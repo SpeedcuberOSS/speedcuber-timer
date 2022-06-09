@@ -4,12 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { SafeAreaView } from 'react-native';
+import { Title } from 'react-native-paper';
 import React from 'react';
 
-import MainNavigator from './src/navigation/MainNavigator';
-
-const App = () => {
-  return <MainNavigator />;
-};
-
-export default App;
+export default function LearnScreen() {
+  return (
+    <SafeAreaView>
+      <Title>LearnScreen</Title>
+    </SafeAreaView>
+  );
+}
