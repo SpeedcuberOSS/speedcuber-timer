@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "stkb.rewrap",
+    "esbenp.prettier-vscode",
+    "wix.glean",
+    "ms-vscode.vscode-typescript-next",
+    "ymotongpoo.licenser",
+    "msjsdiag.vscode-react-native"
+  ]
+}

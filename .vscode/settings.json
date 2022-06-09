@@ -1,0 +1,34 @@
+{
+  // Configure the auto-generated license headers for new files.
+  "licenser.author": "Joseph Hale <me@jhale.dev>",
+  "licenser.license": "MPLv2",
+  "licenser.projectName": "Speedcuber Timer",
+  
+  // Configure the max line length for comments via the `rewrap` extension.
+  "editor.wordWrapColumn": 72,
+
+  "[json]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+}
