@@ -9,8 +9,12 @@ import { AppRegistry } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import App from './App';
 import { name as appName } from './app.json';
+import i18n from './src/localization';
 
 export default function Main() {
+  if (i18n.isInitialized) {
+    console.log('i18n initialized');
+  }
   return (
     <PaperProvider>
       <App />
