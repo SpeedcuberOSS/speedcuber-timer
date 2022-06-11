@@ -1,15 +1,31 @@
 # Speedcuber, The App
 
-The all-in-one, cross-platform, mobile app made for speedcubers by speedcubers.
+The all-in-one, cross-platform, mobile app made for speedcubers by
+speedcubers.
+
+## Contributing
+Thank you for your interest in contributing to this project! There are
+lots of ways you can do so:
+ - [Sponsoring the developer](https://github.com/sponsors/jhale1805) to
+   fund the app's continued presence on Google Play and bring it to the
+   Apple App Store.
+ - [Submitting feature
+   requests](https://github.com/SpeedcuberOSS/BinaryClock/issues/new/choose).
+ - [Reporting
+   bugs](https://github.com/SpeedcuberOSS/BinaryClock/issues/new/choose).
+ - Developing new features/bug fixes.
+ - (Coming Soon!) Adding and updating translations.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information!
 
 ## The Legal Stuff
 
 ```
-`speedcuber` by Joseph Hale is licensed under the terms of the Mozilla
+`speedcuber-timer` by Joseph Hale is licensed under the terms of the Mozilla
 Public License, v 2.0, which are available at https://mozilla.org/MPL/2.0/.
 
-You can download the source code for `speedcuber` for free from
-https://github.com/SpeedcuberOSS/speedcuber.
+You can download the source code for `speedcuber-timer` for free from
+https://github.com/SpeedcuberOSS/speedcuber-timer.
 ```
 
 ### TL;DR
@@ -22,11 +38,11 @@ program) under the MPL-2.0. The best way to do this is via a Pull
 Request back into this project.
 
 If you have any other questions, you may also find Mozilla's [official
-FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/) for the MPL-2.0
-license insightful.
+FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/) for the MPL-2.0 license
+insightful.
 
-If you dislike this license, you can contact me about negotiating a
-paid contract with different terms.
+If you dislike this license, you can contact me about negotiating a paid
+contract with different terms.
 
 **Disclaimer:** This TL;DR is just a summary. All legal questions
 regarding usage of this project must be handled according to the

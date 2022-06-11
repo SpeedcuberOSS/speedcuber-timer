@@ -5,6 +5,7 @@
     "wix.glean",
     "ms-vscode.vscode-typescript-next",
     "ymotongpoo.licenser",
-    "msjsdiag.vscode-react-native"
+    "msjsdiag.vscode-react-native",
+    "lokalise.i18n-ally"
   ]
 }
