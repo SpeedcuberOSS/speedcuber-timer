@@ -15,8 +15,10 @@
     "react": "17.0.2",
     "react-i18next": "^11.17.0",
     "react-native": "0.68.2",
+    "react-native-countdown-circle-timer": "^3.0.9",
     "react-native-localize": "^2.2.2",
     "react-native-paper": "^4.12.1",
+    "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
