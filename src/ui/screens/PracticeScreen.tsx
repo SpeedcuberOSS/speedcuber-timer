@@ -8,7 +8,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
-import { Penalty } from '../../lib/attempts/penalties';
+import { Penalty } from '../../lib/attempts/types/Penalty';
 import SolveTimer from '../components/SolveTimer';
 import format_elapsed_time from '../utils/format_elapsed_time';
 import { Scrambler, NbyN } from '../../lib/scramblers';

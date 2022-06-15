@@ -4,14 +4,34 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-enum Penalty {
-  NONE,
-  PLUS_2,
-  DID_NOT_FINISH,
-  DID_NOT_START,
-}
+import { Penalty } from './Penalty';
 
-enum Infraction {
+/**
+ * A violation of the WCA regulations that incurs a penalty.
+ */
+type Infraction = {
+  /**
+   * A unique identifier for the infraction. (ideally a UUIDv4)
+   */
+  id: string;
+  /**
+   * The penalty imposed by the infraction.
+   */
+  penalty: Penalty;
+  /**
+   * A description of the infraction
+   */
+  description: string;
+  /**
+   * A URL to the WCA regulation specifying the infraction
+   */
+  regulation_url: string;
+};
+
+/**
+ * All possible infractions specified in the Official WCA Regulations.
+ */
+enum Infractions {
   // Article A1 - Time Limits
   TIMELIMIT_EXCEEDED = Penalty.DID_NOT_FINISH, // https://www.worldcubeassociation.org/regulations/#A1a4
 
@@ -64,26 +84,31 @@ enum Infraction {
 }
 
 const PreSolveInfractions = [
-  Infraction.INSPECTION_STARTED_LATE_ONE_MINUTE,
-  Infraction.INSPECTION_APPLIED_MOVES,
-  Infraction.STARTED_WRONG_PUZZLE_PLACEMENT,
-  Infraction.STARTED_WRONG_HAND_PLACEMENT,
-  Infraction.STARTED_TOUCHED_PUZZLE,
-  Infraction.INSPECTION_EXCEEDED_15_SECONDS,
-  Infraction.INSPECTION_EXCEEDED_17_SECONDS,
+  Infractions.INSPECTION_STARTED_LATE_ONE_MINUTE,
+  Infractions.INSPECTION_APPLIED_MOVES,
+  Infractions.STARTED_WRONG_PUZZLE_PLACEMENT,
+  Infractions.STARTED_WRONG_HAND_PLACEMENT,
+  Infractions.STARTED_TOUCHED_PUZZLE,
+  Infractions.INSPECTION_EXCEEDED_15_SECONDS,
+  Infractions.INSPECTION_EXCEEDED_17_SECONDS,
 ];
 
 const PostSolveInfractions = [
-  Infraction.STOPPED_PUZZLE_UNSOLVED,
-  Infraction.STOPPED_PUZZLE_HELD,
-  Infraction.STOPPED_PUZZLE_HELD_JUDGE_OVERRIDE,
-  Infraction.STOPPED_WRONG_HAND_PLACEMENT,
-  Infraction.STOPPED_APPLIED_MOVES,
-  Infraction.STOPPED_TOUCHED_PUZZLE,
-  Infraction.STOPPED_TOUCHED_PUZZLE_JUDGE_OVERRIDE,
-  Infraction.RESET_TIMER_BEFORE_SIGNATURES,
-  Infraction.RESET_TIMER_BEFORE_SIGNATURES_JUDGE_OVERRIDE,
-  Infraction.RESET_TIMER_BEFORE_RESULT_RECORDED,
+  Infractions.STOPPED_PUZZLE_UNSOLVED,
+  Infractions.STOPPED_PUZZLE_HELD,
+  Infractions.STOPPED_PUZZLE_HELD_JUDGE_OVERRIDE,
+  Infractions.STOPPED_WRONG_HAND_PLACEMENT,
+  Infractions.STOPPED_APPLIED_MOVES,
+  Infractions.STOPPED_TOUCHED_PUZZLE,
+  Infractions.STOPPED_TOUCHED_PUZZLE_JUDGE_OVERRIDE,
+  Infractions.RESET_TIMER_BEFORE_SIGNATURES,
+  Infractions.RESET_TIMER_BEFORE_SIGNATURES_JUDGE_OVERRIDE,
+  Infractions.RESET_TIMER_BEFORE_RESULT_RECORDED,
 ];
 
-export { Penalty, Infraction, PreSolveInfractions, PostSolveInfractions };
+export {
+  type Infraction,
+  Infractions,
+  PreSolveInfractions,
+  PostSolveInfractions,
+};
