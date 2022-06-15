@@ -8,10 +8,10 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
-import { Penalty } from '../types/penalties';
+import { Penalty } from '../../lib/attempts/penalties';
 import SolveTimer from '../components/SolveTimer';
 import format_elapsed_time from '../utils/format_elapsed_time';
-import { Scrambler, NbyN } from '../lib/scrambler';
+import { Scrambler, NbyN } from '../../lib/scramblers';
 
 enum TimerState {
   SCRAMBLING = 0,

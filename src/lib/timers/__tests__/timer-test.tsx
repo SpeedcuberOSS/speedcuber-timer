@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Timer } from '../../../src/lib/timer/timer';
+import { Timer } from '../';
 
 async function sleep(milliseconds: number) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));

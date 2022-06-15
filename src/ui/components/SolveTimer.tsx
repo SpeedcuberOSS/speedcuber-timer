@@ -7,7 +7,7 @@
 import { Pressable, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native-paper';
-import { Timer } from '../lib/timer/timer';
+import { Timer } from '../../lib/timers';
 import format_elapsed_time from '../utils/format_elapsed_time';
 
 interface SolveTimerProps {
