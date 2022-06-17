@@ -5,7 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Algorithm } from './Algorithm';
-import { CompetitionEvent } from './CompetitionEvent';
+import { CompetitiveEvent } from './CompetitiveEvent';
+import { Extension } from './Extension';
 import { ScrambleProvider } from './ScrambleProvider';
 
 /**
@@ -19,7 +20,7 @@ type Scramble = {
   /**
    * The event for which this scramble was generated.
    */
-  event: CompetitionEvent;
+  event: CompetitiveEvent;
   /**
    * The move sequence of the scramble.
    */
@@ -28,6 +29,10 @@ type Scramble = {
    * Details about the software used to generate the scramble.
    */
   provider: ScrambleProvider;
+  /**
+   * List of custom extensions.
+   */
+  extensions?: Extension[];
 };
 
 export { type Scramble };

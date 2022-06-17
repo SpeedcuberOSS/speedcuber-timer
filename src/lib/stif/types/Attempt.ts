@@ -4,9 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { CompetitionEvent } from './CompetitionEvent';
+import { CompetitiveEvent } from './CompetitiveEvent';
+import { Extension } from './Extension';
 import { Infraction } from './Infraction';
-import { Session } from './Session';
 import { Solution } from './Solution';
 
 /**
@@ -24,11 +24,7 @@ type Attempt = {
   /**
    * The speedsolving event for the attempt.
    */
-  event: CompetitionEvent;
-  /**
-   * The speedsolving session in which the attempt occurred.
-   */
-  session: Session;
+  event: CompetitiveEvent;
   /**
    * The solutions completed in the attempt.
    *
@@ -44,6 +40,10 @@ type Attempt = {
    * A free-form text comment about the attempt.
    */
   comment: string;
+  /**
+   * List of custom extensions.
+   */
+  extensions?: Extension[];
 };
 
 export { type Attempt };

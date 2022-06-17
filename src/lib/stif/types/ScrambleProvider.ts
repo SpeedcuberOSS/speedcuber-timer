@@ -4,22 +4,29 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Extension } from './Extension';
+
 /**
  * Details about a software system that can generate scrambles.
  */
 type ScrambleProvider = {
   /**
-   * A unique identifier for the event. (ideally a UUIDv4)
+   * A unique identifier for the scramble provider.
+   *
+   * Should be in [reverse domain name
+   * notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation)
+   * to distinguish the provider from other scramble providers.
    */
   id: string;
   /**
-   * The name of the scramble provider.
-   */
-  name: string;
-  /**
-   * The URL containing more information about the scramble provider.
+   * A valid URL pointing to more information about the scramble
+   * provider.
    */
   url: string;
+  /**
+   * List of custom extensions.
+   */
+  extensions?: Extension[];
 };
 
 export { type ScrambleProvider };

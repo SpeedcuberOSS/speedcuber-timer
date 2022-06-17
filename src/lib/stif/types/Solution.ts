@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Algorithm } from './Algorithm';
+import { Extension } from './Extension';
 import { Scramble } from './Scramble';
 
 /**
@@ -18,15 +19,19 @@ type Solution = {
   /**
    * The duration of the solution (in milliseconds), excluding penalties.
    */
-  duration: Date;
+  duration: number;
   /**
-   * The algorithm used to scramble the puzzle for the attempt.
+   * The scramble use to prepare the puzzle for a solution attempt.
    */
   scramble: Scramble;
   /**
    * The move sequence of the solution.
    */
-  algorithm: Algorithm;
+  reconstruction?: Algorithm;
+  /**
+   * List of custom extensions.
+   */
+  extensions?: Extension[];
 };
 
 export { type Solution };
