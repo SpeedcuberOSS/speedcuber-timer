@@ -27,13 +27,14 @@ communicate effectively with each other.
 ## FAQ
 
 ### Why not just use [WCIF (WCA Competition Interchange Format)](https://github.com/SpeedcuberOSS/wcif)?
-WCIF is a fantastic specification for building *cubing competition*
-software. As such, it includes many objects not applicable to at-home
-speedcubing timers (e.g.
-[Schedule](https://github.com/SpeedcuberOSS/wcif/blob/master/specification.md#Schedule),
+WCIF is a fantastic specification for building *cubing competition
+management* software. As such, it includes many objects not applicable
+to at-home speedcubing timers (e.g.
+[Schedule](https://github.com/SpeedcuberOSS/wcif/blob/master/specification.md#Schedule)
+and
 [Venue](https://github.com/SpeedcuberOSS/wcif/blob/master/specification.md#Venue))
 and omits many fields desireable for analyzing personal solves (e.g.
 millisecond precision, solving sessions, solving categories, etc.)
 
 STIF takes the great ideas from WCIF and applies them to the realm of
-personal speedcubing timers.
+*personal speedcubing timers*.
