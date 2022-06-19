@@ -4,18 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Algorithm } from './Algorithm';
-import { Extension } from './Extension';
+import { Entity } from './Entity';
+import { Reconstruction } from './Reconstruction';
 import { Scramble } from './Scramble';
 
 /**
  * Details about a solution to a scramble.
  */
-type Solution = {
-  /**
-   * A unique identifier for the solution. (ideally a UUIDv4)
-   */
-  id: string;
+interface Solution extends Entity {
   /**
    * The duration of the solution (in milliseconds), excluding penalties.
    */
@@ -25,13 +21,9 @@ type Solution = {
    */
   scramble: Scramble;
   /**
-   * The move sequence of the solution.
+   * The reconstruction of the solution.
    */
-  reconstruction?: Algorithm;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
+  reconstruction?: Reconstruction;
 };
 
 export { type Solution };

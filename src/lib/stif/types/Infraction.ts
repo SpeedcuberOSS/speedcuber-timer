@@ -4,13 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Extension } from './Extension';
+import { Entity } from './Entity';
 import { Penalty } from './Penalty';
 
 /**
  * A violation of the WCA regulations that incurs a penalty.
  */
-type Infraction = {
+interface Infraction extends Entity {
   /**
    * A unique identifier for the infraction.
    *
@@ -23,10 +23,6 @@ type Infraction = {
    * The penalty imposed by the infraction.
    */
   penalty: Penalty;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type Infraction };

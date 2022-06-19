@@ -4,12 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Extension } from './Extension';
+import { Entity } from './Entity';
 
 /**
  * A twisty toy that can be scrambled and solved.
  */
-type Puzzle = {
+interface Puzzle extends Entity {
   /**
    * A unique identifier for the puzzle.
    *
@@ -18,10 +18,6 @@ type Puzzle = {
    * corresponding to the puzzle's standard event.
    */
   id: string;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type Puzzle };

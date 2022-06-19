@@ -5,18 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { CompetitiveEvent } from './CompetitiveEvent';
-import { Extension } from './Extension';
+import { Entity } from './Entity';
 import { Infraction } from './Infraction';
 import { Solution } from './Solution';
 
 /**
  * A single attempt by a user to complete a competition event.
  */
-type Attempt = {
-  /**
-   * A unique identifier for the attempt. (ideally a UUIDv4)
-   */
-  id: string;
+interface Attempt extends Entity {
   /**
    * The unix timestamp (in milliseconds) when the attempt occurred.
    */
@@ -40,10 +36,6 @@ type Attempt = {
    * A free-form text comment about the attempt.
    */
   comment: string;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type Attempt };

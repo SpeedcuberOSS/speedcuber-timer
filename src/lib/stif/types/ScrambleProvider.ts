@@ -4,12 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Extension } from './Extension';
+import { Entity } from './Entity';
 
 /**
  * Details about a software system that can generate scrambles.
  */
-type ScrambleProvider = {
+interface ScrambleProvider extends Entity {
   /**
    * A unique identifier for the scramble provider.
    *
@@ -23,10 +23,6 @@ type ScrambleProvider = {
    * provider.
    */
   url: string;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type ScrambleProvider };

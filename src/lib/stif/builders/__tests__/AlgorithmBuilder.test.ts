@@ -3,21 +3,10 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
-import { Algorithm, Extension } from '../../types';
+import { Algorithm } from '../../types';
 import { AlgorithmBuilder } from '../AlgorithmBuilder';
 import { v4 as uuid } from 'uuid';
-
-const TEST_EXTENSION: Extension = {
-  id: 'org.speedcuber.stif.extensions.test',
-  specUrl: 'https://stif.speedcuber.org/extensions/test',
-  data: [],
-};
-
-const TEST_EXTENSION_ALT: Extension = {
-  id: 'org.speedcuber.stif.extensions.cookies',
-  specUrl: 'https://stif.speedcuber.org/extensions/cookies',
-  data: [],
-};
+import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
 const TEST_MOVES = ['R', 'U', "R'", "U'"];
 

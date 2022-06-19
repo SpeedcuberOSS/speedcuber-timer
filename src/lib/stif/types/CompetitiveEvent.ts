@@ -4,6 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Entity } from './Entity';
 import { Extension } from './Extension';
 import { Puzzle } from './Puzzle';
 
@@ -28,7 +29,7 @@ enum CompetitiveEventType {
 /**
  * A category of puzzle solving challenge.
  */
-type CompetitiveEvent = {
+interface CompetitiveEvent extends Entity {
   /**
    * A unique identifier for the event.
    *
@@ -44,10 +45,6 @@ type CompetitiveEvent = {
    * The type of event.
    */
   type: CompetitiveEventType;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type CompetitiveEvent, CompetitiveEventType };

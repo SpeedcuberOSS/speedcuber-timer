@@ -5,22 +5,18 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Algorithm } from './Algorithm';
-import { CompetitiveEvent } from './CompetitiveEvent';
-import { Extension } from './Extension';
+import { Entity } from './Entity';
+import { Puzzle } from './Puzzle';
 import { ScrambleProvider } from './ScrambleProvider';
 
 /**
  * Details about the scramble used to prepare a puzzle for an attempt.
  */
-type Scramble = {
+interface Scramble extends Entity {
   /**
-   * A unique identifier for the scramble. (ideally a UUIDv4)
+   * The puzzle for which this scramble was generated.
    */
-  id: string;
-  /**
-   * The event for which this scramble was generated.
-   */
-  event: CompetitiveEvent;
+  puzzle: Puzzle;
   /**
    * The move sequence of the scramble.
    */
@@ -29,10 +25,6 @@ type Scramble = {
    * Details about the software used to generate the scramble.
    */
   provider: ScrambleProvider;
-  /**
-   * List of custom extensions.
-   */
-  extensions?: Extension[];
 };
 
 export { type Scramble };
