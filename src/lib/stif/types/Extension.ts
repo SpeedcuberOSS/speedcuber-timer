@@ -30,5 +30,5 @@ export type Extension = {
   /**
    * The extension data.
    */
-  data: any;
+  data: object;
 };
