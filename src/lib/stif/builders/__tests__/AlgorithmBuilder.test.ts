@@ -10,58 +10,55 @@ import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
 const TEST_MOVES = ['R', 'U', "R'", "U'"];
 
-describe('AlgorithmBuilder', () => {
-  test('should offer static builder from just a move sequence', () => {
-    let algorithm: Algorithm = AlgorithmBuilder.fromMoves(TEST_MOVES);
+describe("AlgorithmBuilder's convenience API", () => {
+  it('enables creating an Algorithm from just a move sequence', () => {
+    let algorithm: Algorithm = AlgorithmBuilder.buildFromMoves(TEST_MOVES);
     expect(algorithm.moves.length).toEqual(TEST_MOVES.length);
   });
-  test('should fail to build when given nothing', () => {
-    expect(() => new AlgorithmBuilder().build()).toThrow('Nothing to build!');
-  });
-  test('should successfully build when given just a move sequence', () => {
-    let algorithm: Algorithm = new AlgorithmBuilder()
-      .setMoves(TEST_MOVES)
-      .build();
-    expect(algorithm.moves.length).toEqual(TEST_MOVES.length);
-  });
-  test('should allow setting a custom id', () => {
-    let id = uuid();
-    let algorithm: Algorithm = new AlgorithmBuilder()
-      .setId(id)
-      .setMoves(TEST_MOVES)
-      .build();
-    expect(algorithm.id).toEqual(id);
-  });
-  test('should fail to build if given an id without any moves', () => {
-    expect(() => new AlgorithmBuilder().setId(uuid()).build()).toThrow(
-      '`moves` is a required attribute.',
-    );
-  });
-  test('should allow setting a custom extension', () => {
-    let algorithm: Algorithm = new AlgorithmBuilder()
-      .addExtension(TEST_EXTENSION)
-      .setMoves(TEST_MOVES)
-      .build();
-    expect(algorithm.extensions?.length).toBe(1);
-  });
-  test('should fail to build if given an extension without any moves', () => {
-    expect(() =>
-      new AlgorithmBuilder().addExtension(TEST_EXTENSION).build(),
-    ).toThrow('`moves` is a required attribute.');
-  });
-  test('should fail to add a duplicate extension', () => {
-    expect(() =>
-      new AlgorithmBuilder()
+});
+
+describe('A new Algorithm Builder', () => {
+  describe("builds successfully when", () => {
+    it("is given just a move sequence", () => {
+      let algorithm: Algorithm = new AlgorithmBuilder()
+        .setMoves(TEST_MOVES)
+        .build();
+      expect(algorithm.moves.length).toEqual(TEST_MOVES.length);
+    })
+    it("is given a custom id and a move sequence", () => {
+      let id = uuid();
+      let algorithm: Algorithm = new AlgorithmBuilder()
+        .setId(id)
+        .setMoves(TEST_MOVES)
+        .build();
+      expect(algorithm.id).toEqual(id);
+    });
+    it("is given one extension and a move sequence", () => {
+      let algorithm: Algorithm = new AlgorithmBuilder()
         .addExtension(TEST_EXTENSION)
-        .addExtension(TEST_EXTENSION),
-    ).toThrow('cannot add a duplicate extension');
-  });
-  test('should allow adding multiple extensions', () => {
-    let algorithm = new AlgorithmBuilder()
-      .addExtension(TEST_EXTENSION)
-      .addExtension(TEST_EXTENSION_ALT)
-      .setMoves(TEST_MOVES)
-      .build();
-    expect(algorithm.extensions?.length).toEqual(2);
-  });
+        .setMoves(TEST_MOVES)
+        .build();
+      expect(algorithm.extensions?.length).toBe(1);
+    })
+    it("is given multiple extensions and a move sequence", () => {
+      let algorithm = new AlgorithmBuilder()
+        .addExtension(TEST_EXTENSION)
+        .addExtension(TEST_EXTENSION_ALT)
+        .setMoves(TEST_MOVES)
+        .build();
+      expect(algorithm.extensions?.length).toEqual(2);
+    })
+  })
+  describe("fails to build when", () => {
+    it("is given no additional attributes", () => {
+      expect(() => new AlgorithmBuilder().build()).toThrow('Nothing to build!');
+    })
+    it("is given a duplicate extension", () => {
+      expect(() =>
+        new AlgorithmBuilder()
+          .addExtension(TEST_EXTENSION)
+          .addExtension(TEST_EXTENSION),
+      ).toThrow('cannot add a duplicate extension');
+    })
+  })
 });

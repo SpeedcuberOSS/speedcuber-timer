@@ -8,7 +8,7 @@ import { EntityBuilder } from './EntityBuilder';
 
 class AlgorithmBuilder extends EntityBuilder {
   protected wip: Partial<Algorithm> = {};
-  public static fromMoves(moves: string[]): Algorithm {
+  public static buildFromMoves(moves: string[]): Algorithm {
     return new AlgorithmBuilder().setMoves(moves).build();
   }
   public setMoves(moves: string[]): this {
