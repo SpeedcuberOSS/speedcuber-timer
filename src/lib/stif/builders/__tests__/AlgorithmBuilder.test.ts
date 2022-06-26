@@ -10,13 +10,6 @@ import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
 const TEST_MOVES = ['R', 'U', "R'", "U'"];
 
-describe("AlgorithmBuilder's convenience API", () => {
-  it('enables creating an Algorithm from just a move sequence', () => {
-    let algorithm: Algorithm = AlgorithmBuilder.buildFromMoves(TEST_MOVES);
-    expect(algorithm.moves.length).toEqual(TEST_MOVES.length);
-  });
-});
-
 describe('A new Algorithm Builder', () => {
   describe("builds successfully when", () => {
     it("is given just a move sequence", () => {

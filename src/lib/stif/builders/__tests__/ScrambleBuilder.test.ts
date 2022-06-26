@@ -15,7 +15,12 @@ const TEST_PROVIDER: ScrambleProvider = {
   url: 'https://stif.speedcuber.org/scrambleproviders/test',
 };
 
-const TEST_ALGORITHM: Algorithm = AlgorithmBuilder.buildFromMoves(['R', 'U']);
+const TEST_ALGORITHM: Algorithm = new AlgorithmBuilder()
+  .setMoves(['R', 'U'])
+  .build();
+const TEST_ALGORITHM_ALT: Algorithm = new AlgorithmBuilder()
+  .setMoves(['R', 'U', 'D'])
+  .build();
 
 describe('A new ScrambleBuilder', () => {
   describe('builds successfully when', () => {
