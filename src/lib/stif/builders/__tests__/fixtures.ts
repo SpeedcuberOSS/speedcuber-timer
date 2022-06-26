@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Extension } from '../../types';
+import { Extension, ScrambleProvider } from '../../types';
 
 const TEST_EXTENSION: Extension = {
   id: 'org.speedcuber.stif.extensions.test',
@@ -18,6 +18,11 @@ const TEST_EXTENSION_ALT: Extension = {
   data: [],
 };
 
-test('fixtures loaded', () => {})
+const TEST_PROVIDER: ScrambleProvider = {
+  id: 'org.speedcuber.stif.scrambleproviders.test',
+  url: 'https://stif.speedcuber.org/scrambleproviders/test',
+};
 
-export { TEST_EXTENSION, TEST_EXTENSION_ALT };
+test('fixtures loaded', () => {});
+
+export { TEST_EXTENSION, TEST_EXTENSION_ALT, TEST_PROVIDER };

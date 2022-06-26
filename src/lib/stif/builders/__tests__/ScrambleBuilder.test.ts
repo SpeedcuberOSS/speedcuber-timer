@@ -8,12 +8,7 @@ import { v4 as uuid } from 'uuid';
 import { PUZZLE_3x3x3 } from '../../builtins';
 import { Algorithm, Scramble, ScrambleProvider } from '../../types';
 import { AlgorithmBuilder } from '../AlgorithmBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
-
-const TEST_PROVIDER: ScrambleProvider = {
-  id: 'org.speedcuber.stif.scrambleproviders.test',
-  url: 'https://stif.speedcuber.org/scrambleproviders/test',
-};
+import { TEST_EXTENSION, TEST_EXTENSION_ALT, TEST_PROVIDER } from './fixtures';
 
 const TEST_ALGORITHM: Algorithm = new AlgorithmBuilder()
   .setMoves(['R', 'U'])
