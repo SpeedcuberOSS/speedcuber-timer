@@ -22,6 +22,21 @@ const TEST_ALGORITHM_ALT: Algorithm = new AlgorithmBuilder()
   .setMoves(['R', 'U', 'D'])
   .build();
 
+describe("ScrambleBuilder's API", () => {
+  it('enables creating a reusable builder with a preset provider and puzzle', () => {
+    let reusableBuilder = new ScrambleBuilder()
+      .setProvider(TEST_PROVIDER)
+      .setPuzzle(PUZZLE_3x3x3);
+    let scramble1 = reusableBuilder.setAlgorithm(TEST_ALGORITHM).build();
+    let scramble2 = reusableBuilder.setAlgorithm(TEST_ALGORITHM_ALT).build();
+
+    expect(scramble1.provider).toEqual(scramble2.provider);
+    expect(scramble1.id).not.toEqual(scramble2.id);
+    expect(scramble1.algorithm).toEqual(TEST_ALGORITHM);
+    expect(scramble2.algorithm).toEqual(TEST_ALGORITHM_ALT);
+  });
+});
+
 describe('A new ScrambleBuilder', () => {
   describe('builds successfully when', () => {
     it("is given a puzzle, algorithm, and a scramble provider (the 'CORE FIELDS')", () => {
