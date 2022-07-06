@@ -22,6 +22,9 @@ class InMemoryAttemptLibrary implements AttemptLibrary {
     this._library.delete(attempt_id);
     return true;
   }
+  get(attempt_id: string): Attempt | undefined {
+    return this._library.get(attempt_id);
+  }
   update(attempt_id: string, attempt: Attempt): boolean {
     if (!this._library.has(attempt_id)) {
       return false;
@@ -29,8 +32,8 @@ class InMemoryAttemptLibrary implements AttemptLibrary {
     this._library.set(attempt_id, attempt);
     return true;
   }
-  getAll(): Attempt[] {
-    return Array.from(this._library.values());
+  count(): number {
+    return this._library.size;
   }
 }
 
