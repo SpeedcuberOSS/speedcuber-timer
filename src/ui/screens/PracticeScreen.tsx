@@ -8,10 +8,10 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
-import { Penalty } from '../../lib/attempts/types/Penalty';
+import { Penalty } from '../../lib/stif/types/Penalty';
 import SolveTimer from '../components/SolveTimer';
 import format_elapsed_time from '../utils/format_elapsed_time';
-import { Scrambler, NbyN } from '../../lib/scramblers';
+import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -19,11 +19,8 @@ enum TimerState {
   SOLVING = 2,
 }
 
-function get3x3Scramble(): string {
-  let scrambler = new Scrambler(new NbyN(3));
-  let scrambleMoves = scrambler.generateScramble().map(move => move.toString());
-  let scramble = scrambleMoves.join(' ');
-  return scramble;
+function get3x3x3Scramble(): string {
+  return new Scrambler3x3x3().generateScramble().algorithm.moves.join(' ');
 }
 
 export default function PracticeScreen() {
@@ -50,7 +47,7 @@ export default function PracticeScreen() {
       {(timerState === TimerState.SCRAMBLING && (
         <>
           <Text onPress={nextTimerState}>{format_elapsed_time(lastTime)}</Text>
-          <Text onPress={nextTimerState}>{get3x3Scramble()}</Text>
+          <Text onPress={nextTimerState}>{get3x3x3Scramble()}</Text>
         </>
       )) ||
         (timerState === TimerState.INSPECTION && (
