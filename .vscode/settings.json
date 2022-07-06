@@ -3,10 +3,8 @@
   "licenser.author": "Joseph Hale <me@jhale.dev>",
   "licenser.license": "MPLv2",
   "licenser.projectName": "Speedcuber Timer",
-  
   // Configure the max line length for comments via the `rewrap` extension.
   "editor.wordWrapColumn": 72,
-
   "[json]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
@@ -44,4 +42,8 @@
     "ios/Pods/Headers/Public/Flipper-Folly/folly/lang",
     "ios/Pods/Headers/Public/RCT-Folly/folly/lang"
   ],
+  "cSpell.words": [
+    "stif"
+  ],
+  "licenser.disableAutoHeaderInsertion": false,
 }
