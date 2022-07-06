@@ -8,6 +8,11 @@ import { Algorithm, Scramble, ScrambleProvider } from '../types';
 import { Puzzle } from '../types/Puzzle';
 import { EntityBuilder } from './EntityBuilder';
 
+let DEFAULT_PROVIDER: ScrambleProvider = {
+  id: 'org.speedcuber.scrambleproviders.default',
+  url: 'https://scrambleproviders.speedcuber.org/default'
+}
+
 class ScrambleBuilder extends EntityBuilder {
   protected wip: Partial<Scramble> = {};
   setPuzzle(puzzle: Puzzle): this {
@@ -28,15 +33,13 @@ class ScrambleBuilder extends EntityBuilder {
       throw new Error('`puzzle` is a required attribute.');
     if (this.wip.algorithm === undefined)
       throw new Error('`algorithm` is a required attribute.');
-    if (this.wip.provider === undefined)
-      throw new Error('`provider` is a required attribute.');
     return {
       ...entity,
       puzzle: this.wip.puzzle,
       algorithm: this.wip.algorithm,
-      provider: this.wip.provider,
+      provider: this.wip.provider ?? DEFAULT_PROVIDER,
     };
   }
 }
 
-export { ScrambleBuilder };
+export { ScrambleBuilder, DEFAULT_PROVIDER };
