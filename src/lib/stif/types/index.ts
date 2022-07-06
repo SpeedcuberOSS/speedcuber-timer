@@ -10,6 +10,7 @@ export * from './CompetitiveEvent';
 export * from './Extension';
 export * from './Infraction';
 export * from './Penalty';
+export * from './Puzzle';
 export * from './Scramble';
 export * from './ScrambleProvider';
 export * from './Solution';
