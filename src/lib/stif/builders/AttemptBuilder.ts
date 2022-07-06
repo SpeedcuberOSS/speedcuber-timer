@@ -4,11 +4,28 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt, CompetitiveEvent, Infraction, Solution } from '../types';
+import {
+  Attempt,
+  CompetitiveEvent,
+  Infraction,
+  Scramble,
+  Solution,
+} from '../types';
 import { EntityBuilder } from './EntityBuilder';
+import { SolutionBuilder } from './SolutionBuilder';
 
 class AttemptBuilder extends EntityBuilder {
   protected wip: Partial<Attempt> = {};
+  static buildBasic(
+    event: CompetitiveEvent,
+    scramble: Scramble,
+    duration: number,
+  ): Attempt {
+    return new AttemptBuilder()
+      .setEvent(event)
+      .addSolution(SolutionBuilder.buildBasic(scramble, duration))
+      .build();
+  }
   setEvent(event: CompetitiveEvent): this {
     this.wip.event = event;
     return this;

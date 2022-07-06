@@ -9,6 +9,12 @@ import { EntityBuilder } from './EntityBuilder';
 
 class SolutionBuilder extends EntityBuilder {
   protected wip: Partial<Solution> = {};
+  static buildBasic(scramble: Scramble, duration: number): Solution {
+    return new SolutionBuilder()
+      .setScramble(scramble)
+      .setDuration(duration)
+      .build();
+  }
   public setDuration(duration: number): this {
     this.wip.duration = duration;
     return this;

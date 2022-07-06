@@ -5,17 +5,22 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { PUZZLE_3x3x3 } from '../../builtins';
 import { Solution } from '../../types';
-import { AlgorithmBuilder } from '../AlgorithmBuilder';
 import { ScrambleBuilder } from '../ScrambleBuilder';
 import { SolutionBuilder } from '../SolutionBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT, TEST_PROVIDER } from './fixtures';
+import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 import { v4 as uuid } from 'uuid';
 
-let TEST_SCRAMBLE = new ScrambleBuilder()
-  .setPuzzle(PUZZLE_3x3x3)
-  .setProvider(TEST_PROVIDER)
-  .setAlgorithm(new AlgorithmBuilder().setMoves(['R', 'U']).build())
-  .build();
+let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U'])
+
+describe("SolutionBuilder's API", () => {
+  it('provides a static method for creating basic solutions', () => {
+    let solution = SolutionBuilder.buildBasic(TEST_SCRAMBLE, 10000);
+    expect(solution.id).toBeDefined();
+    expect(solution.duration).toEqual(10000);
+    expect(solution.scramble.puzzle).toEqual(PUZZLE_3x3x3);
+    expect(solution.scramble.algorithm.moves).toEqual(["R", "U"]);
+  })
+});
 
 describe('A new SolutionBuilder', () => {
   describe('builds successfully when', () => {

@@ -6,9 +6,9 @@
 import { ScrambleBuilder, DEFAULT_PROVIDER } from '../ScrambleBuilder';
 import { v4 as uuid } from 'uuid';
 import { PUZZLE_3x3x3 } from '../../builtins';
-import { Algorithm, Scramble } from '../../types';
+import { Algorithm, Scramble, ScrambleProvider } from '../../types';
 import { AlgorithmBuilder } from '../AlgorithmBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT, TEST_PROVIDER } from './fixtures';
+import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
 const TEST_ALGORITHM: Algorithm = new AlgorithmBuilder()
   .setMoves(['R', 'U'])
@@ -16,6 +16,10 @@ const TEST_ALGORITHM: Algorithm = new AlgorithmBuilder()
 const TEST_ALGORITHM_ALT: Algorithm = new AlgorithmBuilder()
   .setMoves(['R', 'U', 'D'])
   .build();
+const TEST_PROVIDER: ScrambleProvider = {
+  id: 'org.speedcuber.stif.scrambleproviders.test',
+  url: 'https://stif.speedcuber.org/scrambleproviders/test',
+};
 
 describe("ScrambleBuilder's API", () => {
   it('enables creating a reusable builder with a preset provider and puzzle', () => {
@@ -29,6 +33,13 @@ describe("ScrambleBuilder's API", () => {
     expect(scramble1.id).not.toEqual(scramble2.id);
     expect(scramble1.algorithm).toEqual(TEST_ALGORITHM);
     expect(scramble2.algorithm).toEqual(TEST_ALGORITHM_ALT);
+  });
+  it('provides a static method for creating basic scrambles', () => {
+    let scramble = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
+    expect(scramble.puzzle).toEqual(PUZZLE_3x3x3);
+    expect(scramble.provider).toEqual(DEFAULT_PROVIDER);
+    expect(scramble.id).toBeDefined();
+    expect(scramble.algorithm.moves).toEqual(['R', 'U']);
   });
 });
 

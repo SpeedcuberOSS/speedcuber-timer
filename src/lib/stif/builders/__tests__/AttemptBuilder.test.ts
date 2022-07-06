@@ -6,25 +6,36 @@
 
 import { AttemptBuilder } from '../AttemptBuilder';
 import { v4 as uuid } from 'uuid';
-import { EVENT_3x3x3, INSPECTION_EXCEEDED_17_SECONDS, PUZZLE_3x3x3, TIMELIMIT_EXCEEDED } from '../../builtins';
-import { Algorithm, Attempt, Scramble } from '../../types';
+import {
+  EVENT_3x3x3,
+  INSPECTION_EXCEEDED_17_SECONDS,
+  PUZZLE_3x3x3,
+  TIMELIMIT_EXCEEDED,
+} from '../../builtins';
+import { Attempt } from '../../types';
 import { SolutionBuilder } from '../SolutionBuilder';
 import { ScrambleBuilder } from '../ScrambleBuilder';
-import { AlgorithmBuilder } from '../AlgorithmBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT, TEST_PROVIDER } from './fixtures';
+import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
-let TEST_ALGORITHM: Algorithm = new AlgorithmBuilder()
-  .setMoves(['R', 'U'])
-  .build();
-let TEST_SCRAMBLE: Scramble = new ScrambleBuilder()
-  .setPuzzle(PUZZLE_3x3x3)
-  .setAlgorithm(TEST_ALGORITHM)
-  .setProvider(TEST_PROVIDER)
-  .build();
-let TEST_SOLUTION = new SolutionBuilder()
-  .setDuration(2000)
-  .setScramble(TEST_SCRAMBLE)
-  .build();
+let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
+let TEST_SOLUTION = SolutionBuilder.buildBasic(TEST_SCRAMBLE, 2000);
+
+describe("AttemptBuilder's API", () => {
+  it('provides a static method for creating basic attempts', () => {
+    let attempt = AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000);
+    expect(attempt.event).toEqual(EVENT_3x3x3);
+    expect(attempt.solutions[0].scramble).toEqual(TEST_SCRAMBLE);
+    expect(attempt.solutions[0].duration).toEqual(10000);
+    expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
+      new Date().getMilliseconds() - 1000,
+    );
+    expect(attempt.timestamp.getMilliseconds()).toBeLessThan(
+      new Date().getMilliseconds() + 1000,
+    );
+    expect(attempt.infractions).toEqual([]);
+    expect(attempt.comment).toEqual('');
+  });
+});
 
 describe('A new AttemptBuilder', () => {
   describe('builds successfully when', () => {
@@ -35,8 +46,12 @@ describe('A new AttemptBuilder', () => {
         .build();
       expect(attempt.event).toEqual(EVENT_3x3x3);
       expect(attempt.solutions).toEqual([TEST_SOLUTION]);
-      expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(new Date().getMilliseconds() - 1000)
-      expect(attempt.timestamp.getMilliseconds()).toBeLessThan(new Date().getMilliseconds() + 1000)
+      expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
+        new Date().getMilliseconds() - 1000,
+      );
+      expect(attempt.timestamp.getMilliseconds()).toBeLessThan(
+        new Date().getMilliseconds() + 1000,
+      );
       expect(attempt.infractions).toEqual([]);
       expect(attempt.comment).toEqual('');
     });

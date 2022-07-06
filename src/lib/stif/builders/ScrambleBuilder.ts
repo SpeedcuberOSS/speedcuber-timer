@@ -6,15 +6,22 @@
 
 import { Algorithm, Scramble, ScrambleProvider } from '../types';
 import { Puzzle } from '../types/Puzzle';
+import { AlgorithmBuilder } from './AlgorithmBuilder';
 import { EntityBuilder } from './EntityBuilder';
 
 let DEFAULT_PROVIDER: ScrambleProvider = {
-  id: 'org.speedcuber.scrambleproviders.default',
-  url: 'https://scrambleproviders.speedcuber.org/default'
-}
+  id: 'org.speedcuber.stif.scrambleproviders.default',
+  url: 'https://stif.speedcuber.org/scrambleproviders/default',
+};
 
 class ScrambleBuilder extends EntityBuilder {
   protected wip: Partial<Scramble> = {};
+  static buildBasic(puzzle: Puzzle, moves: string[]): Scramble {
+    return new ScrambleBuilder()
+      .setPuzzle(puzzle)
+      .setAlgorithm(new AlgorithmBuilder().setMoves(moves).build())
+      .build();
+  }
   setPuzzle(puzzle: Puzzle): this {
     this.wip.puzzle = puzzle;
     return this;
