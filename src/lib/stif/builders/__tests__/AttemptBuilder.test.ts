@@ -18,14 +18,14 @@ import { ScrambleBuilder } from '../ScrambleBuilder';
 import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
 let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
-let TEST_SOLUTION = SolutionBuilder.buildBasic(TEST_SCRAMBLE, 2000);
+let TEST_SOLUTION = new SolutionBuilder().setScramble(TEST_SCRAMBLE).build();
 
 describe("AttemptBuilder's API", () => {
   it('provides a static method for creating basic attempts', () => {
     let attempt = AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000);
     expect(attempt.event).toEqual(EVENT_3x3x3);
+    expect(attempt.duration).toEqual(10000);
     expect(attempt.solutions[0].scramble).toEqual(TEST_SCRAMBLE);
-    expect(attempt.solutions[0].duration).toEqual(10000);
     expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
       new Date().getMilliseconds() - 1000,
     );
@@ -39,12 +39,14 @@ describe("AttemptBuilder's API", () => {
 
 describe('A new AttemptBuilder', () => {
   describe('builds successfully when', () => {
-    it("is given an event and at least one solution (the 'CORE FIELDS')", () => {
+    it("is given an event, a duration, and at least one solution (the 'CORE FIELDS')", () => {
       let attempt: Attempt = new AttemptBuilder()
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.event).toEqual(EVENT_3x3x3);
+      expect(attempt.duration).toEqual(10000);
       expect(attempt.solutions).toEqual([TEST_SOLUTION]);
       expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
         new Date().getMilliseconds() - 1000,
@@ -60,6 +62,7 @@ describe('A new AttemptBuilder', () => {
       let attempt: Attempt = new AttemptBuilder()
         .setId(id)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.id).toEqual(id);
@@ -69,6 +72,7 @@ describe('A new AttemptBuilder', () => {
       let attempt: Attempt = new AttemptBuilder()
         .setTimestamp(timestamp)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.timestamp).toEqual(timestamp);
@@ -76,8 +80,12 @@ describe('A new AttemptBuilder', () => {
     it("is given multiple solutions and the 'CORE FIELDS'", () => {
       let attempt: Attempt = new AttemptBuilder()
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
-        .addSolution({ ...TEST_SOLUTION, duration: 3000 })
+        .addSolution({
+          ...TEST_SOLUTION,
+          scramble: ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', "U'"]),
+        })
         .build();
       expect(attempt.solutions.length).toEqual(2);
     });
@@ -85,6 +93,7 @@ describe('A new AttemptBuilder', () => {
       let attempt: Attempt = new AttemptBuilder()
         .addInfraction(TIMELIMIT_EXCEEDED)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.infractions.length).toEqual(1);
@@ -94,6 +103,7 @@ describe('A new AttemptBuilder', () => {
         .addInfraction(TIMELIMIT_EXCEEDED)
         .addInfraction(INSPECTION_EXCEEDED_17_SECONDS)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.infractions.length).toEqual(2);
@@ -103,6 +113,7 @@ describe('A new AttemptBuilder', () => {
       let attempt: Attempt = new AttemptBuilder()
         .setComment(comment)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.comment).toEqual(comment);
@@ -111,6 +122,7 @@ describe('A new AttemptBuilder', () => {
       let attempt: Attempt = new AttemptBuilder()
         .addExtension(TEST_EXTENSION)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.extensions?.length).toBe(1);
@@ -120,6 +132,7 @@ describe('A new AttemptBuilder', () => {
         .addExtension(TEST_EXTENSION)
         .addExtension(TEST_EXTENSION_ALT)
         .setEvent(EVENT_3x3x3)
+        .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
       expect(attempt.extensions?.length).toEqual(2);
@@ -136,10 +149,15 @@ describe('A new AttemptBuilder', () => {
         '`event` is a required attribute.',
       );
     });
-    it('is given no `solution', () => {
+    it('is given no `duration', () => {
       expect(() => new AttemptBuilder().setEvent(EVENT_3x3x3).build()).toThrow(
-        'At least one `solution` must be provided.',
+        '`duration` is a required attribute.',
       );
+    });
+    it('is given no `solution', () => {
+      expect(() =>
+        new AttemptBuilder().setEvent(EVENT_3x3x3).setDuration(10000).build(),
+      ).toThrow('At least one `solution` must be provided.');
     });
     it('is given a duplicate extension', () => {
       expect(() =>

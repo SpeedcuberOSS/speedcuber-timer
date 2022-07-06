@@ -13,10 +13,6 @@ import { Scramble } from './Scramble';
  */
 interface Solution extends Entity {
   /**
-   * The duration of the solution (in milliseconds), excluding penalties.
-   */
-  duration: number;
-  /**
    * The scramble use to prepare the puzzle for a solution attempt.
    */
   scramble: Scramble;

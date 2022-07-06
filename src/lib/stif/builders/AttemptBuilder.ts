@@ -23,11 +23,16 @@ class AttemptBuilder extends EntityBuilder {
   ): Attempt {
     return new AttemptBuilder()
       .setEvent(event)
-      .addSolution(SolutionBuilder.buildBasic(scramble, duration))
+      .setDuration(duration)
+      .addSolution(new SolutionBuilder().setScramble(scramble).build())
       .build();
   }
   setEvent(event: CompetitiveEvent): this {
     this.wip.event = event;
+    return this;
+  }
+  setDuration(duration: number): this {
+    this.wip.duration = duration;
     return this;
   }
   addSolution(solution: Solution): this {
@@ -56,12 +61,15 @@ class AttemptBuilder extends EntityBuilder {
     let entity = super.build();
     if (this.wip.event === undefined)
       throw new Error('`event` is a required attribute.');
+    if (this.wip.duration === undefined)
+      throw new Error('`duration` is a required attribute.');
     if (this.wip.solutions === undefined || this.wip.solutions.length === 0)
       throw new Error('At least one `solution` must be provided.');
     return {
       ...entity,
       timestamp: this.wip.timestamp ?? new Date(),
       event: this.wip.event,
+      duration: this.wip.duration,
       solutions: this.wip.solutions,
       infractions: this.wip.infractions ?? [],
       comment: this.wip.comment ?? '',

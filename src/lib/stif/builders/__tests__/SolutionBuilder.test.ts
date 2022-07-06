@@ -9,67 +9,61 @@ import { ScrambleBuilder } from '../ScrambleBuilder';
 import { SolutionBuilder } from '../SolutionBuilder';
 import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 import { v4 as uuid } from 'uuid';
+import { AlgorithmBuilder } from '../AlgorithmBuilder';
+import { Reconstruction } from '../../types/Reconstruction';
 
-let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U'])
-
-describe("SolutionBuilder's API", () => {
-  it('provides a static method for creating basic solutions', () => {
-    let solution = SolutionBuilder.buildBasic(TEST_SCRAMBLE, 10000);
-    expect(solution.id).toBeDefined();
-    expect(solution.duration).toEqual(10000);
-    expect(solution.scramble.puzzle).toEqual(PUZZLE_3x3x3);
-    expect(solution.scramble.algorithm.moves).toEqual(["R", "U"]);
-  })
-});
+let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
+let TEST_RECONSTRUCTION: Reconstruction = {
+  id: uuid(),
+  algorithm: new AlgorithmBuilder().setMoves(['R', 'U']).build(),
+}
 
 describe('A new SolutionBuilder', () => {
   describe('builds successfully when', () => {
-    it("is given a duration and a scramble (the 'CORE FIELDS')", () => {
+    it("is given a scramble (the 'CORE FIELDS')", () => {
       let solution: Solution = new SolutionBuilder()
-        .setDuration(10000)
         .setScramble(TEST_SCRAMBLE)
         .build();
-      expect(solution.duration).toEqual(10000);
       expect(solution.scramble).toEqual(TEST_SCRAMBLE);
     });
-  });
-  it("is given a custom id and the 'CORE FIELDS'", () => {
-    let id = uuid();
-    let solution: Solution = new SolutionBuilder()
-      .setId(id)
-      .setDuration(10000)
-      .setScramble(TEST_SCRAMBLE)
-      .build();
-    expect(solution.id).toEqual(id);
-  });
-  it("is given one extension and the 'CORE FIELDS'", () => {
-    let solution: Solution = new SolutionBuilder()
-      .addExtension(TEST_EXTENSION)
-      .setDuration(10000)
-      .setScramble(TEST_SCRAMBLE)
-      .build();
-    expect(solution.extensions?.length).toBe(1);
-  });
-  it("is given multiple extensions and the 'CORE FIELDS", () => {
-    let solution: Solution = new SolutionBuilder()
-      .addExtension(TEST_EXTENSION)
-      .addExtension(TEST_EXTENSION_ALT)
-      .setDuration(10000)
-      .setScramble(TEST_SCRAMBLE)
-      .build();
-    expect(solution.extensions?.length).toEqual(2);
+    it("is given a reconstruction and the 'CORE FIELDS'", () => {
+      let solution: Solution = new SolutionBuilder()
+        .setScramble(TEST_SCRAMBLE)
+        .setReconstruction(TEST_RECONSTRUCTION)
+        .build();
+      expect(solution.scramble).toEqual(TEST_SCRAMBLE);
+      expect(solution.reconstruction?.algorithm.moves).toEqual(['R', 'U']);
+    });
+    it("is given a custom id and the 'CORE FIELDS'", () => {
+      let id = uuid();
+      let solution: Solution = new SolutionBuilder()
+        .setId(id)
+        .setScramble(TEST_SCRAMBLE)
+        .build();
+      expect(solution.id).toEqual(id);
+    });
+    it("is given one extension and the 'CORE FIELDS'", () => {
+      let solution: Solution = new SolutionBuilder()
+        .addExtension(TEST_EXTENSION)
+        .setScramble(TEST_SCRAMBLE)
+        .build();
+      expect(solution.extensions?.length).toBe(1);
+    });
+    it("is given multiple extensions and the 'CORE FIELDS", () => {
+      let solution: Solution = new SolutionBuilder()
+        .addExtension(TEST_EXTENSION)
+        .addExtension(TEST_EXTENSION_ALT)
+        .setScramble(TEST_SCRAMBLE)
+        .build();
+      expect(solution.extensions?.length).toEqual(2);
+    });
   });
   describe('fails to build when', () => {
     it('is given no additional attributes', () => {
       expect(() => new SolutionBuilder().build()).toThrow('Nothing to build!');
     });
-    it('is given no `duration`', () => {
-      expect(() => new SolutionBuilder().setId(uuid()).build()).toThrow(
-        '`duration` is a required attribute.',
-      );
-    });
     it('is given no `scramble`', () => {
-      expect(() => new SolutionBuilder().setDuration(10000).build()).toThrow(
+      expect(() => new SolutionBuilder().setId(uuid()).build()).toThrow(
         '`scramble` is a required attribute.',
       );
     });

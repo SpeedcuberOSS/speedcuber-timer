@@ -18,6 +18,10 @@ interface Attempt extends Entity {
    */
   timestamp: Date;
   /**
+   * The duration of the attempt (in milliseconds), excluding penalties.
+   */
+  duration: number;
+  /**
    * The speedsolving event for the attempt.
    */
   event: CompetitiveEvent;
@@ -36,6 +40,6 @@ interface Attempt extends Entity {
    * A free-form text comment about the attempt.
    */
   comment: string;
-};
+}
 
 export { type Attempt };
