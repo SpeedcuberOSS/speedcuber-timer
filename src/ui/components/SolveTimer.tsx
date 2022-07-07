@@ -36,7 +36,7 @@ const SolveTimer: React.FC<SolveTimerProps> = ({ onStopTimer }) => {
 
   return (
     <Pressable style={styles.container} onPressIn={handleOnPressIn}>
-      <Text>{format_elapsed_time(elapsed)}</Text>
+      <Text style={styles.timer}>{format_elapsed_time(elapsed)}</Text>
     </Pressable>
   );
 };
@@ -48,5 +48,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    flexGrow: 1,
+    width: '100%',
+  },
+  timer: {
+    fontSize: 60,
   },
 });

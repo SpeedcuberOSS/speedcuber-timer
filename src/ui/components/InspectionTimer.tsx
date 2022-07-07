@@ -8,7 +8,7 @@ import { Pressable, StyleSheet } from 'react-native';
 import React from 'react';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import { Text, useTheme } from 'react-native-paper';
-import { Penalty } from '../../lib/attempts/types/Penalty';
+import { Penalty } from '../../lib/stif';
 import { getCurrentTheme } from '../themes';
 
 interface InspectionTimerProps {
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
   },
   timer: {
     fontSize: 80,

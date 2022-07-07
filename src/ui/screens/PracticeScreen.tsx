@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { Pressable, SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
@@ -20,7 +20,13 @@ enum TimerState {
 }
 
 function get3x3x3Scramble(): string {
-  return new Scrambler3x3x3().generateScramble().algorithm.moves.join(' ');
+  let moves = new Scrambler3x3x3().generateScramble().algorithm.moves;
+  const movesPerLine = 10;
+  let lines = [];
+  for (let i = 0; i < moves.length; i += movesPerLine) {
+    lines.push(moves.slice(i, i + movesPerLine).join(' '));
+  }
+  return lines.join('\n');
 }
 
 export default function PracticeScreen() {
@@ -45,10 +51,11 @@ export default function PracticeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       {(timerState === TimerState.SCRAMBLING && (
-        <>
-          <Text onPress={nextTimerState}>{format_elapsed_time(lastTime)}</Text>
-          <Text onPress={nextTimerState}>{get3x3x3Scramble()}</Text>
-        </>
+        <Pressable style={styles.landing} onPress={nextTimerState}>
+          <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
+          <Text style={styles.time}>{format_elapsed_time(lastTime)}</Text>
+          <Text style={styles.scramble}>{''}</Text>
+        </Pressable>
       )) ||
         (timerState === TimerState.INSPECTION && (
           <InspectionTimer onInspectionComplete={handleInspectionComplete} />
@@ -63,7 +70,22 @@ export default function PracticeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  landing: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  time: {
+    fontSize: 60,
+  },
+  scramble: {
+    fontSize: 20,
+    textAlign: 'center',
+    padding: 40,
   },
 });
