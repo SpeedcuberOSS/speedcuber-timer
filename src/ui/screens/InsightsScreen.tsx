@@ -16,7 +16,7 @@ export default function InsightsScreen() {
         {getLibrary()
           .getAll()
           .map(attempt => (
-            <AttemptCard attempt={attempt} />
+            <AttemptCard key={attempt.id} attempt={attempt} />
           ))}
       </ScrollView>
     </SafeAreaView>
