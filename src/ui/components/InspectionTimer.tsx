@@ -8,11 +8,11 @@ import { Pressable, StyleSheet } from 'react-native';
 import React from 'react';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import { Text, useTheme } from 'react-native-paper';
-import { Penalty } from '../../lib/stif';
+import { Infraction } from '../../lib/stif';
 import { getCurrentTheme } from '../themes';
 
 interface InspectionTimerProps {
-  onInspectionComplete: (penalties: Penalty[]) => any;
+  onInspectionComplete: (infractions: Infraction[]) => any;
 }
 
 /**
@@ -30,7 +30,7 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
   const { colors } = useTheme();
   let startTime: number = Infinity;
   let countdownColor = colors.text;
-  let penalties: Penalty[] = [];
+  let infractions: Infraction[] = [];
 
   function handlePressIn() {
     startTime = new Date().getTime();
@@ -43,7 +43,7 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
   function handlePressOut() {
     countdownColor = colors.text;
     if (new Date().getTime() - startTime > STACKMAT_DELAY) {
-      props.onInspectionComplete(penalties);
+      props.onInspectionComplete(infractions);
     }
   }
 

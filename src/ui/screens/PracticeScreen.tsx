@@ -8,10 +8,16 @@ import { Pressable, SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
-import { Penalty } from '../../lib/stif/types/Penalty';
 import SolveTimer from '../components/SolveTimer';
 import format_elapsed_time from '../utils/format_elapsed_time';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
+import {
+  AttemptBuilder,
+  EVENT_3x3x3,
+  Infraction,
+  SolutionBuilder,
+} from '../../lib/stif';
+import { getLibrary } from '../../lib/attempts';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -19,32 +25,37 @@ enum TimerState {
   SOLVING = 2,
 }
 
-function get3x3x3Scramble(): string {
-  let moves = new Scrambler3x3x3().generateScramble().algorithm.moves;
-  const movesPerLine = 10;
-  let lines = [];
-  for (let i = 0; i < moves.length; i += movesPerLine) {
-    lines.push(moves.slice(i, i + movesPerLine).join(' '));
-  }
-  return lines.join('\n');
-}
-
 export default function PracticeScreen() {
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
   const [lastTime, setLastTime] = useState(new Date(0));
+  const [attemptBuilder] = useState(new AttemptBuilder());
+  const [solutionBuilder] = useState(new SolutionBuilder());
+
+  function get3x3x3Scramble(): string {
+    let scramble = new Scrambler3x3x3().generateScramble();
+    attemptBuilder.setEvent(EVENT_3x3x3);
+    solutionBuilder.setScramble(scramble);
+    return scramble.algorithm.moves.join(' ');
+  }
 
   function nextTimerState() {
     let next = (timerState + 1) % 3;
     setTimerState(next);
   }
 
-  function handleInspectionComplete(penalties: Penalty[]) {
-    console.debug('Inspection complete', penalties);
+  function handleInspectionComplete(infractions: Infraction[]) {
+    console.debug('Inspection complete', infractions);
+    infractions.forEach(infraction => {
+      attemptBuilder.addInfraction(infraction);
+    });
     nextTimerState();
   }
 
   function handleSolveComplete(duration: Date) {
     setLastTime(duration);
+    attemptBuilder.setDuration(duration.getTime());
+    attemptBuilder.addSolution(solutionBuilder.build());
+    getLibrary().add(attemptBuilder.build());
     nextTimerState();
   }
 
