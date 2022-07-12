@@ -14,11 +14,13 @@ interface SolveTimerProps {
   onStopTimer: (duration: Date) => void;
 }
 
-let timer = new Timer();
-
 const SolveTimer: React.FC<SolveTimerProps> = ({ onStopTimer }) => {
+  const [timer] = useState(new Timer());
   const [elapsed, setElapsed] = useState(new Date(0));
   useEffect(() => {
+    if (!timer.isRunning()) {
+      timer.start();
+    }
     const interval = setInterval(() => {
       setElapsed(new Date(timer.elapsedMilliseconds()));
     }, 20);
@@ -28,10 +30,6 @@ const SolveTimer: React.FC<SolveTimerProps> = ({ onStopTimer }) => {
   function handleOnPressIn() {
     timer.reset();
     onStopTimer(elapsed);
-  }
-
-  if (!timer.isRunning()) {
-    timer.start();
   }
 
   return (
