@@ -4,14 +4,27 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { SafeAreaView } from 'react-native';
-import { Title } from 'react-native-paper';
+import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
+import { getLibrary } from '../../lib/attempts';
+import AttemptCard from '../components/AttemptCard';
 
 export default function InsightsScreen() {
   return (
     <SafeAreaView>
-      <Title>InsightsScreen</Title>
+      <ScrollView style={styles.container}>
+        {getLibrary()
+          .getAll()
+          .map(attempt => (
+            <AttemptCard attempt={attempt} />
+          ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 4,
+  },
+});
