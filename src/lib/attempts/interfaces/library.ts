@@ -6,9 +6,12 @@
 import { Attempt } from '../../stif/types/Attempt';
 
 interface AttemptLibrary {
-  add(attempt: Partial<Attempt>): boolean;
+  add(attempt: Attempt): boolean;
   remove(attempt_id: string): boolean;
-  update(attempt_id: string, attempt: Partial<Attempt>): boolean;
+  update(attempt_id: string, attempt: Attempt): boolean;
+  get(attempt_id: string): Attempt | undefined;
+  count(): number;
+  getAll(): Array<Attempt>;
 }
 
 export { type AttemptLibrary };

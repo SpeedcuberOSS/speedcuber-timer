@@ -25,6 +25,9 @@ class InMemoryAttemptLibrary implements AttemptLibrary {
   get(attempt_id: string): Attempt | undefined {
     return this._library.get(attempt_id);
   }
+  getAll(): Array<Attempt> {
+    return Array.from(this._library.values());
+  }
   update(attempt_id: string, attempt: Attempt): boolean {
     if (!this._library.has(attempt_id)) {
       return false;
