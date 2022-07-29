@@ -46,4 +46,5 @@
     "stif"
   ],
   "licenser.disableAutoHeaderInsertion": false,
+  "files.autoSave": "off",
 }
