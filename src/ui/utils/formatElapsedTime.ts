@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-export default function format_elapsed_time(elapsed: Date): string {
+export default function formatElapsedTime(elapsed: Date): string {
   let timeStr = (
     elapsed.getSeconds() +
     elapsed.getMilliseconds() / 1000

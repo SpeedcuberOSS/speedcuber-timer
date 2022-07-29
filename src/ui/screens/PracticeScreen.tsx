@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
 import SolveTimer from '../components/SolveTimer';
-import format_elapsed_time from '../utils/format_elapsed_time';
+import formatElapsedTime from '../utils/formatElapsedTime';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import {
   AttemptBuilder,
@@ -64,7 +64,7 @@ export default function PracticeScreen() {
       {(timerState === TimerState.SCRAMBLING && (
         <Pressable style={styles.landing} onPress={nextTimerState}>
           <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
-          <Text style={styles.time}>{format_elapsed_time(lastTime)}</Text>
+          <Text style={styles.time}>{formatElapsedTime(lastTime)}</Text>
           <Text style={styles.scramble}>{''}</Text>
         </Pressable>
       )) ||

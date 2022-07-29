@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import { BottomNavigation } from 'react-native-paper';
-import Icons from '../utils/icon_helper';
+import Icons from '../utils/iconHelper';
 import LearnScreen from '../screens/LearnScreen';
 import PracticeScreen from '../screens/PracticeScreen';
 import PlayScreen from '../screens/PlayScreen';
