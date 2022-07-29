@@ -7,7 +7,7 @@ import { AttemptLibrary } from './interfaces/library';
 import { Attempt } from '../stif/types/Attempt';
 
 class InMemoryAttemptLibrary implements AttemptLibrary {
-  private _library: Map<string, Attempt> = new Map();
+  protected _library: Map<string, Attempt> = new Map();
   add(attempt: Attempt): boolean {
     if (attempt.id && !this._library.has(attempt.id)) {
       this._library.set(attempt.id, attempt);

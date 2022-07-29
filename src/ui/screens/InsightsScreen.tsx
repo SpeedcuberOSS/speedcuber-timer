@@ -9,15 +9,15 @@ import React from 'react';
 import { getLibrary } from '../../lib/attempts';
 import AttemptCard from '../components/AttemptCard';
 
+let library = getLibrary();
+
 export default function InsightsScreen() {
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
-        {getLibrary()
-          .getAll()
-          .map(attempt => (
-            <AttemptCard key={attempt.id} attempt={attempt} />
-          ))}
+        {library.getAll().map(attempt => (
+          <AttemptCard key={attempt.id} attempt={attempt} />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
