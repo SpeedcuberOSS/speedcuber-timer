@@ -5,14 +5,22 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Pressable, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import { Text, useTheme } from 'react-native-paper';
-import { Infraction } from '../../lib/stif';
+import {
+  Infraction,
+  INSPECTION_EXCEEDED_15_SECONDS,
+  INSPECTION_EXCEEDED_17_SECONDS,
+} from '../../lib/stif';
 import { getCurrentTheme } from '../themes';
 
 interface InspectionTimerProps {
   onInspectionComplete: (infractions: Infraction[]) => any;
+}
+enum TimerState {
+  INSPECTION = 0,
+  OVERTIME = 1,
 }
 
 /**
@@ -31,7 +39,8 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
   let startTime: number = Infinity;
   let countdownColor = colors.text;
   let infractions: Infraction[] = [];
-
+  const [timerState, setTimerState] = useState(TimerState.INSPECTION);
+  console.debug(`Current InspectionTimer State ${timerState}`);
   function handlePressIn() {
     startTime = new Date().getTime();
   }
@@ -54,23 +63,43 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
       onPressIn={handlePressIn}
       onLongPress={handleLongPress}
       onPressOut={handlePressOut}>
-      <CountdownCircleTimer
-        isPlaying
-        duration={15}
-        colors={[
-          `#${colors.primary.slice(1)}`,
-          `#${colors.accent.slice(1)}`,
-          `#${colors.error.slice(1)}`,
-          `#${colors.error.slice(1)}`,
-        ]}
-        colorsTime={[15, 7, 3, 0]}
-        onComplete={() => ({ shouldRepeat: true, delay: 2 })}>
-        {({ remainingTime }) => (
-          <Text style={[styles.timer, { color: countdownColor }]}>
-            {remainingTime}
-          </Text>
-        )}
-      </CountdownCircleTimer>
+      {(timerState === TimerState.INSPECTION && (
+        <CountdownCircleTimer
+          isPlaying
+          duration={15}
+          colors={[
+            `#${colors.primary.slice(1)}`,
+            `#${colors.accent.slice(1)}`,
+            `#${colors.error.slice(1)}`,
+            `#${colors.error.slice(1)}`,
+          ]}
+          colorsTime={[15, 7, 3, 0]}
+          onComplete={() => {
+            infractions = [INSPECTION_EXCEEDED_15_SECONDS];
+            setTimerState(TimerState.OVERTIME);
+          }}>
+          {({ remainingTime }) => (
+            <Text style={[styles.timer, { color: countdownColor }]}>
+              {remainingTime}
+            </Text>
+          )}
+        </CountdownCircleTimer>
+      )) ||
+        (timerState === TimerState.OVERTIME && (
+          <CountdownCircleTimer
+            isPlaying
+            duration={2}
+            colors={[`#${colors.error.slice(1)}`, `#${colors.error.slice(1)}`]}
+            colorsTime={[2, 0]}
+            onComplete={() => {
+              infractions = [INSPECTION_EXCEEDED_17_SECONDS];
+              props.onInspectionComplete(infractions);
+            }}>
+            {({ remainingTime }) => (
+              <Text style={[styles.timer, { color: countdownColor }]}>+2</Text>
+            )}
+          </CountdownCircleTimer>
+        ))}
     </Pressable>
   );
 };

@@ -4,6 +4,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Attempt, Penalty } from '../../lib/stif';
+
 export default function formatElapsedTime(elapsed: Date): string {
   let timeStr = (
     elapsed.getSeconds() +
@@ -22,4 +24,17 @@ export default function formatElapsedTime(elapsed: Date): string {
     timeStr = `${elapsed.getHours()}:${timeStr}`;
   }
   return timeStr;
+}
+
+export function getAttemptTimeString(attempt: Attempt): string {
+  let duration = attempt.duration;
+  let timeString =
+    duration >= 0 ? formatElapsedTime(new Date(duration)) : 'DNF/DNS';
+  if (attempt.infractions.some(i => i.penalty === Penalty.DID_NOT_FINISH)) {
+    timeString = 'DNF';
+  }
+  if (attempt.infractions.some(i => i.penalty === Penalty.DID_NOT_START)) {
+    timeString = 'DNS';
+  }
+  return timeString;
 }

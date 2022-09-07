@@ -6,19 +6,23 @@
 
 import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
+import BigList from 'react-native-big-list';
 import { getLibrary } from '../../lib/attempts';
 import AttemptCard from '../components/AttemptCard';
+import { Attempt } from '../../lib/stif';
 
 let library = getLibrary();
 
 export default function InsightsScreen() {
   return (
     <SafeAreaView>
-      <ScrollView style={styles.container}>
-        {library.getAll().map(attempt => (
-          <AttemptCard key={attempt.id} attempt={attempt} />
-        ))}
-      </ScrollView>
+      <BigList
+        data={library.getAll()}
+        renderItem={({ item, index }) => (
+          <AttemptCard key={item.id} attempt={item} />
+        )}
+        itemHeight={100}
+      />
     </SafeAreaView>
   );
 }

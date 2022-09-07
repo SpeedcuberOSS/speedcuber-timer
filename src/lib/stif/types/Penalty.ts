@@ -11,25 +11,25 @@ enum Penalty {
   /**
    * No penalty.
    */
-  NONE,
+  NONE = '',
   /**
    * Add two seconds to the attempt duration.
    */
-  PLUS_2,
+  PLUS_2 = '+2',
   /**
    * Mark the attempt as incomplete.
    *
    * Effectively equivalent to an infinite duration for purposes of
    * discarding the worst solve(s) in an average of X.
    */
-  DID_NOT_FINISH,
+  DID_NOT_FINISH = 'DNF',
   /**
    * Mark the attempt as not started
    *
    * Effectively equivalent to an infinite duration for purposes of
    * discarding the worst solve(s) in an average of X.
    */
-  DID_NOT_START,
+  DID_NOT_START = 'DNS',
 }
 
 export { Penalty };

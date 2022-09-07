@@ -16,6 +16,7 @@
     "react": "17.0.2",
     "react-i18next": "^11.17.0",
     "react-native": "0.68.2",
+    "react-native-big-list": "^1.5.4",
     "react-native-countdown-circle-timer": "^3.0.9",
     "react-native-default-preference": "^1.4.4",
     "react-native-get-random-values": "^1.8.0",

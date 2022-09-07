@@ -9,12 +9,15 @@ import React, { useState } from 'react';
 import InspectionTimer from '../components/InspectionTimer';
 import { Text } from 'react-native-paper';
 import SolveTimer from '../components/SolveTimer';
-import formatElapsedTime from '../utils/formatElapsedTime';
+import { getAttemptTimeString } from '../utils/formatElapsedTime';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import {
   AttemptBuilder,
   EVENT_3x3x3,
   Infraction,
+  Penalty,
+  PUZZLE_3x3x3,
+  ScrambleBuilder,
   SolutionBuilder,
 } from '../../lib/stif';
 import { getLibrary } from '../../lib/attempts';
@@ -27,9 +30,15 @@ enum TimerState {
 
 export default function PracticeScreen() {
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
-  const [lastTime, setLastTime] = useState(new Date(0));
-  const [attemptBuilder] = useState(new AttemptBuilder());
-  const [solutionBuilder] = useState(new SolutionBuilder());
+  const [lastAttempt, setLastAttempt] = useState(
+    AttemptBuilder.buildBasic(
+      EVENT_3x3x3,
+      ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
+      0,
+    ),
+  );
+  const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
+  const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
 
   function get3x3x3Scramble(): string {
     let scramble = new Scrambler3x3x3().generateScramble();
@@ -48,15 +57,29 @@ export default function PracticeScreen() {
     infractions.forEach(infraction => {
       attemptBuilder.addInfraction(infraction);
     });
-    nextTimerState();
+    if (infractions.some(i => i.penalty === Penalty.DID_NOT_FINISH)) {
+      console.log('DNF Detected');
+      // TODO Ensure DNFs are handled correctly.
+      completeAndSaveAttempt(new Date(-1));
+      setTimerState(TimerState.SCRAMBLING);
+    } else {
+      nextTimerState();
+    }
   }
 
   function handleSolveComplete(duration: Date) {
-    setLastTime(duration);
+    completeAndSaveAttempt(duration);
+    nextTimerState();
+  }
+
+  function completeAndSaveAttempt(duration: Date) {
     attemptBuilder.setDuration(duration.getTime());
     attemptBuilder.addSolution(solutionBuilder.build());
-    getLibrary().add(attemptBuilder.build());
-    nextTimerState();
+    let lastAttempt = attemptBuilder.build();
+    getLibrary().add(lastAttempt);
+    setLastAttempt(lastAttempt);
+    setAttemptBuilder(new AttemptBuilder());
+    setSolutionBuilder(new SolutionBuilder());
   }
 
   return (
@@ -64,7 +87,7 @@ export default function PracticeScreen() {
       {(timerState === TimerState.SCRAMBLING && (
         <Pressable style={styles.landing} onPress={nextTimerState}>
           <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
-          <Text style={styles.time}>{formatElapsedTime(lastTime)}</Text>
+          <Text style={styles.time}>{getAttemptTimeString(lastAttempt)}</Text>
           <Text style={styles.scramble}>{''}</Text>
         </Pressable>
       )) ||

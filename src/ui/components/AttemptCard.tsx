@@ -8,7 +8,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Caption, Card } from 'react-native-paper';
 import { Attempt } from '../../lib/stif';
-import formatElapsedTime from '../utils/formatElapsedTime';
+import { getAttemptTimeString } from '../utils/formatElapsedTime';
 
 interface AttemptCardProps {
   attempt: Attempt;
@@ -18,7 +18,7 @@ export default function AttemptCard(props: AttemptCardProps) {
   return (
     <Card style={styles.card}>
       <Card.Title
-        title={formatElapsedTime(new Date(props.attempt.duration))}
+        title={getAttemptTimeString(props.attempt)}
         subtitle={props.attempt.timestamp.toLocaleString()}
       />
       <Card.Content>
