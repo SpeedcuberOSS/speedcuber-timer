@@ -67,5 +67,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Bluetooth access required for Smartcube support.</string>
 </dict>
 </plist>

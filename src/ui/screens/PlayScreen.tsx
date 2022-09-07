@@ -5,13 +5,15 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { SafeAreaView } from 'react-native';
-import { Title } from 'react-native-paper';
+import { Button, Title } from 'react-native-paper';
 import React from 'react';
+import { scanBluetooth } from '../../lib/smartcubes';
 
 export default function PlayScreen() {
   return (
     <SafeAreaView>
       <Title>PlayScreen</Title>
+      <Button onPress={scanBluetooth}>Click Me!</Button>
     </SafeAreaView>
   );
 }
