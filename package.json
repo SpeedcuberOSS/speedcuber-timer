@@ -22,7 +22,7 @@
     "react-native-default-preference": "^1.4.4",
     "react-native-get-random-values": "^1.8.0",
     "react-native-localize": "^2.2.2",
-    "react-native-paper": "^4.12.1",
+    "react-native-paper": "5.0.0-rc.5",
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
     "uuid": "^8.3.2"

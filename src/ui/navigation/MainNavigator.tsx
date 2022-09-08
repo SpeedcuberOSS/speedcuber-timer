@@ -28,10 +28,18 @@ const MainNavigator = () => {
   const { t } = useTranslation();
   const [index, setIndex] = React.useState<number>(0);
   const [routes] = React.useState<RoutesState>([
-    { key: 'learn', title: t('learn'), icon: Icons.Entypo('open-book') },
-    { key: 'practice', title: t('practice'), icon: Icons.Entypo('stopwatch') },
-    { key: 'play', title: t('play'), icon: 'gamepad-variant-outline' },
-    { key: 'insights', title: t('insights'), icon: Icons.Entypo('line-graph') },
+    { key: 'learn', title: t('learn'), focusedIcon: Icons.Entypo('open-book') },
+    {
+      key: 'practice',
+      title: t('practice'),
+      focusedIcon: Icons.Entypo('stopwatch'),
+    },
+    { key: 'play', title: t('play'), focusedIcon: 'gamepad-variant-outline' },
+    {
+      key: 'insights',
+      title: t('insights'),
+      focusedIcon: Icons.Entypo('line-graph'),
+    },
   ]);
   return (
     <BottomNavigation

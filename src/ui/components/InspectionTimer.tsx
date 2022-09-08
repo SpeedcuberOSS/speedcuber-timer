@@ -37,7 +37,7 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
 
   const { colors } = useTheme();
   let startTime: number = Infinity;
-  let countdownColor = colors.text;
+  let countdownColor = colors.primary;
   let infractions: Infraction[] = [];
   const [timerState, setTimerState] = useState(TimerState.INSPECTION);
   console.debug(`Current InspectionTimer State ${timerState}`);
@@ -46,11 +46,11 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
   }
 
   function handleLongPress() {
-    countdownColor = colors.accent;
+    countdownColor = colors.secondary;
   }
 
   function handlePressOut() {
-    countdownColor = colors.text;
+    countdownColor = colors.primary;
     if (new Date().getTime() - startTime > STACKMAT_DELAY) {
       props.onInspectionComplete(infractions);
     }
@@ -69,7 +69,7 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
           duration={15}
           colors={[
             `#${colors.primary.slice(1)}`,
-            `#${colors.accent.slice(1)}`,
+            `#${colors.secondary.slice(1)}`,
             `#${colors.error.slice(1)}`,
             `#${colors.error.slice(1)}`,
           ]}
