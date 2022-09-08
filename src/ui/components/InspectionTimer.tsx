@@ -95,7 +95,7 @@ const InspectionTimer: React.FC<InspectionTimerProps> = (
               infractions = [INSPECTION_EXCEEDED_17_SECONDS];
               props.onInspectionComplete(infractions);
             }}>
-            {({ remainingTime }) => (
+            {() => (
               <Text style={[styles.timer, { color: countdownColor }]}>+2</Text>
             )}
           </CountdownCircleTimer>
@@ -115,6 +115,6 @@ const styles = StyleSheet.create({
   },
   timer: {
     fontSize: 80,
-    color: getCurrentTheme().colors.text,
+    color: getCurrentTheme().colors.primary,
   },
 });
