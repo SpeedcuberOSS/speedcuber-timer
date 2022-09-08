@@ -16,4 +16,4 @@
 //   );
 // }
 
-export { default } from '../storybook';
+export { default } from '../_storybook';
