@@ -7,10 +7,10 @@
 import 'react-native-get-random-values';
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
-import i18n from './src/localization';
-import { getCurrentTheme } from './src/ui/themes';
+import i18n from '../localization';
+import { getCurrentTheme } from './themes';
 
-import MainNavigator from './src/ui/navigation/MainNavigator';
+import MainNavigator from './navigation/MainNavigator';
 
 const App = () => {
   if (i18n.isInitialized) {

@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { AppRegistry } from 'react-native';
-import App from './App';
+import App from './src/ui/App';
 import { name as appName } from './app.json';
 
 AppRegistry.registerComponent(appName, () => App);
