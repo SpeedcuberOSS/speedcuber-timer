@@ -28,16 +28,20 @@ export default function formatElapsedTime(elapsed: Date): string {
 
 export function getAttemptTimeString(attempt: Attempt): string {
   let duration = attempt.duration;
-  let timeString = '';
-  if (attempt.infractions.some(i => i.penalty === Penalty.DID_NOT_FINISH)) {
-    timeString = 'DNF';
-  } else if (
-    attempt.infractions.some(i => i.penalty === Penalty.DID_NOT_START)
-  ) {
-    timeString = 'DNS';
-  } else if (attempt.infractions.some(i => i.penalty === Penalty.PLUS_2)) {
-    timeString = formatElapsedTime(new Date(duration + 2000));
-    timeString += ' (+2)';
+  let infractionsWith = (penalty: Penalty) =>
+    attempt.infractions.filter(i => i.penalty === penalty);
+  let incurred = (penalty: Penalty) => infractionsWith(penalty).length > 0;
+
+  if (incurred(Penalty.DID_NOT_START)) {
+    return 'DNS';
+  } else if (incurred(Penalty.DID_NOT_FINISH)) {
+    return 'DNF';
+  } else if (incurred(Penalty.PLUS_2)) {
+    let plus2Count = infractionsWith(Penalty.PLUS_2).length;
+    let penaltyDuration = duration + plus2Count * 2000;
+    let formattedTime = formatElapsedTime(new Date(penaltyDuration));
+    return `${formattedTime} (+${plus2Count * 2})`;
+  } else {
+    return '';
   }
-  return timeString;
 }
