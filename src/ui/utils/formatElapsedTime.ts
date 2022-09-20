@@ -42,6 +42,6 @@ export function getAttemptTimeString(attempt: Attempt): string {
     let formattedTime = formatElapsedTime(new Date(penaltyDuration));
     return `${formattedTime} (+${plus2Count * 2})`;
   } else {
-    return '';
+    return formatElapsedTime(new Date(duration));
   }
 }
