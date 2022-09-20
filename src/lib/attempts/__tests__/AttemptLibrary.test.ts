@@ -4,12 +4,30 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { v4 as uuid } from 'uuid';
-import { Attempt, AttemptBuilder, EVENT_3x3x3, PUZZLE_3x3x3, Scramble, ScrambleBuilder } from '../../stif';
+import {
+  Attempt,
+  AttemptBuilder,
+  EVENT_3x3x3,
+  PUZZLE_3x3x3,
+  Scramble,
+  ScrambleBuilder,
+} from '../../stif';
 import { InMemoryAttemptLibrary as AttemptLibrary } from '../InMemoryAttemptLibrary';
 
-let TEST_SCRAMBLE: Scramble = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ["R", "U"])
-let TEST_ATTEMPT: Attempt = AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000)
-let TEST_ATTEMPT2: Attempt = AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 12000)
+let TEST_SCRAMBLE: Scramble = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, [
+  'R',
+  'U',
+]);
+let TEST_ATTEMPT: Attempt = AttemptBuilder.buildBasic(
+  EVENT_3x3x3,
+  TEST_SCRAMBLE,
+  10000,
+);
+let TEST_ATTEMPT2: Attempt = AttemptBuilder.buildBasic(
+  EVENT_3x3x3,
+  TEST_SCRAMBLE,
+  12000,
+);
 
 describe('AttemptLibrary', () => {
   it('successfully stores a new Attempt', () => {
@@ -55,19 +73,25 @@ describe('AttemptLibrary', () => {
   it('successfully updates an existing attempt', () => {
     const library = new AttemptLibrary();
     library.add(TEST_ATTEMPT);
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(TEST_ATTEMPT.duration);
-    
-    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000};
+    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
+      TEST_ATTEMPT.duration,
+    );
+
+    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000 };
     expect(library.update(TEST_ATTEMPT.id, NEW_ATTEMPT)).toBeTruthy();
     expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(8000);
   });
   it('fails to update a non-existent Attempt', () => {
     const library = new AttemptLibrary();
     library.add(TEST_ATTEMPT);
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(TEST_ATTEMPT.duration);
-    
-    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000};
+    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
+      TEST_ATTEMPT.duration,
+    );
+
+    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000 };
     expect(library.update(uuid(), NEW_ATTEMPT)).toBeFalsy();
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(TEST_ATTEMPT.duration);
+    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
+      TEST_ATTEMPT.duration,
+    );
   });
 });

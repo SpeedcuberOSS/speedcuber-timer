@@ -15,6 +15,7 @@ function getBleManager() {
 function scanBluetooth() {
   console.debug('Connecting to Bluetooth Adapter');
   getBleManager().onStateChange(state => {
+    console.log(`Bluetooth Adapter State: ${state}`);
     if (state === 'PoweredOn') {
       scanForDevices();
     }

@@ -7,7 +7,7 @@
 import { SafeAreaView } from 'react-native';
 import { Button } from 'react-native-paper';
 import React from 'react';
-import { scanBluetooth } from '../../lib/smartcubes';
+import { scanBluetooth } from '../utils/bluetooth';
 
 export default function PlayScreen() {
   return (
