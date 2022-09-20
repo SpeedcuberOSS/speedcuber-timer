@@ -32,6 +32,6 @@ export default function AttemptCard(props: AttemptCardProps) {
 
 const styles = StyleSheet.create({
   card: {
-    margin: 4,
+    margin: 10,
   },
 });
