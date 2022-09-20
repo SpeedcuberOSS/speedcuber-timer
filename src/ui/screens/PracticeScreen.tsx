@@ -75,9 +75,9 @@ export default function PracticeScreen() {
   function completeAndSaveAttempt(duration: Date) {
     attemptBuilder.setDuration(duration.getTime());
     attemptBuilder.addSolution(solutionBuilder.build());
-    let lastAttempt = attemptBuilder.build();
-    getLibrary().add(lastAttempt);
-    setLastAttempt(lastAttempt);
+    let prevAttempt = attemptBuilder.build();
+    getLibrary().add(prevAttempt);
+    setLastAttempt(prevAttempt);
     setAttemptBuilder(new AttemptBuilder());
     setSolutionBuilder(new SolutionBuilder());
   }

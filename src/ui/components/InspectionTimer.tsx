@@ -4,102 +4,110 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Pressable, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
-import { Text, useTheme } from 'react-native-paper';
+
+import InspectionTime from './InspectionTime';
+import { useTimer } from '../hooks';
 import {
   Infraction,
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
 } from '../../lib/stif';
-import { getCurrentTheme } from '../themes';
+import { Inspection } from '../../lib/constants';
+import { Pressable, StyleSheet } from 'react-native';
 
 interface InspectionTimerProps {
-  onInspectionComplete: (infractions: Infraction[]) => any;
+  onInspectionComplete?: (infractions: Infraction[]) => void;
+  inspectionDurationMillis?: number;
+  stackmatDelayMillis?: number;
+  overtimeUntilDnfMillis?: number;
 }
-enum TimerState {
-  INSPECTION = 0,
-  OVERTIME = 1,
-}
 
-/**
- * The number of milliseconds a stackmat delays before allowing the
- * timer to start.
- */
-const STACKMAT_DELAY = 500;
-
-const InspectionTimer: React.FC<InspectionTimerProps> = (
-  args: InspectionTimerProps,
-) => {
-  const defaults = {};
-  const props = { ...defaults, ...args };
-
-  const { colors } = useTheme();
-  let startTime: number = Infinity;
-  let countdownColor = colors.primary;
+function getInfractions(
+  elapsedMillis: number,
+  inspectionDurationMillis: number,
+  overtimeUntilDnfMillis: number,
+) {
   let infractions: Infraction[] = [];
-  const [timerState, setTimerState] = useState(TimerState.INSPECTION);
-  console.debug(`Current InspectionTimer State ${timerState}`);
+  if (elapsedMillis > inspectionDurationMillis + overtimeUntilDnfMillis) {
+    infractions.push(INSPECTION_EXCEEDED_17_SECONDS);
+  } else if (elapsedMillis > inspectionDurationMillis) {
+    infractions.push(INSPECTION_EXCEEDED_15_SECONDS);
+  }
+  return infractions;
+}
+
+const InspectionTimer = ({
+  onInspectionComplete = () => {},
+  inspectionDurationMillis = Inspection.DEFAULT_DURATION_MILLIS,
+  stackmatDelayMillis = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
+  overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
+}: InspectionTimerProps) => {
+  const { timer, elapsed } = useTimer();
+  const [ready, setReady] = useState(false);
+  const [startMillis, setStartMillis] = useState(Infinity);
+
+  const elapsedMillis = elapsed.valueOf();
+
   function handlePressIn() {
-    startTime = new Date().getTime();
+    if (timer.isRunning()) {
+      setStartMillis(new Date().valueOf());
+    }
   }
 
   function handleLongPress() {
-    countdownColor = colors.secondary;
+    if (timer.isRunning()) {
+      setReady(true);
+    }
   }
 
   function handlePressOut() {
-    countdownColor = colors.primary;
-    if (new Date().getTime() - startTime > STACKMAT_DELAY) {
-      props.onInspectionComplete(infractions);
+    if (
+      timer.isRunning() &&
+      new Date().valueOf() - startMillis > stackmatDelayMillis
+    ) {
+      _end_inspection();
     }
   }
+
+  function endInspectionIfAtDnf() {
+    if (
+      timer.isRunning() &&
+      elapsedMillis > inspectionDurationMillis + overtimeUntilDnfMillis
+    ) {
+      _end_inspection();
+    }
+  }
+
+  function _end_inspection() {
+    setReady(false);
+    timer.stop();
+    let infractions: Infraction[] = getInfractions(
+      elapsedMillis,
+      inspectionDurationMillis,
+      overtimeUntilDnfMillis,
+    );
+    setTimeout(() => {
+      onInspectionComplete(infractions);
+    }, 0);
+  }
+
+  endInspectionIfAtDnf();
 
   return (
     <Pressable
       style={styles.container}
-      delayLongPress={STACKMAT_DELAY}
+      delayLongPress={stackmatDelayMillis}
       onPressIn={handlePressIn}
       onLongPress={handleLongPress}
       onPressOut={handlePressOut}>
-      {(timerState === TimerState.INSPECTION && (
-        <CountdownCircleTimer
-          isPlaying
-          duration={15}
-          colors={[
-            `#${colors.primary.slice(1)}`,
-            `#${colors.secondary.slice(1)}`,
-            `#${colors.error.slice(1)}`,
-            `#${colors.error.slice(1)}`,
-          ]}
-          colorsTime={[15, 7, 3, 0]}
-          onComplete={() => {
-            infractions = [INSPECTION_EXCEEDED_15_SECONDS];
-            setTimerState(TimerState.OVERTIME);
-          }}>
-          {({ remainingTime }) => (
-            <Text style={[styles.timer, { color: countdownColor }]}>
-              {remainingTime}
-            </Text>
-          )}
-        </CountdownCircleTimer>
-      )) ||
-        (timerState === TimerState.OVERTIME && (
-          <CountdownCircleTimer
-            isPlaying
-            duration={2}
-            colors={[`#${colors.error.slice(1)}`, `#${colors.error.slice(1)}`]}
-            colorsTime={[2, 0]}
-            onComplete={() => {
-              infractions = [INSPECTION_EXCEEDED_17_SECONDS];
-              props.onInspectionComplete(infractions);
-            }}>
-            {() => (
-              <Text style={[styles.timer, { color: countdownColor }]}>+2</Text>
-            )}
-          </CountdownCircleTimer>
-        ))}
+      <InspectionTime
+        ready={ready}
+        elapsedMillis={elapsed.valueOf()}
+        inspectionDurationMillis={inspectionDurationMillis}
+        stackmatDelayMillis={stackmatDelayMillis}
+        overtimeUntilDnfMillis={overtimeUntilDnfMillis}
+      />
     </Pressable>
   );
 };
@@ -112,9 +120,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-  },
-  timer: {
-    fontSize: 80,
-    color: getCurrentTheme().colors.primary,
   },
 });

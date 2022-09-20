@@ -23,7 +23,13 @@ class Timer {
   }
 
   public stop(): void {
-    this._stopTime = new Date().getTime();
+    if (!this.isStarted()) {
+      throw new Error('Timer not started');
+    } else if (this.isStopped()) {
+      throw new Error('Timer already stopped');
+    } else {
+      this._stopTime = new Date().getTime();
+    }
   }
 
   public reset(): void {
@@ -31,8 +37,16 @@ class Timer {
     this._stopTime = NOT_STOPPED;
   }
 
+  public isStarted(): boolean {
+    return this._startTime !== NOT_STARTED;
+  }
+
+  public isStopped(): boolean {
+    return this._stopTime !== NOT_STOPPED;
+  }
+
   public isRunning(): boolean {
-    return this._startTime !== NOT_STARTED && this._stopTime === NOT_STOPPED;
+    return this.isStarted() && !this.isStopped();
   }
 
   public elapsedMilliseconds(): number {

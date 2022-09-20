@@ -16,6 +16,8 @@ addDecorator(withKnobs);
 // import stories
 configure(() => {
   require('./components/AttemptCard.stories');
+  require('./components/InspectionTime.stories');
+  require('./components/InspectionTimer.stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#getstorybookui-options
