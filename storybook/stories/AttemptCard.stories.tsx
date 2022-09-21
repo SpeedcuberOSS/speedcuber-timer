@@ -13,14 +13,15 @@ import {
   ScrambleBuilder,
   PUZZLE_3x3x3,
   EVENT_3x3x3,
-} from '../../../lib/stif';
-import AttemptCard from '../../components/AttemptCard';
+} from '../../src/lib/stif';
+import AttemptCard from '../../src/ui/components/AttemptCard';
 
 let attempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
   10000,
 );
+attempt.timestamp = new Date(1663731466876);
 
 storiesOf('AttemptCard', module).add('default', () => (
   <AttemptCard attempt={attempt} />

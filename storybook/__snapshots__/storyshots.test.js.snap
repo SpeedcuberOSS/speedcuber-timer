@@ -1,0 +1,737 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AttemptCard default 1`] = `
+<View
+  collapsable={false}
+  style={
+    Object {
+      "alignSelf": undefined,
+      "bottom": undefined,
+      "left": undefined,
+      "position": undefined,
+      "right": undefined,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.15,
+      "shadowRadius": 3,
+      "top": undefined,
+    }
+  }
+>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.3,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 251, 254, 1)",
+          "borderRadius": 4,
+          "elevation": 1,
+          "margin": 10,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "paddingLeft": 16,
+              },
+              Object {
+                "minHeight": 72,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.15,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "minHeight": 30,
+                      "paddingRight": 16,
+                    },
+                    Object {
+                      "marginBottom": 0,
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              10.000
+            </Text>
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.25,
+                    "lineHeight": 20,
+                  },
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "marginVertical": 0,
+                      "minHeight": 20,
+                      "paddingRight": 16,
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              9/20/2022, 8:37:46 PM
+            </Text>
+          </View>
+          <View />
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "paddingHorizontal": 16,
+              },
+              Object {
+                "paddingBottom": 16,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "rgba(28, 27, 31, 1)",
+                },
+                Object {
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "color": "rgba(28, 27, 31, 0.54)",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                      "letterSpacing": 0.4,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            R U
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots InspectionTime almost done 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    0
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime custom durations 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    20
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime default 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    15
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime first warning 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    7
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime overtime +2 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    +2
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime overtime DNF 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    DNF
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime ready +2 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "#00ff00",
+            "fontSize": 100,
+          },
+        ],
+      ]
+    }
+  >
+    +2
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime ready 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "#00ff00",
+            "fontSize": 100,
+          },
+        ],
+      ]
+    }
+  >
+    11
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime ready late 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "#00ff00",
+            "fontSize": 100,
+          },
+        ],
+      ]
+    }
+  >
+    2
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime second warning 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+          Object {
+            "color": "rgba(242, 184, 181, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    3
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTime start 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        Array [
+          Object {
+            "color": "rgba(234, 221, 255, 1)",
+            "fontSize": 80,
+          },
+        ],
+      ]
+    }
+  >
+    15
+  </Text>
+</View>
+`;
+
+exports[`Storyshots InspectionTimer custom durations 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgba(28, 27, 31, 1)",
+          },
+          Object {
+            "textAlign": "left",
+          },
+          Array [
+            Object {
+              "color": "rgba(234, 221, 255, 1)",
+              "fontSize": 80,
+            },
+          ],
+        ]
+      }
+    >
+      20
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots InspectionTimer default 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgba(28, 27, 31, 1)",
+          },
+          Object {
+            "textAlign": "left",
+          },
+          Array [
+            Object {
+              "color": "rgba(234, 221, 255, 1)",
+              "fontSize": 80,
+            },
+          ],
+        ]
+      }
+    >
+      15
+    </Text>
+  </View>
+</View>
+`;

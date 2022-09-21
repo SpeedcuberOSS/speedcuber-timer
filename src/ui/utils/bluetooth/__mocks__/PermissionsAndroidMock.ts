@@ -35,7 +35,6 @@ jest.mock(
     const PermissionsAndroid = jest.requireActual(
       'react-native//Libraries/PermissionsAndroid/PermissionsAndroid',
     );
-    console.log(PermissionsAndroid);
     return {
       ...PermissionsAndroid,
       check: mockPermissionsCheck,

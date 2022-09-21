@@ -8,7 +8,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import React, { useState } from 'react';
 
-import StoryBook from '../_storybook';
+import StoryBook from '../../../storybook';
 import Icons from '../utils/iconHelper';
 
 function OpenStorybookFAB({ onPress }: { onPress: () => void }) {

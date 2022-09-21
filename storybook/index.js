@@ -9,15 +9,14 @@ import {
 import { withKnobs } from '@storybook/addon-knobs';
 
 import './rn-addons';
+import { loadStories } from './storyLoader';
 
 // enables knobs for all stories
 addDecorator(withKnobs);
 
 // import stories
 configure(() => {
-  require('./components/AttemptCard.stories');
-  require('./components/InspectionTime.stories');
-  require('./components/InspectionTimer.stories');
+  loadStories();
 }, module);
 
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#getstorybookui-options

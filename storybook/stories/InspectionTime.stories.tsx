@@ -9,7 +9,7 @@ import { storiesOf } from '@storybook/react-native';
 // import { action } from '@storybook/addon-actions';
 import { number as numberKnob } from '@storybook/addon-knobs';
 
-import InspectionTime from '../../components/InspectionTime';
+import InspectionTime from '../../src/ui/components/InspectionTime';
 
 storiesOf('InspectionTime', module)
   .add('default', () => {
