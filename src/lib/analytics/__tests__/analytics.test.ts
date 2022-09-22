@@ -175,4 +175,46 @@ describe('analytics', () => {
       });
     });
   });
+  describe('MoX', () => {
+    // Compute the mean of the last X solves
+    // Just like AoX, but without the exclusion of best/worst solves
+    // This means DNFs will always trigger an Infinity result.
+  });
+  describe('percentile', () => {
+    // Percentile for time X.XX
+    // Time required for percentile XX.X%
+  });
+  describe('AoXForecast', () => {
+    // Given X-1 solves, what time is needed to achieve an AoX of X.XX?
+    // Will be used for messages like "you only need < X.XX to beat your
+    // record AoX"
+  });
+  describe('MoXForecast', () => {
+    // Given X-1 solves, what time is needed to achieve an MoX of X.XX?
+    // Will be used for messages like "you only need < X.XX to beat your
+    // record MoX"
+  });
+  describe('Standard Deviation', () => {
+    // Just the typical standard deviation
+    // Would be good to offer an "of X" option...
+  });
+  describe('sessions', () => {
+    // Find the logical break points between different solve sessions
+    // and return a list of lists, where each sublist is a session.
+    // A session is defined as a set of solves with similar start times
+    // to each other, but very different start times to other solves.
+  });
+  describe('sliding windows', () => {
+    // compute any of the statistics across a sliding window of size X
+    // solves.
+    // Returns a list of numbers, where each number is the statistic for
+    // the window.
+  });
+  describe('expanding windows', () => {
+    // compute any of the statistics across an expanding window.
+    // An expanding window starts with just the first attempt, then
+    // grows to include the second, then the third, etc.
+    // Returns a list of numbers, where each number is the statistic for
+    // the expanding window.
+  });
 });
