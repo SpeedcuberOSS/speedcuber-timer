@@ -19,57 +19,89 @@ it('has a noop test to satisfy Jest', () => {
 
 let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
 
+export function attemptFixtureWithTime(durationMillis: number) {
+  return AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, durationMillis);
+}
+
 export const Ao5_AVG_10000 = [
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 8000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 9000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 11000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 15000),
+  attemptFixtureWithTime(8_000),
+  attemptFixtureWithTime(9_000),
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
+  attemptFixtureWithTime(15_000),
 ];
 
 export const Ao5_AVG_10000_WITH_PLUS_2 = [
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 8000),
+  attemptFixtureWithTime(8_000),
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 7000),
+    ...attemptFixtureWithTime(7_000),
     infractions: [STOPPED_PUZZLE_ONE_MOVE_REMAINING],
   },
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 11000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 15000),
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
+  attemptFixtureWithTime(15_000),
 ];
 
 export const Ao5_AVG_10000_WITH_DNF = [
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 8000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 9000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 11000),
+  attemptFixtureWithTime(8_000),
+  attemptFixtureWithTime(9_000),
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 7000),
+    ...attemptFixtureWithTime(7_000),
     infractions: [STOPPED_PUZZLE_UNSOLVED],
   },
 ];
 
 export const Ao5_AVG_DNF = [
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 8000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 9000),
-  AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000),
+  attemptFixtureWithTime(8_000),
+  attemptFixtureWithTime(9_000),
+  attemptFixtureWithTime(10_000),
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 7000),
+    ...attemptFixtureWithTime(7_000),
     infractions: [STOPPED_PUZZLE_UNSOLVED],
   },
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 7000),
+    ...attemptFixtureWithTime(7_000),
     infractions: [STOPPED_PUZZLE_UNSOLVED],
   },
 ];
 
 export const ALL_DNF = [
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 8000),
+    ...attemptFixtureWithTime(8_000),
     infractions: [STOPPED_PUZZLE_UNSOLVED],
   },
   {
-    ...AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 7000),
+    ...attemptFixtureWithTime(7_000),
     infractions: [STOPPED_PUZZLE_UNSOLVED],
   },
 ];
+
+export const Mo3_MEAN_10000 = [
+  attemptFixtureWithTime(9_000),
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
+];
+
+export const Mo3_MEAN_10000_WITH_PLUS_2 = [
+  {
+    ...attemptFixtureWithTime(7_000),
+    infractions: [STOPPED_PUZZLE_ONE_MOVE_REMAINING],
+  },
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
+];
+
+export const Mo3_MEAN_DNF = [
+  attemptFixtureWithTime(10_000),
+  attemptFixtureWithTime(11_000),
+  {
+    ...attemptFixtureWithTime(7_000),
+    infractions: [STOPPED_PUZZLE_UNSOLVED],
+  },
+];
+
+export const PERCENTILE_STANDARD_100_ATTEMPTS = Array(100)
+  .fill(0)
+  .map((_, i) => attemptFixtureWithTime((i + 1) * 1000));

@@ -12,7 +12,16 @@ import {
   Ao5_AVG_10000_WITH_DNF,
   Ao5_AVG_10000_WITH_PLUS_2,
   Ao5_AVG_DNF,
+  attemptFixtureWithTime,
+  Mo3_MEAN_10000,
+  Mo3_MEAN_10000_WITH_PLUS_2,
+  Mo3_MEAN_DNF,
+  PERCENTILE_STANDARD_100_ATTEMPTS,
 } from './fixtures/attemptSets';
+import {
+  INSPECTION_EXCEEDED_15_SECONDS,
+  INSPECTION_EXCEEDED_17_SECONDS,
+} from '../../stif';
 const twistyAnalytics = new AttemptAnalytics(twistyAttempts);
 const attemptAnalytics = new AttemptAnalytics(Ao5_AVG_10000);
 
@@ -176,13 +185,150 @@ describe('analytics', () => {
     });
   });
   describe('MoX', () => {
-    // Compute the mean of the last X solves
-    // Just like AoX, but without the exclusion of best/worst solves
-    // This means DNFs will always trigger an Infinity result.
+    describe('finds the correct mean of 3', () => {
+      it('with no penalties', () => {
+        const analytics = new AttemptAnalytics(Mo3_MEAN_10000);
+        expect(analytics.MoX(3)).toBe(10000);
+      });
+      it('with a plus 2 penalty', () => {
+        const analytics = new AttemptAnalytics(Mo3_MEAN_10000_WITH_PLUS_2);
+        expect(analytics.MoX(3)).toBe(10000);
+      });
+      it('with a DNF penalty', () => {
+        const analytics = new AttemptAnalytics(Mo3_MEAN_DNF);
+        expect(analytics.MoX(3)).toBe(Infinity);
+      });
+    });
+    describe('throws an error when attempting to', () => {
+      test.each([0, -1, -10, -Infinity])(
+        'average less than 1 attempt (case: %p)',
+        X => {
+          expect(() => {
+            attemptAnalytics.MoX(X);
+          }).toThrow('Cannot compute a mean of < 1 attempts.');
+        },
+      );
+      test('average infinite attempts', () => {
+        expect(() => {
+          attemptAnalytics.MoX(Infinity);
+        }).toThrow('Cannot compute a mean of Infinity attempts.');
+      });
+    });
   });
   describe('percentile', () => {
-    // Percentile for time X.XX
-    // Time required for percentile XX.X%
+    describe('computes the percent of attempts slower than a given attempt', () => {
+      let percentileAnalytics = new AttemptAnalytics(
+        PERCENTILE_STANDARD_100_ATTEMPTS,
+      );
+      test.each([1_000, 10_000, 50_000, 90_000, 100_000])(
+        'for attempts with a duration within the test range [1_000, 100_000] (case: %p)',
+        duration => {
+          let percentileOracle = (d: number) => (100 - d / 1000) / 100;
+          let attempt = attemptFixtureWithTime(duration);
+          expect(percentileAnalytics.percentileRank(attempt)).toBe(
+            percentileOracle(duration),
+          );
+        },
+      );
+      test('for an attempt faster than all other attempts', () => {
+        let attempt = attemptFixtureWithTime(0);
+        expect(percentileAnalytics.percentileRank(attempt)).toBe(1);
+      });
+      test('for an attempt slower than all other attempts', () => {
+        let attempt = attemptFixtureWithTime(101_000);
+        expect(percentileAnalytics.percentileRank(attempt)).toBe(0);
+      });
+      test('for an attempt with a +2 penalty', () => {
+        let attempt = {
+          ...attemptFixtureWithTime(50_000),
+          infractions: [INSPECTION_EXCEEDED_15_SECONDS],
+        };
+        expect(percentileAnalytics.percentileRank(attempt)).toBe(0.48);
+      });
+      test('for an attempt with a DNF penalty', () => {
+        let attempt = {
+          ...attemptFixtureWithTime(50_000),
+          infractions: [INSPECTION_EXCEEDED_17_SECONDS],
+        };
+        expect(percentileAnalytics.percentileRank(attempt)).toBe(0);
+      });
+      test('when multiple attempts have the same duration', () => {
+        let analytics = new AttemptAnalytics([
+          attemptFixtureWithTime(10),
+          attemptFixtureWithTime(50),
+          attemptFixtureWithTime(50),
+          attemptFixtureWithTime(50),
+          attemptFixtureWithTime(60),
+        ]);
+        let attempt = attemptFixtureWithTime(50);
+        expect(analytics.percentileRank(attempt)).toBe(0.2);
+      });
+      test('when all attempts have the same duration', () => {
+        let analytics = new AttemptAnalytics([
+          attemptFixtureWithTime(50),
+          attemptFixtureWithTime(50),
+          attemptFixtureWithTime(50),
+        ]);
+        let attempt = attemptFixtureWithTime(50);
+        expect(analytics.percentileRank(attempt)).toBe(0.0);
+      });
+      test('when there are no attempts to compare against', () => {
+        let analytics = new AttemptAnalytics([]);
+        let attempt = attemptFixtureWithTime(50);
+        expect(analytics.percentileRank(attempt)).toBe(1);
+      });
+    });
+    describe('computes the time required to achieve a specific percentile', () => {
+      let percentileAnalytics = new AttemptAnalytics(
+        PERCENTILE_STANDARD_100_ATTEMPTS,
+      );
+      test('when requesting a score', () => {
+        expect(percentileAnalytics.percentileScore(0.5)).toBe(50_000);
+      });
+      test('when requesting the 100th percentile', () => {
+        expect(percentileAnalytics.percentileScore(1)).toBe(1_000);
+      });
+      test('when requesting the 0th percentile', () => {
+        expect(percentileAnalytics.percentileScore(0)).toBe(100_000);
+      });
+      test('when requesting multiple scores', () => {
+        expect(percentileAnalytics.percentileScores([0.25, 0.5, 0.75])).toEqual(
+          [75_000, 50_000, 25_000],
+        );
+      });
+      test('in the presence of a +2 penalty', () => {
+        let analytics = new AttemptAnalytics([
+          attemptFixtureWithTime(48_000),
+          {
+            ...attemptFixtureWithTime(48_000),
+            infractions: [INSPECTION_EXCEEDED_15_SECONDS],
+          },
+          attemptFixtureWithTime(52_000),
+        ]);
+        expect(analytics.percentileScore(0.5)).toBe(50_000);
+      });
+      test('in the presence of a DNF penalty', () => {
+        let analytics = new AttemptAnalytics([
+          attemptFixtureWithTime(48_000),
+          attemptFixtureWithTime(52_000),
+          {
+            ...attemptFixtureWithTime(48_000),
+            infractions: [INSPECTION_EXCEEDED_17_SECONDS],
+          },
+        ]);
+        expect(analytics.percentileScore(0)).toBe(Infinity);
+      });
+    });
+    describe('throws an error when attempting to', () => {
+      test.each([-Infinity, -1, -0.01, 1.01, 10, Infinity])(
+        'compute the score of a percentile outside the domain [0, 1] (case: %p)',
+        percentile => {
+          expect(() => {
+            attemptAnalytics.percentileScore(percentile);
+          }).toThrow('Percentile must be within the domain [0, 1].');
+        },
+      );
+    });
   });
   describe('AoXForecast', () => {
     // Given X-1 solves, what time is needed to achieve an AoX of X.XX?
