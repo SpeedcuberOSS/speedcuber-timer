@@ -84,7 +84,7 @@ class AttemptAnalytics {
       return -1;
     }
     const [best, worst] = this.__computeExcludeCounts(x, bestPct, worstPct);
-    const countingAttempts = xAttempts.slice(best, -worst);
+    const countingAttempts = xAttempts.slice(best, xAttempts.length - worst);
     const totalDuration = countingAttempts.reduce(
       (acc, attempt) => acc + durationWithPenalties(attempt),
       0,
@@ -129,18 +129,7 @@ class AttemptAnalytics {
     if (x === Infinity) {
       throw new Error('Cannot compute a mean of Infinity attempts.');
     }
-    return this.__safeMoX(x);
-  }
-  __safeMoX(x: number): number {
-    const xAttempts = this.__getMostRecentXAttemptsDurationAscending(x);
-    if (xAttempts.length < x) {
-      return -1;
-    }
-    const totalDuration = xAttempts.reduce(
-      (acc, attempt) => acc + durationWithPenalties(attempt),
-      0,
-    );
-    return Math.round(totalDuration / x);
+    return this.__safeAoX(x, 0, 0);
   }
 
   /**
