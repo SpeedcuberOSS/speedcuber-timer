@@ -360,6 +360,7 @@ describe('analytics', () => {
     // compute any of the statistics across an expanding window.
     // An expanding window starts with just the first attempt, then
     // grows to include the second, then the third, etc.
+    // -> Use a step increment to control how quickly the window expands.
     // Returns a list of numbers, where each number is the statistic for
     // the expanding window.
   });
