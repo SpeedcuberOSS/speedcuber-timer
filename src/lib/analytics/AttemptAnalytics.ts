@@ -222,10 +222,8 @@ function rightmostBinarySearch<Type>(
 }
 
 const SORTS = {
-  dateAscending: (a: Attempt, b: Attempt) =>
-    a.timestamp.getTime() - b.timestamp.getTime(),
-  dateDescending: (a: Attempt, b: Attempt) =>
-    b.timestamp.getTime() - a.timestamp.getTime(),
+  dateAscending: (a: Attempt, b: Attempt) => a.unixTimestamp - b.unixTimestamp,
+  dateDescending: (a: Attempt, b: Attempt) => b.unixTimestamp - a.unixTimestamp,
   durationAscending: (a: Attempt, b: Attempt) => compareByDuration(a, b),
   durationDescending: (a: Attempt, b: Attempt) => -compareByDuration(a, b),
 };

@@ -15,7 +15,7 @@ let library = getLibrary();
 
 export default function InsightsScreen() {
   const data = library.getAll();
-  data.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+  data.sort((a, b) => b.unixTimestamp - a.unixTimestamp);
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );

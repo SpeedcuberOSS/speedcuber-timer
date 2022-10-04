@@ -26,12 +26,8 @@ describe("AttemptBuilder's API", () => {
     expect(attempt.event).toEqual(EVENT_3x3x3);
     expect(attempt.duration).toEqual(10000);
     expect(attempt.solutions[0].scramble).toEqual(TEST_SCRAMBLE);
-    expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
-      new Date().getMilliseconds() - 1000,
-    );
-    expect(attempt.timestamp.getMilliseconds()).toBeLessThan(
-      new Date().getMilliseconds() + 1000,
-    );
+    expect(attempt.unixTimestamp).toBeGreaterThan(new Date().getTime() - 1000);
+    expect(attempt.unixTimestamp).toBeLessThan(new Date().getTime() + 1000);
     expect(attempt.infractions).toEqual([]);
     expect(attempt.comment).toEqual('');
   });
@@ -48,12 +44,10 @@ describe('A new AttemptBuilder', () => {
       expect(attempt.event).toEqual(EVENT_3x3x3);
       expect(attempt.duration).toEqual(10000);
       expect(attempt.solutions).toEqual([TEST_SOLUTION]);
-      expect(attempt.timestamp.getMilliseconds()).toBeGreaterThan(
-        new Date().getMilliseconds() - 1000,
+      expect(attempt.unixTimestamp).toBeGreaterThan(
+        new Date().getTime() - 1000,
       );
-      expect(attempt.timestamp.getMilliseconds()).toBeLessThan(
-        new Date().getMilliseconds() + 1000,
-      );
+      expect(attempt.unixTimestamp).toBeLessThan(new Date().getTime() + 1000);
       expect(attempt.infractions).toEqual([]);
       expect(attempt.comment).toEqual('');
     });
@@ -68,14 +62,14 @@ describe('A new AttemptBuilder', () => {
       expect(attempt.id).toEqual(id);
     });
     it("is given a custom timestamp and the 'CORE FIELDS'", () => {
-      let timestamp = new Date();
+      let timestamp = new Date().getTime();
       let attempt: Attempt = new AttemptBuilder()
         .setTimestamp(timestamp)
         .setEvent(EVENT_3x3x3)
         .setDuration(10000)
         .addSolution(TEST_SOLUTION)
         .build();
-      expect(attempt.timestamp).toEqual(timestamp);
+      expect(attempt.unixTimestamp).toEqual(timestamp);
     });
     it("is given multiple solutions and the 'CORE FIELDS'", () => {
       let attempt: Attempt = new AttemptBuilder()

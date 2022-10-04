@@ -16,7 +16,7 @@ interface Attempt extends Entity {
   /**
    * The unix timestamp (in milliseconds) when the attempt occurred.
    */
-  timestamp: Date;
+  unixTimestamp: number;
   /**
    * The duration of the attempt (in milliseconds), excluding penalties.
    */

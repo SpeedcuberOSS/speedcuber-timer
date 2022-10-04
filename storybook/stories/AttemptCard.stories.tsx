@@ -21,7 +21,7 @@ let attempt = AttemptBuilder.buildBasic(
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
   10000,
 );
-attempt.timestamp = new Date(1663731466876);
+attempt.unixTimestamp = 1663731466876;
 
 storiesOf('AttemptCard', module).add('default', () => (
   <AttemptCard attempt={attempt} />

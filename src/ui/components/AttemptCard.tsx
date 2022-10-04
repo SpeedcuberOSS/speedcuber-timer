@@ -19,7 +19,7 @@ export default function AttemptCard(props: AttemptCardProps) {
     <Card style={styles.card}>
       <Card.Title
         title={getAttemptTimeString(props.attempt)}
-        subtitle={props.attempt.timestamp.toLocaleString()}
+        subtitle={new Date(props.attempt.unixTimestamp).toLocaleString()}
       />
       <Card.Content>
         <Caption>
