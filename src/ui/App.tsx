@@ -5,6 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import 'react-native-get-random-values';
+import FlipperAsyncStorage from 'rn-flipper-async-storage-advanced';
+
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import i18n from '../localization';
@@ -18,6 +20,7 @@ const App = () => {
   }
   return (
     <PaperProvider theme={getCurrentTheme()}>
+      <FlipperAsyncStorage />
       <MainNavigator />
     </PaperProvider>
   );
