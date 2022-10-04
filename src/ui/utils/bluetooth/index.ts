@@ -12,17 +12,27 @@ function getBleManager() {
   return manager;
 }
 
-function scanBluetooth() {
-  console.debug('Connecting to Bluetooth Adapter');
-  getBleManager().onStateChange(state => {
-    console.log(`Bluetooth Adapter State: ${state}`);
-    if (state === 'PoweredOn') {
-      scanForDevices();
-    }
-  }, true);
+async function scanBluetooth() {
+  console.debug('Checking if Bluetooth Adapter is powered on');
+  // if (!listenerCreated) {
+  //   getBleManager().onStateChange(state => {
+  //     console.log(`Bluetooth Adapter State: ${state}`);
+  //     if (state === 'PoweredOn') {
+  //       scanForDevices();
+  //     }
+  //   }, true);
+  //   listenerCreated = true;
+  // }
+  // (async () => {
+  let state = await getBleManager().state();
+  console.log(state);
+  if (state === 'PoweredOn') {
+    scanForDevices();
+  }
+  // })();
 }
 
-function scanForDevices() {
+async function scanForDevices() {
   console.debug('Scanning for devices');
   getBleManager().startDeviceScan(null, null, (error, device) => {
     if (error) {
@@ -40,35 +50,22 @@ function scanForDevices() {
   });
 }
 
-function connectToDevice(targetDevice: Device) {
+async function connectToDevice(targetDevice: Device) {
   console.debug(`Connecting to ${targetDevice.name}`);
-  targetDevice
-    .connect()
-    .then(device => {
-      console.debug(`Connected to device: ${device.name}`);
-      return device.discoverAllServicesAndCharacteristics();
-    })
-    .then(device => {
-      // Do work on device with services and characteristics
+  let device = await targetDevice.connect();
+  console.debug(`Connected to device: ${device.name}`);
+  await device.discoverAllServicesAndCharacteristics();
+  console.debug(`Services and Characteristics Discovered for ${device.name}`);
+  let services = await device.services();
+  services.forEach(async service => {
+    const characteristics = await service.characteristics();
+    console.debug(`Service: ${service.uuid}`);
+    characteristics.forEach(characteristic => {
       console.debug(
-        `Services and Characteristics Discovered for ${device.name}`,
+        ` - Characteristic: ${characteristic.uuid} (Value: ${characteristic.value})`,
       );
-      device.services().then(services => {
-        services.forEach(async service => {
-          const characteristics = await service.characteristics();
-          console.debug(`Service: ${service.uuid}`);
-          characteristics.forEach(characteristic => {
-            console.debug(
-              ` - Characteristic: ${characteristic.uuid} (Value: ${characteristic.value})`,
-            );
-          });
-        });
-      });
-    })
-    .catch(error => {
-      // Handle errors
-      console.error(error);
     });
+  });
 }
 
 export { scanBluetooth };
