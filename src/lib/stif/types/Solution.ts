@@ -20,6 +20,6 @@ interface Solution extends Entity {
    * The reconstruction of the solution.
    */
   reconstruction?: Reconstruction;
-};
+}
 
 export { type Solution };

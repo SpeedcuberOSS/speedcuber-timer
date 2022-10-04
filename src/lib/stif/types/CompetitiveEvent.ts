@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Entity } from './Entity';
-import { Extension } from './Extension';
 import { Puzzle } from './Puzzle';
 
 /**
@@ -45,6 +44,6 @@ interface CompetitiveEvent extends Entity {
    * The type of event.
    */
   type: CompetitiveEventType;
-};
+}
 
 export { type CompetitiveEvent, CompetitiveEventType };

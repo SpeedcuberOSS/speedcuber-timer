@@ -23,6 +23,6 @@ interface Infraction extends Entity {
    * The penalty imposed by the infraction.
    */
   penalty: Penalty;
-};
+}
 
 export { type Infraction };

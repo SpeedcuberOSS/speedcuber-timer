@@ -15,6 +15,6 @@ interface Algorithm extends Entity {
    * notation](https://www.worldcubeassociation.org/regulations/#notation).
    */
   moves: string[];
-};
+}
 
 export { type Algorithm };

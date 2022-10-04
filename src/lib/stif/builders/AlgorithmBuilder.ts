@@ -14,9 +14,9 @@ class AlgorithmBuilder extends EntityBuilder {
   }
   public build(): Algorithm {
     let entity = super.build();
-    if (this.wip.moves === undefined)
+    if (this.wip.moves === undefined) {
       throw new Error('`moves` is a required attribute.');
-    else {
+    } else {
       return {
         ...entity,
         moves: this.wip.moves,

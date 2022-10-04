@@ -23,6 +23,6 @@ interface ScrambleProvider extends Entity {
    * provider.
    */
   url: string;
-};
+}
 
 export { type ScrambleProvider };

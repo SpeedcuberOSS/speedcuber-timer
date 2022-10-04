@@ -16,7 +16,7 @@ let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
 let TEST_RECONSTRUCTION: Reconstruction = {
   id: uuid(),
   algorithm: new AlgorithmBuilder().setMoves(['R', 'U']).build(),
-}
+};
 
 describe('A new SolutionBuilder', () => {
   describe('builds successfully when', () => {

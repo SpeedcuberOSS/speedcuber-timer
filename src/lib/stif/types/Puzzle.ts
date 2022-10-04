@@ -18,6 +18,6 @@ interface Puzzle extends Entity {
    * corresponding to the puzzle's standard event.
    */
   id: string;
-};
+}
 
 export { type Puzzle };

@@ -36,14 +36,14 @@ class AttemptBuilder extends EntityBuilder {
     return this;
   }
   addSolution(solution: Solution): this {
-    if (this.wip.solutions == undefined) {
+    if (this.wip.solutions === undefined) {
       this.wip.solutions = [];
     }
     this.wip.solutions.push(solution);
     return this;
   }
-  setTimestamp(timestamp: Date): this {
-    this.wip.timestamp = timestamp;
+  setTimestamp(unixTimestamp: number): this {
+    this.wip.unixTimestamp = unixTimestamp;
     return this;
   }
   addInfraction(infraction: Infraction): this {
@@ -59,15 +59,18 @@ class AttemptBuilder extends EntityBuilder {
   }
   build(): Attempt {
     let entity = super.build();
-    if (this.wip.event === undefined)
+    if (this.wip.event === undefined) {
       throw new Error('`event` is a required attribute.');
-    if (this.wip.duration === undefined)
+    }
+    if (this.wip.duration === undefined) {
       throw new Error('`duration` is a required attribute.');
-    if (this.wip.solutions === undefined || this.wip.solutions.length === 0)
+    }
+    if (this.wip.solutions === undefined || this.wip.solutions.length === 0) {
       throw new Error('At least one `solution` must be provided.');
+    }
     return {
       ...entity,
-      timestamp: this.wip.timestamp ?? new Date(),
+      unixTimestamp: this.wip.unixTimestamp ?? new Date().getTime(),
       event: this.wip.event,
       duration: this.wip.duration,
       solutions: this.wip.solutions,

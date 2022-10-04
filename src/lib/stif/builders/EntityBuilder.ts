@@ -18,7 +18,7 @@ abstract class EntityBuilder {
     return this;
   }
   public addExtension(extension: Extension): this {
-    if (this.wip.extensions == undefined) {
+    if (this.wip.extensions === undefined) {
       this.wip.extensions = [];
     }
     if (!this.wip.extensions.every(e => e.id !== extension.id)) {
@@ -28,8 +28,9 @@ abstract class EntityBuilder {
     return this;
   }
   public build(): Entity {
-    if (Object.keys(this.wip).length === 0)
+    if (Object.keys(this.wip).length === 0) {
       throw new Error('Nothing to build!');
+    }
     return {
       id: this.wip.id ?? uuid(),
       extensions: this.wip.extensions,

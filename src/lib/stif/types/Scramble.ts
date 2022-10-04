@@ -25,6 +25,6 @@ interface Scramble extends Entity {
    * Details about the software used to generate the scramble.
    */
   provider: ScrambleProvider;
-};
+}
 
 export { type Scramble };

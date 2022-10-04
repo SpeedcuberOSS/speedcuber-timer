@@ -19,14 +19,15 @@ class SolutionBuilder extends EntityBuilder {
     return this;
   }
   public build(): Solution {
-    let entity = super.build()
-    if (this.wip.scramble === undefined) 
-      throw new Error("`scramble` is a required attribute.")
+    let entity = super.build();
+    if (this.wip.scramble === undefined) {
+      throw new Error('`scramble` is a required attribute.');
+    }
     return {
       ...entity,
       scramble: this.wip.scramble,
       reconstruction: this.wip.reconstruction,
-    }
+    };
   }
 }
 

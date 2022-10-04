@@ -36,10 +36,12 @@ class ScrambleBuilder extends EntityBuilder {
   }
   build(): Scramble {
     let entity = super.build();
-    if (this.wip.puzzle === undefined)
+    if (this.wip.puzzle === undefined) {
       throw new Error('`puzzle` is a required attribute.');
-    if (this.wip.algorithm === undefined)
+    }
+    if (this.wip.algorithm === undefined) {
       throw new Error('`algorithm` is a required attribute.');
+    }
     return {
       ...entity,
       puzzle: this.wip.puzzle,
