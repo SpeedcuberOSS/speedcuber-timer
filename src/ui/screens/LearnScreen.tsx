@@ -8,7 +8,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import React, { useState } from 'react';
 
-import StoryBook from '../../../storybook';
+// import StoryBook from '../../../storybook';
 import Icons from '../utils/iconHelper';
 
 function OpenStorybookFAB({ onPress }: { onPress: () => void }) {
@@ -36,7 +36,7 @@ export default function LearnScreen() {
   const onPressFAB = () => setShowStorybook(!showStorybook);
   return (
     <SafeAreaView style={styles.container}>
-      {showStorybook && <StoryBook />}
+      {/* {showStorybook && <StoryBook />} */}
       {showStorybook ? (
         <CloseStorybookFAB onPress={onPressFAB} />
       ) : (

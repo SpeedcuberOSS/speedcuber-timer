@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { AsyncStorageAttemptLibrary } from './AsyncStorageAttemptLibrary';
-import { InMemoryAttemptLibrary } from './InMemoryAttemptLibrary';
+// import { InMemoryAttemptLibrary } from './InMemoryAttemptLibrary';
 import { AttemptLibrary } from './interfaces/library';
 
 // let LIBRARY = new InMemoryAttemptLibrary();

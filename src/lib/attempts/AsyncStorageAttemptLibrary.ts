@@ -17,12 +17,16 @@ class AsyncStorageAttemptLibrary extends InMemoryAttemptLibrary {
   }
   add(attempt: Attempt): boolean {
     let success = super.add(attempt);
-    if (success) this.persistChanges();
+    if (success) {
+      this.persistChanges();
+    }
     return success;
   }
   remove(attempt_id: string): boolean {
     let success = super.remove(attempt_id);
-    if (success) this.persistChanges();
+    if (success) {
+      this.persistChanges();
+    }
     return success;
   }
   get(attempt_id: string): Attempt | undefined {
@@ -33,51 +37,43 @@ class AsyncStorageAttemptLibrary extends InMemoryAttemptLibrary {
   }
   update(attempt_id: string, attempt: Attempt): boolean {
     let success = super.update(attempt_id, attempt);
-    if (success) this.persistChanges();
+    if (success) {
+      this.persistChanges();
+    }
     return success;
   }
-  private persistChanges() {
+  private async persistChanges() {
     function parseAttemptMap(libraryJSON: string | null): Map<string, Attempt> {
       let jsonString = libraryJSON ? libraryJSON : '[]';
       return new Map(JSON.parse(jsonString));
     }
-    /**
-     * Merges AttemptLibrary Maps.
-     * @param libs The libs to merge, in order of increasing precedence.
-     * @returns The merged library
-     */
-    function mergeLibraries(
-      ...libs: Array<Map<string, Attempt>>
-    ): Map<string, Attempt> {
-      let newLib = new Map();
-      libs.forEach(l => {
-        Array.from(l.entries()).forEach(([id, attempt]) =>
-          newLib.set(id, attempt),
-        );
-      });
-      return newLib;
-    }
-    AsyncStorage.getItem(LIBRARY_KEY)
-      .then(parseAttemptMap)
-      .then(storedLibrary => mergeLibraries(storedLibrary, this._library))
-      .then(mergedLibrary => (this._library = mergedLibrary))
-      .then(mergedLibrary => {
-        const updatedLibrary = Array.from(mergedLibrary);
-        let updatedLibraryString = JSON.stringify(updatedLibrary);
-        AsyncStorage.setItem(LIBRARY_KEY, updatedLibraryString)
-          .then(_result =>
-            console.log(
-              `Successfully stored the updated library with ${updatedLibrary.length} attempts`,
-            ),
-          )
-          .catch(
-            logError(
-              'Could not persist updated Attempt Library to AsyncStorage',
-            ),
-          );
-      })
-      .catch(logError('Could not load Attempt Library from AsyncStorage'));
+    let storedJSONstr = await AsyncStorage.getItem(LIBRARY_KEY);
+    let storedLibrary = parseAttemptMap(storedJSONstr);
+    this._library = mergeLibraries(storedLibrary, this._library);
+    let updatedLibraryString = JSON.stringify(Array.from(this._library));
+    AsyncStorage.setItem(LIBRARY_KEY, updatedLibraryString)
+      .then(_result =>
+        console.log(
+          `Successfully stored the updated library with ${this._library.size} attempts`,
+        ),
+      )
+      .catch(
+        logError('Could not persist updated Attempt Library to AsyncStorage'),
+      );
   }
+}
+
+/**
+ * Merges AttemptLibrary Maps.
+ * @param libs The libs to merge, in order of increasing precedence.
+ * @returns The merged library
+ */
+function mergeLibraries(...libs: Map<string, Attempt>[]): Map<string, Attempt> {
+  let newLib = new Map();
+  libs.forEach(l => {
+    Array.from(l.entries()).forEach(([id, attempt]) => newLib.set(id, attempt));
+  });
+  return newLib;
 }
 
 export { AsyncStorageAttemptLibrary };
