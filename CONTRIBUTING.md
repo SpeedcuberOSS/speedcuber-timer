@@ -36,6 +36,11 @@ Then fork and clone this repository to your machine.
 - Note, members of the SpeedcuberOSS organization can directly clone
   this project, no forking required.
 
+1. Install the `yarn` package manager globally using `npm install
+   --global yarn`
+2. Start Metro Bundler with `yarn start`
+3. Run the app on an emulator or device via `yarn ios` or `yarn android`
+
 From there you can start experimenting with making any changes you like!
 
 ## Directory Structure
