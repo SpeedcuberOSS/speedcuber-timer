@@ -11,6 +11,10 @@ import { getLibrary } from '../../lib/attempts';
 import AttemptCard from '../components/AttemptCard';
 import { Attempt } from '../../lib/stif';
 
+import {Alg} from "cubing/alg"
+import {TwistyPlayer} from "cubing/twisty"
+import { WebView } from 'react-native-webview';
+
 let library = getLibrary();
 
 export default function InsightsScreen() {
@@ -19,10 +23,14 @@ export default function InsightsScreen() {
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );
+  const testScale = {
+    transform: [{ scale: 1.1 }]
+  };
   console.debug(`showing ${data.length} attempts`);
   return (
     <SafeAreaView style={styles.container}>
-      <BigList data={data} renderItem={renderAttempt} itemHeight={125} />
+      <WebView style={testScale}
+        source={{ html: '<script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script><twisty-player></twisty-player>' }}/>
     </SafeAreaView>
   );
 }

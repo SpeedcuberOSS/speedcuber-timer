@@ -31,6 +31,7 @@
     "react-native-paper": "5.0.0-rc.5",
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
+    "react-native-webview": "^11.23.1",
     "rn-flipper-async-storage-advanced": "^1.0.4",
     "uuid": "^8.3.2"
   },
@@ -56,6 +57,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.5",
+    "cubing": "^0.30.0",
     "eslint": "^7.32.0",
     "jest": "^24.0.1",
     "metro-react-native-babel-preset": "^0.67.0",
