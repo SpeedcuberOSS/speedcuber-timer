@@ -8,64 +8,76 @@ import { BleManager, Device } from 'react-native-ble-plx';
 
 let manager = new BleManager();
 
+async function getAvailableBluetoothCubes(): Promise<Device[]> {
+  await _ensurePermissionsGranted();
+  await _ensureBluetoothPoweredOn();
+  let devices = await _getSmartcubes();
+  return devices;
+}
+
+async function _ensurePermissionsGranted(): Promise<boolean> {
+  return true; // TODO: Handled manually right now.
+}
+
+async function _ensureBluetoothPoweredOn(): Promise<boolean> {
+  return await new Promise<boolean>((resolve, reject) => {
+    getBleManager().onStateChange(state => {
+      console.debug(`Bluetooth state changed to ${state}`);
+      if (state === 'PoweredOn') {
+        resolve(true);
+      }
+    }, true);
+    setTimeout(() => {
+      reject('Bluetooth not powered on');
+    }, 10000);
+  });
+}
+
+async function _getSmartcubes(): Promise<Device[]> {
+  return await new Promise<Device[]>((resolve, reject) => {
+    let devices: Device[] = [];
+    getBleManager().startDeviceScan(null, null, (error, device) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else if (device && isSmartcube(device)) {
+        devices.push(device);
+      }
+    });
+    setTimeout(() => {
+      getBleManager().stopDeviceScan();
+      resolve(devices);
+    }, 5000);
+  });
+}
+
+function isSmartcube(device: Device | null) {
+  return device?.name?.includes('Rubik');
+}
+
 function getBleManager() {
   return manager;
 }
 
-async function scanBluetooth() {
-  console.debug('Checking if Bluetooth Adapter is powered on');
-  // if (!listenerCreated) {
-  //   getBleManager().onStateChange(state => {
-  //     console.log(`Bluetooth Adapter State: ${state}`);
-  //     if (state === 'PoweredOn') {
-  //       scanForDevices();
-  //     }
-  //   }, true);
-  //   listenerCreated = true;
-  // }
-  // (async () => {
-  let state = await getBleManager().state();
-  console.log(state);
-  if (state === 'PoweredOn') {
-    scanForDevices();
-  }
-  // })();
-}
-
-async function scanForDevices() {
-  console.debug('Scanning for devices');
-  getBleManager().startDeviceScan(null, null, (error, device) => {
-    if (error) {
-      console.error(error);
-    } else if (device?.name?.includes('Rubik')) {
-      console.debug(
-        `Found ${device.name} (${device.localName}).
-         Services: ${device.serviceUUIDs}
-         Data: ${device.serviceData}
-         Is Connectable: ${device.isConnectable}`,
-      );
-      getBleManager().stopDeviceScan();
-      connectToDevice(device);
-    }
-  });
-}
-
-async function connectToDevice(targetDevice: Device) {
-  console.debug(`Connecting to ${targetDevice.name}`);
-  let device = await targetDevice.connect();
+async function connectToCube(cube: Device) {
+  console.debug(`Connecting to ${cube.name}`);
+  let device = await cube.connect();
   console.debug(`Connected to device: ${device.name}`);
   await device.discoverAllServicesAndCharacteristics();
   console.debug(`Services and Characteristics Discovered for ${device.name}`);
   let services = await device.services();
-  services.forEach(async service => {
-    const characteristics = await service.characteristics();
-    console.debug(`Service: ${service.uuid}`);
-    characteristics.forEach(characteristic => {
-      console.debug(
-        ` - Characteristic: ${characteristic.uuid} (Value: ${characteristic.value})`,
-      );
-    });
+  let primaryService = services.filter(s => s.isPrimary)[0];
+  let characteristics = await primaryService.characteristics();
+  let stateCharacteristic = characteristics.filter(
+    c => c.uuid === '6e400003-b5a3-f393-e0a9-e50e24dcca9e', // GoCube State Characteristic
+  )[0];
+  stateCharacteristic.monitor((error, characteristic) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.debug(characteristic?.value);
+    }
   });
 }
 
-export { scanBluetooth };
+export { getAvailableBluetoothCubes, connectToCube };
