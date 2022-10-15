@@ -4,24 +4,26 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import twistyAttempts from '../demo/twisty2stif';
-import { AttemptAnalytics } from '../AttemptAnalytics';
 import {
   ALL_DNF,
   Ao5_AVG_10000,
   Ao5_AVG_10000_WITH_DNF,
   Ao5_AVG_10000_WITH_PLUS_2,
   Ao5_AVG_DNF,
-  attemptFixtureWithTime,
   Mo3_MEAN_10000,
   Mo3_MEAN_10000_WITH_PLUS_2,
   Mo3_MEAN_DNF,
   PERCENTILE_STANDARD_100_ATTEMPTS,
+  attemptFixtureWithTime,
 } from '../demo/attemptSets';
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
 } from '../../stif';
+
+import { AttemptAnalytics } from '../AttemptAnalytics';
+import twistyAttempts from '../demo/twisty2stif';
+
 const twistyAnalytics = new AttemptAnalytics(twistyAttempts);
 const attemptAnalytics = new AttemptAnalytics(Ao5_AVG_10000);
 
@@ -350,11 +352,35 @@ describe('analytics', () => {
     // A session is defined as a set of solves with similar start times
     // to each other, but very different start times to other solves.
   });
-  describe('sliding windows', () => {
+  describe('sliding window', () => {
     // compute any of the statistics across a sliding window of size X
     // solves.
     // Returns a list of numbers, where each number is the statistic for
     // the window.
+    it('computes a sliding AoX', () => {
+      let analytics = new AttemptAnalytics([
+        attemptFixtureWithTime(10),
+        attemptFixtureWithTime(20),
+        attemptFixtureWithTime(30),
+        attemptFixtureWithTime(40),
+        attemptFixtureWithTime(50),
+        attemptFixtureWithTime(60),
+        attemptFixtureWithTime(70),
+      ]);
+      expect(analytics.sliding.AoX(5)).toEqual([30, 40, 50]);
+    });
+    it("returns an empty list when there aren't enough solves", () => {
+      let analytics = new AttemptAnalytics([
+        attemptFixtureWithTime(10),
+        attemptFixtureWithTime(20),
+        attemptFixtureWithTime(30),
+      ]);
+      expect(analytics.sliding.AoX(5)).toEqual([]);
+    });
+    it("returns an empty list when there aren't any solves", () => {
+      let analytics = new AttemptAnalytics([]);
+      expect(analytics.sliding.AoX(5)).toEqual([]);
+    });
   });
   describe('expanding windows', () => {
     // compute any of the statistics across an expanding window.
