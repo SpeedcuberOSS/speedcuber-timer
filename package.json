@@ -34,10 +34,11 @@
     "react-native-localize": "^2.2.2",
     "react-native-paper": "5.0.0-rc.5",
     "react-native-responsive-linechart": "^5.7.1",
-    "react-native-svg": "^12.3.0",
+    "react-native-svg": "^13.4.0",
     "react-native-vector-icons": "^9.1.0",
     "rn-flipper-async-storage-advanced": "^1.0.4",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "victory-native": "^36.6.8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

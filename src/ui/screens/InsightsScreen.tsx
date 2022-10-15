@@ -12,101 +12,61 @@ import AttemptCard from '../components/AttemptCard';
 import { getCurrentTheme } from '../themes';
 import { Attempt } from '../../lib/stif';
 import {
-  Chart,
-  Line,
-  Area,
-  HorizontalAxis,
-  VerticalAxis,
-} from 'react-native-responsive-linechart';
+  VictoryChart,
+  VictoryScatter,
+  VictoryTheme,
+  VictoryZoomContainer,
+} from 'victory-native';
+import { VictoryThemeDefinition } from 'victory-core';
 
 let library = getLibrary();
+let chartTheme: VictoryThemeDefinition = {
+  ...VictoryTheme.material,
+  axis: {
+    ...VictoryTheme.material.axis,
+    style: {
+      ...VictoryTheme.material.axis?.style,
+      tickLabels: {
+        ...VictoryTheme.material.axis?.style?.tickLabels,
+        // @ts-ignore
+        fill: getCurrentTheme().colors.onBackground,
+      },
+    },
+  },
+};
 
 export default function InsightsScreen() {
   const theme = getCurrentTheme();
   let data = library.getAll();
   data = data
     .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
-    .slice(0, Math.min(1000, data.length));
+    .slice(0, Math.min(200, data.length));
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );
   console.debug(`showing ${data.length} attempts`);
   return (
     <SafeAreaView style={styles.container}>
-      <Chart
-        style={{ height: 200, width: Dimensions.get('window').width }}
-        data={data.map((attempt, index) => ({
-          x: data.length - index,
-          y: attempt.duration / 1000,
-        }))}
-        padding={{ left: 40, bottom: 20, right: 20, top: 20 }}
-        xDomain={{ min: 0, max: data.length }}
-        yDomain={{
-          min: 0,
-          max: Math.max(...data.map(attempt => attempt.duration / 1000)) * 1.1,
+      <VictoryChart
+        theme={chartTheme}
+        domainPadding={20}
+        containerComponent={<VictoryZoomContainer />}
+        height={Dimensions.get('window').height * (3 / 8)}
+        domain={{
+          x: [0, data.length],
+          y: [0, Math.max(...data.map(a => a.duration / 1000))],
         }}>
-        <VerticalAxis
-          tickCount={11}
-          theme={{
-            axis: {
-              stroke: { color: theme.colors.onBackground },
-            },
-            grid: {
-              stroke: { color: theme.colors.backdrop },
-            },
-            ticks: {
-              stroke: { color: theme.colors.onBackground },
-            },
-            labels: {
-              formatter: v => v.toFixed(0),
-              label: {
-                color: theme.colors.onBackground,
-              },
-            },
+        <VictoryScatter
+          style={{
+            data: { fill: theme.colors.primary },
           }}
+          size={1}
+          data={data.map((attempt, index) => ({
+            x: data.length - index,
+            y: attempt.duration / 1000,
+          }))}
         />
-        <HorizontalAxis
-          tickCount={5}
-          theme={{
-            axis: {
-              stroke: { color: theme.colors.onBackground },
-            },
-            grid: {
-              stroke: { color: theme.colors.backdrop },
-            },
-            ticks: {
-              stroke: { color: theme.colors.onBackground },
-            },
-            labels: {
-              formatter: v => v.toFixed(0),
-              label: {
-                color: theme.colors.onBackground,
-              },
-            },
-          }}
-        />
-        <Area
-          theme={{
-            gradient: {
-              from: { color: theme.colors.primary, opacity: 0 },
-              to: { color: theme.colors.primary, opacity: 0 },
-            },
-          }}
-        />
-        <Line
-          theme={{
-            scatter: {
-              default: {
-                width: 1,
-                height: 1,
-                // rx: 2,
-                color: theme.colors.primary,
-              },
-            },
-            stroke: { color: theme.colors.primary, width: 0 },
-          }}
-        />
-      </Chart>
+      </VictoryChart>
       <BigList data={data} renderItem={renderAttempt} itemHeight={125} />
     </SafeAreaView>
   );
