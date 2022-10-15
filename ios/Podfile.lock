@@ -359,6 +359,8 @@ PODS:
     - React-Core
   - RNFS (2.20.0):
     - React-Core
+  - RNGestureHandler (2.7.1):
+    - React-Core
   - RNLocalize (2.2.2):
     - React-Core
   - RNSVG (12.3.0):
@@ -428,6 +430,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNDefaultPreference (from `../node_modules/react-native-default-preference`)
   - RNFS (from `../node_modules/react-native-fs`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -522,6 +525,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-default-preference"
   RNFS:
     :path: "../node_modules/react-native-fs"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
   RNSVG:
@@ -579,6 +584,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: d81ee5c3db1060afd49ea7045ad460eff82d2b7d
   RNDefaultPreference: 08bdb06cfa9188d5da97d4642dac745218d7fb31
   RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
+  RNGestureHandler: b7a872907ee289ada902127f2554fa1d2c076122
   RNLocalize: 95a43f85e41a966be7bc9cff2437128911c52da0
   RNSVG: 302bfc9905bd8122f08966dc2ce2d07b7b52b9f8
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
