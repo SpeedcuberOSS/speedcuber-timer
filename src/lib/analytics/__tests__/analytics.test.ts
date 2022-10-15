@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import twistyAttempts from './fixtures/twisty2stif';
+import twistyAttempts from '../demo/twisty2stif';
 import { AttemptAnalytics } from '../AttemptAnalytics';
 import {
   ALL_DNF,
@@ -17,7 +17,7 @@ import {
   Mo3_MEAN_10000_WITH_PLUS_2,
   Mo3_MEAN_DNF,
   PERCENTILE_STANDARD_100_ATTEMPTS,
-} from './fixtures/attemptSets';
+} from '../demo/attemptSets';
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,

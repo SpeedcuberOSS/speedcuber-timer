@@ -15,11 +15,11 @@ import {
   ScrambleBuilder,
   SolutionBuilder,
   STOPPED_PUZZLE_UNSOLVED,
-} from '../../../stif';
+} from '../../stif';
 
-it('has a noop test to satisfy Jest', () => {
-  expect(true).toBe(true);
-});
+// it('has a noop test to satisfy Jest', () => {
+//   expect(true).toBe(true);
+// });
 
 const attempts: Array<Attempt> = [];
 
@@ -38,7 +38,7 @@ twistyData.forEach((twisty: string[]) => {
       .setDuration(parseInt(durationMillis, 10))
       .setEvent(EVENT_3x3x3)
       .setComment(comment)
-      .setTimestamp(new Date(parseInt(dateMillis, 10)))
+      .setTimestamp(parseInt(dateMillis, 10))
       .addSolution(
         new SolutionBuilder()
           .setScramble(
