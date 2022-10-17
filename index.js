@@ -6,15 +6,15 @@
 
 import { AppRegistry, LogBox } from 'react-native';
 
+import App from './src/ui/App';
 import { IS_STORYBOOK } from './envs/_env.json';
+import Storybook from './storybook';
 import { name as appName } from './app.json';
 
 LogBox.ignoreLogs(['Require cycle: node_modules/victory']);
 LogBox.ignoreLogs(['Require cycle: node_modules\\victory']);
 
 console.log(`Is Storybook: ${IS_STORYBOOK}`);
-const App = IS_STORYBOOK
-  ? require('./storybook').default
-  : require('./src/ui/App').default;
-console.log(`App: ${Object.keys(App)}`);
-AppRegistry.registerComponent(appName, () => App);
+const RuntimeApp = IS_STORYBOOK ? Storybook : App;
+console.log(`App: ${Object.keys(RuntimeApp)}`);
+AppRegistry.registerComponent(appName, () => RuntimeApp);
