@@ -7,6 +7,7 @@
 import { BleManager, Device } from 'react-native-ble-plx';
 
 let manager = new BleManager();
+let subscription: { remove: () => void } | null = null;
 
 async function getAvailableBluetoothCubes(): Promise<Device[]> {
   await _ensurePermissionsGranted();
@@ -35,18 +36,28 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
 
 async function _getSmartcubes(): Promise<Device[]> {
   return await new Promise<Device[]>((resolve, reject) => {
-    let devices: Device[] = [];
-    getBleManager().startDeviceScan(null, null, (error, device) => {
-      if (error) {
-        console.error(error);
-        reject(error);
-      } else if (device && isSmartcube(device)) {
-        devices.push(device);
-      }
-    });
+    let devices: Map<string, Device> = new Map();
+    if (subscription) {
+      subscription.remove();
+    }
+    // @ts-ignore
+    subscription = getBleManager().startDeviceScan(
+      null,
+      null,
+      (error, device) => {
+        console.debug(`Found device named '${device?.name}'`);
+        if (error) {
+          console.error(error);
+          reject(error);
+        } else if (device && isSmartcube(device)) {
+          devices.set(device.name ?? 'Unknown', device);
+        }
+      },
+    );
     setTimeout(() => {
+      console.debug('Stopping device scan');
       getBleManager().stopDeviceScan();
-      resolve(devices);
+      resolve(Array.from(devices.values()));
     }, 5000);
   });
 }
