@@ -77,18 +77,26 @@ async function connectToCube(cube: Device) {
   await device.discoverAllServicesAndCharacteristics();
   console.debug(`Services and Characteristics Discovered for ${device.name}`);
   let services = await device.services();
-  let primaryService = services.filter(s => s.isPrimary)[0];
+  let primaryService = services.filter(
+    s => s.uuid === '6e400001-b5a3-f393-e0a9-e50e24dcca9e', // GoCube Primary Service
+  )[0];
   let characteristics = await primaryService.characteristics();
+  characteristics.forEach(c => console.debug(c.uuid));
   let stateCharacteristic = characteristics.filter(
     c => c.uuid === '6e400003-b5a3-f393-e0a9-e50e24dcca9e', // GoCube State Characteristic
   )[0];
-  stateCharacteristic.monitor((error, characteristic) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.debug(characteristic?.value);
-    }
-  });
+  if (stateCharacteristic) {
+    stateCharacteristic.monitor((error, characteristic) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.debug(characteristic?.value);
+      }
+    });
+  } else {
+    cube.cancelConnection();
+    throw new Error('Could not find state characteristic to monitor.');
+  }
 }
 
 export { getAvailableBluetoothCubes, connectToCube };
