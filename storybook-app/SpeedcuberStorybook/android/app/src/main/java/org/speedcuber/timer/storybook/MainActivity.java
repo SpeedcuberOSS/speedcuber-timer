@@ -1,4 +1,4 @@
-package com.speedcuberstorybook;
+package org.speedcuber.timer.storybook;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

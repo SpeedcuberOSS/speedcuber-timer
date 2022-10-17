@@ -1,4 +1,4 @@
-package com.speedcuberstorybook.newarchitecture.modules;
+package org.speedcuber.timer.storybook.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
