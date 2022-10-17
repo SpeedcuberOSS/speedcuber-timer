@@ -5,9 +5,16 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { AppRegistry, LogBox } from 'react-native';
-import App from './src/ui/App';
+
+import { IS_STORYBOOK } from './envs/_env.json';
 import { name as appName } from './app.json';
 
 LogBox.ignoreLogs(['Require cycle: node_modules/victory']);
+LogBox.ignoreLogs(['Require cycle: node_modules\\victory']);
 
+console.log(`Is Storybook: ${IS_STORYBOOK}`);
+const App = IS_STORYBOOK
+  ? require('./storybook').default
+  : require('./src/ui/App').default;
+console.log(`App: ${Object.keys(App)}`);
 AppRegistry.registerComponent(appName, () => App);
