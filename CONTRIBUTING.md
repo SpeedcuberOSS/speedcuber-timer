@@ -78,6 +78,86 @@ back into this project.
 
 ## Other Notes
 
+### Writing UI Component Stories
+
+Speedcuber Timer uses
+[Storybook](https://github.com/storybookjs/react-native) to help with
+developing the UI. Storybook makes it easy to visually build and test
+components in isolation and yields automated snapshot tests to help the
+UI stay stable. It does so by rendering the component library on your
+device, emulated or physical, as you build it.
+
+#### Writing Stories
+Stories are written in a "story file", which has the extension
+`*.stories.tsx`. Typically one story file corresponds to one component
+located in the same directory as the story file, though not all
+components need a corresponding story file.
+
+A story file for a `Switch` component might look like this:
+```typescript
+// Switch.stories.tsx
+import Switch from './Switch';
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+
+storiesOf('Switch', module)
+  .add('default', () => <Switch />)
+  .add('disabled', () => <Switch />);
+  .add('enabled', () => <Switch enabled />);
+```
+
+Notice the `storiesOf` invocation which creates a new grouping of
+stories. From there, individual stories are `add`ed to the group with a
+name and a function to render the isolated component.
+
+Some best practices for effective story writing:
+  * Write stories for controlled components first (i.e. components with
+    little to no state, get nearly all the data to render via props).
+  * Write stories for small components before big components. It's
+    easier to compose components with well written stories into larger,
+    more complex components and screens.
+  * Write a story before building the component. This helps you design
+    the component with your ideal API, which results in more useful
+    components at the end. (Yes this is
+    [TDD](https://en.wikipedia.org/wiki/Test-driven_development), but
+    for components.)
+
+#### Launching Storybook
+In this project, Storybook only loads when specifically requested.
+
+*Launch Storybook on Android*
+```bash
+yarn android:storybook
+```
+
+*Launch StoryBook on iOS*
+```bash
+yarn ios:storybook
+```
+
+You can quickly switch between storybook and the main application, even
+while the application is running.
+
+*Switch to the main application*
+```bash
+yarn env:dev
+```
+
+*Switch to Storybook*
+```bash
+yarn env:storybook
+```
+
+Stories in newly created story files only appear in Storybook after
+running a story discovery process. This process runs by default when
+opening Storybook via any of the commands above, but you can also
+trigger it manually while the application is running.
+
+*Manually trigger Story discovery*
+```bash
+yarn env:storybook
+```
+
 ### Configuring Debugging
 
 0. Close everything down
