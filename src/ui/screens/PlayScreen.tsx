@@ -32,19 +32,14 @@ export default function PlayScreen() {
         cubes.map(cube => (
           // TODO convert to a driving component to update status.
           <SmartPuzzleCard
-            key={cube.id}
-            name={cube.name}
-            brand={cube.brand}
-            puzzle={cube.puzzle}
-            connectionStatus={cube.connectionStatus}
+            key={cube.id()}
+            name={cube.name()}
+            brand={cube.brand()}
+            puzzle={cube.puzzle()}
+            connectionStatus={cube.connectionStatus()}
             onConnect={async () => {
               await cube.connect();
-              await cube.monitorTurns((error, value) => {
-                if (error) {
-                  console.error(error);
-                }
-                console.debug(value);
-              });
+              await cube.addMoveListener(console.debug);
             }}
           />
         ))

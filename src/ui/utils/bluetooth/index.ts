@@ -4,17 +4,18 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { BleManager, Device } from 'react-native-ble-plx';
+import { BleManager, Characteristic, Device } from 'react-native-ble-plx';
 import {
   BluetoothDevice,
   BluetoothPuzzle,
+  MonitorCallback,
   RubiksConnected,
 } from '../../../lib/bluetooth-puzzle';
 
-let manager = new BleManager();
-let subscription: { remove: () => void } | null = null;
+let _MANAGER = new BleManager();
+let _SUBSCRIPTION: { remove: () => void } | null = null;
 
-async function getAvailableBluetoothCubes(): Promise<BluetoothPuzzle[]> {
+export async function getAvailableBluetoothCubes(): Promise<BluetoothPuzzle[]> {
   await _ensurePermissionsGranted();
   await _ensureBluetoothPoweredOn();
   let devices = await _getSmartcubes();
@@ -27,7 +28,7 @@ async function _ensurePermissionsGranted(): Promise<boolean> {
 
 async function _ensureBluetoothPoweredOn(): Promise<boolean> {
   return await new Promise<boolean>((resolve, reject) => {
-    getBleManager().onStateChange(state => {
+    _getBleManager().onStateChange(state => {
       console.debug(`Bluetooth state changed to ${state}`);
       if (state === 'PoweredOn') {
         resolve(true);
@@ -42,11 +43,11 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
 async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
   return await new Promise<BluetoothPuzzle[]>((resolve, reject) => {
     let devices: Map<string, Device> = new Map();
-    if (subscription) {
-      subscription.remove();
+    if (_SUBSCRIPTION) {
+      _SUBSCRIPTION.remove();
     }
     // @ts-ignore
-    subscription = getBleManager().startDeviceScan(
+    _SUBSCRIPTION = _getBleManager().startDeviceScan(
       null,
       null,
       (error, device) => {
@@ -54,67 +55,83 @@ async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
         if (error) {
           console.error(error);
           reject(error);
-        } else if (device && isSmartcube(device)) {
+        } else if (device && _isSmartcube(device)) {
           devices.set(device.name ?? 'Unknown', device);
         }
       },
     );
     setTimeout(() => {
       console.debug('Stopping device scan');
-      getBleManager().stopDeviceScan();
-      resolve(Array.from(devices.values()).map(d => asBluetoothPuzzle(d)));
+      _getBleManager().stopDeviceScan();
+      resolve(
+        Array.from(devices.values())
+          .map(d => new _ReactNativeBluetoothDevice(d))
+          .map(d => _mapToBluetoothPuzzle(d)),
+      );
     }, 5000);
   });
 }
 
-function asBluetoothPuzzle(device: Device): BluetoothPuzzle {
-  const standardizedDevice: BluetoothDevice = {
-    id: device.id,
-    name: device.name ?? 'Unknown',
-    connectionStatus: 'disconnected',
-    connect: async () => {
-      console.debug(`Connecting to ${device.name}`);
-      let cube = await device.connect();
-      console.debug(`Connected to device: ${cube.name}`);
-    },
-    disconnect: async () => {
-      device.cancelConnection();
-    },
-    monitor: async (
-      callback: (error: any, value: any) => any,
-      serviceUUID: string,
-      characteristicUUID: string,
-    ) => {
-      await device.discoverAllServicesAndCharacteristics();
-      console.debug(
-        `Services and Characteristics Discovered for ${device.name}`,
-      );
-      let services = await device.services();
-      let primaryService = services.filter(s => s.uuid === serviceUUID)[0];
-      let characteristics = await primaryService.characteristics();
-      characteristics.forEach(c => console.debug(c.uuid));
-      let stateCharacteristic = characteristics.filter(
-        c => c.uuid === characteristicUUID,
-      )[0];
-      if (stateCharacteristic) {
-        stateCharacteristic.monitor((error, characteristic) =>
-          callback(error, characteristic?.value),
-        );
-      } else {
-        device.cancelConnection();
-        throw new Error('Could not find state characteristic to monitor.');
-      }
-    },
-  };
-  return new RubiksConnected(standardizedDevice);
+function _getBleManager() {
+  return _MANAGER;
 }
 
-function isSmartcube(device: Device | null) {
+function _isSmartcube(device: Device | null) {
   return device?.name?.includes('Rubik');
 }
 
-function getBleManager() {
-  return manager;
+function _mapToBluetoothPuzzle(device: BluetoothDevice): BluetoothPuzzle {
+  // TODO add support for other puzzles here.
+  return new RubiksConnected(device);
 }
 
-export { getAvailableBluetoothCubes };
+class _ReactNativeBluetoothDevice extends BluetoothDevice {
+  private _device: Device;
+  constructor(device: Device) {
+    super();
+    this._device = device;
+  }
+  id(): string {
+    return this._device.id;
+  }
+  name(): string {
+    return this._device.name ?? 'Unknown';
+  }
+  protected async _connectToDevice(): Promise<any> {
+    console.debug(`Connecting to ${this.name()}`);
+    await this._device.connect();
+    console.debug(`Connected to device: ${this.name()}`);
+  }
+  protected async _addMonitor(
+    callback: MonitorCallback,
+    serviceUUID: string,
+    characteristicUUID: string,
+  ): Promise<void> {
+    const characteristic = await this.__findCharacteristic(
+      serviceUUID,
+      characteristicUUID,
+    );
+    if (characteristic) {
+      characteristic.monitor((error, updatedCharacteristic) =>
+        callback(error, updatedCharacteristic?.value),
+      );
+    } else {
+      this._device.cancelConnection();
+      throw new Error('Could not find state characteristic to monitor.');
+    }
+  }
+  private async __findCharacteristic(
+    serviceUUID: string,
+    characteristicUUID: string,
+  ): Promise<Characteristic> {
+    await this._device.discoverAllServicesAndCharacteristics();
+    console.debug(
+      `Services and Characteristics Discovered for ${this._device.name}`,
+    );
+    let services = await this._device.services();
+    let primaryService = services.filter(s => s.uuid === serviceUUID)[0];
+    let characteristics = await primaryService.characteristics();
+    characteristics.forEach(c => console.debug(c.uuid));
+    return characteristics.filter(c => c.uuid === characteristicUUID)[0];
+  }
+}
