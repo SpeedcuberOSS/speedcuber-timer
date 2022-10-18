@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "start-no-cache": "react-native start --reset-cache",
-    "env:storybook": "node envs/set-environment.js storybook",
+    "env:storybook": "node envs/set-environment.js storybook && rnstl",
     "env:dev": "node envs/set-environment.js dev",
     "env:qa": "node envs/set-environment.js qa",
     "env:prod": "node envs/set-environment.js prod",
