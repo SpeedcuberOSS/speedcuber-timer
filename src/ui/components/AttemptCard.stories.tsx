@@ -17,9 +17,6 @@ import { storiesOf } from '@storybook/react-native';
 
 // import { action } from '@storybook/addon-actions';
 
-
-
-
 let attempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
