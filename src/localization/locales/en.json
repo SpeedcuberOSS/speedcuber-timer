@@ -6,5 +6,8 @@
   "learn": "Learn",
   "practice": "Practice",
   "play": "Play",
-  "insights": "Insights"
+  "insights": "Insights",
+  "bluetooth": {
+    "connect": "Connect"
+  }
 }

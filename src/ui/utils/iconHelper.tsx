@@ -19,10 +19,12 @@ import OcticonsIcon from 'react-native-vector-icons/Octicons';
 import ZocialIcon from 'react-native-vector-icons/Zocial';
 import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
 
-type IconParams = {
+interface IconParams {
   size: number;
-  color: string;
-};
+  color?: string;
+}
+
+export type IconFunction = (params: IconParams) => JSX.Element;
 
 export default class Icons {
   private static render(Icon: any, name: string) {

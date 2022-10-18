@@ -6,5 +6,8 @@
   "learn": "Aprender",
   "practice": "Practicar",
   "play": "Jugar",
-  "insights": "Mejorar"
+  "insights": "Mejorar",
+  "bluetooth": {
+    "connect": "Conectar"
+  }
 }
