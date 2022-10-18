@@ -5,11 +5,16 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BleManager, Device } from 'react-native-ble-plx';
+import {
+  BluetoothDevice,
+  BluetoothPuzzle,
+  RubiksConnected,
+} from '../../../lib/bluetooth-puzzle';
 
 let manager = new BleManager();
 let subscription: { remove: () => void } | null = null;
 
-async function getAvailableBluetoothCubes(): Promise<Device[]> {
+async function getAvailableBluetoothCubes(): Promise<BluetoothPuzzle[]> {
   await _ensurePermissionsGranted();
   await _ensureBluetoothPoweredOn();
   let devices = await _getSmartcubes();
@@ -34,8 +39,8 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
   });
 }
 
-async function _getSmartcubes(): Promise<Device[]> {
-  return await new Promise<Device[]>((resolve, reject) => {
+async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
+  return await new Promise<BluetoothPuzzle[]>((resolve, reject) => {
     let devices: Map<string, Device> = new Map();
     if (subscription) {
       subscription.remove();
@@ -57,9 +62,51 @@ async function _getSmartcubes(): Promise<Device[]> {
     setTimeout(() => {
       console.debug('Stopping device scan');
       getBleManager().stopDeviceScan();
-      resolve(Array.from(devices.values()));
+      resolve(Array.from(devices.values()).map(d => asBluetoothPuzzle(d)));
     }, 5000);
   });
+}
+
+function asBluetoothPuzzle(device: Device): BluetoothPuzzle {
+  const standardizedDevice: BluetoothDevice = {
+    id: device.id,
+    name: device.name ?? 'Unknown',
+    connectionStatus: 'disconnected',
+    connect: async () => {
+      console.debug(`Connecting to ${device.name}`);
+      let cube = await device.connect();
+      console.debug(`Connected to device: ${cube.name}`);
+    },
+    disconnect: async () => {
+      device.cancelConnection();
+    },
+    monitor: async (
+      callback: (error: any, value: any) => any,
+      serviceUUID: string,
+      characteristicUUID: string,
+    ) => {
+      await device.discoverAllServicesAndCharacteristics();
+      console.debug(
+        `Services and Characteristics Discovered for ${device.name}`,
+      );
+      let services = await device.services();
+      let primaryService = services.filter(s => s.uuid === serviceUUID)[0];
+      let characteristics = await primaryService.characteristics();
+      characteristics.forEach(c => console.debug(c.uuid));
+      let stateCharacteristic = characteristics.filter(
+        c => c.uuid === characteristicUUID,
+      )[0];
+      if (stateCharacteristic) {
+        stateCharacteristic.monitor((error, characteristic) =>
+          callback(error, characteristic?.value),
+        );
+      } else {
+        device.cancelConnection();
+        throw new Error('Could not find state characteristic to monitor.');
+      }
+    },
+  };
+  return new RubiksConnected(standardizedDevice);
 }
 
 function isSmartcube(device: Device | null) {
@@ -70,33 +117,4 @@ function getBleManager() {
   return manager;
 }
 
-async function connectToCube(cube: Device) {
-  console.debug(`Connecting to ${cube.name}`);
-  let device = await cube.connect();
-  console.debug(`Connected to device: ${device.name}`);
-  await device.discoverAllServicesAndCharacteristics();
-  console.debug(`Services and Characteristics Discovered for ${device.name}`);
-  let services = await device.services();
-  let primaryService = services.filter(
-    s => s.uuid === '6e400001-b5a3-f393-e0a9-e50e24dcca9e', // GoCube Primary Service
-  )[0];
-  let characteristics = await primaryService.characteristics();
-  characteristics.forEach(c => console.debug(c.uuid));
-  let stateCharacteristic = characteristics.filter(
-    c => c.uuid === '6e400003-b5a3-f393-e0a9-e50e24dcca9e', // GoCube State Characteristic
-  )[0];
-  if (stateCharacteristic) {
-    stateCharacteristic.monitor((error, characteristic) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.debug(characteristic?.value);
-      }
-    });
-  } else {
-    cube.cancelConnection();
-    throw new Error('Could not find state characteristic to monitor.');
-  }
-}
-
-export { getAvailableBluetoothCubes, connectToCube };
+export { getAvailableBluetoothCubes };

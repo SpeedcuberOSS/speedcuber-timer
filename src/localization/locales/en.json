@@ -8,6 +8,7 @@
   "play": "Play",
   "insights": "Insights",
   "bluetooth": {
-    "connect": "Connect"
+    "connect": "Connect",
+    "start_scan": "Scan for smartcubes"
   }
 }

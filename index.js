@@ -7,10 +7,13 @@
 import App from './src/ui/App';
 import { AppRegistry } from 'react-native';
 import { IS_STORYBOOK } from './envs/_env.json';
-import Storybook from './storybook';
 import { name as appName } from './app.json';
 import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
+// import Storybook from './storybook';
+
+
+
 suppressKnownWarnings();
 
-AppRegistry.registerComponent(appName, () => (IS_STORYBOOK ? Storybook : App));
+AppRegistry.registerComponent(appName, () => (IS_STORYBOOK ? App : App));

@@ -4,47 +4,49 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Button, Text } from 'react-native-paper';
+
+import { BluetoothPuzzle } from '../../lib/bluetooth-puzzle';
+import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Button, Card, Text } from 'react-native-paper';
-import React, { useEffect } from 'react';
-import { getAvailableBluetoothCubes, connectToCube } from '../utils/bluetooth';
-import { Device } from 'react-native-ble-plx';
+import SmartPuzzleCard from '../components/SmartPuzzleCard';
+import { getAvailableBluetoothCubes } from '../utils/bluetooth';
+import { useTranslation } from 'react-i18next';
 
 export default function PlayScreen() {
-  const [cubeScanning, setCubeScanning] = React.useState(false);
-  const [devices, setDevices] = React.useState<Device[]>([]);
-  useEffect(() => {
-    async function scanForCubes() {
-      console.debug('Scanning for cubes');
-      const cubes = await getAvailableBluetoothCubes();
-      setDevices(cubes);
-      setCubeScanning(false);
-    }
-    if (cubeScanning) {
-      scanForCubes();
-    }
-  }, [cubeScanning]);
+  const [cubes, setCubes] = React.useState<BluetoothPuzzle[]>([]);
+  const { t } = useTranslation();
   return (
     <SafeAreaView>
       <Button
-        onPress={() => setCubeScanning(true)}
+        onPress={async () => {
+          console.debug('Scanning for cubes');
+          const cubes = await getAvailableBluetoothCubes();
+          setCubes(cubes);
+        }}
         mode="contained-tonal"
         icon="bluetooth">
-        Scan for devices
+        {t('bluetooth.start_scan')}
       </Button>
-      {devices ? (
-        devices.map(device => (
-          <Card key={device.id}>
-            <Card.Title title={device.name} />
-            <Card.Content>
-              <Button
-                onPress={() => connectToCube(device)}
-                mode="contained-tonal"
-                icon="bluetooth">
-                Connect
-              </Button>
-            </Card.Content>
-          </Card>
+      {cubes ? (
+        cubes.map(cube => (
+          // TODO convert to a driving component to update status.
+          <SmartPuzzleCard
+            key={cube.id}
+            name={cube.name}
+            brand={cube.brand}
+            puzzle={cube.puzzle}
+            connectionStatus={cube.connectionStatus}
+            onConnect={async () => {
+              await cube.connect();
+              await cube.monitorTurns((error, value) => {
+                if (error) {
+                  console.error(error);
+                }
+                console.debug(value);
+              });
+            }}
+          />
         ))
       ) : (
         <Text>No smartcubes found!</Text>

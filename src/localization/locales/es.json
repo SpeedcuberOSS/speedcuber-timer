@@ -8,6 +8,7 @@
   "play": "Jugar",
   "insights": "Mejorar",
   "bluetooth": {
-    "connect": "Conectar"
+    "connect": "Conectar",
+    "start_scan": "Buscar cubos inteligentes"
   }
 }

@@ -31,11 +31,11 @@ const PuzzleIcon = new Map<Puzzle, IconFunction>([
   [PUZZLE_3x3x3, Icons.MaterialCommunityIcons('grid')],
 ]);
 
-function SmartcubeCard({
+function SmartPuzzleCard({
   name = 'Unknown Name',
   brand = 'Unknown Brand',
   puzzle = PUZZLE_3x3x3,
-  connectionStatus = 'pending',
+  connectionStatus = 'disconnected',
   onConnect,
 }: SmartPuzzleCardProps) {
   const { t } = useTranslation();
@@ -46,7 +46,7 @@ function SmartcubeCard({
         subtitle={brand}
         left={PuzzleIcon.get(puzzle) ?? Icons.FontAwesome('question')}
         right={props => {
-          if (connectionStatus === 'pending') {
+          if (connectionStatus === 'disconnected') {
             return (
               <Button
                 {...props}
@@ -87,7 +87,7 @@ function SmartcubeCard({
   );
 }
 
-export default SmartcubeCard;
+export default SmartPuzzleCard;
 
 const styles = StyleSheet.create({
   button: {
