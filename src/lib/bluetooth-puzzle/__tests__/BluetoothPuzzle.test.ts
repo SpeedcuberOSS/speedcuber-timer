@@ -8,11 +8,11 @@ import { BluetoothPuzzle, MoveListener } from '../BluetoothPuzzle';
 import { PUZZLE_3x3x3, Puzzle } from '../../stif';
 
 import { ConnectionStatus } from '../BluetoothDevice';
-import { MockBluetoothDevice } from './BluetoothDevice.test';
+import { DemoBluetoothDevice } from '../DemoBluetoothDevice';
 
 class MockBluetoothPuzzle extends BluetoothPuzzle {
   constructor() {
-    super(new MockBluetoothDevice());
+    super(new DemoBluetoothDevice());
   }
   brand(): string {
     return 'Mock Brand';
@@ -24,8 +24,8 @@ class MockBluetoothPuzzle extends BluetoothPuzzle {
     this._device.monitor(callback, '0000', '0000');
   }
 
-  device(): MockBluetoothDevice {
-    return this._device as MockBluetoothDevice;
+  device(): DemoBluetoothDevice {
+    return this._device as DemoBluetoothDevice;
   }
 }
 

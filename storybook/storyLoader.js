@@ -8,6 +8,7 @@ function loadStories() {
   require('../src/ui/components/InspectionTime.stories');
   require('../src/ui/components/InspectionTimer.stories');
   require('../src/ui/components/SmartPuzzleCard.stories');
+  require('../src/ui/components/SmartPuzzleConnector.stories');
 }
 
 const stories = [
@@ -15,6 +16,7 @@ const stories = [
   '../src/ui/components/InspectionTime.stories',
   '../src/ui/components/InspectionTimer.stories',
   '../src/ui/components/SmartPuzzleCard.stories',
+  '../src/ui/components/SmartPuzzleConnector.stories',
 ];
 
 module.exports = {
