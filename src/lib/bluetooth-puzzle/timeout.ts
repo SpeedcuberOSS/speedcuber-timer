@@ -18,7 +18,7 @@ export const timeout = (
     (_resolve, reject) =>
       (timer = setTimeout(reject, milliseconds, timeoutException)),
   );
-  return Promise.race([promise, timeoutPromise]).finally(() =>
-    clearTimeout(timer),
-  );
+  return Promise.race([promise, timeoutPromise])
+    .catch()
+    .then(() => clearTimeout(timer));
 };

@@ -51,9 +51,11 @@ async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
       null,
       null,
       (error, device) => {
-        console.debug(`Found device named '${device?.name}'`);
+        if (device?.name) {
+          console.debug(`Found device named '${device.name}'`);
+        }
         if (error) {
-          console.error(error);
+          console.error(`Error while getting smartcubes: ${error}`);
           reject(error);
         } else if (device && _isSmartcube(device)) {
           devices.set(device.name ?? 'Unknown', device);

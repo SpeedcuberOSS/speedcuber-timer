@@ -17,7 +17,7 @@ export class RubiksConnected extends BluetoothPuzzle {
   addMoveListener(callback: MoveListener): void {
     const monitorFunction = (error: any, value: any) => {
       if (error) {
-        console.log(error);
+        console.error(`Error while listening to moves: ${error}`);
         return;
       }
       const move = value.toString();
