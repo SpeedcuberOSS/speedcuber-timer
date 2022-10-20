@@ -6,11 +6,12 @@
 
 import {
   ActivityIndicator,
+  Avatar,
   Button,
   Card,
   IconButton,
 } from 'react-native-paper';
-import Icons, { IconFunction } from '../utils/iconHelper';
+import Icons, { IconFunction } from '../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../lib/stif';
 
 import { ConnectionStatus } from '../../lib/bluetooth-puzzle';
@@ -26,16 +27,23 @@ interface SmartPuzzleCardProps {
   onConnect: () => Promise<void>;
 }
 
-const PuzzleIcon = new Map<Puzzle, IconFunction>([
-  [PUZZLE_2x2x2, Icons.MaterialCommunityIcons('grid-large')],
-  [PUZZLE_3x3x3, Icons.MaterialCommunityIcons('grid')],
+const TitleIcon = (icon: any) => (props: { size: number }) =>
+  <Avatar.Icon {...props} icon={icon} />;
+
+const PuzzleIcons = new Map<Puzzle, IconFunction>([
+  [PUZZLE_2x2x2, TitleIcon(Icons.WCAEvent('222'))],
+  [PUZZLE_3x3x3, TitleIcon(Icons.WCAEvent('333'))],
 ]);
+
+function getPuzzleIcon(puzzle: Puzzle): IconFunction {
+  return PuzzleIcons.get(puzzle) || TitleIcon(Icons.FontAwesome('question'));
+}
 
 function SmartPuzzleCard({
   name = 'Unknown Name',
   brand = 'Unknown Brand',
   puzzle = PUZZLE_3x3x3,
-  connectionStatus = 'disconnected',
+  connectionStatus = ConnectionStatus.DISCONNECTED,
   onConnect,
 }: SmartPuzzleCardProps) {
   const { t } = useTranslation();
@@ -44,9 +52,9 @@ function SmartPuzzleCard({
       <Card.Title
         title={name}
         subtitle={brand}
-        left={PuzzleIcon.get(puzzle) ?? Icons.FontAwesome('question')}
+        left={getPuzzleIcon(puzzle)}
         right={props => {
-          if (connectionStatus === 'disconnected') {
+          if (connectionStatus === ConnectionStatus.DISCONNECTED) {
             return (
               <Button
                 {...props}
@@ -57,9 +65,9 @@ function SmartPuzzleCard({
                 {t('bluetooth.connect')}
               </Button>
             );
-          } else if (connectionStatus === 'connecting') {
-            return <ActivityIndicator animating style={styles.connection} />;
-          } else if (connectionStatus === 'connected') {
+          } else if (connectionStatus === ConnectionStatus.CONNECTING) {
+            return <ActivityIndicator animating style={styles.connecting} />;
+          } else if (connectionStatus === ConnectionStatus.CONNECTED) {
             return (
               <IconButton
                 icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
@@ -92,6 +100,9 @@ export default SmartPuzzleCard;
 const styles = StyleSheet.create({
   button: {
     marginRight: 15,
+  },
+  connecting: {
+    marginHorizontal: 28,
   },
   connection: {
     marginHorizontal: 20,

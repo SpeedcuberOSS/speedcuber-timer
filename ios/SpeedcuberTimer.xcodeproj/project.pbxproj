@@ -28,6 +28,9 @@
 		2C324C592851D08D00A07F04 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C492851D08D00A07F04 /* EvilIcons.ttf */; };
 		2C324C5A2851D08D00A07F04 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */; };
 		2C324C5B2851D08D00A07F04 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */; };
+		2C7CA2E22901C77700277A1C /* WCAEvent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E12901C77700277A1C /* WCAEvent.ttf */; };
+		2C7CA2E42901C79400277A1C /* WCAEventUnofficial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */; };
+		2C7CA2E62901C79E00277A1C /* WCAInfraction.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,9 @@
 		2C324C492851D08D00A07F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		2C7CA2E12901C77700277A1C /* WCAEvent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAEvent.ttf; path = ../../../src/ui/icons/wca/WCAEvent/WCAEvent.ttf; sourceTree = "<group>"; };
+		2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAEventUnofficial.ttf; path = ../../../src/ui/icons/wca/WCAEventUnofficial/WCAEventUnofficial.ttf; sourceTree = "<group>"; };
+		2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAInfraction.ttf; path = ../../../src/ui/icons/wca/WCAInfraction/WCAInfraction.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SpeedcuberTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer.debug.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer/Pods-SpeedcuberTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SpeedcuberTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer.release.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer/Pods-SpeedcuberTimer.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 				2C324C492851D08D00A07F04 /* EvilIcons.ttf */,
 				2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */,
 				2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */,
+				2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */,
+				2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */,
+				2C7CA2E12901C77700277A1C /* WCAEvent.ttf */,
 			);
 			name = Fonts;
 			path = "../node_modules/react-native-vector-icons/Fonts";
@@ -304,11 +313,13 @@
 				2C324C532851D08D00A07F04 /* Foundation.ttf in Resources */,
 				2C324C562851D08D00A07F04 /* FontAwesome5_Regular.ttf in Resources */,
 				2C324C542851D08D00A07F04 /* Ionicons.ttf in Resources */,
+				2C7CA2E22901C77700277A1C /* WCAEvent.ttf in Resources */,
 				2C324C592851D08D00A07F04 /* EvilIcons.ttf in Resources */,
 				2C324C4F2851D08D00A07F04 /* Entypo.ttf in Resources */,
 				2C324C582851D08D00A07F04 /* Zocial.ttf in Resources */,
 				2C324C5A2851D08D00A07F04 /* SimpleLineIcons.ttf in Resources */,
 				2C324C4E2851D08D00A07F04 /* Feather.ttf in Resources */,
+				2C7CA2E42901C79400277A1C /* WCAEventUnofficial.ttf in Resources */,
 				2C324C4D2851D08D00A07F04 /* Octicons.ttf in Resources */,
 				2C324C502851D08D00A07F04 /* FontAwesome5_Brands.ttf in Resources */,
 				2C324C522851D08D00A07F04 /* AntDesign.ttf in Resources */,
@@ -317,6 +328,7 @@
 				2C324C512851D08D00A07F04 /* MaterialCommunityIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				2C7CA2E62901C79E00277A1C /* WCAInfraction.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import { BottomNavigation } from 'react-native-paper';
-import Icons from '../utils/iconHelper';
+import Icons from '../icons/iconHelper';
 import LearnScreen from '../screens/LearnScreen';
 import PracticeScreen from '../screens/PracticeScreen';
 import PlayScreen from '../screens/PlayScreen';
@@ -28,7 +28,11 @@ const MainNavigator = () => {
   const { t } = useTranslation();
   const [index, setIndex] = React.useState<number>(0);
   const [routes] = React.useState<RoutesState>([
-    { key: 'learn', title: t('learn'), focusedIcon: Icons.Entypo('open-book') },
+    {
+      key: 'learn',
+      title: t('learn'),
+      focusedIcon: Icons.Entypo('open-book'),
+    },
     {
       key: 'practice',
       title: t('practice'),
