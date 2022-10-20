@@ -34,7 +34,13 @@ export abstract class BluetoothDevice {
     if (this.connectionStatus() !== ConnectionStatus.CONNECTED) {
       throw new Error('Cannot monitor a disconnected device');
     }
-    this._addMonitor(callback, serviceUUID, characteristicUUID);
+    const monitorCallbackWrapper = (error: any, value: any) => {
+      if (error && error.contains('disconnected')) {
+        this.__setConnectionStatus(ConnectionStatus.DISCONNECTED);
+      }
+      callback(error, value);
+    };
+    this._addMonitor(monitorCallbackWrapper, serviceUUID, characteristicUUID);
   }
   connectionStatus(): ConnectionStatus {
     return this._connectionStatus;
@@ -46,24 +52,30 @@ export abstract class BluetoothDevice {
     let result = null;
     this.__setConnectionStatus(ConnectionStatus.CONNECTING);
     try {
+      console.debug(
+        `BluetoothDevice attempting to connect with timeout of ${timeoutMillis}ms`,
+      );
       result = await timeout(
         this._connectToDevice(),
         timeoutMillis,
         new Error(`Timeout of ${timeoutMillis}ms exceeded`),
       );
+      console.debug(`BluetoothDevice successfully connected.`);
       this.__setConnectionStatus(ConnectionStatus.CONNECTED);
-    } catch (e) {
+    } catch (error) {
       if (
-        e instanceof Error &&
-        e.message !== `Timeout of ${timeoutMillis}ms exceeded`
+        error instanceof Error &&
+        error.message !== `Timeout of ${timeoutMillis}ms exceeded`
       ) {
-        console.error(e);
+        console.error(`Error while connecting to device: ${error}`);
       }
+      console.debug(`BluetoothDevice failed to connect.`);
       this.__setConnectionStatus(ConnectionStatus.DISCONNECTED);
     }
     return Promise.resolve(result);
   }
   private __setConnectionStatus(status: ConnectionStatus) {
+    console.debug(`BluetoothDevice updating status to: ${status}`);
     this._connectionStatus = status;
     this._connectionStatusListeners.forEach(listener => listener(status));
   }
