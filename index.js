@@ -10,8 +10,8 @@ import { IS_STORYBOOK } from './envs/_env.json';
 import { name as appName } from './app.json';
 import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
-import Storybook from './storybook';
+// import Storybook from './storybook';
 
 suppressKnownWarnings();
 
-AppRegistry.registerComponent(appName, () => (IS_STORYBOOK ? Storybook : App));
+AppRegistry.registerComponent(appName, () => (IS_STORYBOOK ? App : App));

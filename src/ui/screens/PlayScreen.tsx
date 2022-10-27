@@ -25,8 +25,8 @@ export default function PlayScreen() {
           console.debug('Scanning for cubes');
           setProgressVisible(true);
           try {
-            const cubes = await getAvailableBluetoothCubes();
-            setCubes(cubes);
+            const discoveredCubes = await getAvailableBluetoothCubes();
+            setCubes(discoveredCubes);
           } catch (error) {
             console.error(`Error while discovering cubes: ${error}`);
           }
