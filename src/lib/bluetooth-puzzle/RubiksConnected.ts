@@ -3,7 +3,7 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
+import { Buffer } from 'buffer';
 import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
 import { PUZZLE_3x3x3, Puzzle } from '../stif';
 
@@ -22,7 +22,7 @@ export class RubiksConnected extends BluetoothPuzzle {
       }
       const messageHexValues = base64ValueToHexArray(value);
       const message = parseGoCubeMessage(messageHexValues);
-      callback(message.toString());
+      callback(JSON.stringify(message));
     };
     this.__monitorTurns(monitorFunction);
   }
@@ -39,7 +39,16 @@ function base64ValueToHexArray(value: string): string[] {
   return hexDigits ? hexDigits : [];
 }
 
-function parseGoCubeMessage(hexValues: string[]): any {
+interface RawGoCubeMessage {
+  prefix: string;
+  messageLength: string;
+  messageType: string;
+  message: string[];
+  checksum: string;
+  suffix: string[];
+}
+
+function parseGoCubeMessage(hexValues: string[]): RawGoCubeMessage {
   // https://github.com/oddpetersson/gocube-protocol/blob/main/README.md#common-message-format
   hexValues = hexValues.map(v => v.toUpperCase());
   const prefix = hexValues[0];
@@ -75,7 +84,14 @@ function parseGoCubeMessage(hexValues: string[]): any {
       .toUpperCase();
   };
   console.assert(checksum === calculateChecksum(), 'Checksum should match');
-  return messageFromParts;
+  return {
+    prefix,
+    messageLength,
+    messageType,
+    message,
+    checksum,
+    suffix,
+  };
 }
 
 // The following code is modified from cubing.js
