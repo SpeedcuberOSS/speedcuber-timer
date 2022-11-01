@@ -20,9 +20,10 @@ export class RubiksConnected extends BluetoothPuzzle {
         console.error(`Error while listening to moves: ${error}`);
         return;
       }
-      const messageHexValues = base64ValueToHexArray(value);
-      const message = parseGoCubeMessage(messageHexValues);
-      validateGoCubeMessage(message);
+      const hexValues = base64ValueToHexArray(value);
+      const rawMmessage = parseRawMessage(hexValues);
+      validateMessage(rawMmessage);
+      const message = parseMessage(rawMmessage);
       callback(JSON.stringify(message));
     };
     this.__monitorTurns(monitorFunction);
@@ -49,7 +50,7 @@ interface RawGoCubeMessage {
   suffix: string[];
 }
 
-function parseGoCubeMessage(hexValues: string[]): RawGoCubeMessage {
+function parseRawMessage(hexValues: string[]): RawGoCubeMessage {
   // https://github.com/oddpetersson/gocube-protocol/blob/main/README.md#common-message-format
   const MSG_LENGTH = parseInt(hexValues[1], 16);
   return {
@@ -62,29 +63,106 @@ function parseGoCubeMessage(hexValues: string[]): RawGoCubeMessage {
   };
 }
 
-function validateGoCubeMessage(msg: RawGoCubeMessage): void {
-  validateGoCubeMessagePrefix(msg.prefix);
-  validateGoCubeMessageSuffix(msg.suffix);
-  validateGoCubeMessageChecksum(msg);
+function validateMessage(msg: RawGoCubeMessage): void {
+  validatePrefix(msg.prefix);
+  validateSuffix(msg.suffix);
+  validateChecksum(msg);
 }
 
-function validateGoCubeMessagePrefix(prefix: string): void {
+function validatePrefix(prefix: string): void {
   console.assert(prefix === '2A', 'Prefix should be 0x2A');
 }
 
-function validateGoCubeMessageSuffix(suffix: string[]): void {
+function validateSuffix(suffix: string[]): void {
   console.assert(
     suffix[0] === '0D' && suffix[1] === '0A',
     'Suffix should be 0x0D,0x0A (CR,LF)',
   );
 }
 
-function validateGoCubeMessageChecksum(msg: RawGoCubeMessage) {
+function validateChecksum(msg: RawGoCubeMessage) {
   const checksummedParts = [msg.prefix, msg.length, msg.type, ...msg.message];
   const checksum = checksummedParts
     .reduce((a, b) => (parseInt(a, 16) + parseInt(b, 16)).toString(16))
     .toUpperCase();
   console.assert(msg.checksum === checksum, 'Checksum should match');
+}
+
+enum GoCubeMessageType {
+  Rotation = '01',
+  State = '02',
+  Orientation = '03',
+  Battery = '05',
+  OfflineStats = '07',
+  CubeType = '08',
+}
+
+function parseMessage(msg: RawGoCubeMessage) {
+  switch (msg.type) {
+    case GoCubeMessageType.Rotation:
+      return parseRotationMessage(msg);
+    // case GoCubeMessageType.State:
+    //   return parseGoCubeStateMessage(msg);
+    // case GoCubeMessageType.Orientation:
+    //   return parseGoCubeOrientationMessage(msg);
+    // case GoCubeMessageType.Battery:
+    //   return parseGoCubeBatteryMessage(msg);
+    // case GoCubeMessageType.OfflineStats:
+    //   return parseGoCubeOfflineStatsMessage(msg);
+    // case GoCubeMessageType.CubeType:
+    //   return parseGoCubeCubeTypeMessage(msg);
+    default:
+      throw new Error(`Unsupported message type: ${msg.type}`);
+  }
+}
+
+type FaceColor = 'White' | 'Yellow' | 'Blue' | 'Green' | 'Red' | 'Orange';
+type Direction = 'clockwise' | 'counterclockwise';
+type Angle = 0 | 90 | 180 | 270;
+interface GoCubeRotationMessage {
+  face: FaceColor;
+  direction: Direction;
+  angle: Angle;
+}
+
+function parseRotationMessage(msg: RawGoCubeMessage): GoCubeRotationMessage {
+  const faceRotationInt = parseInt(msg.message[0], 16);
+  const angleInt = parseInt(msg.message[1], 16);
+  return {
+    face: parseFaceColor(faceRotationInt),
+    direction: parseDirection(faceRotationInt),
+    angle: parseAngle(angleInt),
+  };
+}
+
+function parseDirection(faceRotationInt: number): Direction {
+  return faceRotationInt % 2 === 0 ? 'clockwise' : 'counterclockwise';
+}
+function parseFaceColor(faceRotationInt: number): FaceColor {
+  const faceInt = Math.floor(faceRotationInt / 2);
+  switch (faceInt) {
+    case 0:
+      return 'Blue';
+    case 1:
+      return 'Green';
+    case 2:
+      return 'White';
+    case 3:
+      return 'Yellow';
+    case 4:
+      return 'Red';
+    case 5:
+      return 'Orange';
+    default:
+      throw new Error(`Invalid face number: ${faceRotationInt}`);
+  }
+}
+
+function parseAngle(angleInt: number): Angle {
+  if ([0, 3, 6, 9].indexOf(angleInt) === -1) {
+    throw new Error(`Invalid angle number: ${angleInt}`);
+  }
+  return (angleInt * 30) as Angle;
 }
 
 // The following code is modified from cubing.js
