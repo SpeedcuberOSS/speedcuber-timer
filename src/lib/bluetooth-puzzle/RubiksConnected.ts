@@ -22,6 +22,7 @@ export class RubiksConnected extends BluetoothPuzzle {
       }
       const messageHexValues = base64ValueToHexArray(value);
       const message = parseGoCubeMessage(messageHexValues);
+      validateGoCubeMessage(message);
       callback(JSON.stringify(message));
     };
     this.__monitorTurns(monitorFunction);
@@ -36,13 +37,13 @@ export class RubiksConnected extends BluetoothPuzzle {
 function base64ValueToHexArray(value: string): string[] {
   const hexString = Buffer.from(value, 'base64').toString('hex');
   const hexDigits = hexString.match(/.{1,2}/g);
-  return hexDigits ? hexDigits : [];
+  return (hexDigits ? hexDigits : []).map(v => v.toUpperCase());
 }
 
 interface RawGoCubeMessage {
   prefix: string;
-  messageLength: string;
-  messageType: string;
+  length: string;
+  type: string;
   message: string[];
   checksum: string;
   suffix: string[];
@@ -50,48 +51,40 @@ interface RawGoCubeMessage {
 
 function parseGoCubeMessage(hexValues: string[]): RawGoCubeMessage {
   // https://github.com/oddpetersson/gocube-protocol/blob/main/README.md#common-message-format
-  hexValues = hexValues.map(v => v.toUpperCase());
-  const prefix = hexValues[0];
-  const messageLength = hexValues[1];
-  const messageType = hexValues[2];
-  const message = hexValues.slice(3, 3 + (parseInt(messageLength, 16) - 4));
-  const checksum = hexValues[parseInt(messageLength, 16) - 1];
-  const suffix = hexValues.slice(-2);
+  const MSG_LENGTH = parseInt(hexValues[1], 16);
+  return {
+    prefix: hexValues[0],
+    length: hexValues[1],
+    type: hexValues[2],
+    message: hexValues.slice(3, 3 + (MSG_LENGTH - 4)),
+    checksum: hexValues[MSG_LENGTH - 1],
+    suffix: hexValues.slice(-2),
+  };
+}
 
-  // Parsing Validation
-  // TODO extract into separate function
+function validateGoCubeMessage(msg: RawGoCubeMessage): void {
+  validateGoCubeMessagePrefix(msg.prefix);
+  validateGoCubeMessageSuffix(msg.suffix);
+  validateGoCubeMessageChecksum(msg);
+}
+
+function validateGoCubeMessagePrefix(prefix: string): void {
   console.assert(prefix === '2A', 'Prefix should be 0x2A');
+}
+
+function validateGoCubeMessageSuffix(suffix: string[]): void {
   console.assert(
     suffix[0] === '0D' && suffix[1] === '0A',
     'Suffix should be 0x0D,0x0A (CR,LF)',
   );
-  const messageFromParts = [
-    prefix,
-    messageLength,
-    messageType,
-    ...message,
-    checksum,
-    ...suffix,
-  ];
-  console.assert(
-    messageFromParts.join('') === hexValues.join(''),
-    'Parsed message parts should match original message',
-  );
-  const calculateChecksum = (): string => {
-    return hexValues
-      .slice(0, parseInt(messageLength, 16) - 1)
-      .reduce((a, b) => (parseInt(a, 16) + parseInt(b, 16)).toString(16))
-      .toUpperCase();
-  };
-  console.assert(checksum === calculateChecksum(), 'Checksum should match');
-  return {
-    prefix,
-    messageLength,
-    messageType,
-    message,
-    checksum,
-    suffix,
-  };
+}
+
+function validateGoCubeMessageChecksum(msg: RawGoCubeMessage) {
+  const checksummedParts = [msg.prefix, msg.length, msg.type, ...msg.message];
+  const checksum = checksummedParts
+    .reduce((a, b) => (parseInt(a, 16) + parseInt(b, 16)).toString(16))
+    .toUpperCase();
+  console.assert(msg.checksum === checksum, 'Checksum should match');
 }
 
 // The following code is modified from cubing.js
