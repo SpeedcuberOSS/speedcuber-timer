@@ -19,6 +19,8 @@ import {
 } from 'victory-native';
 import { VictoryThemeDefinition } from 'victory-core';
 
+import ModelView from 'react-native-gl-model-view';
+
 let library = getLibrary();
 let chartTheme: VictoryThemeDefinition = {
   ...VictoryTheme.material,
@@ -46,29 +48,21 @@ export default function InsightsScreen() {
   );
   console.debug(`showing ${data.length} attempts`);
   return (
-    <SafeAreaView style={styles.container}>
-      <VictoryChart
-        theme={chartTheme}
-        domainPadding={20}
-        containerComponent={<VictoryZoomContainer />}
-        height={Dimensions.get('window').height * (3 / 8)}
-        domain={{
-          x: [0, data.length],
-          y: [0, Math.max(...data.map(a => a.duration / 1000))],
-        }}>
-        <VictoryScatter
-          style={{
-            data: { fill: theme.colors.primary },
-          }}
-          size={1}
-          data={data.map((attempt, index) => ({
-            x: data.length - index,
-            y: attempt.duration / 1000,
-          }))}
-        />
-      </VictoryChart>
-      <BigList data={data} renderItem={renderAttempt} itemHeight={125} />
-    </SafeAreaView>
+    <ModelView
+      model={{
+        uri: 'testcube.obj',
+      }}
+      texture={{
+        uri: 'testcube.png',
+      }}
+
+      scale={0.1}
+
+      translateZ={-2}
+      rotateZ={270}
+
+      style={{flex: 1}}
+    />
   );
 }
 
