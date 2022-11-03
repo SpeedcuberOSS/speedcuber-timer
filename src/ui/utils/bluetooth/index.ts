@@ -12,13 +12,18 @@ import {
   RubiksConnected,
 } from '../../../lib/bluetooth-puzzle';
 
+export const DEFAULT_BLUETOOTH_SCAN_DURATION = 5000
 let _MANAGER = new BleManager();
 let _SUBSCRIPTION: { remove: () => void } | null = null;
+type PuzzleDiscoveryListener = (puzzle: BluetoothPuzzle) => void
 
-export async function getAvailableBluetoothCubes(): Promise<BluetoothPuzzle[]> {
+export async function getAvailableBluetoothCubes(
+  scanDurationMillis: number = 5000,
+  onDiscoverPuzzle: PuzzleDiscoveryListener = (_p: BluetoothPuzzle) => {}
+): Promise<BluetoothPuzzle[]> {
   await _ensurePermissionsGranted();
   await _ensureBluetoothPoweredOn();
-  let devices = await _getSmartcubes();
+  let devices = await _getSmartcubes(scanDurationMillis, onDiscoverPuzzle);
   return devices;
 }
 
@@ -40,7 +45,7 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
   });
 }
 
-async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
+async function _getSmartcubes(scanDurationMillis: number, onDiscoverPuzzle: PuzzleDiscoveryListener): Promise<BluetoothPuzzle[]> {
   return await new Promise<BluetoothPuzzle[]>((resolve, reject) => {
     let devices: Map<string, Device> = new Map();
     if (_SUBSCRIPTION) {
@@ -59,6 +64,7 @@ async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
           reject(error);
         } else if (device && _isSmartcube(device)) {
           devices.set(device.name ?? 'Unknown', device);
+          onDiscoverPuzzle(_mapToBluetoothPuzzle(new _ReactNativeBluetoothDevice(device)))
         }
       },
     );
@@ -70,7 +76,7 @@ async function _getSmartcubes(): Promise<BluetoothPuzzle[]> {
           .map(d => new _ReactNativeBluetoothDevice(d))
           .map(d => _mapToBluetoothPuzzle(d)),
       );
-    }, 5000);
+    }, scanDurationMillis);
   });
 }
 

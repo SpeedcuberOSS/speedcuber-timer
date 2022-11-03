@@ -7,14 +7,14 @@
 import { Button, ProgressBar, Text } from 'react-native-paper';
 import React, { useState } from 'react';
 
-import { BluetoothPuzzle } from '../../lib/bluetooth-puzzle';
+import { DEFAULT_BLUETOOTH_SCAN_DURATION } from '../utils/bluetooth';
 import { SafeAreaView } from 'react-native';
 import SmartPuzzleConnector from '../components/SmartPuzzleConnector';
-import { getAvailableBluetoothCubes } from '../utils/bluetooth';
+import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
 import { useTranslation } from 'react-i18next';
 
 export default function PlayScreen() {
-  const [cubes, setCubes] = useState<BluetoothPuzzle[]>([]);
+  const { puzzles, puzzleScan } = useSmartPuzzles();
   const [progressVisible, setProgressVisible] = useState(false);
   const [moves, setMoves] = useState<string[]>([]);
   const { t } = useTranslation();
@@ -25,20 +25,21 @@ export default function PlayScreen() {
           console.debug('Scanning for cubes');
           setProgressVisible(true);
           try {
-            const discoveredCubes = await getAvailableBluetoothCubes();
-            setCubes(discoveredCubes);
+            puzzleScan(DEFAULT_BLUETOOTH_SCAN_DURATION);
           } catch (error) {
             console.error(`Error while discovering cubes: ${error}`);
           }
-          setProgressVisible(false);
+          setTimeout(() => {
+            setProgressVisible(false);
+          }, DEFAULT_BLUETOOTH_SCAN_DURATION);
         }}
         mode="contained-tonal"
         icon="bluetooth">
         {t('bluetooth.start_scan')}
       </Button>
       <ProgressBar visible={progressVisible} indeterminate />
-      {cubes.length > 0 &&
-        cubes.map(cube => (
+      {puzzles.length > 0 &&
+        puzzles.map(cube => (
           <SmartPuzzleConnector
             key={cube.id()}
             smartPuzzle={cube}
