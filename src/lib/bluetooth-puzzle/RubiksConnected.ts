@@ -1,11 +1,12 @@
+import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
+import { PUZZLE_3x3x3, Puzzle } from '../stif';
+
 // Copyright (c) 2022 Joseph Hale <me@jhale.dev>
 //
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { Buffer } from 'buffer';
-import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
-import { PUZZLE_3x3x3, Puzzle } from '../stif';
 
 export class RubiksConnected extends BluetoothPuzzle {
   brand(): string {
@@ -24,7 +25,9 @@ export class RubiksConnected extends BluetoothPuzzle {
       const rawMmessage = parseRawMessage(hexValues);
       validateMessage(rawMmessage);
       const message = parseMessage(rawMmessage);
-      callback(JSON.stringify(message));
+      if (message) {
+        callback(JSON.stringify(message));
+      }
     };
     this.__monitorTurns(monitorFunction);
   }
@@ -32,6 +35,15 @@ export class RubiksConnected extends BluetoothPuzzle {
     const serviceUUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
     const characteristicUUID = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
     this._device.monitor(callback, serviceUUID, characteristicUUID);
+  }
+}
+
+export class GoCube extends RubiksConnected {
+  brand(): string {
+    return 'GoCube';
+  }
+  puzzle(): Puzzle {
+    return PUZZLE_3x3x3;
   }
 }
 
@@ -112,7 +124,10 @@ function parseMessage(msg: RawGoCubeMessage) {
     // case GoCubeMessageType.CubeType:
     //   return parseGoCubeCubeTypeMessage(msg);
     default:
-      throw new Error(`Unsupported message type: ${msg.type}`);
+      (function noop() {
+        // Do nothing until other message types are implemented
+        // console.warn(`Unsupported message type: ${msg.type}`);
+      })();
   }
 }
 

@@ -8,18 +8,19 @@ import { BleManager, Characteristic, Device } from 'react-native-ble-plx';
 import {
   BluetoothDevice,
   BluetoothPuzzle,
+  GoCube,
   MonitorCallback,
   RubiksConnected,
 } from '../../../lib/bluetooth-puzzle';
 
-export const DEFAULT_BLUETOOTH_SCAN_DURATION = 5000
+export const DEFAULT_BLUETOOTH_SCAN_DURATION = 5000;
 let _MANAGER = new BleManager();
 let _SUBSCRIPTION: { remove: () => void } | null = null;
-type PuzzleDiscoveryListener = (puzzle: BluetoothPuzzle) => void
+type PuzzleDiscoveryListener = (puzzle: BluetoothPuzzle) => void;
 
 export async function getAvailableBluetoothCubes(
   scanDurationMillis: number = 5000,
-  onDiscoverPuzzle: PuzzleDiscoveryListener = (_p: BluetoothPuzzle) => {}
+  onDiscoverPuzzle: PuzzleDiscoveryListener = (_p: BluetoothPuzzle) => {},
 ): Promise<BluetoothPuzzle[]> {
   await _ensurePermissionsGranted();
   await _ensureBluetoothPoweredOn();
@@ -45,7 +46,10 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
   });
 }
 
-async function _getSmartcubes(scanDurationMillis: number, onDiscoverPuzzle: PuzzleDiscoveryListener): Promise<BluetoothPuzzle[]> {
+async function _getSmartcubes(
+  scanDurationMillis: number,
+  onDiscoverPuzzle: PuzzleDiscoveryListener,
+): Promise<BluetoothPuzzle[]> {
   return await new Promise<BluetoothPuzzle[]>((resolve, reject) => {
     let devices: Map<string, Device> = new Map();
     if (_SUBSCRIPTION) {
@@ -64,7 +68,9 @@ async function _getSmartcubes(scanDurationMillis: number, onDiscoverPuzzle: Puzz
           reject(error);
         } else if (device && _isSmartcube(device)) {
           devices.set(device.name ?? 'Unknown', device);
-          onDiscoverPuzzle(_mapToBluetoothPuzzle(new _ReactNativeBluetoothDevice(device)))
+          onDiscoverPuzzle(
+            _mapToBluetoothPuzzle(new _ReactNativeBluetoothDevice(device)),
+          );
         }
       },
     );
@@ -85,11 +91,17 @@ function _getBleManager() {
 }
 
 function _isSmartcube(device: Device | null) {
-  return device?.name?.includes('Rubik');
+  return device?.name?.includes('Rubik') || device?.name?.includes('GoCube');
 }
 
 function _mapToBluetoothPuzzle(device: BluetoothDevice): BluetoothPuzzle {
   // TODO add support for other puzzles here.
+  if (device.name().includes('Rubik')) {
+    return new RubiksConnected(device);
+  }
+  if (device.name().includes('GoCube')) {
+    return new GoCube(device);
+  }
   return new RubiksConnected(device);
 }
 
