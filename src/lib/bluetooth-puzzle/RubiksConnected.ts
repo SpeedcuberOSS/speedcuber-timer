@@ -1,5 +1,5 @@
 import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
-import { PUZZLE_3x3x3, Puzzle } from '../stif';
+import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
 
 // Copyright (c) 2022 Joseph Hale <me@jhale.dev>
 //
@@ -44,6 +44,15 @@ export class GoCube extends RubiksConnected {
   }
   puzzle(): Puzzle {
     return PUZZLE_3x3x3;
+  }
+}
+
+export class GoCube2x2x2 extends RubiksConnected {
+  brand(): string {
+    return 'GoCube 2x2';
+  }
+  puzzle(): Puzzle {
+    return PUZZLE_2x2x2;
   }
 }
 

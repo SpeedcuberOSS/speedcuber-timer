@@ -9,6 +9,7 @@ import {
   BluetoothDevice,
   BluetoothPuzzle,
   GoCube,
+  GoCube2x2x2,
   MonitorCallback,
   RubiksConnected,
 } from '../../../lib/bluetooth-puzzle';
@@ -98,6 +99,9 @@ function _mapToBluetoothPuzzle(device: BluetoothDevice): BluetoothPuzzle {
   // TODO add support for other puzzles here.
   if (device.name().includes('Rubik')) {
     return new RubiksConnected(device);
+  }
+  if (device.name().includes('GoCube2x2')) {
+    return new GoCube2x2x2(device);
   }
   if (device.name().includes('GoCube')) {
     return new GoCube(device);
