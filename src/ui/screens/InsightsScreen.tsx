@@ -4,22 +4,47 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, Dimensions } from 'react-native';
 import React from 'react';
 import BigList from 'react-native-big-list';
 import { getLibrary } from '../../lib/attempts';
 import AttemptCard from '../components/AttemptCard';
+import { getCurrentTheme } from '../themes';
 import { Attempt } from '../../lib/stif';
+import {
+  VictoryChart,
+  VictoryScatter,
+  VictoryTheme,
+  VictoryZoomContainer,
+} from 'victory-native';
+import { VictoryThemeDefinition } from 'victory-core';
 
 import {Alg} from "cubing/alg"
 import {TwistyPlayer} from "cubing/twisty"
 import { WebView } from 'react-native-webview';
 
 let library = getLibrary();
+let chartTheme: VictoryThemeDefinition = {
+  ...VictoryTheme.material,
+  axis: {
+    ...VictoryTheme.material.axis,
+    style: {
+      ...VictoryTheme.material.axis?.style,
+      tickLabels: {
+        ...VictoryTheme.material.axis?.style?.tickLabels,
+        // @ts-ignore
+        fill: getCurrentTheme().colors.onBackground,
+      },
+    },
+  },
+};
 
 export default function InsightsScreen() {
-  const data = library.getAll();
-  data.sort((a, b) => b.unixTimestamp - a.unixTimestamp);
+  const theme = getCurrentTheme();
+  let data = library.getAll();
+  data = data
+    .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
+    .slice(0, Math.min(200, data.length));
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );
@@ -31,6 +56,7 @@ export default function InsightsScreen() {
     <SafeAreaView style={styles.container}>
       <WebView style={testScale}
         source={{ html: '<script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script><twisty-player></twisty-player>' }}/>
+
     </SafeAreaView>
   );
 }

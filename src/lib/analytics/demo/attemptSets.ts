@@ -11,11 +11,11 @@ import {
   ScrambleBuilder,
   STOPPED_PUZZLE_ONE_MOVE_REMAINING,
   STOPPED_PUZZLE_UNSOLVED,
-} from '../../../stif';
+} from '../../stif';
 
-it('has a noop test to satisfy Jest', () => {
-  expect(true).toBe(true);
-});
+// it('has a noop test to satisfy Jest', () => {
+//   expect(true).toBe(true);
+// });
 
 let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
 

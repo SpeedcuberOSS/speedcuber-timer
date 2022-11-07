@@ -3,13 +3,16 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
 import { Attempt, Penalty } from '../stif';
 
 class AttemptAnalytics {
   private attempts: Attempt[];
+  public sliding: SlidingWindowAnalytics;
 
   constructor(attempts: Attempt[]) {
     this.attempts = attempts;
+    this.sliding = new SlidingWindowAnalytics(attempts);
   }
 
   count(): number {
@@ -174,6 +177,23 @@ class AttemptAnalytics {
 
   percentileScores(percentiles: number[]): number[] {
     return percentiles.map(pct => this.percentileScore(pct));
+  }
+}
+
+class SlidingWindowAnalytics {
+  private attempts: Attempt[];
+
+  constructor(attempts: Attempt[]) {
+    this.attempts = attempts;
+  }
+
+  AoX(x: number, bestPct: number = 0.05, worstPct: number = 0.05): number[] {
+    let averages: number[] = [];
+    for (let i = 0; i < this.attempts.length - x + 1; i++) {
+      let window = this.attempts.slice(i, i + x);
+      averages.push(new AttemptAnalytics(window).AoX(x, bestPct, worstPct));
+    }
+    return averages;
   }
 }
 

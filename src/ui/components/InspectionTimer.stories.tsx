@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import InspectionTimer from './InspectionTimer';
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { number as numberKnob } from '@storybook/addon-knobs';
-
-import InspectionTimer from '../../src/ui/components/InspectionTimer';
+import { storiesOf } from '@storybook/react-native';
 
 storiesOf('InspectionTimer', module)
   .add('default', () => {

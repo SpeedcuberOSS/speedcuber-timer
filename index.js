@@ -4,8 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { AppRegistry } from 'react-native';
 import App from './src/ui/App';
+import { AppRegistry } from 'react-native';
+import { IS_STORYBOOK } from './envs/_env.json';
 import { name as appName } from './app.json';
+import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
-AppRegistry.registerComponent(appName, () => App);
+// import Storybook from './storybook';
+
+suppressKnownWarnings();
+
+AppRegistry.registerComponent(appName, () => (IS_STORYBOOK ? App : App));

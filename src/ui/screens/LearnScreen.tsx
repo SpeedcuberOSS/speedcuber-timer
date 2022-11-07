@@ -9,7 +9,7 @@ import { FAB } from 'react-native-paper';
 import React, { useState } from 'react';
 
 // import StoryBook from '../../../storybook';
-import Icons from '../utils/iconHelper';
+import Icons from '../icons/iconHelper';
 
 function OpenStorybookFAB({ onPress }: { onPress: () => void }) {
   return (
