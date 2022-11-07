@@ -20,9 +20,11 @@ import {
 import { VictoryThemeDefinition } from 'victory-core';
 
 //import {Alg} from "cubing/alg"
-import {TwistyPlayer} from "cubing/twisty"
-//import { TwistyPlayer } from '../../cubing/twisty';
+//import {TwistyPlayer} from "cubing/twisty"
+import { TwistyPlayer } from '../../cubing/twisty';
 import { WebView } from 'react-native-webview';
+
+// TODO: GET TWISTY PLAYER WORKING FROM LOCAL FORK, NOT NODE MODULES!!!
 
 let library = getLibrary();
 let chartTheme: VictoryThemeDefinition = {
