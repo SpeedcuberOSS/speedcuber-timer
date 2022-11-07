@@ -11470,11 +11470,6 @@ react-native-codegen@^0.0.17:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-countdown-circle-timer@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.npmjs.org/react-native-countdown-circle-timer/-/react-native-countdown-circle-timer-3.0.9.tgz"
-  integrity sha512-7djFk+2QQS9FAhfIUhwQoc+P/7Vkn9EJApr6zUWK9B5QvHP07UlqIWfhIPqqeMa4kP6y5Y2S3YL+xeRsq2tNfg==
-
 react-native-default-preference@^1.4.4:
   version "1.4.4"
   resolved "https://registry.npmjs.org/react-native-default-preference/-/react-native-default-preference-1.4.4.tgz"

@@ -19,8 +19,9 @@ import {
 } from 'victory-native';
 import { VictoryThemeDefinition } from 'victory-core';
 
-import {Alg} from "cubing/alg"
+//import {Alg} from "cubing/alg"
 import {TwistyPlayer} from "cubing/twisty"
+//import { TwistyPlayer } from '../../cubing/twisty';
 import { WebView } from 'react-native-webview';
 
 let library = getLibrary();
@@ -52,10 +53,19 @@ export default function InsightsScreen() {
     transform: [{ scale: 1.1 }]
   };
   console.debug(`showing ${data.length} attempts`);
+
+  const player = new TwistyPlayer({
+    puzzle: "4x4x4",
+    alg: "R U R'",
+    hintFacelets: "none",
+    backView: "top-right",
+    background: "none"
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <WebView style={testScale}
-        source={{ html: '<script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script><twisty-player></twisty-player>' }}/>
+        source={{ html: '<script type="module"></script><twisty-player></twisty-player>' }}/>
 
     </SafeAreaView>
   );
