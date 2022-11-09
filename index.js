@@ -6,11 +6,14 @@
 
 import App from './src/ui/App';
 import { AppRegistry } from 'react-native';
+import Constants from 'expo-constants';
 import { IS_STORYBOOK } from './envs/_env.json';
 import { name as appName } from './app.json';
 import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
 // import Storybook from './storybook';
+
+console.log('Expo Constants: ' + Constants.systemFonts);
 
 suppressKnownWarnings();
 

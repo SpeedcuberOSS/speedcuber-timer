@@ -31,8 +31,10 @@
 		2C7CA2E22901C77700277A1C /* WCAEvent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E12901C77700277A1C /* WCAEvent.ttf */; };
 		2C7CA2E42901C79400277A1C /* WCAEventUnofficial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */; };
 		2C7CA2E62901C79E00277A1C /* WCAInfraction.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */; };
+		7495EC6FD078BD1A907F2B14 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92823D21B7CA72A12C83B7F /* ExpoModulesProvider.swift */; };
 		7699B88040F8A987B510C191 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E4121BBEB24F608AE775E7E0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFCC32A9F7A8550F65306 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-SpeedcuberTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeedcuberTimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SpeedcuberTimer/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig"; sourceTree = "<group>"; };
+		95EFFCC32A9F7A8550F65306 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		B92823D21B7CA72A12C83B7F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SpeedcuberTimer/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		778AEE6574CFFAE8F1FE11FC /* SpeedcuberTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				95EFFCC32A9F7A8550F65306 /* ExpoModulesProvider.swift */,
+			);
+			name = SpeedcuberTimerTests;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				9934C146611473FF49BA5615 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -203,6 +216,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9934C146611473FF49BA5615 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				FB335047028847FC89BC531F /* SpeedcuberTimer */,
+				778AEE6574CFFAE8F1FE11FC /* SpeedcuberTimerTests */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +234,14 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB335047028847FC89BC531F /* SpeedcuberTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B92823D21B7CA72A12C83B7F /* ExpoModulesProvider.swift */,
+			);
+			name = SpeedcuberTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* SpeedcuberTimerTests.m in Sources */,
+				E4121BBEB24F608AE775E7E0 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +528,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				7495EC6FD078BD1A907F2B14 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +554,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SpeedcuberTimerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,6 +565,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeedcuberTimer.app/SpeedcuberTimer";
@@ -547,7 +580,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = XLMP575759;
 				INFOPLIST_FILE = SpeedcuberTimerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,6 +591,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeedcuberTimer.app/SpeedcuberTimer";
@@ -583,6 +617,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.speedcuber.timer;
 				PRODUCT_NAME = SpeedcuberTimer;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -609,6 +644,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = org.speedcuber.timer;
 				PRODUCT_NAME = SpeedcuberTimer;
 				SWIFT_VERSION = 5.0;
@@ -665,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -729,7 +765,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
