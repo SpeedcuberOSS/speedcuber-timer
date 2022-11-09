@@ -19,7 +19,7 @@ export abstract class BluetoothPuzzle {
   protected _device: BluetoothDevice;
   abstract brand(): string;
   abstract puzzle(): Puzzle;
-  abstract addMoveListener(callback: MoveListener): void;
+  abstract addMoveListener(callback: MoveListener, id?: string): void;
 
   constructor(device: BluetoothDevice) {
     this._device = device;

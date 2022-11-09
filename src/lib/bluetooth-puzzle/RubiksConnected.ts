@@ -9,13 +9,14 @@ import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
 import { Buffer } from 'buffer';
 
 export class RubiksConnected extends BluetoothPuzzle {
+  moveListeners: Map<string, MoveListener> = new Map();
   brand(): string {
     return 'Rubiks Connected';
   }
   puzzle(): Puzzle {
     return PUZZLE_3x3x3;
   }
-  addMoveListener(callback: MoveListener): void {
+  addMoveListener(callback: MoveListener, id?: string): void {
     const monitorFunction = (error: any, value: any) => {
       if (error) {
         console.error(`Error while listening to moves: ${error}`);
@@ -29,7 +30,14 @@ export class RubiksConnected extends BluetoothPuzzle {
         callback(JSON.stringify(message));
       }
     };
-    this.__monitorTurns(monitorFunction);
+    if (id) {
+      if (!this.moveListeners.has(id)) {
+        this.moveListeners.set(id, callback);
+        this.__monitorTurns(monitorFunction);
+      }
+    } else {
+      this.__monitorTurns(monitorFunction);
+    }
   }
   private __monitorTurns(callback: (error: any, value: any) => any) {
     const serviceUUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';

@@ -5,15 +5,21 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BluetoothPuzzle } from '../../../lib/bluetooth-puzzle';
+import { createGlobalState } from 'react-hooks-global-state';
 import { getAvailableBluetoothCubes } from './';
-import { useState } from 'react';
 
 let PUZZLE_REGISTRY: Map<string, BluetoothPuzzle> = new Map();
 
+function _getCurrentPuzzles() {
+  return Array.from(PUZZLE_REGISTRY.values());
+}
+
+const { setGlobalState, useGlobalState } = createGlobalState({
+  currentPuzzles: _getCurrentPuzzles(),
+});
+
 export default function useSmartPuzzles() {
-  const [puzzles, setPuzzles] = useState<BluetoothPuzzle[]>(
-    _getCurrentPuzzles(),
-  );
+  const [puzzles, setPuzzles] = useGlobalState('currentPuzzles');
   const puzzleScan = (scanDurationMillis: number) => {
     getAvailableBluetoothCubes(
       scanDurationMillis,
@@ -27,8 +33,4 @@ export default function useSmartPuzzles() {
     puzzles,
     puzzleScan,
   };
-}
-
-function _getCurrentPuzzles() {
-  return Array.from(PUZZLE_REGISTRY.values());
 }

@@ -4,15 +4,47 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React, { useRef } from 'react';
 
 import { WebView } from 'react-native-webview';
+import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
 
 export default function LearnScreen() {
+  const { puzzles } = useSmartPuzzles();
+  console.log('Learn: ' + puzzles.length);
   const webViewRef = useRef({});
   const width = 384;
   const height = 256;
   const scale = 2;
+  const reactToMoves = (cube: BluetoothPuzzle) => {
+    cube.addMoveListener(move => {
+      const { face, direction } = JSON.parse(move);
+      let moveStr = '';
+      moveStr += face === 'White' ? 'U' : '';
+      moveStr += face === 'Yellow' ? 'D' : '';
+      moveStr += face === 'Red' ? 'R' : '';
+      moveStr += face === 'Orange' ? 'L' : '';
+      moveStr += face === 'Green' ? 'F' : '';
+      moveStr += face === 'Blue' ? 'B' : '';
+      moveStr += direction === 'clockwise' ? '' : "'";
+      sendMove(moveStr);
+    }, 'LearnScreen');
+  };
+  puzzles.forEach(cube => {
+    if (cube.connectionStatus() === ConnectionStatus.CONNECTED) {
+      console.log("Reacting to cube's moves:" + cube.name());
+      reactToMoves(cube);
+    } else {
+      cube.addConnectionStatusListener(status => {
+        console.log('Watching connection status:' + cube.name());
+        if (status === ConnectionStatus.CONNECTED) {
+          console.log("Reacting to cube's moves:" + cube.name());
+          reactToMoves(cube);
+        }
+      });
+    }
+  });
 
   function sendMove(move: string) {
     const js = `
@@ -23,10 +55,6 @@ export default function LearnScreen() {
     console.log(js);
     webViewRef.current.injectJavaScript(js);
   }
-
-  setTimeout(() => {
-    sendMove('U');
-  }, 1000);
   return (
     <WebView
       ref={webViewRef}
