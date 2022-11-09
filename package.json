@@ -40,6 +40,7 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.7",
     "buffer": "^6.0.3",
+    "cubing": "^0.31.7",
     "i18next": "^21.8.9",
     "intl-pluralrules": "^1.3.1",
     "react": "17.0.2",
@@ -55,6 +56,7 @@
     "react-native-paper": "5.0.0-rc.5",
     "react-native-svg": "^13.4.0",
     "react-native-vector-icons": "^9.1.0",
+    "react-native-webview": "^11.23.1",
     "rn-flipper-async-storage-advanced": "^1.0.4",
     "uuid": "^8.3.2",
     "victory-native": "^36.6.8"
