@@ -8,10 +8,21 @@ import App from './src/ui/App';
 import { AppRegistry } from 'react-native';
 import Constants from 'expo-constants';
 import { IS_STORYBOOK } from './envs/_env.json';
+import { THREE } from 'expo-three';
 import { name as appName } from './app.json';
 import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
 // import Storybook from './storybook';
+
+/**
+ * Due to some issues with the Metro bundler you may need to manually
+ * define the global instance of Three.js. This is important because
+ * three.js doesn't fully use ECMAScript but rather mutates a single
+ * global instance of THREE with side-effects.
+ *
+ * https://www.npmjs.com/package/expo-three#user-content-usage
+ */
+global.THREE = global.THREE || THREE;
 
 console.log('Expo Constants: ' + Constants.systemFonts);
 

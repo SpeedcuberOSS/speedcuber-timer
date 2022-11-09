@@ -1,65 +1,77 @@
-// Copyright (c) 2022 Joseph Hale <me@jhale.dev>
+import {
+  BoxGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  PerspectiveCamera,
+  Scene,
+} from 'three';
 
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+import { GLView } from 'expo-gl';
+import React from 'react';
+import { Renderer } from 'expo-three';
+import { View } from 'react-native';
 
-import { SafeAreaView, StyleSheet } from 'react-native';
-import { FAB } from 'react-native-paper';
-import React, { useState } from 'react';
+const App = () => {
+  const onContextCreate = async (gl: any) => {
+    // three.js implementation.
+    const scene = new Scene();
+    const camera = new PerspectiveCamera(
+      75,
+      gl.drawingBufferWidth / gl.drawingBufferHeight,
+      0.1,
+      1000,
+    );
+    gl.canvas = {
+      width: gl.drawingBufferWidth,
+      height: gl.drawingBufferHeight,
+    };
 
-// import StoryBook from '../../../storybook';
-import Icons from '../icons/iconHelper';
+    // set camera position away from cube
+    camera.position.z = 2;
 
-function OpenStorybookFAB({ onPress }: { onPress: () => void }) {
+    const renderer = new Renderer({ gl });
+    // set size of buffer to be equal to drawing buffer width
+    renderer.setSize(gl.drawingBufferWidth, gl.drawingBufferHeight);
+
+    // create cube
+    // define geometry
+    const geometry = new BoxGeometry(1, 1, 1);
+    const material = new MeshBasicMaterial({
+      color: 'cyan',
+    });
+
+    const cube = new Mesh(geometry, material);
+
+    // add cube to scene
+    scene.add(cube);
+
+    // create render function
+    const render = () => {
+      requestAnimationFrame(render);
+      // create rotate functionality
+      // rotate around x axis
+      cube.rotation.x += 0.01;
+
+      // rotate around y axis
+      cube.rotation.y += 0.01;
+
+      renderer.render(scene, camera);
+      gl.endFrameEXP();
+    };
+
+    // call render
+    render();
+  };
+
   return (
-    <FAB
-      style={styles.fabOpen}
-      icon={Icons.MaterialCommunityIcons('book')}
-      onPress={onPress}
-    />
+    <View>
+      <GLView
+        onContextCreate={onContextCreate}
+        // set height and width of GLView
+        style={{ width: 400, height: 400 }}
+      />
+    </View>
   );
-}
+};
 
-function CloseStorybookFAB({ onPress }: { onPress: () => void }) {
-  return (
-    <FAB
-      style={styles.fabClosed}
-      icon={Icons.Entypo('open-book')}
-      onPress={onPress}
-    />
-  );
-}
-
-export default function LearnScreen() {
-  const [showStorybook, setShowStorybook] = useState(false);
-  const onPressFAB = () => setShowStorybook(!showStorybook);
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* {showStorybook && <StoryBook />} */}
-      {showStorybook ? (
-        <CloseStorybookFAB onPress={onPressFAB} />
-      ) : (
-        <OpenStorybookFAB onPress={onPressFAB} />
-      )}
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  fabOpen: {
-    position: 'absolute',
-    margin: 16,
-    right: 0,
-    bottom: 2,
-  },
-  fabClosed: {
-    position: 'absolute',
-    margin: 16,
-    right: 0,
-    bottom: 40,
-  },
-});
+export default App;
