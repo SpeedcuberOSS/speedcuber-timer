@@ -8,52 +8,39 @@ import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React, { useRef } from 'react';
 
 import { WebView } from 'react-native-webview';
-import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
 
-export default function TwistyPlayer() {
-  const { puzzles } = useSmartPuzzles();
+interface TwistyPlayerProps {
+  bluetoothPuzzle?: BluetoothPuzzle;
+}
+
+export default function TwistyPlayer({ bluetoothPuzzle }: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
-  const width = 384;
-  const height = 256;
-  const scale = 2;
-  const reactToMoves = (cube: BluetoothPuzzle) => {
-    cube.addMoveListener(move => {
-      const { face, direction } = JSON.parse(move);
-      let moveStr = '';
-      moveStr += face === 'White' ? 'U' : '';
-      moveStr += face === 'Yellow' ? 'D' : '';
-      moveStr += face === 'Red' ? 'R' : '';
-      moveStr += face === 'Orange' ? 'L' : '';
-      moveStr += face === 'Green' ? 'F' : '';
-      moveStr += face === 'Blue' ? 'B' : '';
-      moveStr += direction === 'clockwise' ? '' : "'";
-      sendMove(moveStr);
-    }, 'LearnScreen');
-  };
-  puzzles.forEach(cube => {
-    if (cube.connectionStatus() === ConnectionStatus.CONNECTED) {
-      console.debug("Reacting to cube's moves:" + cube.name());
-      reactToMoves(cube);
-    } else {
-      cube.addConnectionStatusListener(status => {
-        console.debug('Watching connection status:' + cube.name());
-        if (status === ConnectionStatus.CONNECTED) {
-          console.debug("Reacting to cube's moves:" + cube.name());
-          reactToMoves(cube);
-        }
-      });
-    }
-  });
-
+  const [width, height, scale] = [384, 256, 2];
   function sendMove(move: string) {
     const js = `
       document.getElementById("next-move").innerHTML = "${move}"
       document.getElementById("next-move").click()
       true;
     `;
-    console.log(js);
+    console.debug(`Sending move ${move} to twisty player`);
     webViewRef.current.injectJavaScript(js);
   }
+  const reactToMoves = (p: BluetoothPuzzle) => {
+    p.addMoveListener(move => {
+      let moveStr = parseMove(move);
+      sendMove(moveStr);
+    }, 'TwistyPlayer');
+  };
+  if (bluetoothPuzzle?.connectionStatus() === ConnectionStatus.CONNECTED) {
+    reactToMoves(bluetoothPuzzle);
+  } else {
+    bluetoothPuzzle?.addConnectionStatusListener(status => {
+      if (status === ConnectionStatus.CONNECTED) {
+        reactToMoves(bluetoothPuzzle);
+      }
+    });
+  }
+
   return (
     <WebView
       ref={webViewRef}
@@ -90,4 +77,17 @@ export default function TwistyPlayer() {
       }}
     />
   );
+}
+
+function parseMove(move: string) {
+  const { face, direction } = JSON.parse(move);
+  let moveStr = '';
+  moveStr += face === 'White' ? 'U' : '';
+  moveStr += face === 'Yellow' ? 'D' : '';
+  moveStr += face === 'Red' ? 'R' : '';
+  moveStr += face === 'Orange' ? 'L' : '';
+  moveStr += face === 'Green' ? 'F' : '';
+  moveStr += face === 'Blue' ? 'B' : '';
+  moveStr += direction === 'clockwise' ? '' : "'";
+  return moveStr;
 }
