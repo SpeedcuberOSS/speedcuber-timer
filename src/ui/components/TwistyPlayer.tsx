@@ -13,11 +13,13 @@ import { WebView } from 'react-native-webview';
 interface TwistyPlayerProps {
   puzzle?: Puzzle;
   bluetoothPuzzle?: BluetoothPuzzle;
+  visualization?: '3D' | '2D';
 }
 
 export default function TwistyPlayer({
   puzzle = PUZZLE_3x3x3,
-  bluetoothPuzzle,
+  bluetoothPuzzle = undefined,
+  visualization = '3D',
 }: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
   const [width, height, scale] = [384, 256, 2];
@@ -58,10 +60,11 @@ export default function TwistyPlayer({
           import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
           const player = new TwistyPlayer({
+            alg: "",
             puzzle: "${stifPuzzle_To_TwistyPlayerString(
               bluetoothPuzzle?.puzzle() || puzzle,
             )}",
-            alg: "",
+            visualization: "${visualization}",
             hintFacelets: "none",
             backView: "none",
             background: "none",
