@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import {
+  AlgorithmBuilder,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
   PUZZLE_4x4x4,
@@ -65,4 +66,11 @@ storiesOf('TwistyPlayer', module)
   .add('Back View (side-by-side)', () => (
     <TwistyPlayer backView="side-by-side" />
   ))
-  .add('Hint Facelets', () => <TwistyPlayer hintFacelets="floating" />);
+  .add('Hint Facelets', () => <TwistyPlayer hintFacelets="floating" />)
+  .add('Custom Scramble', () => (
+    <TwistyPlayer
+      algorithm={new AlgorithmBuilder()
+        .setMoves("R U R' U'".split(' '))
+        .build()}
+    />
+  ));

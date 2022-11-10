@@ -4,8 +4,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import {
+  Algorithm,
   PUZZLE_3x3x3,
   PUZZLE_CLOCK,
   PUZZLE_MEGAMINX,
@@ -14,11 +14,13 @@ import {
   PUZZLE_SQUARE_1,
   Puzzle,
 } from '../../lib/stif';
+import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React, { useRef } from 'react';
 
 import { WebView } from 'react-native-webview';
 
 interface TwistyPlayerProps {
+  algorithm?: Algorithm;
   puzzle?: Puzzle;
   bluetoothPuzzle?: BluetoothPuzzle;
   visualization?: '3D' | '2D';
@@ -27,6 +29,7 @@ interface TwistyPlayerProps {
 }
 
 export default function TwistyPlayer({
+  algorithm = undefined,
   puzzle = PUZZLE_3x3x3,
   bluetoothPuzzle = undefined,
   visualization = '3D',
@@ -72,7 +75,7 @@ export default function TwistyPlayer({
           import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
           const player = new TwistyPlayer({
-            alg: "",
+            alg: "${algorithm ? algorithm?.moves.join(' ') : ''}",
             puzzle: "${stifPuzzle_To_TwistyPlayerString(
               bluetoothPuzzle?.puzzle() || puzzle,
             )}",
