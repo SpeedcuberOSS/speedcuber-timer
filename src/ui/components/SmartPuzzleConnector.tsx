@@ -16,7 +16,7 @@ import { StyleSheet } from 'react-native';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: BluetoothPuzzle;
-  onMove: MoveListener;
+  onMove?: MoveListener;
 }
 
 const SmartPuzzleConnector = ({
@@ -38,7 +38,9 @@ const SmartPuzzleConnector = ({
       connectionStatus={connectionStatus}
       onConnect={async () => {
         await smartPuzzle.connect();
-        smartPuzzle.addMoveListener(onMove);
+        if (onMove) {
+          smartPuzzle.addMoveListener(onMove);
+        }
       }}
     />
   );
