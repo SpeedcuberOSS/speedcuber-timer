@@ -5,15 +5,20 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
+import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../lib/stif';
 import React, { useRef } from 'react';
 
 import { WebView } from 'react-native-webview';
 
 interface TwistyPlayerProps {
+  puzzle?: Puzzle;
   bluetoothPuzzle?: BluetoothPuzzle;
 }
 
-export default function TwistyPlayer({ bluetoothPuzzle }: TwistyPlayerProps) {
+export default function TwistyPlayer({
+  puzzle = PUZZLE_3x3x3,
+  bluetoothPuzzle,
+}: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
   const [width, height, scale] = [384, 256, 2];
   function sendMove(move: string) {
@@ -53,7 +58,9 @@ export default function TwistyPlayer({ bluetoothPuzzle }: TwistyPlayerProps) {
           import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
           const player = new TwistyPlayer({
-            puzzle: "3x3x3",
+            puzzle: "${stifPuzzle_To_TwistyPlayerString(
+              bluetoothPuzzle?.puzzle() || puzzle,
+            )}",
             alg: "",
             hintFacelets: "none",
             backView: "none",
@@ -90,4 +97,15 @@ function parseMove(move: string) {
   moveStr += face === 'Blue' ? 'B' : '';
   moveStr += direction === 'clockwise' ? '' : "'";
   return moveStr;
+}
+
+function stifPuzzle_To_TwistyPlayerString(puzzle: Puzzle): string {
+  switch (puzzle) {
+    case PUZZLE_2x2x2:
+      return '2x2x2';
+    case PUZZLE_3x3x3:
+      return '3x3x3';
+    default:
+      return '3x3x3';
+  }
 }
