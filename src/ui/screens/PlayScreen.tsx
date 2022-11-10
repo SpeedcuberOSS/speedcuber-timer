@@ -6,12 +6,7 @@
 
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import SmartPuzzleScanner from '../components/SmartPuzzleScanner';
 
 export default function PlayScreen() {
-  return (
-    <SafeAreaView>
-      <SmartPuzzleScanner />
-    </SafeAreaView>
-  );
+  return <SafeAreaView></SafeAreaView>;
 }
