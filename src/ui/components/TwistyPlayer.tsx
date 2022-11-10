@@ -22,12 +22,14 @@ interface TwistyPlayerProps {
   puzzle?: Puzzle;
   bluetoothPuzzle?: BluetoothPuzzle;
   visualization?: '3D' | '2D';
+  backView?: 'top-right' | 'side-by-side';
 }
 
 export default function TwistyPlayer({
   puzzle = PUZZLE_3x3x3,
   bluetoothPuzzle = undefined,
   visualization = '3D',
+  backView = undefined,
 }: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
   const [width, height, scale] = [384, 256, 2];
@@ -74,7 +76,7 @@ export default function TwistyPlayer({
             )}",
             visualization: "${visualization}",
             hintFacelets: "none",
-            backView: "none",
+            backView: "${backView ? backView : 'none'}",
             background: "none",
             controlPanel: "none",
           });

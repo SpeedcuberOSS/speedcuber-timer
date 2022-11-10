@@ -60,4 +60,8 @@ storiesOf('TwistyPlayer', module)
   .add('square 1', () => (
     <TwistyPlayer puzzle={PUZZLE_SQUARE_1} visualization={visualizationKnob} />
   ))
-  .add('2D', () => <TwistyPlayer visualization="2D" />);
+  .add('2D', () => <TwistyPlayer visualization="2D" />)
+  .add('Back View (top-right)', () => <TwistyPlayer backView="top-right" />)
+  .add('Back View (side-by-side)', () => (
+    <TwistyPlayer backView="side-by-side" />
+  ));
