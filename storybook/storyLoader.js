@@ -9,6 +9,7 @@ function loadStories() {
   require('../src/ui/components/InspectionTimer.stories');
   require('../src/ui/components/SmartPuzzleCard.stories');
   require('../src/ui/components/SmartPuzzleConnector.stories');
+  require('../src/ui/components/TwistyPlayer.stories');
 }
 
 const stories = [
@@ -17,6 +18,7 @@ const stories = [
   '../src/ui/components/InspectionTimer.stories',
   '../src/ui/components/SmartPuzzleCard.stories',
   '../src/ui/components/SmartPuzzleConnector.stories',
+  '../src/ui/components/TwistyPlayer.stories',
 ];
 
 module.exports = {

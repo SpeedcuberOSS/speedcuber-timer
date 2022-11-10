@@ -5,7 +5,15 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
-import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../lib/stif';
+import {
+  PUZZLE_3x3x3,
+  PUZZLE_CLOCK,
+  PUZZLE_MEGAMINX,
+  PUZZLE_PYRAMINX,
+  PUZZLE_SKEWB,
+  PUZZLE_SQUARE_1,
+  Puzzle,
+} from '../../lib/stif';
 import React, { useRef } from 'react';
 
 import { WebView } from 'react-native-webview';
@@ -103,11 +111,20 @@ function parseMove(move: string) {
 }
 
 function stifPuzzle_To_TwistyPlayerString(puzzle: Puzzle): string {
+  if (parseInt(puzzle.id)) {
+    return puzzle.id.split('').join('x');
+  }
   switch (puzzle) {
-    case PUZZLE_2x2x2:
-      return '2x2x2';
-    case PUZZLE_3x3x3:
-      return '3x3x3';
+    case PUZZLE_CLOCK:
+      return 'clock';
+    case PUZZLE_MEGAMINX:
+      return 'megaminx';
+    case PUZZLE_PYRAMINX:
+      return 'pyraminx';
+    case PUZZLE_SKEWB:
+      return 'skewb';
+    case PUZZLE_SQUARE_1:
+      return 'square1';
     default:
       return '3x3x3';
   }
