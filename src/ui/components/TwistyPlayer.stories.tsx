@@ -64,4 +64,5 @@ storiesOf('TwistyPlayer', module)
   .add('Back View (top-right)', () => <TwistyPlayer backView="top-right" />)
   .add('Back View (side-by-side)', () => (
     <TwistyPlayer backView="side-by-side" />
-  ));
+  ))
+  .add('Hint Facelets', () => <TwistyPlayer hintFacelets="floating" />);

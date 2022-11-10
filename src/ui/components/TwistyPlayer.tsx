@@ -22,6 +22,7 @@ interface TwistyPlayerProps {
   puzzle?: Puzzle;
   bluetoothPuzzle?: BluetoothPuzzle;
   visualization?: '3D' | '2D';
+  hintFacelets?: 'floating';
   backView?: 'top-right' | 'side-by-side';
 }
 
@@ -29,6 +30,7 @@ export default function TwistyPlayer({
   puzzle = PUZZLE_3x3x3,
   bluetoothPuzzle = undefined,
   visualization = '3D',
+  hintFacelets = undefined,
   backView = undefined,
 }: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
@@ -75,7 +77,7 @@ export default function TwistyPlayer({
               bluetoothPuzzle?.puzzle() || puzzle,
             )}",
             visualization: "${visualization}",
-            hintFacelets: "none",
+            hintFacelets: "${hintFacelets ? hintFacelets : 'none'}",
             backView: "${backView ? backView : 'none'}",
             background: "none",
             controlPanel: "none",
