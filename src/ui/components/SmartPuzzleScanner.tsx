@@ -5,11 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Button, ProgressBar } from 'react-native-paper';
+import { FlatList, View } from 'react-native';
 import React, { useState } from 'react';
 
 import { DEFAULT_BLUETOOTH_SCAN_DURATION } from '../utils/bluetooth';
 import SmartPuzzleConnector from '../components/SmartPuzzleConnector';
-import { View } from 'react-native';
 import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
 import { useTranslation } from 'react-i18next';
 
@@ -37,6 +37,12 @@ const SmartPuzzleScanner = () => {
         {t('bluetooth.start_scan')}
       </Button>
       <ProgressBar visible={progressVisible} indeterminate />
+      {/* <FlatList
+        data={puzzles}
+        renderItem={({ item }) => <SmartPuzzleConnector smartPuzzle={item} />}
+        keyExtractor={item => item.id()}
+      /> */}
+
       {puzzles.length > 0 &&
         puzzles.map(cube => (
           <SmartPuzzleConnector key={cube.id()} smartPuzzle={cube} />

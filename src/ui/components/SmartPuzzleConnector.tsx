@@ -12,22 +12,27 @@ import {
 import React, { useEffect, useState } from 'react';
 
 import SmartPuzzleCard from './SmartPuzzleCard';
-import { StyleSheet } from 'react-native';
+import { v4 as uuid } from 'uuid';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: BluetoothPuzzle;
   onMove?: MoveListener;
 }
 
-const SmartPuzzleConnector = ({
+export default function SmartPuzzleConnector({
   smartPuzzle,
   onMove,
-}: SmartPuzzleConnectorProps) => {
+}: SmartPuzzleConnectorProps) {
+  const [statusListenerID] = useState(uuid());
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>(
     smartPuzzle.connectionStatus(),
   );
+  console.debug(connectionStatus);
   useEffect(() => {
-    smartPuzzle.addConnectionStatusListener(s => setConnectionStatus(s));
+    smartPuzzle.addConnectionStatusListener(
+      s => setConnectionStatus(s),
+      statusListenerID,
+    );
   }, []);
   return (
     <SmartPuzzleCard
@@ -44,8 +49,4 @@ const SmartPuzzleConnector = ({
       }}
     />
   );
-};
-
-export default SmartPuzzleConnector;
-
-const styles = StyleSheet.create({});
+}

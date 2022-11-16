@@ -10,13 +10,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import Icons from '../icons/iconHelper';
 import PracticeView from '../components/PracticeView';
-import SmartPuzzleScanner from '../components/SmartPuzzleScanner';
-
-enum TimerState {
-  SCRAMBLING = 0,
-  INSPECTION = 1,
-  SOLVING = 2,
-}
+import SmartPuzzlePlayground from '../components/SmartPuzzlePlayground';
 
 function ScannerFAB({ onPress }: { onPress: () => void }) {
   return (
@@ -52,7 +46,7 @@ export default function PracticeScreen() {
       )}
       {currentView === 'ScannerView' && (
         <>
-          <SmartPuzzleScanner />
+          <SmartPuzzlePlayground />
           <PracticeFAB onPress={() => onPressFAB('PracticeView')} />
         </>
       )}
