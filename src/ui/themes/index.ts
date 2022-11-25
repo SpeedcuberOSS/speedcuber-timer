@@ -1,118 +1,80 @@
-import { MD3DarkTheme, configureFonts } from 'react-native-paper';
-
-import { MD3Theme } from 'react-native-paper/lib/typescript/types';
 // Copyright (c) 2022 Joseph Hale <me@jhale.dev>
 //
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
-import { Platform } from 'react-native';
 
-const fontConfig = {
+import {
+  MD3Theme,
+  MD3Typescale,
+} from 'react-native-paper/lib/typescript/types';
+
+import { MD3DarkTheme } from 'react-native-paper';
+
+const fonts: MD3Typescale = {
   displayLarge: {
+    ...MD3DarkTheme.fonts.displayLarge,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 64,
-    fontSize: 57,
   },
   displayMedium: {
+    ...MD3DarkTheme.fonts.displayMedium,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 52,
-    fontSize: 45,
   },
   displaySmall: {
+    ...MD3DarkTheme.fonts.displaySmall,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 44,
-    fontSize: 36,
   },
   headlineLarge: {
+    ...MD3DarkTheme.fonts.headlineLarge,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 40,
-    fontSize: 32,
   },
   headlineMedium: {
+    ...MD3DarkTheme.fonts.headlineMedium,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 36,
-    fontSize: 28,
   },
   headlineSmall: {
+    ...MD3DarkTheme.fonts.headlineSmall,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 32,
-    fontSize: 24,
   },
   titleLarge: {
+    ...MD3DarkTheme.fonts.titleLarge,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0,
-    fontWeight: '400',
-    lineHeight: 28,
-    fontSize: 22,
   },
   titleMedium: {
+    ...MD3DarkTheme.fonts.titleMedium,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.15,
-    fontWeight: '500',
-    lineHeight: 24,
-    fontSize: 16,
   },
   titleSmall: {
+    ...MD3DarkTheme.fonts.titleSmall,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.1,
-    fontWeight: '500',
-    lineHeight: 20,
-    fontSize: 14,
   },
   labelLarge: {
+    ...MD3DarkTheme.fonts.labelLarge,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.1,
-    fontWeight: '500',
-    lineHeight: 20,
-    fontSize: 14,
   },
   labelMedium: {
+    ...MD3DarkTheme.fonts.labelMedium,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.5,
-    fontWeight: '500',
-    lineHeight: 16,
-    fontSize: 12,
   },
   labelSmall: {
+    ...MD3DarkTheme.fonts.labelSmall,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.5,
-    fontWeight: '500',
-    lineHeight: 16,
-    fontSize: 11,
   },
   bodyLarge: {
+    ...MD3DarkTheme.fonts.bodyLarge,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.15,
-    fontWeight: '400',
-    lineHeight: 24,
-    fontSize: 16,
   },
   bodyMedium: {
+    ...MD3DarkTheme.fonts.bodyMedium,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.25,
-    fontWeight: '400',
-    lineHeight: 20,
-    fontSize: 14,
   },
   bodySmall: {
+    ...MD3DarkTheme.fonts.bodySmall,
     fontFamily: 'Rubik-Regular',
-    letterSpacing: 0.4,
-    fontWeight: '400',
-    lineHeight: 16,
-    fontSize: 12,
+  },
+  default: {
+    ...MD3DarkTheme.fonts.default,
+    fontFamily: 'Rubik-Regular',
   },
 };
 
@@ -124,13 +86,7 @@ function getCurrentTheme(): MD3Theme {
       ...MD3DarkTheme.colors,
       secondary: '#00ff00',
     },
-    fonts: {
-      ...fontConfig,
-      default: {
-        ...MD3DarkTheme.fonts.default,
-        fontFamily: 'Rubik-Regular',
-      },
-    },
+    fonts: fonts,
   };
   return theme;
 }
