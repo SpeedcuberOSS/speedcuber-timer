@@ -4,7 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { DocumentDirectoryPath, readFile, writeFile } from 'react-native-fs';
+import {
+  DocumentDirectoryPath,
+  exists,
+  readFile,
+  writeFile,
+} from 'react-native-fs';
 import { logError, mergeLibraries, parseAttemptMap } from './_helpers';
 
 import { PersistentAttemptLibrary } from './PersistentAttemptLibrary';
@@ -14,10 +19,12 @@ const STORAGE_PATH = `${DocumentDirectoryPath}/attempts.json`;
 class FileSystemAttemptLibrary extends PersistentAttemptLibrary {
   protected async loadLibraryFromStorage(): Promise<string> {
     let storedJSONstr = '[]';
-    try {
-      storedJSONstr = await readFile(STORAGE_PATH);
-    } catch (error) {
-      logError('Failed to read attempts from storage')(error as Error);
+    if (await exists(STORAGE_PATH)) {
+      try {
+        storedJSONstr = await readFile(STORAGE_PATH);
+      } catch (error) {
+        logError('Failed to read attempts from storage')(error as Error);
+      }
     }
     return storedJSONstr;
   }
