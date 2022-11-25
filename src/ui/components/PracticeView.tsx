@@ -121,7 +121,6 @@ const styles = StyleSheet.create({
   },
   scramble: {
     fontSize: 20,
-    fontFamily: 'Rubik-Regular',
     textAlign: 'center',
     padding: 40,
   },

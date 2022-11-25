@@ -4,10 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Caption, Card, Text } from 'react-native-paper';
+
+import { Attempt } from '../../lib/stif';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Caption, Card } from 'react-native-paper';
-import { Attempt } from '../../lib/stif';
 import { getAttemptTimeString } from '../utils/formatElapsedTime';
 
 interface AttemptCardProps {
@@ -22,9 +23,9 @@ export default function AttemptCard(props: AttemptCardProps) {
         subtitle={new Date(props.attempt.unixTimestamp).toLocaleString()}
       />
       <Card.Content>
-        <Caption>
+        <Text variant="bodySmall">
           {props.attempt.solutions[0].scramble.algorithm.moves.join(' ')}
-        </Caption>
+        </Text>
       </Card.Content>
     </Card>
   );
