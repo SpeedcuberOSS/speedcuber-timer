@@ -52,5 +52,6 @@ const styles = StyleSheet.create({
   },
   timer: {
     fontSize: 60,
+    fontFamily: 'RubikMonoOne-Regular',
   },
 });

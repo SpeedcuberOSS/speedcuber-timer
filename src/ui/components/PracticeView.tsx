@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   time: {
     fontSize: 60,
-    fontFamily: 'Rubik-Regular',
+    fontFamily: 'RubikMonoOne-Regular',
   },
   scramble: {
     fontSize: 20,

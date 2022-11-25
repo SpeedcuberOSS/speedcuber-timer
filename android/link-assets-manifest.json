@@ -56,6 +56,10 @@
     {
       "path": "assets/fonts/Rubik-SemiBoldItalic.ttf",
       "sha1": "7a08df8c79fc1c8f733e53e4f56ebaf883920f1c"
+    },
+    {
+      "path": "assets/fonts/RubikMonoOne-Regular.ttf",
+      "sha1": "d4fd521e4f27e58e68e103b1ee997e4ba5bb1f3e"
     }
   ]
 }

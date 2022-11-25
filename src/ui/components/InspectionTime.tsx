@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   timer: {
     fontSize: 80,
-    fontFamily: 'Rubik-Regular',
+    fontFamily: 'RubikMonoOne-Regular',
     color: getCurrentTheme().colors.onPrimaryContainer,
   },
   almostDone: {
