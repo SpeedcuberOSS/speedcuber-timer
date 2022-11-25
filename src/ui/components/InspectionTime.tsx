@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
-import React from 'react';
-import { getCurrentTheme } from '../themes';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { Inspection } from '../../lib/constants';
+import React from 'react';
+import { getCurrentTheme } from '../themes';
 
 interface InspectionTimeProps {
   elapsedMillis: number;
@@ -50,7 +49,6 @@ const InspectionTime = ({
   if (ready) {
     textStyle.push(styles.ready);
   }
-
   return (
     <View style={styles.container}>
       <Text style={textStyle}>
@@ -71,6 +69,7 @@ const styles = StyleSheet.create({
   },
   timer: {
     fontSize: 80,
+    fontFamily: 'Rubik-Regular',
     color: getCurrentTheme().colors.onPrimaryContainer,
   },
   almostDone: {

@@ -117,9 +117,11 @@ const styles = StyleSheet.create({
   },
   time: {
     fontSize: 60,
+    fontFamily: 'Rubik-Regular',
   },
   scramble: {
     fontSize: 20,
+    fontFamily: 'Rubik-Regular',
     textAlign: 'center',
     padding: 40,
   },

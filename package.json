@@ -33,6 +33,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "clean": "react-native-clean-project",
+    "link-assets": "react-native-asset",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
     "prestorybook": "rnstl"
