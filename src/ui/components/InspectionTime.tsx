@@ -10,6 +10,7 @@ import { Inspection } from '../../lib/constants';
 import React from 'react';
 import { Text } from 'react-native-paper';
 import { getCurrentTheme } from '../themes';
+import { useTranslation } from 'react-i18next';
 
 interface InspectionTimeProps {
   elapsedMillis: number;
@@ -39,6 +40,7 @@ const InspectionTime = ({
   stackmatDelayMillis = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
   overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
 }: InspectionTimeProps) => {
+  const { t } = useTranslation();
   let textStyle: any[] = [styles.timer];
 
   const millisRemaining = inspectionDurationMillis - elapsedMillis;
@@ -52,6 +54,9 @@ const InspectionTime = ({
   }
   return (
     <View style={styles.container}>
+      <Text style={styles.inspection}>{`${t(
+        'inspection',
+      ).toLocaleUpperCase()}:`}</Text>
       <Text style={textStyle}>
         {formatTimeToShow(millisRemaining, overtimeUntilDnfMillis)}
       </Text>
@@ -68,9 +73,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
+  inspection: {
+    fontSize: 16,
+    paddingBottom: 10,
+  },
   timer: {
     fontSize: 80,
-    fontFamily: 'RubikMonoOne-Regular',
+    fontVariant: ['tabular-nums'],
     color: getCurrentTheme().colors.onPrimaryContainer,
   },
   almostDone: {

@@ -16,11 +16,11 @@ import {
 import { Pressable, StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
 
+import AttemptTime from './AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
-import { getAttemptTimeString } from '../utils/formatElapsedTime';
 import { getLibrary } from '../../lib/attempts';
 
 enum TimerState {
@@ -88,7 +88,7 @@ export default function PracticeView() {
       {(timerState === TimerState.SCRAMBLING && (
         <Pressable style={styles.landing} onPress={nextTimerState}>
           <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
-          <Text style={styles.time}>{getAttemptTimeString(lastAttempt)}</Text>
+          <AttemptTime attempt={lastAttempt} />
           <Text style={styles.scramble}>{''}</Text>
         </Pressable>
       )) ||
@@ -120,8 +120,9 @@ const styles = StyleSheet.create({
     fontFamily: 'RubikMonoOne-Regular',
   },
   scramble: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'center',
-    padding: 40,
+    paddingHorizontal: 15,
+    paddingVertical: 40,
   },
 });

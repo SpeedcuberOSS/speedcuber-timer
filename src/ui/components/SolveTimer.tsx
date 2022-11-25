@@ -7,9 +7,8 @@
 import { Pressable, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 
-import { Text } from 'react-native-paper';
+import Time from './Time';
 import { Timer } from '../../lib/timers';
-import formatElapsedTime from '../utils/formatElapsedTime';
 
 interface SolveTimerProps {
   onStopTimer: (duration: Date) => void;
@@ -35,7 +34,7 @@ const SolveTimer: React.FC<SolveTimerProps> = ({ onStopTimer }) => {
 
   return (
     <Pressable style={styles.container} onPressIn={handleOnPressIn}>
-      <Text style={styles.timer}>{formatElapsedTime(elapsed)}</Text>
+      <Time elapsed={elapsed} />
     </Pressable>
   );
 };
