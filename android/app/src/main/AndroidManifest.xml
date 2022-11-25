@@ -2,6 +2,7 @@
   package="org.speedcuber.timer">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <!-- Add Permissions for Bluetooth Low Energy -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>

@@ -4,17 +4,17 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import React, { useState } from 'react';
-
-import InspectionTime from './InspectionTime';
-import { useTimer } from '../hooks';
 import {
-  Infraction,
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
+  Infraction,
 } from '../../lib/stif';
+import { Pressable, StyleSheet, Vibration } from 'react-native';
+import React, { useState } from 'react';
+
 import { Inspection } from '../../lib/constants';
-import { Pressable, StyleSheet } from 'react-native';
+import InspectionTime from './InspectionTime';
+import { useTimer } from '../hooks';
 
 interface InspectionTimerProps {
   onInspectionComplete?: (infractions: Infraction[]) => void;
@@ -37,6 +37,9 @@ function getInfractions(
   return infractions;
 }
 
+const FIRST_WARNING_MILLIS = 8000;
+const SECOND_WARNING_MILLIS = 12000;
+
 const InspectionTimer = ({
   onInspectionComplete = () => {},
   inspectionDurationMillis = Inspection.DEFAULT_DURATION_MILLIS,
@@ -44,6 +47,7 @@ const InspectionTimer = ({
   overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
 }: InspectionTimerProps) => {
   const { timer, elapsed } = useTimer();
+  const [warnings, setWarnings] = useState<number[]>([]);
   const [ready, setReady] = useState(false);
   const [startMillis, setStartMillis] = useState(Infinity);
 
@@ -92,7 +96,19 @@ const InspectionTimer = ({
     }, 0);
   }
 
+  function deliverTimeWarning() {
+    for (const warning of [FIRST_WARNING_MILLIS, SECOND_WARNING_MILLIS]) {
+      if (elapsedMillis > warning) {
+        if (!warnings.includes(warning)) {
+          setWarnings([...warnings, warning]);
+          Vibration.vibrate();
+        }
+      }
+    }
+  }
+
   endInspectionIfAtDnf();
+  deliverTimeWarning();
 
   return (
     <Pressable
