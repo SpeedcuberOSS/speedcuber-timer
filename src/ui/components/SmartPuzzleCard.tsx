@@ -25,6 +25,7 @@ interface SmartPuzzleCardProps {
   connectionStatus?: ConnectionStatus;
   puzzle?: Puzzle;
   onConnect: () => Promise<void>;
+  onDisconnect: () => Promise<void>;
 }
 
 const TitleIcon = (icon: any) => (props: { size: number }) =>
@@ -45,6 +46,7 @@ function SmartPuzzleCard({
   puzzle = PUZZLE_3x3x3,
   connectionStatus = ConnectionStatus.DISCONNECTED,
   onConnect,
+  onDisconnect,
 }: SmartPuzzleCardProps) {
   const { t } = useTranslation();
   return (
@@ -72,6 +74,7 @@ function SmartPuzzleCard({
               <IconButton
                 icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
                 style={styles.connection}
+                onPress={onDisconnect}
               />
             );
           } else if (connectionStatus === 'failed') {

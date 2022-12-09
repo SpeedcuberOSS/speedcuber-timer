@@ -15,7 +15,6 @@ import {
 } from '../../../lib/bluetooth-puzzle';
 
 import { Platform } from 'react-native';
-import SystemSetting from 'react-native-system-setting';
 
 export const DEFAULT_BLUETOOTH_SCAN_DURATION = 5000;
 let _MANAGER = new BleManager();
@@ -57,9 +56,6 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
 async function _ensureLocationEnabled(): Promise<boolean> {
   if (Platform.OS === 'android') {
     try {
-      if (!(await SystemSetting.isLocationEnabled())) {
-        await SystemSetting.switchLocation();
-      }
     } catch (error) {
       console.error(error);
     }

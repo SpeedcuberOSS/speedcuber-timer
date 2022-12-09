@@ -6,7 +6,7 @@
 
 import { BluetoothPuzzle } from '../../../lib/bluetooth-puzzle';
 import { createGlobalState } from 'react-hooks-global-state';
-import { getAvailableBluetoothCubes } from './';
+import { getAvailableBluetoothCubes } from './legacyIndex';
 
 let PUZZLE_REGISTRY: Map<string, BluetoothPuzzle> = new Map();
 

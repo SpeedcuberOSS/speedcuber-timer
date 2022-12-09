@@ -6,6 +6,9 @@
 
 import { Puzzle } from '../types/Puzzle';
 
+const PUZZLE_UNKNOWN: Puzzle = Object.freeze({
+  id: '???',
+});
 const PUZZLE_2x2x2: Puzzle = Object.freeze({
   id: '222',
 });
@@ -41,6 +44,7 @@ const PUZZLE_SKEWB: Puzzle = Object.freeze({
 });
 
 export {
+  PUZZLE_UNKNOWN,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
   PUZZLE_4x4x4,
