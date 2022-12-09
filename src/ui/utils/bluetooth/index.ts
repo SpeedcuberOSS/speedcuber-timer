@@ -12,7 +12,7 @@ BleManager.start({ showAlert: false });
 const BleEventEmitter = new NativeEventEmitter(NativeModules.BleManager);
 
 export function isBluetoothEnabled(): Promise<boolean> {
-  return new Promise<boolean>((resolve, reject) => {
+  return new Promise<boolean>((resolve, _reject) => {
     const subscription = BleEventEmitter.addListener(
       'BleManagerDidUpdateState',
       ({ state }) => {
