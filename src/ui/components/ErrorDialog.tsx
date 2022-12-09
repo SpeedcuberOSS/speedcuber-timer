@@ -16,9 +16,9 @@ export default function ErrorDialog({ error }: ErrorDialogProps) {
   const [visible, setVisible] = useState<boolean>(false);
   useEffect(() => {
     const shouldBeVisible = message !== undefined;
+    console.debug(`ErrorDialog: ${message} | ${visible}`);
     setVisible(shouldBeVisible);
   }, [error]);
-  console.debug(`ErrorDialog: ${message} | ${visible}`);
   return (
     <Portal>
       <Dialog visible={visible}>
