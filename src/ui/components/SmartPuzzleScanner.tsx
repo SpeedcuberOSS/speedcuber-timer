@@ -7,40 +7,42 @@
 import { Button, ProgressBar } from 'react-native-paper';
 import React, { useState } from 'react';
 
-import { DEFAULT_BLUETOOTH_SCAN_DURATION } from '../utils/bluetooth';
-import SmartPuzzleConnector from '../components/SmartPuzzleConnector';
+import ErrorDialog from './ErrorDialog';
+import { SmartPuzzleError } from '../utils/bluetooth/SmartPuzzleError';
 import { View } from 'react-native';
-import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
+import { ensureScanningReady } from '../utils/bluetooth/permissions';
 import { useTranslation } from 'react-i18next';
 
 const SmartPuzzleScanner = () => {
-  const { puzzles, puzzleScan } = useSmartPuzzles();
   const [progressVisible, setProgressVisible] = useState(false);
   const { t } = useTranslation();
+  const [smartPuzzleError, setSmartPuzzleError] = useState<SmartPuzzleError>();
   return (
     <View>
       <Button
         onPress={async () => {
-          console.debug('Scanning for cubes');
-          setProgressVisible(true);
           try {
-            puzzleScan(DEFAULT_BLUETOOTH_SCAN_DURATION);
+            await ensureScanningReady();
+            console.log('PLACEHOLDER: Scanning for cubes');
           } catch (error) {
-            console.error(`Error while discovering cubes: ${error}`);
+            if (error instanceof SmartPuzzleError) {
+              setSmartPuzzleError(error);
+              return;
+            } else {
+              throw error;
+            }
           }
-          setTimeout(() => {
-            setProgressVisible(false);
-          }, DEFAULT_BLUETOOTH_SCAN_DURATION);
         }}
         mode="contained-tonal"
         icon="bluetooth">
         {t('bluetooth.start_scan')}
       </Button>
       <ProgressBar visible={progressVisible} indeterminate />
-      {puzzles.length > 0 &&
+      {/* {puzzles.length > 0 &&
         puzzles.map(cube => (
           <SmartPuzzleConnector key={cube.id()} smartPuzzle={cube} />
-        ))}
+        ))} */}
+      <ErrorDialog error={smartPuzzleError} />
     </View>
   );
 };
