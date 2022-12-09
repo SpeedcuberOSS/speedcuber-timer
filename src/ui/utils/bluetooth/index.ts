@@ -23,14 +23,21 @@ export async function getAvailableBluetoothCubes(
   scanDurationMillis: number = 5000,
   onDiscoverPuzzle: PuzzleDiscoveryListener = (_p: BluetoothPuzzle) => {},
 ): Promise<BluetoothPuzzle[]> {
-  await _ensurePermissionsGranted();
+  if (Platform.OS === 'android') {
+    await _ensurePermissionsGranted();
+    await _ensureLocationEnabled();
+  }
   await _ensureBluetoothPoweredOn();
   let devices = await _getSmartcubes(scanDurationMillis, onDiscoverPuzzle);
   return devices;
 }
 
 async function _ensurePermissionsGranted(): Promise<boolean> {
-  return true; // TODO: Handled manually right now.
+  let success = true;
+  if (!(await isLocationAccessAllowed())) {
+    success = await requestLocationAccess();
+  }
+  return success;
 }
 
 async function _ensureBluetoothPoweredOn(): Promise<boolean> {
@@ -45,6 +52,10 @@ async function _ensureBluetoothPoweredOn(): Promise<boolean> {
       reject('Bluetooth not powered on');
     }, 10000);
   });
+}
+
+async function _ensureLocationEnabled(): Promise<boolean> {
+  return true; // TODO: Handled manually right now.
 }
 
 async function _getSmartcubes(

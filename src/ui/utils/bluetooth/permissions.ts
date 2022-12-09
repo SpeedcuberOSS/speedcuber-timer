@@ -5,12 +5,28 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { PermissionsAndroid } from 'react-native';
 
-async function isCoarseLocationAccessAllowed(): Promise<boolean> {
+async function isLocationAccessAllowed(): Promise<boolean> {
+  console.debug('Checking location access');
   return await PermissionsAndroid.check(
-    PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
+    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+  );
+}
+async function requestLocationAccess(): Promise<boolean> {
+  console.debug('Requesting location access');
+  return (
+    (await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Location Access Required',
+        message:
+          'Scanning for bluetooth devices (e.g. smartcubes) requires location access.',
+        buttonPositive: 'OK',
+      },
+    )) === PermissionsAndroid.RESULTS.GRANTED
   );
 }
 async function isBluetoothAccessAllowed(): Promise<boolean> {
+  console.debug('Checking bluetooth access');
   return (
     (await PermissionsAndroid.check(
       PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
@@ -20,4 +36,8 @@ async function isBluetoothAccessAllowed(): Promise<boolean> {
     ))
   );
 }
-export { isCoarseLocationAccessAllowed, isBluetoothAccessAllowed };
+export {
+  isLocationAccessAllowed,
+  requestLocationAccess,
+  isBluetoothAccessAllowed,
+};
