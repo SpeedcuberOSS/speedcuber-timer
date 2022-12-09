@@ -12,15 +12,16 @@ import React, { useEffect, useState } from 'react';
 
 import ErrorDialog from './ErrorDialog';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
+import { SmartPuzzleError } from '../utils/bluetooth/SmartPuzzleError';
 import { View } from 'react-native';
 import { ensureScanningReady } from '../utils/bluetooth/permissions';
 import { scanForSmartPuzzles } from '../utils/bluetooth';
-import useSmartPuzzleErrorGuard from '../hooks/useSmartPuzzleErrorGuard';
+import useErrorGuard from '../hooks/useErrorGuard';
 import { useTranslation } from 'react-i18next';
 
 const SmartPuzzleScanner = () => {
   const { t } = useTranslation();
-  const { smartPuzzleError, guard } = useSmartPuzzleErrorGuard();
+  const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [isScanActive, setIsScanActive] = useState(false);
   const [smartPuzzles, setSmartPuzzles] = useState<SmartPuzzle[]>([]);
   useEffect(() => {
@@ -48,7 +49,7 @@ const SmartPuzzleScanner = () => {
         smartPuzzles.map(cube => (
           <SmartPuzzleConnector key={cube.device.id} smartPuzzle={cube} />
         ))}
-      <ErrorDialog error={smartPuzzleError} />
+      <ErrorDialog error={error} />
     </View>
   );
 };

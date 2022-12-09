@@ -12,8 +12,9 @@ import React, { useEffect, useState } from 'react';
 
 import ErrorDialog from './ErrorDialog';
 import SmartPuzzleCard from './SmartPuzzleCard';
+import { SmartPuzzleError } from '../utils/bluetooth/SmartPuzzleError';
 import { StyleSheet } from 'react-native';
-import useSmartPuzzleErrorGuard from '../hooks/useSmartPuzzleErrorGuard';
+import useErrorGuard from '../hooks/useErrorGuard';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: SmartPuzzle;
@@ -32,7 +33,7 @@ const SmartPuzzleConnector = ({
   smartPuzzle,
   onMove,
 }: SmartPuzzleConnectorProps) => {
-  const { smartPuzzleError, guard } = useSmartPuzzleErrorGuard();
+  const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>(
     ConnectionStatus.DISCONNECTED,
   );
@@ -62,7 +63,7 @@ const SmartPuzzleConnector = ({
         onConnect={onInitiateConnection}
         onDisconnect={onTerminateConnection}
       />
-      <ErrorDialog error={smartPuzzleError} />
+      <ErrorDialog error={error} />
     </>
   );
 };
