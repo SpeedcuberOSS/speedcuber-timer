@@ -8,6 +8,7 @@ import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import LocationStatus from './LocationStatus';
 import { isBluetoothEnabled } from '.';
+import { t } from 'i18next';
 
 export async function ensureScanningReady() {
   await ensureLocationPermissionGranted();
@@ -26,19 +27,17 @@ async function ensureLocationPermissionGranted() {
         case PermissionsAndroid.RESULTS.DENIED:
           throw new SmartPuzzleError(
             SmartPuzzleErrorCode.LOCATION_PERMISSION_DENIED,
-            'Location permission denied. Please grant location permissions to use smart puzzles.',
+            t('location.denied'),
           );
         case PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN:
           throw new SmartPuzzleError(
             SmartPuzzleErrorCode.LOCATION_PERMISSION_NEVER_ASK_AGAIN,
-            "Location permission denied. Please grant location permissions in your device's settings to use smart puzzles.",
+            t('location.never_ask_again'),
           );
         case PermissionsAndroid.RESULTS.GRANTED:
           return; // We have the required permission!
         default:
-          throw new Error(
-            `Unexpected location permission request result: ${result}`,
-          );
+          throw new Error(t('location.unexpected_result', { result: result }));
       }
     }
   }
@@ -51,7 +50,7 @@ async function checkPermission(permission: Permission) {
     console.debug(`Permission (${permission}) check result: ${result}`);
     return result;
   } catch (err) {
-    throw new Error(`Unknown error while checking permission: ${err}`);
+    throw new Error(t('error.permissions_check', { error: err }));
   }
 }
 
@@ -67,17 +66,14 @@ async function requestLocationPermission(requiredPermission: Permission) {
   console.debug(`Requesting location permission: ${requiredPermission}`);
   try {
     let result = await PermissionsAndroid.request(requiredPermission, {
-      title: 'Location Access Required',
-      message:
-        'Speedcuber Timer needs location permissions to find smart puzzles near you.',
-      buttonPositive: 'OK',
+      title: t('location.request_title'),
+      message: t('location.request_rationale'),
+      buttonPositive: t('common.ok'),
     });
     console.debug(`Location permission request result: ${result}`);
     return result;
   } catch (err) {
-    throw new Error(
-      `Unknown error while requesting Location permissions: ${err}`,
-    );
+    throw new Error(t('location.error_request', { error: err }));
   }
 }
 
@@ -106,18 +102,18 @@ async function ensureBluetoothPermissionGranted() {
           case PermissionsAndroid.RESULTS.DENIED:
             throw new SmartPuzzleError(
               SmartPuzzleErrorCode.BLUETOOTH_PERMISSION_DENIED,
-              'Bluetooth permission denied. Please grant Bluetooth permissions to use smart puzzles.',
+              t('bluetooth.denied'),
             );
           case PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN:
             throw new SmartPuzzleError(
               SmartPuzzleErrorCode.BLUETOOTH_PERMISSION_NEVER_ASK_AGAIN,
-              "Bluetooth permission denied. Please grant Bluetooth permissions in your device's settings to use smart puzzles.",
+              t('bluetooth.never_ask_again'),
             );
           case PermissionsAndroid.RESULTS.GRANTED:
             return; // We have the required permission!
           default:
             throw new Error(
-              `Unexpected Bluetooth permission request result: ${result}`,
+              t('bluetooth.unexpected_result', { result: result }),
             );
         }
       });
@@ -147,9 +143,7 @@ async function requestBluetoothPermissions(permissions: Permission[]) {
     );
     return result;
   } catch (err) {
-    throw new Error(
-      `Unknown error while requesting Bluetooth permissions: ${err}`,
-    );
+    throw new Error(t('bluetooth.error_request', { error: err }));
   }
 }
 
@@ -161,7 +155,7 @@ async function ensureLocationEnabled() {
     if (!enabled) {
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.LOCATION_DISABLED,
-        'Location is turned off. Please enable location to find nearby smart puzzles.',
+        t('location.disabled'),
       );
     }
   }
@@ -174,7 +168,7 @@ async function ensureBluetoothEnabled() {
   if (!enabled) {
     throw new SmartPuzzleError(
       SmartPuzzleErrorCode.BLUETOOTH_DISABLED,
-      'Bluetooth is turned off. Please enable Bluetooth to connect to smart puzzles.',
+      t('bluetooth.disabled'),
     );
   }
 }

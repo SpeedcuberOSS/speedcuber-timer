@@ -1,7 +1,8 @@
 {
   "common": {
     "back": "Atrás",
-    "done": "Hecho"
+    "done": "Hecho",
+    "ok": "Entendido"
   },
   "inspection": "Inspección",
   "learn": "Aprender",
@@ -10,6 +11,17 @@
   "insights": "Mejorar",
   "bluetooth": {
     "connect": "Conectar",
-    "start_scan": "Buscar cubos inteligentes"
+    "start_scan": "Buscar cubos inteligentes",
+    "connect_error": "No se pudo conectar a {{name}} por causa de:\n{{error}}",
+    "disconnect_error": "No se pudo desconectar de {{name}} por causa de:\n{{error}}"
+  },
+  "location": {
+    "request_title": "Se require aceso a la ubicación",
+    "request_rationale": "Speedcuber Timer requiere aceso a la ubicación para buscar cubos inteligentes cercanos.",
+    "denied": "Aceso a la ubicación prohibido. Por favor, conceder este permiso para utilizar cubos inteligentes.",
+    "never_ask_again": "Aceso a la ubicación prohibido. Por favor, conceder este permiso en los ajustes del dispositivo para utilizar cubos inteligentes."
+  },
+  "error": {
+    "title": "Ocurrió un error..."
   }
 }

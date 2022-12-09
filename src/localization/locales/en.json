@@ -1,7 +1,8 @@
 {
   "common": {
     "back": "Back",
-    "done": "Done"
+    "done": "Done",
+    "ok": "Ok"
   },
   "inspection": "Inspection",
   "learn": "Learn",
@@ -10,6 +11,26 @@
   "insights": "Insights",
   "bluetooth": {
     "connect": "Connect",
-    "start_scan": "Scan for smartcubes"
+    "start_scan": "Scan for smartcubes",
+    "connect_error": "Failed to connect to puzzle {{name}} because:\n{{error}}",
+    "disconnect_error": "Failed to disconnect from puzzle {{name}} because:\n{{error}}",
+    "denied": "Bluetooth permission denied. Please grant Bluetooth permissions to use smart puzzles.",
+    "never_ask_again": "Bluetooth permission denied. Please grant Bluetooth permissions in your device's settings to use smart puzzles.",
+    "disabled": "Bluetooth is turned off. Please enable Bluetooth to connect to smart puzzles.",
+    "error_request": "Unknown error while requesting Bluetooth permissions:\n{{error}}",
+    "unexpected_result": "Unexpected Bluetooth permission request result:\n{{result}}"
+  },
+  "location": {
+    "request_title": "Location Access Required",
+    "request_rationale": "Speedcuber Timer needs location permissions to find smart puzzles near you.",
+    "denied": "Location permission denied. Please grant location permissions to use smart puzzles.",
+    "never_ask_again": "Location permission denied. Please grant location permissions in your device's settings to use smart puzzles.",
+    "disabled": "Location is turned off. Please enable location to find nearby smart puzzles.",
+    "error_request": "Unknown error while requesting Location permissions:\n{{error}}",
+    "unexpected_result": "Unexpected Location permission request result:\n{{result}}"
+  },
+  "error": {
+    "title": "Something went wrong...",
+    "permissions_check": "Unknown error while checking permission:\n{{error}}"
   }
 }

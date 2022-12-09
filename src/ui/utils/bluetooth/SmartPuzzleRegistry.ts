@@ -13,6 +13,7 @@ import {
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import { Device } from 'react-native-ble-plx';
+import { t } from 'i18next';
 
 const PUZZLE_REGISTRY: Map<string, Device> = new Map();
 
@@ -106,10 +107,14 @@ async function connect(puzzle: SmartPuzzle) {
   if (!(await puzzle.device.isConnected())) {
     try {
       await puzzle.device.connect({ timeout: 5000 });
+      // TODO: Configure notifications
     } catch (error) {
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.PUZZLE_CONNECTION_FAILED,
-        `Failed to connect to puzzle ${puzzle.device.name} because: ${error}`,
+        t('bluetooth.connect_error', {
+          name: puzzle.device.name,
+          error: error,
+        }),
         { cause: error },
       );
     }
@@ -123,7 +128,10 @@ async function disconnect(puzzle: SmartPuzzle) {
     } catch (error) {
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.PUZZLE_CONNECTION_FAILED,
-        `Failed to disconnect from puzzle ${puzzle.device.name} because: ${error}`,
+        t('bluetooth.disconnect_error', {
+          name: puzzle.device.name,
+          error: error,
+        }),
         { cause: error },
       );
     }

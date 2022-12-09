@@ -7,6 +7,8 @@
 import { Button, Dialog, Portal, Text } from 'react-native-paper';
 import React, { useEffect, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 interface ErrorDialogProps {
   error: Error | undefined;
 }
@@ -19,15 +21,16 @@ export default function ErrorDialog({ error }: ErrorDialogProps) {
     console.debug(`ErrorDialog: ${message} | ${visible}`);
     setVisible(shouldBeVisible);
   }, [error]);
+  const { t } = useTranslation();
   return (
     <Portal>
       <Dialog visible={visible}>
-        <Dialog.Title>Something went wrong...</Dialog.Title>
+        <Dialog.Title>{t('error.title')}</Dialog.Title>
         <Dialog.Content>
           <Text variant="bodyMedium">{message}</Text>
         </Dialog.Content>
         <Dialog.Actions>
-          <Button onPress={() => setVisible(false)}>Ok</Button>
+          <Button onPress={() => setVisible(false)}>{t('common.ok')}</Button>
         </Dialog.Actions>
       </Dialog>
     </Portal>
