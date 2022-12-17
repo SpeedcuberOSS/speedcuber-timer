@@ -6,13 +6,13 @@
 
 import { Characteristic, Device, Subscription } from 'react-native-ble-plx';
 import {
-  PUZZLE_2x2x2,
-  PUZZLE_3x3x3,
-  PUZZLE_UNKNOWN,
-  Puzzle,
-} from '../../../lib/stif';
+  KNOWN_PUZZLE_MODELS,
+  SmartPuzzle,
+  UnknownPuzzle,
+} from '../../../lib/smart-puzzles';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
+import { PUZZLE_UNKNOWN } from '../../../lib/stif';
 import { t } from 'i18next';
 
 interface Message {
@@ -22,7 +22,7 @@ interface Message {
 
 type NotificationListener = (message: Message) => void;
 interface PuzzleRegistryEntry {
-  puzzle: SmartPuzzle;
+  puzzle: BluetoothPuzzle;
   subscriptions: Subscription[];
   messages: Message[];
   listeners: NotificationListener[];
@@ -30,80 +30,14 @@ interface PuzzleRegistryEntry {
 
 const PUZZLE_REGISTRY: Map<string, PuzzleRegistryEntry> = new Map();
 
-interface SmartPuzzleUUIDs {
-  trackingService: string;
-  trackingCharacteristic: string;
-}
-interface SmartPuzzleModel {
-  /**
-   * The prefix of the puzzle's Bluetooth name.
-   */
-  prefix: string;
-  /**
-   * The brand name of the puzzle.
-   */
-  brand: string;
-  /**
-   * The puzzle type.
-   */
-  puzzle: Puzzle;
-  /**
-   * The UUIDs used to connect to the puzzle and use its features.
-   */
-  uuids: SmartPuzzleUUIDs;
-}
-
-export interface SmartPuzzle extends SmartPuzzleModel {
+export interface BluetoothPuzzle extends SmartPuzzle {
   /**
    * The Bluetooth Device representing the smart puzzle.
    */
   device: Device;
 }
 
-const UnknownPuzzle: SmartPuzzleModel = {
-  prefix: '',
-  brand: 'Unknown Brand',
-  puzzle: PUZZLE_UNKNOWN,
-  uuids: {
-    trackingService: '',
-    trackingCharacteristic: '',
-  },
-};
-
-const ParticulaPuzzle: SmartPuzzleModel = {
-  prefix: '',
-  brand: 'Particula GoCube',
-  puzzle: PUZZLE_3x3x3,
-  uuids: {
-    trackingService: '6e400001-b5a3-f393-e0a9-e50e24dcca9e',
-    trackingCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e',
-  },
-};
-
-const RubiksConnected: SmartPuzzleModel = {
-  ...ParticulaPuzzle,
-  prefix: 'Rubiks',
-  brand: 'Rubiks Connected',
-};
-
-const GoCube: SmartPuzzleModel = {
-  ...ParticulaPuzzle,
-  prefix: 'GoCube',
-};
-
-const GoCube2x2x2: SmartPuzzleModel = {
-  ...ParticulaPuzzle,
-  prefix: 'GoCube2x2',
-  puzzle: PUZZLE_2x2x2,
-};
-
-const KNOWN_PUZZLE_MODELS: SmartPuzzleModel[] = [
-  RubiksConnected,
-  GoCube,
-  GoCube2x2x2,
-];
-
-function smartPuzzleType(device: Device): SmartPuzzleModel {
+function smartPuzzleType(device: Device): SmartPuzzle {
   const matchingPuzzles = KNOWN_PUZZLE_MODELS.filter(puzzle =>
     device?.name?.includes(puzzle.prefix),
   );
@@ -132,26 +66,26 @@ function addPuzzle(device: Device) {
 }
 
 function addNotificationListener(
-  puzzle: SmartPuzzle,
+  puzzle: BluetoothPuzzle,
   listener: NotificationListener,
 ) {
   PUZZLE_REGISTRY.get(puzzle.device.id)?.listeners.push(listener);
 }
 
-function getPuzzles(): SmartPuzzle[] {
+function getPuzzles(): BluetoothPuzzle[] {
   return Array.from(PUZZLE_REGISTRY.values())
     .map(entry => entry.puzzle)
     .filter(puzzle => puzzle.puzzle !== PUZZLE_UNKNOWN);
 }
 
-function asSmartPuzzle(device: Device): SmartPuzzle {
+function asSmartPuzzle(device: Device): BluetoothPuzzle {
   return {
     device,
     ...smartPuzzleType(device),
   };
 }
 
-async function connect(puzzle: SmartPuzzle) {
+async function connect(puzzle: BluetoothPuzzle) {
   if (!(await puzzle.device.isConnected())) {
     try {
       await connectToPuzzle(puzzle, 5000);
@@ -169,11 +103,11 @@ async function connect(puzzle: SmartPuzzle) {
   }
 }
 
-async function connectToPuzzle(puzzle: SmartPuzzle, timeoutMillis: number) {
+async function connectToPuzzle(puzzle: BluetoothPuzzle, timeoutMillis: number) {
   await puzzle.device.connect({ timeout: timeoutMillis });
 }
 
-async function configureNotifications(puzzle: SmartPuzzle) {
+async function configureNotifications(puzzle: BluetoothPuzzle) {
   await puzzle.device.discoverAllServicesAndCharacteristics();
   let subscription = await puzzle.device.monitorCharacteristicForService(
     puzzle.uuids.trackingService,
@@ -183,7 +117,7 @@ async function configureNotifications(puzzle: SmartPuzzle) {
   PUZZLE_REGISTRY.get(puzzle.device.id)?.subscriptions.push(subscription);
 }
 
-function onReceiveNotification(puzzle: SmartPuzzle) {
+function onReceiveNotification(puzzle: BluetoothPuzzle) {
   return (error: Error | null, characteristic: Characteristic | null) => {
     if (error) {
       console.error(error);
@@ -194,6 +128,7 @@ function onReceiveNotification(puzzle: SmartPuzzle) {
         occurredAtMillis: Date.now(),
         message: characteristic.value ?? '',
       };
+      console.debug(message);
       PUZZLE_REGISTRY.get(puzzle.device.id)?.messages.push();
       PUZZLE_REGISTRY.get(puzzle.device.id)?.listeners.forEach(listener => {
         // Defer execution of listeners to avoid blocking.
@@ -203,7 +138,7 @@ function onReceiveNotification(puzzle: SmartPuzzle) {
   };
 }
 
-async function disconnect(puzzle: SmartPuzzle) {
+async function disconnect(puzzle: BluetoothPuzzle) {
   if (await puzzle.device.isConnected()) {
     try {
       await puzzle.device.cancelConnection();

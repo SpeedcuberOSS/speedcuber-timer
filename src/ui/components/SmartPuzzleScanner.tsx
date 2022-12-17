@@ -6,7 +6,7 @@
 
 import { Button, ProgressBar } from 'react-native-paper';
 import PuzzleRegistry, {
-  SmartPuzzle,
+  BluetoothPuzzle,
 } from '../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useEffect, useState } from 'react';
 
@@ -23,7 +23,7 @@ const SmartPuzzleScanner = () => {
   const { t } = useTranslation();
   const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [isScanActive, setIsScanActive] = useState(false);
-  const [smartPuzzles, setSmartPuzzles] = useState<SmartPuzzle[]>([]);
+  const [smartPuzzles, setSmartPuzzles] = useState<BluetoothPuzzle[]>([]);
   useEffect(() => {
     setSmartPuzzles(PuzzleRegistry.getPuzzles());
   }, [isScanActive]);

@@ -6,7 +6,7 @@
 
 import { ConnectionStatus, MoveListener } from '../../lib/bluetooth-puzzle';
 import PuzzleRegistry, {
-  SmartPuzzle,
+  BluetoothPuzzle,
 } from '../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useEffect, useState } from 'react';
 
@@ -17,12 +17,12 @@ import { StyleSheet } from 'react-native';
 import useErrorGuard from '../hooks/useErrorGuard';
 
 interface SmartPuzzleConnectorProps {
-  smartPuzzle: SmartPuzzle;
+  smartPuzzle: BluetoothPuzzle;
   onMove?: MoveListener;
 }
 
 async function getConnectionStatus(
-  puzzle: SmartPuzzle,
+  puzzle: BluetoothPuzzle,
 ): Promise<ConnectionStatus> {
   return (await puzzle.device.isConnected())
     ? ConnectionStatus.CONNECTED
