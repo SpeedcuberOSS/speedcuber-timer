@@ -11,112 +11,112 @@ import { Penalty } from '../types/Penalty';
  * All possible infractions specified in the Official WCA Regulations.
  */
 // Article A1 - Time Limits
-const TIMELIMIT_EXCEEDED: Infraction = {
+const TIMELIMIT_EXCEEDED: Infraction = Object.freeze({
   id: 'A1a4',
   penalty: Penalty.DID_NOT_FINISH,
-};
+});
 
 // Article A3 - Inspection
-const INSPECTION_STARTED_LATE_ONE_MINUTE: Infraction = {
+const INSPECTION_STARTED_LATE_ONE_MINUTE: Infraction = Object.freeze({
   id: 'A3b1',
   penalty: Penalty.DID_NOT_START,
-};
-const INSPECTION_APPLIED_MOVES: Infraction = {
+});
+const INSPECTION_APPLIED_MOVES: Infraction = Object.freeze({
   id: 'A3c1',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const STARTED_PUZZLE_PLACED_OUTSIDE_MAT: Infraction = {
+});
+const STARTED_PUZZLE_PLACED_OUTSIDE_MAT: Infraction = Object.freeze({
   id: 'A3d',
   penalty: Penalty.PLUS_2,
-};
+});
 
 // Article A4 - Starting the solve
-const STARTED_WRONG_HAND_PLACEMENT: Infraction = {
+const STARTED_WRONG_HAND_PLACEMENT: Infraction = Object.freeze({
   id: 'A4b',
   penalty: Penalty.PLUS_2,
-};
-const STARTED_WHILE_TOUCHING_PUZZLE: Infraction = {
+});
+const STARTED_WHILE_TOUCHING_PUZZLE: Infraction = Object.freeze({
   id: 'A4b1',
   penalty: Penalty.PLUS_2,
-};
-const INSPECTION_EXCEEDED_15_SECONDS: Infraction = {
+});
+const INSPECTION_EXCEEDED_15_SECONDS: Infraction = Object.freeze({
   id: 'A4d1',
   penalty: Penalty.PLUS_2,
-};
-const INSPECTION_EXCEEDED_17_SECONDS: Infraction = {
+});
+const INSPECTION_EXCEEDED_17_SECONDS: Infraction = Object.freeze({
   id: 'A4d2',
   penalty: Penalty.DID_NOT_FINISH,
-};
+});
 
 // Article A5 - During the solve
-const UNAUTHORIZED_COMMUNICATION: Infraction = {
+const UNAUTHORIZED_COMMUNICATION: Infraction = Object.freeze({
   id: 'A5a',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const UNAUTHORIZED_ASSISTANCE: Infraction = {
+});
+const UNAUTHORIZED_ASSISTANCE: Infraction = Object.freeze({
   id: 'A5b',
   penalty: Penalty.DID_NOT_FINISH,
-};
+});
 
 // Article A6 - Stopping the solve
-const STOPPED_PUZZLE_ONE_MOVE_REMAINING: Infraction = {
+const STOPPED_PUZZLE_ONE_MOVE_REMAINING: Infraction = Object.freeze({
   id: '10e3',
   penalty: Penalty.PLUS_2,
-};
-const STOPPED_PUZZLE_UNSOLVED: Infraction = {
+});
+const STOPPED_PUZZLE_UNSOLVED: Infraction = Object.freeze({
   id: '10e4',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const STOPPED_PUZZLE_HELD: Infraction = {
+});
+const STOPPED_PUZZLE_HELD: Infraction = Object.freeze({
   id: 'A6c',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const STOPPED_PUZZLE_HELD_JUDGE_OVERRIDE: Infraction = {
+});
+const STOPPED_PUZZLE_HELD_JUDGE_OVERRIDE: Infraction = Object.freeze({
   id: 'A6c-override',
   penalty: Penalty.PLUS_2,
-};
-const STOPPED_WRONG_HAND_PLACEMENT: Infraction = {
+});
+const STOPPED_WRONG_HAND_PLACEMENT: Infraction = Object.freeze({
   id: 'A6d',
   penalty: Penalty.PLUS_2,
-};
-const STOPPED_APPLIED_MOVES: Infraction = {
+});
+const STOPPED_APPLIED_MOVES: Infraction = Object.freeze({
   id: 'A6e1',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const STOPPED_TOUCHED_PUZZLE: Infraction = {
+});
+const STOPPED_TOUCHED_PUZZLE: Infraction = Object.freeze({
   id: 'A6e2',
   penalty: Penalty.PLUS_2,
-};
-const STOPPED_TOUCHED_PUZZLE_JUDGE_OVERRIDE: Infraction = {
+});
+const STOPPED_TOUCHED_PUZZLE_JUDGE_OVERRIDE: Infraction = Object.freeze({
   id: 'A6e2-override',
   penalty: Penalty.NONE,
-};
-const RESET_TIMER_BEFORE_SIGNATURES: Infraction = {
+});
+const RESET_TIMER_BEFORE_SIGNATURES: Infraction = Object.freeze({
   id: 'A6f',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const RESET_TIMER_BEFORE_SIGNATURES_JUDGE_OVERRIDE: Infraction = {
+});
+const RESET_TIMER_BEFORE_SIGNATURES_JUDGE_OVERRIDE: Infraction = Object.freeze({
   id: 'A6f-override',
   penalty: Penalty.NONE,
-};
-const RESET_TIMER_BEFORE_RESULT_RECORDED: Infraction = {
+});
+const RESET_TIMER_BEFORE_RESULT_RECORDED: Infraction = Object.freeze({
   id: 'A6f1',
   penalty: Penalty.DID_NOT_FINISH,
-};
+});
 
 // Article A7 - Recording results
-const SIGNED_BEFORE_STARTING: Infraction = {
+const SIGNED_BEFORE_STARTING: Infraction = Object.freeze({
   id: 'A7c2',
   penalty: Penalty.DID_NOT_START,
-};
-const SIGNED_BEFORE_JUDGE: Infraction = {
+});
+const SIGNED_BEFORE_JUDGE: Infraction = Object.freeze({
   id: 'A7c3',
   penalty: Penalty.DID_NOT_FINISH,
-};
-const SIGNATURE_MISSING: Infraction = {
+});
+const SIGNATURE_MISSING: Infraction = Object.freeze({
   id: 'A7c4',
   penalty: Penalty.DID_NOT_FINISH,
-};
+});
 
 // Article B - Blindfolded Solving
 // TODO Add BLD penalties
@@ -167,7 +167,7 @@ export {
   INSPECTION_APPLIED_MOVES,
   STARTED_PUZZLE_PLACED_OUTSIDE_MAT,
   STARTED_WRONG_HAND_PLACEMENT,
-  STARTED_WHILE_TOUCHING_PUZZLE as STARTED_TOUCHED_PUZZLE,
+  STARTED_WHILE_TOUCHING_PUZZLE,
   UNAUTHORIZED_ASSISTANCE,
   UNAUTHORIZED_COMMUNICATION,
   STOPPED_PUZZLE_ONE_MOVE_REMAINING,

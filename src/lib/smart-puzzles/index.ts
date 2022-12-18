@@ -4,31 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { PUZZLE_2x2x2, PUZZLE_3x3x3, PUZZLE_UNKNOWN, Puzzle } from '../stif';
-
-export interface SmartPuzzleUUIDs {
-  trackingService: string;
-  trackingCharacteristic: string;
-}
-
-export interface SmartPuzzle {
-  /**
-   * The prefix of the puzzle's Bluetooth name.
-   */
-  prefix: string;
-  /**
-   * The brand name of the puzzle.
-   */
-  brand: string;
-  /**
-   * The puzzle type.
-   */
-  puzzle: Puzzle;
-  /**
-   * The UUIDs used to connect to the puzzle and use its features.
-   */
-  uuids: SmartPuzzleUUIDs;
-}
+import {
+  PUZZLE_2x2x2,
+  PUZZLE_3x3x3,
+  PUZZLE_UNKNOWN,
+  SmartPuzzle,
+} from '../stif';
 
 export const UnknownPuzzle: SmartPuzzle = {
   prefix: '',

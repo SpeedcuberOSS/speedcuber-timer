@@ -5,22 +5,21 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Characteristic, Device, Subscription } from 'react-native-ble-plx';
-import {
-  KNOWN_PUZZLE_MODELS,
-  SmartPuzzle,
-  UnknownPuzzle,
-} from '../../../lib/smart-puzzles';
+import { KNOWN_PUZZLE_MODELS, UnknownPuzzle } from '../../../lib/smart-puzzles';
+import { Message, PUZZLE_UNKNOWN, SmartPuzzle } from '../../../lib/stif';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
-import { PUZZLE_UNKNOWN } from '../../../lib/stif';
 import { t } from 'i18next';
 
-interface Message {
-  occurredAtMillis: number;
-  message: string;
+export interface BluetoothPuzzle extends SmartPuzzle {
+  /**
+   * The Bluetooth Device representing the smart puzzle.
+   */
+  device: Device;
 }
 
 type NotificationListener = (message: Message) => void;
+
 interface PuzzleRegistryEntry {
   puzzle: BluetoothPuzzle;
   subscriptions: Subscription[];
@@ -29,13 +28,7 @@ interface PuzzleRegistryEntry {
 }
 
 const PUZZLE_REGISTRY: Map<string, PuzzleRegistryEntry> = new Map();
-
-export interface BluetoothPuzzle extends SmartPuzzle {
-  /**
-   * The Bluetooth Device representing the smart puzzle.
-   */
-  device: Device;
-}
+let _lastConnectedPuzzle: BluetoothPuzzle | null = null;
 
 function smartPuzzleType(device: Device): SmartPuzzle {
   const matchingPuzzles = KNOWN_PUZZLE_MODELS.filter(puzzle =>
@@ -90,6 +83,7 @@ async function connect(puzzle: BluetoothPuzzle) {
     try {
       await connectToPuzzle(puzzle, 5000);
       await configureNotifications(puzzle);
+      _lastConnectedPuzzle = puzzle;
     } catch (error) {
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.PUZZLE_CONNECTION_FAILED,
@@ -125,11 +119,11 @@ function onReceiveNotification(puzzle: BluetoothPuzzle) {
     }
     if (characteristic) {
       let message = {
-        occurredAtMillis: Date.now(),
-        message: characteristic.value ?? '',
+        t: Date.now(),
+        m: characteristic.value ?? '',
       };
       console.debug(message);
-      PUZZLE_REGISTRY.get(puzzle.device.id)?.messages.push();
+      PUZZLE_REGISTRY.get(puzzle.device.id)?.messages.push(message);
       PUZZLE_REGISTRY.get(puzzle.device.id)?.listeners.forEach(listener => {
         // Defer execution of listeners to avoid blocking.
         setTimeout(() => listener(message), 0);
@@ -145,6 +139,9 @@ async function disconnect(puzzle: BluetoothPuzzle) {
       PUZZLE_REGISTRY.get(puzzle.device.id)?.subscriptions.forEach(
         subscription => subscription.remove(),
       );
+      if (puzzle === _lastConnectedPuzzle) {
+        _lastConnectedPuzzle = null;
+      }
     } catch (error) {
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.PUZZLE_CONNECTION_FAILED,
@@ -158,12 +155,34 @@ async function disconnect(puzzle: BluetoothPuzzle) {
   }
 }
 
+function lastConnectedPuzzle(): BluetoothPuzzle | null {
+  return _lastConnectedPuzzle;
+}
+
+function getMessages(puzzle: BluetoothPuzzle): Message[] {
+  return PUZZLE_REGISTRY.get(puzzle.device.id)?.messages ?? [];
+}
+
+function getMessagesOnInterval(
+  puzzle: BluetoothPuzzle,
+  intervalStartMillis: number,
+  intervalEndMillis: number,
+) {
+  return getMessages(puzzle).filter(
+    message =>
+      message.t >= intervalStartMillis && message.t <= intervalEndMillis,
+  );
+}
+
 const PuzzleRegistry = {
   addPuzzle,
   getPuzzles,
   connect,
   addNotificationListener,
   disconnect,
+  lastConnectedPuzzle,
+  getMessages,
+  getMessagesOnInterval,
 };
 
 export default PuzzleRegistry;

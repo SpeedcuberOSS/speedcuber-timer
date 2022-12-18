@@ -13,7 +13,7 @@
  * Extensions that become widely used should have their fields proposed
  * for inclusion in the full STIF specification.
  */
-export type Extension = {
+export interface Extension {
   /**
    * The Extension identifier.
    *
@@ -31,4 +31,4 @@ export type Extension = {
    * The extension data.
    */
   data: object;
-};
+}

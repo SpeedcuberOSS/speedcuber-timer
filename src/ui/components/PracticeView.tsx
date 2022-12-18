@@ -18,6 +18,9 @@ import React, { useState } from 'react';
 
 import AttemptTime from './AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
+import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
+import PuzzleRegistry from '../utils/bluetooth/SmartPuzzleRegistry';
+import { SMARTPUZZLE_UNKNOWN } from '../../lib/stif/builtins/SmartPuzzles';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
@@ -40,6 +43,8 @@ export default function PracticeView() {
   );
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
   const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
+  const [inspectionStart, setInspectionStart] = useState(Date.now());
+  const [inspectionEnd, setInspectionEnd] = useState(Date.now());
 
   function get3x3x3Scramble(): string {
     let scramble = new Scrambler3x3x3().generateScramble();
@@ -53,8 +58,15 @@ export default function PracticeView() {
     setTimerState(next);
   }
 
+  function handleInspectionBegin() {
+    console.debug('Inspection begin');
+    setInspectionStart(Date.now());
+    nextTimerState();
+  }
+
   function handleInspectionComplete(infractions: Infraction[]) {
     console.debug('Inspection complete', infractions);
+    setInspectionEnd(Date.now());
     infractions.forEach(infraction => {
       attemptBuilder.addInfraction(infraction);
     });
@@ -76,6 +88,21 @@ export default function PracticeView() {
   function completeAndSaveAttempt(duration: Date) {
     attemptBuilder.setDuration(duration.getTime());
     attemptBuilder.addSolution(solutionBuilder.build());
+    let smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
+    if (smartPuzzle) {
+      attemptBuilder.addExtension(
+        new MessageStreamBuilder()
+          .setSmartPuzzle(smartPuzzle)
+          .addMessages(
+            PuzzleRegistry.getMessagesOnInterval(
+              smartPuzzle,
+              inspectionStart,
+              inspectionEnd,
+            ),
+          )
+          .build(),
+      );
+    }
     let prevAttempt = attemptBuilder.build();
     getLibrary().add(prevAttempt);
     setLastAttempt(prevAttempt);
@@ -86,7 +113,7 @@ export default function PracticeView() {
   return (
     <View style={styles.container}>
       {(timerState === TimerState.SCRAMBLING && (
-        <Pressable style={styles.landing} onPress={nextTimerState}>
+        <Pressable style={styles.landing} onPress={handleInspectionBegin}>
           <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
           <AttemptTime attempt={lastAttempt} />
           <Text style={styles.scramble}>{''}</Text>
