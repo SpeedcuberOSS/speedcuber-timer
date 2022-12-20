@@ -4,20 +4,21 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { SafeAreaView, StyleSheet, Dimensions } from 'react-native';
-import React from 'react';
-import BigList from 'react-native-big-list';
-import { getLibrary } from '../../lib/attempts';
-import AttemptCard from '../components/AttemptCard';
-import { getCurrentTheme } from '../themes';
-import { Attempt } from '../../lib/stif';
+import { Dimensions, SafeAreaView, StyleSheet } from 'react-native';
 import {
   VictoryChart,
   VictoryScatter,
   VictoryTheme,
   VictoryZoomContainer,
 } from 'victory-native';
+
+import { Attempt } from '../../lib/stif';
+import AttemptCard from '../components/AttemptCard';
+import BigList from 'react-native-big-list';
+import React from 'react';
 import { VictoryThemeDefinition } from 'victory-core';
+import { getCurrentTheme } from '../themes';
+import { getLibrary } from '../../lib/attempts';
 
 let library = getLibrary();
 let chartTheme: VictoryThemeDefinition = {
