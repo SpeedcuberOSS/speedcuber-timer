@@ -19,8 +19,14 @@ import {
   PUZZLE_PYRAMINX,
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
+  PUZZLE_UNKNOWN,
 } from './Puzzles';
 
+const EVENT_UNKNOWN: CompetitiveEvent = Object.freeze({
+  id: '???',
+  puzzle: PUZZLE_UNKNOWN,
+  type: CompetitiveEventType.CUSTOM,
+});
 const EVENT_2x2x2: CompetitiveEvent = Object.freeze({
   id: '222',
   puzzle: PUZZLE_2x2x2,
@@ -117,6 +123,7 @@ const EVENT_SKEWB: CompetitiveEvent = Object.freeze({
 // TODO add several common unofficial events (e.g. relays, team BLD)
 
 export {
+  EVENT_UNKNOWN,
   EVENT_2x2x2,
   EVENT_3x3x3,
   EVENT_3x3x3_BLD,

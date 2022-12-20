@@ -8,9 +8,7 @@ import {
   AttemptBuilder,
   EVENT_3x3x3,
   Infraction,
-  PUZZLE_3x3x3,
   Penalty,
-  ScrambleBuilder,
   SolutionBuilder,
 } from '../../lib/stif';
 import { Pressable, StyleSheet, View } from 'react-native';
@@ -19,6 +17,7 @@ import PuzzleRegistry, {
 } from '../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useState } from 'react';
 
+import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
@@ -35,13 +34,7 @@ enum TimerState {
 
 export default function PracticeView() {
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
-  const [lastAttempt, setLastAttempt] = useState(
-    AttemptBuilder.buildBasic(
-      EVENT_3x3x3,
-      ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
-      0,
-    ),
-  );
+  const [lastAttempt, setLastAttempt] = useState(ATTEMPT_UNKNOWN);
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
   const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
   const [messageStreamBuilder, setMessageStreamBuilder] = useState(
