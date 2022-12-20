@@ -14,13 +14,14 @@ import {
   SolutionBuilder,
 } from '../../lib/stif';
 import { Pressable, StyleSheet, View } from 'react-native';
+import PuzzleRegistry, {
+  MessageSubscription,
+} from '../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useState } from 'react';
 
 import AttemptTime from './AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
-import PuzzleRegistry from '../utils/bluetooth/SmartPuzzleRegistry';
-import { SMARTPUZZLE_UNKNOWN } from '../../lib/stif/builtins/SmartPuzzles';
 import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
@@ -43,8 +44,11 @@ export default function PracticeView() {
   );
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
   const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
-  const [inspectionStart, setInspectionStart] = useState(Date.now());
-  const [inspectionEnd, setInspectionEnd] = useState(Date.now());
+  const [messageStreamBuilder, setMessageStreamBuilder] = useState(
+    new MessageStreamBuilder(),
+  );
+  const [messageSubscription, setMessageSubscription] =
+    useState<MessageSubscription>();
 
   function get3x3x3Scramble(): string {
     let scramble = new Scrambler3x3x3().generateScramble();
@@ -60,13 +64,20 @@ export default function PracticeView() {
 
   function handleInspectionBegin() {
     console.debug('Inspection begin');
-    setInspectionStart(Date.now());
+    const smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
+    if (smartPuzzle) {
+      messageStreamBuilder.setSmartPuzzle(smartPuzzle);
+      setMessageSubscription(
+        PuzzleRegistry.addMessageListener(smartPuzzle, message => {
+          messageStreamBuilder.addMessages([message]);
+        }),
+      );
+    }
     nextTimerState();
   }
 
   function handleInspectionComplete(infractions: Infraction[]) {
     console.debug('Inspection complete', infractions);
-    setInspectionEnd(Date.now());
     infractions.forEach(infraction => {
       attemptBuilder.addInfraction(infraction);
     });
@@ -88,26 +99,17 @@ export default function PracticeView() {
   function completeAndSaveAttempt(duration: Date) {
     attemptBuilder.setDuration(duration.getTime());
     attemptBuilder.addSolution(solutionBuilder.build());
-    let smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
-    if (smartPuzzle) {
-      attemptBuilder.addExtension(
-        new MessageStreamBuilder()
-          .setSmartPuzzle(smartPuzzle)
-          .addMessages(
-            PuzzleRegistry.getMessagesOnInterval(
-              smartPuzzle,
-              inspectionStart,
-              inspectionEnd,
-            ),
-          )
-          .build(),
-      );
+    if (messageSubscription) {
+      attemptBuilder.addExtension(messageStreamBuilder.build());
+      messageSubscription.remove();
+      setMessageSubscription(undefined);
     }
     let prevAttempt = attemptBuilder.build();
     getLibrary().add(prevAttempt);
     setLastAttempt(prevAttempt);
     setAttemptBuilder(new AttemptBuilder());
     setSolutionBuilder(new SolutionBuilder());
+    setMessageStreamBuilder(new MessageStreamBuilder());
   }
 
   return (

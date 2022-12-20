@@ -18,13 +18,16 @@ export interface BluetoothPuzzle extends SmartPuzzle {
   device: Device;
 }
 
-type NotificationListener = (message: Message) => void;
+type MessageListener = (message: Message) => void;
+
+export interface MessageSubscription {
+  remove: () => void;
+}
 
 interface PuzzleRegistryEntry {
   puzzle: BluetoothPuzzle;
   subscriptions: Subscription[];
-  messages: Message[];
-  listeners: NotificationListener[];
+  listeners: MessageListener[];
 }
 
 const PUZZLE_REGISTRY: Map<string, PuzzleRegistryEntry> = new Map();
@@ -53,16 +56,23 @@ function addPuzzle(device: Device) {
       puzzle: asSmartPuzzle(device),
       listeners: [],
       subscriptions: [],
-      messages: [],
     });
   }
 }
 
-function addNotificationListener(
+function addMessageListener(
   puzzle: BluetoothPuzzle,
-  listener: NotificationListener,
-) {
+  listener: MessageListener,
+): MessageSubscription {
   PUZZLE_REGISTRY.get(puzzle.device.id)?.listeners.push(listener);
+  return {
+    remove: () => {
+      const entry = PUZZLE_REGISTRY.get(puzzle.device.id);
+      if (entry) {
+        entry.listeners = entry.listeners.filter(l => l !== listener);
+      }
+    },
+  };
 }
 
 function getPuzzles(): BluetoothPuzzle[] {
@@ -118,12 +128,7 @@ function onReceiveNotification(puzzle: BluetoothPuzzle) {
       return;
     }
     if (characteristic) {
-      let message = {
-        t: Date.now(),
-        m: characteristic.value ?? '',
-      };
-      console.debug(message);
-      PUZZLE_REGISTRY.get(puzzle.device.id)?.messages.push(message);
+      let message = { t: Date.now(), m: characteristic.value ?? '' };
       PUZZLE_REGISTRY.get(puzzle.device.id)?.listeners.forEach(listener => {
         // Defer execution of listeners to avoid blocking.
         setTimeout(() => listener(message), 0);
@@ -159,30 +164,13 @@ function lastConnectedPuzzle(): BluetoothPuzzle | null {
   return _lastConnectedPuzzle;
 }
 
-function getMessages(puzzle: BluetoothPuzzle): Message[] {
-  return PUZZLE_REGISTRY.get(puzzle.device.id)?.messages ?? [];
-}
-
-function getMessagesOnInterval(
-  puzzle: BluetoothPuzzle,
-  intervalStartMillis: number,
-  intervalEndMillis: number,
-) {
-  return getMessages(puzzle).filter(
-    message =>
-      message.t >= intervalStartMillis && message.t <= intervalEndMillis,
-  );
-}
-
 const PuzzleRegistry = {
   addPuzzle,
   getPuzzles,
   connect,
-  addNotificationListener,
+  addMessageListener,
   disconnect,
   lastConnectedPuzzle,
-  getMessages,
-  getMessagesOnInterval,
 };
 
 export default PuzzleRegistry;
