@@ -115,7 +115,13 @@ export default function PracticeView() {
         </Pressable>
       )) ||
         (timerState === TimerState.INSPECTION && (
-          <InspectionTimer onInspectionComplete={handleInspectionComplete} />
+          <InspectionTimer
+            onInspectionComplete={handleInspectionComplete}
+            onCancel={() => {
+              setTimerState(TimerState.SCRAMBLING);
+              setMessageStreamBuilder(new MessageStreamBuilder());
+            }}
+          />
         )) ||
         (timerState === TimerState.SOLVING && (
           <SolveTimer onStopTimer={handleSolveComplete} />

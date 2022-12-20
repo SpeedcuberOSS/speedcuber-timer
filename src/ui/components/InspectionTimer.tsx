@@ -12,12 +12,15 @@ import {
 import { Pressable, StyleSheet, Vibration } from 'react-native';
 import React, { useState } from 'react';
 
+import { Button } from 'react-native-paper';
 import { Inspection } from '../../lib/constants';
 import InspectionTime from './InspectionTime';
 import { useTimer } from '../hooks';
+import { useTranslation } from 'react-i18next';
 
 interface InspectionTimerProps {
   onInspectionComplete?: (infractions: Infraction[]) => void;
+  onCancel?: () => void;
   inspectionDurationMillis?: number;
   stackmatDelayMillis?: number;
   overtimeUntilDnfMillis?: number;
@@ -42,10 +45,12 @@ const SECOND_WARNING_MILLIS = 12000;
 
 const InspectionTimer = ({
   onInspectionComplete = () => {},
+  onCancel = () => {},
   inspectionDurationMillis = Inspection.DEFAULT_DURATION_MILLIS,
   stackmatDelayMillis = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
   overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
 }: InspectionTimerProps) => {
+  const { t } = useTranslation();
   const { timer, elapsed } = useTimer();
   const [warnings, setWarnings] = useState<number[]>([]);
   const [ready, setReady] = useState(false);
@@ -124,6 +129,9 @@ const InspectionTimer = ({
         stackmatDelayMillis={stackmatDelayMillis}
         overtimeUntilDnfMillis={overtimeUntilDnfMillis}
       />
+      <Button onPress={onCancel} mode="contained-tonal">
+        {t('common.cancel')}
+      </Button>
     </Pressable>
   );
 };
