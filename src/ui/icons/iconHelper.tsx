@@ -4,29 +4,29 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import React from 'react';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
+import { WCAEvent, WCAEventUnofficial, WCAInfraction } from './wca';
+
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
 import EvilIconsIcon from 'react-native-vector-icons/EvilIcons';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import FoundationIcon from 'react-native-vector-icons/Foundation';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import OcticonsIcon from 'react-native-vector-icons/Octicons';
-import ZocialIcon from 'react-native-vector-icons/Zocial';
+import React from 'react';
 import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
-
-import { WCAEvent, WCAEventUnofficial, WCAInfraction } from './wca';
+import ZocialIcon from 'react-native-vector-icons/Zocial';
 
 interface IconParams {
   size: number;
   color?: string;
 }
 
-export type IconFunction = (params: IconParams) => JSX.Element;
+export type IconFunction = (params: IconParams) => React.ReactNode;
 
 function render(Icon: any, name: string) {
   return ({ size, color }: IconParams) => (

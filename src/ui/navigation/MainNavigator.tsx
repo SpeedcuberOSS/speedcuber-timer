@@ -5,29 +5,19 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import * as React from 'react';
+
 import { BottomNavigation } from 'react-native-paper';
 import Icons from '../icons/iconHelper';
-import LearnScreen from '../screens/LearnScreen';
-import PracticeScreen from '../screens/PracticeScreen';
-import PlayScreen from '../screens/PlayScreen';
 import InsightsScreen from '../screens/InsightsScreen';
-import { IconSource } from 'react-native-paper/lib/typescript/components/Icon';
+import LearnScreen from '../screens/LearnScreen';
+import PlayScreen from '../screens/PlayScreen';
+import PracticeScreen from '../screens/PracticeScreen';
 import { useTranslation } from 'react-i18next';
-
-type RoutesState = Array<{
-  key: string;
-  title: string;
-  icon: IconSource;
-  color?: string;
-  badge?: boolean;
-  getAccessibilityLabel?: string;
-  getTestID?: string;
-}>;
 
 const MainNavigator = () => {
   const { t } = useTranslation();
   const [index, setIndex] = React.useState<number>(0);
-  const [routes] = React.useState<RoutesState>([
+  const [routes] = React.useState([
     {
       key: 'learn',
       title: t('learn'),
@@ -55,7 +45,8 @@ const MainNavigator = () => {
         play: PlayScreen,
         insights: InsightsScreen,
       })}
-      sceneAnimationEnabled={false}
+      sceneAnimationEnabled={true}
+      sceneAnimationType={'shifting'}
     />
   );
 };
