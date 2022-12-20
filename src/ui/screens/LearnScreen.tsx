@@ -10,8 +10,10 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import TwistyPlayer from '../components/TwistyPlayer';
 import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
+import { useTheme } from 'react-native-paper';
 
 export default function LearnScreen() {
+  const theme = useTheme();
   const { puzzles } = useSmartPuzzles();
   const [puzzle, setPuzzle] = useState<BluetoothPuzzle>();
   puzzles.forEach(p => {
@@ -25,7 +27,10 @@ export default function LearnScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TwistyPlayer bluetoothPuzzle={puzzle} />
+      <TwistyPlayer
+        bluetoothPuzzle={puzzle}
+        backgroundColor={theme.colors.background}
+      />
     </SafeAreaView>
   );
 }

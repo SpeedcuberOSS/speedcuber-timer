@@ -17,6 +17,7 @@ import {
 import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React, { useRef } from 'react';
 
+import { ColorValue } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 interface TwistyPlayerProps {
@@ -26,6 +27,7 @@ interface TwistyPlayerProps {
   visualization?: '3D' | '2D';
   hintFacelets?: 'floating';
   backView?: 'top-right' | 'side-by-side';
+  backgroundColor?: ColorValue;
 }
 
 export default function TwistyPlayer({
@@ -35,6 +37,7 @@ export default function TwistyPlayer({
   visualization = '3D',
   hintFacelets = undefined,
   backView = undefined,
+  backgroundColor = 'black',
 }: TwistyPlayerProps) {
   const webViewRef = useRef<WebView>({} as WebView);
   const [width, height, scale] = [384, 256, 2];
@@ -95,7 +98,9 @@ export default function TwistyPlayer({
         </script>
 
         <body
-          style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black">
+          style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: ${String(
+            backgroundColor,
+          )}">
           <button hidden id="next-move">U</button>
         </body>
       `,
