@@ -6,6 +6,7 @@
 
 import * as React from 'react';
 
+import AppBar from '../components/AppBar';
 import { BottomNavigation } from 'react-native-paper';
 import Icons from '../icons/iconHelper';
 import InsightsScreen from '../screens/InsightsScreen';
@@ -36,18 +37,21 @@ const MainNavigator = () => {
     },
   ]);
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={idx => setIndex(idx)}
-      renderScene={BottomNavigation.SceneMap({
-        learn: LearnScreen,
-        practice: PracticeScreen,
-        play: PlayScreen,
-        insights: InsightsScreen,
-      })}
-      sceneAnimationEnabled={true}
-      sceneAnimationType={'shifting'}
-    />
+    <>
+      <AppBar />
+      <BottomNavigation
+        navigationState={{ index, routes }}
+        onIndexChange={idx => setIndex(idx)}
+        renderScene={BottomNavigation.SceneMap({
+          learn: LearnScreen,
+          practice: PracticeScreen,
+          play: PlayScreen,
+          insights: InsightsScreen,
+        })}
+        sceneAnimationEnabled={true}
+        sceneAnimationType={'shifting'}
+      />
+    </>
   );
 };
 
