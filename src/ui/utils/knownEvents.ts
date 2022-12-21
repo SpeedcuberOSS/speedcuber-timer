@@ -26,6 +26,7 @@ import {
 } from '../../lib/stif';
 
 export function getKnownCompetitiveEvents() {
+  // Note: This function will eventually need to load a user's custom events.
   return [
     EVENT_2x2x2,
     EVENT_3x3x3,
