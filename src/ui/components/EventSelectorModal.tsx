@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Modal, Portal, useTheme } from 'react-native-paper';
-
 import { CompetitiveEvent } from '../../lib/stif';
-import { Dimensions } from 'react-native';
 import EventSelector from './EventSelector';
 import React from 'react';
+import TitledModal from './TitledModal';
+import { useTranslation } from 'react-i18next';
 
 interface EventSelectorModalProps {
   visible: boolean;
@@ -22,23 +21,13 @@ export default function EventSelectorModal({
   onDismiss,
   onSelect,
 }: EventSelectorModalProps) {
-  const theme = useTheme();
+  const { t } = useTranslation();
   return (
-    <Portal>
-      <Modal
-        visible={visible}
-        onDismiss={onDismiss}
-        contentContainerStyle={{
-          maxHeight: 0.6 * Dimensions.get('window').height,
-          paddingBottom: 20,
-          margin: 20,
-          borderRadius: 10,
-          backgroundColor: theme.colors.background,
-          alignItems: 'stretch',
-          justifyContent: 'center',
-        }}>
-        <EventSelector onSelect={onSelect} />
-      </Modal>
-    </Portal>
+    <TitledModal
+      title={t('dialogs.select_event')}
+      visible={visible}
+      onDismiss={onDismiss}>
+      <EventSelector onSelect={onSelect} />
+    </TitledModal>
   );
 }
