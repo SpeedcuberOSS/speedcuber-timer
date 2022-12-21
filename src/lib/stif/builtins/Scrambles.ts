@@ -8,8 +8,9 @@ import { PUZZLE_UNKNOWN } from './Puzzles';
 import { Scramble } from '../types';
 import { ScrambleBuilder } from '../builders';
 
-const SCRAMBLE_UNKNOWN: Scramble = Object.freeze(
-  ScrambleBuilder.buildBasic(PUZZLE_UNKNOWN, []),
-);
+const SCRAMBLE_UNKNOWN: Scramble = Object.freeze({
+  ...ScrambleBuilder.buildBasic(PUZZLE_UNKNOWN, []),
+  id: 'unknown',
+});
 
 export { SCRAMBLE_UNKNOWN };

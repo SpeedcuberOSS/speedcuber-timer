@@ -7,7 +7,7 @@
 import { Puzzle } from '../types/Puzzle';
 
 const PUZZLE_UNKNOWN: Puzzle = Object.freeze({
-  id: '???',
+  id: 'unknown',
 });
 const PUZZLE_2x2x2: Puzzle = Object.freeze({
   id: '222',

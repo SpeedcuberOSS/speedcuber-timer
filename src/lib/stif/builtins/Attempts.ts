@@ -9,8 +9,9 @@ import { AttemptBuilder } from '../builders';
 import { EVENT_UNKNOWN } from './CompetitiveEvents';
 import { SCRAMBLE_UNKNOWN } from './Scrambles';
 
-const ATTEMPT_UNKNOWN: Attempt = Object.freeze(
-  AttemptBuilder.buildBasic(EVENT_UNKNOWN, SCRAMBLE_UNKNOWN, 0),
-);
+const ATTEMPT_UNKNOWN: Attempt = Object.freeze({
+  ...AttemptBuilder.buildBasic(EVENT_UNKNOWN, SCRAMBLE_UNKNOWN, 0),
+  id: 'unknown',
+});
 
 export { ATTEMPT_UNKNOWN };

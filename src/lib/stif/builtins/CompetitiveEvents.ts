@@ -23,7 +23,7 @@ import {
 } from './Puzzles';
 
 const EVENT_UNKNOWN: CompetitiveEvent = Object.freeze({
-  id: '???',
+  id: 'unknown',
   puzzle: PUZZLE_UNKNOWN,
   type: CompetitiveEventType.CUSTOM,
 });
