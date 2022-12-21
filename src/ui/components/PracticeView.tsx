@@ -6,7 +6,6 @@
 
 import {
   AttemptBuilder,
-  EVENT_3x3x3,
   Infraction,
   Penalty,
   SolutionBuilder,
@@ -21,10 +20,11 @@ import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
-import { Scrambler3x3x3 } from '../../lib/scrambles/mandy';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
 import { getLibrary } from '../../lib/attempts';
+import { getScrambler } from '../../lib/scrambles/mandy';
+import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -33,6 +33,7 @@ enum TimerState {
 }
 
 export default function PracticeView() {
+  const [event] = useCompetitiveEvent();
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
   const [lastAttempt, setLastAttempt] = useState(ATTEMPT_UNKNOWN);
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
@@ -43,9 +44,9 @@ export default function PracticeView() {
   const [messageSubscription, setMessageSubscription] =
     useState<MessageSubscription>();
 
-  function get3x3x3Scramble(): string {
-    let scramble = new Scrambler3x3x3().generateScramble();
-    attemptBuilder.setEvent(EVENT_3x3x3);
+  function getScramble(): string {
+    let scramble = getScrambler(event).generateScramble();
+    attemptBuilder.setEvent(event);
     solutionBuilder.setScramble(scramble);
     return scramble.algorithm.moves.join(' ');
   }
@@ -109,7 +110,7 @@ export default function PracticeView() {
     <View style={styles.container}>
       {(timerState === TimerState.SCRAMBLING && (
         <Pressable style={styles.landing} onPress={handleInspectionBegin}>
-          <Text style={styles.scramble}>{get3x3x3Scramble()}</Text>
+          <Text style={styles.scramble}>{getScramble()}</Text>
           <AttemptTime attempt={lastAttempt} />
           <Text style={styles.scramble}>{''}</Text>
         </Pressable>

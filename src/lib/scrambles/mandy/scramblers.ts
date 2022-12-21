@@ -4,7 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Scrambler } from './core';
 import {
   Cube2x2x2,
   Cube3x3x3,
@@ -13,6 +12,8 @@ import {
   Cube6x6x6,
   Cube7x7x7,
 } from './cubes';
+
+import { Scrambler } from './core';
 
 class Scrambler2x2x2 extends Scrambler {
   constructor() {
