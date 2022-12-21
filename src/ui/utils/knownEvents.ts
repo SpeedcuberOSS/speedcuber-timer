@@ -16,6 +16,11 @@ import {
   EVENT_5x5x5_BLD,
   EVENT_6x6x6,
   EVENT_7x7x7,
+  EVENT_CLOCK,
+  EVENT_MEGAMINX,
+  EVENT_PYRAMINX,
+  EVENT_SKEWB,
+  EVENT_SQUARE_1,
 } from '../../lib/stif';
 
 export function getKnownCompetitiveEvents() {
@@ -34,11 +39,10 @@ export function getKnownCompetitiveEvents() {
     EVENT_5x5x5_BLD,
     EVENT_6x6x6,
     EVENT_7x7x7,
-    // No scramblers available for these puzzles yet.
-    // EVENT_CLOCK,
-    // EVENT_PYRAMINX,
-    // EVENT_MEGAMINX,
-    // EVENT_SQUARE_1,
-    // EVENT_SKEWB,
+    EVENT_CLOCK,
+    EVENT_PYRAMINX,
+    EVENT_MEGAMINX,
+    EVENT_SQUARE_1,
+    EVENT_SKEWB,
   ];
 }

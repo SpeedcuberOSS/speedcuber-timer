@@ -25,6 +25,7 @@ import {
   Scrambler5x5x5,
   Scrambler6x6x6,
   Scrambler7x7x7,
+  ScramblerUnknown,
 } from './scramblers';
 
 import { Scrambler } from './core';
@@ -44,5 +45,5 @@ const SCRAMBLER_MAP = new Map<CompetitiveEvent, Scrambler>([
 ]);
 
 export function getScrambler(event: CompetitiveEvent) {
-  return SCRAMBLER_MAP.get(event) ?? new Scrambler3x3x3();
+  return SCRAMBLER_MAP.get(event) ?? new ScramblerUnknown();
 }

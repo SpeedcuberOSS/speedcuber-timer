@@ -8,6 +8,7 @@ import {
   AttemptBuilder,
   Infraction,
   Penalty,
+  SCRAMBLE_UNKNOWN,
   SolutionBuilder,
 } from '../../lib/stif';
 import { Pressable, StyleSheet, View } from 'react-native';
@@ -24,6 +25,7 @@ import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
 import { getLibrary } from '../../lib/attempts';
 import { getScrambler } from '../../lib/scrambles/mandy';
+import { t } from 'i18next';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 enum TimerState {
@@ -48,7 +50,11 @@ export default function PracticeView() {
     let scramble = getScrambler(event).generateScramble();
     attemptBuilder.setEvent(event);
     solutionBuilder.setScramble(scramble);
-    return scramble.algorithm.moves.join(' ');
+    if (scramble === SCRAMBLE_UNKNOWN) {
+      return t('scramble.hand');
+    } else {
+      return scramble.algorithm.moves.join(' ');
+    }
   }
 
   function nextTimerState() {
