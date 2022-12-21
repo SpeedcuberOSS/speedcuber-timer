@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import AppBar from '../components/AppBar';
 import { BottomNavigation } from 'react-native-paper';
@@ -17,8 +17,8 @@ import { useTranslation } from 'react-i18next';
 
 const MainNavigator = () => {
   const { t } = useTranslation();
-  const [index, setIndex] = React.useState<number>(0);
-  const [routes] = React.useState([
+  const [index, setIndex] = useState(0);
+  const [routes] = useState([
     {
       key: 'learn',
       title: t('learn'),
