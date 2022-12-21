@@ -11,6 +11,7 @@ import { CompetitiveEvent } from '../../lib/stif';
 import EventSelectorModal from './EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import SmartPuzzleScannerModal from './SmartPuzzleScannerModal';
+import { View } from 'react-native';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
 
@@ -21,7 +22,7 @@ export default function AppBar() {
   const { t } = useTranslation();
   return (
     <>
-      <Appbar.Header elevated={true}>
+      <Appbar.Header elevated={true} mode="center-aligned">
         {/* @ts-ignore */}
         <Appbar.Action
           icon="menu"
@@ -29,9 +30,11 @@ export default function AppBar() {
         />
         {/* @ts-ignore */}
         <Appbar.Content
-          style={{ paddingTop: 8 }}
           title={
-            <Button icon={Icons.WCAEvent(event.id)} mode="contained-tonal">
+            <Button
+              icon={Icons.WCAEvent(event.id)}
+              mode="contained-tonal"
+              style={{ marginTop: 8 }}>
               {t(`events.${event.id}`)}
             </Button>
           }
