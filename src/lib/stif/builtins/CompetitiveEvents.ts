@@ -88,7 +88,7 @@ const EVENT_6x6x6: CompetitiveEvent = Object.freeze({
   type: CompetitiveEventType.WCA,
 });
 const EVENT_7x7x7: CompetitiveEvent = Object.freeze({
-  id: '666',
+  id: '777',
   puzzle: PUZZLE_7x7x7,
   type: CompetitiveEventType.WCA,
 });
