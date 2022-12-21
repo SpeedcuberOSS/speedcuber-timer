@@ -19,6 +19,8 @@ import React from 'react';
 import { VictoryThemeDefinition } from 'victory-core';
 import { getCurrentTheme } from '../themes';
 import { getLibrary } from '../../lib/attempts';
+import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
+import { useTheme } from 'react-native-paper';
 
 let library = getLibrary();
 let chartTheme: VictoryThemeDefinition = {
@@ -41,38 +43,40 @@ let chartTheme: VictoryThemeDefinition = {
 };
 
 export default function InsightsScreen() {
-  const theme = getCurrentTheme();
-  let data = library.getAll();
-  data = data
+  const theme = useTheme();
+  const [event] = useCompetitiveEvent();
+  const data = library.getAll();
+  const attempts = data
+    .filter(a => a.event === event)
     .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
     .slice(0, Math.min(200, data.length));
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );
-  console.debug(`showing ${data.length} attempts`);
+  console.debug(`showing ${attempts.length} attempts`);
   return (
     <SafeAreaView style={styles.container}>
       <VictoryChart
         theme={chartTheme}
         domainPadding={20}
         containerComponent={<VictoryZoomContainer />}
-        height={Dimensions.get('window').height * (3 / 8)}
+        height={Dimensions.get('window').height * (2.5 / 8)}
         domain={{
-          x: [0, data.length],
-          y: [0, Math.max(...data.map(a => a.duration / 1000))],
+          x: [0, attempts.length],
+          y: [0, Math.max(...attempts.map(a => a.duration / 1000))],
         }}>
         <VictoryScatter
           style={{
             data: { fill: theme.colors.primary },
           }}
           size={1}
-          data={data.map((attempt, index) => ({
-            x: data.length - index,
+          data={attempts.map((attempt, index) => ({
+            x: attempts.length - index,
             y: attempt.duration / 1000,
           }))}
         />
       </VictoryChart>
-      <BigList data={data} renderItem={renderAttempt} itemHeight={125} />
+      <BigList data={attempts} renderItem={renderAttempt} itemHeight={125} />
     </SafeAreaView>
   );
 }
