@@ -27,6 +27,10 @@ let chartTheme: VictoryThemeDefinition = {
     ...VictoryTheme.material.axis,
     style: {
       ...VictoryTheme.material.axis?.style,
+      grid: {
+        ...VictoryTheme.material.axis?.style?.grid,
+        stroke: getCurrentTheme().colors.backdrop,
+      },
       tickLabels: {
         ...VictoryTheme.material.axis?.style?.tickLabels,
         // @ts-ignore
