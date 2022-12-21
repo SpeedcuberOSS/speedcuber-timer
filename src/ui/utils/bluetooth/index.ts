@@ -13,10 +13,14 @@ const BleManager = new BleManagerModule();
 export async function isBluetoothEnabled(): Promise<boolean> {
   const EMIT_CURRENT_STATE = true;
   return new Promise<boolean>((resolve, _reject) => {
+    let bleState: string = '';
     const subscription = BleManager.onStateChange(state => {
-      resolve(state === 'PoweredOn');
-      subscription.remove();
+      bleState = state;
     }, EMIT_CURRENT_STATE);
+    setTimeout(() => {
+      resolve(bleState === 'PoweredOn');
+      subscription.remove();
+    }, 100);
   });
 }
 
