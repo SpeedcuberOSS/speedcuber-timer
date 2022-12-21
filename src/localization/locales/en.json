@@ -33,5 +33,29 @@
   "error": {
     "title": "Something went wrong...",
     "permissions_check": "Unknown error while checking permission:\n{{error}}"
+  },
+  "dialogs": {
+    "select_event": "Select Event"
+  },
+  "events": {
+    "???": "Unknown",
+    "222": "2x2x2",
+    "333": "3x3x3",
+    "333bf": "3x3x3 BLD",
+    "333mbf": "3x3x3 Multi-BLD",
+    "333oh": "3x3x3 OH",
+    "333fm": "3x3x3 Fewest Moves",
+    "333ft": "3x3x3 Feet",
+    "444": "4x4x4",
+    "444bf": "4x4x4 BLD",
+    "555": "5x5x5",
+    "555bf": "5x5x5 BLD",
+    "666": "6x6x6",
+    "777": "7x7x7",
+    "clock": "Clock",
+    "pyram": "Pyraminx",
+    "minx": "Megaminx",
+    "sq1": "Square-1",
+    "skewb": "Skewb"
   }
 }
