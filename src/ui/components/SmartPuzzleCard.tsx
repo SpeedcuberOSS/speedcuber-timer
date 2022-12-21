@@ -6,10 +6,10 @@
 
 import {
   ActivityIndicator,
-  Avatar,
-  Button,
   Card,
+  Chip,
   IconButton,
+  Text,
 } from 'react-native-paper';
 import Icons, { IconFunction } from '../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../lib/stif';
@@ -17,7 +17,6 @@ import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../lib/stif';
 import { ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { useTranslation } from 'react-i18next';
 
 interface SmartPuzzleCardProps {
   name: string;
@@ -28,16 +27,13 @@ interface SmartPuzzleCardProps {
   onDisconnect: () => Promise<void>;
 }
 
-const TitleIcon = (icon: any) => (props: { size: number }) =>
-  <Avatar.Icon {...props} icon={icon} />;
-
 const PuzzleIcons = new Map<Puzzle, IconFunction>([
-  [PUZZLE_2x2x2, TitleIcon(Icons.WCAEvent('222'))],
-  [PUZZLE_3x3x3, TitleIcon(Icons.WCAEvent('333'))],
+  [PUZZLE_2x2x2, Icons.WCAEvent('222')],
+  [PUZZLE_3x3x3, Icons.WCAEvent('333')],
 ]);
 
 function getPuzzleIcon(puzzle: Puzzle): IconFunction {
-  return PuzzleIcons.get(puzzle) || TitleIcon(Icons.FontAwesome('question'));
+  return PuzzleIcons.get(puzzle) || Icons.FontAwesome('question');
 }
 
 function SmartPuzzleCard({
@@ -48,30 +44,32 @@ function SmartPuzzleCard({
   onConnect,
   onDisconnect,
 }: SmartPuzzleCardProps) {
-  const { t } = useTranslation();
   return (
-    <Card>
+    <Card style={{ marginTop: 8, marginHorizontal: 8 }}>
       <Card.Title
+        style={{ paddingVertical: 10 }}
         title={name}
-        subtitle={brand}
-        left={getPuzzleIcon(puzzle)}
-        right={props => {
+        subtitle={
+          <Chip icon={getPuzzleIcon(puzzle)} mode="outlined" disabled>
+            <Text variant="bodySmall">{brand}</Text>
+          </Chip>
+        }
+        right={() => {
           if (connectionStatus === ConnectionStatus.DISCONNECTED) {
             return (
-              <Button
-                {...props}
-                onPress={onConnect}
+              <IconButton
+                mode="contained"
                 icon={Icons.MaterialCommunityIcons('bluetooth')}
-                mode={'contained-tonal'}
-                style={styles.button}>
-                {t('bluetooth.connect')}
-              </Button>
+                style={styles.connection}
+                onPress={onConnect}
+              />
             );
           } else if (connectionStatus === ConnectionStatus.CONNECTING) {
             return <ActivityIndicator animating style={styles.connecting} />;
           } else if (connectionStatus === ConnectionStatus.CONNECTED) {
             return (
               <IconButton
+                mode="contained"
                 icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
                 style={styles.connection}
                 onPress={onDisconnect}

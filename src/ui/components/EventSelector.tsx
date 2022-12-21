@@ -43,17 +43,22 @@ function EventItem({ item, onPress }: EventItemProps) {
 
 export default function EventSelector({ onSelect }: EventSelectorProps) {
   return (
-    <FlatList
-      data={getKnownCompetitiveEvents()}
-      numColumns={3}
-      renderItem={({ item }) => (
-        <EventItem key={item.id} item={item} onPress={() => onSelect(item)} />
-      )}
-    />
+    <View style={styles.container}>
+      <FlatList
+        data={getKnownCompetitiveEvents()}
+        numColumns={3}
+        renderItem={({ item }) => (
+          <EventItem key={item.id} item={item} onPress={() => onSelect(item)} />
+        )}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
   item: {
     marginTop: 16,
     width: Dimensions.get('window').width / 4,

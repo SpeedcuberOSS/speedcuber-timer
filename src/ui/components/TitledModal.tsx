@@ -28,15 +28,15 @@ const TitledModal: React.FC<TitledModalProps> = ({
         visible={visible}
         onDismiss={onDismiss}
         contentContainerStyle={[
-          styles.contents,
+          styles.container,
           { backgroundColor: theme.colors.background },
         ]}>
-        <Surface style={styles.titleContainer}>
+        <Surface style={styles.titleContainer} elevation={2}>
           <Text variant="titleLarge" style={styles.title}>
             {title}
           </Text>
         </Surface>
-        <View style={styles.container}>{children}</View>
+        <View style={styles.childrenContainer}>{children}</View>
       </Modal>
     </Portal>
   );
@@ -44,16 +44,15 @@ const TitledModal: React.FC<TitledModalProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    paddingBottom: 20,
-  },
-  contents: {
     maxHeight: 0.6 * Dimensions.get('window').height,
     paddingBottom: 20,
     margin: 20,
     borderRadius: 10,
     alignItems: 'stretch',
     justifyContent: 'center',
+  },
+  childrenContainer: {
+    alignItems: 'stretch',
   },
   titleContainer: {
     borderTopRightRadius: 10,

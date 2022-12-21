@@ -34,7 +34,7 @@ const ParticulaPuzzle: SmartPuzzle = {
 export const RubiksConnected: SmartPuzzle = {
   ...ParticulaPuzzle,
   prefix: 'Rubiks',
-  brand: 'Rubiks Connected',
+  brand: "Rubik's Connected",
 };
 
 export const GoCube: SmartPuzzle = {

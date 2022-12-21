@@ -10,12 +10,14 @@ import React, { useState } from 'react';
 import { CompetitiveEvent } from '../../lib/stif';
 import EventSelectorModal from './EventSelectorModal';
 import Icons from '../icons/iconHelper';
+import SmartPuzzleScannerModal from './SmartPuzzleScannerModal';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
 
 export default function AppBar() {
   const [event, setEvent] = useCompetitiveEvent();
   const [showEventSelector, setShowEventSelector] = useState(false);
+  const [showPuzzleScanner, setShowPuzzleScanner] = useState(false);
   const { t } = useTranslation();
   return (
     <>
@@ -38,7 +40,7 @@ export default function AppBar() {
         {/* @ts-ignore */}
         <Appbar.Action
           icon="bluetooth"
-          onPress={() => console.log('PLACEHOLDER: Bluetooth pressed')}
+          onPress={() => setShowPuzzleScanner(true)}
         />
       </Appbar.Header>
       <EventSelectorModal
@@ -48,6 +50,10 @@ export default function AppBar() {
           setEvent(event);
           setShowEventSelector(false);
         }}
+      />
+      <SmartPuzzleScannerModal
+        visible={showPuzzleScanner}
+        onDismiss={() => setShowPuzzleScanner(false)}
       />
     </>
   );

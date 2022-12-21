@@ -4,58 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
-import { FAB } from 'react-native-paper';
-import Icons from '../icons/iconHelper';
 import PracticeView from '../components/PracticeView';
-import SmartPuzzleScanner from '../components/SmartPuzzleScanner';
-
-enum TimerState {
-  SCRAMBLING = 0,
-  INSPECTION = 1,
-  SOLVING = 2,
-}
-
-function ScannerFAB({ onPress }: { onPress: () => void }) {
-  return (
-    <FAB
-      style={styles.fab}
-      icon={Icons.MaterialCommunityIcons('bluetooth')}
-      onPress={onPress}
-    />
-  );
-}
-
-function PracticeFAB({ onPress }: { onPress: () => void }) {
-  return (
-    <FAB
-      style={styles.fab}
-      icon={Icons.Entypo('stopwatch')}
-      onPress={onPress}
-    />
-  );
-}
+import React from 'react';
 
 export default function PracticeScreen() {
-  const [currentView, setCurrentView] = useState('PracticeView');
-  const onPressFAB = (newView: string) => setCurrentView(newView);
-
   return (
     <SafeAreaView style={styles.container}>
-      {currentView === 'PracticeView' && (
-        <>
-          <PracticeView />
-          <ScannerFAB onPress={() => onPressFAB('ScannerView')} />
-        </>
-      )}
-      {currentView === 'ScannerView' && (
-        <>
-          <SmartPuzzleScanner />
-          <PracticeFAB onPress={() => onPressFAB('PracticeView')} />
-        </>
-      )}
+      <PracticeView />
     </SafeAreaView>
   );
 }

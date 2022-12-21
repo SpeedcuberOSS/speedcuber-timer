@@ -12,7 +12,7 @@
   "insights": "Insights",
   "bluetooth": {
     "connect": "Connect",
-    "start_scan": "Scan for smartcubes",
+    "start_scan": "Smartcube Scan",
     "connect_error": "Failed to connect to puzzle {{name}} because:\n{{error}}",
     "disconnect_error": "Failed to disconnect from puzzle {{name}} because:\n{{error}}",
     "denied": "Bluetooth permission denied. Please grant Bluetooth permissions to use smart puzzles.",
