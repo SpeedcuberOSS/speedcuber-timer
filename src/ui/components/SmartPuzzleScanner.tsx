@@ -20,11 +20,15 @@ import useErrorGuard from '../hooks/useErrorGuard';
 const SmartPuzzleScanner = () => {
   const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [isScanActive, setIsScanActive] = useState(false);
+  const [arePuzzlesRetrieved, setArePuzzlesRetrieved] = useState(false);
   const [smartPuzzles, setSmartPuzzles] = useState<BluetoothPuzzle[]>([]);
   useEffect(() => {
     setSmartPuzzles(PuzzleRegistry.getPuzzles());
-    if (smartPuzzles.length === 0) onInitiateScan();
+    setArePuzzlesRetrieved(true);
   }, [isScanActive]);
+  useEffect(() => {
+    if (arePuzzlesRetrieved && smartPuzzles.length === 0) onInitiateScan();
+  }, [arePuzzlesRetrieved, smartPuzzles]);
 
   async function onInitiateScan() {
     await guard(
