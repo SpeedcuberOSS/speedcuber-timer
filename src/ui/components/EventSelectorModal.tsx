@@ -30,9 +30,11 @@ export default function EventSelectorModal({
         onDismiss={onDismiss}
         contentContainerStyle={{
           maxHeight: 0.6 * Dimensions.get('window').height,
+          paddingBottom: 20,
           margin: 20,
+          borderRadius: 10,
           backgroundColor: theme.colors.background,
-          alignItems: 'center',
+          alignItems: 'stretch',
           justifyContent: 'center',
         }}>
         <EventSelector onSelect={onSelect} />
