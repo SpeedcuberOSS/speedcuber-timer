@@ -3839,3 +3839,1329 @@ exports[`Storyshots SmartPuzzleConnector 3x3x3 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots TwistyPlayer 2D 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"2D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 2x2x2 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"2x2x2\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 3x3x3 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 4x4x4 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"4x4x4\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 5x5x5 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"5x5x5\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 6x6x6 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"6x6x6\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer 7x7x7 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"7x7x7\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer Back View (side-by-side) 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"side-by-side\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer Back View (top-right) 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"top-right\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer Custom Scramble 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"R U R' U'\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer Hint Facelets 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"floating\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer clock 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"clock\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"3x3x3\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer megaminx 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"megaminx\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer pyraminx 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"pyraminx\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer skewb 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"skewb\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
+
+exports[`Storyshots TwistyPlayer square 1 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={true}
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      Object {
+        "html": "
+        <script type=\\"module\\">
+          import { TwistyPlayer } from \\"https://cdn.cubing.net/js/cubing/twisty\\";
+          import { Move } from \\"https://cdn.cubing.net/js/cubing/alg\\";
+
+          const player = new TwistyPlayer({
+            alg: \\"\\",
+            puzzle: \\"square1\\",
+            visualization: \\"3D\\",
+            hintFacelets: \\"none\\",
+            backView: \\"none\\",
+            background: \\"none\\",
+            controlPanel: \\"none\\",
+          });
+          player.style = \\"width: 768; height: 512;\\"
+          document.body.appendChild(player);
+          document.player = player
+          document.getElementById(\\"next-move\\").addEventListener(\\"click\\", () => {
+            var move = document.getElementById(\\"next-move\\").innerHTML
+            player.experimentalAddAlgLeaf(new Move(move));
+          })
+        </script>
+
+        <body
+          style=\\"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: black\\">
+          <button hidden id=\\"next-move\\">U</button>
+        </body>
+      ",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
