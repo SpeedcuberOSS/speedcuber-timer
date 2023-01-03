@@ -24,5 +24,8 @@
   },
   "error": {
     "title": "Ocurrió un error..."
+  },
+  "charts": {
+    "duration": "Duración"
   }
 }

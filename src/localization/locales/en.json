@@ -60,5 +60,8 @@
     "minx": "Megaminx",
     "sq1": "Square-1",
     "skewb": "Skewb"
+  },
+  "charts": {
+    "duration": "Duration"
   }
 }

@@ -8,8 +8,8 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 
 import { Attempt } from '../../lib/stif';
 import AttemptCard from '../components/AttemptCard';
+import AttemptsChart from '../components/charts/AttemptsChart';
 import BigList from 'react-native-big-list';
-import LineChart from '../components/charts/LineChart';
 import React from 'react';
 import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
@@ -21,15 +21,14 @@ export default function InsightsScreen() {
   const data = library.getAll();
   const attempts = data
     .filter(a => a.event === event)
-    .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
-    .slice(0, Math.min(200, data.length));
+    .sort((a, b) => b.unixTimestamp - a.unixTimestamp);
   const renderAttempt = ({ item }: { item: Attempt }) => (
     <AttemptCard key={item.id} attempt={item} />
   );
   console.debug(`showing ${attempts.length} attempts`);
   return (
     <SafeAreaView style={styles.container}>
-      <LineChart attempts={attempts} />
+      <AttemptsChart attempts={attempts} />
       <BigList data={attempts} renderItem={renderAttempt} itemHeight={125} />
     </SafeAreaView>
   );

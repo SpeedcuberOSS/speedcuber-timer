@@ -51,6 +51,7 @@
     "react-native-big-list": "^1.5.4",
     "react-native-ble-manager": "^8.4.4",
     "react-native-ble-plx": "^2.0.3",
+    "react-native-charts-wrapper": "^0.5.11",
     "react-native-default-preference": "^1.4.4",
     "react-native-flipper": "^0.164.0",
     "react-native-fs": "^2.20.0",
@@ -60,10 +61,9 @@
     "react-native-safe-area-context": "3.4.1",
     "react-native-svg": "^13.4.0",
     "react-native-vector-icons": "^9.1.0",
-    "react-native-webview": "^11.23.1",
+    "react-native-webview": "11.26.0",
     "rn-flipper-async-storage-advanced": "^1.0.4",
-    "uuid": "^8.3.2",
-    "victory-native": "^36.6.8"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -80,6 +80,7 @@
     "@storybook/react-native-server": "^5.3.23",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.67.3",
+    "@types/react-native-charts-wrapper": "^0.5.2",
     "@types/react-native-vector-icons": "^6.4.10",
     "@types/react-test-renderer": "^17.0.1",
     "@types/uuid": "^8.3.4",
