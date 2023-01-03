@@ -39,8 +39,8 @@ exports[`Storyshots AttemptCard default 1`] = `
       collapsable={false}
       style={
         Object {
-          "backgroundColor": "rgba(255, 251, 254, 1)",
-          "borderRadius": 4,
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 12,
           "elevation": 1,
           "margin": 10,
         }
@@ -63,7 +63,6 @@ exports[`Storyshots AttemptCard default 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flexGrow": 1,
             "flexShrink": 1,
           }
         }
@@ -101,6 +100,7 @@ exports[`Storyshots AttemptCard default 1`] = `
                 Array [
                   Object {
                     "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "System",
                     "fontSize": 16,
                     "fontWeight": "400",
                     "letterSpacing": 0.15,
@@ -133,6 +133,7 @@ exports[`Storyshots AttemptCard default 1`] = `
                 Array [
                   Object {
                     "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "System",
                     "fontSize": 14,
                     "fontWeight": "400",
                     "letterSpacing": 0.25,
@@ -178,28 +179,19 @@ exports[`Storyshots AttemptCard default 1`] = `
               Array [
                 Object {
                   "color": "rgba(28, 27, 31, 1)",
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "letterSpacing": 0.4,
+                  "lineHeight": 16,
                 },
                 Object {
                   "textAlign": "left",
                 },
-                Array [
-                  Object {
-                    "textAlign": "left",
-                  },
-                  Object {
-                    "color": "rgba(28, 27, 31, 0.54)",
-                    "writingDirection": "ltr",
-                  },
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                      "letterSpacing": 0.4,
-                      "lineHeight": 20,
-                      "marginVertical": 2,
-                    },
-                    undefined,
-                  ],
-                ],
+                Object {
+                  "writingDirection": "ltr",
+                },
+                undefined,
               ]
             }
           >
@@ -217,7 +209,6 @@ exports[`Storyshots InspectionTime almost done 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -227,15 +218,48 @@ exports[`Storyshots InspectionTime almost done 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -255,7 +279,6 @@ exports[`Storyshots InspectionTime custom durations 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -265,15 +288,48 @@ exports[`Storyshots InspectionTime custom durations 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
         ],
       ]
@@ -289,7 +345,6 @@ exports[`Storyshots InspectionTime default 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -299,15 +354,48 @@ exports[`Storyshots InspectionTime default 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
         ],
       ]
@@ -323,7 +411,6 @@ exports[`Storyshots InspectionTime first warning 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -333,15 +420,48 @@ exports[`Storyshots InspectionTime first warning 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
         ],
       ]
@@ -357,7 +477,6 @@ exports[`Storyshots InspectionTime overtime +2 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -367,15 +486,48 @@ exports[`Storyshots InspectionTime overtime +2 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -395,7 +547,6 @@ exports[`Storyshots InspectionTime overtime DNF 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -405,15 +556,48 @@ exports[`Storyshots InspectionTime overtime DNF 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -433,7 +617,6 @@ exports[`Storyshots InspectionTime ready +2 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -443,15 +626,48 @@ exports[`Storyshots InspectionTime ready +2 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -475,7 +691,6 @@ exports[`Storyshots InspectionTime ready 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -485,15 +700,48 @@ exports[`Storyshots InspectionTime ready 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "#00ff00",
@@ -513,7 +761,6 @@ exports[`Storyshots InspectionTime ready late 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -523,15 +770,48 @@ exports[`Storyshots InspectionTime ready late 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -555,7 +835,6 @@ exports[`Storyshots InspectionTime second warning 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -565,15 +844,48 @@ exports[`Storyshots InspectionTime second warning 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
           Object {
             "color": "rgba(242, 184, 181, 1)",
@@ -593,7 +905,6 @@ exports[`Storyshots InspectionTime start 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
       "width": "100%",
     }
@@ -603,15 +914,48 @@ exports[`Storyshots InspectionTime start 1`] = `
     style={
       Array [
         Object {
-          "color": "rgba(28, 27, 31, 1)",
+          "textAlign": "left",
         },
         Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
+        },
+        Object {
+          "fontSize": 16,
+          "paddingBottom": 10,
+        },
+      ]
+    }
+  >
+    INSPECTION:
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
           "textAlign": "left",
+        },
+        Object {
+          "color": "rgba(28, 27, 31, 1)",
+          "fontFamily": "System",
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {
+          "writingDirection": "ltr",
         },
         Array [
           Object {
             "color": "rgba(234, 221, 255, 1)",
             "fontSize": 80,
+            "fontVariant": Array [
+              "tabular-nums",
+            ],
           },
         ],
       ]
@@ -649,7 +993,6 @@ exports[`Storyshots InspectionTimer custom durations 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
         "justifyContent": "center",
         "width": "100%",
       }
@@ -659,15 +1002,48 @@ exports[`Storyshots InspectionTimer custom durations 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(28, 27, 31, 1)",
+            "textAlign": "left",
           },
           Object {
+            "color": "rgba(28, 27, 31, 1)",
+            "fontFamily": "System",
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {
+            "writingDirection": "ltr",
+          },
+          Object {
+            "fontSize": 16,
+            "paddingBottom": 10,
+          },
+        ]
+      }
+    >
+      INSPECTION:
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
             "textAlign": "left",
+          },
+          Object {
+            "color": "rgba(28, 27, 31, 1)",
+            "fontFamily": "System",
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {
+            "writingDirection": "ltr",
           },
           Array [
             Object {
               "color": "rgba(234, 221, 255, 1)",
               "fontSize": 80,
+              "fontVariant": Array [
+                "tabular-nums",
+              ],
             },
           ],
         ]
@@ -675,6 +1051,148 @@ exports[`Storyshots InspectionTimer custom durations 1`] = `
     >
       20
     </Text>
+  </View>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "alignSelf": undefined,
+        "bottom": undefined,
+        "left": undefined,
+        "position": undefined,
+        "right": undefined,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+        "top": undefined,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0,
+          "shadowRadius": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgba(232, 222, 248, 1)",
+            "borderColor": "transparent",
+            "borderRadius": 20,
+            "borderStyle": "solid",
+            "borderWidth": 0,
+            "minWidth": 64,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              false,
+              Object {
+                "borderRadius": 20,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "letterSpacing": 0.1,
+                    "lineHeight": 20,
+                  },
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "marginHorizontal": 16,
+                      "marginVertical": 9,
+                      "textAlign": "center",
+                    },
+                    false,
+                    Object {
+                      "marginHorizontal": 24,
+                      "marginVertical": 10,
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "color": "rgba(29, 25, 43, 1)",
+                      "fontFamily": "System",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.1,
+                      "lineHeight": 20,
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              common.cancel
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -706,7 +1224,6 @@ exports[`Storyshots InspectionTimer default 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
         "justifyContent": "center",
         "width": "100%",
       }
@@ -716,15 +1233,48 @@ exports[`Storyshots InspectionTimer default 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(28, 27, 31, 1)",
+            "textAlign": "left",
           },
           Object {
+            "color": "rgba(28, 27, 31, 1)",
+            "fontFamily": "System",
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {
+            "writingDirection": "ltr",
+          },
+          Object {
+            "fontSize": 16,
+            "paddingBottom": 10,
+          },
+        ]
+      }
+    >
+      INSPECTION:
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
             "textAlign": "left",
+          },
+          Object {
+            "color": "rgba(28, 27, 31, 1)",
+            "fontFamily": "System",
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {
+            "writingDirection": "ltr",
           },
           Array [
             Object {
               "color": "rgba(234, 221, 255, 1)",
               "fontSize": 80,
+              "fontVariant": Array [
+                "tabular-nums",
+              ],
             },
           ],
         ]
@@ -732,6 +1282,148 @@ exports[`Storyshots InspectionTimer default 1`] = `
     >
       15
     </Text>
+  </View>
+  <View
+    collapsable={false}
+    style={
+      Object {
+        "alignSelf": undefined,
+        "bottom": undefined,
+        "left": undefined,
+        "position": undefined,
+        "right": undefined,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+        "top": undefined,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0,
+          "shadowRadius": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          Object {
+            "backgroundColor": "rgba(232, 222, 248, 1)",
+            "borderColor": "transparent",
+            "borderRadius": 20,
+            "borderStyle": "solid",
+            "borderWidth": 0,
+            "minWidth": 64,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              false,
+              Object {
+                "borderRadius": 20,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              selectable={false}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "letterSpacing": 0.1,
+                    "lineHeight": 20,
+                  },
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "marginHorizontal": 16,
+                      "marginVertical": 9,
+                      "textAlign": "center",
+                    },
+                    false,
+                    Object {
+                      "marginHorizontal": 24,
+                      "marginVertical": 10,
+                    },
+                    undefined,
+                    false,
+                    Object {
+                      "color": "rgba(29, 25, 43, 1)",
+                      "fontFamily": "System",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.1,
+                      "lineHeight": 20,
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              common.cancel
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -777,9 +1469,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -800,7 +1494,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -817,63 +1510,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -891,6 +1533,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -923,6 +1566,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -945,7 +1589,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Rubik's Connected
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Rubik's Connected
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -985,29 +1838,45 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   >
                     <View
                       collapsable={false}
-                      size={24}
                       style={
                         Object {
-                          "backgroundColor": "rgba(232, 222, 248, 1)",
-                          "borderColor": "transparent",
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
+                          "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
-                          "borderStyle": "solid",
                           "borderWidth": 0,
-                          "marginRight": 15,
-                          "minWidth": 64,
+                          "elevation": 0,
+                          "height": 40,
+                          "margin": 6,
+                          "marginHorizontal": 20,
+                          "overflow": "hidden",
+                          "width": 40,
                         }
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": false,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
+                        centered={true}
+                        collapsable={false}
                         focusable={true}
+                        hitSlop={
+                          Object {
+                            "bottom": 6,
+                            "left": 6,
+                            "right": 6,
+                            "top": 6,
+                          }
+                        }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -1019,108 +1888,41 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "borderRadius": 20,
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          style={
+                            false,
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexGrow": 1,
                                 "justifyContent": "center",
                               },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "rgba(103, 80, 164, 1)",
+                                "fontSize": 24,
+                              },
                               undefined,
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
                             ]
                           }
                         >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "marginLeft": 12,
-                                  "marginRight": -4,
-                                },
-                                Object {
-                                  "marginLeft": 16,
-                                  "marginRight": -16,
-                                },
-                                false,
-                              ]
-                            }
-                          >
-                            <Text
-                              allowFontScaling={false}
-                              selectable={false}
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontSize": 18,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
-                                ]
-                              }
-                            >
-                              󰂯
-                            </Text>
-                          </View>
-                          <Text
-                            numberOfLines={1}
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontSize": 14,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.1,
-                                  "lineHeight": 20,
-                                },
-                                Object {
-                                  "textAlign": "left",
-                                },
-                                Object {
-                                  "writingDirection": "ltr",
-                                },
-                                Array [
-                                  Object {
-                                    "marginHorizontal": 16,
-                                    "marginVertical": 9,
-                                    "textAlign": "center",
-                                  },
-                                  false,
-                                  Object {
-                                    "marginHorizontal": 24,
-                                    "marginVertical": 10,
-                                  },
-                                  undefined,
-                                  false,
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontFamily": "System",
-                                    "fontSize": 14,
-                                    "fontWeight": "500",
-                                    "letterSpacing": 0.1,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                              ]
-                            }
-                          >
-                            bluetooth.connect
-                          </Text>
-                        </View>
+                          󰂯
+                        </Text>
                       </View>
                     </View>
                   </View>
@@ -1169,9 +1971,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -1192,7 +1996,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -1209,63 +2012,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -1283,6 +2035,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -1315,6 +2068,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -1337,7 +2091,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Giiker Super Cube i2
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Giiker Super Cube i2
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -1377,29 +2340,45 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   >
                     <View
                       collapsable={false}
-                      size={24}
                       style={
                         Object {
-                          "backgroundColor": "rgba(232, 222, 248, 1)",
-                          "borderColor": "transparent",
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
+                          "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
-                          "borderStyle": "solid",
                           "borderWidth": 0,
-                          "marginRight": 15,
-                          "minWidth": 64,
+                          "elevation": 0,
+                          "height": 40,
+                          "margin": 6,
+                          "marginHorizontal": 20,
+                          "overflow": "hidden",
+                          "width": 40,
                         }
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": false,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
+                        centered={true}
+                        collapsable={false}
                         focusable={true}
+                        hitSlop={
+                          Object {
+                            "bottom": 6,
+                            "left": 6,
+                            "right": 6,
+                            "top": 6,
+                          }
+                        }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -1411,108 +2390,41 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "borderRadius": 20,
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          style={
+                            false,
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexGrow": 1,
                                 "justifyContent": "center",
                               },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "rgba(103, 80, 164, 1)",
+                                "fontSize": 24,
+                              },
                               undefined,
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
                             ]
                           }
                         >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "marginLeft": 12,
-                                  "marginRight": -4,
-                                },
-                                Object {
-                                  "marginLeft": 16,
-                                  "marginRight": -16,
-                                },
-                                false,
-                              ]
-                            }
-                          >
-                            <Text
-                              allowFontScaling={false}
-                              selectable={false}
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontSize": 18,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
-                                ]
-                              }
-                            >
-                              󰂯
-                            </Text>
-                          </View>
-                          <Text
-                            numberOfLines={1}
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontSize": 14,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.1,
-                                  "lineHeight": 20,
-                                },
-                                Object {
-                                  "textAlign": "left",
-                                },
-                                Object {
-                                  "writingDirection": "ltr",
-                                },
-                                Array [
-                                  Object {
-                                    "marginHorizontal": 16,
-                                    "marginVertical": 9,
-                                    "textAlign": "center",
-                                  },
-                                  false,
-                                  Object {
-                                    "marginHorizontal": 24,
-                                    "marginVertical": 10,
-                                  },
-                                  undefined,
-                                  false,
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontFamily": "System",
-                                    "fontSize": 14,
-                                    "fontWeight": "500",
-                                    "letterSpacing": 0.1,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                              ]
-                            }
-                          >
-                            bluetooth.connect
-                          </Text>
-                        </View>
+                          󰂯
+                        </Text>
                       </View>
                     </View>
                   </View>
@@ -1561,9 +2473,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -1584,7 +2498,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -1601,63 +2514,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -1675,6 +2537,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -1707,6 +2570,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -1729,7 +2593,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Lorem Isum Dolor Sit Amet Cubes
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Lorem Isum Dolor Sit Amet Cubes
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -1769,29 +2842,45 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   >
                     <View
                       collapsable={false}
-                      size={24}
                       style={
                         Object {
-                          "backgroundColor": "rgba(232, 222, 248, 1)",
-                          "borderColor": "transparent",
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
+                          "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
-                          "borderStyle": "solid",
                           "borderWidth": 0,
-                          "marginRight": 15,
-                          "minWidth": 64,
+                          "elevation": 0,
+                          "height": 40,
+                          "margin": 6,
+                          "marginHorizontal": 20,
+                          "overflow": "hidden",
+                          "width": 40,
                         }
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": false,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
+                        centered={true}
+                        collapsable={false}
                         focusable={true}
+                        hitSlop={
+                          Object {
+                            "bottom": 6,
+                            "left": 6,
+                            "right": 6,
+                            "top": 6,
+                          }
+                        }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -1803,108 +2892,41 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "borderRadius": 20,
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          style={
+                            false,
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexGrow": 1,
                                 "justifyContent": "center",
                               },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "rgba(103, 80, 164, 1)",
+                                "fontSize": 24,
+                              },
                               undefined,
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
                             ]
                           }
                         >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "marginLeft": 12,
-                                  "marginRight": -4,
-                                },
-                                Object {
-                                  "marginLeft": 16,
-                                  "marginRight": -16,
-                                },
-                                false,
-                              ]
-                            }
-                          >
-                            <Text
-                              allowFontScaling={false}
-                              selectable={false}
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontSize": 18,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
-                                ]
-                              }
-                            >
-                              󰂯
-                            </Text>
-                          </View>
-                          <Text
-                            numberOfLines={1}
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontSize": 14,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.1,
-                                  "lineHeight": 20,
-                                },
-                                Object {
-                                  "textAlign": "left",
-                                },
-                                Object {
-                                  "writingDirection": "ltr",
-                                },
-                                Array [
-                                  Object {
-                                    "marginHorizontal": 16,
-                                    "marginVertical": 9,
-                                    "textAlign": "center",
-                                  },
-                                  false,
-                                  Object {
-                                    "marginHorizontal": 24,
-                                    "marginVertical": 10,
-                                  },
-                                  undefined,
-                                  false,
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontFamily": "System",
-                                    "fontSize": 14,
-                                    "fontWeight": "500",
-                                    "letterSpacing": 0.1,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                              ]
-                            }
-                          >
-                            bluetooth.connect
-                          </Text>
-                        </View>
+                          󰂯
+                        </Text>
                       </View>
                     </View>
                   </View>
@@ -1953,9 +2975,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -1976,7 +3000,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -1993,63 +3016,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "FontAwesome",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -2067,6 +3039,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -2099,6 +3072,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -2121,7 +3095,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Mysterious Cubes
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "FontAwesome",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Mysterious Cubes
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -2161,29 +3344,45 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   >
                     <View
                       collapsable={false}
-                      size={24}
                       style={
                         Object {
-                          "backgroundColor": "rgba(232, 222, 248, 1)",
-                          "borderColor": "transparent",
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
+                          "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
-                          "borderStyle": "solid",
                           "borderWidth": 0,
-                          "marginRight": 15,
-                          "minWidth": 64,
+                          "elevation": 0,
+                          "height": 40,
+                          "margin": 6,
+                          "marginHorizontal": 20,
+                          "overflow": "hidden",
+                          "width": 40,
                         }
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": false,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
+                        centered={true}
+                        collapsable={false}
                         focusable={true}
+                        hitSlop={
+                          Object {
+                            "bottom": 6,
+                            "left": 6,
+                            "right": 6,
+                            "top": 6,
+                          }
+                        }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -2195,108 +3394,41 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "borderRadius": 20,
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          style={
+                            false,
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexGrow": 1,
                                 "justifyContent": "center",
                               },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "rgba(103, 80, 164, 1)",
+                                "fontSize": 24,
+                              },
                               undefined,
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
                             ]
                           }
                         >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "marginLeft": 12,
-                                  "marginRight": -4,
-                                },
-                                Object {
-                                  "marginLeft": 16,
-                                  "marginRight": -16,
-                                },
-                                false,
-                              ]
-                            }
-                          >
-                            <Text
-                              allowFontScaling={false}
-                              selectable={false}
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontSize": 18,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
-                                ]
-                              }
-                            >
-                              󰂯
-                            </Text>
-                          </View>
-                          <Text
-                            numberOfLines={1}
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontSize": 14,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.1,
-                                  "lineHeight": 20,
-                                },
-                                Object {
-                                  "textAlign": "left",
-                                },
-                                Object {
-                                  "writingDirection": "ltr",
-                                },
-                                Array [
-                                  Object {
-                                    "marginHorizontal": 16,
-                                    "marginVertical": 9,
-                                    "textAlign": "center",
-                                  },
-                                  false,
-                                  Object {
-                                    "marginHorizontal": 24,
-                                    "marginVertical": 10,
-                                  },
-                                  undefined,
-                                  false,
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontFamily": "System",
-                                    "fontSize": 14,
-                                    "fontWeight": "500",
-                                    "letterSpacing": 0.1,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                              ]
-                            }
-                          >
-                            bluetooth.connect
-                          </Text>
-                        </View>
+                          󰂯
+                        </Text>
                       </View>
                     </View>
                   </View>
@@ -2345,9 +3477,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -2368,7 +3502,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -2385,63 +3518,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -2459,6 +3541,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -2491,6 +3574,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -2513,7 +3597,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Rubik's Connected
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Rubik's Connected
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -2758,9 +4051,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -2781,7 +4076,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -2798,63 +4092,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -2872,6 +4115,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -2904,6 +4148,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -2926,7 +4171,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Rubik's Connected
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Rubik's Connected
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -2968,7 +4422,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                       collapsable={false}
                       style={
                         Object {
-                          "backgroundColor": undefined,
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
                           "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
                           "borderWidth": 0,
@@ -2982,14 +4436,18 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": true,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
-                        focusable={false}
+                        centered={true}
+                        collapsable={false}
+                        focusable={true}
                         hitSlop={
                           Object {
                             "bottom": 6,
@@ -2998,7 +4456,9 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             "top": 6,
                           }
                         }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -3010,11 +4470,17 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "alignItems": "center",
-                              "flexGrow": 1,
-                              "justifyContent": "center",
-                            },
+                            false,
+                            Array [
+                              Object {
+                                "alignItems": "center",
+                                "flexGrow": 1,
+                                "justifyContent": "center",
+                              },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
                           ]
                         }
                       >
@@ -3024,7 +4490,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                           style={
                             Array [
                               Object {
-                                "color": "rgba(73, 69, 79, 1)",
+                                "color": "rgba(103, 80, 164, 1)",
                                 "fontSize": 24,
                               },
                               undefined,
@@ -3087,9 +4553,11 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
           collapsable={false}
           style={
             Object {
-              "backgroundColor": "rgba(255, 251, 254, 1)",
-              "borderRadius": 4,
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 12,
               "elevation": 1,
+              "marginHorizontal": 8,
+              "marginTop": 8,
             }
           }
         >
@@ -3110,7 +4578,6 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "flexGrow": 1,
                 "flexShrink": 1,
               }
             }
@@ -3127,63 +4594,12 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   Object {
                     "minHeight": 72,
                   },
-                  undefined,
+                  Object {
+                    "paddingVertical": 10,
+                  },
                 ]
               }
             >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 40,
-                      "justifyContent": "center",
-                      "marginRight": 16,
-                      "width": 40,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "rgba(103, 80, 164, 1)",
-                        "borderRadius": 20,
-                        "height": 40,
-                        "width": 40,
-                      },
-                      Object {
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                      },
-                      Object {},
-                    ]
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                          "fontSize": 24,
-                        },
-                        undefined,
-                        Object {
-                          "fontFamily": "WCAEvent",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-              </View>
               <View
                 style={
                   Array [
@@ -3201,6 +4617,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 16,
                         "fontWeight": "400",
                         "letterSpacing": 0.15,
@@ -3233,6 +4650,7 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     Array [
                       Object {
                         "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "System",
                         "fontSize": 14,
                         "fontWeight": "400",
                         "letterSpacing": 0.25,
@@ -3255,7 +4673,216 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                     ]
                   }
                 >
-                  Rubik's Connected
+                  <View
+                    collapsable={false}
+                    style={
+                      Object {
+                        "alignSelf": undefined,
+                        "bottom": undefined,
+                        "left": undefined,
+                        "position": undefined,
+                        "right": undefined,
+                        "shadowColor": "#000",
+                        "shadowOffset": Object {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "top": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "shadowColor": "#000",
+                          "shadowOffset": Object {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderColor": "rgba(73, 69, 79, 0.12)",
+                            "borderRadius": 8,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
+                            "flexDirection": "column",
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            Object {
+                              "disabled": true,
+                              "selected": false,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Array [
+                              Object {
+                                "overflow": "hidden",
+                              },
+                              false,
+                              Array [
+                                Object {
+                                  "borderRadius": 8,
+                                },
+                                Object {
+                                  "flexGrow": 1,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                  "flexGrow": 1,
+                                  "paddingLeft": 4,
+                                  "position": "relative",
+                                },
+                                Object {
+                                  "paddingLeft": 0,
+                                },
+                                Object {
+                                  "paddingRight": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "alignSelf": "center",
+                                    "padding": 4,
+                                  },
+                                  Object {
+                                    "paddingLeft": 8,
+                                    "paddingRight": 0,
+                                  },
+                                  null,
+                                ]
+                              }
+                            >
+                              <Text
+                                allowFontScaling={false}
+                                selectable={false}
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontSize": 18,
+                                    },
+                                    undefined,
+                                    Object {
+                                      "fontFamily": "WCAEvent",
+                                      "fontStyle": "normal",
+                                      "fontWeight": "normal",
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                
+                              </Text>
+                            </View>
+                            <Text
+                              numberOfLines={1}
+                              selectable={false}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "rgba(28, 27, 31, 1)",
+                                    "fontFamily": "System",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "writingDirection": "ltr",
+                                  },
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "textAlignVertical": "center",
+                                    },
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 0.38)",
+                                      "fontFamily": "System",
+                                      "fontSize": 14,
+                                      "fontWeight": "500",
+                                      "letterSpacing": 0.1,
+                                      "lineHeight": 20,
+                                    },
+                                    Object {
+                                      "marginLeft": 8,
+                                      "marginRight": 16,
+                                    },
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "color": "rgba(28, 27, 31, 1)",
+                                      "fontFamily": "System",
+                                      "fontSize": 12,
+                                      "fontWeight": "400",
+                                      "letterSpacing": 0.4,
+                                      "lineHeight": 16,
+                                    },
+                                    Object {
+                                      "textAlign": "left",
+                                    },
+                                    Object {
+                                      "writingDirection": "ltr",
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                Rubik's Connected
+                              </Text>
+                            </Text>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
                 </Text>
               </View>
               <View>
@@ -3295,29 +4922,45 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                   >
                     <View
                       collapsable={false}
-                      size={24}
                       style={
                         Object {
-                          "backgroundColor": "rgba(232, 222, 248, 1)",
-                          "borderColor": "transparent",
+                          "backgroundColor": "rgba(231, 224, 236, 1)",
+                          "borderColor": "rgba(121, 116, 126, 1)",
                           "borderRadius": 20,
-                          "borderStyle": "solid",
                           "borderWidth": 0,
-                          "marginRight": 15,
-                          "minWidth": 64,
+                          "elevation": 0,
+                          "height": 40,
+                          "margin": 6,
+                          "marginHorizontal": 20,
+                          "overflow": "hidden",
+                          "width": 40,
                         }
                       }
                     >
                       <View
+                        accessibilityComponentType="button"
                         accessibilityRole="button"
                         accessibilityState={
                           Object {
                             "disabled": false,
                           }
                         }
+                        accessibilityTraits="button"
                         accessible={true}
+                        centered={true}
+                        collapsable={false}
                         focusable={true}
+                        hitSlop={
+                          Object {
+                            "bottom": 6,
+                            "left": 6,
+                            "right": 6,
+                            "top": 6,
+                          }
+                        }
+                        onBlur={[Function]}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -3329,108 +4972,41 @@ exports[`Storyshots SmartPuzzleCard variants 1`] = `
                             Object {
                               "overflow": "hidden",
                             },
-                            Object {
-                              "borderRadius": 20,
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          style={
+                            false,
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexGrow": 1,
                                 "justifyContent": "center",
                               },
+                              Object {
+                                "borderRadius": 20,
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          selectable={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "rgba(103, 80, 164, 1)",
+                                "fontSize": 24,
+                              },
                               undefined,
+                              Object {
+                                "fontFamily": "Material Design Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
                             ]
                           }
                         >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "marginLeft": 12,
-                                  "marginRight": -4,
-                                },
-                                Object {
-                                  "marginLeft": 16,
-                                  "marginRight": -16,
-                                },
-                                false,
-                              ]
-                            }
-                          >
-                            <Text
-                              allowFontScaling={false}
-                              selectable={false}
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontSize": 18,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "fontFamily": "Material Design Icons",
-                                    "fontStyle": "normal",
-                                    "fontWeight": "normal",
-                                  },
-                                  Object {},
-                                ]
-                              }
-                            >
-                              󰂯
-                            </Text>
-                          </View>
-                          <Text
-                            numberOfLines={1}
-                            selectable={false}
-                            style={
-                              Array [
-                                Object {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontSize": 14,
-                                  "fontWeight": "500",
-                                  "letterSpacing": 0.1,
-                                  "lineHeight": 20,
-                                },
-                                Object {
-                                  "textAlign": "left",
-                                },
-                                Object {
-                                  "writingDirection": "ltr",
-                                },
-                                Array [
-                                  Object {
-                                    "marginHorizontal": 16,
-                                    "marginVertical": 9,
-                                    "textAlign": "center",
-                                  },
-                                  false,
-                                  Object {
-                                    "marginHorizontal": 24,
-                                    "marginVertical": 10,
-                                  },
-                                  undefined,
-                                  false,
-                                  Object {
-                                    "color": "rgba(29, 25, 43, 1)",
-                                    "fontFamily": "System",
-                                    "fontSize": 14,
-                                    "fontWeight": "500",
-                                    "letterSpacing": 0.1,
-                                    "lineHeight": 20,
-                                  },
-                                  undefined,
-                                ],
-                              ]
-                            }
-                          >
-                            bluetooth.connect
-                          </Text>
-                        </View>
+                          󰂯
+                        </Text>
                       </View>
                     </View>
                   </View>

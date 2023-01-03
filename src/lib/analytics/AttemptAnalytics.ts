@@ -195,6 +195,20 @@ class SlidingWindowAnalytics {
     }
     return averages;
   }
+
+  best(): number[][] {
+    let attempts = this.attempts.sort(SORTS.dateAscending);
+    let bestAttempts: number[][] = [];
+    let currentBest = Infinity;
+    for (let i = 0; i < attempts.length; i++) {
+      let duration = durationWithPenalties(attempts[i]);
+      if (duration < currentBest) {
+        currentBest = duration;
+        bestAttempts.push([i, duration]);
+      }
+    }
+    return bestAttempts;
+  }
 }
 
 /**

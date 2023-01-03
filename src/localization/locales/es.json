@@ -26,6 +26,7 @@
     "title": "Ocurrió un error..."
   },
   "charts": {
-    "duration": "Duración"
+    "duration": "Duración",
+    "best": "Mejor"
   }
 }

@@ -381,6 +381,23 @@ describe('analytics', () => {
       let analytics = new AttemptAnalytics([]);
       expect(analytics.sliding.AoX(5)).toEqual([]);
     });
+    it('computes a sliding best', () => {
+      let analytics = new AttemptAnalytics([
+        attemptFixtureWithTime(60),
+        attemptFixtureWithTime(70),
+        attemptFixtureWithTime(40),
+        attemptFixtureWithTime(50),
+        attemptFixtureWithTime(20),
+        attemptFixtureWithTime(30),
+        attemptFixtureWithTime(10),
+      ]);
+      expect(analytics.sliding.best()).toEqual([
+        [0, 60],
+        [2, 40],
+        [4, 20],
+        [6, 10],
+      ]);
+    });
   });
   describe('expanding windows', () => {
     // compute any of the statistics across an expanding window.

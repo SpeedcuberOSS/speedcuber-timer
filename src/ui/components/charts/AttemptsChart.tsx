@@ -7,36 +7,99 @@
 import { View, processColor } from 'react-native';
 
 import { Attempt } from '../../../lib/stif';
+import { AttemptAnalytics } from '../../../lib/analytics/AttemptAnalytics';
+import { CombinedChart } from 'react-native-charts-wrapper';
 import React from 'react';
-import { ScatterChart } from 'react-native-charts-wrapper';
 import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 
-export default function AttemptsChart({ attempts }: { attempts: Attempt[] }) {
+interface AttemptsChartProps {
+  attempts: Attempt[];
+  averages?: number[];
+}
+
+const AVERAGE_COLORS = ['red', 'limegreen', 'yellow', 'orange'];
+
+function prepareAverage(x: number, attempts: Attempt[]) {
+  let averages = new AttemptAnalytics(attempts).sliding
+    .AoX(x)
+    .map(d => d / 1000)
+    .map((d, idx) => {
+      return {
+        x: idx + x - 1,
+        y: d,
+      };
+    });
+  return averages;
+}
+
+export default function AttemptsChart({
+  attempts,
+  averages = [5, 12],
+}: AttemptsChartProps) {
   const theme = useTheme();
   const { t } = useTranslation();
-  const pointColor = processColor(theme.colors.primary);
+  const pointColor = processColor(theme.colors.primary.replace('1)', '0.75)'));
   const textColor = processColor(theme.colors.onBackground);
   return (
     <View style={{ flex: 1, padding: 10 }}>
-      <ScatterChart
+      <CombinedChart
         style={{ flex: 1 }}
         data={{
-          dataSets: [
-            {
-              label: t('charts.duration'),
-              values: attempts
-                .map(attempt => attempt.duration / 1000)
-                .reverse(),
-              config: {
-                scatterShape: 'CIRCLE',
-                scatterShapeSize: 4,
-                scatterShapeHoleRadius: 1,
-                color: pointColor,
-                valueTextColor: textColor,
+          scatterData: {
+            dataSets: [
+              {
+                label: t('charts.duration'),
+                values: attempts
+                  .map(attempt => attempt.duration / 1000)
+                  .reverse(),
+                config: {
+                  scatterShape: 'CIRCLE',
+                  scatterShapeSize: 5,
+                  scatterShapeHoleRadius: 2,
+                  color: pointColor,
+                  valueTextColor: textColor,
+                },
               },
-            },
-          ],
+            ],
+          },
+          lineData: {
+            dataSets: [
+              {
+                label: t('charts.best'),
+                values: new AttemptAnalytics(attempts).sliding
+                  .best()
+                  .map(([x, y]) => {
+                    return { x: x, y: y / 1000 };
+                  }),
+                config: {
+                  color: processColor('yellow'),
+                  circleColor: processColor('yellow'),
+                  circleRadius: 3,
+                  drawCircleHole: false,
+                  drawValues: false,
+                  dashedLine: {
+                    lineLength: 5,
+                    spaceLength: 5,
+                  },
+                },
+              },
+              ...averages.map((a, idx) => {
+                return {
+                  label: `Ao${a}`,
+                  values: prepareAverage(a, attempts),
+                  config: {
+                    color: processColor(
+                      AVERAGE_COLORS[idx % AVERAGE_COLORS.length],
+                    ),
+                    lineWidth: 2,
+                    drawCircles: false,
+                    drawValues: false,
+                  },
+                };
+              }),
+            ],
+          },
         }}
         legend={{
           form: 'CIRCLE',
@@ -57,6 +120,7 @@ export default function AttemptsChart({ attempts }: { attempts: Attempt[] }) {
             enabled: false,
           },
         }}
+        drawOrder={['SCATTER', 'LINE']}
       />
     </View>
   );
