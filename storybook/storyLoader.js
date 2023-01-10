@@ -9,7 +9,7 @@ function loadStories() {
   require('../src/ui/components/InspectionTimer.stories');
   require('../src/ui/components/SmartPuzzleCard.stories');
   require('../src/ui/components/SmartPuzzleConnector.stories');
-  require('../src/ui/components/TwistyPlayer.stories');
+  require('../src/ui/components/TwistyPlayer/TwistyPlayer.stories');
 }
 
 const stories = [

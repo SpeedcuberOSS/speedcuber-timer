@@ -17,7 +17,7 @@ import {
   PUZZLE_PYRAMINX,
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
-} from '../../lib/stif';
+} from '../../../lib/stif';
 
 import React from 'react';
 import TwistyPlayer from './TwistyPlayer';

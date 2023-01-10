@@ -13,8 +13,11 @@ import {
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
   Puzzle,
-} from '../../lib/stif';
-import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
+} from '../../../lib/stif';
+import {
+  BluetoothPuzzle,
+  ConnectionStatus,
+} from '../../../lib/bluetooth-puzzle';
 import React, { useRef } from 'react';
 
 import { ColorValue } from 'react-native';
