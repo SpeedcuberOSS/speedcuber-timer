@@ -4,10 +4,10 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Caption, Card, Text } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
+import React, { memo } from 'react';
 
 import { Attempt } from '../../lib/stif';
-import React from 'react';
 import { StyleSheet } from 'react-native';
 import { getAttemptTimeString } from '../utils/formatElapsedTime';
 
@@ -15,7 +15,7 @@ interface AttemptCardProps {
   attempt: Attempt;
 }
 
-export default function AttemptCard(props: AttemptCardProps) {
+function AttemptCard(props: AttemptCardProps) {
   return (
     <Card style={styles.card}>
       <Card.Title
@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+export default memo(AttemptCard);
