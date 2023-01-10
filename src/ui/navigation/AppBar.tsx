@@ -4,13 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Appbar, Button } from 'react-native-paper';
+import { Button, IconButton, Surface } from 'react-native-paper';
 import React, { useState } from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 import { CompetitiveEvent } from '../../lib/stif';
 import EventSelectorModal from '../components/EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import SmartPuzzleScannerModal from '../components/SmartPuzzleScannerModal';
+import { modeAppbarHeight } from 'react-native-paper/src/components/Appbar/utils';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
 
@@ -20,31 +22,25 @@ export default function AppBar() {
   const [showPuzzleScanner, setShowPuzzleScanner] = useState(false);
   const { t } = useTranslation();
   return (
-    <>
-      <Appbar.Header elevated={true} mode="center-aligned">
+    <SafeAreaView>
+      <Surface style={styles.appbar}>
         {/* @ts-ignore */}
-        <Appbar.Action
+        <IconButton
           icon="menu"
           onPress={() => console.log('PLACEHOLDER: Menu pressed')}
         />
+        <Button
+          icon={Icons.WCAEvent(event.id)}
+          mode="contained-tonal"
+          onPress={() => setShowEventSelector(true)}>
+          {t(`events.${event.id}`)}
+        </Button>
         {/* @ts-ignore */}
-        <Appbar.Content
-          title={
-            <Button
-              icon={Icons.WCAEvent(event.id)}
-              mode="contained-tonal"
-              style={{ marginTop: 8 }}>
-              {t(`events.${event.id}`)}
-            </Button>
-          }
-          onPress={() => setShowEventSelector(true)}
-        />
-        {/* @ts-ignore */}
-        <Appbar.Action
+        <IconButton
           icon="bluetooth"
           onPress={() => setShowPuzzleScanner(true)}
         />
-      </Appbar.Header>
+      </Surface>
       <EventSelectorModal
         visible={showEventSelector}
         onDismiss={() => setShowEventSelector(false)}
@@ -57,6 +53,15 @@ export default function AppBar() {
         visible={showPuzzleScanner}
         onDismiss={() => setShowPuzzleScanner(false)}
       />
-    </>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  appbar: {
+    height: modeAppbarHeight['center-aligned'],
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+});
