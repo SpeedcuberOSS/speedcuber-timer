@@ -6,7 +6,7 @@
 
 import React, { useState } from 'react';
 
-import AppBar from '../components/AppBar';
+import AppBar from './AppBar';
 import { BottomNavigation } from 'react-native-paper';
 import Icons from '../icons/iconHelper';
 import InsightsScreen from '../screens/InsightsScreen';
