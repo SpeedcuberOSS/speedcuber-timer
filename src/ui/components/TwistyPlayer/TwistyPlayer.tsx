@@ -72,8 +72,13 @@ export default function TwistyPlayer({
   return (
     <WebView
       ref={webViewRef}
-      originWhitelist={['*']}
       style={{ flex: 1 }}
+      scrollEnabled={false}
+      setBuiltInZoomControls={false}
+      setDisplayZoomControls={false}
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      originWhitelist={['*']}
       source={{
         html: `
         <script type="module">
