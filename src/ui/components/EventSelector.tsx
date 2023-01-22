@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Avatar, Surface, Text } from 'react-native-paper';
+import { Avatar, Text } from 'react-native-paper';
 import {
   Dimensions,
   FlatList,
   Pressable,
-  ScrollView,
   StyleSheet,
   View,
 } from 'react-native';

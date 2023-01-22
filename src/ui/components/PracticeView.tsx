@@ -18,7 +18,7 @@ import PuzzleRegistry, {
 import React, { useState } from 'react';
 
 import { ATTEMPT_UNKNOWN } from '../../lib/stif';
-import AttemptTime from './AttemptTime';
+import AttemptTime from './attempts/AttemptTime';
 import InspectionTimer from '../components/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
 import SolveTimer from '../components/SolveTimer';

@@ -6,7 +6,7 @@
 
 import { SafeAreaView, StyleSheet } from 'react-native';
 
-import AttemptList from '../components/AttemptList';
+import AttemptList from '../components/attempts/AttemptList';
 import AttemptsChart from '../components/charts/AttemptsChart';
 import React from 'react';
 import { getLibrary } from '../../lib/attempts';

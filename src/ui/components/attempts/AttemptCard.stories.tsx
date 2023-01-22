@@ -9,16 +9,13 @@ import {
   EVENT_3x3x3,
   PUZZLE_3x3x3,
   ScrambleBuilder,
-} from '../../lib/stif';
+} from '../../../lib/stif';
 
 import AttemptCard from './AttemptCard';
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 // import { action } from '@storybook/addon-actions';
-
-
-
 
 let attempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,

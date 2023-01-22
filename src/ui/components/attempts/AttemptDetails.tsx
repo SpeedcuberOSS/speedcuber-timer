@@ -7,11 +7,11 @@
 import { List, useTheme } from 'react-native-paper';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { Attempt } from '../../lib/stif';
-import Icons from '../icons/iconHelper';
+import { Attempt } from '../../../lib/stif';
+import Icons from '../../icons/iconHelper';
 import React from 'react';
-import TwistyPlayer from './TwistyPlayer';
-import { getAttemptTimeString } from '../utils/formatElapsedTime';
+import TwistyPlayer from '../TwistyPlayer';
+import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
 interface AttemptDetailsProps {
   attempt: Attempt;

@@ -7,7 +7,7 @@
 import { FlatList, View } from 'react-native';
 import React, { memo } from 'react';
 
-import { Attempt } from '../../lib/stif';
+import { Attempt } from '../../../lib/stif';
 import AttemptCard from './AttemptCard';
 
 interface AttemptListProps {

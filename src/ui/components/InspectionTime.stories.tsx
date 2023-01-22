@@ -11,9 +11,6 @@ import { storiesOf } from '@storybook/react-native';
 
 // import { action } from '@storybook/addon-actions';
 
-
-
-
 storiesOf('InspectionTime', module)
   .add('default', () => {
     return (

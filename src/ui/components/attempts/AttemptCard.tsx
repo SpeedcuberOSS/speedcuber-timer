@@ -7,9 +7,9 @@
 import { Card, Text } from 'react-native-paper';
 import React, { memo } from 'react';
 
-import { Attempt } from '../../lib/stif';
+import { Attempt } from '../../../lib/stif';
 import { StyleSheet } from 'react-native';
-import { getAttemptTimeString } from '../utils/formatElapsedTime';
+import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
 interface AttemptCardProps {
   attempt: Attempt;
