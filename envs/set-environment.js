@@ -8,12 +8,20 @@
 // https://itnext.io/the-easiest-way-to-setup-multiple-environments-on-react-native-67b33d073390
 
 const fs = require('fs');
-//Obtain the environment string passed to the node script
-const environment = process.argv[2];
-//read the content of the json file
-const envFileContent = require(`../envs/${environment}.json`);
-//copy the json inside the env.json file
-fs.writeFileSync(
-  'envs/_env.json',
-  JSON.stringify(envFileContent, undefined, 2),
-);
+
+function setEnvironmentConfig(environment) {
+  const envFileContent = require(`../envs/${environment}/config.json`);
+  fs.writeFileSync(
+    'envs/_env.json',
+    JSON.stringify(envFileContent, undefined, 2),
+  );
+}
+
+function setEnvironmentApp(environment) {
+  fs.copyFileSync(`envs/${environment}/App.js`, 'index.js');
+}
+
+// MAIN
+const environment = process.argv[2]; // Obtain the environment string passed to the node script
+setEnvironmentConfig(environment);
+setEnvironmentApp(environment);
