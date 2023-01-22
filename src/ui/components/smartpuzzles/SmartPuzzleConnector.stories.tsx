@@ -4,9 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { DemoBluetoothDevice } from '../../lib/bluetooth-puzzle/DemoBluetoothDevice';
+import { DemoBluetoothDevice } from '../../../lib/bluetooth-puzzle/DemoBluetoothDevice';
 import React from 'react';
-import { RubiksConnected } from '../../lib/bluetooth-puzzle';
+import { RubiksConnected } from '../../../lib/bluetooth-puzzle';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';

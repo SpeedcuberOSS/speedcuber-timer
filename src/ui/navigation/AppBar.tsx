@@ -11,7 +11,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { CompetitiveEvent } from '../../lib/stif';
 import EventSelectorModal from '../components/EventSelectorModal';
 import Icons from '../icons/iconHelper';
-import SmartPuzzleScannerModal from '../components/SmartPuzzleScannerModal';
+import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
 import { modeAppbarHeight } from 'react-native-paper/src/components/Appbar/utils';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';

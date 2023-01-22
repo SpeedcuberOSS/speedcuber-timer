@@ -6,7 +6,7 @@
 
 import React from 'react';
 import SmartPuzzleScanner from './SmartPuzzleScanner';
-import TitledModal from './TitledModal';
+import TitledModal from '../TitledModal';
 import { useTranslation } from 'react-i18next';
 
 interface SmartPuzzleScannerModalProps {

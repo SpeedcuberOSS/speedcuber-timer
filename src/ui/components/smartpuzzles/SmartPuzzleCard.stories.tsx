@@ -4,14 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { PUZZLE_2x2x2, PUZZLE_SQUARE_1 } from '../../lib/stif';
+import { PUZZLE_2x2x2, PUZZLE_SQUARE_1 } from '../../../lib/stif';
 
+import { ConnectionStatus } from '../../../lib/bluetooth-puzzle';
 import React from 'react';
+import { ScrollView } from 'react-native';
 import SmartPuzzleCard from './SmartPuzzleCard';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
-import { ScrollView } from 'react-native';
-import { ConnectionStatus } from '../../lib/bluetooth-puzzle';
 
 async function connectSuccessfully(): Promise<void> {
   return await new Promise((resolve, reject) => {

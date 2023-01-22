@@ -4,17 +4,17 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { ConnectionStatus, MoveListener } from '../../lib/bluetooth-puzzle';
+import { ConnectionStatus, MoveListener } from '../../../lib/bluetooth-puzzle';
 import PuzzleRegistry, {
   BluetoothPuzzle,
-} from '../utils/bluetooth/SmartPuzzleRegistry';
+} from '../../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useEffect, useState } from 'react';
 
-import ErrorDialog from './ErrorDialog';
+import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleCard from './SmartPuzzleCard';
-import { SmartPuzzleError } from '../utils/bluetooth/SmartPuzzleError';
+import { SmartPuzzleError } from '../../utils/bluetooth/SmartPuzzleError';
 import { StyleSheet } from 'react-native';
-import useErrorGuard from '../hooks/useErrorGuard';
+import useErrorGuard from '../../hooks/useErrorGuard';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: BluetoothPuzzle;

@@ -6,16 +6,16 @@
 
 import PuzzleRegistry, {
   BluetoothPuzzle,
-} from '../utils/bluetooth/SmartPuzzleRegistry';
+} from '../../utils/bluetooth/SmartPuzzleRegistry';
 import React, { useEffect, useState } from 'react';
 import { RefreshControl, ScrollView, View } from 'react-native';
 
-import ErrorDialog from './ErrorDialog';
+import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
-import { SmartPuzzleError } from '../utils/bluetooth/SmartPuzzleError';
-import { ensureScanningReady } from '../utils/bluetooth/permissions';
-import { scanForSmartPuzzles } from '../utils/bluetooth';
-import useErrorGuard from '../hooks/useErrorGuard';
+import { SmartPuzzleError } from '../../utils/bluetooth/SmartPuzzleError';
+import { ensureScanningReady } from '../../utils/bluetooth/permissions';
+import { scanForSmartPuzzles } from '../../utils/bluetooth';
+import useErrorGuard from '../../hooks/useErrorGuard';
 
 const SmartPuzzleScanner = () => {
   const { error, guard } = useErrorGuard(SmartPuzzleError);
