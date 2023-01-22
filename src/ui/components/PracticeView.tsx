@@ -19,7 +19,7 @@ import React, { useState } from 'react';
 
 import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './attempts/AttemptTime';
-import InspectionTimer from '../components/InspectionTimer';
+import InspectionTimer from '../components/inspection/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';

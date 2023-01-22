@@ -8,14 +8,14 @@ import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
   Infraction,
-} from '../../lib/stif';
+} from '../../../lib/stif';
 import { Pressable, StyleSheet, Vibration } from 'react-native';
 import React, { useState } from 'react';
 
 import { Button } from 'react-native-paper';
-import { Inspection } from '../../lib/constants';
+import { Inspection } from '../../../lib/constants';
 import InspectionTime from './InspectionTime';
-import { useTimer } from '../hooks';
+import { useTimer } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 
 interface InspectionTimerProps {

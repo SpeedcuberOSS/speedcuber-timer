@@ -6,10 +6,10 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { Inspection } from '../../lib/constants';
+import { Inspection } from '../../../lib/constants';
 import React from 'react';
 import { Text } from 'react-native-paper';
-import { getCurrentTheme } from '../themes';
+import { getCurrentTheme } from '../../themes';
 import { useTranslation } from 'react-i18next';
 
 interface InspectionTimeProps {
