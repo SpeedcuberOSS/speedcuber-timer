@@ -15,6 +15,8 @@ interface TitledModalProps {
   onDismiss: () => void;
 }
 
+const MODAL_HEIGHT = 0.6 * Dimensions.get('window').height;
+
 const TitledModal: React.FC<TitledModalProps> = ({
   title,
   visible,
@@ -32,11 +34,17 @@ const TitledModal: React.FC<TitledModalProps> = ({
           { backgroundColor: theme.colors.background },
         ]}>
         <Surface style={styles.titleContainer} elevation={2}>
-          <Text variant="titleLarge" style={styles.title}>
+          <Text variant="titleMedium" style={styles.title}>
             {title}
           </Text>
         </Surface>
         <View style={styles.childrenContainer}>{children}</View>
+        <View
+          style={[
+            styles.bottomContainer,
+            { backgroundColor: theme.colors.background },
+          ]}
+        />
       </Modal>
     </Portal>
   );
@@ -44,20 +52,26 @@ const TitledModal: React.FC<TitledModalProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    maxHeight: 0.6 * Dimensions.get('window').height,
-    paddingBottom: 20,
+    maxHeight: MODAL_HEIGHT,
     margin: 20,
     borderRadius: 10,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-  childrenContainer: {
-    alignItems: 'stretch',
   },
   titleContainer: {
+    maxHeight: 0.15 * MODAL_HEIGHT,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     alignItems: 'center',
+  },
+  childrenContainer: {
+    maxHeight: 0.85 * MODAL_HEIGHT,
+    alignItems: 'stretch',
+  },
+  bottomContainer: {
+    height: 15,
+    marginTop: -15,
+    opacity: 0.25,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
   title: { padding: 10 },
 });

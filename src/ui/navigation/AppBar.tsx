@@ -8,7 +8,7 @@ import { Appbar, Button } from 'react-native-paper';
 import React, { useState } from 'react';
 
 import { CompetitiveEvent } from '../../lib/stif';
-import EventSelectorModal from '../components/EventSelectorModal';
+import EventSelectorModal from '../components/events/EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
 import { StyleSheet } from 'react-native';

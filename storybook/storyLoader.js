@@ -6,6 +6,8 @@
 function loadStories() {
   require('../src/ui/components/attempts/AttemptCard.stories');
   require('../src/ui/components/attempts/AttemptDetails.stories');
+  require('../src/ui/components/events/EventSelector.stories');
+  require('../src/ui/components/events/EventSelectorModal.stories');
   require('../src/ui/components/inspection/InspectionTime.stories');
   require('../src/ui/components/inspection/InspectionTimer.stories');
   require('../src/ui/components/smartpuzzles/SmartPuzzleCard.stories');
@@ -16,6 +18,8 @@ function loadStories() {
 const stories = [
   '../src/ui/components/attempts/AttemptCard.stories',
   '../src/ui/components/attempts/AttemptDetails.stories',
+  '../src/ui/components/events/EventSelector.stories',
+  '../src/ui/components/events/EventSelectorModal.stories',
   '../src/ui/components/inspection/InspectionTime.stories',
   '../src/ui/components/inspection/InspectionTimer.stories',
   '../src/ui/components/smartpuzzles/SmartPuzzleCard.stories',

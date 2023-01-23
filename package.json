@@ -36,7 +36,8 @@
     "link-assets": "react-native-asset",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
-    "prestorybook": "rnstl"
+    "prestorybook": "rnstl",
+    "stories": "rnstl"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.7",

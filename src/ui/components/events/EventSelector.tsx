@@ -13,10 +13,10 @@ import {
   View,
 } from 'react-native';
 
-import { CompetitiveEvent } from '../../lib/stif';
-import Icons from '../icons/iconHelper';
+import { CompetitiveEvent } from '../../../lib/stif';
+import Icons from '../../icons/iconHelper';
 import React from 'react';
-import { getKnownCompetitiveEvents } from '../utils/knownEvents';
+import { getKnownCompetitiveEvents } from '../../utils/knownEvents';
 import { useTranslation } from 'react-i18next';
 
 interface EventSelectorProps {
@@ -33,7 +33,7 @@ function EventItem({ item, onPress }: EventItemProps) {
   return (
     <Pressable style={styles.item} onPress={onPress}>
       <Avatar.Icon icon={Icons.WCAEvent(item.id)} size={60} />
-      <Text style={styles.label} variant="labelSmall">
+      <Text numberOfLines={1} variant="labelSmall">
         {t(`events.${item.id}`)}
       </Text>
     </Pressable>
@@ -44,6 +44,7 @@ export default function EventSelector({ onSelect }: EventSelectorProps) {
   return (
     <View style={styles.container}>
       <FlatList
+        columnWrapperStyle={styles.list}
         data={getKnownCompetitiveEvents()}
         numColumns={3}
         renderItem={({ item }) => (
@@ -55,14 +56,15 @@ export default function EventSelector({ onSelect }: EventSelectorProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-  },
-  item: {
-    marginTop: 16,
-    width: Dimensions.get('window').width / 4,
+  container: {},
+  list: {
     alignItems: 'center',
     justifyContent: 'space-evenly',
+  },
+  item: {
+    padding: 10,
+    width: Dimensions.get('window').width / 4,
+    alignItems: 'center',
   },
   label: { padding: 10 },
 });

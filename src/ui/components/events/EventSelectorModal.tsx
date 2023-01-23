@@ -4,10 +4,10 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { CompetitiveEvent } from '../../lib/stif';
+import { CompetitiveEvent } from '../../../lib/stif';
 import EventSelector from './EventSelector';
 import React from 'react';
-import TitledModal from './TitledModal';
+import TitledModal from '../TitledModal';
 import { useTranslation } from 'react-i18next';
 
 interface EventSelectorModalProps {
