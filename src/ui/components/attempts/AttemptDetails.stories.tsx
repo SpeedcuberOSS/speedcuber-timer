@@ -20,7 +20,7 @@ import { storiesOf } from '@storybook/react-native';
 
 // import { action } from '@storybook/addon-actions';
 
-let basicAttempt = AttemptBuilder.buildBasic(
+export const basicAttempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
   10000,
@@ -28,7 +28,7 @@ let basicAttempt = AttemptBuilder.buildBasic(
 basicAttempt.comment = 'What a neat solve!';
 basicAttempt.unixTimestamp = 1663731466876;
 
-let infractionsAttempt = AttemptBuilder.buildBasic(
+export const infractionsAttempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
   10000,
@@ -36,7 +36,7 @@ let infractionsAttempt = AttemptBuilder.buildBasic(
 infractionsAttempt.unixTimestamp = 1663731466876;
 infractionsAttempt.infractions = [STOPPED_PUZZLE_ONE_MOVE_REMAINING];
 
-let dnfAttempt = AttemptBuilder.buildBasic(
+export const dnfAttempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
   10000,
@@ -44,7 +44,7 @@ let dnfAttempt = AttemptBuilder.buildBasic(
 dnfAttempt.unixTimestamp = 1663731466876;
 dnfAttempt.infractions = [STOPPED_PUZZLE_UNSOLVED];
 
-let dnsAttempt = AttemptBuilder.buildBasic(
+export const dnsAttempt = AttemptBuilder.buildBasic(
   EVENT_3x3x3,
   ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
   10000,

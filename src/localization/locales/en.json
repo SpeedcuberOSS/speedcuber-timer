@@ -35,7 +35,8 @@
     "permissions_check": "Unknown error while checking permission:\n{{error}}"
   },
   "dialogs": {
-    "select_event": "Select Event"
+    "select_event": "Select Event",
+    "attempt_details": "Attempt Details"
   },
   "scramble": {
     "hand": "Hand Scramble"

@@ -15,11 +15,17 @@ import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
 interface AttemptDetailsProps {
   attempt: Attempt;
+  onToggleScramble?: (visible: boolean) => void;
+  onToggleSolution?: (visible: boolean) => void;
 }
 
-export default function AttemptDetails({ attempt }: AttemptDetailsProps) {
+export default function AttemptDetails({
+  attempt,
+  onToggleScramble,
+  onToggleSolution,
+}: AttemptDetailsProps) {
   const theme = useTheme();
-  const [expanded, setExpanded] = useState(false);
+  const [scrambleExpanded, setScrambleExpanded] = useState(false);
   const solution = attempt.solutions[0];
   const scramble = solution.scramble.algorithm.moves.join(' ');
   return (
@@ -41,20 +47,25 @@ export default function AttemptDetails({ attempt }: AttemptDetailsProps) {
             )}
           />
         ) : null}
+        {/* @ts-ignore */}
         <List.Accordion
           style={{ marginLeft: 10 }}
           title={scramble}
           titleNumberOfLines={0}
-          expanded={expanded}
-          onPress={() => setExpanded(!expanded)}
+          expanded={scrambleExpanded}
+          onPress={() => {
+            setScrambleExpanded(!scrambleExpanded);
+            onToggleScramble?.(!scrambleExpanded);
+          }}
           left={props => (
             <List.Icon {...props} icon={Icons.WCAEvent(attempt.event.id)} />
           )}
         />
       </List.Section>
-      {expanded ? (
+      {scrambleExpanded ? (
         <View style={{ height: 200 }}>
           <TwistyPlayer
+            // @ts-ignore
             puzzle={attempt.event.puzzle}
             algorithm={solution.scramble.algorithm}
             visualization={'2D'}
@@ -67,7 +78,5 @@ export default function AttemptDetails({ attempt }: AttemptDetailsProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  container: {},
 });
