@@ -6,11 +6,9 @@
 
 import App from './src/ui/App';
 import { AppRegistry } from 'react-native';
-import { IS_STORYBOOK } from './envs/_env.json';
-import Storybook from './storybook';
 import { name as appName } from './app.json';
 import { suppressKnownWarnings } from './src/ui/utils/suppressKnownWarnings';
 
 suppressKnownWarnings();
 
-AppRegistry.registerComponent(appName, () => Storybook);
+AppRegistry.registerComponent(appName, () => App);

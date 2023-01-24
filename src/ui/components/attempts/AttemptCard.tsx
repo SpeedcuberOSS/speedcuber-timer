@@ -5,9 +5,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Card, Text } from 'react-native-paper';
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 
 import { Attempt } from '../../../lib/stif';
+import AttemptDetailsModal from './AttemptDetailsModal';
 import { StyleSheet } from 'react-native';
 import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
@@ -16,18 +17,26 @@ interface AttemptCardProps {
 }
 
 function AttemptCard(props: AttemptCardProps) {
+  const [detailsVisible, setDetailsVisible] = useState(false);
   return (
-    <Card style={styles.card}>
-      <Card.Title
-        title={getAttemptTimeString(props.attempt)}
-        subtitle={new Date(props.attempt.unixTimestamp).toLocaleString()}
+    <>
+      <Card style={styles.card} onPress={() => setDetailsVisible(true)}>
+        <Card.Title
+          title={getAttemptTimeString(props.attempt)}
+          subtitle={new Date(props.attempt.unixTimestamp).toLocaleString()}
+        />
+        <Card.Content>
+          <Text variant="bodySmall">
+            {props.attempt.solutions[0].scramble.algorithm.moves.join(' ')}
+          </Text>
+        </Card.Content>
+      </Card>
+      <AttemptDetailsModal
+        visible={detailsVisible}
+        attempt={props.attempt}
+        onDismiss={() => setDetailsVisible(false)}
       />
-      <Card.Content>
-        <Text variant="bodySmall">
-          {props.attempt.solutions[0].scramble.algorithm.moves.join(' ')}
-        </Text>
-      </Card.Content>
-    </Card>
+    </>
   );
 }
 
