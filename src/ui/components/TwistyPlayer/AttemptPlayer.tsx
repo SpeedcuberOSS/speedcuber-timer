@@ -11,12 +11,12 @@ import {
   MessageStream,
   SmartPuzzle,
 } from '../../../lib/stif';
-import React, { useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Slider from '@react-native-community/slider';
 import { Text } from 'react-native-paper';
 import TwistyPlayer from './TwistyPlayer';
+import { View } from 'react-native';
 import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
 
 interface AttemptPlayerProps {
@@ -24,21 +24,36 @@ interface AttemptPlayerProps {
 }
 
 export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
+  const twistyPlayerRef = useRef({});
   const [sliderValue, setSliderValue] = useState(0);
+
+  const scrambleAlg = attempt.solutions[0].scramble.algorithm;
   const solveReplay = getSolveReplay(attempt);
-  const moves = solveReplay.filter(v => v.t < sliderValue).map(v => v.m);
-  const twistyAlg = new AlgorithmBuilder()
-    .setMoves([...attempt.solutions[0].scramble.algorithm.moves, ...moves])
-    .build();
+  const solutionMoves = solveReplay
+    .filter(v => v.t < sliderValue)
+    .map(v => v.m);
+
+  useEffect(() => {
+    const twistyAlg = new AlgorithmBuilder()
+      .setMoves([...scrambleAlg.moves, ...solutionMoves])
+      .build();
+    // @ts-ignore
+    twistyPlayerRef.current.setAlgorithm(twistyAlg);
+  }, [sliderValue]);
+
   return (
     <View style={{ flex: 1 }}>
-      {/* @ts-ignore */}
-      <TwistyPlayer puzzle={attempt.event.puzzle} algorithm={twistyAlg} />
+      <TwistyPlayer
+        ref={twistyPlayerRef}
+        // @ts-ignore
+        puzzle={attempt.event.puzzle}
+        algorithm={scrambleAlg}
+      />
       <Slider
         maximumValue={attempt.duration}
         onValueChange={value => setSliderValue(value)}
       />
-      <Text>{moves.join(' ')}</Text>
+      <Text>{solutionMoves.join(' ')}</Text>
     </View>
   );
 }
