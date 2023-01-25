@@ -21,8 +21,8 @@ export interface Message {
 }
 
 export interface MessageStream extends Extension {
-  id: 'org.speedcuber.stif.extensions.message-stream';
-  specUrl: 'https://speedcuber.org/stif/extensions/message-stream.schema.json';
+  id: 'org.speedcuber.stif.extensions.message_stream';
+  specUrl: 'https://speedcuber.org/stif/extensions/message_stream.schema.json';
   data: {
     smartPuzzle: SmartPuzzle;
     stream: Message[];

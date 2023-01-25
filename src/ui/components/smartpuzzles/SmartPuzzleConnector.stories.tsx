@@ -15,8 +15,8 @@ const device = new DemoBluetoothDevice();
 device.delayConnection(1000);
 const puzzle = new RubiksConnected(device);
 
-storiesOf('SmartPuzzleConnector', module).add('3x3x3', () => (
-  // This component works in the app, but in Storybook, the Promises
-  // do not resolve properly, so it does not work there.
-  <SmartPuzzleConnector smartPuzzle={puzzle} onMove={() => {}} />
-));
+// storiesOf('SmartPuzzleConnector', module).add('3x3x3', () => (
+//   // This component works in the app, but in Storybook, the Promises
+//   // do not resolve properly, so it does not work there.
+//   <SmartPuzzleConnector smartPuzzle={puzzle} onMove={() => {}} />
+// ));

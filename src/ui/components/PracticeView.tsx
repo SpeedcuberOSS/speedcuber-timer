@@ -64,6 +64,7 @@ export default function PracticeView() {
 
   function handleInspectionBegin() {
     console.debug('Inspection begin');
+    attemptBuilder.setTimestamp(new Date().getTime());
     const smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
     if (smartPuzzle) {
       messageStreamBuilder.setSmartPuzzle(smartPuzzle);
@@ -78,6 +79,7 @@ export default function PracticeView() {
 
   function handleInspectionComplete(infractions: Infraction[]) {
     console.debug('Inspection complete', infractions);
+    attemptBuilder.setInspectionCompleteTimestamp(new Date().getTime());
     infractions.forEach(infraction => {
       attemptBuilder.addInfraction(infraction);
     });

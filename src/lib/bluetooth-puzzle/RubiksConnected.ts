@@ -23,9 +23,9 @@ export class RubiksConnected extends BluetoothPuzzle {
         return;
       }
       const hexValues = base64ValueToHexArray(value);
-      const rawMmessage = parseRawMessage(hexValues);
+      const rawMmessage = parseHexValuesIntoRawMessage(hexValues);
       validateMessage(rawMmessage);
-      const message = parseMessage(rawMmessage);
+      const message = parseRawMessage(rawMmessage);
       if (message) {
         callback(JSON.stringify(message));
       }
@@ -79,7 +79,14 @@ interface RawGoCubeMessage {
   suffix: string[];
 }
 
-function parseRawMessage(hexValues: string[]): RawGoCubeMessage {
+export function parseMessage(message: string) {
+  const hexValues = base64ValueToHexArray(message);
+  const rawMmessage = parseHexValuesIntoRawMessage(hexValues);
+  validateMessage(rawMmessage);
+  return parseRawMessage(rawMmessage);
+}
+
+function parseHexValuesIntoRawMessage(hexValues: string[]): RawGoCubeMessage {
   // https://github.com/oddpetersson/gocube-protocol/blob/main/README.md#common-message-format
   const MSG_LENGTH = parseInt(hexValues[1], 16);
   return {
@@ -126,7 +133,7 @@ enum GoCubeMessageType {
   CubeType = '08',
 }
 
-function parseMessage(msg: RawGoCubeMessage) {
+export function parseRawMessage(msg: RawGoCubeMessage) {
   switch (msg.type) {
     case GoCubeMessageType.Rotation:
       return parseRotationMessage(msg);

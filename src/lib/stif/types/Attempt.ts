@@ -14,9 +14,13 @@ import { Solution } from './Solution';
  */
 interface Attempt extends Entity {
   /**
-   * The unix timestamp (in milliseconds) when the attempt occurred.
+   * The unix timestamp (in milliseconds) when the attempt began.
    */
   unixTimestamp: number;
+  /**
+   * The unix timestamp (in milliseconds) when the inspection phase was completed.
+   */
+  inspectionCompleteTimestamp?: number;
   /**
    * The duration of the attempt (in milliseconds), excluding penalties.
    */

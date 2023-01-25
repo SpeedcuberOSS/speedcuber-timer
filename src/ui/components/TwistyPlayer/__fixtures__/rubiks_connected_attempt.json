@@ -1,0 +1,340 @@
+{
+  "id": "bd19f5f6-ea3c-4f9d-beb0-2aa9c41e661f",
+  "extensions": [
+    {
+      "id": "org.speedcuber.stif.extensions.message_stream",
+      "specUrl": "https://speedcuber.org/stif/extensions/message_stream.schema.json",
+      "data": {
+        "smartPuzzle": {
+          "prefix": "Rubiks",
+          "brand": "Rubik's Connected",
+          "puzzle": {
+            "id": "333"
+          },
+          "uuids": {
+            "trackingService": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+            "trackingCharacteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+          }
+        },
+        "stream": [
+          {
+            "t": 1674668005400,
+            "m": "KgYBCwlFDQo="
+          },
+          {
+            "t": 1674668005485,
+            "m": "KgYBCQM9DQo="
+          },
+          {
+            "t": 1674668006056,
+            "m": "KgYBAAM0DQo="
+          },
+          {
+            "t": 1674668006326,
+            "m": "KgYBBwA4DQo="
+          },
+          {
+            "t": 1674668006553,
+            "m": "KgYBCgA7DQo="
+          },
+          {
+            "t": 1674668006816,
+            "m": "KgYBBQM5DQo="
+          },
+          {
+            "t": 1674668007495,
+            "m": "KgYBAQAyDQo="
+          },
+          {
+            "t": 1674668008157,
+            "m": "KgYBAgY5DQo="
+          },
+          {
+            "t": 1674668008247,
+            "m": "KgYBAgk8DQo="
+          },
+          {
+            "t": 1674668008729,
+            "m": "KgYBBgM6DQo="
+          },
+          {
+            "t": 1674668008934,
+            "m": "KgYBAwY6DQo="
+          },
+          {
+            "t": 1674668009235,
+            "m": "KgYBBwA4DQo="
+          },
+          {
+            "t": 1674668010045,
+            "m": "KgYBBwlBDQo="
+          },
+          {
+            "t": 1674668010167,
+            "m": "KgYBAwM3DQo="
+          },
+          {
+            "t": 1674668010256,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668010375,
+            "m": "KgYBBgA3DQo="
+          },
+          {
+            "t": 1674668010467,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668010686,
+            "m": "KgYBBQA2DQo="
+          },
+          {
+            "t": 1674668010855,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668011006,
+            "m": "KgYBBAM4DQo="
+          },
+          {
+            "t": 1674668011281,
+            "m": "KgYBBwlBDQo="
+          },
+          {
+            "t": 1674668011336,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668011545,
+            "m": "KgYBBgA3DQo="
+          },
+          {
+            "t": 1674668012056,
+            "m": "KgYBCQA6DQo="
+          },
+          {
+            "t": 1674668012181,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668012295,
+            "m": "KgYBAwk9DQo="
+          },
+          {
+            "t": 1674668012416,
+            "m": "KgYBCAM8DQo="
+          },
+          {
+            "t": 1674668012595,
+            "m": "KgYBAwY6DQo="
+          },
+          {
+            "t": 1674668012749,
+            "m": "KgYBBAY7DQo="
+          },
+          {
+            "t": 1674668012896,
+            "m": "KgYBAgk8DQo="
+          },
+          {
+            "t": 1674668013016,
+            "m": "KgYBBQM5DQo="
+          },
+          {
+            "t": 1674668013405,
+            "m": "KgYBCAY/DQo="
+          },
+          {
+            "t": 1674668013500,
+            "m": "KgYBAwY6DQo="
+          },
+          {
+            "t": 1674668013585,
+            "m": "KgYBCQM9DQo="
+          },
+          {
+            "t": 1674668013855,
+            "m": "KgYBBgM6DQo="
+          },
+          {
+            "t": 1674668014005,
+            "m": "KgYBCQA6DQo="
+          },
+          {
+            "t": 1674668014138,
+            "m": "KgYBBwA4DQo="
+          },
+          {
+            "t": 1674668014185,
+            "m": "KgYBCAM8DQo="
+          },
+          {
+            "t": 1674668014725,
+            "m": "KgYBAwM3DQo="
+          },
+          {
+            "t": 1674668014883,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668015334,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668015605,
+            "m": "KgYBBAY7DQo="
+          },
+          {
+            "t": 1674668015900,
+            "m": "KgYBAgY5DQo="
+          },
+          {
+            "t": 1674668015985,
+            "m": "KgYBCgM+DQo="
+          },
+          {
+            "t": 1674668016076,
+            "m": "KgYBAwM3DQo="
+          },
+          {
+            "t": 1674668016165,
+            "m": "KgYBCwA8DQo="
+          },
+          {
+            "t": 1674668016383,
+            "m": "KgYBBQM5DQo="
+          },
+          {
+            "t": 1674668016556,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668016841,
+            "m": "KgYBBgM6DQo="
+          },
+          {
+            "t": 1674668016917,
+            "m": "KgYBCAY/DQo="
+          },
+          {
+            "t": 1674668017065,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668017165,
+            "m": "KgYBCQM9DQo="
+          },
+          {
+            "t": 1674668017215,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668017367,
+            "m": "KgYBBwA4DQo="
+          },
+          {
+            "t": 1674668017995,
+            "m": "KgYBCQA6DQo="
+          },
+          {
+            "t": 1674668018055,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668018116,
+            "m": "KgYBCQlDDQo="
+          },
+          {
+            "t": 1674668018270,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1674668018477,
+            "m": "KgYBCQZADQo="
+          },
+          {
+            "t": 1674668018538,
+            "m": "KgYBAwk9DQo="
+          },
+          {
+            "t": 1674668018759,
+            "m": "KgYBCQM9DQo="
+          },
+          {
+            "t": 1674668018838,
+            "m": "KgYBAgAzDQo="
+          },
+          {
+            "t": 1674668018973,
+            "m": "KgYBCAY/DQo="
+          },
+          {
+            "t": 1674668019015,
+            "m": "KgYBAgM2DQo="
+          },
+          {
+            "t": 1674668019135,
+            "m": "KgYBCAlCDQo="
+          },
+          {
+            "t": 1674668019231,
+            "m": "KgYBCAA5DQo="
+          }
+        ]
+      }
+    }
+  ],
+  "unixTimestamp": 1674667995013,
+  "inspectionCompleteTimestamp": 1674668004869,
+  "event": {
+    "id": "333",
+    "puzzle": {
+      "id": "333"
+    },
+    "type": "WCA"
+  },
+  "duration": 14865,
+  "solutions": [
+    {
+      "id": "c65c112c-5bf3-4e44-a968-534c51714fb6",
+      "scramble": {
+        "id": "3b445af6-6ee8-452a-b49a-e82cd519e0d1",
+        "puzzle": {
+          "id": "333"
+        },
+        "algorithm": {
+          "id": "121212a2-3313-4a6a-ac6d-166e182700c2",
+          "moves": [
+            "L2",
+            "U",
+            "F2",
+            "L2",
+            "B2",
+            "L",
+            "U'",
+            "R2",
+            "F",
+            "R",
+            "B",
+            "R",
+            "U",
+            "L'",
+            "U",
+            "B",
+            "R2",
+            "B'",
+            "D",
+            "L"
+          ]
+        },
+        "provider": {
+          "id": "org.speedcuber.scramblerproviders.mandy",
+          "url": "https://scrambleproviders.speedcuber.org/mandy"
+        }
+      }
+    }
+  ],
+  "infractions": [],
+  "comment": ""
+}

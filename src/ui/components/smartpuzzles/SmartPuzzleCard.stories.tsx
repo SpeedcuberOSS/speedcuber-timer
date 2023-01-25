@@ -29,47 +29,47 @@ async function connectFailure(): Promise<void> {
   });
 }
 
-storiesOf('SmartPuzzleCard', module).add('variants', () => (
-  <ScrollView>
-    <SmartPuzzleCard
-      name="Rubik_12345"
-      brand="Rubik's Connected"
-      onConnect={connectSuccessfully}
-    />
-    <SmartPuzzleCard
-      name="Giiker_12345"
-      brand="Giiker Super Cube i2"
-      puzzle={PUZZLE_2x2x2}
-      onConnect={connectSuccessfully}
-    />
-    <SmartPuzzleCard
-      name="Puzzle_1234567890"
-      brand="Lorem Isum Dolor Sit Amet Cubes"
-      onConnect={connectSuccessfully}
-    />
-    <SmartPuzzleCard
-      name="FooBar"
-      brand="Mysterious Cubes"
-      puzzle={PUZZLE_SQUARE_1}
-      onConnect={connectFailure}
-    />
-    <SmartPuzzleCard
-      name="Rubik_12345"
-      brand="Rubik's Connected"
-      connectionStatus={ConnectionStatus.CONNECTING}
-      onConnect={connectSuccessfully}
-    />
-    <SmartPuzzleCard
-      name="Rubik_12345"
-      brand="Rubik's Connected"
-      connectionStatus={ConnectionStatus.CONNECTED}
-      onConnect={connectSuccessfully}
-    />
-    <SmartPuzzleCard
-      name="Rubik_12345"
-      brand="Rubik's Connected"
-      connectionStatus={ConnectionStatus.DISCONNECTED}
-      onConnect={connectFailure}
-    />
-  </ScrollView>
-));
+// storiesOf('SmartPuzzleCard', module).add('variants', () => (
+//   <ScrollView>
+//     <SmartPuzzleCard
+//       name="Rubik_12345"
+//       brand="Rubik's Connected"
+//       onConnect={connectSuccessfully}
+//     />
+//     <SmartPuzzleCard
+//       name="Giiker_12345"
+//       brand="Giiker Super Cube i2"
+//       puzzle={PUZZLE_2x2x2}
+//       onConnect={connectSuccessfully}
+//     />
+//     <SmartPuzzleCard
+//       name="Puzzle_1234567890"
+//       brand="Lorem Isum Dolor Sit Amet Cubes"
+//       onConnect={connectSuccessfully}
+//     />
+//     <SmartPuzzleCard
+//       name="FooBar"
+//       brand="Mysterious Cubes"
+//       puzzle={PUZZLE_SQUARE_1}
+//       onConnect={connectFailure}
+//     />
+//     <SmartPuzzleCard
+//       name="Rubik_12345"
+//       brand="Rubik's Connected"
+//       connectionStatus={ConnectionStatus.CONNECTING}
+//       onConnect={connectSuccessfully}
+//     />
+//     <SmartPuzzleCard
+//       name="Rubik_12345"
+//       brand="Rubik's Connected"
+//       connectionStatus={ConnectionStatus.CONNECTED}
+//       onConnect={connectSuccessfully}
+//     />
+//     <SmartPuzzleCard
+//       name="Rubik_12345"
+//       brand="Rubik's Connected"
+//       connectionStatus={ConnectionStatus.DISCONNECTED}
+//       onConnect={connectFailure}
+//     />
+//   </ScrollView>
+// ));

@@ -11,6 +11,7 @@ import {
   Scramble,
   Solution,
 } from '../types';
+
 import { EntityBuilder } from './EntityBuilder';
 import { SolutionBuilder } from './SolutionBuilder';
 
@@ -46,6 +47,10 @@ class AttemptBuilder extends EntityBuilder {
     this.wip.unixTimestamp = unixTimestamp;
     return this;
   }
+  setInspectionCompleteTimestamp(unixTimestamp: number): this {
+    this.wip.inspectionCompleteTimestamp = unixTimestamp;
+    return this;
+  }
   addInfraction(infraction: Infraction): this {
     if (this.wip.infractions === undefined) {
       this.wip.infractions = [];
@@ -71,6 +76,7 @@ class AttemptBuilder extends EntityBuilder {
     return {
       ...entity,
       unixTimestamp: this.wip.unixTimestamp ?? new Date().getTime(),
+      inspectionCompleteTimestamp: this.wip.inspectionCompleteTimestamp,
       event: this.wip.event,
       duration: this.wip.duration,
       solutions: this.wip.solutions,

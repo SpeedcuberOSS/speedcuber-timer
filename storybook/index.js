@@ -17,6 +17,11 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 // enables knobs for all stories
 addDecorator(withKnobs);
+addDecorator(Story => (
+  <PaperProvider theme={getCurrentTheme()}>
+    <Story />
+  </PaperProvider>
+));
 
 // import stories
 configure(() => {
@@ -26,11 +31,7 @@ configure(() => {
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#getstorybookui-options
 // To find allowed options for getStorybookUI
 const StorybookUIRoot = getStorybookUI({ asyncStorage: null });
-const Storybook = () => (
-  <PaperProvider theme={getCurrentTheme()}>
-    <StorybookUIRoot />
-  </PaperProvider>
-);
+const Storybook = () => <StorybookUIRoot />;
 
 // If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
 // If you use Expo you should remove this line.

@@ -9,8 +9,8 @@ import { Message, MessageStream } from '../../types/extensions';
 import { SMARTPUZZLE_UNKNOWN } from '../SmartPuzzles';
 
 export const MESSAGE_STREAM_TEMPLATE: MessageStream = Object.freeze({
-  id: 'org.speedcuber.stif.extensions.message-stream',
-  specUrl: 'https://speedcuber.org/stif/extensions/message-stream.schema.json',
+  id: 'org.speedcuber.stif.extensions.message_stream',
+  specUrl: 'https://speedcuber.org/stif/extensions/message_stream.schema.json',
   data: {
     smartPuzzle: SMARTPUZZLE_UNKNOWN,
     stream: [] as Message[],

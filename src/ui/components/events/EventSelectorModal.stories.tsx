@@ -20,6 +20,6 @@ const EventSelectorModalWrapper = () => {
   );
 };
 
-storiesOf('EventSelector', module).add('default', () => (
+storiesOf('EventSelectorModal', module).add('default', () => (
   <EventSelectorModalWrapper />
 ));
