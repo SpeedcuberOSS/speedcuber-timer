@@ -50,8 +50,11 @@ const TwistyPlayer = forwardRef(
     const [width, height, scale] = [384, 256, 2];
     function sendMove(move: string) {
       const js = `
-        document.getElementById("add-move").innerHTML = "${move}"
-        document.getElementById("add-move").click()
+        addMoveButton = document.getElementById("add-move")
+        if (addMoveButton) {
+          addMoveButton.innerHTML = "${move}"
+          addMoveButton.click()
+        }
         true;
       `;
       console.debug(`Sending move ${move} to twisty player`);
@@ -75,10 +78,12 @@ const TwistyPlayer = forwardRef(
     useImperativeHandle(ref, () => ({
       setAlgorithm: (alg: Algorithm) => {
         const moves = alg.moves.join(' ');
-        console.debug('Setting TwistyPlayer algorithm to', moves);
         const js = `
-          document.getElementById("set-algorithm").innerHTML = "${moves}"
-          document.getElementById("set-algorithm").click()
+          setAlgButton = document.getElementById("set-algorithm")
+          if (setAlgButton) {
+            setAlgButton.innerHTML = "${moves}"
+            setAlgButton.click()
+          }
           true;
         `;
         webViewRef.current.injectJavaScript(js);
