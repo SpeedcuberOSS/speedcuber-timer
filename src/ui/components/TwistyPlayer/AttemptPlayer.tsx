@@ -12,9 +12,9 @@ import {
   SmartPuzzle,
 } from '../../../lib/stif';
 import React, { useEffect, useRef, useState } from 'react';
+import { Text, useTheme } from 'react-native-paper';
 
 import Slider from '@react-native-community/slider';
-import { Text } from 'react-native-paper';
 import TwistyPlayer from './TwistyPlayer';
 import { View } from 'react-native';
 import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
@@ -24,6 +24,7 @@ interface AttemptPlayerProps {
 }
 
 export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
+  const theme = useTheme();
   const twistyPlayerRef = useRef({});
   const [sliderValue, setSliderValue] = useState(0);
 
@@ -48,10 +49,15 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         // @ts-ignore
         puzzle={attempt.event.puzzle}
         algorithm={scrambleAlg}
+        backgroundColor={theme.colors.background}
       />
       <Slider
         maximumValue={attempt.duration}
         onValueChange={value => setSliderValue(value)}
+        style={{ backgroundColor: theme.colors.background }}
+        thumbTintColor={theme.colors.primary}
+        minimumTrackTintColor={theme.colors.primary}
+        maximumTrackTintColor={theme.colors.onBackground}
       />
       <Text>{solutionMoves.join(' ')}</Text>
     </View>
