@@ -26,21 +26,19 @@ interface AttemptPlayerProps {
 export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const [sliderValue, setSliderValue] = useState(0);
   const solveReplay = getSolveReplay(attempt);
-  const moves = new AlgorithmBuilder()
-    .setMoves([
-      ...attempt.solutions[0].scramble.algorithm.moves,
-      ...solveReplay.filter(v => v.t < sliderValue).map(v => v.m),
-    ])
+  const moves = solveReplay.filter(v => v.t < sliderValue).map(v => v.m);
+  const twistyAlg = new AlgorithmBuilder()
+    .setMoves([...attempt.solutions[0].scramble.algorithm.moves, ...moves])
     .build();
   return (
     <View style={{ flex: 1 }}>
       {/* @ts-ignore */}
-      <TwistyPlayer puzzle={attempt.event.puzzle} algorithm={moves} />
+      <TwistyPlayer puzzle={attempt.event.puzzle} algorithm={twistyAlg} />
       <Slider
         maximumValue={attempt.duration}
         onValueChange={value => setSliderValue(value)}
       />
-      <Text>{moves.moves.join(' ')}</Text>
+      <Text>{moves.join(' ')}</Text>
     </View>
   );
 }
