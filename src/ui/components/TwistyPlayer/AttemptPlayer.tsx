@@ -84,11 +84,6 @@ export function getMessageStream(attempt: Attempt): MessageStream {
   return messageStream ?? MESSAGE_STREAM_TEMPLATE;
 }
 
-function convertMessageStreamToSolveReplay(
-  messageStream: MessageStream,
-  windowMillis: number = 100,
-) {}
-
 export function parseMoves(messageStream: MessageStream) {
   const parser = getMessageParserForSmartPuzzle(messageStream.data.smartPuzzle);
   const moves = messageStream.data.stream.map(({ t, m }) => {
