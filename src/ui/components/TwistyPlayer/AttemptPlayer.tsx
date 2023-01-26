@@ -48,6 +48,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const solveReplay = getSolveReplay(attempt);
   const solutionMoves = solveReplay
     .filter(v => v.t < sliderValue)
+    .sort((a, b) => a.t - b.t)
     .map(v => v.m);
 
   useEffect(() => {
