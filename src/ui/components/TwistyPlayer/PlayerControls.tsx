@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { IconButton, Text, useTheme } from 'react-native-paper';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
@@ -30,14 +30,30 @@ interface PlayerControlsProps {
   onSeek: (timestamp: number) => void;
 }
 
-export default function PlayerControls({
-  duration,
-  onSeek,
-}: PlayerControlsProps) {
+function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
   const theme = useTheme();
   const [sliderValue, setSliderValue] = useState(0);
   const [playing, setPlaying] = useState<Date | null>(null);
-  const [lastSeek, setLastSeek] = useState(0);
+  const controls = useMemo(() => {
+    return {
+      jumpStart: {
+        icon: Icons.Entypo('controller-jump-to-start'),
+        onPress: () => seekToTimestamp(0),
+      },
+      backward: {
+        icon: Icons.Entypo('controller-fast-backward'),
+        onPress: () => seekToTimestamp(sliderValue - 1000),
+      },
+      forward: {
+        icon: Icons.Entypo('controller-fast-forward'),
+        onPress: () => seekToTimestamp(sliderValue + 1000),
+      },
+      jumpEnd: {
+        icon: Icons.Entypo('controller-next'),
+        onPress: () => seekToTimestamp(duration),
+      },
+    };
+  }, []);
   useEffect(() => {
     if (playing) {
       const interval = setInterval(() => {
@@ -67,7 +83,6 @@ export default function PlayerControls({
     if (startPlaying) {
       setPlaying(new Date(new Date().getTime() - boundedTimestamp));
     }
-    setLastSeek(new Date().getTime());
   }
 
   function setTimestamp(timestamp: number): number {
@@ -87,7 +102,7 @@ export default function PlayerControls({
           maximumValue={duration}
           value={sliderValue}
           style={styles.slider}
-          onValueChange={value => seekToTimestamp(value)}
+          onSlidingComplete={value => seekToTimestamp(value)}
           thumbTintColor={theme.colors.primary}
           minimumTrackTintColor={theme.colors.primary}
           maximumTrackTintColor={theme.colors.onBackground}
@@ -97,13 +112,13 @@ export default function PlayerControls({
         </Text>
       </View>
       <View style={styles.playerControls}>
-        <IconButton
-          icon={Icons.Entypo('controller-jump-to-start')}
-          onPress={() => seekToTimestamp(0)}
+        <MemoizedIconButton
+          icon={controls.jumpStart.icon}
+          onPress={controls.jumpStart.onPress}
         />
-        <IconButton
-          icon={Icons.Entypo('controller-fast-backward')}
-          onPress={() => seekToTimestamp(sliderValue - 1000)}
+        <MemoizedIconButton
+          icon={controls.backward.icon}
+          onPress={controls.backward.onPress}
         />
         <IconButton
           icon={
@@ -113,18 +128,20 @@ export default function PlayerControls({
           }
           onPress={togglePlaying}
         />
-        <IconButton
-          icon={Icons.Entypo('controller-fast-forward')}
-          onPress={() => seekToTimestamp(sliderValue + 1000)}
+        <MemoizedIconButton
+          icon={controls.forward.icon}
+          onPress={controls.forward.onPress}
         />
-        <IconButton
-          icon={Icons.Entypo('controller-next')}
-          onPress={() => seekToTimestamp(duration)}
+        <MemoizedIconButton
+          icon={controls.jumpEnd.icon}
+          onPress={controls.jumpEnd.onPress}
         />
       </View>
     </>
   );
 }
+
+const MemoizedIconButton = memo(IconButton);
 
 const styles = StyleSheet.create({
   timeControls: {
@@ -146,3 +163,5 @@ const styles = StyleSheet.create({
     fontVariant: ['tabular-nums'],
   },
 });
+
+export default memo(PlayerControls);

@@ -4,11 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+import React, { memo, useEffect, useState } from 'react';
 import { Text, useTheme } from 'react-native-paper';
 
 import { Algorithm } from '../../../lib/stif';
+import { Item } from 'react-native-paper/lib/typescript/components/Drawer/Drawer';
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import { analyzeSolution } from 'solution-analyzer';
 
@@ -60,20 +61,21 @@ function ReconstructionStep({
       </Text>
     );
   } else {
+    let solvedMoves = moves
+      .filter(v => v.t <= elapsed)
+      .map(v => v.m)
+      .join(' ');
+    let unsolvedMoves = moves
+      .filter(v => v.t > elapsed)
+      .map(v => v.m)
+      .join(' ');
     Moves = (
       <Text>
-        {moves.map((v, i) => (
-          <Text
-            key={i}
-            style={{
-              color:
-                elapsed >= v.t
-                  ? theme.colors.primary
-                  : theme.colors.onBackground,
-            }}>
-            {`${v.m} `}
-          </Text>
-        ))}
+        <Text style={{ color: theme.colors.primary }}>{solvedMoves}</Text>
+        <Text>{solvedMoves ? ' ' : ''}</Text>
+        <Text style={{ color: theme.colors.onBackground }}>
+          {unsolvedMoves}
+        </Text>
       </Text>
     );
   }
@@ -86,6 +88,8 @@ function ReconstructionStep({
     </View>
   );
 }
+
+const MemoizedReconstructionStep = memo(ReconstructionStep);
 
 export default function Reconstruction({
   scrambleAlg,
@@ -119,9 +123,25 @@ export default function Reconstruction({
 
   return (
     <View>
-      {steps.map((step, i) => {
-        return <ReconstructionStep key={i} {...step} elapsed={atTimestamp} />;
-      })}
+      <FlatList
+        data={steps}
+        renderItem={({ item }) => {
+          let timestamp = atTimestamp;
+          if (atTimestamp < item.moves[0]?.t) {
+            timestamp = 0;
+          } else if (atTimestamp > item.moves[item.moves.length - 1]?.t) {
+            timestamp = Infinity;
+          }
+          return (
+            <MemoizedReconstructionStep
+              key={item.label}
+              {...item}
+              elapsed={timestamp}
+            />
+          );
+        }}
+        keyExtractor={item => item.label}
+      />
     </View>
   );
 }
