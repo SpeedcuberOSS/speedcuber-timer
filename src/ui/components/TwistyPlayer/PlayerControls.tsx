@@ -37,6 +37,7 @@ export default function PlayerControls({
   const theme = useTheme();
   const [sliderValue, setSliderValue] = useState(0);
   const [playing, setPlaying] = useState<Date | null>(null);
+  const [lastSeek, setLastSeek] = useState(0);
   useEffect(() => {
     if (playing) {
       const interval = setInterval(() => {
@@ -66,6 +67,7 @@ export default function PlayerControls({
     if (startPlaying) {
       setPlaying(new Date(new Date().getTime() - boundedTimestamp));
     }
+    setLastSeek(new Date().getTime());
   }
 
   function setTimestamp(timestamp: number): number {
