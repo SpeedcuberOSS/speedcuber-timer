@@ -15,6 +15,7 @@ import { IconButton, Text, useTheme } from 'react-native-paper';
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import Icons from '../../icons/iconHelper';
 import Slider from '@react-native-community/slider';
 import TwistyPlayer from './TwistyPlayer';
 import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
@@ -66,13 +67,16 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       setSliderValue(0);
       setPlaying(new Date());
     } else {
-      startPlayingFromTimestamp(sliderValue);
+      seekToTimestamp(sliderValue, true);
     }
   }
 
-  function startPlayingFromTimestamp(timestamp: number) {
-    setSliderValue(timestamp);
-    setPlaying(new Date(new Date().getTime() - timestamp));
+  function seekToTimestamp(timestamp: number, startPlaying = playing) {
+    let boundedTimestamp = Math.min(attempt.duration, Math.max(0, timestamp));
+    setSliderValue(boundedTimestamp);
+    if (startPlaying) {
+      setPlaying(new Date(new Date().getTime() - boundedTimestamp));
+    }
   }
 
   return (
@@ -87,13 +91,36 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       <Slider
         maximumValue={attempt.duration}
         value={sliderValue}
-        onValueChange={value => startPlayingFromTimestamp(value)}
+        onValueChange={value => seekToTimestamp(value)}
         thumbTintColor={theme.colors.primary}
         minimumTrackTintColor={theme.colors.primary}
         maximumTrackTintColor={theme.colors.onBackground}
       />
       <View style={styles.playerControls}>
-        <IconButton icon={playing ? 'stop' : 'play'} onPress={togglePlaying} />
+        <IconButton
+          icon={Icons.Entypo('controller-jump-to-start')}
+          onPress={() => seekToTimestamp(0)}
+        />
+        <IconButton
+          icon={Icons.Entypo('controller-fast-backward')}
+          onPress={() => seekToTimestamp(sliderValue - 1000)}
+        />
+        <IconButton
+          icon={
+            playing
+              ? Icons.Entypo('controller-paus')
+              : Icons.Entypo('controller-play')
+          }
+          onPress={togglePlaying}
+        />
+        <IconButton
+          icon={Icons.Entypo('controller-fast-forward')}
+          onPress={() => seekToTimestamp(sliderValue + 1000)}
+        />
+        <IconButton
+          icon={Icons.Entypo('controller-next')}
+          onPress={() => seekToTimestamp(attempt.duration)}
+        />
       </View>
       <Text>{solutionMoves.join(' ')}</Text>
     </View>
