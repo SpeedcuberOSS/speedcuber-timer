@@ -11,22 +11,38 @@ import {
   MessageStream,
   SmartPuzzle,
 } from '../../../lib/stif';
+import { IconButton, Text, useTheme } from 'react-native-paper';
 import React, { useEffect, useRef, useState } from 'react';
-import { Text, useTheme } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 
 import Slider from '@react-native-community/slider';
 import TwistyPlayer from './TwistyPlayer';
-import { View } from 'react-native';
 import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
 
 interface AttemptPlayerProps {
   attempt: Attempt;
 }
 
+const FRAME_RATE = 60;
+const INTERVAL = 1000 / FRAME_RATE;
+
 export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const theme = useTheme();
   const twistyPlayerRef = useRef({});
   const [sliderValue, setSliderValue] = useState(0);
+  const [playing, setPlaying] = useState<Date | null>(null);
+  useEffect(() => {
+    if (playing) {
+      const interval = setInterval(() => {
+        const elapsedMillies = new Date().getTime() - playing.getTime();
+        if (elapsedMillies >= attempt.duration) {
+          setPlaying(null);
+        }
+        setSliderValue(elapsedMillies);
+      }, INTERVAL);
+      return () => clearInterval(interval);
+    }
+  }, [playing, sliderValue]);
 
   const scrambleAlg = attempt.solutions[0].scramble.algorithm;
   const solveReplay = getSolveReplay(attempt);
@@ -42,6 +58,22 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
     twistyPlayerRef.current.setAlgorithm(twistyAlg);
   }, [sliderValue]);
 
+  function togglePlaying() {
+    if (playing) {
+      setPlaying(null);
+    } else if (sliderValue >= attempt.duration) {
+      setSliderValue(0);
+      setPlaying(new Date());
+    } else {
+      startPlayingFromTimestamp(sliderValue);
+    }
+  }
+
+  function startPlayingFromTimestamp(timestamp: number) {
+    setSliderValue(timestamp);
+    setPlaying(new Date(new Date().getTime() - timestamp));
+  }
+
   return (
     <View style={{ flex: 1 }}>
       <TwistyPlayer
@@ -53,16 +85,27 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       />
       <Slider
         maximumValue={attempt.duration}
-        onValueChange={value => setSliderValue(value)}
-        style={{ backgroundColor: theme.colors.background }}
+        value={sliderValue}
+        onValueChange={value => startPlayingFromTimestamp(value)}
         thumbTintColor={theme.colors.primary}
         minimumTrackTintColor={theme.colors.primary}
         maximumTrackTintColor={theme.colors.onBackground}
       />
+      <View style={styles.playerControls}>
+        <IconButton icon={playing ? 'stop' : 'play'} onPress={togglePlaying} />
+      </View>
       <Text>{solutionMoves.join(' ')}</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  playerControls: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export type SolveReplay = { t: number; m: string }[];
 
