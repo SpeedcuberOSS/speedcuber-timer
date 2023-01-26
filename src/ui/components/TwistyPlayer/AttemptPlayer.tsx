@@ -6,11 +6,11 @@
 
 import { AlgorithmBuilder, Attempt } from '../../../lib/stif';
 import React, { useEffect, useRef, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 
 import PlayerControls from './PlayerControls';
 import TwistyPlayer from './TwistyPlayer';
-import { View } from 'react-native';
 import { getSolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
 interface AttemptPlayerProps {
@@ -26,6 +26,10 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const solveReplay = getSolveReplay(attempt);
   const solutionMoves = solveReplay
     .filter(v => v.t < elapsed)
+    .sort((a, b) => a.t - b.t)
+    .map(v => v.m);
+  const unsolvedMoves = solveReplay
+    .filter(v => v.t > elapsed)
     .sort((a, b) => a.t - b.t)
     .map(v => v.m);
 
@@ -46,8 +50,24 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         algorithm={scrambleAlg}
         backgroundColor={theme.colors.background}
       />
+      <Text style={styles.reconstruction}>
+        <Text style={{ color: theme.colors.primary }}>
+          {solutionMoves.join(' ')}
+        </Text>
+        <Text style={{ color: theme.colors.onBackground }}>
+          {solutionMoves.length > 0 ? ' ' : ''}
+        </Text>
+        <Text style={{ color: theme.colors.onBackground }}>
+          {unsolvedMoves.join(' ')}
+        </Text>
+      </Text>
       <PlayerControls duration={attempt.duration} onSeek={setElapsed} />
-      <Text>{solutionMoves.join(' ')}</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  reconstruction: {
+    padding: 15,
+  },
+});
