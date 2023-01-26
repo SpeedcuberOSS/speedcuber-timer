@@ -18,10 +18,11 @@ export type SolveReplay = { t: number; m: string }[];
 export function getSolveReplay(attempt: Attempt): SolveReplay {
   const messageStream = getMessageStream(attempt);
   const timestampedMoves = parseMoves(messageStream);
-  const solveReplay = adjustTimestampsRelativeToInspectionComplete(
+  const offsetTimestampedMoves = adjustTimestampsRelativeToInspectionComplete(
     timestampedMoves,
     attempt.inspectionCompleteTimestamp ?? 0,
   );
+  const solveReplay = offsetTimestampedMoves.sort((a, b) => a.t - b.t);
   return solveReplay;
 }
 
