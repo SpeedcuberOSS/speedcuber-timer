@@ -4,20 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  AlgorithmBuilder,
-  Attempt,
-  MESSAGE_STREAM_TEMPLATE,
-  MessageStream,
-  SmartPuzzle,
-} from '../../../lib/stif';
-import { IconButton, Text, useTheme } from 'react-native-paper';
+import { AlgorithmBuilder, Attempt } from '../../../lib/stif';
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Text, useTheme } from 'react-native-paper';
 
 import PlayerControls from './PlayerControls';
 import TwistyPlayer from './TwistyPlayer';
-import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
+import { View } from 'react-native';
+import { getSolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
 interface AttemptPlayerProps {
   attempt: Attempt;
@@ -56,64 +50,4 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       <Text>{solutionMoves.join(' ')}</Text>
     </View>
   );
-}
-
-export type SolveReplay = { t: number; m: string }[];
-
-export function getSolveReplay(attempt: Attempt): SolveReplay {
-  const messageStream = getMessageStream(attempt);
-  const timestampedMoves = parseMoves(messageStream);
-  const solveReplay = adjustTimestampsRelativeToInspectionComplete(
-    timestampedMoves,
-    attempt.inspectionCompleteTimestamp ?? 0,
-  );
-  return solveReplay;
-}
-
-export function getMessageStream(attempt: Attempt): MessageStream {
-  const messageStreamExtensions = attempt.extensions?.filter(
-    ext => ext.id === MESSAGE_STREAM_TEMPLATE.id,
-  );
-  const messageStream = messageStreamExtensions?.[0] as MessageStream;
-  return messageStream ?? MESSAGE_STREAM_TEMPLATE;
-}
-
-export function parseMoves(messageStream: MessageStream) {
-  const parser = getMessageParserForSmartPuzzle(messageStream.data.smartPuzzle);
-  const moves = messageStream.data.stream.map(({ t, m }) => {
-    const message = parser(m);
-    return {
-      t,
-      m: convertParticulaRotationMessageToAlgMove(message),
-    };
-  });
-  return moves;
-}
-
-function convertParticulaRotationMessageToAlgMove(message: any) {
-  const { face, direction } = message;
-  let moveStr = '';
-  moveStr += face === 'White' ? 'U' : '';
-  moveStr += face === 'Yellow' ? 'D' : '';
-  moveStr += face === 'Red' ? 'R' : '';
-  moveStr += face === 'Orange' ? 'L' : '';
-  moveStr += face === 'Green' ? 'F' : '';
-  moveStr += face === 'Blue' ? 'B' : '';
-  moveStr += direction === 'clockwise' ? '' : "'";
-  return moveStr;
-}
-
-function getMessageParserForSmartPuzzle(smartPuzzle: SmartPuzzle) {
-  // TODO return different parsers based on smartPuzzle type.
-  return parseMessage;
-}
-
-export function adjustTimestampsRelativeToInspectionComplete(
-  timestampedMoves: { t: number; m: string }[],
-  inspectionCompleteTimestamp: number,
-) {
-  return timestampedMoves.map(({ t, m }) => ({
-    t: t - inspectionCompleteTimestamp,
-    m,
-  }));
 }
