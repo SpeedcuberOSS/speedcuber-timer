@@ -4,12 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { IconButton, useTheme } from 'react-native-paper';
+import { IconButton, Text, useTheme } from 'react-native-paper';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
 import Slider from '@react-native-community/slider';
+import formatElapsedTime from '../../utils/formatElapsedTime';
 
 const FRAME_RATE = 60;
 const INTERVAL = 1000 / FRAME_RATE;
@@ -61,28 +62,38 @@ export default function PlayerControls({
   }
 
   function seekToTimestamp(timestamp: number, startPlaying = playing) {
-    let boundedTimestamp = Math.min(duration, Math.max(0, timestamp));
-    setTimestamp(boundedTimestamp);
+    let boundedTimestamp = setTimestamp(timestamp);
     if (startPlaying) {
       setPlaying(new Date(new Date().getTime() - boundedTimestamp));
     }
   }
 
-  function setTimestamp(timestamp: number) {
-    setSliderValue(timestamp);
-    onSeek(timestamp);
+  function setTimestamp(timestamp: number): number {
+    let boundedTimestamp = Math.min(duration, Math.max(0, timestamp));
+    setSliderValue(boundedTimestamp);
+    onSeek(boundedTimestamp);
+    return boundedTimestamp;
   }
 
   return (
     <>
-      <Slider
-        maximumValue={duration}
-        value={sliderValue}
-        onValueChange={value => seekToTimestamp(value)}
-        thumbTintColor={theme.colors.primary}
-        minimumTrackTintColor={theme.colors.primary}
-        maximumTrackTintColor={theme.colors.onBackground}
-      />
+      <View style={styles.timeControls}>
+        <Text variant="labelSmall" style={styles.time}>
+          {formatElapsedTime(new Date(sliderValue))}
+        </Text>
+        <Slider
+          maximumValue={duration}
+          value={sliderValue}
+          style={styles.slider}
+          onValueChange={value => seekToTimestamp(value)}
+          thumbTintColor={theme.colors.primary}
+          minimumTrackTintColor={theme.colors.primary}
+          maximumTrackTintColor={theme.colors.onBackground}
+        />
+        <Text variant="labelSmall" style={styles.time}>
+          {formatElapsedTime(new Date(duration))}
+        </Text>
+      </View>
       <View style={styles.playerControls}>
         <IconButton
           icon={Icons.Entypo('controller-jump-to-start')}
@@ -114,9 +125,22 @@ export default function PlayerControls({
 }
 
 const styles = StyleSheet.create({
+  timeControls: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
   playerControls: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  slider: {
+    flex: 4,
+  },
+  time: {
+    flex: 1,
+    textAlign: 'center',
+    fontVariant: ['tabular-nums'],
   },
 });
