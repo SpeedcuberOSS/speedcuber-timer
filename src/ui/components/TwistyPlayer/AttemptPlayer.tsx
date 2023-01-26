@@ -15,8 +15,7 @@ import { IconButton, Text, useTheme } from 'react-native-paper';
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Icons from '../../icons/iconHelper';
-import Slider from '@react-native-community/slider';
+import PlayerControls from './PlayerControls';
 import TwistyPlayer from './TwistyPlayer';
 import { parseMessage } from '../../../lib/bluetooth-puzzle/RubiksConnected';
 
@@ -24,31 +23,15 @@ interface AttemptPlayerProps {
   attempt: Attempt;
 }
 
-const FRAME_RATE = 60;
-const INTERVAL = 1000 / FRAME_RATE;
-
 export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const theme = useTheme();
   const twistyPlayerRef = useRef({});
-  const [sliderValue, setSliderValue] = useState(0);
-  const [playing, setPlaying] = useState<Date | null>(null);
-  useEffect(() => {
-    if (playing) {
-      const interval = setInterval(() => {
-        const elapsedMillies = new Date().getTime() - playing.getTime();
-        if (elapsedMillies >= attempt.duration) {
-          setPlaying(null);
-        }
-        setSliderValue(elapsedMillies);
-      }, INTERVAL);
-      return () => clearInterval(interval);
-    }
-  }, [playing, sliderValue]);
+  const [elapsed, setElapsed] = useState(0);
 
   const scrambleAlg = attempt.solutions[0].scramble.algorithm;
   const solveReplay = getSolveReplay(attempt);
   const solutionMoves = solveReplay
-    .filter(v => v.t < sliderValue)
+    .filter(v => v.t < elapsed)
     .sort((a, b) => a.t - b.t)
     .map(v => v.m);
 
@@ -58,26 +41,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       .build();
     // @ts-ignore
     twistyPlayerRef.current.setAlgorithm(twistyAlg);
-  }, [sliderValue]);
-
-  function togglePlaying() {
-    if (playing) {
-      setPlaying(null);
-    } else if (sliderValue >= attempt.duration) {
-      setSliderValue(0);
-      setPlaying(new Date());
-    } else {
-      seekToTimestamp(sliderValue, true);
-    }
-  }
-
-  function seekToTimestamp(timestamp: number, startPlaying = playing) {
-    let boundedTimestamp = Math.min(attempt.duration, Math.max(0, timestamp));
-    setSliderValue(boundedTimestamp);
-    if (startPlaying) {
-      setPlaying(new Date(new Date().getTime() - boundedTimestamp));
-    }
-  }
+  }, [elapsed]);
 
   return (
     <View style={{ flex: 1 }}>
@@ -88,52 +52,11 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         algorithm={scrambleAlg}
         backgroundColor={theme.colors.background}
       />
-      <Slider
-        maximumValue={attempt.duration}
-        value={sliderValue}
-        onValueChange={value => seekToTimestamp(value)}
-        thumbTintColor={theme.colors.primary}
-        minimumTrackTintColor={theme.colors.primary}
-        maximumTrackTintColor={theme.colors.onBackground}
-      />
-      <View style={styles.playerControls}>
-        <IconButton
-          icon={Icons.Entypo('controller-jump-to-start')}
-          onPress={() => seekToTimestamp(0)}
-        />
-        <IconButton
-          icon={Icons.Entypo('controller-fast-backward')}
-          onPress={() => seekToTimestamp(sliderValue - 1000)}
-        />
-        <IconButton
-          icon={
-            playing
-              ? Icons.Entypo('controller-paus')
-              : Icons.Entypo('controller-play')
-          }
-          onPress={togglePlaying}
-        />
-        <IconButton
-          icon={Icons.Entypo('controller-fast-forward')}
-          onPress={() => seekToTimestamp(sliderValue + 1000)}
-        />
-        <IconButton
-          icon={Icons.Entypo('controller-next')}
-          onPress={() => seekToTimestamp(attempt.duration)}
-        />
-      </View>
+      <PlayerControls duration={attempt.duration} onSeek={setElapsed} />
       <Text>{solutionMoves.join(' ')}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  playerControls: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export type SolveReplay = { t: number; m: string }[];
 
