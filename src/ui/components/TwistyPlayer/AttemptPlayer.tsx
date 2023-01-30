@@ -47,6 +47,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         // @ts-ignore
         puzzle={attempt.event.puzzle}
         algorithm={scrambleAlg}
+        hintFacelets={'floating'}
         backgroundColor={theme.colors.background}
       />
       <Reconstruction

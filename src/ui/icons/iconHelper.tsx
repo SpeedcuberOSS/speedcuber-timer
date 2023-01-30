@@ -28,10 +28,16 @@ interface IconParams {
 
 export type IconFunction = (params: IconParams) => React.ReactNode;
 
+const _ICON_CACHE: { [key: string]: IconFunction } = {};
+
 function render(Icon: any, name: string) {
-  return ({ size, color }: IconParams) => (
-    <Icon name={name} size={size} color={color} />
-  );
+  const key = `${Icon.name}-${name}`;
+  if (!_ICON_CACHE[key]) {
+    _ICON_CACHE[key] = ({ size, color }: IconParams) => (
+      <Icon name={name} size={size} color={color} />
+    );
+  }
+  return _ICON_CACHE[key];
 }
 
 const ReactNativeVectorIcons = {

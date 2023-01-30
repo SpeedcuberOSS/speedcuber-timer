@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { IconButton, Text, useTheme } from 'react-native-paper';
-import React, { memo, useEffect, useMemo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
@@ -30,79 +30,90 @@ interface PlayerControlsProps {
   onSeek: (timestamp: number) => void;
 }
 
+function elapsedMillies(since: Date) {
+  return new Date().getTime() - since.getTime();
+}
+
+function millisAgo(millis: number) {
+  return new Date(new Date().getTime() - millis);
+}
+
 function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
   const theme = useTheme();
-  const [sliderValue, setSliderValue] = useState(0);
-  const [playing, setPlaying] = useState<Date | null>(null);
-  const controls = useMemo(() => {
-    return {
-      jumpStart: {
-        icon: Icons.Entypo('controller-jump-to-start'),
-        onPress: () => seekToTimestamp(0),
-      },
-      backward: {
-        icon: Icons.Entypo('controller-fast-backward'),
-        onPress: () => seekToTimestamp(sliderValue - 1000),
-      },
-      forward: {
-        icon: Icons.Entypo('controller-fast-forward'),
-        onPress: () => seekToTimestamp(sliderValue + 1000),
-      },
-      jumpEnd: {
-        icon: Icons.Entypo('controller-next'),
-        onPress: () => seekToTimestamp(duration),
-      },
-    };
-  }, []);
+  const [currentTimestamp, setCurrentTimestamp] = useState(0);
+  const [startedPlayingAt, setStartedPlayingAt] = useState<Date | null>(null);
+  const IS_PLAYING = startedPlayingAt !== null;
+
   useEffect(() => {
-    if (playing) {
+    if (IS_PLAYING) {
       const interval = setInterval(() => {
-        const elapsedMillies = new Date().getTime() - playing.getTime();
-        if (elapsedMillies >= duration) {
-          setPlaying(null);
+        const elapsed = elapsedMillies(startedPlayingAt!);
+        seekToTimestamp(elapsed);
+        if (elapsed >= duration) {
+          onPause();
         }
-        setTimestamp(elapsedMillies);
       }, INTERVAL);
       return () => clearInterval(interval);
     }
-  }, [playing, sliderValue]);
+  }, [startedPlayingAt, currentTimestamp]);
 
-  function togglePlaying() {
-    if (playing) {
-      setPlaying(null);
-    } else if (sliderValue >= duration) {
-      setTimestamp(0);
-      setPlaying(new Date());
-    } else {
-      seekToTimestamp(sliderValue, new Date());
-    }
-  }
-
-  function seekToTimestamp(timestamp: number, startPlaying = playing) {
-    let boundedTimestamp = setTimestamp(timestamp);
-    if (startPlaying) {
-      setPlaying(new Date(new Date().getTime() - boundedTimestamp));
-    }
-  }
-
-  function setTimestamp(timestamp: number): number {
+  function seekToTimestamp(timestamp: number) {
     let boundedTimestamp = Math.min(duration, Math.max(0, timestamp));
-    setSliderValue(boundedTimestamp);
-    onSeek(boundedTimestamp);
-    return boundedTimestamp;
+    setCurrentTimestamp(boundedTimestamp);
+    if (IS_PLAYING) {
+      setStartedPlayingAt(millisAgo(boundedTimestamp));
+    }
+    setTimeout(() => onSeek(boundedTimestamp), 0); // Schedule client function to run after the current render
+  }
+
+  function onScrub(newTimestamp: number) {
+    console.debug('scrub');
+    seekToTimestamp(newTimestamp);
+  }
+
+  function onJumpToStart() {
+    console.debug('jump to start');
+    seekToTimestamp(0);
+  }
+
+  function onJumpBackward() {
+    console.debug('jump backward');
+    seekToTimestamp(currentTimestamp - 1000);
+  }
+
+  function onPlay() {
+    console.debug('play');
+    const nextTimestamp = currentTimestamp >= duration ? 0 : currentTimestamp;
+    seekToTimestamp(nextTimestamp);
+    setStartedPlayingAt(millisAgo(nextTimestamp));
+  }
+
+  function onPause() {
+    console.debug('pause');
+    setStartedPlayingAt(null);
+  }
+
+  function onJumpForward() {
+    console.debug('jump forward');
+    seekToTimestamp(currentTimestamp + 1000);
+  }
+
+  function onJumpToEnd() {
+    console.debug('jump to end');
+    seekToTimestamp(duration);
   }
 
   return (
     <>
       <View style={styles.timeControls}>
         <Text variant="labelSmall" style={styles.time}>
-          {formatElapsedTime(new Date(sliderValue))}
+          {formatElapsedTime(new Date(currentTimestamp))}
         </Text>
         <Slider
           maximumValue={duration}
-          value={sliderValue}
+          value={currentTimestamp}
+          onValueChange={onScrub}
           style={styles.slider}
-          onSlidingComplete={value => seekToTimestamp(value)}
           thumbTintColor={theme.colors.primary}
           minimumTrackTintColor={theme.colors.primary}
           maximumTrackTintColor={theme.colors.onBackground}
@@ -112,36 +123,34 @@ function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
         </Text>
       </View>
       <View style={styles.playerControls}>
-        <MemoizedIconButton
-          icon={controls.jumpStart.icon}
-          onPress={controls.jumpStart.onPress}
+        <IconButton
+          icon={Icons.Entypo('controller-jump-to-start')}
+          onPress={onJumpToStart}
         />
-        <MemoizedIconButton
-          icon={controls.backward.icon}
-          onPress={controls.backward.onPress}
+        <IconButton
+          icon={Icons.Entypo('controller-fast-backward')}
+          onPress={onJumpBackward}
         />
         <IconButton
           icon={
-            playing
+            IS_PLAYING
               ? Icons.Entypo('controller-paus')
               : Icons.Entypo('controller-play')
           }
-          onPress={togglePlaying}
+          onPress={IS_PLAYING ? onPause : onPlay}
         />
-        <MemoizedIconButton
-          icon={controls.forward.icon}
-          onPress={controls.forward.onPress}
+        <IconButton
+          icon={Icons.Entypo('controller-fast-forward')}
+          onPress={onJumpForward}
         />
-        <MemoizedIconButton
-          icon={controls.jumpEnd.icon}
-          onPress={controls.jumpEnd.onPress}
+        <IconButton
+          icon={Icons.Entypo('controller-next')}
+          onPress={onJumpToEnd}
         />
       </View>
     </>
   );
 }
-
-const MemoizedIconButton = memo(IconButton);
 
 const styles = StyleSheet.create({
   timeControls: {
