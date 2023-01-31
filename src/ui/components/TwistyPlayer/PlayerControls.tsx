@@ -133,10 +133,12 @@ function PlayerControls({
   );
 
   function onScrubEnd() {
-    console.debug('scrub end');
-    setIsScrubbing(false);
-    if (IS_PLAYING) {
-      setStartedPlayingAt(millisAgo(currentTimestamp));
+    if (isScrubbing) {
+      console.debug('scrub end');
+      setIsScrubbing(false);
+      if (IS_PLAYING) {
+        setStartedPlayingAt(millisAgo(currentTimestamp));
+      }
     }
   }
 
