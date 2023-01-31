@@ -138,15 +138,15 @@ export function parseRawMessage(msg: RawGoCubeMessage) {
     case GoCubeMessageType.Rotation:
       return parseRotationMessage(msg);
     // case GoCubeMessageType.State:
-    //   return parseGoCubeStateMessage(msg);
-    // case GoCubeMessageType.Orientation:
-    //   return parseGoCubeOrientationMessage(msg);
+    //   return parseStateMessage(msg);
+    case GoCubeMessageType.Orientation:
+      return parseOrientationMessage(msg);
     // case GoCubeMessageType.Battery:
-    //   return parseGoCubeBatteryMessage(msg);
+    //   return parseBatteryMessage(msg);
     // case GoCubeMessageType.OfflineStats:
-    //   return parseGoCubeOfflineStatsMessage(msg);
+    //   return parseOfflineStatsMessage(msg);
     // case GoCubeMessageType.CubeType:
-    //   return parseGoCubeCubeTypeMessage(msg);
+    //   return parseCubeTypeMessage(msg);
     default:
       (function noop() {
         // Do nothing until other message types are implemented
@@ -202,4 +202,29 @@ function parseAngle(angleInt: number): Angle {
     throw new Error(`Invalid angle number: ${angleInt}`);
   }
   return (angleInt * 30) as Angle;
+}
+
+interface GoCubeOrientationMessage {
+  x: number;
+  y: number;
+  z: number;
+  w: number;
+}
+
+function parseOrientationMessage(
+  message: RawGoCubeMessage,
+): GoCubeOrientationMessage {
+  const DELIMETER = '23';
+  const parts: string[][] = [[]];
+  message.message.forEach(m => {
+    if (m === DELIMETER) {
+      parts.push([]);
+    } else {
+      parts[parts.length - 1].push(m);
+    }
+  });
+  const [x, y, z, w] = parts.map(p =>
+    parseInt(Buffer.from(p.join(''), 'hex').toString()),
+  );
+  return { x, y, z, w };
 }

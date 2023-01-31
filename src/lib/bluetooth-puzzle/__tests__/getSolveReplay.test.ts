@@ -13,6 +13,16 @@ const RubiksConnectedAttempt =
 const RubiksConnectedSolveReplay =
   require('../__fixtures__/rubiks_connected_solve_replay.json') as SolveReplay;
 
+const Particula2x2x2Attempt =
+  require('../__fixtures__/particula_2x2x2_attempt.json') as Attempt;
+const Particula2x2x2SolveReplay =
+  require('../__fixtures__/particula_2x2x2_solve_replay.json') as SolveReplay;
+
+const Particula3x3x3Attempt =
+  require('../__fixtures__/particula_3x3x3_attempt.json') as Attempt;
+const Particula3x3x3SolveReplay =
+  require('../__fixtures__/particula_3x3x3_solve_replay.json') as SolveReplay;
+
 describe('getSolveReplay', () => {
   it('returns no solve replay if there is no message stream', () => {
     expect(
@@ -24,5 +34,15 @@ describe('getSolveReplay', () => {
     expect(getSolveReplay(RubiksConnectedAttempt)).toEqual(
       RubiksConnectedSolveReplay,
     );
+  });
+  it('correctly parses a solve replay from a Particula 2x2x2', () => {
+    const replay = getSolveReplay(Particula2x2x2Attempt);
+    expect(replay).toEqual(Particula2x2x2SolveReplay);
+  });
+  it('correctly parses a solve replay from a Particula 3x3x3', () => {
+    // NOTE: This test enforces the omission of orientation quaternions.
+    // A future version of the test will need to include them.
+    const replay = getSolveReplay(Particula3x3x3Attempt);
+    expect(replay).toEqual(Particula3x3x3SolveReplay);
   });
 });

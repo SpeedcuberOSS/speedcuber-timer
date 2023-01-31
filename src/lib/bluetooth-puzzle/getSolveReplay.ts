@@ -36,13 +36,20 @@ function getMessageStream(attempt: Attempt): MessageStream {
 
 function parseMoves(messageStream: MessageStream) {
   const parser = getMessageParserForSmartPuzzle(messageStream.data.smartPuzzle);
-  const moves = messageStream.data.stream.map(({ t, m }) => {
-    const message = parser(m);
-    return {
-      t,
-      m: convertParticulaRotationMessageToAlgMove(message),
-    };
-  });
+  const moves = messageStream.data.stream
+    .map(({ t, m }) => {
+      return {
+        t,
+        m: parser(m),
+      };
+    })
+    .filter(({ m }) => m?.x === undefined)
+    .map(({ t, m }) => {
+      return {
+        t,
+        m: convertParticulaRotationMessageToAlgMove(m),
+      };
+    });
   return moves;
 }
 
