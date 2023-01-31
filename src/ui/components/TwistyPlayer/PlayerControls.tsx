@@ -5,15 +5,13 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { IconButton, Text, useTheme } from 'react-native-paper';
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
 import Slider from '@react-native-community/slider';
 import formatElapsedTime from '../../utils/formatElapsedTime';
-
-const FRAME_RATE = 60;
-const INTERVAL = 1000 / FRAME_RATE;
+import throttle from 'lodash/throttle';
 
 interface PlayerControlsProps {
   /**
@@ -28,6 +26,19 @@ interface PlayerControlsProps {
    * @param timestamp the current timestamp in milliseconds
    */
   onSeek: (timestamp: number) => void;
+  /**
+   * The rate at which onSeek is called when playing the timer.
+   *
+   * Defaults to 60fps
+   */
+  refreshRate?: number;
+  /**
+   * The number of milliseconds to jump forward/backward when using the
+   * forward/backward buttons.
+   *
+   * Defaults to 1000ms (1 second)
+   */
+  jumpMillis?: number;
 }
 
 function elapsedMillies(since: Date) {
@@ -38,47 +49,52 @@ function millisAgo(millis: number) {
   return new Date(new Date().getTime() - millis);
 }
 
-function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
+function intervalAtFPS(fps: number) {
+  return 1000 / fps;
+}
+
+function PlayerControls({
+  duration,
+  onSeek,
+  refreshRate = 60,
+  jumpMillis = 1000,
+}: PlayerControlsProps) {
   const theme = useTheme();
   const [currentTimestamp, setCurrentTimestamp] = useState(0);
   const [startedPlayingAt, setStartedPlayingAt] = useState<Date | null>(null);
+  const [isScrubbing, setIsScrubbing] = useState(false);
   const IS_PLAYING = startedPlayingAt !== null;
 
   useEffect(() => {
-    if (IS_PLAYING) {
+    if (IS_PLAYING && !isScrubbing) {
       const interval = setInterval(() => {
         const elapsed = elapsedMillies(startedPlayingAt!);
         seekToTimestamp(elapsed);
         if (elapsed >= duration) {
           onPause();
         }
-      }, INTERVAL);
+      }, intervalAtFPS(refreshRate));
       return () => clearInterval(interval);
     }
   }, [startedPlayingAt, currentTimestamp]);
 
-  function seekToTimestamp(timestamp: number) {
+  function seekToTimestamp(timestamp: number, type?: 'jump') {
     let boundedTimestamp = Math.min(duration, Math.max(0, timestamp));
     setCurrentTimestamp(boundedTimestamp);
-    if (IS_PLAYING) {
+    if (IS_PLAYING && type === 'jump') {
       setStartedPlayingAt(millisAgo(boundedTimestamp));
     }
     setTimeout(() => onSeek(boundedTimestamp), 0); // Schedule client function to run after the current render
   }
 
-  function onScrub(newTimestamp: number) {
-    console.debug('scrub');
-    seekToTimestamp(newTimestamp);
-  }
-
   function onJumpToStart() {
     console.debug('jump to start');
-    seekToTimestamp(0);
+    seekToTimestamp(0, 'jump');
   }
 
   function onJumpBackward() {
     console.debug('jump backward');
-    seekToTimestamp(currentTimestamp - 1000);
+    seekToTimestamp(currentTimestamp - jumpMillis, 'jump');
   }
 
   function onPlay() {
@@ -95,12 +111,33 @@ function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
 
   function onJumpForward() {
     console.debug('jump forward');
-    seekToTimestamp(currentTimestamp + 1000);
+    seekToTimestamp(currentTimestamp + jumpMillis, 'jump');
   }
 
   function onJumpToEnd() {
     console.debug('jump to end');
-    seekToTimestamp(duration);
+    seekToTimestamp(duration, 'jump');
+  }
+
+  function onScrubStart() {
+    console.debug('scrub start');
+    setIsScrubbing(true);
+  }
+
+  const onScrub = useCallback(
+    throttle((newTimestamp: number) => {
+      console.debug('scrub', newTimestamp);
+      seekToTimestamp(newTimestamp, 'jump');
+    }, intervalAtFPS(10)),
+    [],
+  );
+
+  function onScrubEnd() {
+    console.debug('scrub end');
+    setIsScrubbing(false);
+    if (IS_PLAYING) {
+      setStartedPlayingAt(millisAgo(currentTimestamp));
+    }
   }
 
   return (
@@ -112,7 +149,9 @@ function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
         <Slider
           maximumValue={duration}
           value={currentTimestamp}
+          onSlidingStart={onScrubStart}
           onValueChange={onScrub}
+          onSlidingComplete={onScrubEnd}
           style={styles.slider}
           thumbTintColor={theme.colors.primary}
           minimumTrackTintColor={theme.colors.primary}
@@ -137,6 +176,7 @@ function PlayerControls({ duration, onSeek }: PlayerControlsProps) {
               ? Icons.Entypo('controller-paus')
               : Icons.Entypo('controller-play')
           }
+          animated={true}
           onPress={IS_PLAYING ? onPause : onPlay}
         />
         <IconButton
