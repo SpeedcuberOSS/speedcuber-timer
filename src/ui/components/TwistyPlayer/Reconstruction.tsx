@@ -9,9 +9,9 @@ import React, { memo, useEffect, useState } from 'react';
 import { Text, useTheme } from 'react-native-paper';
 
 import { Algorithm } from '../../../lib/stif';
-import { Item } from 'react-native-paper/lib/typescript/components/Drawer/Drawer';
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import { analyzeSolution } from 'solution-analyzer';
+import formatElapsedTime from '../../utils/formatElapsedTime';
 
 interface ReconstructionProps {
   /**
@@ -29,10 +29,24 @@ interface ReconstructionProps {
 }
 
 interface ReconstructionStep {
+  /**
+   * The name of the step
+   */
   label: string;
+  /**
+   * The timestamped moves in the step
+   */
   moves: { t: number; m: string }[];
-  duration?: number;
-  tps?: number;
+  /**
+   * The duration of the step
+   */
+  duration: number;
+  /**
+   * The average TPS of the step
+   *
+   * = duration / moves.length
+   */
+  tps: number;
 }
 
 interface ReconstructionStepProps extends ReconstructionStep {
@@ -81,9 +95,14 @@ function ReconstructionStep({
   }
   return (
     <View style={styles.reconstruction}>
-      <Text variant="labelMedium" style={styles.label}>
-        {label}
-      </Text>
+      <View style={styles.heading}>
+        <Text variant="labelMedium" style={styles.label}>
+          {`${label}:`}
+        </Text>
+        <Text variant="labelMedium" style={styles.annotations}>
+          {`${formatElapsedTime(new Date(duration))} s | ${tps.toFixed(2)} TPS`}
+        </Text>
+      </View>
       {Moves}
     </View>
   );
@@ -107,14 +126,16 @@ export default function Reconstruction({
     let steps: ReconstructionStep[] = [];
     let wipMoveCount = 0;
     for (const step of breakdown.steps) {
+      const moves = solveReplay.slice(
+        wipMoveCount,
+        wipMoveCount + step.moves.length,
+      );
+      const duration = moves[moves.length - 1]?.t - moves[0]?.t;
       steps.push({
         label: step.label,
-        moves: solveReplay.slice(
-          wipMoveCount,
-          wipMoveCount + step.moves.length,
-        ),
-        // duration: step.duration,
-        // tps: step.tps,
+        moves: moves,
+        duration: duration,
+        tps: moves.length / (duration / 1000),
       });
       wipMoveCount += step.moves.length;
     }
@@ -122,7 +143,7 @@ export default function Reconstruction({
   }, [scrambleAlg, solveReplay]);
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={steps}
         renderItem={({ item }) => {
@@ -147,11 +168,22 @@ export default function Reconstruction({
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 5,
+  },
   reconstruction: {
     paddingVertical: 5,
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
+  },
+  heading: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   label: {
     fontWeight: 'bold',
+  },
+  annotations: {
+    fontWeight: 'normal',
+    fontVariant: ['tabular-nums'],
   },
 });
