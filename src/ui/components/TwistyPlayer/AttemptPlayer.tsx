@@ -42,19 +42,23 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
 
   return (
     <View style={{ flex: 1 }}>
-      <TwistyPlayer
-        ref={twistyPlayerRef}
-        // @ts-ignore
-        puzzle={attempt.event.puzzle}
-        algorithm={scrambleAlg}
-        hintFacelets={'floating'}
-        backgroundColor={theme.colors.background}
-      />
-      <Reconstruction
-        scrambleAlg={scrambleAlg}
-        solveReplay={solveReplay}
-        atTimestamp={elapsed}
-      />
+      <View style={{ flex: 2 }}>
+        <TwistyPlayer
+          ref={twistyPlayerRef}
+          // @ts-ignore
+          puzzle={attempt.event.puzzle}
+          algorithm={scrambleAlg}
+          hintFacelets={'floating'}
+          backgroundColor={theme.colors.background}
+        />
+      </View>
+      <View style={{ flex: 3 }}>
+        <Reconstruction
+          scrambleAlg={scrambleAlg}
+          solveReplay={solveReplay}
+          atTimestamp={elapsed}
+        />
+      </View>
       <PlayerControls duration={attempt.duration} onSeek={setElapsed} />
     </View>
   );
