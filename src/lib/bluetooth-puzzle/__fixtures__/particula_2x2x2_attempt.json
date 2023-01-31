@@ -1,0 +1,184 @@
+{
+  "id": "4aae23b1-4b0a-496f-8d36-27f6cb85defb",
+  "extensions": [
+    {
+      "id": "org.speedcuber.stif.extensions.message_stream",
+      "specUrl": "https://speedcuber.org/stif/extensions/message_stream.schema.json",
+      "data": {
+        "smartPuzzle": {
+          "prefix": "GoCube2x2",
+          "brand": "Particula GoCube",
+          "puzzle": {
+            "id": "222"
+          },
+          "uuids": {
+            "trackingService": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+            "trackingCharacteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+          }
+        },
+        "stream": [
+          {
+            "t": 1675144649193,
+            "m": "KgYBCAlCDQo="
+          },
+          {
+            "t": 1675144649703,
+            "m": "KgYBAgY5DQo="
+          },
+          {
+            "t": 1675144650244,
+            "m": "KgYBBAM4DQo="
+          },
+          {
+            "t": 1675144650454,
+            "m": "KgYBAgk8DQo="
+          },
+          {
+            "t": 1675144650754,
+            "m": "KgYBBQA2DQo="
+          },
+          {
+            "t": 1675144650853,
+            "m": "KgYBCAA5DQo="
+          },
+          {
+            "t": 1675144651023,
+            "m": "KgYBBAM4DQo="
+          },
+          {
+            "t": 1675144651053,
+            "m": "KgYBAwY6DQo="
+          },
+          {
+            "t": 1675144651234,
+            "m": "KgYBBQA2DQo="
+          },
+          {
+            "t": 1675144651564,
+            "m": "KgYBCAM8DQo="
+          },
+          {
+            "t": 1675144651655,
+            "m": "KgYBBAM4DQo="
+          },
+          {
+            "t": 1675144651748,
+            "m": "KgYBAwM3DQo="
+          },
+          {
+            "t": 1675144651850,
+            "m": "KgYBAwA0DQo="
+          },
+          {
+            "t": 1675144651954,
+            "m": "KgYBBQA2DQo="
+          },
+          {
+            "t": 1675144653394,
+            "m": "KgYBCQA6DQo="
+          },
+          {
+            "t": 1675144653544,
+            "m": "KgYBCQlDDQo="
+          },
+          {
+            "t": 1675144654266,
+            "m": "KgYBBQk/DQo="
+          },
+          {
+            "t": 1675144654325,
+            "m": "KgYBBQY8DQo="
+          },
+          {
+            "t": 1675144654415,
+            "m": "KgYBCQZADQo="
+          },
+          {
+            "t": 1675144654594,
+            "m": "KgYBBAk+DQo="
+          },
+          {
+            "t": 1675144654625,
+            "m": "KgYBBAA1DQo="
+          },
+          {
+            "t": 1675144654846,
+            "m": "KgYBCQM9DQo="
+          },
+          {
+            "t": 1675144654983,
+            "m": "KgYBCQA6DQo="
+          },
+          {
+            "t": 1675144655644,
+            "m": "KgYBAwk9DQo="
+          },
+          {
+            "t": 1675144655735,
+            "m": "KgYBAwY6DQo="
+          },
+          {
+            "t": 1675144655854,
+            "m": "KgYBCQlDDQo="
+          },
+          {
+            "t": 1675144655982,
+            "m": "KgYBAgk8DQo="
+          },
+          {
+            "t": 1675144656037,
+            "m": "KgYBAgAzDQo="
+          },
+          {
+            "t": 1675144656214,
+            "m": "KgYBCAA5DQo="
+          }
+        ]
+      }
+    }
+  ],
+  "unixTimestamp": 1675144636354,
+  "inspectionCompleteTimestamp": 1675144648997,
+  "event": {
+    "id": "222",
+    "puzzle": {
+      "id": "222"
+    },
+    "type": "WCA"
+  },
+  "duration": 7561,
+  "solutions": [
+    {
+      "id": "986b068f-38e4-4e8b-8bee-adfeb1368596",
+      "scramble": {
+        "id": "3cc13ce1-1a99-4480-9895-657edfd47248",
+        "puzzle": {
+          "id": "222"
+        },
+        "algorithm": {
+          "id": "b43a935b-ea64-49b6-ae1b-083e57d0044a",
+          "moves": [
+            "R2",
+            "F2",
+            "R2",
+            "F",
+            "U2",
+            "F",
+            "R2",
+            "U",
+            "F2",
+            "R2",
+            "U'",
+            "R"
+          ]
+        },
+        "provider": {
+          "id": "org.speedcuber.scramblerproviders.mandy",
+          "url": "https://scrambleproviders.speedcuber.org/mandy"
+        }
+      }
+    }
+  ],
+  "infractions": [],
+  "comment": ""
+}

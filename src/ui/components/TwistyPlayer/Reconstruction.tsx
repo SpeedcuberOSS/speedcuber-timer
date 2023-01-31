@@ -132,7 +132,7 @@ export default function Reconstruction({
       );
       const duration = moves[moves.length - 1]?.t - moves[0]?.t;
       steps.push({
-        label: step.label,
+        label: step.label ?? 'unknown',
         moves: moves,
         duration: duration,
         tps: moves.length / (duration / 1000),
