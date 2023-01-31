@@ -5,11 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import {
-  ScrambleProvider,
+  AlgorithmBuilder,
+  Puzzle,
   Scramble,
   ScrambleBuilder,
-  Puzzle,
-  AlgorithmBuilder,
+  ScrambleProvider,
 } from '../../stif';
 
 let SCRAMBLE_PROVIDER_INFO: ScrambleProvider = {
@@ -17,7 +17,7 @@ let SCRAMBLE_PROVIDER_INFO: ScrambleProvider = {
   url: 'https://scrambleproviders.speedcuber.org/mandy',
 };
 
-interface Face {
+export interface Face {
   label: string;
   opposite: string;
 }

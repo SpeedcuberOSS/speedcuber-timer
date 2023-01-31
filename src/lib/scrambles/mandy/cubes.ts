@@ -4,17 +4,16 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Face, NbyN } from './core';
 import {
-  Puzzle,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
   PUZZLE_4x4x4,
   PUZZLE_5x5x5,
   PUZZLE_6x6x6,
   PUZZLE_7x7x7,
+  Puzzle,
 } from '../../stif';
-
-import { NbyN } from './core';
 
 class Cube2x2x2 extends NbyN {
   constructor() {
@@ -22,6 +21,11 @@ class Cube2x2x2 extends NbyN {
   }
   getPuzzle(): Puzzle {
     return PUZZLE_2x2x2;
+  }
+  getFaces(): Face[] {
+    return ['U', 'R', 'F'].map(label => {
+      return { label: label, opposite: '' };
+    });
   }
 }
 
