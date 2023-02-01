@@ -16,6 +16,7 @@ function loadStories() {
   require('../src/ui/components/TwistyPlayer/AttemptPlayer.stories');
   require('../src/ui/components/TwistyPlayer/PlayerControls.stories');
   require('../src/ui/components/TwistyPlayer/TwistyPlayer.stories');
+  require('../src/ui/structure/CenteredBetweenSidebars.stories');
 }
 
 const stories = [
@@ -31,6 +32,7 @@ const stories = [
   '../src/ui/components/TwistyPlayer/AttemptPlayer.stories',
   '../src/ui/components/TwistyPlayer/PlayerControls.stories',
   '../src/ui/components/TwistyPlayer/TwistyPlayer.stories',
+  '../src/ui/structure/CenteredBetweenSidebars.stories',
 ];
 
 module.exports = {
