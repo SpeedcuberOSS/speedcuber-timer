@@ -6,6 +6,7 @@
 
 import { FlatList, StyleSheet, View } from 'react-native';
 import React, { memo, useEffect, useState } from 'react';
+import ReconstructionStep, { Phase } from './ReconstructionStep';
 import { Text, useTheme } from 'react-native-paper';
 
 import { Algorithm } from '../../../lib/stif';
@@ -32,103 +33,13 @@ interface ReconstructionProps {
   atTimestamp: number;
 }
 
-interface ReconstructionStep {
-  /**
-   * The name of the step
-   */
-  label: string;
-  /**
-   * The timestamped moves in the step
-   */
-  moves: { t: number; m: string }[];
-  /**
-   * The duration of the step in milliseconds
-   */
-  duration: number;
-  /**
-   * The number of milliseconds between the start of the step and
-   * execution of the first move.
-   */
-  recognition: number;
-  /**
-   * The average TPS of the step
-   *
-   * = duration / moves.length
-   */
-  tps: number;
-}
-
-interface ReconstructionStepProps extends ReconstructionStep {
-  elapsed: number;
-}
-
-function ReconstructionStep({
-  label,
-  moves,
-  duration,
-  recognition,
-  tps,
-  elapsed,
-}: ReconstructionStepProps) {
-  const theme = useTheme();
-  let Moves = null;
-  if (elapsed < moves[0]?.t) {
-    Moves = (
-      <Text style={{ color: theme.colors.onBackground }}>
-        {moves.map(v => v.m).join(' ')}
-      </Text>
-    );
-  } else if (elapsed > moves[moves.length - 1]?.t) {
-    Moves = (
-      <Text style={{ color: theme.colors.primary }}>
-        {moves.map(v => v.m).join(' ')}
-      </Text>
-    );
-  } else {
-    let solvedMoves = moves
-      .filter(v => v.t <= elapsed)
-      .map(v => v.m)
-      .join(' ');
-    let unsolvedMoves = moves
-      .filter(v => v.t > elapsed)
-      .map(v => v.m)
-      .join(' ');
-    Moves = (
-      <Text>
-        <Text style={{ color: theme.colors.primary }}>{solvedMoves}</Text>
-        <Text>{solvedMoves ? ' ' : ''}</Text>
-        <Text style={{ color: theme.colors.onBackground }}>
-          {unsolvedMoves}
-        </Text>
-      </Text>
-    );
-  }
-  return (
-    <View style={styles.reconstruction}>
-      <View style={styles.heading}>
-        <Text variant="labelMedium" style={styles.label}>
-          {`${label}:`}
-        </Text>
-        <Text variant="labelMedium" style={styles.annotations}>
-          {`${formatElapsedTime(new Date(duration))} s | ${tps.toFixed(
-            2,
-          )} TPS | rec: ${formatElapsedTime(new Date(recognition))} s`}
-        </Text>
-      </View>
-      {Moves}
-    </View>
-  );
-}
-
-const MemoizedReconstructionStep = memo(ReconstructionStep);
-
 export default function Reconstruction({
   scrambleAlg,
   solveReplay,
   duration,
   atTimestamp,
 }: ReconstructionProps) {
-  const [steps, setSteps] = useState<ReconstructionStep[]>([]);
+  const [steps, setSteps] = useState<Phase[]>([]);
   useEffect(() => {
     console.debug('Reconstruction: useEffect: analyzeSolution()');
     const breakdown = analyzeSolution(
@@ -136,7 +47,7 @@ export default function Reconstruction({
       solveReplay.map(v => v.m).join(' '),
       'CFOP',
     );
-    let steps: ReconstructionStep[] = [
+    let steps: Phase[] = [
       {
         label: 'pickup',
         moves: [],
@@ -187,7 +98,7 @@ export default function Reconstruction({
             timestamp = Infinity;
           }
           return (
-            <MemoizedReconstructionStep
+            <ReconstructionStep
               key={item.label}
               {...item}
               elapsed={timestamp}
@@ -203,20 +114,5 @@ export default function Reconstruction({
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 5,
-  },
-  reconstruction: {
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-  },
-  heading: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  label: {
-    fontWeight: 'bold',
-  },
-  annotations: {
-    fontWeight: 'normal',
-    fontVariant: ['tabular-nums'],
   },
 });
