@@ -62,8 +62,12 @@
     "sq1": "Square-1",
     "skewb": "Skewb"
   },
-  "charts": {
+  "analytics": {
     "duration": "Duration",
+    "average": "Average",
+    "recognition": "Recognition",
+    "execution": "Execution",
+    "tps": "TPS",
     "best": "Best"
   }
 }

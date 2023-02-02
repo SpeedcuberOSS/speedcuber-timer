@@ -4,11 +4,12 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { List, Text, useTheme } from 'react-native-paper';
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
 
+import Icons from '../../icons/iconHelper';
 import formatElapsedTime from '../../utils/formatElapsedTime';
+import { useTranslation } from 'react-i18next';
 
 export interface Phase {
   /**
@@ -49,6 +50,7 @@ function ReconstructionStep({
   elapsed,
 }: ReconstructionStepProps) {
   const theme = useTheme();
+  const { t } = useTranslation();
   let Moves = null;
   if (elapsed < moves[0]?.t) {
     Moves = (
@@ -62,7 +64,7 @@ function ReconstructionStep({
         {moves.map(v => v.m).join(' ')}
       </Text>
     );
-  } else {
+  } else if (moves.length > 0) {
     let solvedMoves = moves
       .filter(v => v.t <= elapsed)
       .map(v => v.m)
@@ -82,38 +84,37 @@ function ReconstructionStep({
     );
   }
   return (
-    <View style={styles.reconstruction}>
-      <View style={styles.heading}>
-        <Text variant="labelMedium" style={styles.label}>
-          {`${label}:`}
-        </Text>
-        <Text variant="labelMedium" style={styles.annotations}>
-          {`${formatElapsedTime(new Date(duration))} s | ${tps.toFixed(
-            2,
-          )} TPS | rec: ${formatElapsedTime(new Date(recognition))} s`}
-        </Text>
-      </View>
-      {Moves}
-    </View>
+    <List.Accordion title={label} description={Moves}>
+      <List.Item
+        title={t('analytics.duration')}
+        description={formatElapsedTime(new Date(duration))}
+        left={props => (
+          <List.Icon {...props} icon={Icons.MaterialCommunityIcons('clock')} />
+        )}
+      />
+      <List.Item
+        title={t('analytics.recognition')}
+        description={formatElapsedTime(new Date(recognition))}
+        left={props => (
+          <List.Icon {...props} icon={Icons.Ionicons('hourglass')} />
+        )}
+      />
+      <List.Item
+        title={t('analytics.execution')}
+        description={formatElapsedTime(new Date(duration - recognition))}
+        left={props => (
+          <List.Icon {...props} icon={Icons.MaterialIcons('directions-run')} />
+        )}
+      />
+      <List.Item
+        title={t('analytics.tps')}
+        description={tps.toFixed(3)}
+        left={props => (
+          <List.Icon {...props} icon={Icons.Ionicons('speedometer')} />
+        )}
+      />
+    </List.Accordion>
   );
 }
-
-const styles = StyleSheet.create({
-  reconstruction: {
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-  },
-  heading: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  label: {
-    fontWeight: 'bold',
-  },
-  annotations: {
-    fontWeight: 'normal',
-    fontVariant: ['tabular-nums'],
-  },
-});
 
 export default memo(ReconstructionStep);

@@ -49,7 +49,7 @@ export default function AttemptsChart({
           scatterData: {
             dataSets: [
               {
-                label: t('charts.duration'),
+                label: t('analytics.duration'),
                 values: attempts
                   .map(attempt => attempt.duration / 1000)
                   .reverse(),
@@ -66,7 +66,7 @@ export default function AttemptsChart({
           lineData: {
             dataSets: [
               {
-                label: t('charts.best'),
+                label: t('analytics.best'),
                 values: new AttemptAnalytics(attempts).sliding
                   .best()
                   .map(([x, y]) => {
