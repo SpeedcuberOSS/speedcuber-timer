@@ -121,6 +121,7 @@ export default function AttemptsChart({
           },
         }}
         drawOrder={['SCATTER', 'LINE']}
+        chartDescription={{ text: '' }}
       />
     </View>
   );

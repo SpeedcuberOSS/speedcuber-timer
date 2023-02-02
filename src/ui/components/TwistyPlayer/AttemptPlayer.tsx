@@ -12,17 +12,20 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { SegmentedButtons, Text, useTheme } from 'react-native-paper';
 import {
   SolveReplay,
   compressDoubleTurns,
   getSolveReplay,
 } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
+import CenteredBetweenSidebars from '../../structure/CenteredBetweenSidebars';
 import PlayerControls from '../PlayerControls';
 import Reconstruction from '../reconstructions/Reconstruction';
+import TPSChart from '../charts/TPSChart';
 import TwistyPlayer from './TwistyPlayer';
 import { View } from 'react-native';
-import { useTheme } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
 interface AttemptPlayerProps {
   attempt: Attempt;
@@ -77,6 +80,9 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
     }
   }, [elapsed]);
 
+  const [value, setValue] = useState('reconstruction');
+  const { t } = useTranslation();
+
   return (
     <View style={{ flex: 1 }}>
       <View style={{ flex: 2 }}>
@@ -89,13 +95,31 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
           backgroundColor={theme.colors.background}
         />
       </View>
+      <SegmentedButtons
+        value={value}
+        onValueChange={setValue}
+        density="high"
+        style={{ paddingHorizontal: 20 }}
+        buttons={[
+          {
+            label: t('reconstruction.reconstruction'),
+            value: 'reconstruction',
+          },
+          { label: t('analytics.tps'), value: 'tps' },
+        ]}
+      />
       <View style={{ flex: 3 }}>
-        <Reconstruction
-          scramble={scramble}
-          solveReplay={solveReplay}
-          duration={attempt.duration}
-          atTimestamp={elapsed.current}
-        />
+        {value == 'tps' ? (
+          <TPSChart solveReplay={solveReplay} duration={attempt.duration} />
+        ) : null}
+        {value == 'reconstruction' ? (
+          <Reconstruction
+            scramble={scramble}
+            solveReplay={solveReplay}
+            duration={attempt.duration}
+            atTimestamp={elapsed.current}
+          />
+        ) : null}
       </View>
       <PlayerControls duration={attempt.duration} onSeek={setElapsed} />
     </View>

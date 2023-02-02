@@ -7,14 +7,15 @@ function loadStories() {
   require('../src/ui/components/attempts/AttemptCard.stories');
   require('../src/ui/components/attempts/AttemptDetails.stories');
   require('../src/ui/components/attempts/AttemptDetailsModal.stories');
+  require('../src/ui/components/charts/TPSChart.stories');
   require('../src/ui/components/events/EventSelector.stories');
   require('../src/ui/components/events/EventSelectorModal.stories');
   require('../src/ui/components/inspection/InspectionTime.stories');
   require('../src/ui/components/inspection/InspectionTimer.stories');
+  require('../src/ui/components/PlayerControls/PlayerControls.stories');
   require('../src/ui/components/smartpuzzles/SmartPuzzleCard.stories');
   require('../src/ui/components/smartpuzzles/SmartPuzzleConnector.stories');
   require('../src/ui/components/TwistyPlayer/AttemptPlayer.stories');
-  require('../src/ui/components/PlayerControls/PlayerControls.stories');
   require('../src/ui/components/TwistyPlayer/TwistyPlayer.stories');
   require('../src/ui/structure/CenteredBetweenSidebars.stories');
 }
@@ -23,14 +24,15 @@ const stories = [
   '../src/ui/components/attempts/AttemptCard.stories',
   '../src/ui/components/attempts/AttemptDetails.stories',
   '../src/ui/components/attempts/AttemptDetailsModal.stories',
+  '../src/ui/components/charts/TPSChart.stories',
   '../src/ui/components/events/EventSelector.stories',
   '../src/ui/components/events/EventSelectorModal.stories',
   '../src/ui/components/inspection/InspectionTime.stories',
   '../src/ui/components/inspection/InspectionTimer.stories',
+  '../src/ui/components/PlayerControls/PlayerControls.stories',
   '../src/ui/components/smartpuzzles/SmartPuzzleCard.stories',
   '../src/ui/components/smartpuzzles/SmartPuzzleConnector.stories',
   '../src/ui/components/TwistyPlayer/AttemptPlayer.stories',
-  '../src/ui/components/TwistyPlayer/PlayerControls.stories',
   '../src/ui/components/TwistyPlayer/TwistyPlayer.stories',
   '../src/ui/structure/CenteredBetweenSidebars.stories',
 ];

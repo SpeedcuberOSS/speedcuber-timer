@@ -69,5 +69,8 @@
     "execution": "Execution",
     "tps": "TPS",
     "best": "Best"
+  },
+  "reconstruction": {
+    "reconstruction": "Reconstruction"
   }
 }
