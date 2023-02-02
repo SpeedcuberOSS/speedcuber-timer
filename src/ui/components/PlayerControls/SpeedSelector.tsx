@@ -25,7 +25,7 @@ export default function SpeedSelector({
   onSpeedChange = (_speed: number) => {},
 }: SpeedSelectorProps) {
   const theme = useTheme();
-  const [speedIdx, setSpeedIdx] = useState(4);
+  const [speedIdx, setSpeedIdx] = useState(3);
   return (
     <Pressable
       onPress={() => {
