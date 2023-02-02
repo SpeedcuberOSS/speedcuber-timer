@@ -72,5 +72,8 @@
   },
   "reconstruction": {
     "reconstruction": "Reconstruction"
+  },
+  "units": {
+    "seconds": "s"
   }
 }

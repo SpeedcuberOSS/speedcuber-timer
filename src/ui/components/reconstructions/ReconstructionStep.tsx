@@ -4,10 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { List, Text, useTheme } from 'react-native-paper';
+import { Chip, List, Text, useTheme } from 'react-native-paper';
 import React, { memo } from 'react';
 
 import Icons from '../../icons/iconHelper';
+import { StyleSheet } from 'react-native';
 import formatElapsedTime from '../../utils/formatElapsedTime';
 import { useTranslation } from 'react-i18next';
 
@@ -84,37 +85,58 @@ function ReconstructionStep({
     );
   }
   return (
-    <List.Accordion title={label} description={Moves}>
-      <List.Item
-        title={t('analytics.duration')}
-        description={formatElapsedTime(new Date(duration))}
-        left={props => (
-          <List.Icon {...props} icon={Icons.MaterialCommunityIcons('clock')} />
-        )}
-      />
+    <List.Accordion
+      title={label}
+      right={props => (
+        <Chip {...props} compact textStyle={styles.chip}>
+          {`${_time(duration)} ${t('units.seconds')}`}
+        </Chip>
+      )}
+      description={Moves}>
       <List.Item
         title={t('analytics.recognition')}
-        description={formatElapsedTime(new Date(recognition))}
         left={props => (
           <List.Icon {...props} icon={Icons.Ionicons('hourglass')} />
+        )}
+        right={props => (
+          <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
+            {`${_time(recognition)} ${t('units.seconds')}`}
+          </Chip>
         )}
       />
       <List.Item
         title={t('analytics.execution')}
-        description={formatElapsedTime(new Date(duration - recognition))}
         left={props => (
           <List.Icon {...props} icon={Icons.MaterialIcons('directions-run')} />
+        )}
+        right={props => (
+          <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
+            {`${_time(duration - recognition)} ${t('units.seconds')}`}
+          </Chip>
         )}
       />
       <List.Item
         title={t('analytics.tps')}
-        description={tps.toFixed(3)}
         left={props => (
           <List.Icon {...props} icon={Icons.Ionicons('speedometer')} />
+        )}
+        right={props => (
+          <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
+            {tps.toFixed(3)}
+          </Chip>
         )}
       />
     </List.Accordion>
   );
 }
 
+const styles = StyleSheet.create({
+  chip: {
+    fontVariant: ['tabular-nums'],
+  },
+});
+
+function _time(duration: number): string {
+  return formatElapsedTime(new Date(duration));
+}
 export default memo(ReconstructionStep);
