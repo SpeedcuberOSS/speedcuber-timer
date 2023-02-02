@@ -26,6 +26,27 @@ export function getSolveReplay(attempt: Attempt): SolveReplay {
   return solveReplay;
 }
 
+/**
+ * Compresses individual turns into double turns if they occur within a
+ * given window.
+ *
+ * @param solveReplay The solve replay to compress
+ * @param window The maximum time in milliseconds between two moves to
+ * be considered a double turn
+ * @returns The compressed solve replay
+ */
+export function compressDoubleTurns(solveReplay: SolveReplay): SolveReplay {
+  const window = solveReplay[solveReplay.length - 1].t / solveReplay.length;
+  const compressedSolveReplay = solveReplay.reduce((acc, move) => {
+    const lastMove = acc[acc.length - 1];
+    if (lastMove && lastMove.m === move.m && move.t - lastMove.t < window) {
+      return [...acc.slice(0, -1), { t: lastMove.t, m: `${lastMove.m[0]}2` }];
+    }
+    return [...acc, move];
+  }, [] as SolveReplay);
+  return compressedSolveReplay;
+}
+
 function getMessageStream(attempt: Attempt): MessageStream {
   const messageStreamExtensions = attempt.extensions?.filter(
     ext => ext.id === MESSAGE_STREAM_TEMPLATE.id,

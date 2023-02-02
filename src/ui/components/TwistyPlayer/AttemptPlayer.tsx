@@ -14,6 +14,7 @@ import React, {
 } from 'react';
 import {
   SolveReplay,
+  compressDoubleTurns,
   getSolveReplay,
 } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
@@ -52,7 +53,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const [scrambleAlg] = useState(attempt.solutions[0].scramble.algorithm);
   const [solveReplay, setSolveReplay] = useState<SolveReplay>([]);
   useEffect(() => {
-    setSolveReplay(getSolveReplay(attempt));
+    setSolveReplay(compressDoubleTurns(getSolveReplay(attempt)));
   }, [attempt]);
 
   useEffect(() => {
