@@ -6,7 +6,7 @@
 
 import { Algorithm, Scramble } from '../../../lib/stif';
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReconstructionStep, { Phase } from './ReconstructionStep';
 
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
@@ -43,10 +43,35 @@ export default function Reconstruction({
     setSteps(phases);
   }, [scramble, solveReplay]);
 
+  const ref = useRef<FlatList>(null);
+  useEffect(() => {
+    if (ref.current && steps.length > 0) {
+      let idx = 0;
+      for (let i = 0; i < steps.length; i++) {
+        if (atTimestamp < steps[i].moves[0]?.t) {
+          break;
+        }
+        idx = i;
+      }
+      ref.current.scrollToIndex({
+        index: idx,
+        animated: true,
+        viewPosition: 0.5,
+      });
+    }
+  }, [atTimestamp]);
+
   return (
     <View style={styles.container}>
       <FlatList
+        ref={ref}
         data={steps}
+        initialScrollIndex={1}
+        getItemLayout={(data, index) => ({
+          length: 75,
+          offset: 75 * index,
+          index,
+        })}
         renderItem={({ item }) => {
           let timestamp = atTimestamp;
           if (atTimestamp < item.moves[0]?.t) {
