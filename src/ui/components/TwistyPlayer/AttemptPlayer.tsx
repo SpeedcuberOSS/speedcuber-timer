@@ -110,7 +110,11 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       />
       <View style={{ flex: 3 }}>
         {value == 'tps' ? (
-          <TPSChart solveReplay={solveReplay} duration={attempt.duration} />
+          <TPSChart
+            solveReplay={solveReplay}
+            duration={attempt.duration}
+            atTimestamp={elapsed.current}
+          />
         ) : null}
         {value == 'reconstruction' ? (
           <Reconstruction

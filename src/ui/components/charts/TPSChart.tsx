@@ -15,12 +15,18 @@ import { useTranslation } from 'react-i18next';
 interface TPSChartProps {
   solveReplay: SolveReplay;
   duration: number;
+  atTimestamp?: number;
 }
 
-export default function TPSChart({ solveReplay, duration }: TPSChartProps) {
+export default function TPSChart({
+  solveReplay,
+  duration,
+  atTimestamp,
+}: TPSChartProps) {
   const { t } = useTranslation();
   const theme = useTheme();
   const tps = windowedTPS(solveReplay, duration);
+  const maxTPS = Math.max(...tps.map(t => t.tps));
   return (
     <View style={{ flex: 1, padding: 10 }}>
       <View style={styles.container}>
@@ -33,6 +39,7 @@ export default function TPSChart({ solveReplay, duration }: TPSChartProps) {
                 values: [
                   { x: 0, y: 0 },
                   ...tps.map((tps, i) => ({ y: tps.tps, x: tps.t })),
+                  { x: duration / 1000, y: 0 },
                 ],
                 config: {
                   drawValues: false,
@@ -50,6 +57,22 @@ export default function TPSChart({ solveReplay, duration }: TPSChartProps) {
                     angle: 90,
                     orientation: 'BOTTOM_TOP',
                   },
+                },
+              },
+              {
+                label: t('analytics.tps'),
+                values:
+                  atTimestamp !== undefined
+                    ? [
+                        { x: atTimestamp / 1000, y: 0 },
+                        { x: atTimestamp / 1000, y: maxTPS },
+                      ]
+                    : [],
+                config: {
+                  drawValues: false,
+                  drawCircles: false,
+                  mode: 'LINEAR',
+                  color: processColor(theme.colors.secondary),
                 },
               },
             ],
