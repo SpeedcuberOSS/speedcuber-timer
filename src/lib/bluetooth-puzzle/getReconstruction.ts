@@ -39,24 +39,16 @@ export type Reconstruction = Phase[];
 
 export default function getReconstruction(
   scramble: Scramble,
-  duration: number,
   solveReplay: SolveReplay,
   method: SolutionMethod,
+  duration: number,
 ): Reconstruction {
   const breakdown = analyzeSolution(
     scramble.algorithm.moves.join(' '),
     solveReplay.map(v => v.m).join(' '),
     method,
   );
-  let phases: Phase[] = [
-    {
-      label: 'pickup',
-      moves: [],
-      duration: solveReplay[0]?.t ?? 0,
-      recognition: 0,
-      tps: 0,
-    },
-  ];
+  let phases: Phase[] = [getPickupPhase(solveReplay)];
   let wipMoveCount = 0;
   let wipDuration = phases[0].duration;
   for (const step of breakdown.steps) {
@@ -77,12 +69,26 @@ export default function getReconstruction(
     wipMoveCount += step.moves.length;
     wipDuration = endTime;
   }
-  phases.push({
-    label: 'put down',
+  phases.push(getPutDownPhase(wipDuration, duration));
+  return phases;
+}
+
+function getPickupPhase(solveReplay: SolveReplay): Phase {
+  return {
+    label: 'pickup',
     moves: [],
-    duration: duration - wipDuration,
+    duration: solveReplay[0]?.t ?? 0,
     recognition: 0,
     tps: 0,
-  });
-  return phases;
+  };
+}
+
+function getPutDownPhase(wipDuration: number, solveDuration: number): Phase {
+  return {
+    label: 'put down',
+    moves: [],
+    duration: solveDuration - wipDuration,
+    recognition: 0,
+    tps: 0,
+  };
 }

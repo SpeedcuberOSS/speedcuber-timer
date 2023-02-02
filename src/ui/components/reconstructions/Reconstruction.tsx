@@ -39,7 +39,7 @@ export default function Reconstruction({
 }: ReconstructionProps) {
   const [steps, setSteps] = useState<Phase[]>([]);
   useEffect(() => {
-    const phases = getReconstruction(scramble, duration, solveReplay, 'CFOP');
+    const phases = getReconstruction(scramble, solveReplay, 'CFOP', duration);
     setSteps(phases);
   }, [scramble, solveReplay]);
 
