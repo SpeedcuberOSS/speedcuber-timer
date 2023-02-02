@@ -4,21 +4,19 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Algorithm, Scramble } from '../../../lib/stif';
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReconstructionStep, { Phase } from './ReconstructionStep';
-import { Text, useTheme } from 'react-native-paper';
 
-import { Algorithm } from '../../../lib/stif';
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
-import { analyzeSolution } from 'solution-analyzer';
-import formatElapsedTime from '../../utils/formatElapsedTime';
+import getReconstruction from '../../../lib/bluetooth-puzzle/getReconstruction';
 
 interface ReconstructionProps {
   /**
    * The starting scramble for solve.
    */
-  scrambleAlg: Algorithm;
+  scramble: Scramble;
   /**
    * The solve replay for which a reconstruction is being displayed.
    */
@@ -34,57 +32,16 @@ interface ReconstructionProps {
 }
 
 export default function Reconstruction({
-  scrambleAlg,
+  scramble,
   solveReplay,
   duration,
   atTimestamp,
 }: ReconstructionProps) {
   const [steps, setSteps] = useState<Phase[]>([]);
   useEffect(() => {
-    console.debug('Reconstruction: useEffect: analyzeSolution()');
-    const breakdown = analyzeSolution(
-      scrambleAlg.moves.join(' '),
-      solveReplay.map(v => v.m).join(' '),
-      'CFOP',
-    );
-    let steps: Phase[] = [
-      {
-        label: 'pickup',
-        moves: [],
-        duration: solveReplay[0]?.t ?? 0,
-        recognition: 0,
-        tps: 0,
-      },
-    ];
-    let wipMoveCount = 0;
-    let wipDuration = steps[0].duration;
-    for (const step of breakdown.steps) {
-      const moves = solveReplay.slice(
-        wipMoveCount,
-        wipMoveCount + step.moves.length,
-      );
-      const startTime = wipDuration;
-      const endTime = moves[moves.length - 1].t;
-      const stepDuration = endTime - startTime;
-      steps.push({
-        label: step.label ?? 'unknown',
-        moves: moves,
-        duration: stepDuration,
-        recognition: moves[0].t - startTime,
-        tps: moves.length / (stepDuration / 1000),
-      });
-      wipMoveCount += step.moves.length;
-      wipDuration = endTime;
-    }
-    steps.push({
-      label: 'put down',
-      moves: [],
-      duration: duration - wipDuration,
-      recognition: 0,
-      tps: 0,
-    });
-    setSteps(steps);
-  }, [scrambleAlg, solveReplay]);
+    const phases = getReconstruction(scramble, duration, solveReplay, 'CFOP');
+    setSteps(phases);
+  }, [scramble, solveReplay]);
 
   return (
     <View style={styles.container}>

@@ -50,7 +50,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const setElapsed = useCallback((elapsed: number) => {
     dispatchElapsed({ type: 'setElapsed', elapsed });
   }, []);
-  const [scrambleAlg] = useState(attempt.solutions[0].scramble.algorithm);
+  const [scramble] = useState(attempt.solutions[0].scramble);
   const [solveReplay, setSolveReplay] = useState<SolveReplay>([]);
   useEffect(() => {
     setSolveReplay(compressDoubleTurns(getSolveReplay(attempt)));
@@ -70,7 +70,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         .filter(v => v.t < elapsed.current)
         .map(v => v.m);
       const twistyAlg = new AlgorithmBuilder()
-        .setMoves([...scrambleAlg.moves, ...solutionMoves])
+        .setMoves([...scramble.algorithm.moves, ...solutionMoves])
         .build();
       // @ts-ignore
       twistyPlayerRef.current.setAlgorithm(twistyAlg);
@@ -84,14 +84,14 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
           ref={twistyPlayerRef}
           // @ts-ignore
           puzzle={attempt.event.puzzle}
-          setupAlg={scrambleAlg}
+          setupAlg={scramble.algorithm}
           hintFacelets={'floating'}
           backgroundColor={theme.colors.background}
         />
       </View>
       <View style={{ flex: 3 }}>
         <Reconstruction
-          scrambleAlg={scrambleAlg}
+          scramble={scramble}
           solveReplay={solveReplay}
           duration={attempt.duration}
           atTimestamp={elapsed.current}
