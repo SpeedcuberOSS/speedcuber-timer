@@ -121,15 +121,12 @@ interface SpeedSelectorProps {
   onSpeedChange: (speed: number) => void;
 }
 
-const SPEED_LABELS = ['1/16x', '1/8x', '1/4x', '1/2x', '1x', '2x', '4x'];
+const SPEED_LABELS = ['1/8x', '1/4x', '1/2x', '1x'];
 const SPEEDS = {
-  '1/16x': 0.0625,
   '1/8x': 0.125,
   '1/4x': 0.25,
   '1/2x': 0.5,
   '1x': 1,
-  '2x': 2,
-  '4x': 4,
 };
 
 function SpeedSelector({
