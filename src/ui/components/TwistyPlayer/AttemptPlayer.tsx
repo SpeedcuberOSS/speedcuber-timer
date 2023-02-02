@@ -19,7 +19,7 @@ import {
 } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
 import PlayerControls from './PlayerControls';
-import Reconstruction from './Reconstruction';
+import Reconstruction from '../reconstructions/Reconstruction';
 import TwistyPlayer from './TwistyPlayer';
 import { View } from 'react-native';
 import { useTheme } from 'react-native-paper';
