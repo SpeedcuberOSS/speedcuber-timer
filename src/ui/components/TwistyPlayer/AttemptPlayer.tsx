@@ -93,6 +93,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         <Reconstruction
           scrambleAlg={scrambleAlg}
           solveReplay={solveReplay}
+          duration={attempt.duration}
           atTimestamp={elapsed.current}
         />
       </View>

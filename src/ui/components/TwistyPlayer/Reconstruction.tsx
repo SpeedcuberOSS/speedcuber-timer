@@ -23,6 +23,10 @@ interface ReconstructionProps {
    */
   solveReplay: SolveReplay;
   /**
+   * The duration of the attempt.
+   */
+  duration: number;
+  /**
    * The current timestamp in the solve replay.
    */
   atTimestamp: number;
@@ -113,6 +117,7 @@ const MemoizedReconstructionStep = memo(ReconstructionStep);
 export default function Reconstruction({
   scrambleAlg,
   solveReplay,
+  duration,
   atTimestamp,
 }: ReconstructionProps) {
   const [steps, setSteps] = useState<ReconstructionStep[]>([]);
@@ -123,22 +128,39 @@ export default function Reconstruction({
       solveReplay.map(v => v.m).join(' '),
       'CFOP',
     );
-    let steps: ReconstructionStep[] = [];
+    let steps: ReconstructionStep[] = [
+      {
+        label: 'pickup',
+        moves: [],
+        duration: solveReplay[0]?.t ?? 0,
+        tps: 0,
+      },
+    ];
     let wipMoveCount = 0;
+    let wipDuration = steps[0].duration;
     for (const step of breakdown.steps) {
       const moves = solveReplay.slice(
         wipMoveCount,
         wipMoveCount + step.moves.length,
       );
-      const duration = moves[moves.length - 1]?.t - moves[0]?.t;
+      const startTime = wipDuration;
+      const endTime = moves[moves.length - 1].t;
+      const stepDuration = endTime - startTime;
       steps.push({
         label: step.label ?? 'unknown',
         moves: moves,
-        duration: duration,
-        tps: moves.length / (duration / 1000),
+        duration: stepDuration,
+        tps: moves.length / (stepDuration / 1000),
       });
       wipMoveCount += step.moves.length;
+      wipDuration = endTime;
     }
+    steps.push({
+      label: 'put down',
+      moves: [],
+      duration: duration - wipDuration,
+      tps: 0,
+    });
     setSteps(steps);
   }, [scrambleAlg, solveReplay]);
 
