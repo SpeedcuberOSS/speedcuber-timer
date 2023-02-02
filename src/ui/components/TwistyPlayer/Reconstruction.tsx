@@ -42,9 +42,14 @@ interface ReconstructionStep {
    */
   moves: { t: number; m: string }[];
   /**
-   * The duration of the step
+   * The duration of the step in milliseconds
    */
   duration: number;
+  /**
+   * The number of milliseconds between the start of the step and
+   * execution of the first move.
+   */
+  recognition: number;
   /**
    * The average TPS of the step
    *
@@ -61,6 +66,7 @@ function ReconstructionStep({
   label,
   moves,
   duration,
+  recognition,
   tps,
   elapsed,
 }: ReconstructionStepProps) {
@@ -104,7 +110,9 @@ function ReconstructionStep({
           {`${label}:`}
         </Text>
         <Text variant="labelMedium" style={styles.annotations}>
-          {`${formatElapsedTime(new Date(duration))} s | ${tps.toFixed(2)} TPS`}
+          {`${formatElapsedTime(new Date(duration))} s | ${tps.toFixed(
+            2,
+          )} TPS | rec: ${formatElapsedTime(new Date(recognition))} s`}
         </Text>
       </View>
       {Moves}
@@ -133,6 +141,7 @@ export default function Reconstruction({
         label: 'pickup',
         moves: [],
         duration: solveReplay[0]?.t ?? 0,
+        recognition: 0,
         tps: 0,
       },
     ];
@@ -150,6 +159,7 @@ export default function Reconstruction({
         label: step.label ?? 'unknown',
         moves: moves,
         duration: stepDuration,
+        recognition: moves[0].t - startTime,
         tps: moves.length / (stepDuration / 1000),
       });
       wipMoveCount += step.moves.length;
@@ -159,6 +169,7 @@ export default function Reconstruction({
       label: 'put down',
       moves: [],
       duration: duration - wipDuration,
+      recognition: 0,
       tps: 0,
     });
     setSteps(steps);
