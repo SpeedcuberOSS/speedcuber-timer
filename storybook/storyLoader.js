@@ -14,7 +14,7 @@ function loadStories() {
   require('../src/ui/components/smartpuzzles/SmartPuzzleCard.stories');
   require('../src/ui/components/smartpuzzles/SmartPuzzleConnector.stories');
   require('../src/ui/components/TwistyPlayer/AttemptPlayer.stories');
-  require('../src/ui/components/TwistyPlayer/PlayerControls.stories');
+  require('../src/ui/components/PlayerControls/PlayerControls.stories');
   require('../src/ui/components/TwistyPlayer/TwistyPlayer.stories');
   require('../src/ui/structure/CenteredBetweenSidebars.stories');
 }
