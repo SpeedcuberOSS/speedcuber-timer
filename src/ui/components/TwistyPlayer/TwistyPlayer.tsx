@@ -78,11 +78,24 @@ const TwistyPlayer = forwardRef(
     useImperativeHandle(ref, () => ({
       setAlgorithm: (alg: Algorithm) => {
         const moves = alg.moves.join(' ');
+        console.debug('Setting alg:', moves);
         const js = `
           setAlgButton = document.getElementById("set-algorithm")
           if (setAlgButton) {
             setAlgButton.innerHTML = "${moves}"
             setAlgButton.click()
+          }
+          true;
+        `;
+        webViewRef.current.injectJavaScript(js);
+      },
+      addMove: (move: string) => {
+        console.debug('Adding move:', move);
+        const js = `
+          addMoveButton = document.getElementById("add-move")
+          if (addMoveButton) {
+            addMoveButton.innerHTML = "${move}"
+            addMoveButton.click()
           }
           true;
         `;
