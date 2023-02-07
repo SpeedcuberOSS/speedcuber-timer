@@ -59,7 +59,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   }, [attempt]);
 
   useEffect(() => {
-    const didMoveBackward = elapsed.old > elapsed.current;
+    const didMoveBackward = elapsed.old >= elapsed.current;
     const movesForward = solveReplay.filter(
       v => elapsed.old < v.t && v.t <= elapsed.current,
     );
