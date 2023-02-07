@@ -7,14 +7,13 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 import AttemptList from '../components/attempts/AttemptList';
-import AttemptsChart from '../components/charts/AttemptsChart';
 import React from 'react';
 import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 let library = getLibrary();
 
-export default function InsightsScreen() {
+export default function AttemptsScreen() {
   const [event] = useCompetitiveEvent();
   const data = library.getAll();
   const attempts = data
@@ -23,7 +22,7 @@ export default function InsightsScreen() {
     .slice(0, 100);
   return (
     <SafeAreaView style={styles.container}>
-      <AttemptsChart attempts={attempts} />
+      <AttemptList attempts={attempts} />
     </SafeAreaView>
   );
 }

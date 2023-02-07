@@ -5,11 +5,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import AppBar from './AppBar';
-import InsightsScreen from '../screens/InsightsScreen';
 import LearnScreen from '../screens/LearnScreen';
 import PlayScreen from '../screens/PlayScreen';
-import PracticeScreen from '../screens/PracticeScreen';
 import React from 'react';
+import TimerNavigator from './TimerNavigator';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
@@ -18,10 +17,9 @@ const DrawerNavigator: React.FC = () => {
   return (
     <Drawer.Navigator
       screenOptions={{ header: props => <AppBar {...props} /> }}>
+      <Drawer.Screen name="Timer" component={TimerNavigator} />
       <Drawer.Screen name="Learn" component={LearnScreen} />
-      <Drawer.Screen name="Practice" component={PracticeScreen} />
       <Drawer.Screen name="Play" component={PlayScreen} />
-      <Drawer.Screen name="Insights" component={InsightsScreen} />
     </Drawer.Navigator>
   );
 };
