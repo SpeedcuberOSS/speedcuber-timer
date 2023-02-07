@@ -8,15 +8,14 @@ import { Appbar, Button } from 'react-native-paper';
 import React, { useState } from 'react';
 
 import { CompetitiveEvent } from '../../lib/stif';
+import { DrawerHeaderProps } from '@react-navigation/drawer';
 import EventSelectorModal from '../components/events/EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
-import { StyleSheet } from 'react-native';
-import { modeAppbarHeight } from 'react-native-paper/src/components/Appbar/utils';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
 
-export default function AppBar() {
+export default function AppBar({ navigation }: DrawerHeaderProps) {
   const [event, setEvent] = useCompetitiveEvent();
   const [showEventSelector, setShowEventSelector] = useState(false);
   const [showPuzzleScanner, setShowPuzzleScanner] = useState(false);
@@ -24,10 +23,7 @@ export default function AppBar() {
   return (
     <>
       <Appbar.Header mode="center-aligned" elevated>
-        <Appbar.Action
-          icon="menu"
-          onPress={() => console.log('PLACEHOLDER: Menu pressed')}
-        />
+        <Appbar.Action icon="menu" onPress={navigation.toggleDrawer} />
         <Appbar.Content
           title={
             <Button
@@ -58,12 +54,3 @@ export default function AppBar() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  appbar: {
-    height: modeAppbarHeight['center-aligned'],
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-});

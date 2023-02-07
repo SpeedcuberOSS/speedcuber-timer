@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import AppBar from './AppBar';
+import DrawerNavigator from './DrawerNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import TabNavigator from './TabNavigator';
@@ -14,8 +15,9 @@ const MainNavigator = () => {
   const theme = useTheme();
   return (
     <NavigationContainer theme={theme}>
-      <AppBar />
-      <TabNavigator />
+      <DrawerNavigator />
+      {/* <AppBar />
+      <TabNavigator /> */}
     </NavigationContainer>
   );
 };
