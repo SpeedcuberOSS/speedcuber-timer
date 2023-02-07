@@ -4,18 +4,24 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Button } from 'react-native-paper';
+import { SafeAreaView, View } from 'react-native';
+
+import { Attempt } from '../../lib/stif';
+import AttemptPlayer from '../components/TwistyPlayer/AttemptPlayer';
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { getLibrary } from '../../lib/attempts';
+
+const attempt =
+  require('../../lib/bluetooth-puzzle/__fixtures__/particula_3x3x3_attempt.json') as Attempt;
 
 export default function PlayScreen() {
   return (
-    <SafeAreaView>
-      <Button
+    <SafeAreaView style={{ flex: 1 }}>
+      {/* <Button
         onPress={() => console.log(JSON.stringify(getLibrary().getAll()))}>
         Print Attempt Library
       </Button>
+      */}
+      <AttemptPlayer attempt={attempt} />
     </SafeAreaView>
   );
 }

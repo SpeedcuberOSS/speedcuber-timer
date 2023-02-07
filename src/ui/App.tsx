@@ -5,24 +5,26 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import 'react-native-get-random-values';
+
 import FlipperAsyncStorage from 'rn-flipper-async-storage-advanced';
-
-import React from 'react';
-import { Provider as PaperProvider } from 'react-native-paper';
-import i18n from '../localization';
-import { getCurrentTheme } from './themes';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MainNavigator from './navigation/MainNavigator';
+import { Provider as PaperProvider } from 'react-native-paper';
+import React from 'react';
+import { getCurrentTheme } from './themes';
+import i18n from '../localization';
 
 const App = () => {
   if (i18n.isInitialized) {
     console.log('i18n initialized');
   }
   return (
-    <PaperProvider theme={getCurrentTheme()}>
-      <FlipperAsyncStorage />
-      <MainNavigator />
-    </PaperProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <PaperProvider theme={getCurrentTheme()}>
+        <FlipperAsyncStorage />
+        <MainNavigator />
+      </PaperProvider>
+    </GestureHandlerRootView>
   );
 };
 

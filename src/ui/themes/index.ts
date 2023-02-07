@@ -4,13 +4,30 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { MD3DarkTheme, MD3LightTheme } from 'react-native-paper';
+import {
+  MD3DarkTheme,
+  MD3LightTheme,
+  adaptNavigationTheme,
+} from 'react-native-paper';
 import {
   MD3Theme,
   MD3Typescale,
 } from 'react-native-paper/lib/typescript/types';
+import {
+  DarkTheme as NavigationDarkTheme,
+  DefaultTheme as NavigationDefaultTheme,
+} from '@react-navigation/native';
 
 import { Appearance } from 'react-native';
+import merge from 'deepmerge';
+
+const { LightTheme, DarkTheme } = adaptNavigationTheme({
+  reactNavigationLight: NavigationDefaultTheme,
+  reactNavigationDark: NavigationDarkTheme,
+});
+
+const CombinedLightTheme = merge(MD3LightTheme, LightTheme);
+const CombinedDarkTheme = merge(MD3DarkTheme, DarkTheme);
 
 const fonts: MD3Typescale = {
   displayLarge: {
@@ -81,7 +98,7 @@ const fonts: MD3Typescale = {
 
 function getCurrentTheme(): MD3Theme {
   const darkTheme = Appearance.getColorScheme() == 'dark';
-  const baseTheme = darkTheme ? MD3DarkTheme : MD3LightTheme;
+  const baseTheme = darkTheme ? CombinedDarkTheme : CombinedLightTheme;
   const theme = {
     ...baseTheme,
     roundness: 2,

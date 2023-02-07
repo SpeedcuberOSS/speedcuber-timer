@@ -1,0 +1,6 @@
+The code in this folder is heavily based on code from the
+`parallax-horizontal` example from `react-native-reanimated-carousel`
+which is licensed under the MIT license.
+
+Original Source Code:
+https://github.com/dohooo/react-native-reanimated-carousel/blob/main/exampleExpo/src/pages/parallax/index.tsx
