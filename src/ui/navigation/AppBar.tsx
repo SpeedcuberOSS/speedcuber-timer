@@ -8,14 +8,14 @@ import { Appbar, Button } from 'react-native-paper';
 import React, { useState } from 'react';
 
 import { CompetitiveEvent } from '../../lib/stif';
-import { DrawerHeaderProps } from '@react-navigation/drawer';
 import EventSelectorModal from '../components/events/EventSelectorModal';
 import Icons from '../icons/iconHelper';
+import { PracticeStackHeaderProps } from './types';
 import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
 
-export default function AppBar({ navigation }: DrawerHeaderProps) {
+export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
   const [event, setEvent] = useCompetitiveEvent();
   const [showEventSelector, setShowEventSelector] = useState(false);
   const [showPuzzleScanner, setShowPuzzleScanner] = useState(false);
@@ -23,7 +23,11 @@ export default function AppBar({ navigation }: DrawerHeaderProps) {
   return (
     <>
       <Appbar.Header mode="center-aligned" elevated>
-        <Appbar.Action icon="menu" onPress={navigation.toggleDrawer} />
+        {back ? (
+          <Appbar.BackAction onPress={navigation.goBack} />
+        ) : (
+          <Appbar.Action icon="menu" onPress={navigation.toggleDrawer} />
+        )}
         <Appbar.Content
           title={
             <Button

@@ -12,12 +12,13 @@ import AttemptCard from './AttemptCard';
 
 interface AttemptListProps {
   attempts: Attempt[];
+  onReplay?: (attempt: Attempt) => void;
 }
 
-function AttemptList({ attempts }: AttemptListProps) {
+function AttemptList({ attempts, onReplay = () => {} }: AttemptListProps) {
   console.debug(`AttemptList: ${attempts.length}`);
   const renderAttempt = ({ item }: { item: Attempt }) => (
-    <AttemptCard key={item.id} attempt={item} />
+    <AttemptCard key={item.id} attempt={item} onReplay={onReplay} />
   );
   return (
     <View style={{ flex: 1 }}>

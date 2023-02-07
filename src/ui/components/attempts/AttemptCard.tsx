@@ -14,26 +14,28 @@ import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
 interface AttemptCardProps {
   attempt: Attempt;
+  onReplay?: (attempt: Attempt) => void;
 }
 
-function AttemptCard(props: AttemptCardProps) {
+function AttemptCard({ attempt, onReplay = () => {} }: AttemptCardProps) {
   const [detailsVisible, setDetailsVisible] = useState(false);
   return (
     <>
       <Card style={styles.card} onPress={() => setDetailsVisible(true)}>
         <Card.Title
-          title={getAttemptTimeString(props.attempt)}
-          subtitle={new Date(props.attempt.unixTimestamp).toLocaleString()}
+          title={getAttemptTimeString(attempt)}
+          subtitle={new Date(attempt.unixTimestamp).toLocaleString()}
         />
         <Card.Content>
           <Text variant="bodySmall">
-            {props.attempt.solutions[0].scramble.algorithm.moves.join(' ')}
+            {attempt.solutions[0].scramble.algorithm.moves.join(' ')}
           </Text>
         </Card.Content>
       </Card>
       <AttemptDetailsModal
+        attempt={attempt}
+        onReplay={onReplay}
         visible={detailsVisible}
-        attempt={props.attempt}
         onDismiss={() => setDetailsVisible(false)}
       />
     </>

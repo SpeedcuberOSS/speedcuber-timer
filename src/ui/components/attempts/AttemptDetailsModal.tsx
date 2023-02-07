@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 interface AttemptDetailsModalProps {
   attempt: Attempt;
+  onReplay?: (attempt: Attempt) => void;
   visible: boolean;
   onDismiss: () => void;
 }
@@ -22,6 +23,7 @@ export default function AttemptDetailsModal({
   attempt,
   visible,
   onDismiss,
+  onReplay = () => {},
 }: AttemptDetailsModalProps) {
   const { t } = useTranslation();
   const [paddingBottom, setPaddingBottom] = useState(0);
@@ -34,6 +36,10 @@ export default function AttemptDetailsModal({
         <AttemptDetails
           attempt={attempt}
           onToggleScramble={visible => setPaddingBottom(visible ? 15 : 0)}
+          onReplay={attempt => {
+            onReplay(attempt);
+            onDismiss();
+          }}
         />
       </View>
     </TitledModal>

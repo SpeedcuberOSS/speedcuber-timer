@@ -8,8 +8,11 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 
 import PracticeView from '../components/PracticeView';
 import React from 'react';
+import { TimerTabScreenProps } from '../navigation/types';
 
-export default function PracticeScreen() {
+type Props = TimerTabScreenProps<'Stopwatch'>;
+
+export default function StopwatchScreen(props: Props) {
   return (
     <SafeAreaView style={styles.container}>
       <PracticeView />

@@ -6,23 +6,24 @@
 
 import { List, useTheme } from 'react-native-paper';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { Attempt } from '../../../lib/stif';
 import Icons from '../../icons/iconHelper';
 import TwistyPlayer from '../TwistyPlayer';
 import { getAttemptTimeString } from '../../utils/formatElapsedTime';
+import { getSolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
 interface AttemptDetailsProps {
   attempt: Attempt;
   onToggleScramble?: (visible: boolean) => void;
-  onToggleSolution?: (visible: boolean) => void;
+  onReplay?: (attempt: Attempt) => void;
 }
 
 export default function AttemptDetails({
   attempt,
-  onToggleScramble,
-  onToggleSolution,
+  onToggleScramble = () => {},
+  onReplay = () => {},
 }: AttemptDetailsProps) {
   const theme = useTheme();
   const [scrambleExpanded, setScrambleExpanded] = useState(false);
@@ -37,6 +38,13 @@ export default function AttemptDetails({
           left={props => (
             <List.Icon {...props} icon={Icons.Entypo('stopwatch')} />
           )}
+          right={props =>
+            getSolveReplay(attempt).length > 0 ? (
+              <TouchableOpacity onPress={() => onReplay(attempt)}>
+                <List.Icon {...props} icon={Icons.Entypo('controller-play')} />
+              </TouchableOpacity>
+            ) : null
+          }
         />
         {attempt.comment.length > 0 ? (
           <List.Item

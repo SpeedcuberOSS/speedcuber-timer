@@ -6,15 +6,17 @@
 
 import { SafeAreaView, StyleSheet } from 'react-native';
 
-import AttemptList from '../components/attempts/AttemptList';
 import AttemptsChart from '../components/charts/AttemptsChart';
 import React from 'react';
+import { TimerTabScreenProps } from '../navigation/types';
 import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
+type Props = TimerTabScreenProps<'Insights'>;
+
 let library = getLibrary();
 
-export default function InsightsScreen() {
+export default function InsightsScreen(props: Props) {
   const [event] = useCompetitiveEvent();
   const data = library.getAll();
   const attempts = data

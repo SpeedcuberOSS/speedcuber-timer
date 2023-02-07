@@ -8,10 +8,13 @@ import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
 import React, { useState } from 'react';
 
 import ActivePuzzlePlayer from '../components/ActivePuzzlePlayer';
+import { RootDrawerScreenProps } from '../navigation/types';
 import { SafeAreaView } from 'react-native';
 import useSmartPuzzles from '../utils/bluetooth/useSmartPuzzles';
 
-export default function LearnScreen() {
+type Props = RootDrawerScreenProps<'Learn'>;
+
+export default function LearnScreen(props: Props) {
   const { puzzles } = useSmartPuzzles();
   const [puzzle, setPuzzle] = useState<BluetoothPuzzle>();
   puzzles.forEach(p => {

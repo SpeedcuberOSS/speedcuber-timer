@@ -12,14 +12,13 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { SegmentedButtons, Text, useTheme } from 'react-native-paper';
+import { SegmentedButtons, useTheme } from 'react-native-paper';
 import {
   SolveReplay,
   compressDoubleTurns,
   getSolveReplay,
 } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
-import CenteredBetweenSidebars from '../../structure/CenteredBetweenSidebars';
 import PlayerControls from '../PlayerControls';
 import Reconstruction from '../reconstructions/Reconstruction';
 import TPSChart from '../charts/TPSChart';
@@ -27,7 +26,7 @@ import TwistyPlayer from './TwistyPlayer';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-interface AttemptPlayerProps {
+export interface AttemptPlayerProps {
   attempt: Attempt;
 }
 

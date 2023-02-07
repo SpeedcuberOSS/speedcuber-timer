@@ -13,12 +13,12 @@ import { IconButton, Surface, useTheme } from 'react-native-paper';
 import AttemptsScreen from '../screens/AttemptsScreen';
 import Icons from '../icons/iconHelper';
 import InsightsScreen from '../screens/InsightsScreen';
-import PracticeScreen from '../screens/PracticeScreen';
 import React from 'react';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import StopwatchScreen from '../screens/StopwatchScreen';
+import { TimerTabParamList } from './types';
 import { useTranslation } from 'react-i18next';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<TimerTabParamList>();
 
 const TimerTabBar: React.FC<BottomTabBarProps> = ({
   state,
@@ -84,10 +84,10 @@ const TimerNavigator: React.FC = () => {
       }}
       tabBar={props => <TimerTabBar {...props} />}>
       <Tab.Screen
-        name="Practice"
-        component={PracticeScreen}
+        name="Stopwatch"
+        component={StopwatchScreen}
         options={{
-          tabBarLabel: t('practice'),
+          tabBarLabel: t('timer'),
           tabBarIcon: ({ color, size }) =>
             Icons.Entypo('stopwatch')({ size, color }),
         }}
