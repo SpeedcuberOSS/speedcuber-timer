@@ -18,7 +18,7 @@ import {
   BluetoothPuzzle,
   ConnectionStatus,
 } from '../../../lib/bluetooth-puzzle';
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 import { ColorValue } from 'react-native';
 import { WebView } from 'react-native-webview';

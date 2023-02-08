@@ -7,7 +7,6 @@
 import { Dimensions, View } from 'react-native';
 
 import CenteredBetweenSidebars from './CenteredBetweenSidebars';
-import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 storiesOf('CenteredBetweenSidebars', module)

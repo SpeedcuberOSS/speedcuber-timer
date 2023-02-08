@@ -10,7 +10,7 @@ import {
   Infraction,
 } from '../../../lib/stif';
 import { Pressable, StyleSheet, Vibration } from 'react-native';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Button } from 'react-native-paper';
 import { Inspection } from '../../../lib/constants';

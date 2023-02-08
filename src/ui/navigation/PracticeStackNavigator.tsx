@@ -7,7 +7,6 @@
 import AppBar from './AppBar';
 import AttemptPlayerScreen from '../screens/AttemptPlayerScreen';
 import { PracticeStackParamList } from './types';
-import React from 'react';
 import TimerNavigator from './TimerNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
 

@@ -11,7 +11,7 @@ import BubbleTabBar, {
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import Icons from '../icons/iconHelper';
-import React from 'react';
+import * as React from 'react';
 import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 

@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { FlatList, View } from 'react-native';
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import { Attempt } from '../../../lib/stif';
 import AttemptCard from './AttemptCard';

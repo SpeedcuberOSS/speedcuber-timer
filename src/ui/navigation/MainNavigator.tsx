@@ -6,7 +6,6 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import PracticeStackNavigator from './PracticeStackNavigator';
-import React from 'react';
 import RootDrawerNavigator from './RootDrawerNavigator';
 import { useTheme } from 'react-native-paper';
 

@@ -8,7 +8,6 @@ import { StyleSheet, View } from 'react-native';
 
 import { IconButton } from 'react-native-paper';
 import Icons from '../../icons/iconHelper';
-import React from 'react';
 
 interface PlayerButtonsProps {
   isPlaying: boolean;

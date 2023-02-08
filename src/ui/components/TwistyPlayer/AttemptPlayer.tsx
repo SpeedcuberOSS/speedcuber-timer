@@ -5,13 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { AlgorithmBuilder, Attempt } from '../../../lib/stif';
-import React, {
-  useCallback,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { SegmentedButtons, useTheme } from 'react-native-paper';
 import {
   SolveReplay,

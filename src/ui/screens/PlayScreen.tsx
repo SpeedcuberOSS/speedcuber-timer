@@ -6,7 +6,6 @@
 
 import { Attempt } from '../../lib/stif';
 import AttemptPlayer from '../components/TwistyPlayer/AttemptPlayer';
-import React from 'react';
 import { RootDrawerScreenProps } from '../navigation/types';
 import { SafeAreaView } from 'react-native';
 

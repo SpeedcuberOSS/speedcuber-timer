@@ -9,7 +9,6 @@ import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { AttemptAnalytics } from '../../lib/analytics/AttemptAnalytics';
 import AttemptsChart from '../components/charts/AttemptsChart';
 import { DataTable } from 'react-native-paper';
-import React from 'react';
 import { TimerTabScreenProps } from '../navigation/types';
 import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';

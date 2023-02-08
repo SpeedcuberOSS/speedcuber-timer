@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Card, Text } from 'react-native-paper';
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 
 import { Attempt } from '../../../lib/stif';
 import AttemptDetailsModal from './AttemptDetailsModal';

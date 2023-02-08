@@ -13,7 +13,7 @@ import { IconButton, Surface, useTheme } from 'react-native-paper';
 import AttemptsScreen from '../screens/AttemptsScreen';
 import Icons from '../icons/iconHelper';
 import InsightsScreen from '../screens/InsightsScreen';
-import React from 'react';
+import * as React from 'react';
 import StopwatchScreen from '../screens/StopwatchScreen';
 import { TimerTabParamList } from './types';
 import { useTranslation } from 'react-i18next';

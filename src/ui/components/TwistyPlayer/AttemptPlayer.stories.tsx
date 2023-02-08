@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import AttemptPlayer from './AttemptPlayer';
-import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 const smartAttempt2x2x2 = require('../../../lib/bluetooth-puzzle/__fixtures__/particula_2x2x2_attempt.json');

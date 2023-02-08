@@ -6,7 +6,6 @@
 
 import AttemptPlayer from '../components/TwistyPlayer/AttemptPlayer';
 import { PracticeStackScreenProps } from '../navigation/types';
-import React from 'react';
 
 type Props = PracticeStackScreenProps<'Player'>;
 

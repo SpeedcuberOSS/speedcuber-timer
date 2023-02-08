@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Appbar, Button } from 'react-native-paper';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { CompetitiveEvent } from '../../lib/stif';
 import EventSelectorModal from '../components/events/EventSelectorModal';

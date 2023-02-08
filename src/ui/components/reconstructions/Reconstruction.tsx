@@ -6,7 +6,7 @@
 
 import { Algorithm, Scramble } from '../../../lib/stif';
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReconstructionStep, { Phase } from './ReconstructionStep';
 
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';

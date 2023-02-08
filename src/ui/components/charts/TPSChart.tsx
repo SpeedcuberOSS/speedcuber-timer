@@ -8,7 +8,6 @@ import { StyleSheet, View, processColor } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 
 import { LineChart } from 'react-native-charts-wrapper';
-import React from 'react';
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import { useTranslation } from 'react-i18next';
 

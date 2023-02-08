@@ -15,7 +15,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import PuzzleRegistry, {
   MessageSubscription,
 } from '../utils/bluetooth/SmartPuzzleRegistry';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './attempts/AttemptTime';

@@ -8,7 +8,6 @@ import { StyleSheet, View } from 'react-native';
 
 import { Attempt } from '../../lib/stif';
 import AttemptList from '../components/attempts/AttemptList';
-import React from 'react';
 import { TimerTabScreenProps } from '../navigation/types';
 import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';

@@ -7,7 +7,7 @@
 import LearnScreen from '../screens/LearnScreen';
 import PlayScreen from '../screens/PlayScreen';
 import PracticeStackNavigator from './PracticeStackNavigator';
-import React from 'react';
+import * as React from 'react';
 import { RootDrawerParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 

@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { DemoBluetoothDevice } from '../../../lib/bluetooth-puzzle/DemoBluetoothDevice';
-import React from 'react';
 import { RubiksConnected } from '../../../lib/bluetooth-puzzle';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
 import { action } from '@storybook/addon-actions';

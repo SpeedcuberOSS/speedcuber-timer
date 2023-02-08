@@ -15,7 +15,6 @@ import {
 
 import { CompetitiveEvent } from '../../../lib/stif';
 import Icons from '../../icons/iconHelper';
-import React from 'react';
 import { getKnownCompetitiveEvents } from '../../utils/knownEvents';
 import { useTranslation } from 'react-i18next';
 

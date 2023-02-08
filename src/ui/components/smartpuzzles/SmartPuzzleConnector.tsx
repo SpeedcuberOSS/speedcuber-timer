@@ -8,7 +8,7 @@ import { ConnectionStatus, MoveListener } from '../../../lib/bluetooth-puzzle';
 import PuzzleRegistry, {
   BluetoothPuzzle,
 } from '../../utils/bluetooth/SmartPuzzleRegistry';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleCard from './SmartPuzzleCard';

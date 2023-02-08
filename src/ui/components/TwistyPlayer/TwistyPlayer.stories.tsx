@@ -19,7 +19,6 @@ import {
   PUZZLE_SQUARE_1,
 } from '../../../lib/stif';
 
-import React from 'react';
 import TwistyPlayer from './TwistyPlayer';
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';

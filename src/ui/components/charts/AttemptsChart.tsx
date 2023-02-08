@@ -9,7 +9,6 @@ import { View, processColor } from 'react-native';
 import { Attempt } from '../../../lib/stif';
 import { AttemptAnalytics } from '../../../lib/analytics/AttemptAnalytics';
 import { CombinedChart } from 'react-native-charts-wrapper';
-import React from 'react';
 import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 

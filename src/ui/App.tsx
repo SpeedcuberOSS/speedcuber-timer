@@ -10,7 +10,6 @@ import FlipperAsyncStorage from 'rn-flipper-async-storage-advanced';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
-import React from 'react';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
 

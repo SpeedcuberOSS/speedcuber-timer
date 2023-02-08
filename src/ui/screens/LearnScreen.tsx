@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BluetoothPuzzle, ConnectionStatus } from '../../lib/bluetooth-puzzle';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import ActivePuzzlePlayer from '../components/ActivePuzzlePlayer';
 import { RootDrawerScreenProps } from '../navigation/types';

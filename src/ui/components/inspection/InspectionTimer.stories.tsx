@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import InspectionTimer from './InspectionTimer';
-import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { number as numberKnob } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';

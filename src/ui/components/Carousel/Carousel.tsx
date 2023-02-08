@@ -1,6 +1,7 @@
 import { Card, Surface, Text, useTheme } from 'react-native-paper';
 import { Dimensions, StyleSheet } from 'react-native';
-import React, { Children } from 'react';
+import { Children } from 'react';
+import * as React from 'react';
 
 import PaginationItem from './PaginationItem';
 import ReanimatedCarousel from 'react-native-reanimated-carousel';

@@ -6,7 +6,6 @@
 
 import { CompetitiveEvent } from '../../../lib/stif';
 import EventSelector from './EventSelector';
-import React from 'react';
 import TitledModal from '../TitledModal';
 import { useTranslation } from 'react-i18next';
 

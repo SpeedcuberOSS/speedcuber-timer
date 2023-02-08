@@ -7,7 +7,7 @@
 import { Dimensions, StyleSheet, View } from 'react-native';
 import { Modal, Portal, Surface, Text, useTheme } from 'react-native-paper';
 
-import React from 'react';
+import * as React from 'react';
 
 interface TitledModalProps {
   title: string;

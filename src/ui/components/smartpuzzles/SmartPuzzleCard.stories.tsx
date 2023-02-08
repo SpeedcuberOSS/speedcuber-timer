@@ -7,7 +7,6 @@
 import { PUZZLE_2x2x2, PUZZLE_SQUARE_1 } from '../../../lib/stif';
 
 import { ConnectionStatus } from '../../../lib/bluetooth-puzzle';
-import React from 'react';
 import { ScrollView } from 'react-native';
 import SmartPuzzleCard from './SmartPuzzleCard';
 import { action } from '@storybook/addon-actions';

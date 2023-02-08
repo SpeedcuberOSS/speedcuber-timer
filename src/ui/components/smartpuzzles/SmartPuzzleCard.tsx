@@ -15,7 +15,6 @@ import Icons, { IconFunction } from '../../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../../lib/stif';
 
 import { ConnectionStatus } from '../../../lib/bluetooth-puzzle';
-import React from 'react';
 import { StyleSheet } from 'react-native';
 
 interface SmartPuzzleCardProps {

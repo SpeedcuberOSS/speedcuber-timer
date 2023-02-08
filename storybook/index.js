@@ -10,7 +10,6 @@ import {
 } from '@storybook/react-native';
 
 import { Provider as PaperProvider } from 'react-native-paper';
-import React from 'react';
 import { getCurrentTheme } from '../src/ui/themes';
 import { loadStories } from './storyLoader';
 import { withKnobs } from '@storybook/addon-knobs';

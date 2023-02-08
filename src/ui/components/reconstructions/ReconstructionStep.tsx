@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Chip, List, Text, useTheme } from 'react-native-paper';
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import Icons from '../../icons/iconHelper';
 import { StyleSheet } from 'react-native';

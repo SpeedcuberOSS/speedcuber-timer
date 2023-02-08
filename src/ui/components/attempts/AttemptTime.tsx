@@ -7,7 +7,6 @@
 import { Attempt, Penalty } from '../../../lib/stif';
 import { StyleSheet, View } from 'react-native';
 
-import React from 'react';
 import { Text } from 'react-native-paper';
 import Time from '../Time';
 

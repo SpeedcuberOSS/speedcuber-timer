@@ -17,7 +17,7 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import OcticonsIcon from 'react-native-vector-icons/Octicons';
-import React from 'react';
+import * as React from 'react';
 import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
 import ZocialIcon from 'react-native-vector-icons/Zocial';
 

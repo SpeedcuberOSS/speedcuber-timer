@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import EventSelector from './EventSelector';
-import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 storiesOf('EventSelector', module).add('default', () => (
