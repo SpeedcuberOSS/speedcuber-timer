@@ -38,12 +38,15 @@ export default function InsightsScreen(props: Props) {
           </DataTable.Header>
         </DataTable>
         {averages.map(count => (
+          // @ts-ignore
           <DataTable.Row key={count}>
+            {/* @ts-ignore */}
             <DataTable.Cell>{`Ao${count}`}</DataTable.Cell>
             {/* <DataTable.Cell>
               {Math.min(...new AttemptAnalytics(data).sliding.AoX(count)) /
                 1000}
             </DataTable.Cell> */}
+            {/* @ts-ignore */}
             <DataTable.Cell>
               {new AttemptAnalytics(data.slice(-count)).AoX(count) / 1000}
             </DataTable.Cell>

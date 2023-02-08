@@ -23,8 +23,8 @@ interface SmartPuzzleCardProps {
   brand: string;
   connectionStatus?: ConnectionStatus;
   puzzle?: Puzzle;
-  onConnect: () => Promise<void>;
-  onDisconnect: () => Promise<void>;
+  onConnect: () => void;
+  onDisconnect: () => void;
 }
 
 const PuzzleIcons = new Map<Puzzle, IconFunction>([
@@ -57,6 +57,7 @@ function SmartPuzzleCard({
         right={() => {
           if (connectionStatus === ConnectionStatus.DISCONNECTED) {
             return (
+              // @ts-ignore
               <IconButton
                 mode="contained"
                 icon={Icons.MaterialCommunityIcons('bluetooth')}
@@ -68,6 +69,7 @@ function SmartPuzzleCard({
             return <ActivityIndicator animating style={styles.connecting} />;
           } else if (connectionStatus === ConnectionStatus.CONNECTED) {
             return (
+              // @ts-ignore
               <IconButton
                 mode="contained"
                 icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
@@ -77,6 +79,7 @@ function SmartPuzzleCard({
             );
           } else if (connectionStatus === 'failed') {
             return (
+              // @ts-ignore
               <IconButton
                 icon={Icons.Entypo('warning')}
                 style={styles.connection}
@@ -84,6 +87,7 @@ function SmartPuzzleCard({
             );
           } else {
             return (
+              // @ts-ignore
               <IconButton
                 icon={Icons.FontAwesome('question')}
                 style={styles.connection}

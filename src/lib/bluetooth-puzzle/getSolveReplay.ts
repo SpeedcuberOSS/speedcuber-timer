@@ -64,7 +64,7 @@ function parseMoves(messageStream: MessageStream) {
         m: parser(m),
       };
     })
-    .filter(({ m }) => m?.x === undefined)
+    .filter(({ m }) => !m?.hasOwnProperty('x')) // Filter out Rotation messages
     .map(({ t, m }) => {
       return {
         t,

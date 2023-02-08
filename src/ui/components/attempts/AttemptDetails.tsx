@@ -32,6 +32,7 @@ export default function AttemptDetails({
   return (
     <ScrollView style={styles.container}>
       <List.Section>
+        {/* @ts-ignore */}
         <List.Item
           title={getAttemptTimeString(attempt)}
           description={new Date(attempt.unixTimestamp).toLocaleString()}
@@ -47,6 +48,7 @@ export default function AttemptDetails({
           }
         />
         {attempt.comment.length > 0 ? (
+          // @ts-ignore
           <List.Item
             title={attempt.comment}
             titleNumberOfLines={0}

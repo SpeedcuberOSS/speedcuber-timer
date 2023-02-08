@@ -16,6 +16,7 @@ const Stack = createStackNavigator<PracticeStackParamList>();
 export default function PracticeStackNavigator() {
   return (
     <Stack.Navigator>
+      {/* @ts-ignore */}
       <Stack.Group screenOptions={{ header: AppBar }}>
         <Stack.Screen name="Timer" component={TimerNavigator} />
       </Stack.Group>

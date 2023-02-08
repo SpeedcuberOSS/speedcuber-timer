@@ -31,14 +31,17 @@ export default function PlayerButtons({
 }: PlayerButtonsProps) {
   return (
     <View style={styles.container}>
+      {/* @ts-ignore */}
       <IconButton
         icon={Icons.Entypo('controller-jump-to-start')}
         onPress={onJumpToStart}
       />
+      {/* @ts-ignore */}
       <IconButton
         icon={Icons.Entypo('controller-fast-backward')}
         onPress={onJumpBackward}
       />
+      {/* @ts-ignore */}
       <IconButton
         icon={
           isPlaying
@@ -48,10 +51,12 @@ export default function PlayerButtons({
         animated={true}
         onPress={isPlaying ? onPause : onPlay}
       />
+      {/* @ts-ignore */}
       <IconButton
         icon={Icons.Entypo('controller-fast-forward')}
         onPress={onJumpForward}
       />
+      {/* @ts-ignore */}
       <IconButton
         icon={Icons.Entypo('controller-next')}
         onPress={onJumpToEnd}

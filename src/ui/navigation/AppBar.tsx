@@ -24,8 +24,10 @@ export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
     <>
       <Appbar.Header mode="center-aligned" elevated>
         {back ? (
+          // @ts-ignore
           <Appbar.BackAction onPress={navigation.goBack} />
         ) : (
+          // @ts-ignore
           <Appbar.Action icon="menu" onPress={navigation.toggleDrawer} />
         )}
         <Appbar.Content
@@ -38,6 +40,7 @@ export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
             </Button>
           }
         />
+        {/* @ts-ignore */}
         <Appbar.Action
           icon="bluetooth"
           onPress={() => setShowPuzzleScanner(true)}

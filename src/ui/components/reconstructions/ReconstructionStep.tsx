@@ -93,6 +93,7 @@ function ReconstructionStep({
         </Chip>
       )}
       description={Moves}>
+      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.recognition')}
         left={props => (
@@ -104,6 +105,7 @@ function ReconstructionStep({
           </Chip>
         )}
       />
+      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.execution')}
         left={props => (
@@ -115,6 +117,7 @@ function ReconstructionStep({
           </Chip>
         )}
       />
+      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.tps')}
         left={props => (

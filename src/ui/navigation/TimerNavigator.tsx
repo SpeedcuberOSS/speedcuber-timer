@@ -53,6 +53,7 @@ const TimerTabBar: React.FC<BottomTabBarProps> = ({
         };
 
         return (
+          // @ts-ignore
           <IconButton
             key={route.key}
             icon={() =>
