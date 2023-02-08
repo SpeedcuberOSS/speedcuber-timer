@@ -1,5 +1,6 @@
 // prettier-ignore
 {
+  "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Projects */
@@ -94,7 +95,6 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "node_modules.bak",
     "babel.config.js",
     "metro.config.js",
     "jest.config.js"
