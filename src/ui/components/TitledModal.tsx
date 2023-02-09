@@ -4,15 +4,16 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import * as React from 'react';
+
 import { Dimensions, StyleSheet, View } from 'react-native';
 import { Modal, Portal, Surface, Text, useTheme } from 'react-native-paper';
-
-import * as React from 'react';
 
 interface TitledModalProps {
   title: string;
   visible: boolean;
   onDismiss: () => void;
+  children: React.ReactNode;
 }
 
 const MODAL_HEIGHT = 0.6 * Dimensions.get('window').height;
