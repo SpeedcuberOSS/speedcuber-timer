@@ -4,11 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Algorithm, Scramble } from '../../../lib/stif';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { useEffect, useRef, useState } from 'react';
 import ReconstructionStep, { Phase } from './ReconstructionStep';
+import { useEffect, useRef, useState } from 'react';
 
+import { Scramble } from '../../../lib/stif';
 import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import getReconstruction from '../../../lib/bluetooth-puzzle/getReconstruction';
 
@@ -60,35 +60,36 @@ export default function Reconstruction({
       });
     }
   }, [atTimestamp]);
-
   return (
     <View style={styles.container}>
-      <FlatList
-        ref={ref}
-        data={steps}
-        initialScrollIndex={1}
-        getItemLayout={(data, index) => ({
-          length: 75,
-          offset: 75 * index,
-          index,
-        })}
-        renderItem={({ item }) => {
-          let timestamp = atTimestamp;
-          if (atTimestamp < item.moves[0]?.t) {
-            timestamp = 0;
-          } else if (atTimestamp > item.moves[item.moves.length - 1]?.t) {
-            timestamp = Infinity;
-          }
-          return (
-            <ReconstructionStep
-              key={item.label}
-              {...item}
-              elapsed={timestamp}
-            />
-          );
-        }}
-        keyExtractor={item => item.label}
-      />
+      {steps.length > 0 ? (
+        <FlatList
+          ref={ref}
+          data={steps}
+          initialScrollIndex={1}
+          getItemLayout={(data, index) => ({
+            length: 75,
+            offset: 75 * index,
+            index,
+          })}
+          renderItem={({ item }) => {
+            let timestamp = atTimestamp;
+            if (atTimestamp < item.moves[0]?.t) {
+              timestamp = 0;
+            } else if (atTimestamp > item.moves[item.moves.length - 1]?.t) {
+              timestamp = Infinity;
+            }
+            return (
+              <ReconstructionStep
+                key={item.label}
+                {...item}
+                elapsed={timestamp}
+              />
+            );
+          }}
+          keyExtractor={item => item.label}
+        />
+      ) : null}
     </View>
   );
 }
