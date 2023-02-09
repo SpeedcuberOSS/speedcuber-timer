@@ -1,11 +1,12 @@
-import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
-import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
-
 // Copyright (c) 2022 Joseph Hale <me@jhale.dev>
 //
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
+import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
+
 import { Buffer } from 'buffer';
 
 export class RubiksConnected extends BluetoothPuzzle {
@@ -81,9 +82,17 @@ interface RawGoCubeMessage {
 
 export function parseMessage(message: string) {
   const hexValues = base64ValueToHexArray(message);
-  const rawMmessage = parseHexValuesIntoRawMessage(hexValues);
-  validateMessage(rawMmessage);
-  return parseRawMessage(rawMmessage);
+  const rawMessage = parseHexValuesIntoRawMessage(hexValues);
+  try {
+    validateMessage(rawMessage);
+    return parseRawMessage(rawMessage);
+  } catch (e) {
+    throw new Error(
+      `Couldn't parse message because '${e}': ${message} -> ${JSON.stringify(
+        rawMessage,
+      )}`,
+    );
+  }
 }
 
 function parseHexValuesIntoRawMessage(hexValues: string[]): RawGoCubeMessage {
@@ -106,22 +115,32 @@ function validateMessage(msg: RawGoCubeMessage): void {
 }
 
 function validatePrefix(prefix: string): void {
-  console.assert(prefix === '2A', 'Prefix should be 0x2A');
+  if (prefix !== '2A') {
+    throw new Error(`Invalid prefix: ${prefix}`);
+  }
 }
 
 function validateSuffix(suffix: string[]): void {
-  console.assert(
-    suffix[0] === '0D' && suffix[1] === '0A',
-    'Suffix should be 0x0D,0x0A (CR,LF)',
-  );
+  if (suffix.length !== 2 || suffix[0] !== '0D' || suffix[1] !== '0A') {
+    throw new Error(
+      `Invalid suffix: ${JSON.stringify(suffix)}. Should be 0x0D,0x0A (CR,LF)`,
+    );
+  }
 }
 
-function validateChecksum(msg: RawGoCubeMessage) {
+function validateChecksum(msg: RawGoCubeMessage): void {
   const checksummedParts = [msg.prefix, msg.length, msg.type, ...msg.message];
-  const checksum = checksummedParts
+  const summedParts = checksummedParts
     .reduce((a, b) => (parseInt(a, 16) + parseInt(b, 16)).toString(16))
     .toUpperCase();
-  console.assert(msg.checksum === checksum, 'Checksum should match');
+  const checksumValue = (parseInt(summedParts, 16) % parseInt('100', 16))
+    .toString(16)
+    .toUpperCase();
+  const checksum =
+    checksumValue.length === 1 ? `0${checksumValue}` : checksumValue;
+  if (checksum !== msg.checksum) {
+    throw new Error(`Invalid checksum: ${checksum}. Should be ${msg.checksum}`);
+  }
 }
 
 enum GoCubeMessageType {
