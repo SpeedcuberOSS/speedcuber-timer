@@ -7,12 +7,12 @@
 import { AttemptLibrary } from './interfaces/library';
 // import { AsyncStorageAttemptLibrary } from './AsyncStorageAttemptLibrary';
 // import { InMemoryAttemptLibrary } from './InMemoryAttemptLibrary';
-import { DemoAttemptLibrary } from './DemoAttemptLibrary';
-// import { FileSystemAttemptLibrary } from './FileSystemAttemptLibrary';
+// import { DemoAttemptLibrary } from './DemoAttemptLibrary';
+import { FileSystemAttemptLibrary } from './FileSystemAttemptLibrary';
 
-let LIBRARY = new DemoAttemptLibrary();
+// let LIBRARY = new DemoAttemptLibrary();
 // let LIBRARY = new InMemoryAttemptLibrary();
-// let LIBRARY = new FileSystemAttemptLibrary();
+let LIBRARY = new FileSystemAttemptLibrary();
 
 export function getLibrary(): AttemptLibrary {
   return LIBRARY;

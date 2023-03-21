@@ -6,6 +6,7 @@
 
 import {
   DocumentDirectoryPath,
+  ExternalDirectoryPath,
   exists,
   readFile,
   writeFile,
@@ -13,8 +14,13 @@ import {
 import { logError, mergeLibraries, parseAttemptMap } from './_helpers';
 
 import { PersistentAttemptLibrary } from './PersistentAttemptLibrary';
+import { Platform } from 'react-native';
 
-const STORAGE_PATH = `${DocumentDirectoryPath}/attempts.json`;
+const FOLDER_PATH = Platform.select({
+  ios: DocumentDirectoryPath,
+  android: ExternalDirectoryPath,
+});
+const STORAGE_PATH = `${FOLDER_PATH}/attempts.json`;
 
 class FileSystemAttemptLibrary extends PersistentAttemptLibrary {
   protected async loadLibraryFromStorage(): Promise<string> {
