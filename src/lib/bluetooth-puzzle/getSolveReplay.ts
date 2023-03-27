@@ -11,6 +11,7 @@ import {
   SmartPuzzle,
 } from '../stif';
 
+import { parseMessage as parseGiiKERMessage } from './GiiKER';
 import { parseMessage as parseHeyKubeMessage } from './HeyKube';
 import { parseMessage as parseParticulaMessage } from './ParticulaPuzzle';
 
@@ -94,6 +95,8 @@ function getMessageParserForSmartPuzzle(
     };
   } else if (smartPuzzle.brand === 'HeyKube') {
     return parseHeyKubeMessage;
+  } else if (smartPuzzle.brand === 'GiiKER') {
+    return parseGiiKERMessage;
   } else {
     return (message: string) => message;
   }

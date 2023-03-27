@@ -59,9 +59,32 @@ export const HeyKube: SmartPuzzle = {
   },
 };
 
+export const GiiKERPuzzle: SmartPuzzle = {
+  prefix: '',
+  brand: 'GiiKER',
+  puzzle: PUZZLE_3x3x3,
+  uuids: {
+    trackingService: '0000aadb-0000-1000-8000-00805f9b34fb',
+    trackingCharacteristic: '0000aadc-0000-1000-8000-00805f9b34fb',
+  },
+};
+
+export const GiiKER3x3x3: SmartPuzzle = {
+  ...GiiKERPuzzle,
+  prefix: 'Gi',
+};
+
+export const GiiKER2x2x2: SmartPuzzle = {
+  ...GiiKERPuzzle,
+  prefix: 'Gi2',
+  puzzle: PUZZLE_2x2x2,
+};
+
 export const KNOWN_PUZZLE_MODELS: SmartPuzzle[] = [
   RubiksConnected,
   GoCube,
   GoCube2x2x2,
   HeyKube,
+  GiiKER3x3x3,
+  GiiKER2x2x2,
 ];
