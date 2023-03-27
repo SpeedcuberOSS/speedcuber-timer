@@ -59,12 +59,14 @@ function getMessageStream(attempt: Attempt): MessageStream {
 
 function parseMoves(messageStream: MessageStream) {
   const parser = getMessageParserForSmartPuzzle(messageStream.data.smartPuzzle);
-  const moves = messageStream.data.stream.map(({ t, m }) => {
-    return {
-      t,
-      m: parser(m),
-    };
-  });
+  const moves = messageStream.data.stream
+    .map(({ t, m }) => {
+      return {
+        t,
+        m: parser(m),
+      };
+    })
+    .filter(({ m }) => m !== '');
   return moves;
 }
 
