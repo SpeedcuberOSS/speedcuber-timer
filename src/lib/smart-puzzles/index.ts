@@ -21,7 +21,7 @@ export const UnknownPuzzle: SmartPuzzle = {
   },
 };
 
-const ParticulaPuzzle: SmartPuzzle = {
+export const ParticulaPuzzle: SmartPuzzle = {
   prefix: '',
   brand: 'Particula GoCube',
   puzzle: PUZZLE_3x3x3,

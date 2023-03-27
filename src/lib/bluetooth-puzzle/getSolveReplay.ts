@@ -10,6 +10,7 @@ import {
   MessageStream,
   SmartPuzzle,
 } from '../stif';
+import { GiiKERPuzzle, HeyKube, ParticulaPuzzle } from '../smart-puzzles';
 
 import { parseMessage as parseGiiKERMessage } from './GiiKER';
 import { parseMessage as parseHeyKubeMessage } from './HeyKube';
@@ -86,7 +87,8 @@ function convertParticulaRotationMessageToAlgMove(message: any) {
 function getMessageParserForSmartPuzzle(
   smartPuzzle: SmartPuzzle,
 ): (message: string) => string {
-  if (smartPuzzle.brand === 'Particula') {
+  const uuid = smartPuzzle.uuids.trackingService;
+  if (ParticulaPuzzle.uuids.trackingService === uuid) {
     return (message: string) => {
       let parsedMove = '';
       let parsedMessage = parseParticulaMessage(message);
@@ -95,9 +97,9 @@ function getMessageParserForSmartPuzzle(
       }
       return parsedMove;
     };
-  } else if (smartPuzzle.brand === 'HeyKube') {
+  } else if (HeyKube.uuids.trackingService === uuid) {
     return parseHeyKubeMessage;
-  } else if (smartPuzzle.brand === 'GiiKER') {
+  } else if (GiiKERPuzzle.uuids.trackingService === uuid) {
     return parseGiiKERMessage;
   } else {
     return (message: string) => message;
