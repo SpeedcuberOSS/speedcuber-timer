@@ -48,8 +48,20 @@ export const GoCube2x2x2: SmartPuzzle = {
   puzzle: PUZZLE_2x2x2,
 };
 
+export const HeyKube: SmartPuzzle = {
+  prefix: 'HEYKUBE',
+  brand: 'HeyKube',
+  puzzle: PUZZLE_3x3x3,
+  uuids: {
+    trackingService: 'b46a791a-8273-4fc1-9e67-94d3dc2aac1c',
+    trackingCharacteristic: 'a2f41a4e-0e31-4bbc-9389-4253475481fb',
+    batteryCharacteristic: 'fd51b3ba-99c7-49c6-9f85-5644ff56a378',
+  },
+};
+
 export const KNOWN_PUZZLE_MODELS: SmartPuzzle[] = [
   RubiksConnected,
   GoCube,
   GoCube2x2x2,
+  HeyKube,
 ];

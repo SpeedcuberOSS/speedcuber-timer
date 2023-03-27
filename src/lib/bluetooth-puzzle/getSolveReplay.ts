@@ -11,7 +11,8 @@ import {
   SmartPuzzle,
 } from '../stif';
 
-import { parseMessage } from './RubiksConnected';
+import { parseMessage as parseHeyKubeMessage } from './HeyKube';
+import { parseMessage as parseParticulaMessage } from './ParticulaPuzzle';
 
 export type SolveReplay = { t: number; m: string }[];
 
@@ -57,20 +58,12 @@ function getMessageStream(attempt: Attempt): MessageStream {
 
 function parseMoves(messageStream: MessageStream) {
   const parser = getMessageParserForSmartPuzzle(messageStream.data.smartPuzzle);
-  const moves = messageStream.data.stream
-    .map(({ t, m }) => {
-      return {
-        t,
-        m: parser(m),
-      };
-    })
-    .filter(({ m }) => !m?.hasOwnProperty('x')) // Filter out Rotation messages
-    .map(({ t, m }) => {
-      return {
-        t,
-        m: convertParticulaRotationMessageToAlgMove(m),
-      };
-    });
+  const moves = messageStream.data.stream.map(({ t, m }) => {
+    return {
+      t,
+      m: parser(m),
+    };
+  });
   return moves;
 }
 
@@ -87,9 +80,23 @@ function convertParticulaRotationMessageToAlgMove(message: any) {
   return moveStr;
 }
 
-function getMessageParserForSmartPuzzle(smartPuzzle: SmartPuzzle) {
-  // TODO return different parsers based on smartPuzzle type.
-  return parseMessage;
+function getMessageParserForSmartPuzzle(
+  smartPuzzle: SmartPuzzle,
+): (message: string) => string {
+  if (smartPuzzle.brand === 'Particula') {
+    return (message: string) => {
+      let parsedMove = '';
+      let parsedMessage = parseParticulaMessage(message);
+      if (!parsedMessage?.hasOwnProperty('x')) {
+        parsedMove = convertParticulaRotationMessageToAlgMove(parsedMessage);
+      }
+      return parsedMove;
+    };
+  } else if (smartPuzzle.brand === 'HeyKube') {
+    return parseHeyKubeMessage;
+  } else {
+    return (message: string) => message;
+  }
 }
 
 function adjustTimestampsRelativeToInspectionComplete(

@@ -9,7 +9,7 @@ import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
 
 import { Buffer } from 'buffer';
 
-export class RubiksConnected extends BluetoothPuzzle {
+export class ParticulaPuzzle extends BluetoothPuzzle {
   moveListeners: Map<string, MoveListener> = new Map();
   brand(): string {
     return 'Rubiks Connected';
@@ -47,7 +47,7 @@ export class RubiksConnected extends BluetoothPuzzle {
   }
 }
 
-export class GoCube extends RubiksConnected {
+export class GoCube extends ParticulaPuzzle {
   brand(): string {
     return 'GoCube';
   }
@@ -56,7 +56,7 @@ export class GoCube extends RubiksConnected {
   }
 }
 
-export class GoCube2x2x2 extends RubiksConnected {
+export class GoCube2x2x2 extends ParticulaPuzzle {
   brand(): string {
     return 'GoCube 2x2';
   }

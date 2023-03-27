@@ -5,14 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { DemoBluetoothDevice } from '../../../lib/bluetooth-puzzle/DemoBluetoothDevice';
-import { RubiksConnected } from '../../../lib/bluetooth-puzzle';
+import { ParticulaPuzzle } from '../../../lib/bluetooth-puzzle';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
 
 const device = new DemoBluetoothDevice();
 device.delayConnection(1000);
-const puzzle = new RubiksConnected(device);
+const puzzle = new ParticulaPuzzle(device);
 
 // storiesOf('SmartPuzzleConnector', module).add('3x3x3', () => (
 //   // This component works in the app, but in Storybook, the Promises

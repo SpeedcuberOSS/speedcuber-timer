@@ -9,6 +9,7 @@ import { Puzzle } from './Puzzle';
 interface SmartPuzzleUUIDs {
   trackingService: string;
   trackingCharacteristic: string;
+  batteryCharacteristic?: string;
 }
 
 export interface SmartPuzzle {

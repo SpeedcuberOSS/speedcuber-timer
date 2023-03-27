@@ -6,4 +6,4 @@
 
 export * from './BluetoothDevice';
 export * from './BluetoothPuzzle';
-export * from './RubiksConnected';
+export * from './ParticulaPuzzle';

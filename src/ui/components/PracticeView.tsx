@@ -15,7 +15,6 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import PuzzleRegistry, {
   MessageSubscription,
 } from '../utils/bluetooth/SmartPuzzleRegistry';
-import { useState } from 'react';
 
 import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './attempts/AttemptTime';
@@ -27,6 +26,7 @@ import { getLibrary } from '../../lib/attempts';
 import { getScrambler } from '../../lib/scrambles/mandy';
 import { t } from 'i18next';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
+import { useState } from 'react';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -70,6 +70,7 @@ export default function PracticeView() {
       messageStreamBuilder.setSmartPuzzle(smartPuzzle);
       setMessageSubscription(
         PuzzleRegistry.addMessageListener(smartPuzzle, message => {
+          console.debug('Message received:', message);
           messageStreamBuilder.addMessages([message]);
         }),
       );
