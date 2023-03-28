@@ -16,7 +16,7 @@ interface TitledModalProps {
   children: React.ReactNode;
 }
 
-const MODAL_HEIGHT = 0.6 * Dimensions.get('window').height;
+const MODAL_HEIGHT = 0.8 * Dimensions.get('window').height;
 
 const TitledModal: React.FC<TitledModalProps> = ({
   title,
