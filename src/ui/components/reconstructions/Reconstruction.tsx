@@ -37,18 +37,18 @@ export default function Reconstruction({
   duration,
   atTimestamp,
 }: ReconstructionProps) {
-  const [steps, setSteps] = useState<Phase[]>([]);
+  const [phases, setPhases] = useState<Phase[]>([]);
   useEffect(() => {
     const phases = getReconstruction(scramble, solveReplay, 'CFOP', duration);
-    setSteps(phases);
+    setPhases(phases);
   }, [scramble, solveReplay]);
 
   const ref = useRef<FlatList>(null);
   useEffect(() => {
-    if (ref.current && steps.length > 0) {
+    if (ref.current && phases.length > 0) {
       let idx = 0;
-      for (let i = 0; i < steps.length; i++) {
-        if (atTimestamp < steps[i].moves[0]?.t) {
+      for (let i = 0; i < phases.length; i++) {
+        if (atTimestamp < phases[i].moves[0]?.t) {
           break;
         }
         idx = i;
@@ -62,10 +62,10 @@ export default function Reconstruction({
   }, [atTimestamp]);
   return (
     <View style={styles.container}>
-      {steps.length > 0 ? (
+      {phases.length > 0 ? (
         <FlatList
           ref={ref}
-          data={steps}
+          data={phases}
           initialScrollIndex={1}
           getItemLayout={(data, index) => ({
             length: 75,
