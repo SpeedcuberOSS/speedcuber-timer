@@ -28,7 +28,7 @@ life.
 ## Development Setup
 
 Start by following the [React Native CLI
-Quickstart](https://reactnative.dev/docs/environment-setup) from the
+Quickstart](https://reactnative.dev/docs/environment-setup?guide=native) from the
 official docs.
 
 Then fork and clone this repository to your machine.
@@ -43,8 +43,7 @@ From there you can start experimenting with making any changes you like!
 Nearly all development on Speedcuber Timer occurs within the `src`
 folder. Here's what each subfolder contains:
 
-- `components`: Individual, reusable UI components for the clock and its
-  settings page.
+- `components`: Individual, reusable UI components for the app.
 - `localization`: Translations and localization settings.
 - `navigation`: Controls for navigating between screens of the app.
 - `screens`: Complete screens for the app.
