@@ -31,6 +31,7 @@
 		2C324C592851D08D00A07F04 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C492851D08D00A07F04 /* EvilIcons.ttf */; };
 		2C324C5A2851D08D00A07F04 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */; };
 		2C324C5B2851D08D00A07F04 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */; };
+		2C7269FA2A42CB3600DE8816 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */; };
 		2C7CA2E22901C77700277A1C /* WCAEvent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E12901C77700277A1C /* WCAEvent.ttf */; };
 		2C7CA2E42901C79400277A1C /* WCAEventUnofficial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */; };
 		2C7CA2E62901C79E00277A1C /* WCAInfraction.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */; };
@@ -89,6 +90,7 @@
 		2C324C492851D08D00A07F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = SpeedcuberTimer/BootSplash.storyboard; sourceTree = "<group>"; };
 		2C7CA2E12901C77700277A1C /* WCAEvent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAEvent.ttf; path = ../../../src/ui/icons/wca/WCAEvent/WCAEvent.ttf; sourceTree = "<group>"; };
 		2C7CA2E32901C79400277A1C /* WCAEventUnofficial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAEventUnofficial.ttf; path = ../../../src/ui/icons/wca/WCAEventUnofficial/WCAEventUnofficial.ttf; sourceTree = "<group>"; };
 		2C7CA2E52901C79E00277A1C /* WCAInfraction.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WCAInfraction.ttf; path = ../../../src/ui/icons/wca/WCAInfraction/WCAInfraction.ttf; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -381,6 +384,7 @@
 				2C324C512851D08D00A07F04 /* MaterialCommunityIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				2C7269FA2A42CB3600DE8816 /* BootSplash.storyboard in Resources */,
 				2C7CA2E62901C79E00277A1C /* WCAInfraction.ttf in Resources */,
 				C76D4E88E97D4B4194011564 /* Rubik-Black.ttf in Resources */,
 				53C967E2AD56445D913C72A5 /* Rubik-BlackItalic.ttf in Resources */,
@@ -647,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -675,7 +679,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

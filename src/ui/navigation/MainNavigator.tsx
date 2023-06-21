@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { NavigationContainer } from '@react-navigation/native';
-import PracticeStackNavigator from './PracticeStackNavigator';
+import RNBootSplash from 'react-native-bootsplash';
 import RootDrawerNavigator from './RootDrawerNavigator';
 import { useTheme } from 'react-native-paper';
 
@@ -13,7 +13,9 @@ const MainNavigator = () => {
   const theme = useTheme();
   return (
     // @ts-ignore
-    <NavigationContainer theme={theme}>
+    <NavigationContainer
+      theme={theme}
+      onReady={() => RNBootSplash.hide({ fade: true, duration: 500 })}>
       <RootDrawerNavigator />
     </NavigationContainer>
   );
