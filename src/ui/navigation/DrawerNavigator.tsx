@@ -4,7 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import LearnScreen from '../screens/LearnScreen';
 import PlayScreen from '../screens/PlayScreen';
 import PracticeNavigator from './PracticeNavigator';
 import * as React from 'react';
@@ -27,7 +26,6 @@ const DrawerNavigator: React.FC = () => {
         />
       )}
       <Drawer.Screen name="Practice" component={PracticeNavigator} />
-      <Drawer.Screen name="Learn" component={LearnScreen} />
       <Drawer.Screen name="Play" component={PlayScreen} />
     </Drawer.Navigator>
   );
