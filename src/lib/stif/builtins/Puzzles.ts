@@ -4,56 +4,17 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Puzzle } from '../types/Puzzle';
+import { STIF } from '../STIF';
 
-const PUZZLE_UNKNOWN: Puzzle = Object.freeze({
-  id: 'unknown',
-});
-const PUZZLE_2x2x2: Puzzle = Object.freeze({
-  id: '222',
-});
-const PUZZLE_3x3x3: Puzzle = Object.freeze({
-  id: '333',
-});
-const PUZZLE_4x4x4: Puzzle = Object.freeze({
-  id: '444',
-});
-const PUZZLE_5x5x5: Puzzle = Object.freeze({
-  id: '555',
-});
-const PUZZLE_6x6x6: Puzzle = Object.freeze({
-  id: '666',
-});
-const PUZZLE_7x7x7: Puzzle = Object.freeze({
-  id: '777',
-});
-const PUZZLE_CLOCK: Puzzle = Object.freeze({
-  id: 'clock',
-});
-const PUZZLE_SQUARE_1: Puzzle = Object.freeze({
-  id: 'sq1',
-});
-const PUZZLE_MEGAMINX: Puzzle = Object.freeze({
-  id: 'minx',
-});
-const PUZZLE_PYRAMINX: Puzzle = Object.freeze({
-  id: 'pyram',
-});
-const PUZZLE_SKEWB: Puzzle = Object.freeze({
-  id: 'skewb',
-});
-
-export {
-  PUZZLE_UNKNOWN,
-  PUZZLE_2x2x2,
-  PUZZLE_3x3x3,
-  PUZZLE_4x4x4,
-  PUZZLE_5x5x5,
-  PUZZLE_6x6x6,
-  PUZZLE_7x7x7,
-  PUZZLE_CLOCK,
-  PUZZLE_SQUARE_1,
-  PUZZLE_MEGAMINX,
-  PUZZLE_PYRAMINX,
-  PUZZLE_SKEWB,
-};
+export const PUZZLE_UNKNOWN: STIF.Puzzle = 'unknown'
+export const PUZZLE_2x2x2: STIF.Puzzle = '222'
+export const PUZZLE_3x3x3: STIF.Puzzle = '333'
+export const PUZZLE_4x4x4: STIF.Puzzle = '444'
+export const PUZZLE_5x5x5: STIF.Puzzle = '555'
+export const PUZZLE_6x6x6: STIF.Puzzle = '666'
+export const PUZZLE_7x7x7: STIF.Puzzle = '777'
+export const PUZZLE_CLOCK: STIF.Puzzle = 'clock'
+export const PUZZLE_SQUARE_1: STIF.Puzzle = 'sq1'
+export const PUZZLE_MEGAMINX: STIF.Puzzle = 'minx'
+export const PUZZLE_PYRAMINX: STIF.Puzzle = 'pyram'
+export const PUZZLE_SKEWB: STIF.Puzzle = 'skewb'
