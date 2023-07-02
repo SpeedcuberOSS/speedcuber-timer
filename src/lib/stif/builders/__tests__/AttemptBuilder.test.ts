@@ -8,157 +8,214 @@ import { AttemptBuilder } from '../AttemptBuilder';
 import { v4 as uuid } from 'uuid';
 import {
   EVENT_3x3x3,
+  EVENT_RELAY_23,
   INSPECTION_EXCEEDED_17_SECONDS,
+  PUZZLE_2x2x2,
   PUZZLE_3x3x3,
+  PUZZLE_4x4x4,
   TIMELIMIT_EXCEEDED,
 } from '../../builtins';
-import { Attempt } from '../../types';
+import { STIF, UnixTimestamp } from '../../STIF';
 import { SolutionBuilder } from '../SolutionBuilder';
-import { ScrambleBuilder } from '../ScrambleBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
 
-let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
-let TEST_SOLUTION = new SolutionBuilder().setScramble(TEST_SCRAMBLE).build();
+const TEST_SOLUTION = new SolutionBuilder()
+  .setPuzzle(PUZZLE_3x3x3)
+  .setScramble(['R', 'U'])
+  .build();
+const PREPARED_TIMES = () =>
+  new AttemptBuilder().setInspectionStart().setSolveStart().setSolveEnd();
+const PREPARED_BUILD = () =>
+  PREPARED_TIMES().setEvent(EVENT_3x3x3).addSolution(TEST_SOLUTION);
 
-describe("AttemptBuilder's API", () => {
-  it('provides a static method for creating basic attempts', () => {
-    let attempt = AttemptBuilder.buildBasic(EVENT_3x3x3, TEST_SCRAMBLE, 10000);
-    expect(attempt.event).toEqual(EVENT_3x3x3);
-    expect(attempt.duration).toEqual(10000);
-    expect(attempt.solutions[0].scramble).toEqual(TEST_SCRAMBLE);
-    expect(attempt.unixTimestamp).toBeGreaterThan(new Date().getTime() - 1000);
-    expect(attempt.unixTimestamp).toBeLessThan(new Date().getTime() + 1000);
-    expect(attempt.infractions).toEqual([]);
-    expect(attempt.comment).toEqual('');
-  });
-});
+const expectTime = (actual: UnixTimestamp) => {
+  return {
+    toBeAbout: (expected: UnixTimestamp, margin: number = 100) => {
+      expect(actual).toBeGreaterThan(expected - margin);
+      expect(actual).toBeLessThan(expected + margin);
+    },
+  };
+};
 
 describe('A new AttemptBuilder', () => {
   describe('builds successfully when', () => {
-    it("is given an event, a duration, and at least one solution (the 'CORE FIELDS')", () => {
-      let attempt: Attempt = new AttemptBuilder()
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .build();
+    it('is given its required fields', () => {
+      const NOW = new Date().getTime();
+
+      let attempt: STIF.Attempt = PREPARED_BUILD().build();
+
+      expect(attempt.id).toBeDefined();
       expect(attempt.event).toEqual(EVENT_3x3x3);
-      expect(attempt.duration).toEqual(10000);
       expect(attempt.solutions).toEqual([TEST_SOLUTION]);
-      expect(attempt.unixTimestamp).toBeGreaterThan(
-        new Date().getTime() - 1000,
-      );
-      expect(attempt.unixTimestamp).toBeLessThan(new Date().getTime() + 1000);
+      expectTime(attempt.inspectionStart).toBeAbout(NOW);
+      expectTime(attempt.solveStart).toBeAbout(NOW);
+      expectTime(attempt.solveEnd).toBeAbout(NOW);
       expect(attempt.infractions).toEqual([]);
       expect(attempt.comment).toEqual('');
     });
-    it("is given a custom id and the 'CORE FIELDS'", () => {
+    it('is also given a custom id', () => {
       let id = uuid();
-      let attempt: Attempt = new AttemptBuilder()
-        .setId(id)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .build();
+
+      let attempt: STIF.Attempt = PREPARED_BUILD().setId(id).build();
+
       expect(attempt.id).toEqual(id);
     });
-    it("is given a custom timestamp and the 'CORE FIELDS'", () => {
-      let timestamp = new Date().getTime();
-      let attempt: Attempt = new AttemptBuilder()
-        .setTimestamp(timestamp)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
+    it('is also given custom timestamps', () => {
+      let inspectionStart = new Date().getTime() - 100000;
+      let solveStart = inspectionStart + 1000;
+      let solveEnd = solveStart + 1000;
+
+      let attempt: STIF.Attempt = PREPARED_BUILD()
+        .setInspectionStart(inspectionStart)
+        .setSolveStart(solveStart)
+        .setSolveEnd(solveEnd)
         .build();
-      expect(attempt.unixTimestamp).toEqual(timestamp);
+
+      expect(attempt.inspectionStart).toEqual(inspectionStart);
+      expect(attempt.solveStart).toEqual(solveStart);
+      expect(attempt.solveEnd).toEqual(solveEnd);
     });
-    it("is given multiple solutions and the 'CORE FIELDS'", () => {
-      let attempt: Attempt = new AttemptBuilder()
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .addSolution({
-          ...TEST_SOLUTION,
-          scramble: ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', "U'"]),
-        })
+    it('is given multiple solutions which match the event', () => {
+      const SOLUTION_3x3x3 = TEST_SOLUTION;
+      const SOLUTION_2x2x2 = {
+        ...TEST_SOLUTION,
+        puzzle: PUZZLE_2x2x2,
+      };
+      let attempt: STIF.Attempt = PREPARED_BUILD()
+        .setEvent(EVENT_RELAY_23)
+        .addSolution(SOLUTION_2x2x2)
         .build();
-      expect(attempt.solutions.length).toEqual(2);
+      expect(attempt.solutions).toEqual([SOLUTION_3x3x3, SOLUTION_2x2x2]);
     });
-    it("is given a single infraction and the 'CORE FIELDS'", () => {
-      let attempt: Attempt = new AttemptBuilder()
+    it('is given a single infraction', () => {
+      let attempt: STIF.Attempt = PREPARED_BUILD()
         .addInfraction(TIMELIMIT_EXCEEDED)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
         .build();
-      expect(attempt.infractions.length).toEqual(1);
+      expect(attempt.infractions).toEqual([TIMELIMIT_EXCEEDED]);
     });
-    it("is given multiple infractions and the 'CORE FIELDS'", () => {
-      let attempt: Attempt = new AttemptBuilder()
+    it('is given multiple infractions', () => {
+      let attempt: STIF.Attempt = PREPARED_BUILD()
         .addInfraction(TIMELIMIT_EXCEEDED)
         .addInfraction(INSPECTION_EXCEEDED_17_SECONDS)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
         .build();
-      expect(attempt.infractions.length).toEqual(2);
+      expect(attempt.infractions).toEqual([
+        TIMELIMIT_EXCEEDED,
+        INSPECTION_EXCEEDED_17_SECONDS,
+      ]);
     });
-    it("is given a custom comment and the 'CORE FIELDS'", () => {
+    it('is given a custom comment', () => {
       let comment = 'what an attempt!';
-      let attempt: Attempt = new AttemptBuilder()
-        .setComment(comment)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .build();
+      let attempt: STIF.Attempt = PREPARED_BUILD().setComment(comment).build();
       expect(attempt.comment).toEqual(comment);
-    });
-    it("is given one extension and the 'CORE FIELDS'", () => {
-      let attempt: Attempt = new AttemptBuilder()
-        .addExtension(TEST_EXTENSION)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .build();
-      expect(attempt.extensions?.length).toBe(1);
-    });
-    it("is given multiple extensions and the 'CORE FIELDS'", () => {
-      let attempt: Attempt = new AttemptBuilder()
-        .addExtension(TEST_EXTENSION)
-        .addExtension(TEST_EXTENSION_ALT)
-        .setEvent(EVENT_3x3x3)
-        .setDuration(10000)
-        .addSolution(TEST_SOLUTION)
-        .build();
-      expect(attempt.extensions?.length).toEqual(2);
     });
   });
   describe('fails to build when', () => {
+    it('is given a solveStart prior to inspectionStart', () => {
+      let timestamp = new Date().getTime() - 10000;
+      expect(() =>
+        PREPARED_BUILD()
+          .setInspectionStart(timestamp)
+          .setSolveStart(timestamp - 1000)
+          .build(),
+      ).toThrow('`solveStart` cannot occur prior to `inspectionStart`');
+    });
+    it('is given a solveEnd prior to solveStart', () => {
+      let timestamp = new Date().getTime() - 10000;
+      expect(() =>
+        PREPARED_BUILD()
+          .setInspectionStart(timestamp)
+          .setSolveStart(timestamp + 1000)
+          .setSolveEnd(timestamp + 500)
+          .build(),
+      ).toThrow('`solveEnd` cannot occur prior to `solveStart`');
+    });
+    it('is given different number of solutions than puzzles in the event', () => {
+      expect(() =>
+        PREPARED_TIMES()
+          .setEvent(EVENT_3x3x3)
+          .addSolution(TEST_SOLUTION)
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      ).toThrow('`solutions` do not match the `event`');
+    });
+    it('is given a solution for puzzles not in the event', () => {
+      const SOLUTION_2x2x2 = {
+        ...TEST_SOLUTION,
+        puzzle: PUZZLE_2x2x2,
+      };
+      expect(() =>
+      PREPARED_TIMES()
+          .setEvent(EVENT_3x3x3)
+          .addSolution(SOLUTION_2x2x2)
+          .build(),
+      ).toThrow('`solutions` do not match the `event`');
+    });
+    it('is given solutions whose puzzles do not match the event', () => {
+      const SOLUTION_4x4x4 = {
+        ...TEST_SOLUTION,
+        puzzle: PUZZLE_4x4x4,
+      };
+      expect(() =>
+        PREPARED_TIMES()
+          .setEvent(EVENT_RELAY_23)
+          .addSolution(TEST_SOLUTION)
+          .addSolution(SOLUTION_4x4x4)
+          .build(),
+      ).toThrow('`solutions` do not match the `event`');
+    });
     it('is given no additional attributes', () => {
       expect(() => {
         new AttemptBuilder().build();
-      }).toThrow('Nothing to build!');
+      }).toThrow(/required attribute/);
     });
-    it('is given no `event`', () => {
-      expect(() => new AttemptBuilder().setId(uuid()).build()).toThrow(
-        '`event` is a required attribute.',
-      );
-    });
-    it('is given no `duration', () => {
-      expect(() => new AttemptBuilder().setEvent(EVENT_3x3x3).build()).toThrow(
-        '`duration` is a required attribute.',
-      );
-    });
-    it('is given no `solution', () => {
-      expect(() =>
-        new AttemptBuilder().setEvent(EVENT_3x3x3).setDuration(10000).build(),
-      ).toThrow('At least one `solution` must be provided.');
-    });
-    it('is given a duplicate extension', () => {
+    it('is given no `inspectionStart', () => {
       expect(() =>
         new AttemptBuilder()
-          .addExtension(TEST_EXTENSION)
-          .addExtension(TEST_EXTENSION),
-      ).toThrow('cannot add a duplicate extension');
+          .setSolveStart()
+          .setSolveEnd()
+          .setEvent(EVENT_3x3x3)
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      ).toThrow('`inspectionStart` is a required attribute.');
+    });
+    it('is given no `solveStart', () => {
+      expect(() =>
+        new AttemptBuilder()
+          .setInspectionStart()
+          .setSolveEnd()
+          .setEvent(EVENT_3x3x3)
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      ).toThrow('`solveStart` is a required attribute.');
+    });
+    it('is given no `solveEnd`', () => {
+      expect(() =>
+        new AttemptBuilder()
+          .setInspectionStart()
+          .setSolveStart()
+          .setEvent(EVENT_3x3x3)
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      ).toThrow('`solveEnd` is a required attribute.');
+    });
+    it('is given no `event`', () => {
+      expect(() =>
+        new AttemptBuilder()
+          .setInspectionStart()
+          .setSolveStart()
+          .setSolveEnd()
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      ).toThrow('`event` is a required attribute.');
+    });
+    it('is given no `solutions`', () => {
+      expect(() =>
+        new AttemptBuilder()
+          .setInspectionStart()
+          .setSolveStart()
+          .setSolveEnd()
+          .setEvent(EVENT_3x3x3)
+          .build(),
+      ).toThrow('`solutions` is a required attribute.');
     });
   });
 });

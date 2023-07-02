@@ -11,7 +11,12 @@ module.exports = {
     'node_modules/(?!(jest-)?@react-native|react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)',
   ],
   setupFilesAfterEnv: ['<rootDir>/src/__mocks__/globalMock.js'],
+  
+  // From: https://stackoverflow.com/a/73203803/14765128
   moduleNameMapper: {
-    "^uuid$": require.resolve('uuid'),
-  }
+    // Force module uuid to resolve with the CJS entry point, because
+    // Jest does not support package.json.exports. See
+    // https://github.com/uuidjs/uuid/issues/451
+    uuid: require.resolve('uuid'),
+  },
 };

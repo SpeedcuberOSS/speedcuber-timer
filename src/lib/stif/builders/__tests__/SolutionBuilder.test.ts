@@ -4,75 +4,94 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { PUZZLE_3x3x3 } from '../../builtins';
-import { Solution } from '../../types';
-import { ScrambleBuilder } from '../ScrambleBuilder';
 import { SolutionBuilder } from '../SolutionBuilder';
-import { TEST_EXTENSION, TEST_EXTENSION_ALT } from './fixtures';
-import { v4 as uuid } from 'uuid';
-import { AlgorithmBuilder } from '../AlgorithmBuilder';
-import { Reconstruction } from '../../types/Reconstruction';
-
-let TEST_SCRAMBLE = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']);
-let TEST_RECONSTRUCTION: Reconstruction = {
-  id: uuid(),
-  algorithm: new AlgorithmBuilder().setMoves(['R', 'U']).build(),
-};
+import { STIF } from '../../STIF';
 
 describe('A new SolutionBuilder', () => {
   describe('builds successfully when', () => {
-    it("is given a scramble (the 'CORE FIELDS')", () => {
-      let solution: Solution = new SolutionBuilder()
-        .setScramble(TEST_SCRAMBLE)
+    it('is given its required fields (`puzzle`, `scramble`)', () => {
+      let solution: STIF.Solution = new SolutionBuilder()
+        .setPuzzle(PUZZLE_3x3x3)
+        .setScramble(['R', 'U'])
         .build();
-      expect(solution.scramble).toEqual(TEST_SCRAMBLE);
+      expect(solution.puzzle).toEqual(PUZZLE_3x3x3);
+      expect(solution.scramble).toEqual(['R', 'U']);
+      expect(solution.reconstruction).toEqual([]);
     });
-    it("is given a reconstruction and the 'CORE FIELDS'", () => {
-      let solution: Solution = new SolutionBuilder()
-        .setScramble(TEST_SCRAMBLE)
-        .setReconstruction(TEST_RECONSTRUCTION)
+    it('is also given a reconstruction', () => {
+      const phase: STIF.SolutionPhase = {
+        label: 'cross',
+        moves: [],
+      };
+      let solution: STIF.Solution = new SolutionBuilder()
+        .setPuzzle(PUZZLE_3x3x3)
+        .setScramble(['R', 'U'])
+        .addSolutionPhase(phase)
         .build();
-      expect(solution.scramble).toEqual(TEST_SCRAMBLE);
-      expect(solution.reconstruction?.algorithm.moves).toEqual(['R', 'U']);
+      expect(solution.reconstruction[0]).toEqual(phase);
     });
-    it("is given a custom id and the 'CORE FIELDS'", () => {
-      let id = uuid();
-      let solution: Solution = new SolutionBuilder()
-        .setId(id)
-        .setScramble(TEST_SCRAMBLE)
-        .build();
-      expect(solution.id).toEqual(id);
-    });
-    it("is given one extension and the 'CORE FIELDS'", () => {
-      let solution: Solution = new SolutionBuilder()
-        .addExtension(TEST_EXTENSION)
-        .setScramble(TEST_SCRAMBLE)
-        .build();
-      expect(solution.extensions?.length).toBe(1);
-    });
-    it("is given multiple extensions and the 'CORE FIELDS", () => {
-      let solution: Solution = new SolutionBuilder()
-        .addExtension(TEST_EXTENSION)
-        .addExtension(TEST_EXTENSION_ALT)
-        .setScramble(TEST_SCRAMBLE)
-        .build();
-      expect(solution.extensions?.length).toEqual(2);
+    it('is given a reconstruction with unsorted phases', () => {
+      const phase1 = {
+        label: 'cross',
+        moves: [
+          { t: 0, m: 'R' },
+          { t: 100, m: 'U' },
+        ],
+      };
+      const phase2 = {
+        label: 'f2l',
+        moves: [
+          { t: 150, m: 'U' },
+          { t: 200, m: 'R' },
+        ],
+      };
+      expect(() =>
+        new SolutionBuilder()
+          .setPuzzle(PUZZLE_3x3x3)
+          .setScramble(['R', 'U'])
+          .addSolutionPhase(phase2)
+          .addSolutionPhase(phase1)
+          .build(),
+      ).not.toThrow();
     });
   });
   describe('fails to build when', () => {
     it('is given no additional attributes', () => {
-      expect(() => new SolutionBuilder().build()).toThrow('Nothing to build!');
+      expect(() => new SolutionBuilder().build()).toThrow(/required attribute/);
+    });
+    it('is given no `puzzle`', () => {
+      expect(() =>
+        new SolutionBuilder().setScramble(['R', 'U']).build(),
+      ).toThrow('`puzzle` is a required attribute.');
     });
     it('is given no `scramble`', () => {
-      expect(() => new SolutionBuilder().setId(uuid()).build()).toThrow(
-        '`scramble` is a required attribute.',
-      );
+      expect(() =>
+        new SolutionBuilder().setPuzzle(PUZZLE_3x3x3).build(),
+      ).toThrow('`scramble` is a required attribute.');
     });
-    it('is given a duplicate extension', () => {
+    it('is given phases with overlapping time ranges', () => {
+      const phase1 = {
+        label: 'cross',
+        moves: [
+          { t: 0, m: 'R' },
+          { t: 100, m: 'U' },
+        ],
+      };
+      const phase2 = {
+        label: 'f2l',
+        moves: [
+          { t: 50, m: 'U' },
+          { t: 200, m: 'R' },
+        ],
+      };
       expect(() =>
         new SolutionBuilder()
-          .addExtension(TEST_EXTENSION)
-          .addExtension(TEST_EXTENSION),
-      ).toThrow('cannot add a duplicate extension');
+          .setPuzzle(PUZZLE_3x3x3)
+          .setScramble(['R', 'U'])
+          .addSolutionPhase(phase1)
+          .addSolutionPhase(phase2)
+          .build(),
+      ).toThrow(/overlapping/);
     });
   });
 });

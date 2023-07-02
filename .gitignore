@@ -68,3 +68,6 @@ yarn-error.log
 
 # VS Code
 .vscode/.react/
+
+# Jest
+coverage
