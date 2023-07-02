@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { ConnectionStatus, MoveListener } from '../../../lib/bluetooth-puzzle';
+import { ConnectionStatus, MoveListener } from '../../utils/bluetooth';
 import PuzzleRegistry, {
   BluetoothPuzzle,
 } from '../../utils/bluetooth/SmartPuzzleRegistry';

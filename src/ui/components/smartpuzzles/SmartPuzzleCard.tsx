@@ -12,26 +12,27 @@ import {
   Text,
 } from 'react-native-paper';
 import Icons, { IconFunction } from '../../icons/iconHelper';
-import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../../../lib/stif';
+import { PUZZLE_2x2x2, PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
+import { STIF } from '../../../lib/stif';
 
-import { ConnectionStatus } from '../../../lib/bluetooth-puzzle';
+import { ConnectionStatus } from '../../utils/bluetooth';
 import { StyleSheet } from 'react-native';
 
 interface SmartPuzzleCardProps {
   name: string;
   brand: string;
   connectionStatus?: ConnectionStatus;
-  puzzle?: Puzzle;
+  puzzle?: STIF.Puzzle;
   onConnect: () => void;
   onDisconnect: () => void;
 }
 
-const PuzzleIcons = new Map<Puzzle, IconFunction>([
+const PuzzleIcons = new Map<STIF.Puzzle, IconFunction>([
   [PUZZLE_2x2x2, Icons.WCAEvent('222')],
   [PUZZLE_3x3x3, Icons.WCAEvent('333')],
 ]);
 
-function getPuzzleIcon(puzzle: Puzzle): IconFunction {
+function getPuzzleIcon(puzzle: STIF.Puzzle): IconFunction {
   return PuzzleIcons.get(puzzle) || Icons.FontAwesome('question');
 }
 
