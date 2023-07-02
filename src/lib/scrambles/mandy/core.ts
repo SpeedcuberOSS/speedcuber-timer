@@ -4,18 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  AlgorithmBuilder,
-  Puzzle,
-  Scramble,
-  ScrambleBuilder,
-  ScrambleProvider,
-} from '../../stif';
-
-let SCRAMBLE_PROVIDER_INFO: ScrambleProvider = {
-  id: 'org.speedcuber.scramblerproviders.mandy',
-  url: 'https://scrambleproviders.speedcuber.org/mandy',
-};
+import { STIF } from '../../stif';
 
 export interface Face {
   label: string;
@@ -40,7 +29,7 @@ class Move {
 }
 
 class Cube {
-  getPuzzle(): Puzzle {
+  getPuzzle(): STIF.Puzzle {
     throw 'Not Implemented';
   }
   getScrambleLength(): number {
@@ -66,22 +55,14 @@ class Scrambler {
     this.cube = cube;
   }
 
-  generateScramble(): Scramble {
+  generateScramble(): STIF.Algorithm {
     let length = this.cube.getScrambleLength();
     let moveset = this.__getMoveset();
     let scramble: Move[] = [];
     for (let index = 0; index < length; index++) {
       scramble.push(this.__getNextMove(scramble, moveset));
     }
-    return new ScrambleBuilder()
-      .setProvider(SCRAMBLE_PROVIDER_INFO)
-      .setPuzzle(this.cube.getPuzzle())
-      .setAlgorithm(
-        new AlgorithmBuilder()
-          .setMoves(scramble.map(move => move.toString()))
-          .build(),
-      )
-      .build();
+    return scramble.map(move => move.toString());
   }
 
   __getMoveset(): Move[] {

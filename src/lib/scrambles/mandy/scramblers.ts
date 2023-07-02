@@ -13,7 +13,6 @@ import {
   Cube7x7x7,
 } from './cubes';
 
-import { SCRAMBLE_UNKNOWN } from '../../stif';
 import { Scrambler } from './core';
 
 class ScramblerUnknown extends Scrambler {
@@ -22,7 +21,7 @@ class ScramblerUnknown extends Scrambler {
   }
 
   generateScramble() {
-    return SCRAMBLE_UNKNOWN;
+    return [];
   }
 }
 
