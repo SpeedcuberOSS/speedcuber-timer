@@ -1,0 +1,36 @@
+{
+  "id": "6d2a9eaf-2f1e-4797-879b-a525142cf8fc",
+  "inspectionStart": 1675142895723,
+  "solveStart": 1675142907090,
+  "solveEnd": 1675142918923,
+  "event": { "id": "333", "puzzles": ["333"], "type": "official" },
+  "solutions": [
+    {
+      "puzzle": "333",
+      "scramble": [
+        "L2",
+        "B",
+        "L2",
+        "D'",
+        "F2",
+        "D",
+        "B'",
+        "R",
+        "D'",
+        "F2",
+        "R",
+        "B2",
+        "U",
+        "R2",
+        "D'",
+        "B'",
+        "L2",
+        "F",
+        "U",
+        "B"
+      ]
+    }
+  ],
+  "infractions": [],
+  "comment": ""
+}

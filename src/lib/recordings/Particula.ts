@@ -4,66 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { BluetoothPuzzle, MoveListener } from './BluetoothPuzzle';
-import { PUZZLE_2x2x2, PUZZLE_3x3x3, Puzzle } from '../stif';
-
 import { Buffer } from 'buffer';
-
-export class ParticulaPuzzle extends BluetoothPuzzle {
-  moveListeners: Map<string, MoveListener> = new Map();
-  brand(): string {
-    return 'Rubiks Connected';
-  }
-  puzzle(): Puzzle {
-    return PUZZLE_3x3x3;
-  }
-  addMoveListener(callback: MoveListener, id?: string): void {
-    const monitorFunction = (error: any, value: any) => {
-      if (error) {
-        console.error(`Error while listening to moves: ${error}`);
-        return;
-      }
-      const hexValues = base64ValueToHexArray(value);
-      const rawMmessage = parseHexValuesIntoRawMessage(hexValues);
-      validateMessage(rawMmessage);
-      const message = parseRawMessage(rawMmessage);
-      if (message) {
-        callback(JSON.stringify(message));
-      }
-    };
-    if (id) {
-      if (!this.moveListeners.has(id)) {
-        this.moveListeners.set(id, callback);
-        this.__monitorTurns(monitorFunction);
-      }
-    } else {
-      this.__monitorTurns(monitorFunction);
-    }
-  }
-  private __monitorTurns(callback: (error: any, value: any) => any) {
-    const serviceUUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
-    const characteristicUUID = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
-    this._device.monitor(callback, serviceUUID, characteristicUUID);
-  }
-}
-
-export class GoCube extends ParticulaPuzzle {
-  brand(): string {
-    return 'GoCube';
-  }
-  puzzle(): Puzzle {
-    return PUZZLE_3x3x3;
-  }
-}
-
-export class GoCube2x2x2 extends ParticulaPuzzle {
-  brand(): string {
-    return 'GoCube 2x2';
-  }
-  puzzle(): Puzzle {
-    return PUZZLE_2x2x2;
-  }
-}
 
 function base64ValueToHexArray(value: string): string[] {
   const hexString = Buffer.from(value, 'base64').toString('hex');
@@ -79,8 +20,27 @@ interface RawGoCubeMessage {
   checksum: string;
   suffix: string[];
 }
-
-export function parseMessage(message: string) {
+export const parseMessage = (message: string) => {
+  let parsedMove = '';
+  let parsedMessage = parseParticulaMessage(message);
+  if (!parsedMessage?.hasOwnProperty('x')) {
+    parsedMove = convertParticulaRotationMessageToAlgMove(parsedMessage);
+  }
+  return parsedMove;
+};
+function convertParticulaRotationMessageToAlgMove(message: any) {
+  const { face, direction } = message;
+  let moveStr = '';
+  moveStr += face === 'White' ? 'U' : '';
+  moveStr += face === 'Yellow' ? 'D' : '';
+  moveStr += face === 'Red' ? 'R' : '';
+  moveStr += face === 'Orange' ? 'L' : '';
+  moveStr += face === 'Green' ? 'F' : '';
+  moveStr += face === 'Blue' ? 'B' : '';
+  moveStr += direction === 'clockwise' ? '' : "'";
+  return moveStr;
+}
+export function parseParticulaMessage(message: string) {
   const hexValues = base64ValueToHexArray(message);
   const rawMessage = parseHexValuesIntoRawMessage(hexValues);
   try {

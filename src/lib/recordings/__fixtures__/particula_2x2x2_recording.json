@@ -1,0 +1,129 @@
+{
+  "smartPuzzle": {
+    "prefix": "GoCube2x2",
+    "brand": "Particula GoCube",
+    "puzzle": "222",
+    "uuids": {
+      "trackingService": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "trackingCharacteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+    }
+  },
+  "stream": [
+    {
+      "t": 1675144649193,
+      "m": "KgYBCAlCDQo="
+    },
+    {
+      "t": 1675144649703,
+      "m": "KgYBAgY5DQo="
+    },
+    {
+      "t": 1675144650244,
+      "m": "KgYBBAM4DQo="
+    },
+    {
+      "t": 1675144650454,
+      "m": "KgYBAgk8DQo="
+    },
+    {
+      "t": 1675144650754,
+      "m": "KgYBBQA2DQo="
+    },
+    {
+      "t": 1675144650853,
+      "m": "KgYBCAA5DQo="
+    },
+    {
+      "t": 1675144651023,
+      "m": "KgYBBAM4DQo="
+    },
+    {
+      "t": 1675144651053,
+      "m": "KgYBAwY6DQo="
+    },
+    {
+      "t": 1675144651234,
+      "m": "KgYBBQA2DQo="
+    },
+    {
+      "t": 1675144651564,
+      "m": "KgYBCAM8DQo="
+    },
+    {
+      "t": 1675144651655,
+      "m": "KgYBBAM4DQo="
+    },
+    {
+      "t": 1675144651748,
+      "m": "KgYBAwM3DQo="
+    },
+    {
+      "t": 1675144651850,
+      "m": "KgYBAwA0DQo="
+    },
+    {
+      "t": 1675144651954,
+      "m": "KgYBBQA2DQo="
+    },
+    {
+      "t": 1675144653394,
+      "m": "KgYBCQA6DQo="
+    },
+    {
+      "t": 1675144653544,
+      "m": "KgYBCQlDDQo="
+    },
+    {
+      "t": 1675144654266,
+      "m": "KgYBBQk/DQo="
+    },
+    {
+      "t": 1675144654325,
+      "m": "KgYBBQY8DQo="
+    },
+    {
+      "t": 1675144654415,
+      "m": "KgYBCQZADQo="
+    },
+    {
+      "t": 1675144654594,
+      "m": "KgYBBAk+DQo="
+    },
+    {
+      "t": 1675144654625,
+      "m": "KgYBBAA1DQo="
+    },
+    {
+      "t": 1675144654846,
+      "m": "KgYBCQM9DQo="
+    },
+    {
+      "t": 1675144654983,
+      "m": "KgYBCQA6DQo="
+    },
+    {
+      "t": 1675144655644,
+      "m": "KgYBAwk9DQo="
+    },
+    {
+      "t": 1675144655735,
+      "m": "KgYBAwY6DQo="
+    },
+    {
+      "t": 1675144655854,
+      "m": "KgYBCQlDDQo="
+    },
+    {
+      "t": 1675144655982,
+      "m": "KgYBAgk8DQo="
+    },
+    {
+      "t": 1675144656037,
+      "m": "KgYBAgAzDQo="
+    },
+    {
+      "t": 1675144656214,
+      "m": "KgYBCAA5DQo="
+    }
+  ]
+}

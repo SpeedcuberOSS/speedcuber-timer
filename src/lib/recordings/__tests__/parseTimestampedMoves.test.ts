@@ -1,0 +1,89 @@
+// Copyright (c) 2023 Joseph Hale <me@jhale.dev>
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+import {
+  compressDoubleTurns,
+  parseTimestampedMoves,
+} from '../parseTimestampedMoves';
+
+import { STIF } from '../../stif';
+import { Attempt } from '../../stif/wrappers';
+
+const RubiksConnectedAttempt =
+  require('../__fixtures__/rubiks_connected_attempt.json') as STIF.Attempt;
+const RubiksConnectedRecording =
+  require('../__fixtures__/rubiks_connected_recording.json') as STIF.SolveRecording;
+const RubiksConnectedSolveReplay =
+  require('../__fixtures__/rubiks_connected_solve_replay.json') as STIF.TimestampedMove[];
+
+describe('compressDoubleTurns', () => {
+  it('compresses double turns', () => {
+    const SolveReplayRaw: STIF.TimestampedMove[] = [
+      { t: 5597, m: 'U' },
+      { t: 5628, m: 'U' },
+      { t: 5849, m: "R'" },
+      { t: 5986, m: "R'" },
+      { t: 6647, m: "F'" },
+      { t: 6738, m: "F'" },
+    ];
+    const SolveReplayCompressed: STIF.TimestampedMove[] = [
+      { t: 5597, m: 'U2' },
+      { t: 5849, m: 'R2' },
+      { t: 6647, m: 'F2' },
+    ];
+
+    expect(compressDoubleTurns(SolveReplayRaw)).toEqual(SolveReplayCompressed);
+  });
+});
+
+describe('getSolveReplay', () => {
+  it('returns no solve replay if there is no message stream', () => {
+    expect(
+      parseTimestampedMoves(new Attempt(RubiksConnectedAttempt), {
+        smartPuzzle: RubiksConnectedRecording.smartPuzzle,
+        stream: [],
+      }),
+    ).toEqual([]);
+  });
+
+  it('correctly parses a solve replay from a Rubiks Connected attempt', () => {
+    expect(
+      parseTimestampedMoves(
+        new Attempt(RubiksConnectedAttempt),
+        RubiksConnectedRecording,
+      ),
+    ).toEqual(RubiksConnectedSolveReplay);
+  });
+  it('correctly parses a solve replay from a Particula 2x2x2', () => {
+    const Particula2x2x2Attempt =
+      require('../__fixtures__/particula_2x2x2_attempt.json') as STIF.Attempt;
+    const Particula2x2x2Recording =
+      require('../__fixtures__/particula_2x2x2_recording.json') as STIF.SolveRecording;
+    const Particula2x2x2SolveReplay =
+      require('../__fixtures__/particula_2x2x2_solve_replay.json') as STIF.TimestampedMove[];
+
+    const replay = parseTimestampedMoves(
+      new Attempt(Particula2x2x2Attempt),
+      Particula2x2x2Recording,
+    );
+
+    expect(replay).toEqual(Particula2x2x2SolveReplay);
+  });
+  it('correctly parses a solve replay from a Particula 3x3x3', () => {
+    const Particula3x3x3Attempt =
+      require('../__fixtures__/particula_3x3x3_attempt.json') as STIF.Attempt;
+    const Particula3x3x3Recording =
+      require('../__fixtures__/particula_3x3x3_recording.json') as STIF.SolveRecording;
+    const Particula3x3x3SolveReplay =
+      require('../__fixtures__/particula_3x3x3_solve_replay.json') as STIF.TimestampedMove[];
+
+    // NOTE: This test enforces the omission of orientation quaternions.
+    // A future version of the test will need to include them.
+    const replay = parseTimestampedMoves(new Attempt(Particula3x3x3Attempt), Particula3x3x3Recording);
+
+    expect(replay).toEqual(Particula3x3x3SolveReplay);
+  });
+});
