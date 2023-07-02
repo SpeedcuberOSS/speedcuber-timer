@@ -48,6 +48,7 @@
     "222": "2x2x2",
     "333": "3x3x3",
     "333bf": "3x3x3 BLD",
+    "333bf-team": "3x3x3 Team BLD",
     "333mbf": "3x3x3 Multi-BLD",
     "333oh": "3x3x3 OH",
     "333fm": "3x3x3 Fewest Moves",
@@ -57,12 +58,19 @@
     "555": "5x5x5",
     "555bf": "5x5x5 BLD",
     "666": "6x6x6",
+    "666bf": "6x6x6 BLD",
     "777": "7x7x7",
+    "777bf": "7x7x7 BLD",
     "clock": "Clock",
     "pyram": "Pyraminx",
     "minx": "Megaminx",
     "sq1": "Square-1",
-    "skewb": "Skewb"
+    "skewb": "Skewb",
+    "23relay": "2-3 Relay",
+    "234relay": "2-4 Relay",
+    "2345relay": "2-5 Relay",
+    "23456relay": "2-6 Relay",
+    "234567relay": "2-7 Relay"
   },
   "analytics": {
     "duration": "Duration",
