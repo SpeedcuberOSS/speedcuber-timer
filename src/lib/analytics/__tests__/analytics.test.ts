@@ -19,10 +19,11 @@ import {
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
-} from '../../stif';
+} from '../../stif/builtins';
 
 import { AttemptAnalytics } from '../AttemptAnalytics';
 import twistyAttempts from '../demo/twisty2stif';
+import { Attempt } from '../../stif/wrappers';
 
 const twistyAnalytics = new AttemptAnalytics(twistyAttempts);
 const attemptAnalytics = new AttemptAnalytics(Ao5_AVG_10000);
@@ -34,39 +35,39 @@ describe('analytics', () => {
   describe('best finds the fastest', () => {
     describe('attempt considering the impact of', () => {
       test('no penalties', () => {
-        expect(attemptAnalytics.best().duration).toBe(8000);
+        expect(attemptAnalytics.best().duration()).toBe(8000);
       });
       test('a 2 penalty', () => {
         const analytics = new AttemptAnalytics(Ao5_AVG_10000_WITH_PLUS_2);
-        expect(analytics.best().duration).toBe(8000);
+        expect(analytics.best().duration()).toBe(8000);
       });
       test('a DNF penalty', () => {
         const analytics = new AttemptAnalytics(Ao5_AVG_10000_WITH_DNF);
-        expect(analytics.best().duration).toBe(8000);
+        expect(analytics.best().duration()).toBe(8000);
       });
     });
     it('duration if all attempts are DNFs', () => {
       const analytics = new AttemptAnalytics(ALL_DNF);
-      expect(analytics.best().duration).toBe(7000);
+      expect(analytics.best().durationWithoutPenalties()).toBe(7000);
     });
   });
   describe('worst finds the slowest', () => {
     describe('attempt considering the impact of', () => {
       test('no penalties', () => {
-        expect(attemptAnalytics.worst().duration).toBe(15000);
+        expect(attemptAnalytics.worst().duration()).toBe(15000);
       });
       test('a 2 penalty', () => {
         const analytics = new AttemptAnalytics(Ao5_AVG_10000_WITH_PLUS_2);
-        expect(analytics.worst().duration).toBe(15000);
+        expect(analytics.worst().duration()).toBe(15000);
       });
       test('a DNF penalty', () => {
         const analytics = new AttemptAnalytics(Ao5_AVG_10000_WITH_DNF);
-        expect(analytics.worst().duration).toBe(7000); // The DNF Attempt
+        expect(analytics.worst().durationWithoutPenalties()).toBe(7000); // The DNF Attempt
       });
     });
     it('duration if all attempts are DNFs', () => {
       const analytics = new AttemptAnalytics(ALL_DNF);
-      expect(analytics.worst().duration).toBe(8000);
+      expect(analytics.worst().durationWithoutPenalties()).toBe(8000);
     });
   });
   describe('totals the time spent solving', () => {
@@ -241,17 +242,17 @@ describe('analytics', () => {
         expect(percentileAnalytics.percentileRank(attempt)).toBe(0);
       });
       test('for an attempt with a +2 penalty', () => {
-        let attempt = {
-          ...attemptFixtureWithTime(50_000),
+        let attempt = new Attempt({
+          ...attemptFixtureWithTime(50_000).stif(),
           infractions: [INSPECTION_EXCEEDED_15_SECONDS],
-        };
+        });
         expect(percentileAnalytics.percentileRank(attempt)).toBe(0.48);
       });
       test('for an attempt with a DNF penalty', () => {
-        let attempt = {
-          ...attemptFixtureWithTime(50_000),
+        let attempt = new Attempt({
+          ...attemptFixtureWithTime(50_000).stif(),
           infractions: [INSPECTION_EXCEEDED_17_SECONDS],
-        };
+        });
         expect(percentileAnalytics.percentileRank(attempt)).toBe(0);
       });
       test('when multiple attempts have the same duration', () => {
@@ -301,10 +302,10 @@ describe('analytics', () => {
       test('in the presence of a +2 penalty', () => {
         let analytics = new AttemptAnalytics([
           attemptFixtureWithTime(48_000),
-          {
-            ...attemptFixtureWithTime(48_000),
+          new Attempt({
+            ...attemptFixtureWithTime(48_000).stif(),
             infractions: [INSPECTION_EXCEEDED_15_SECONDS],
-          },
+          }),
           attemptFixtureWithTime(52_000),
         ]);
         expect(analytics.percentileScore(0.5)).toBe(50_000);
@@ -313,10 +314,10 @@ describe('analytics', () => {
         let analytics = new AttemptAnalytics([
           attemptFixtureWithTime(48_000),
           attemptFixtureWithTime(52_000),
-          {
-            ...attemptFixtureWithTime(48_000),
+          new Attempt({
+            ...attemptFixtureWithTime(48_000).stif(),
             infractions: [INSPECTION_EXCEEDED_17_SECONDS],
-          },
+          }),
         ]);
         expect(analytics.percentileScore(0)).toBe(Infinity);
       });

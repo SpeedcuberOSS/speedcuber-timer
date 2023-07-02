@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt, Penalty } from '../stif';
+import { Attempt } from '../stif/wrappers';
 
 class AttemptAnalytics {
   private attempts: Attempt[];
@@ -30,7 +30,10 @@ class AttemptAnalytics {
   }
 
   totalSolveTime(): number {
-    return this.attempts.reduce((acc, attempt) => acc + attempt.duration, 0);
+    return this.attempts.reduce(
+      (acc, attempt) => acc + attempt.durationWithoutPenalties(),
+      0,
+    );
   }
 
   /**
@@ -89,7 +92,7 @@ class AttemptAnalytics {
     const [best, worst] = this.__computeExcludeCounts(x, bestPct, worstPct);
     const countingAttempts = xAttempts.slice(best, xAttempts.length - worst);
     const totalDuration = countingAttempts.reduce(
-      (acc, attempt) => acc + durationWithPenalties(attempt),
+      (acc, attempt) => acc + attempt.duration(),
       0,
     );
     return Math.round(totalDuration / (x - (best + worst)));
@@ -172,7 +175,7 @@ class AttemptAnalytics {
     const attempts = this.attempts.sort(SORTS.durationAscending);
     let idx = attempts.length - Math.floor(attempts.length * percentile) - 1;
     idx = Math.max(idx, 0);
-    return durationWithPenalties(attempts[idx]);
+    return attempts[idx].duration();
   }
 
   percentileScores(percentiles: number[]): number[] {
@@ -201,7 +204,7 @@ class SlidingWindowAnalytics {
     let bestAttempts: number[][] = [];
     let currentBest = Infinity;
     for (let i = 0; i < attempts.length; i++) {
-      let duration = durationWithPenalties(attempts[i]);
+      let duration = attempts[i].duration();
       if (duration < currentBest) {
         currentBest = duration;
         bestAttempts.push([i, duration]);
@@ -256,37 +259,20 @@ function rightmostBinarySearch<Type>(
 }
 
 const SORTS = {
-  dateAscending: (a: Attempt, b: Attempt) => a.unixTimestamp - b.unixTimestamp,
-  dateDescending: (a: Attempt, b: Attempt) => b.unixTimestamp - a.unixTimestamp,
+  dateAscending: (a: Attempt, b: Attempt) =>
+    a.stif().inspectionStart - b.stif().inspectionStart,
+  dateDescending: (a: Attempt, b: Attempt) =>
+    b.stif().inspectionStart - a.stif().inspectionStart,
   durationAscending: (a: Attempt, b: Attempt) => compareByDuration(a, b),
   durationDescending: (a: Attempt, b: Attempt) => -compareByDuration(a, b),
 };
 
 function compareByDuration(a: Attempt, b: Attempt): number {
-  let durA = durationWithPenalties(a);
-  let durB = durationWithPenalties(b);
-  if (durA === Infinity && durB === Infinity) {
-    return a.duration - b.duration;
-  } else {
-    return durA - durB;
-  }
+  let durA = a.duration();
+  let durB = b.duration();
+  return durA === Infinity && durB === Infinity
+    ? a.durationWithoutPenalties() - b.durationWithoutPenalties()
+    : durA - durB;
 }
-
-function durationWithPenalties(
-  attempt: Attempt,
-  penaltyMap: Map<Penalty, number> = PENALTY_TO_TIME,
-): number {
-  const penalties = attempt.infractions.reduce((acc, infraction) => {
-    return acc + penaltyMap.get(infraction.penalty)!;
-  }, 0);
-  return attempt.duration + penalties;
-}
-
-const PENALTY_TO_TIME: Map<Penalty, number> = new Map([
-  [Penalty.NONE, 0],
-  [Penalty.PLUS_2, 2000],
-  [Penalty.DID_NOT_FINISH, Infinity],
-  [Penalty.DID_NOT_START, Infinity],
-]);
 
 export { AttemptAnalytics };

@@ -6,16 +6,13 @@
 
 import twistyData from './twisty_export.json';
 import {
-  AlgorithmBuilder,
-  Attempt,
-  AttemptBuilder,
   EVENT_3x3x3,
   INSPECTION_EXCEEDED_15_SECONDS,
   PUZZLE_3x3x3,
-  ScrambleBuilder,
-  SolutionBuilder,
   STOPPED_PUZZLE_UNSOLVED,
-} from '../../stif';
+} from '../../stif/builtins';
+import { AttemptBuilder } from '../../stif/builders';
+import { Attempt } from '../../stif/wrappers';
 
 // it('has a noop test to satisfy Jest', () => {
 //   expect(true).toBe(true);
@@ -34,34 +31,30 @@ twistyData.forEach((twisty: string[]) => {
     comment,
   ] = twisty;
   if (puzzle === '333' && userCategory === 'CFOP') {
-    const attemptBuilder = new AttemptBuilder()
-      .setDuration(parseInt(durationMillis, 10))
+    const solveStart = parseInt(dateMillis, 10);
+    const durationWithPenalties = solveStart + parseInt(durationMillis, 10);
+    const penalties = penalty === '1' ? 2000 : 0;
+    const duration = durationWithPenalties - penalties;
+    const inspectionStart = solveStart - (14000 + penalties);
+    const builder = new AttemptBuilder()
       .setEvent(EVENT_3x3x3)
       .setComment(comment)
-      .setTimestamp(parseInt(dateMillis, 10))
-      .addSolution(
-        new SolutionBuilder()
-          .setScramble(
-            new ScrambleBuilder()
-              .setPuzzle(PUZZLE_3x3x3)
-              .setAlgorithm(
-                new AlgorithmBuilder().setMoves(scramble.split(' ')).build(),
-              )
-              .build(),
-          )
-          .build(),
-      );
+      .addSolution({
+        puzzle: PUZZLE_3x3x3,
+        scramble: scramble.split(' '),
+        reconstruction: [],
+      })
+      .setInspectionStart(inspectionStart)
+      .setSolveStart(solveStart)
+      .setSolveEnd(duration)
     if (penalty === '1') {
-      attemptBuilder.addInfraction(INSPECTION_EXCEEDED_15_SECONDS);
-      // Twisty Timer includes the +2 penalty in the duration.
-      // We track the +2 penalty separately.
-      attemptBuilder.setDuration(parseInt(durationMillis, 10) - 2000);
+      builder.addInfraction(INSPECTION_EXCEEDED_15_SECONDS);
     }
     if (penalty === '2') {
-      attemptBuilder.addInfraction(STOPPED_PUZZLE_UNSOLVED);
+      builder.addInfraction(STOPPED_PUZZLE_UNSOLVED);
     }
-    const attempt = attemptBuilder.build();
-    attempts.push(attempt);
+    const attempt = builder.build();
+    attempts.push(new Attempt(attempt));
   }
 });
 
