@@ -5,20 +5,36 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Characteristic, Device, Subscription } from 'react-native-ble-plx';
-import { KNOWN_PUZZLE_MODELS, UnknownPuzzle } from '../../../lib/smart-puzzles';
-import { Message, PUZZLE_UNKNOWN, SmartPuzzle } from '../../../lib/stif';
+import { STIF } from '../../../lib/stif';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import { t } from 'i18next';
+import {
+  PUZZLE_UNKNOWN,
+  SMARTPUZZLE_UNKNOWN,
+  GIIKER_2x2x2,
+  GIIKER_3x3x3,
+  GO_CUBE_2x2x2,
+  GO_CUBE_3x3x3,
+  HEYKUBE,
+} from '../../../lib/stif/builtins';
 
-export interface BluetoothPuzzle extends SmartPuzzle {
+const KNOWN_PUZZLE_MODELS: STIF.SmartPuzzle[] = [
+  GO_CUBE_2x2x2,
+  GO_CUBE_3x3x3,
+  GIIKER_2x2x2,
+  GIIKER_3x3x3,
+  HEYKUBE,
+];
+
+export interface BluetoothPuzzle extends STIF.SmartPuzzle {
   /**
    * The Bluetooth Device representing the smart puzzle.
    */
   device: Device;
 }
 
-type MessageListener = (message: Message) => void;
+type MessageListener = (message: STIF.Message) => void;
 
 export interface MessageSubscription {
   remove: () => void;
@@ -33,22 +49,25 @@ interface PuzzleRegistryEntry {
 const PUZZLE_REGISTRY: Map<string, PuzzleRegistryEntry> = new Map();
 let _lastConnectedPuzzle: BluetoothPuzzle | null = null;
 
-function smartPuzzleType(device: Device): SmartPuzzle {
+function smartPuzzleType(device: Device): STIF.SmartPuzzle {
   const matchingPuzzles = KNOWN_PUZZLE_MODELS.filter(puzzle =>
     device?.name?.includes(puzzle.prefix),
   );
   const bestMatches = matchingPuzzles.sort(
     (a, b) => b.prefix.length - a.prefix.length, // longest prefix first
   );
-  if (bestMatches.length > 0) {
-    return bestMatches[0];
-  }
-  return UnknownPuzzle;
+  return bestMatches.length > 0 ? bestMatches[0] : SMARTPUZZLE_UNKNOWN;
+}
+
+function _isPuzzleRegistered(device: Device): boolean {
+  return (
+    smartPuzzleType(device) !== SMARTPUZZLE_UNKNOWN &&
+    !PUZZLE_REGISTRY.has(device.id)
+  );
 }
 
 function addPuzzle(device: Device) {
-  const puzzleType = smartPuzzleType(device);
-  if (puzzleType.puzzle !== PUZZLE_UNKNOWN && !PUZZLE_REGISTRY.has(device.id)) {
+  if (!_isPuzzleRegistered(device)) {
     console.debug(
       `Discovered puzzle: ${device?.name} | ${device?.localName} | ${device?.id}`,
     );
