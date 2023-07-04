@@ -4,12 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Milliseconds, STIF } from '../STIF';
+import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
 import { AttemptBuilder } from '../builders';
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
 } from '../builtins';
+import { Solution } from './Solution';
 
 const SECONDS = 1000;
 
@@ -28,14 +29,35 @@ export class Attempt {
   public stif(): STIF.Attempt {
     return this.attempt;
   }
+  public id(): string {
+    return this.attempt.id;
+  }
+  public event(): STIF.CompetitiveEvent {
+    return this.attempt.event;
+  }
+  public inspectionStart(): UnixTimestamp {
+    return this.attempt.inspectionStart;
+  }
+  public timerStart(): UnixTimestamp {
+    return this.attempt.timerStart;
+  }
+  public timerEnd(): UnixTimestamp {
+    return this.attempt.timerStop;
+  }
+  public solutions(): Solution[] {
+    return this.attempt.solutions.map(s => new Solution(s));
+  }
+  public comment(): string {
+    return this.attempt.comment;
+  }
   public inspectionDuration(): Milliseconds {
-    return this.attempt.solveStart - this.attempt.inspectionStart;
+    return this.attempt.timerStart - this.attempt.inspectionStart;
   }
   public duration(): Milliseconds {
     return this.durationWithoutPenalties() + this.penaltyDuration();
   }
   public durationWithoutPenalties(): Milliseconds {
-    return this.attempt.solveEnd - this.attempt.solveStart;
+    return this.attempt.timerStop - this.attempt.timerStart;
   }
   public result(): Milliseconds | 'DNF' | 'DNS' {
     const penalties = this.infractions().map(i => i.penalty);

@@ -44,8 +44,8 @@ export namespace STIF {
     id: UUID;
     event: CompetitiveEvent;
     inspectionStart: UnixTimestamp;
-    solveStart: UnixTimestamp;
-    solveEnd: UnixTimestamp;
+    timerStart: UnixTimestamp;
+    timerStop: UnixTimestamp;
     solutions: Solution[];
     infractions: Infraction[];
     comment: string;

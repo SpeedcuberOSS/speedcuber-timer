@@ -22,12 +22,12 @@ export class AttemptBuilder {
     this.wip.inspectionStart = inspectionStart ?? new Date().getTime();
     return this;
   }
-  public setSolveStart(solveStart?: UnixTimestamp): this {
-    this.wip.solveStart = solveStart ?? new Date().getTime();
+  public setTimerStart(timerStart?: UnixTimestamp): this {
+    this.wip.timerStart = timerStart ?? new Date().getTime();
     return this;
   }
-  public setSolveEnd(solveEnd?: UnixTimestamp): this {
-    this.wip.solveEnd = solveEnd ?? new Date().getTime();
+  public setTimerStop(timerStop?: UnixTimestamp): this {
+    this.wip.timerStop = timerStop ?? new Date().getTime();
     return this;
   }
   public setEvent(event: STIF.CompetitiveEvent): this {
@@ -57,19 +57,19 @@ export class AttemptBuilder {
       id: this.wip.id ?? uuid(),
       event: this.wip.event ?? err('event'),
       inspectionStart: this.wip.inspectionStart ?? err('inspectionStart'),
-      solveStart: this.wip.solveStart ?? err('solveStart'),
-      solveEnd: this.wip.solveEnd ?? err('solveEnd'),
+      timerStart: this.wip.timerStart ?? err('timerStart'),
+      timerStop: this.wip.timerStop ?? err('timerStop'),
       solutions: lengthGreaterThan(0, this.wip.solutions)
         ? this.wip.solutions
         : err('solutions'),
       infractions: this.wip.infractions ?? [],
       comment: this.wip.comment ?? '',
     };
-    if (attempt.solveEnd < attempt.solveStart) {
-      throw new STIFError('`solveEnd` cannot occur prior to `solveStart`');
+    if (attempt.timerStop < attempt.timerStart) {
+      throw new STIFError('`timerStop` cannot occur prior to `timerStart`');
     }
-    if (attempt.solveStart < attempt.inspectionStart) {
-      throw new STIFError('`solveStart` cannot occur prior to `inspectionStart`');
+    if (attempt.timerStart < attempt.inspectionStart) {
+      throw new STIFError('`timerStart` cannot occur prior to `inspectionStart`');
     }
     let solvedPuzzles = attempt.solutions
       .map(s => s.puzzle)

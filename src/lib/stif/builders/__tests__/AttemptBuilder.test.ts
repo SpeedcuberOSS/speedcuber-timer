@@ -23,7 +23,7 @@ const TEST_SOLUTION = new SolutionBuilder()
   .setScramble(['R', 'U'])
   .build();
 const PREPARED_TIMES = () =>
-  new AttemptBuilder().setInspectionStart().setSolveStart().setSolveEnd();
+  new AttemptBuilder().setInspectionStart().setTimerStart().setTimerStop();
 const PREPARED_BUILD = () =>
   PREPARED_TIMES().setEvent(EVENT_3x3x3).addSolution(TEST_SOLUTION);
 
@@ -47,8 +47,8 @@ describe('A new AttemptBuilder', () => {
       expect(attempt.event).toEqual(EVENT_3x3x3);
       expect(attempt.solutions).toEqual([TEST_SOLUTION]);
       expectTime(attempt.inspectionStart).toBeAbout(NOW);
-      expectTime(attempt.solveStart).toBeAbout(NOW);
-      expectTime(attempt.solveEnd).toBeAbout(NOW);
+      expectTime(attempt.timerStart).toBeAbout(NOW);
+      expectTime(attempt.timerStop).toBeAbout(NOW);
       expect(attempt.infractions).toEqual([]);
       expect(attempt.comment).toEqual('');
     });
@@ -61,18 +61,18 @@ describe('A new AttemptBuilder', () => {
     });
     it('is also given custom timestamps', () => {
       let inspectionStart = new Date().getTime() - 100000;
-      let solveStart = inspectionStart + 1000;
-      let solveEnd = solveStart + 1000;
+      let timerStart = inspectionStart + 1000;
+      let timerStop = timerStart + 1000;
 
       let attempt: STIF.Attempt = PREPARED_BUILD()
         .setInspectionStart(inspectionStart)
-        .setSolveStart(solveStart)
-        .setSolveEnd(solveEnd)
+        .setTimerStart(timerStart)
+        .setTimerStop(timerStop)
         .build();
 
       expect(attempt.inspectionStart).toEqual(inspectionStart);
-      expect(attempt.solveStart).toEqual(solveStart);
-      expect(attempt.solveEnd).toEqual(solveEnd);
+      expect(attempt.timerStart).toEqual(timerStart);
+      expect(attempt.timerStop).toEqual(timerStop);
     });
     it('is given multiple solutions which match the event', () => {
       const SOLUTION_3x3x3 = TEST_SOLUTION;
@@ -109,24 +109,24 @@ describe('A new AttemptBuilder', () => {
     });
   });
   describe('fails to build when', () => {
-    it('is given a solveStart prior to inspectionStart', () => {
+    it('is given a timerStart prior to inspectionStart', () => {
       let timestamp = new Date().getTime() - 10000;
       expect(() =>
         PREPARED_BUILD()
           .setInspectionStart(timestamp)
-          .setSolveStart(timestamp - 1000)
+          .setTimerStart(timestamp - 1000)
           .build(),
-      ).toThrow('`solveStart` cannot occur prior to `inspectionStart`');
+      ).toThrow('`timerStart` cannot occur prior to `inspectionStart`');
     });
-    it('is given a solveEnd prior to solveStart', () => {
+    it('is given a timerStop prior to timerStart', () => {
       let timestamp = new Date().getTime() - 10000;
       expect(() =>
         PREPARED_BUILD()
           .setInspectionStart(timestamp)
-          .setSolveStart(timestamp + 1000)
-          .setSolveEnd(timestamp + 500)
+          .setTimerStart(timestamp + 1000)
+          .setTimerStop(timestamp + 500)
           .build(),
-      ).toThrow('`solveEnd` cannot occur prior to `solveStart`');
+      ).toThrow('`timerStop` cannot occur prior to `timerStart`');
     });
     it('is given different number of solutions than puzzles in the event', () => {
       expect(() =>
@@ -170,39 +170,39 @@ describe('A new AttemptBuilder', () => {
     it('is given no `inspectionStart', () => {
       expect(() =>
         new AttemptBuilder()
-          .setSolveStart()
-          .setSolveEnd()
+          .setTimerStart()
+          .setTimerStop()
           .setEvent(EVENT_3x3x3)
           .addSolution(TEST_SOLUTION)
           .build(),
       ).toThrow('`inspectionStart` is a required attribute.');
     });
-    it('is given no `solveStart', () => {
+    it('is given no `timerStart', () => {
       expect(() =>
         new AttemptBuilder()
           .setInspectionStart()
-          .setSolveEnd()
+          .setTimerStop()
           .setEvent(EVENT_3x3x3)
           .addSolution(TEST_SOLUTION)
           .build(),
-      ).toThrow('`solveStart` is a required attribute.');
+      ).toThrow('`timerStart` is a required attribute.');
     });
-    it('is given no `solveEnd`', () => {
+    it('is given no `timerStop`', () => {
       expect(() =>
         new AttemptBuilder()
           .setInspectionStart()
-          .setSolveStart()
+          .setTimerStart()
           .setEvent(EVENT_3x3x3)
           .addSolution(TEST_SOLUTION)
           .build(),
-      ).toThrow('`solveEnd` is a required attribute.');
+      ).toThrow('`timerStop` is a required attribute.');
     });
     it('is given no `event`', () => {
       expect(() =>
         new AttemptBuilder()
           .setInspectionStart()
-          .setSolveStart()
-          .setSolveEnd()
+          .setTimerStart()
+          .setTimerStop()
           .addSolution(TEST_SOLUTION)
           .build(),
       ).toThrow('`event` is a required attribute.');
@@ -211,8 +211,8 @@ describe('A new AttemptBuilder', () => {
       expect(() =>
         new AttemptBuilder()
           .setInspectionStart()
-          .setSolveStart()
-          .setSolveEnd()
+          .setTimerStart()
+          .setTimerStop()
           .setEvent(EVENT_3x3x3)
           .build(),
       ).toThrow('`solutions` is a required attribute.');

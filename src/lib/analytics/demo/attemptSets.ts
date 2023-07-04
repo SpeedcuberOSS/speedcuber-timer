@@ -25,8 +25,8 @@ export function attemptFixtureWithTime(durationMillis: number) {
     new AttemptBuilder()
       .setEvent(EVENT_3x3x3)
       .setInspectionStart(now - 15_000)
-      .setSolveStart(now)
-      .setSolveEnd(now + durationMillis)
+      .setTimerStart(now)
+      .setTimerStop(now + durationMillis)
       .addSolution({
         puzzle: PUZZLE_3x3x3,
         scramble: TEST_SCRAMBLE,

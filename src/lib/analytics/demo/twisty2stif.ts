@@ -45,8 +45,8 @@ twistyData.forEach((twisty: string[]) => {
         reconstruction: [],
       })
       .setInspectionStart(inspectionStart)
-      .setSolveStart(solveStart)
-      .setSolveEnd(duration)
+      .setTimerStart(solveStart)
+      .setTimerStop(duration)
     if (penalty === '1') {
       builder.addInfraction(INSPECTION_EXCEEDED_15_SECONDS);
     }

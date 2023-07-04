@@ -1,8 +1,8 @@
 {
   "id": "4aae23b1-4b0a-496f-8d36-27f6cb85defb",
   "inspectionStart": 1675144636354,
-  "solveStart": 1675144648997,
-  "solveEnd": 1675144656558,
+  "timerStart": 1675144648997,
+  "timerStop": 1675144656558,
   "event": { "id": "222", "puzzles": ["222"], "type": "official" },
   "solutions": [
     {

@@ -17,7 +17,7 @@ export function parseTimestampedMoves(
   recording: STIF.SolveRecording,
 ): STIF.TimestampedMove[] {
   return adjustTimestamps(parseMoves(recording))
-    .relativeTo(attempt.stif().solveStart ?? 0)
+    .relativeTo(attempt.stif().timerStart ?? 0)
     .sort((a, b) => a.t - b.t);
 }
 

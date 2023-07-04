@@ -2,8 +2,8 @@
   "id": "bd19f5f6-ea3c-4f9d-beb0-2aa9c41e661f",
   "event": { "id": "333", "puzzles": ["333"], "type": "official" },
   "inspectionStart": 1674667995013,
-  "solveStart": 1674668004869,
-  "solveEnd": 1674668019734,
+  "timerStart": 1674668004869,
+  "timerStop": 1674668019734,
   "solutions": [
     {
       "puzzle": "333",
