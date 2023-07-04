@@ -22,6 +22,9 @@ export class SolutionPhase {
   public stif(): STIF.SolutionPhase {
     return this.phase;
   }
+  public label(): string {
+    return this.phase.label;
+  }
   public moves(): STIF.TimestampedMove[] {
     if (this._moves === null) {
       this._moves = this.phase.moves.sort((a, b) => a.t - b.t);
@@ -29,7 +32,7 @@ export class SolutionPhase {
     return this._moves;
   }
   public start(): UnixTimestamp {
-    return this.opts.start ?? this.firstMove().t;
+    return this.moves().length > 0 ? this.opts.start ?? this.firstMove().t : 0;
   }
   public end(): UnixTimestamp {
     return this.lastMove().t;
@@ -46,9 +49,9 @@ export class SolutionPhase {
       : this.moves().length / (this.duration() / 1000);
   }
   protected firstMove(): STIF.TimestampedMove {
-    return this.moves()[0];
+    return this.moves()[0] ?? { t: 0, move: '' };
   }
   protected lastMove(): STIF.TimestampedMove {
-    return this.moves()[this.moves().length - 1];
+    return this.moves()[this.moves().length - 1] ?? { t: 0, move: '' };
   }
 }

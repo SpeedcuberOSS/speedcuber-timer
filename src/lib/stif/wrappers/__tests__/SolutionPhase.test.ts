@@ -16,8 +16,13 @@ describe('[Wrapper] SolutionPhase', () => {
   });
   it('provides access to all STIF.SolutionPhase fields', () => {
     let phase = new SolutionPhase(BASE_BUILD().build());
-    expect(phase.stif().label).toEqual('solve');
-    expect(phase.stif().moves).toEqual([{ t: 500, m: 'R' }]);
+    expect(phase.label()).toEqual('solve');
+    expect(phase.moves()).toEqual([{ t: 500, m: 'R' }]);
+  });
+  it('provides access to the underlying STIF.SolutionPhase', () => {
+    let stifPhase = BASE_BUILD().build();
+    let phase = new SolutionPhase(stifPhase);
+    expect(phase.stif()).toEqual(stifPhase);
   });
   describe('start', () => {
     it('returns the start time if provided', () => {
@@ -36,6 +41,10 @@ describe('[Wrapper] SolutionPhase', () => {
       let phase = new SolutionPhase(BASE_BUILD().build());
       expect(phase.start()).toEqual(500);
     });
+    it('returns the Unix Epoch if no start or moves are provided', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] });
+      expect(phase.start()).toEqual(0);
+    });
     it('works for given start times at the Unix Epoch', () => {
       let phase = new SolutionPhase(BASE_BUILD().build(), { start: 0 });
       expect(phase.start()).toEqual(0);
@@ -50,6 +59,10 @@ describe('[Wrapper] SolutionPhase', () => {
           .build(),
       );
       expect(phase.end()).toEqual(1500);
+    });
+    it('returns the Unix Epoch if no moves are provided', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] });
+      expect(phase.end()).toEqual(0);
     });
   });
   describe('recognition', () => {
@@ -69,6 +82,10 @@ describe('[Wrapper] SolutionPhase', () => {
       let phase = new SolutionPhase(BASE_BUILD().build());
       expect(phase.recognition()).toEqual(0);
     });
+    it('is zero if no moves are provided', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] });
+      expect(phase.recognition()).toEqual(0);
+    })
   })
   describe('duration', () => {
     it('computes the duration as the difference between the first and last moves', () => {
@@ -89,6 +106,14 @@ describe('[Wrapper] SolutionPhase', () => {
       );
       expect(phase.duration()).toEqual(1000);
     });
+    it('is zero for a phase with no moves', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] });
+      expect(phase.duration()).toEqual(0);
+    });
+    it('is zero for a phase with no moves even if a start time is provided', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] }, { start: 500 });
+      expect(phase.duration()).toEqual(0);
+    });
     it('is zero for a phase with only one move', () => {
       let phase = new SolutionPhase(BASE_BUILD().build());
       expect(phase.duration()).toEqual(0);
@@ -107,6 +132,10 @@ describe('[Wrapper] SolutionPhase', () => {
     });
   });
   describe('tps', () => {
+    it('is undefined for phases with no moves', () => {
+      let phase = new SolutionPhase({ label: 'solve', moves: [] });
+      expect(phase.tps()).toBeUndefined();
+    });
     it('is undefined for single move phases with no recognition time', () => {
       let phase = new SolutionPhase(BASE_BUILD().build());
       expect(phase.tps()).toBeUndefined();

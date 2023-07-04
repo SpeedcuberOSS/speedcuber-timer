@@ -20,6 +20,16 @@ describe('A new SolutionPhaseBuilder', () => {
         { t: 750, m: "R'" },
       ]);
     });
+    it('is given no `moves`', () => {
+      let solution: STIF.SolutionPhase = new SolutionPhaseBuilder().setLabel("test").build();
+      expect(solution.label).toEqual('test');
+      expect(solution.moves).toEqual([]);
+    });
+    it('is given an empty `moves` array', () => {
+      let solution: STIF.SolutionPhase = new SolutionPhaseBuilder({label: "test", moves: []}).build();
+      expect(solution.label).toEqual('test');
+      expect(solution.moves).toEqual([]);
+    });
   });
   describe('fails to build when', () => {
     it('is given no additional attributes', () => {
@@ -31,16 +41,6 @@ describe('A new SolutionPhaseBuilder', () => {
       expect(() =>
         new SolutionPhaseBuilder().addMove({ t: 500, m: 'U' }).build(),
       ).toThrow('`label` is a required attribute.');
-    });
-    it('is given no `moves`', () => {
-      expect(() =>
-        new SolutionPhaseBuilder().setLabel('solve').build(),
-      ).toThrow('`moves` is a required attribute.');
-    });
-    it('is given an empty `moves` array', () => {
-      expect(() =>
-        new SolutionPhaseBuilder({ label: 'solve', moves: [] }).build(),
-      ).toThrow('`moves` is a required attribute.');
     });
   });
 });

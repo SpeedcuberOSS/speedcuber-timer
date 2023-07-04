@@ -8,6 +8,7 @@ import { STIF } from '../../STIF';
 import { SolutionBuilder } from '../../builders';
 import { PUZZLE_3x3x3 } from '../../builtins';
 import { Solution } from '../Solution';
+import { SolutionPhase } from '../SolutionPhase';
 
 const BASE_BUILD = () =>
   new SolutionBuilder().setPuzzle(PUZZLE_3x3x3).setScramble(['R', 'U']);
@@ -44,18 +45,22 @@ describe('[Wrapper] Solution', () => {
   it('rejects invalid STIF.Solutions', () => {
     expect(() => new Solution({} as any)).toThrow();
   });
-  it('rejects STIF.Solutions without a reconstruction', () => {
-    expect(() => new Solution(BASE_BUILD().build())).toThrow(/reconstruction/);
+  it('accepts STIF.Solutions without a reconstruction', () => {
+    expect(() => new Solution(BASE_BUILD().build())).not.toThrow();
   });
   it('provides access to all STIF.Solution fields', () => {
     let solution = new Solution(RECONSTRUCTION_BUILD().build());
-    expect(solution.stif().puzzle).toEqual(PUZZLE_3x3x3);
-    expect(solution.stif().scramble).toEqual(['R', 'U']);
-    expect(solution.stif().reconstruction).toEqual([
-      TEST_STEP_1,
-      TEST_STEP_2,
-      TEST_STEP_3,
-    ]);
+    expect(solution.puzzle()).toEqual(PUZZLE_3x3x3);
+    expect(solution.scramble()).toEqual(['R', 'U']);
+    expect(solution.reconstruction().length).toEqual(3);
+    solution.reconstruction().forEach((phase) => {
+      expect(phase).toBeInstanceOf(SolutionPhase);
+    });
+  });
+  it('provides access to the underlying STIF.Solution', () => {
+    let stifSolution = RECONSTRUCTION_BUILD().build();
+    let solution = new Solution(stifSolution);
+    expect(solution.stif()).toEqual(stifSolution);
   });
   it('configures the `start` of each phase to the end of the prior one', () => {
     let solution = new Solution(RECONSTRUCTION_BUILD().build());
@@ -75,6 +80,16 @@ describe('[Wrapper] Solution', () => {
     expect(() => solution.reconstruction()).toThrow(/overlapping/);
   });
   describe('start', () => {
+    describe('if no reconstruction provided', () => {
+      it('is the start time if provided', () => {
+        let solution = new Solution(BASE_BUILD().build(), { start: 250 });
+        expect(solution.start()).toEqual(250);
+      });
+      it('is the Unix Epoch if no start time provided', () => {
+        let solution = new Solution(BASE_BUILD().build());
+        expect(solution.start()).toEqual(0);
+      });
+    });
     describe('if no start time provided', () => {
       it('is the timestamp of the first solution phase', () => {
         let solution = new Solution(RECONSTRUCTION_BUILD().build());
@@ -102,6 +117,16 @@ describe('[Wrapper] Solution', () => {
     });
   });
   describe('end', () => {
+    describe('if no reconstruction provided', () => {
+      it('is the end time if provided', () => {
+        let solution = new Solution(BASE_BUILD().build(), { end: 250 });
+        expect(solution.end()).toEqual(250);
+      });
+      it('is the Unix Epoch if no end time provided', () => {
+        let solution = new Solution(BASE_BUILD().build());
+        expect(solution.end()).toEqual(0);
+      });
+    });
     describe('if no end time provided', () => {
       it('is the end timestamp of the last solution phase', () => {
         let solution = new Solution(RECONSTRUCTION_BUILD().build());

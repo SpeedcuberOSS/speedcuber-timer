@@ -24,12 +24,9 @@ export class SolutionPhaseBuilder {
     return this;
   }
   public build(): STIF.SolutionPhase {
-    if (this.wip.moves === undefined || this.wip.moves.length === 0) {
-      err('moves');
-    }
     return {
       label: this.wip.label ?? err('label'),
-      moves: this.wip.moves,
+      moves: this.wip.moves ?? [],
     };
   }
 }

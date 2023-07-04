@@ -37,15 +37,16 @@ export class Solution {
     ) {
       throw new STIFError('Start time cannot be after end time');
     }
-    if (solution.reconstruction.length === 0) {
-      throw new STIFError(
-        'Solution must have a reconstruction with at least one phase to use this wrapper',
-      );
-    }
     this.opts = opts;
   }
   public stif(): STIF.Solution {
     return this.solution;
+  }
+  public puzzle(): STIF.Puzzle {
+    return this.solution.puzzle;
+  }
+  public scramble(): STIF.Algorithm {
+    return this.solution.scramble;
   }
   public reconstruction(): SolutionPhase[] {
     if (this._phases === null) {
@@ -87,10 +88,12 @@ export class Solution {
     return duration == 0 ? undefined : this.moves().length / (duration / 1000);
   }
   protected firstPhase(): SolutionPhase {
-    return this.reconstruction()[0];
+    return this.reconstruction()[0] ?? EMPTY_PHASE;
   }
   protected lastPhase(): SolutionPhase {
-    return this.reconstruction()[this.reconstruction().length - 1];
+    return (
+      this.reconstruction()[this.reconstruction().length - 1] ?? EMPTY_PHASE
+    );
   }
   protected moves(): STIF.TimestampedMove[] {
     if (this._moves === null) {
@@ -101,3 +104,8 @@ export class Solution {
     return this._moves;
   }
 }
+
+const EMPTY_PHASE = new SolutionPhase({
+  label: '',
+  moves: [],
+});
