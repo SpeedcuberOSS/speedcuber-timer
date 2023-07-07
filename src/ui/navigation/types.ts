@@ -18,6 +18,7 @@ export type RootDrawerParamList = {
   Practice: undefined;
   Learn: undefined;
   Play: undefined;
+  Examples: undefined;
   NotFound: undefined;
 };
 

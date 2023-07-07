@@ -6,7 +6,7 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import RNBootSplash from 'react-native-bootsplash';
-import RootDrawerNavigator from './RootDrawerNavigator';
+import DrawerNavigator from './DrawerNavigator';
 import { useTheme } from 'react-native-paper';
 
 const MainNavigator = () => {
@@ -16,7 +16,7 @@ const MainNavigator = () => {
     <NavigationContainer
       theme={theme}
       onReady={() => RNBootSplash.hide({ fade: true, duration: 500 })}>
-      <RootDrawerNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };

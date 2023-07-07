@@ -6,21 +6,31 @@
 
 import LearnScreen from '../screens/LearnScreen';
 import PlayScreen from '../screens/PlayScreen';
-import PracticeStackNavigator from './PracticeStackNavigator';
+import PracticeNavigator from './PracticeNavigator';
 import * as React from 'react';
 import { RootDrawerParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import ExamplesNavigator from '../examples/ExamplesNavigator';
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
-const RootDrawerNavigator: React.FC = () => {
+const DrawerNavigator: React.FC = () => {
   return (
     <Drawer.Navigator id="Root" screenOptions={{ headerShown: false }}>
-      <Drawer.Screen name="Practice" component={PracticeStackNavigator} />
+      <Drawer.Screen name="Practice" component={PracticeNavigator} />
       <Drawer.Screen name="Learn" component={LearnScreen} />
       <Drawer.Screen name="Play" component={PlayScreen} />
+      {__DEV__ && (
+        <Drawer.Screen
+          name="Examples"
+          component={ExamplesNavigator}
+          options={{
+            drawerLabel: 'Development',
+          }}
+        />
+      )}
     </Drawer.Navigator>
   );
 };
 
-export default RootDrawerNavigator;
+export default DrawerNavigator;
