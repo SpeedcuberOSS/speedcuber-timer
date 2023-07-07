@@ -53,4 +53,7 @@
   "licenser.disableAutoHeaderInsertion": false,
   "files.autoSave": "off",
   "i18n-ally.keystyle": "nested",
+  "material-icon-theme.files.associations": {
+    "*.examples.tsx": "lib"
+  },
 }
