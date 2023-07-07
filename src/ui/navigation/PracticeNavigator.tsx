@@ -12,7 +12,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator<PracticeStackParamList>();
 
-export default function PracticeStackNavigator() {
+export default function PracticeNavigator() {
   return (
     <Stack.Navigator>
       {/* @ts-ignore */}
