@@ -13,7 +13,6 @@ export default function ExampleListScreen(
   props: DevelopmentStackScreenProps<'ExampleList'>,
 ) {
   const keys = props.route.params.keys;
-  console.debug(`Received ${keys.length} keys`);
   return (
     <FlatList
       data={keys}
