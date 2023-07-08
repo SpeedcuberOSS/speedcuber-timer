@@ -7,24 +7,33 @@
 import { useState } from 'react';
 
 import EventSelectorModal from './EventSelectorModal';
+import { DevelopmentExampleSet } from '../../examples/types';
+import { Button } from 'react-native-paper';
 
 const EventSelectorModalWrapper = () => {
   const [visible, setVisible] = useState(true);
   return (
-    <EventSelectorModal
-      visible={visible}
-      onDismiss={() => setVisible(!visible)}
-      onSelect={console.log}
-    />
+    <>
+      <Button onPress={() => setVisible(!visible)}>Show Modal</Button>
+      <EventSelectorModal
+        visible={visible}
+        onDismiss={() => setVisible(!visible)}
+        onSelect={console.log}
+      />
+    </>
   );
 };
 
-const examples = [
-  {
-    key: 'eventSelectorModal:default',
-    name: 'Default Event Selector Modal',
-    component: <EventSelectorModalWrapper />,
-  }
-]
-
+const examples: DevelopmentExampleSet = {
+  key: 'event-selector-modal',
+  title: 'Event Selector Modal',
+  description: 'A modal that allows the user to select an event.',
+  examples: [
+    {
+      key: 'default',
+      title: 'Default',
+      component: <EventSelectorModalWrapper />,
+    },
+  ],
+};
 export default examples;
