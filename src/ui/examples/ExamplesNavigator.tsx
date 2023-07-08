@@ -8,7 +8,7 @@ import { DevelopmentStackParamList } from './types';
 import { createStackNavigator } from '@react-navigation/stack';
 import ExampleScreen from './ExampleScreen';
 import ExampleListScreen from './ExampleListScreen';
-import examples from './examples';
+import Examples from './examples';
 
 const Stack = createStackNavigator<DevelopmentStackParamList>();
 
@@ -19,7 +19,7 @@ export default function DevelopmentNavigator() {
       <Stack.Screen
         name="ExampleList"
         component={ExampleListScreen}
-        initialParams={{keys: examples.map(e => e.key)}}
+        initialParams={{keys: Examples.setKeys()}}
         options={{
           title: "Examples"
         }}

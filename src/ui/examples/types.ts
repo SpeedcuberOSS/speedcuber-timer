@@ -8,10 +8,21 @@ import { StackHeaderProps, StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { RootDrawerHeaderProps, RootDrawerParamList, RootDrawerScreenProps } from '../navigation/types';
 
-export interface DevelopmentExample {
+// Development Examples Data Structures
+export interface DevelopmentExampleSet {
+  key: string;
   title: string;
+  description?: string;
+  examples: DevelopmentExample[];
+}
+export interface DevelopmentExample {
+  key: string;
+  title: string;
+  description?: string;
   component: React.ReactNode;
 }
+
+// Navigation
 export type DevelopmentStackParamList = {
   Example: { key: string };
   ExampleList: {

@@ -13,6 +13,7 @@ import {
   STOPPED_PUZZLE_UNSOLVED,
   ScrambleBuilder,
 } from '../../../lib/stif';
+import { DevelopmentExampleSet } from '../../examples/types';
 
 import AttemptDetails from './AttemptDetails';
 
@@ -48,27 +49,32 @@ export const dnsAttempt = AttemptBuilder.buildBasic(
 dnsAttempt.unixTimestamp = 1663731466876;
 dnsAttempt.infractions = [INSPECTION_STARTED_LATE_ONE_MINUTE];
 
-const examples = [
-  {
-    key: 'attemptdetails:typical',
-    name: 'Typical Attempt Details',
-    component: <AttemptDetails attempt={basicAttempt} />,
-  },
-  {
-    key: 'attemptdetails:infractions',
-    name: 'Attempt Details with Infractions',
-    component: <AttemptDetails attempt={infractionsAttempt} />,
-  },
-  {
-    key: 'attemptdetails:dnf',
-    name: 'Attempt Details with DNF',
-    component: <AttemptDetails attempt={dnfAttempt} />,
-  },
-  {
-    key: 'attemptdetails:dns',
-    name: 'Attempt Details with DNS',
-    component: <AttemptDetails attempt={dnsAttempt} />,
-  },
-]
+const examples: DevelopmentExampleSet = {
+  key: 'attemptdetails',
+  title: 'Attempt Details',
+  description: 'A more detailed view of an attempt.',
+  examples: [
+    {
+      key: 'typical',
+      title: 'Typical',
+      component: <AttemptDetails attempt={basicAttempt} />,
+    },
+    {
+      key: 'infractions',
+      title: 'with Infractions',
+      component: <AttemptDetails attempt={infractionsAttempt} />,
+    },
+    {
+      key: 'dnf',
+      title: 'with DNF',
+      component: <AttemptDetails attempt={dnfAttempt} />,
+    },
+    {
+      key: 'dns',
+      title: 'with DNS',
+      component: <AttemptDetails attempt={dnsAttempt} />,
+    },
+  ],
+}
 
 export default examples;

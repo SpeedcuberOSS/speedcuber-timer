@@ -7,7 +7,8 @@
 import { Divider, List } from 'react-native-paper';
 import { DevelopmentStackScreenProps } from './types';
 import { FlatList } from 'react-native';
-import { exampleByKey } from './examples';
+import Examples from './examples';
+import { useState } from 'react';
 
 export default function ExampleListScreen(
   props: DevelopmentStackScreenProps<'ExampleList'>,
@@ -17,13 +18,44 @@ export default function ExampleListScreen(
     <FlatList
       data={keys}
       renderItem={({ item }) => (
-        <List.Item
-          title={exampleByKey(item).name}
-          onPress={() => props.navigation.navigate('Example', { key: item })}
+        <ExampleListItem
+          setKey={item}
+          onSelectExample={key =>
+            props.navigation.navigate('Example', {
+              key: key,
+            })
+          }
         />
       )}
       ItemSeparatorComponent={Divider}
-      keyExtractor={(item) => item}
+      keyExtractor={item => item}
     />
+  );
+}
+
+interface ExampleListItemProps {
+  setKey: string;
+  onSelectExample: (key: string) => void;
+}
+function ExampleListItem(props: ExampleListItemProps) {
+  const [expanded, setExpanded] = useState(true);
+  const handlePress = () => setExpanded(!expanded);
+  const set = Examples.setByKey(props.setKey);
+  return (
+    <List.Accordion
+      title={set.title}
+      description={set.description}
+      expanded={expanded}
+      onPress={handlePress}
+      left={props => <List.Icon {...props} icon="folder" />}>
+      {set.examples.map(example => (
+        <List.Item
+          key={example.key}
+          title={example.title}
+          description={example.description}
+          onPress={() => props.onSelectExample(`${set.key}:${example.key}`)}
+        />
+      ))}
+    </List.Accordion>
   );
 }

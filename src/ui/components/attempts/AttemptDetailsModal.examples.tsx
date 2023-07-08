@@ -15,6 +15,7 @@ import {
 import { Attempt } from '../../../lib/stif';
 import AttemptDetailsModal from './AttemptDetailsModal';
 import { Button } from 'react-native-paper';
+import { DevelopmentExampleSet } from '../../examples/types';
 
 const AttemptDetailsModalWrapper = ({ attempt }: { attempt: Attempt }) => {
   const [visible, setVisible] = useState(true);
@@ -30,27 +31,32 @@ const AttemptDetailsModalWrapper = ({ attempt }: { attempt: Attempt }) => {
   );
 };
 
-const examples = [
-  {
-    key: 'attemptDetailsModal:typical',
-    name: 'Typical Attempt Details Modal',
-    component: <AttemptDetailsModalWrapper attempt={basicAttempt} />,
-  },
-  {
-    key: 'attemptDetailsModal:infractions',
-    name: 'Attempt Details Modal with Infractions',
-    component: <AttemptDetailsModalWrapper attempt={infractionsAttempt} />,
-  },
-  {
-    key: 'attemptDetailsModal:dnf',
-    name: 'Attempt Details Modal with DNF',
-    component: <AttemptDetailsModalWrapper attempt={dnfAttempt} />,
-  },
-  {
-    key: 'attemptDetailsModal:dns',
-    name: 'Attempt Details Modal with DNS',
-    component: <AttemptDetailsModalWrapper attempt={dnsAttempt} />,
-  },
-]
+const examples: DevelopmentExampleSet = {
+  key: 'attemptdetailsmodal',
+  title: 'Attempt Details Modal',
+  description: 'Attempt Details in a Modal',
+  examples: [
+    {
+      key: 'typical',
+      title: 'Typical',
+      component: <AttemptDetailsModalWrapper attempt={basicAttempt} />,
+    },
+    {
+      key: 'infractions',
+      title: 'with Infractions',
+      component: <AttemptDetailsModalWrapper attempt={infractionsAttempt} />,
+    },
+    {
+      key: 'dnf',
+      title: 'with DNF',
+      component: <AttemptDetailsModalWrapper attempt={dnfAttempt} />,
+    },
+    {
+      key: 'dns',
+      title: 'with DNS',
+      component: <AttemptDetailsModalWrapper attempt={dnsAttempt} />,
+    },
+  ],
+};
 
 export default examples;

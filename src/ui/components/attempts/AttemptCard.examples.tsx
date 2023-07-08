@@ -10,6 +10,7 @@ import {
   PUZZLE_3x3x3,
   ScrambleBuilder,
 } from '../../../lib/stif';
+import { DevelopmentExampleSet } from '../../examples/types';
 
 import AttemptCard from './AttemptCard';
 
@@ -20,11 +21,17 @@ let attempt = AttemptBuilder.buildBasic(
 );
 attempt.unixTimestamp = 1663731466876;
 
-const examples = [
-  {
-    key: 'attempt:typical',
-    name: 'Typical Attempt',
-    component: <AttemptCard attempt={attempt} />,
-  }
-]
+const examples: DevelopmentExampleSet = {
+  key: 'attemptcard',
+  title: 'Attempt Card',
+  description: 'A card that displays an attempt.',
+  examples: [
+    {
+      key: 'typical',
+      title: 'Typical',
+      component: <AttemptCard attempt={attempt} />,
+    },
+  ],
+};
+
 export default examples;
