@@ -1,0 +1,17 @@
+// Copyright (c) 2023 Joseph Hale <me@jhale.dev>
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+module.exports = {
+  preset: 'react-native',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?@react-native|react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)',
+  ],
+  setupFilesAfterEnv: ['<rootDir>/src/__mocks__/globalMock.js'],
+  moduleNameMapper: {
+    "^uuid$": require.resolve('uuid'),
+  }
+};
