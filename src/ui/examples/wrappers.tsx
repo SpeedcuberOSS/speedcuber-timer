@@ -8,9 +8,6 @@ import { View } from 'react-native';
 
 type Wrapper = ({ children }: { children: React.ReactNode }) => JSX.Element;
 
-function Identity({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
-}
 function Centered({ children }: { children: React.ReactNode }) {
   return (
     <View
@@ -23,6 +20,6 @@ function Centered({ children }: { children: React.ReactNode }) {
   );
 }
 
-const wrappers: Wrapper[] = [Identity, Centered];
+const wrappers: Wrapper[] = [Centered];
 
-export { wrappers, Identity, Centered };
+export { wrappers, Centered };

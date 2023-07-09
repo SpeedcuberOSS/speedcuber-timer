@@ -10,7 +10,7 @@ describe('ParticulaPuzzle', () => {
   describe('MessageParser', () => {
     it('correctly parses a message with a small checksum', () => {
       const message = 'KhgDODAjLTEwODYwIzE1MjMjMTIxMzUJDQo=';
-      expect(parseMessage(message)).not.toThrow();
+      expect(() => parseMessage(message)).not.toThrow();
     });
   });
 });
