@@ -58,7 +58,8 @@ const TwistyPlayer = forwardRef(
         true;
       `;
       console.debug(`Sending move ${move} to twisty player`);
-      webViewRef.current.injectJavaScript(js);
+      if (webViewRef.current.injectJavaScript)
+        webViewRef.current.injectJavaScript(js);
     }
     const reactToMoves = (p: BluetoothPuzzle) => {
       p.addMoveListener(move => {
@@ -87,7 +88,8 @@ const TwistyPlayer = forwardRef(
           }
           true;
         `;
-        webViewRef.current.injectJavaScript(js);
+        if (webViewRef.current.injectJavaScript)
+          webViewRef.current.injectJavaScript(js);
       },
       addMove: (move: string) => {
         console.debug('Adding move:', move);
@@ -99,7 +101,8 @@ const TwistyPlayer = forwardRef(
           }
           true;
         `;
-        webViewRef.current.injectJavaScript(js);
+        if (webViewRef.current.injectJavaScript)
+          webViewRef.current.injectJavaScript(js);
       },
     }));
 
