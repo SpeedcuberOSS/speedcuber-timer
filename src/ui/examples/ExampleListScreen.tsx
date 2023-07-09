@@ -38,7 +38,7 @@ interface ExampleListItemProps {
   onSelectExample: (key: string) => void;
 }
 function ExampleListItem(props: ExampleListItemProps) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const handlePress = () => setExpanded(!expanded);
   const set = Examples.setByKey(props.setKey);
   return (
