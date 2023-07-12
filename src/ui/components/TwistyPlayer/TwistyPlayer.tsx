@@ -5,28 +5,22 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import {
-  Algorithm,
   PUZZLE_3x3x3,
   PUZZLE_CLOCK,
   PUZZLE_MEGAMINX,
   PUZZLE_PYRAMINX,
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
-  Puzzle,
-} from '../../../lib/stif';
-import {
-  BluetoothPuzzle,
-  ConnectionStatus,
-} from '../../../lib/bluetooth-puzzle';
+} from '../../../lib/stif/builtins';
+import { STIF } from '../../../lib/stif';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 import { ColorValue } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 interface TwistyPlayerProps {
-  algorithm?: Algorithm;
-  puzzle?: Puzzle;
-  bluetoothPuzzle?: BluetoothPuzzle;
+  algorithm?: STIF.Algorithm;
+  puzzle?: STIF.Puzzle;
   visualization?: '3D' | '2D';
   hintFacelets?: 'floating';
   backView?: 'top-right' | 'side-by-side';
@@ -38,7 +32,6 @@ const TwistyPlayer = forwardRef(
     {
       algorithm = undefined,
       puzzle = PUZZLE_3x3x3,
-      bluetoothPuzzle = undefined,
       visualization = '3D',
       hintFacelets = undefined,
       backView = undefined,
@@ -61,24 +54,9 @@ const TwistyPlayer = forwardRef(
       if (webViewRef.current.injectJavaScript)
         webViewRef.current.injectJavaScript(js);
     }
-    const reactToMoves = (p: BluetoothPuzzle) => {
-      p.addMoveListener(move => {
-        let moveStr = parseMove(move);
-        sendMove(moveStr);
-      }, 'TwistyPlayer');
-    };
-    if (bluetoothPuzzle?.connectionStatus() === ConnectionStatus.CONNECTED) {
-      reactToMoves(bluetoothPuzzle);
-    } else {
-      bluetoothPuzzle?.addConnectionStatusListener(status => {
-        if (status === ConnectionStatus.CONNECTED) {
-          reactToMoves(bluetoothPuzzle);
-        }
-      });
-    }
     useImperativeHandle(ref, () => ({
-      setAlgorithm: (alg: Algorithm) => {
-        const moves = alg.moves.join(' ');
+      setAlgorithm: (alg: STIF.Algorithm) => {
+        const moves = alg.join(' ');
         console.debug('Setting alg:', moves);
         const js = `
           setAlgButton = document.getElementById("set-algorithm")
@@ -123,9 +101,7 @@ const TwistyPlayer = forwardRef(
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "${stifPuzzle_To_TwistyPlayerString(
-                  bluetoothPuzzle?.puzzle() || puzzle,
-                )}",
+                puzzle: "${stifPuzzle_To_TwistyPlayerString(puzzle)}",
                 visualization: "${visualization}",
                 hintFacelets: "${hintFacelets ? hintFacelets : 'none'}",
                 backView: "${backView ? backView : 'none'}",
@@ -135,7 +111,7 @@ const TwistyPlayer = forwardRef(
               player.style = "width: ${width * scale}; height: ${
             height * scale
           };"
-              player.alg = "${algorithm ? algorithm?.moves.join(' ') : ''}",
+              player.alg = "${algorithm?.join(' ') || ''}",
               document.body.appendChild(player);
               document.getElementById("add-move").addEventListener("click", () => {
                 var move = document.getElementById("add-move").innerHTML
@@ -163,22 +139,9 @@ const TwistyPlayer = forwardRef(
 
 export default TwistyPlayer;
 
-function parseMove(move: string) {
-  const { face, direction } = JSON.parse(move);
-  let moveStr = '';
-  moveStr += face === 'White' ? 'U' : '';
-  moveStr += face === 'Yellow' ? 'D' : '';
-  moveStr += face === 'Red' ? 'R' : '';
-  moveStr += face === 'Orange' ? 'L' : '';
-  moveStr += face === 'Green' ? 'F' : '';
-  moveStr += face === 'Blue' ? 'B' : '';
-  moveStr += direction === 'clockwise' ? '' : "'";
-  return moveStr;
-}
-
-function stifPuzzle_To_TwistyPlayerString(puzzle: Puzzle): string {
-  if (parseInt(puzzle.id)) {
-    return puzzle.id.split('').join('x');
+function stifPuzzle_To_TwistyPlayerString(puzzle: STIF.Puzzle): string {
+  if (parseInt(puzzle)) {
+    return puzzle.split('').join('x');
   }
   switch (puzzle) {
     case PUZZLE_CLOCK:

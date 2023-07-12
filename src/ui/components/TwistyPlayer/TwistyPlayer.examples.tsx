@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import {
-  AlgorithmBuilder,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
   PUZZLE_4x4x4,
@@ -17,7 +16,7 @@ import {
   PUZZLE_PYRAMINX,
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
-} from '../../../lib/stif';
+} from '../../../lib/stif/builtins';
 import { DevelopmentExampleSet } from '../../examples/types';
 
 import TwistyPlayer from './TwistyPlayer';
@@ -112,9 +111,7 @@ const examples: DevelopmentExampleSet = {
       title: 'Custom Scramble',
       component: (
         <TwistyPlayer
-          algorithm={new AlgorithmBuilder()
-            .setMoves("R U R' U'".split(' '))
-            .build()}
+          algorithm={"R U R' U'".split(' ')}
         />
       ),
     },

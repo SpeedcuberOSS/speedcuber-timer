@@ -2038,7 +2038,7 @@ exports[`Examples twisty-player's 2x2x2 matches snapshot 1`] = `
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "3x3x3",
+                puzzle: "2x2x2",
                 visualization: "3D",
                 hintFacelets: "none",
                 backView: "none",
@@ -2194,7 +2194,7 @@ exports[`Examples twisty-player's 4x4x4 matches snapshot 1`] = `
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "3x3x3",
+                puzzle: "4x4x4",
                 visualization: "3D",
                 hintFacelets: "none",
                 backView: "none",
@@ -2272,7 +2272,7 @@ exports[`Examples twisty-player's 5x5x5 matches snapshot 1`] = `
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "3x3x3",
+                puzzle: "5x5x5",
                 visualization: "3D",
                 hintFacelets: "none",
                 backView: "none",
@@ -2350,7 +2350,7 @@ exports[`Examples twisty-player's 6x6x6 matches snapshot 1`] = `
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "3x3x3",
+                puzzle: "6x6x6",
                 visualization: "3D",
                 hintFacelets: "none",
                 backView: "none",
@@ -2428,7 +2428,7 @@ exports[`Examples twisty-player's 7x7x7 matches snapshot 1`] = `
               import { Move } from "https://cdn.cubing.net/js/cubing/alg";
 
               const player = new TwistyPlayer({
-                puzzle: "3x3x3",
+                puzzle: "7x7x7",
                 visualization: "3D",
                 hintFacelets: "none",
                 backView: "none",
