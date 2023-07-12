@@ -65,6 +65,11 @@ export class Attempt {
     else if (penalties.includes('DNF')) return 'DNF';
     else return this.duration();
   }
+  public penaltyCount(penalty?: STIF.Penalty): number {
+    return this.infractions().filter(i =>
+      penalty === undefined ? true : i.penalty === penalty,
+    ).length;
+  }
   public penaltyDuration(): Milliseconds {
     return this.infractions()
       .map(i => PENALTY_MILLIS.get(i.penalty)!)

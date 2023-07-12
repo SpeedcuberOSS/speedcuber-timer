@@ -12,11 +12,14 @@ import {
   INSPECTION_EXCEEDED_17_SECONDS,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
+  RESET_TIMER_BEFORE_SIGNATURES,
   SIGNED_BEFORE_STARTING,
   STARTED_WHILE_TOUCHING_PUZZLE,
   STARTED_WRONG_HAND_PLACEMENT,
+  STOPPED_PUZZLE_HELD,
   STOPPED_PUZZLE_ONE_MOVE_REMAINING,
   STOPPED_PUZZLE_UNSOLVED,
+  STOPPED_WRONG_HAND_PLACEMENT,
 } from '../../builtins';
 import { Attempt } from '../Attempt';
 import { Solution } from '../Solution';
@@ -133,6 +136,65 @@ describe('[Wrapper] Attempt', () => {
     });
   });
 
+  describe('penaltyCount', () => {
+    it('is zero for attempts with no infractions', () => {
+      let attempt = new Attempt(TIMED_BUILD().build());
+      expect(attempt.penaltyCount()).toEqual(0);
+    });
+    it('includes both inspection and other infractions', () => {
+      let attempt = new Attempt(
+        INSPECTION_BUILD(15500)
+          .addInfraction(STARTED_WRONG_HAND_PLACEMENT)
+          .build(),
+      );
+      expect(attempt.penaltyCount()).toEqual(2);
+    });
+    it('includes penalties of all types by default', () => {
+      let attempt = new Attempt(
+        INSPECTION_BUILD(17500) // DNF
+          .addInfraction(SIGNED_BEFORE_STARTING) // DNS
+          .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING) // +2
+          .build(),
+      );
+      expect(attempt.penaltyCount()).toEqual(3);
+    });
+    it('counts just +2 penalties when requested', () => {
+      let attempt = new Attempt(
+        INSPECTION_BUILD(15500) // +2
+          .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING) // +2
+          .addInfraction(STOPPED_WRONG_HAND_PLACEMENT) // +2
+          .addInfraction(STOPPED_PUZZLE_HELD) // DNF
+          .addInfraction(RESET_TIMER_BEFORE_SIGNATURES) // DNF
+          .addInfraction(SIGNED_BEFORE_STARTING) // DNS
+          .build(),
+      );
+      expect(attempt.penaltyCount('+2')).toEqual(3);
+    });
+    it('counts just DNF penalties when requested', () => {
+      let attempt = new Attempt(
+        INSPECTION_BUILD(15500) // +2
+          .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING) // +2
+          .addInfraction(STOPPED_WRONG_HAND_PLACEMENT) // +2
+          .addInfraction(STOPPED_PUZZLE_HELD) // DNF
+          .addInfraction(RESET_TIMER_BEFORE_SIGNATURES) // DNF
+          .addInfraction(SIGNED_BEFORE_STARTING) // DNS
+          .build(),
+      );
+      expect(attempt.penaltyCount('DNF')).toEqual(2);
+    });
+    it('counts just DNS penalties when requested', () => {
+      let attempt = new Attempt(
+        INSPECTION_BUILD(15500) // +2
+          .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING) // +2
+          .addInfraction(STOPPED_WRONG_HAND_PLACEMENT) // +2
+          .addInfraction(STOPPED_PUZZLE_HELD) // DNF
+          .addInfraction(RESET_TIMER_BEFORE_SIGNATURES) // DNF
+          .addInfraction(SIGNED_BEFORE_STARTING) // DNS
+          .build(),
+      );
+      expect(attempt.penaltyCount('DNS')).toEqual(1);
+    });
+  });
   describe('penaltyDuration', () => {
     it('is zero in the absence of infractions', () => {
       let attempt = new Attempt(TIMED_BUILD().build());

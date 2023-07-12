@@ -4,11 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Card, Text } from 'react-native-paper';
+import { Card } from 'react-native-paper';
 import { memo, useState } from 'react';
 
-import { Attempt } from '../../../lib/stif';
-import AttemptDetailsModal from './AttemptDetailsModal';
+import { Attempt } from '../../../lib/stif/wrappers';
+// import AttemptDetailsModal from './AttemptDetailsModal';
 import { StyleSheet } from 'react-native';
 import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
@@ -19,25 +19,23 @@ interface AttemptCardProps {
 
 function AttemptCard({ attempt, onReplay = () => {} }: AttemptCardProps) {
   const [detailsVisible, setDetailsVisible] = useState(false);
+
   return (
     <>
       <Card style={styles.card} onPress={() => setDetailsVisible(true)}>
         <Card.Title
           title={getAttemptTimeString(attempt)}
-          subtitle={new Date(attempt.unixTimestamp).toLocaleString()}
+          titleVariant="headlineSmall"
+          subtitle={new Date(attempt.timerStart()).toLocaleDateString()}
+          subtitleVariant="bodySmall"
         />
-        <Card.Content>
-          <Text variant="bodySmall">
-            {attempt.solutions[0].scramble.algorithm.moves.join(' ')}
-          </Text>
-        </Card.Content>
       </Card>
-      <AttemptDetailsModal
+      {/* <AttemptDetailsModal
         attempt={attempt}
         onReplay={onReplay}
         visible={detailsVisible}
         onDismiss={() => setDetailsVisible(false)}
-      />
+      /> */}
     </>
   );
 }
