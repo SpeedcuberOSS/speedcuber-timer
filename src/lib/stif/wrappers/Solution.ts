@@ -95,7 +95,7 @@ export class Solution {
       this.reconstruction()[this.reconstruction().length - 1] ?? EMPTY_PHASE
     );
   }
-  protected moves(): STIF.TimestampedMove[] {
+  public moves(): STIF.TimestampedMove[] {
     if (this._moves === null) {
       this._moves = this.reconstruction()
         .flatMap(phase => phase.moves())

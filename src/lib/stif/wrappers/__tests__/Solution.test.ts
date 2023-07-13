@@ -53,7 +53,7 @@ describe('[Wrapper] Solution', () => {
     expect(solution.puzzle()).toEqual(PUZZLE_3x3x3);
     expect(solution.scramble()).toEqual(['R', 'U']);
     expect(solution.reconstruction().length).toEqual(3);
-    solution.reconstruction().forEach((phase) => {
+    solution.reconstruction().forEach(phase => {
       expect(phase).toBeInstanceOf(SolutionPhase);
     });
   });
@@ -238,4 +238,23 @@ describe('[Wrapper] Solution', () => {
       expect(solution.tps()).toEqual(6 / 2);
     });
   });
+  describe('moves', () => {
+    it('is empty for a solution with no reconstruction', () => {
+      let solution = new Solution(BASE_BUILD().build());
+      expect(solution.moves()).toEqual([]);
+    });
+    it('is a list of all the moves from all the solution phases', () => {
+      let solution = new Solution(RECONSTRUCTION_BUILD().build());
+      expect(solution.moves()).toEqual([
+        { t: 500, m: 'R' },
+        { t: 750, m: 'U' },
+        { t: 1000, m: "U'" },
+        { t: 1250, m: "R'" },
+        { t: 1500, m: "U'" },
+        { t: 1750, m: "R'" },
+      ]);
+    });
+  });
 });
+
+export { RECONSTRUCTION_BUILD };
