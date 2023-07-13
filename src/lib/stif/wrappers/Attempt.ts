@@ -23,6 +23,7 @@ const PENALTY_MILLIS: Map<STIF.Penalty, Milliseconds> = new Map([
 
 export class Attempt {
   protected attempt: STIF.Attempt;
+  private _moves: STIF.TimestampedMove[] | null = null;
   constructor(attempt: STIF.Attempt) {
     this.attempt = new AttemptBuilder(attempt).build();
   }
@@ -83,5 +84,25 @@ export class Attempt {
       i.push(INSPECTION_EXCEEDED_15_SECONDS);
     }
     return [...new Set(i)];
+  }
+  public moveCount(): number {
+    return this.moves().length;
+  }
+  /**
+   * `protected` because this strips away information about which
+   * solution the moves belong to.
+   */
+  protected moves(): STIF.TimestampedMove[] {
+    if (this._moves === null) {
+      this._moves = this.solutions()
+        .flatMap(solution => solution.moves())
+        .sort((a, b) => a.t - b.t);
+    }
+    return this._moves;
+  }
+  public tps(): number | undefined {
+    const moves = this.moves();
+    if (moves.length === 0) return undefined;
+    return moves.length / (this.duration() / SECONDS);
   }
 }

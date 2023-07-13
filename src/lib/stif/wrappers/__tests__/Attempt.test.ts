@@ -7,6 +7,7 @@
 import { AttemptBuilder } from '../../builders';
 import {
   EVENT_3x3x3,
+  EVENT_3x3x3_BLD_MULTI,
   EVENT_RELAY_23,
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
@@ -23,6 +24,9 @@ import {
 } from '../../builtins';
 import { Attempt } from '../Attempt';
 import { Solution } from '../Solution';
+// TODO This import indicates the need for a centralized place for
+// reusable test data.
+import { RECONSTRUCTION_BUILD } from './Solution.test';
 
 const TEST_SOLUTION = {
   puzzle: PUZZLE_3x3x3,
@@ -329,6 +333,64 @@ describe('[Wrapper] Attempt', () => {
     it('is "DNF" for overly long inspection', () => {
       let attempt = new Attempt(INSPECTION_BUILD(17500).build());
       expect(attempt.result()).toEqual('DNF');
+    });
+  });
+  describe('moveCount', () => {
+    it('is zero for attempts with no reconstructed solutions', () => {
+      let attempt = new Attempt(TIMED_BUILD().build());
+      expect(attempt.moveCount()).toBe(0);
+    });
+    it('is the move count of the reconstructed solution for attempts with one solution', () => {
+      let attempt = new Attempt(
+        new AttemptBuilder()
+          .setEvent(EVENT_3x3x3)
+          .setInspectionStart(TEST_INSPECTION_START)
+          .setTimerStart(TEST_TIMER_START)
+          .setTimerStop(TEST_TIMER_STOP)
+          .addSolution(RECONSTRUCTION_BUILD().build())
+          .build(),
+      );
+      expect(attempt.moveCount()).toBe(6);
+    });
+    it('is the summed move count of all reconstructed solutions for attempts with multiple solutions', () => {
+      let attempt = new Attempt(
+        new AttemptBuilder()
+          .setEvent(EVENT_3x3x3_BLD_MULTI(3))
+          .setInspectionStart(TEST_INSPECTION_START)
+          .setTimerStart(TEST_TIMER_START)
+          .setTimerStop(TEST_TIMER_STOP)
+          .addSolution(RECONSTRUCTION_BUILD().build())
+          .addSolution(RECONSTRUCTION_BUILD().build())
+          .addSolution(RECONSTRUCTION_BUILD().build())
+          .build(),
+      );
+      expect(attempt.moveCount()).toBe(18);
+    });
+  });
+  describe('tps', () => {
+    it('is undefined if the duration is zero', () => {
+      let attempt = new Attempt(
+        new AttemptBuilder()
+          .setEvent(EVENT_3x3x3)
+          .setInspectionStart(TEST_INSPECTION_START)
+          .setTimerStart(TEST_TIMER_START)
+          .setTimerStop(TEST_TIMER_START)
+          .addSolution(TEST_SOLUTION)
+          .build(),
+      );
+      expect(attempt.tps()).toBeUndefined();
+    });
+    it('is the number of moves divided by the duration', () => {
+      let attempt = new Attempt(
+        new AttemptBuilder()
+          .setEvent(EVENT_3x3x3)
+          .setInspectionStart(TEST_INSPECTION_START)
+          .setTimerStart(TEST_TIMER_START)
+          .setTimerStop(TEST_TIMER_STOP)
+          .addSolution(RECONSTRUCTION_BUILD().build())
+          .build(),
+      );
+      expect(attempt.tps()).toEqual(1.5);
     });
   });
 });
