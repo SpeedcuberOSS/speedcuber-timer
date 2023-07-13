@@ -9,7 +9,7 @@ import { DevelopmentExample, DevelopmentExampleSet } from './types';
 const examples: Map<string, DevelopmentExampleSet> = new Map();
 [
   require('../components/attempts/AttemptCard.examples').default,
-  // require('../components/attempts/AttemptDetails.examples').default,
+  require('../components/attempts/AttemptDetails.examples').default,
   // require('../components/attempts/AttemptDetailsModal.examples').default,
   // require('../components/charts/TPSChart.examples').default,
   // require('../components/events/EventSelector.examples').default,

@@ -25,6 +25,14 @@
   "error": {
     "title": "Ocurrió un error..."
   },
+  "attempt": {
+    "replay": "Reproducir"
+  },
+  "scramble": {
+    "scramble_one": "Mezcla",
+    "scramble_other": "Mezclas",
+    "hand": "Mezcla a mano"
+  },
   "charts": {
     "duration": "Duración",
     "best": "Mejor"

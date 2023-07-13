@@ -3,7 +3,9 @@
     "cancel": "Cancel",
     "back": "Back",
     "done": "Done",
-    "ok": "Ok"
+    "ok": "Ok",
+    "none": "None",
+    "not_available": "Not available"
   },
   "timer": "Timer",
   "attempts": "Attempts",
@@ -40,8 +42,30 @@
     "select_event": "Select Event",
     "attempt_details": "Attempt Details"
   },
+  "statistics": {
+    "duration": {
+      "inspection": "Inspection Duration"
+    },
+    "statistics": "Statistics",
+    "move_count": "Move Count",
+    "tps": "Turns Per Second (TPS)"
+  },
+  "attempt": {
+    "replay": "Replay",
+    "comment": "Comment",
+    "infraction_zero": "Infractions",
+    "infraction_one": "Infraction",
+    "infraction_other": "Infractions"
+  },
   "scramble": {
+    "scramble_one": "Scramble",
+    "scramble_other": "Scrambles",
     "hand": "Hand Scramble"
+  },
+  "puzzle": {
+    "puzzle_zero": "Puzzles",
+    "puzzle_one": "Puzzle",
+    "puzzle_other": "Puzzles"
   },
   "events": {
     "???": "Unknown",

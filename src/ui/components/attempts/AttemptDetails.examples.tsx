@@ -4,50 +4,182 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { Milliseconds } from '../../../lib/stif';
+import { AttemptBuilder, SolutionBuilder } from '../../../lib/stif/builders';
 import {
-  AttemptBuilder,
   EVENT_3x3x3,
-  INSPECTION_STARTED_LATE_ONE_MINUTE,
+  EVENT_3x3x3_BLD_MULTI,
+  EVENT_RELAY_234567,
+  PUZZLE_2x2x2,
   PUZZLE_3x3x3,
+  PUZZLE_4x4x4,
+  PUZZLE_5x5x5,
+  PUZZLE_6x6x6,
+  PUZZLE_7x7x7,
+  SIGNED_BEFORE_STARTING,
   STOPPED_PUZZLE_ONE_MOVE_REMAINING,
   STOPPED_PUZZLE_UNSOLVED,
-  ScrambleBuilder,
-} from '../../../lib/stif';
+  STOPPED_WRONG_HAND_PLACEMENT,
+} from '../../../lib/stif/builtins';
+import { Attempt } from '../../../lib/stif/wrappers';
 import { DevelopmentExampleSet } from '../../examples/types';
 
 import AttemptDetails from './AttemptDetails';
 
-export const basicAttempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U']),
-  10000,
-);
-basicAttempt.comment = 'What a neat solve!';
-basicAttempt.unixTimestamp = 1663731466876;
+/**
+ * TODOs
+ * - [ ] Extract the common Attempt types into a shared file.
+ *       Perhaps something like `stif/testing`?
+ */
 
-export const infractionsAttempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
-  10000,
-);
-infractionsAttempt.unixTimestamp = 1663731466876;
-infractionsAttempt.infractions = [STOPPED_PUZZLE_ONE_MOVE_REMAINING];
+const INSPECTION_START = 1663731466876;
+const INSPECTION_DURATION = 13456;
+const SOLVE_DURATION = 23343;
+const SOLUTION_3x3x3 = {
+  puzzle: PUZZLE_3x3x3,
+  scramble: ['R', 'U'],
+  reconstruction: [],
+};
 
-export const dnfAttempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
-  10000,
-);
-dnfAttempt.unixTimestamp = 1663731466876;
-dnfAttempt.infractions = [STOPPED_PUZZLE_UNSOLVED];
+const SOLUTION_3x3x3_WITH_RECONSTRUCTION = {
+  ...SOLUTION_3x3x3,
+  reconstruction: [
+    {
+      label: 'step1',
+      moves: [
+        { t: 500, m: 'R' },
+        { t: 750, m: 'U' },
+      ],
+    },
+    {
+      label: 'step2',
+      moves: [
+        { t: 1000, m: "U'" },
+        { t: 1250, m: "R'" },
+      ],
+    },
+    {
+      label: 'step3',
+      moves: [
+        { t: 1500, m: "U'" },
+        { t: 1750, m: "R'" },
+      ],
+    },
+  ],
+};
 
-export const dnsAttempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  ScrambleBuilder.buildBasic(PUZZLE_3x3x3, ['R', 'U', "R'", "U'"]),
-  10000,
+const ATTEMPT_3x3x3 = (duration: Milliseconds) =>
+  new AttemptBuilder()
+    .setEvent(EVENT_3x3x3)
+    .setInspectionStart(INSPECTION_START)
+    .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
+    .setTimerStop(INSPECTION_START + INSPECTION_DURATION + duration);
+
+export const basicAttempt = new Attempt(
+  ATTEMPT_3x3x3(SOLVE_DURATION)
+    .addSolution(SOLUTION_3x3x3)
+    .setComment('What a solve!')
+    .build(),
 );
-dnsAttempt.unixTimestamp = 1663731466876;
-dnsAttempt.infractions = [INSPECTION_STARTED_LATE_ONE_MINUTE];
+
+export const reconstructionAttempt = new Attempt(
+  ATTEMPT_3x3x3(3470)
+    .addSolution(SOLUTION_3x3x3_WITH_RECONSTRUCTION)
+    .setComment('What a solve!')
+    .build(),
+);
+
+export const dnfAttempt = new Attempt(
+  ATTEMPT_3x3x3(11343)
+    .addSolution(SOLUTION_3x3x3)
+    .addInfraction(STOPPED_PUZZLE_UNSOLVED)
+    .build(),
+);
+
+export const dnsAttempt = new Attempt(
+  ATTEMPT_3x3x3(11343)
+    .addSolution(SOLUTION_3x3x3)
+    .addInfraction(SIGNED_BEFORE_STARTING)
+    .build(),
+);
+
+export const plus2Attempt = new Attempt(
+  ATTEMPT_3x3x3(11343)
+    .addSolution(SOLUTION_3x3x3)
+    .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
+    .build(),
+);
+export const plus4Attempt = new Attempt(
+  ATTEMPT_3x3x3(11343)
+    .addSolution(SOLUTION_3x3x3)
+    .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
+    .addInfraction(STOPPED_WRONG_HAND_PLACEMENT)
+    .build(),
+);
+let attempt234567relay = new Attempt(
+  new AttemptBuilder()
+    .setEvent(EVENT_RELAY_234567)
+    .setInspectionStart(INSPECTION_START)
+    .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
+    .setTimerStop(INSPECTION_START + INSPECTION_DURATION + SOLVE_DURATION * 5)
+    .addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_2x2x2)
+        .setScramble(['R', 'U'])
+        .build(),
+    )
+    .addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_3x3x3)
+        .setScramble(['R', 'U', "R'", "U'"])
+        .build(),
+    )
+    .addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_4x4x4)
+        .setScramble(['R', 'U', "R'", "U'", "R'", "U'"])
+        .build(),
+    )
+    .addSolution(
+      new SolutionBuilder()
+
+        .setPuzzle(PUZZLE_5x5x5)
+        .setScramble(['R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'"])
+        .build(),
+    )
+    .addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_6x6x6)
+        .setScramble(['R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", 'R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'"])
+        .build(),
+    )
+    .addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_7x7x7)
+        .setScramble(['R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", 'R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", '2Rw', '2Uw', "2Rw'", "2Uw'", '2Rw', '2Uw', "2Rw'", "2Uw'"])
+        .build(),
+    )
+    .build(),
+);
+let attemptMultiBLD = (() => {
+  const BLD_COUNT = 50;
+  let builder = new AttemptBuilder()
+    .setEvent(EVENT_3x3x3_BLD_MULTI(BLD_COUNT))
+    .setInspectionStart(INSPECTION_START)
+    .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
+    .setTimerStop(
+      INSPECTION_START + INSPECTION_DURATION + SOLVE_DURATION * BLD_COUNT,
+    );
+  for (let i = 0; i < BLD_COUNT; i++) {
+    builder.addSolution(
+      new SolutionBuilder()
+        .setPuzzle(PUZZLE_3x3x3)
+        .setScramble(['R', 'U', "R'", "U'"])
+        .build(),
+    );
+  }
+  return new Attempt(builder.build());
+})();
 
 const examples: DevelopmentExampleSet = {
   key: 'attemptdetails',
@@ -60,9 +192,19 @@ const examples: DevelopmentExampleSet = {
       component: <AttemptDetails attempt={basicAttempt} />,
     },
     {
-      key: 'infractions',
-      title: 'with Infractions',
-      component: <AttemptDetails attempt={infractionsAttempt} />,
+      key: 'reconstruction',
+      title: 'with Reconstruction',
+      component: <AttemptDetails attempt={reconstructionAttempt} />,
+    },
+    {
+      key: 'plus2',
+      title: '+2',
+      component: <AttemptDetails attempt={plus2Attempt} />,
+    },
+    {
+      key: 'plus4',
+      title: '+4',
+      component: <AttemptDetails attempt={plus4Attempt} />,
     },
     {
       key: 'dnf',
@@ -74,7 +216,17 @@ const examples: DevelopmentExampleSet = {
       title: 'with DNS',
       component: <AttemptDetails attempt={dnsAttempt} />,
     },
+    {
+      key: 'relay234567',
+      title: 'Relay 2-7',
+      component: <AttemptDetails attempt={attempt234567relay} />,
+    },
+    {
+      key: 'multibld',
+      title: 'Multi-BLD',
+      component: <AttemptDetails attempt={attemptMultiBLD} />,
+    },
   ],
-}
+};
 
 export default examples;

@@ -4,85 +4,139 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { List, useTheme } from 'react-native-paper';
-import { useState } from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Button, List, Text, useTheme } from 'react-native-paper';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { Attempt } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import Icons from '../../icons/iconHelper';
 import TwistyPlayer from '../TwistyPlayer';
-import { getAttemptTimeString } from '../../utils/formatElapsedTime';
-import { getSolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
+import formatElapsedTime, {
+  getAttemptTimeString,
+} from '../../utils/formatElapsedTime';
+import { useTranslation } from 'react-i18next';
 
 interface AttemptDetailsProps {
   attempt: Attempt;
-  onToggleScramble?: (visible: boolean) => void;
   onReplay?: (attempt: Attempt) => void;
 }
 
 export default function AttemptDetails({
   attempt,
-  onToggleScramble = () => {},
   onReplay = () => {},
 }: AttemptDetailsProps) {
   const theme = useTheme();
-  const [scrambleExpanded, setScrambleExpanded] = useState(false);
-  const solution = attempt.solutions[0];
-  const scramble = solution.scramble.algorithm.moves.join(' ');
+  const { t } = useTranslation();
   return (
     <ScrollView style={styles.container}>
-      <List.Section>
-        {/* @ts-ignore */}
-        <List.Item
-          title={getAttemptTimeString(attempt)}
-          description={new Date(attempt.unixTimestamp).toLocaleString()}
-          left={props => (
-            <List.Icon {...props} icon={Icons.Entypo('stopwatch')} />
-          )}
-          right={props =>
-            getSolveReplay(attempt).length > 0 ? (
-              <TouchableOpacity onPress={() => onReplay(attempt)}>
-                <List.Icon {...props} icon={Icons.Entypo('controller-play')} />
-              </TouchableOpacity>
-            ) : null
-          }
-        />
-        {attempt.comment.length > 0 ? (
-          // @ts-ignore
+      <View style={{ alignItems: 'center' }}>
+        <Text variant="displayLarge">{getAttemptTimeString(attempt)}</Text>
+        <Text variant="labelMedium">
+          {new Date(attempt.timerStart()).toLocaleString()}
+        </Text>
+        {attempt.moveCount() > 0 ? (
+          <Button
+            onPress={() => onReplay(attempt)}
+            style={{ marginVertical: 15 }}
+            mode="contained"
+            icon={Icons.Entypo('controller-play')}>
+            {t('attempt.replay')}
+          </Button>
+        ) : null}
+      </View>
+      {attempt.comment().length > 0 ? (
+        <List.Section>
+          <List.Subheader>{t('attempt.comment')}</List.Subheader>
           <List.Item
-            title={attempt.comment}
+            title={attempt.comment()}
             titleNumberOfLines={0}
             left={props => (
               <List.Icon {...props} icon={Icons.MaterialIcons('comment')} />
             )}
           />
-        ) : null}
-        {/* @ts-ignore */}
-        <List.Accordion
-          style={{ marginLeft: 10 }}
-          title={scramble}
-          titleNumberOfLines={0}
-          expanded={scrambleExpanded}
-          onPress={() => {
-            setScrambleExpanded(!scrambleExpanded);
-            onToggleScramble?.(!scrambleExpanded);
-          }}
+        </List.Section>
+      ) : null}
+      <List.Section>
+        <List.Subheader>{t('statistics.statistics')}</List.Subheader>
+        <List.Item
           left={props => (
-            <List.Icon {...props} icon={Icons.WCAEvent(attempt.event.id)} />
+            <List.Icon {...props} icon={Icons.Ionicons('hourglass')} />
           )}
+          title={formatElapsedTime(new Date(attempt.inspectionDuration()))}
+          description={t('statistics.duration.inspection')}
+        />
+        <List.Item
+          left={props => (
+            <List.Icon
+              {...props}
+              icon={Icons.MaterialCommunityIcons('counter')}
+            />
+          )}
+          title={attempt.moveCount() || t('common.not_available')}
+          description={t('statistics.move_count')}
+        />
+        <List.Item
+          left={props => (
+            <List.Icon
+              {...props}
+              icon={Icons.MaterialCommunityIcons('speedometer')}
+            />
+          )}
+          title={attempt.tps()?.toFixed(3) ?? t('common.not_available')}
+          description={t('statistics.tps')}
         />
       </List.Section>
-      {scrambleExpanded ? (
-        <View style={{ height: 200 }}>
-          <TwistyPlayer
-            // @ts-ignore
-            puzzle={attempt.event.puzzle}
-            algorithm={solution.scramble.algorithm}
-            visualization={'2D'}
-            backgroundColor={theme.colors.background}
-          />
-        </View>
-      ) : null}
+      <List.Section>
+        <List.Subheader>
+          {t('attempt.infraction', { count: attempt.infractions().length })}
+        </List.Subheader>
+        {attempt.infractions().length == 0 ? (
+          <List.Item title={t('common.none')} />
+        ) : (
+          attempt.infractions().map((infraction, index) => (
+            // IDEA: - Add a "right arrow" which opens up a description
+            // of the infraction (e.g. linking to the WCA regulations)
+            <List.Item
+              key={index}
+              left={props => (
+                <List.Icon {...props} icon={Icons.Entypo('flag')} />
+              )}
+              title={infraction.penalty}
+              description={infraction.id}
+              titleNumberOfLines={0}
+            />
+          ))
+        )}
+      </List.Section>
+      <List.Section>
+        <List.Subheader>
+          {t('puzzle.puzzle', { count: attempt.solutions().length })}
+        </List.Subheader>
+        {/* @ts-ignore */}
+        {attempt.solutions().map((solution, index) => (
+          <List.Accordion
+            key={index}
+            title={solution.scramble().join(' ')}
+            titleNumberOfLines={0}
+            description={
+              solution.duration()
+                ? formatElapsedTime(new Date(solution.duration()))
+                : ''
+            }
+            left={props => (
+              <List.Icon {...props} icon={Icons.WCAEvent(solution.puzzle())} />
+            )}>
+            <View style={{ height: 200 }}>
+              <TwistyPlayer
+                // @ts-ignore
+                puzzle={solution.puzzle()}
+                algorithm={solution.scramble()}
+                visualization={'2D'}
+                backgroundColor={theme.colors.background}
+              />
+            </View>
+          </List.Accordion>
+        ))}
+      </List.Section>
     </ScrollView>
   );
 }
