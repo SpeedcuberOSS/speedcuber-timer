@@ -353,9 +353,13 @@ describe('[Wrapper] Attempt', () => {
       expect(attempt.moveCount()).toBe(6);
     });
     it('is the summed move count of all reconstructed solutions for attempts with multiple solutions', () => {
+      let event = {
+        ...EVENT_3x3x3_BLD_MULTI,
+        puzzles: new Array(3).fill(PUZZLE_3x3x3),
+      };
       let attempt = new Attempt(
         new AttemptBuilder()
-          .setEvent(EVENT_3x3x3_BLD_MULTI(3))
+          .setEvent(event)
           .setInspectionStart(TEST_INSPECTION_START)
           .setTimerStart(TEST_TIMER_START)
           .setTimerStop(TEST_TIMER_STOP)

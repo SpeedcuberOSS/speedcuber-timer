@@ -131,8 +131,12 @@ let attempt234567relay = new Attempt(
 
 let attemptMultiBLD = (() => {
   const BLD_COUNT = 50;
+  const event = {
+    ...EVENT_3x3x3_BLD_MULTI,
+    puzzles: new Array(BLD_COUNT).fill(PUZZLE_3x3x3),
+  }
   let builder = new AttemptBuilder()
-    .setEvent(EVENT_3x3x3_BLD_MULTI(BLD_COUNT))
+    .setEvent(event)
     .setInspectionStart(INSPECTION_START)
     .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
     .setTimerStop(

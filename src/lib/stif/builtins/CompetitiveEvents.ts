@@ -41,14 +41,10 @@ export const EVENT_3x3x3_BLD: STIF.CompetitiveEvent = Object.freeze({
   puzzles: [PUZZLE_3x3x3],
   type: 'official',
 });
-export const EVENT_3x3x3_BLD_MULTI: (count: number) => STIF.CompetitiveEvent = (
-  count: number,
-) => {
-  return {
-    id: '333mbf',
-    puzzles: Array(count).fill(PUZZLE_3x3x3),
-    type: 'official',
-  };
+export const EVENT_3x3x3_BLD_MULTI: STIF.CompetitiveEvent = {
+  id: '333mbf',
+  puzzles: [PUZZLE_3x3x3, PUZZLE_3x3x3],
+  type: 'official',
 };
 export const EVENT_3x3x3_OH: STIF.CompetitiveEvent = Object.freeze({
   id: '333oh',
