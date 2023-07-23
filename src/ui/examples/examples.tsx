@@ -12,7 +12,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/attempts/AttemptDetails.examples').default,
   // require('../components/attempts/AttemptDetailsModal.examples').default,
   // require('../components/charts/TPSChart.examples').default,
-  // require('../components/events/EventSelector.examples').default,
+  require('../components/Ticker.examples').default,
   // require('../components/events/EventSelectorModal.examples').default,
   // require('../components/inspection/InspectionTime.examples').default,
   // require('../components/inspection/InspectionTimer.examples').default,
