@@ -20,7 +20,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/PlayerControls/PlayerControls.examples').default,
   // require('../components/TwistyPlayer/AttemptPlayer.examples').default,
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
-  // require('../structure/CenteredBetweenSidebars.examples').default,
+  require('../structure/CenteredBetweenSidebars.examples').default,
 ].forEach(e => examples.set(e.key, e));
 
 /**

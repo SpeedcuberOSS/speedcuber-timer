@@ -26485,6 +26485,172 @@ exports[`Examples attemptdetails's typical matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
+exports[`Examples centered-between-sidebars's custom-weights matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 2,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 2,
+            "zIndex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "green",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 2,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples centered-between-sidebars's default matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 4,
+            "zIndex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "green",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "height": 1334,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
 exports[`Examples event-selector's default matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
