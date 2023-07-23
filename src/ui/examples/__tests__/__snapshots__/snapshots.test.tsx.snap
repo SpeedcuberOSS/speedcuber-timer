@@ -36512,6 +36512,834 @@ exports[`Examples event-selector-modal's default matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
+exports[`Examples inspection-time's almost-done matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+            ],
+          ]
+        }
+      >
+        0
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's default matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+            ],
+          ]
+        }
+      >
+        15
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's first-warning matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+            ],
+          ]
+        }
+      >
+        7
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's overtime-2 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+            ],
+          ]
+        }
+      >
+        +2
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's overtime-dnf matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+            ],
+          ]
+        }
+      >
+        DNF
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's ready matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "#1B5E20",
+                "fontSize": 100,
+              },
+            ],
+          ]
+        }
+      >
+        11
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's ready-2 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+              {
+                "color": "#1B5E20",
+                "fontSize": 100,
+              },
+            ],
+          ]
+        }
+      >
+        +2
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's ready-late matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+              {
+                "color": "#1B5E20",
+                "fontSize": 100,
+              },
+            ],
+          ]
+        }
+      >
+        2
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples inspection-time's second-warning matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "rgba(179, 38, 30, 1)",
+                "fontSize": 80,
+              },
+            ],
+          ]
+        }
+      >
+        3
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
 exports[`Examples ticker's cramped matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}

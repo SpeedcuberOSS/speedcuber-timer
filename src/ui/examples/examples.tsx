@@ -15,7 +15,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/events/EventSelector.examples').default,
   require('../components/Ticker.examples').default,
   require('../components/events/EventSelectorModal.examples').default,
-  // require('../components/inspection/InspectionTime.examples').default,
+  require('../components/inspection/InspectionTime.examples').default,
   // require('../components/inspection/InspectionTimer.examples').default,
   // require('../components/PlayerControls/PlayerControls.examples').default,
   // require('../components/TwistyPlayer/AttemptPlayer.examples').default,

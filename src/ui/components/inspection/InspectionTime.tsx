@@ -10,40 +10,41 @@ import { Inspection } from '../../../lib/constants';
 import { Text } from 'react-native-paper';
 import { getCurrentTheme } from '../../themes';
 import { useTranslation } from 'react-i18next';
+import { Milliseconds } from '../../../lib/stif';
 
 interface InspectionTimeProps {
-  elapsedMillis: number;
+  elapsed: Milliseconds;
   ready?: boolean;
-  inspectionDurationMillis?: number;
-  stackmatDelayMillis?: number;
-  overtimeUntilDnfMillis?: number;
+  inspectionDuration?: Milliseconds;
+  stackmatDelay?: Milliseconds;
+  overtimeUntilDnf?: Milliseconds;
 }
 
 function formatTimeToShow(
-  millisRemaining: number,
-  overtimeUntilDnfMillis: number,
+  remaining: Milliseconds,
+  overtimeUntilDnf: Milliseconds,
 ): string {
-  if (millisRemaining >= 0) {
-    return Math.ceil(millisRemaining / 1000).toString();
-  } else if (Math.abs(millisRemaining) <= overtimeUntilDnfMillis) {
+  if (remaining >= 0) {
+    return Math.ceil(remaining / 1000).toString();
+  } else if (Math.abs(remaining) <= overtimeUntilDnf) {
     return '+2';
   } else {
     return 'DNF';
   }
 }
 
-const InspectionTime = ({
-  elapsedMillis,
+export default function InspectionTime({
+  elapsed,
   ready = false,
-  inspectionDurationMillis = Inspection.DEFAULT_DURATION_MILLIS,
-  stackmatDelayMillis = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
-  overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
-}: InspectionTimeProps) => {
+  inspectionDuration = Inspection.DEFAULT_DURATION_MILLIS,
+  stackmatDelay = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
+  overtimeUntilDnf = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
+}: InspectionTimeProps) {
   const { t } = useTranslation();
   let textStyle: any[] = [styles.timer];
 
-  const millisRemaining = inspectionDurationMillis - elapsedMillis;
-  const isAlmostDone = millisRemaining <= stackmatDelayMillis * 6;
+  const remaining: Milliseconds = inspectionDuration - elapsed;
+  const isAlmostDone = remaining <= stackmatDelay * 6;
 
   if (isAlmostDone) {
     textStyle.push(styles.almostDone);
@@ -57,13 +58,11 @@ const InspectionTime = ({
         'inspection',
       ).toLocaleUpperCase()}:`}</Text>
       <Text style={textStyle}>
-        {formatTimeToShow(millisRemaining, overtimeUntilDnfMillis)}
+        {formatTimeToShow(remaining, overtimeUntilDnf)}
       </Text>
     </View>
   );
-};
-
-export default InspectionTime;
+}
 
 const styles = StyleSheet.create({
   container: {

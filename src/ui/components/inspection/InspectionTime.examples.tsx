@@ -15,47 +15,47 @@ const examples: DevelopmentExampleSet = {
     {
       key: 'default',
       title: 'Default',
-      component: <InspectionTime elapsedMillis={0} />,
+      component: <InspectionTime elapsed={0} />,
     },
     {
       key: 'first-warning',
       title: 'First Warning',
-      component: <InspectionTime elapsedMillis={8000} />,
+      component: <InspectionTime elapsed={8000} />,
     },
     {
       key: 'second-warning',
       title: 'Second Warning',
-      component: <InspectionTime elapsedMillis={12000} />,
+      component: <InspectionTime elapsed={12000} />,
     },
     {
       key: 'almost-done',
       title: 'Almost Done',
-      component: <InspectionTime elapsedMillis={15000} />,
+      component: <InspectionTime elapsed={15000} />,
     },
     {
       key: 'overtime-2',
       title: 'Overtime +2',
-      component: <InspectionTime elapsedMillis={15001} />,
+      component: <InspectionTime elapsed={15001} />,
     },
     {
       key: 'overtime-dnf',
       title: 'Overtime DNF',
-      component: <InspectionTime elapsedMillis={17001} />,
+      component: <InspectionTime elapsed={17001} />,
     },
     {
       key: 'ready',
       title: 'Ready',
-      component: <InspectionTime ready elapsedMillis={4000} />,
+      component: <InspectionTime ready elapsed={4000} />,
     },
     {
       key: 'ready-late',
       title: 'Ready Late',
-      component: <InspectionTime ready elapsedMillis={13000} />,
+      component: <InspectionTime ready elapsed={13000} />,
     },
     {
       key: 'ready-2',
       title: 'Ready +2',
-      component: <InspectionTime ready elapsedMillis={16000} />,
+      component: <InspectionTime ready elapsed={16000} />,
     },
   ],
 };

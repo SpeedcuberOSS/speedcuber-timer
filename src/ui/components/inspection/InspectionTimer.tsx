@@ -4,11 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  INSPECTION_EXCEEDED_15_SECONDS,
-  INSPECTION_EXCEEDED_17_SECONDS,
-  Infraction,
-} from '../../../lib/stif';
+import { Milliseconds } from '../../../lib/stif';
 import { Pressable, StyleSheet, Vibration } from 'react-native';
 import { useState } from 'react';
 
@@ -19,37 +15,23 @@ import { useTimer } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 
 interface InspectionTimerProps {
-  onInspectionComplete?: (infractions: Infraction[]) => void;
+  onInspectionComplete?: () => void;
   onCancel?: () => void;
-  inspectionDurationMillis?: number;
-  stackmatDelayMillis?: number;
-  overtimeUntilDnfMillis?: number;
-}
-
-function getInfractions(
-  elapsedMillis: number,
-  inspectionDurationMillis: number,
-  overtimeUntilDnfMillis: number,
-) {
-  let infractions: Infraction[] = [];
-  if (elapsedMillis > inspectionDurationMillis + overtimeUntilDnfMillis) {
-    infractions.push(INSPECTION_EXCEEDED_17_SECONDS);
-  } else if (elapsedMillis > inspectionDurationMillis) {
-    infractions.push(INSPECTION_EXCEEDED_15_SECONDS);
-  }
-  return infractions;
+  inspectionDuration?: Milliseconds;
+  stackmatDelay?: Milliseconds;
+  overtimeUntilDnf?: Milliseconds;
 }
 
 const FIRST_WARNING_MILLIS = 8000;
 const SECOND_WARNING_MILLIS = 12000;
 
-const InspectionTimer = ({
+export default function InspectionTimer({
   onInspectionComplete = () => {},
   onCancel = () => {},
-  inspectionDurationMillis = Inspection.DEFAULT_DURATION_MILLIS,
-  stackmatDelayMillis = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
-  overtimeUntilDnfMillis = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
-}: InspectionTimerProps) => {
+  inspectionDuration = Inspection.DEFAULT_DURATION_MILLIS,
+  stackmatDelay = Inspection.DEFAULT_STACKMAT_DELAY_MILLIS,
+  overtimeUntilDnf = Inspection.DEFAULT_OVERTIME_UNTIL_DNF_MILLIS,
+}: InspectionTimerProps) {
   const { t } = useTranslation();
   const { timer, elapsed } = useTimer();
   const [warnings, setWarnings] = useState<number[]>([]);
@@ -73,7 +55,7 @@ const InspectionTimer = ({
   function handlePressOut() {
     if (
       timer.isRunning() &&
-      new Date().valueOf() - startMillis > stackmatDelayMillis
+      new Date().valueOf() - startMillis > stackmatDelay
     ) {
       _end_inspection();
     }
@@ -82,7 +64,7 @@ const InspectionTimer = ({
   function endInspectionIfAtDnf() {
     if (
       timer.isRunning() &&
-      elapsedMillis > inspectionDurationMillis + overtimeUntilDnfMillis
+      elapsedMillis > inspectionDuration + overtimeUntilDnf
     ) {
       _end_inspection();
     }
@@ -91,14 +73,7 @@ const InspectionTimer = ({
   function _end_inspection() {
     setReady(false);
     timer.stop();
-    let infractions: Infraction[] = getInfractions(
-      elapsedMillis,
-      inspectionDurationMillis,
-      overtimeUntilDnfMillis,
-    );
-    setTimeout(() => {
-      onInspectionComplete(infractions);
-    }, 0);
+    setTimeout(() => onInspectionComplete(), 0);
   }
 
   function deliverTimeWarning() {
@@ -118,25 +93,23 @@ const InspectionTimer = ({
   return (
     <Pressable
       style={styles.container}
-      delayLongPress={stackmatDelayMillis}
+      delayLongPress={stackmatDelay}
       onPressIn={handlePressIn}
       onLongPress={handleLongPress}
       onPressOut={handlePressOut}>
       <InspectionTime
         ready={ready}
-        elapsedMillis={elapsed.valueOf()}
-        inspectionDurationMillis={inspectionDurationMillis}
-        stackmatDelayMillis={stackmatDelayMillis}
-        overtimeUntilDnfMillis={overtimeUntilDnfMillis}
+        elapsed={elapsed.valueOf()}
+        inspectionDuration={inspectionDuration}
+        stackmatDelay={stackmatDelay}
+        overtimeUntilDnf={overtimeUntilDnf}
       />
       <Button onPress={onCancel} mode="contained-tonal">
         {t('common.cancel')}
       </Button>
     </Pressable>
   );
-};
-
-export default InspectionTimer;
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -27,9 +27,9 @@ const examples: DevelopmentExampleSet = {
       component: (
         <InspectionTimer
           onInspectionComplete={() => console.log('Inspection Complete')}
-          inspectionDurationMillis={20000}
-          stackmatDelayMillis={1000}
-          overtimeUntilDnfMillis={5000}
+          inspectionDuration={20000}
+          stackmatDelay={1000}
+          overtimeUntilDnf={5000}
         />
       ),
     },
