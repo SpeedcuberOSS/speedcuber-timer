@@ -70,6 +70,7 @@
   "events": {
     "???": "Unknown",
     "222": "2x2x2",
+    "222bf": "2x2x2 BLD",
     "333": "3x3x3",
     "333bf": "3x3x3 BLD",
     "333bf-team": "3x3x3 Team BLD",
