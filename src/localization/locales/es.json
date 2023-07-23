@@ -28,6 +28,13 @@
   "attempt": {
     "replay": "Reproducir"
   },
+  "event": {
+    "type" : {
+      "official": "Oficial",
+      "unofficial": "No oficial",
+      "retired": "Retirado"
+    }
+  },
   "scramble": {
     "scramble_one": "Mezcla",
     "scramble_other": "Mezclas",

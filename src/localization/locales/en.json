@@ -67,6 +67,13 @@
     "puzzle_one": "Puzzle",
     "puzzle_other": "Puzzles"
   },
+  "event": {
+    "type" : {
+      "official": "Official",
+      "unofficial": "Unofficial",
+      "retired": "Retired"
+    }
+  },
   "events": {
     "???": "Unknown",
     "222": "2x2x2",
