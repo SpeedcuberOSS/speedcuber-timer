@@ -67,6 +67,16 @@ const examples: DevelopmentExampleSet = {
       component: <Ticker initialValue={13} />,
     },
     {
+      key: 'large-numbers-vertical',
+      title: 'Large Numbers (Vertical)',
+      component: <Ticker initialValue={1397} step={10000} />,
+    },
+    {
+      key: 'large-numbers-horizontal',
+      title: 'Large Numbers (Horizontal)',
+      component: <Ticker initialValue={1397} step={10000} orientation='horizontal'/>,
+    },
+    {
       key: 'everything-vertical',
       title: 'Everything (Vertical)',
       component: (

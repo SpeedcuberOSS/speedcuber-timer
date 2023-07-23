@@ -27505,6 +27505,9 @@ exports[`Examples event-selector's default matches snapshot 1`] = `
                         "writingDirection": "ltr",
                       },
                       {
+                        "fontVariant": [
+                          "tabular-nums",
+                        ],
                         "minWidth": 20,
                         "textAlign": "center",
                         "textAlignVertical": "center",
@@ -32678,6 +32681,9 @@ exports[`Examples event-selector-modal's default matches snapshot 1`] = `
                                   "writingDirection": "ltr",
                                 },
                                 {
+                                  "fontVariant": [
+                                    "tabular-nums",
+                                  ],
                                   "minWidth": 20,
                                   "textAlign": "center",
                                   "textAlignVertical": "center",
@@ -36706,6 +36712,9 @@ exports[`Examples ticker's cramped matches snapshot 1`] = `
                 "writingDirection": "ltr",
               },
               {
+                "fontVariant": [
+                  "tabular-nums",
+                ],
                 "minWidth": 20,
                 "textAlign": "center",
                 "textAlignVertical": "center",
@@ -37041,6 +37050,9 @@ exports[`Examples ticker's default matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -37375,6 +37387,9 @@ exports[`Examples ticker's everything-horizontal matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -37709,6 +37724,9 @@ exports[`Examples ticker's everything-vertical matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -38043,6 +38061,9 @@ exports[`Examples ticker's horizontal matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -38382,6 +38403,9 @@ exports[`Examples ticker's init-gt-max matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -38716,6 +38740,9 @@ exports[`Examples ticker's init-lt-min matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -38840,6 +38867,680 @@ exports[`Examples ticker's init-lt-min matches snapshot 1`] = `
                 [
                   {
                     "color": "rgba(28, 27, 31, 0.38)",
+                    "fontSize": 24,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples ticker's large-numbers-horizontal matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onTouchEnd={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "margin": -14,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "borderRadius": 20,
+            "height": 40,
+            "margin": 6,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0,
+            "shadowRadius": 0,
+            "width": 40,
+          }
+        }
+        testID="icon-button-container-outer-layer"
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderRadius": 20,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flex": 1,
+              "overflow": "hidden",
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0,
+              "shadowRadius": 0,
+            }
+          }
+          testID="icon-button-container"
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityTraits="button"
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            centered={true}
+            collapsable={false}
+            focusable={true}
+            hitSlop={
+              {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                {
+                  "overflow": "hidden",
+                },
+                [
+                  {
+                    "alignItems": "center",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                  },
+                  {
+                    "borderRadius": 20,
+                  },
+                ],
+              ]
+            }
+            testID="icon-button"
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(73, 69, 79, 1)",
+                    "fontSize": 24,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontVariant": [
+                "tabular-nums",
+              ],
+              "minWidth": 20,
+              "textAlign": "center",
+              "textAlignVertical": "center",
+            },
+          ]
+        }
+      >
+        1397
+      </Text>
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "borderRadius": 20,
+            "height": 40,
+            "margin": 6,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0,
+            "shadowRadius": 0,
+            "width": 40,
+          }
+        }
+        testID="icon-button-container-outer-layer"
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderRadius": 20,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flex": 1,
+              "overflow": "hidden",
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0,
+              "shadowRadius": 0,
+            }
+          }
+          testID="icon-button-container"
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityTraits="button"
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            centered={true}
+            collapsable={false}
+            focusable={true}
+            hitSlop={
+              {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                {
+                  "overflow": "hidden",
+                },
+                [
+                  {
+                    "alignItems": "center",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                  },
+                  {
+                    "borderRadius": 20,
+                  },
+                ],
+              ]
+            }
+            testID="icon-button"
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(73, 69, 79, 1)",
+                    "fontSize": 24,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples ticker's large-numbers-vertical matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onTouchEnd={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "margin": -14,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "borderRadius": 20,
+            "height": 40,
+            "margin": 6,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0,
+            "shadowRadius": 0,
+            "width": 40,
+          }
+        }
+        testID="icon-button-container-outer-layer"
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderRadius": 20,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flex": 1,
+              "overflow": "hidden",
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0,
+              "shadowRadius": 0,
+            }
+          }
+          testID="icon-button-container"
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityTraits="button"
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            centered={true}
+            collapsable={false}
+            focusable={true}
+            hitSlop={
+              {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                {
+                  "overflow": "hidden",
+                },
+                [
+                  {
+                    "alignItems": "center",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                  },
+                  {
+                    "borderRadius": 20,
+                  },
+                ],
+              ]
+            }
+            testID="icon-button"
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(73, 69, 79, 1)",
+                    "fontSize": 24,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontVariant": [
+                "tabular-nums",
+              ],
+              "minWidth": 20,
+              "textAlign": "center",
+              "textAlignVertical": "center",
+            },
+          ]
+        }
+      >
+        1397
+      </Text>
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "borderRadius": 20,
+            "height": 40,
+            "margin": 6,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0,
+            "shadowRadius": 0,
+            "width": 40,
+          }
+        }
+        testID="icon-button-container-outer-layer"
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderRadius": 20,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flex": 1,
+              "overflow": "hidden",
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0,
+              "shadowRadius": 0,
+            }
+          }
+          testID="icon-button-container"
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityTraits="button"
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            centered={true}
+            collapsable={false}
+            focusable={true}
+            hitSlop={
+              {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                {
+                  "overflow": "hidden",
+                },
+                [
+                  {
+                    "alignItems": "center",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                  },
+                  {
+                    "borderRadius": 20,
+                  },
+                ],
+              ]
+            }
+            testID="icon-button"
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(73, 69, 79, 1)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -39152,6 +39853,9 @@ exports[`Examples ticker's listitem matches snapshot 1`] = `
                   "writingDirection": "ltr",
                 },
                 {
+                  "fontVariant": [
+                    "tabular-nums",
+                  ],
                   "minWidth": 20,
                   "textAlign": "center",
                   "textAlignVertical": "center",
@@ -39493,6 +40197,9 @@ exports[`Examples ticker's max-10 matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -39832,6 +40539,9 @@ exports[`Examples ticker's max-lt-min matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -40171,6 +40881,9 @@ exports[`Examples ticker's min-0 matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -40515,6 +41228,9 @@ exports[`Examples ticker's min-eq-maz matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -40854,6 +41570,9 @@ exports[`Examples ticker's starting-13 matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",
@@ -41188,6 +41907,9 @@ exports[`Examples ticker's step-5 matches snapshot 1`] = `
               "writingDirection": "ltr",
             },
             {
+              "fontVariant": [
+                "tabular-nums",
+              ],
               "minWidth": 20,
               "textAlign": "center",
               "textAlignVertical": "center",

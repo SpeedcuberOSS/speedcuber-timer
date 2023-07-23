@@ -90,6 +90,7 @@ export default function Ticker({
             minWidth: 20,
             textAlign: 'center',
             textAlignVertical: 'center',
+            fontVariant: ['tabular-nums'],
           }}>
           {min <= max ? value : '-'}
         </Text>
