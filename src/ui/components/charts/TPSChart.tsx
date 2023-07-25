@@ -5,14 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { StyleSheet, View, processColor } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
+import { useTheme } from 'react-native-paper';
 
 import { LineChart } from 'react-native-charts-wrapper';
-import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import { useTranslation } from 'react-i18next';
+import { STIF } from '../../../lib/stif';
 
 interface TPSChartProps {
-  solveReplay: SolveReplay;
+  solveReplay: STIF.TimestampedMove[];
   duration: number;
   atTimestamp?: number;
 }
@@ -109,7 +109,7 @@ export default function TPSChart({
 }
 
 function windowedTPS(
-  solveReplay: SolveReplay,
+  solveReplay: STIF.TimestampedMove[],
   duration: number,
   numSteps = 30,
   windowMillis = 1000,

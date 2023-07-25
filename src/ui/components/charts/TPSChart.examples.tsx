@@ -4,16 +4,16 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
 import { DevelopmentExampleSet } from '../../examples/types';
+import { STIF } from '../../../lib/stif';
 import TPSChart from './TPSChart';
 
 const replay2x2x2 =
-  require('../../../lib/bluetooth-puzzle/__fixtures__/particula_2x2x2_solve_replay.json') as SolveReplay;
+  require('../../../lib/recordings/__fixtures__/particula_2x2x2_solve_replay.json') as STIF.TimestampedMove[];
 const replay3x3x3 =
-  require('../../../lib/bluetooth-puzzle/__fixtures__/rubiks_connected_solve_replay.json') as SolveReplay;
+  require('../../../lib/recordings/__fixtures__/rubiks_connected_solve_replay.json') as STIF.TimestampedMove[];
 const replayGyro =
-  require('../../../lib/bluetooth-puzzle/__fixtures__/particula_3x3x3_solve_replay.json') as SolveReplay;
+  require('../../../lib/recordings/__fixtures__/particula_3x3x3_solve_replay.json') as STIF.TimestampedMove[];
 
 const examples: DevelopmentExampleSet = {
   key: 'tps-chart',

@@ -11,14 +11,17 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/attempts/AttemptCard.examples').default,
   require('../components/attempts/AttemptDetails.examples').default,
   // require('../components/attempts/AttemptDetailsModal.examples').default,
-  // require('../components/charts/TPSChart.examples').default,
+  require('../components/charts/TPSChart.examples').default,
   require('../components/events/EventSelector.examples').default,
   require('../components/Ticker.examples').default,
   require('../components/events/EventSelectorModal.examples').default,
   require('../components/inspection/InspectionTime.examples').default,
   // require('../components/inspection/InspectionTimer.examples').default,
   require('../components/PlayerControls/PlayerControls.examples').default,
+  
+  // >>>>> TODO - Next component to port! <<<<<
   // require('../components/TwistyPlayer/AttemptPlayer.examples').default,
+  
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
   require('../structure/CenteredBetweenSidebars.examples').default,
 ].forEach(e => examples.set(e.key, e));

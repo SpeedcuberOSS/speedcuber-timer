@@ -43955,6 +43955,749 @@ exports[`Examples ticker's step-5 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
+exports[`Examples tps-chart's 2x2x2 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#F5FCFF",
+            "flex": 1,
+          }
+        }
+      >
+        <RNLineChart
+          chartBackgroundColor={4294966270}
+          chartDescription={
+            {
+              "text": "",
+            }
+          }
+          data={
+            {
+              "dataSets": [
+                {
+                  "config": {
+                    "color": 4284960932,
+                    "drawCircles": false,
+                    "drawFilled": true,
+                    "drawValues": false,
+                    "fillAlpha": 100,
+                    "fillGradient": {
+                      "angle": 90,
+                      "colors": [
+                        4294966270,
+                        4284960932,
+                      ],
+                      "orientation": "BOTTOM_TOP",
+                      "positions": [
+                        0,
+                        1,
+                      ],
+                    },
+                    "mode": "HORIZONTAL_BEZIER",
+                  },
+                  "label": "analytics.tps",
+                  "values": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                    },
+                    {
+                      "x": 1,
+                      "y": 2,
+                    },
+                    {
+                      "x": 1.2520333333333333,
+                      "y": 2,
+                    },
+                    {
+                      "x": 1.5040666666666667,
+                      "y": 3,
+                    },
+                    {
+                      "x": 1.7561,
+                      "y": 2,
+                    },
+                    {
+                      "x": 2.0081333333333333,
+                      "y": 4,
+                    },
+                    {
+                      "x": 2.2601666666666667,
+                      "y": 6,
+                    },
+                    {
+                      "x": 2.5122,
+                      "y": 5,
+                    },
+                    {
+                      "x": 2.7642333333333333,
+                      "y": 7,
+                    },
+                    {
+                      "x": 3.016266666666666,
+                      "y": 8,
+                    },
+                    {
+                      "x": 3.2682999999999995,
+                      "y": 5,
+                    },
+                    {
+                      "x": 3.520333333333333,
+                      "y": 5,
+                    },
+                    {
+                      "x": 3.772366666666666,
+                      "y": 2,
+                    },
+                    {
+                      "x": 4.0244,
+                      "y": 0,
+                    },
+                    {
+                      "x": 4.276433333333333,
+                      "y": 0,
+                    },
+                    {
+                      "x": 4.5284666666666675,
+                      "y": 1,
+                    },
+                    {
+                      "x": 4.780500000000001,
+                      "y": 2,
+                    },
+                    {
+                      "x": 5.032533333333335,
+                      "y": 2,
+                    },
+                    {
+                      "x": 5.284566666666668,
+                      "y": 3,
+                    },
+                    {
+                      "x": 5.536600000000002,
+                      "y": 4,
+                    },
+                    {
+                      "x": 5.788633333333336,
+                      "y": 5,
+                    },
+                    {
+                      "x": 6.040666666666669,
+                      "y": 7,
+                    },
+                    {
+                      "x": 6.2927000000000035,
+                      "y": 6,
+                    },
+                    {
+                      "x": 6.544733333333337,
+                      "y": 4,
+                    },
+                    {
+                      "x": 6.796766666666671,
+                      "y": 4,
+                    },
+                    {
+                      "x": 7.048800000000004,
+                      "y": 5,
+                    },
+                    {
+                      "x": 7.300833333333339,
+                      "y": 6,
+                    },
+                    {
+                      "x": 7.552866666666672,
+                      "y": 6,
+                    },
+                    {
+                      "x": 7.561,
+                      "y": 0,
+                    },
+                  ],
+                },
+                {
+                  "config": {
+                    "color": 4279983648,
+                    "drawCircles": false,
+                    "drawValues": false,
+                    "mode": "LINEAR",
+                  },
+                  "label": "analytics.tps",
+                  "values": [],
+                },
+              ],
+            }
+          }
+          legend={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "form": "CIRCLE",
+              "textColor": 4280032031,
+            }
+          }
+          marker={
+            {
+              "enabled": true,
+            }
+          }
+          style={
+            {
+              "flex": 1,
+            }
+          }
+          xAxis={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "position": "BOTTOM",
+              "textColor": 4280032031,
+            }
+          }
+          yAxis={
+            {
+              "left": {
+                "fontFamily": "Rubik",
+                "textColor": 4280032031,
+              },
+              "right": {
+                "enabled": false,
+              },
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples tps-chart's 3x3x3 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#F5FCFF",
+            "flex": 1,
+          }
+        }
+      >
+        <RNLineChart
+          chartBackgroundColor={4294966270}
+          chartDescription={
+            {
+              "text": "",
+            }
+          }
+          data={
+            {
+              "dataSets": [
+                {
+                  "config": {
+                    "color": 4284960932,
+                    "drawCircles": false,
+                    "drawFilled": true,
+                    "drawValues": false,
+                    "fillAlpha": 100,
+                    "fillGradient": {
+                      "angle": 90,
+                      "colors": [
+                        4294966270,
+                        4284960932,
+                      ],
+                      "orientation": "BOTTOM_TOP",
+                      "positions": [
+                        0,
+                        1,
+                      ],
+                    },
+                    "mode": "HORIZONTAL_BEZIER",
+                  },
+                  "label": "analytics.tps",
+                  "values": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                    },
+                    {
+                      "x": 1,
+                      "y": 2,
+                    },
+                    {
+                      "x": 1.4945,
+                      "y": 4,
+                    },
+                    {
+                      "x": 1.989,
+                      "y": 4,
+                    },
+                    {
+                      "x": 2.4835,
+                      "y": 2,
+                    },
+                    {
+                      "x": 2.978,
+                      "y": 1,
+                    },
+                    {
+                      "x": 3.4725,
+                      "y": 3,
+                    },
+                    {
+                      "x": 3.967,
+                      "y": 3,
+                    },
+                    {
+                      "x": 4.4615,
+                      "y": 3,
+                    },
+                    {
+                      "x": 4.956,
+                      "y": 2,
+                    },
+                    {
+                      "x": 5.4505,
+                      "y": 3,
+                    },
+                    {
+                      "x": 5.945,
+                      "y": 6,
+                    },
+                    {
+                      "x": 6.4395,
+                      "y": 6,
+                    },
+                    {
+                      "x": 6.934,
+                      "y": 5,
+                    },
+                    {
+                      "x": 7.4285,
+                      "y": 5,
+                    },
+                    {
+                      "x": 7.923,
+                      "y": 6,
+                    },
+                    {
+                      "x": 8.4175,
+                      "y": 6,
+                    },
+                    {
+                      "x": 8.912,
+                      "y": 5,
+                    },
+                    {
+                      "x": 9.4065,
+                      "y": 7,
+                    },
+                    {
+                      "x": 9.901,
+                      "y": 5,
+                    },
+                    {
+                      "x": 10.3955,
+                      "y": 2,
+                    },
+                    {
+                      "x": 10.89,
+                      "y": 3,
+                    },
+                    {
+                      "x": 11.3845,
+                      "y": 6,
+                    },
+                    {
+                      "x": 11.879,
+                      "y": 6,
+                    },
+                    {
+                      "x": 12.3735,
+                      "y": 7,
+                    },
+                    {
+                      "x": 12.868,
+                      "y": 6,
+                    },
+                    {
+                      "x": 13.3625,
+                      "y": 4,
+                    },
+                    {
+                      "x": 13.857,
+                      "y": 6,
+                    },
+                    {
+                      "x": 14.3515,
+                      "y": 8,
+                    },
+                    {
+                      "x": 14.835,
+                      "y": 0,
+                    },
+                  ],
+                },
+                {
+                  "config": {
+                    "color": 4279983648,
+                    "drawCircles": false,
+                    "drawValues": false,
+                    "mode": "LINEAR",
+                  },
+                  "label": "analytics.tps",
+                  "values": [],
+                },
+              ],
+            }
+          }
+          legend={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "form": "CIRCLE",
+              "textColor": 4280032031,
+            }
+          }
+          marker={
+            {
+              "enabled": true,
+            }
+          }
+          style={
+            {
+              "flex": 1,
+            }
+          }
+          xAxis={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "position": "BOTTOM",
+              "textColor": 4280032031,
+            }
+          }
+          yAxis={
+            {
+              "left": {
+                "fontFamily": "Rubik",
+                "textColor": 4280032031,
+              },
+              "right": {
+                "enabled": false,
+              },
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples tps-chart's 3x3x3-gyro matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#F5FCFF",
+            "flex": 1,
+          }
+        }
+      >
+        <RNLineChart
+          chartBackgroundColor={4294966270}
+          chartDescription={
+            {
+              "text": "",
+            }
+          }
+          data={
+            {
+              "dataSets": [
+                {
+                  "config": {
+                    "color": 4284960932,
+                    "drawCircles": false,
+                    "drawFilled": true,
+                    "drawValues": false,
+                    "fillAlpha": 100,
+                    "fillGradient": {
+                      "angle": 90,
+                      "colors": [
+                        4294966270,
+                        4284960932,
+                      ],
+                      "orientation": "BOTTOM_TOP",
+                      "positions": [
+                        0,
+                        1,
+                      ],
+                    },
+                    "mode": "HORIZONTAL_BEZIER",
+                  },
+                  "label": "analytics.tps",
+                  "values": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                    },
+                    {
+                      "x": 1,
+                      "y": 4,
+                    },
+                    {
+                      "x": 1.3944333333333334,
+                      "y": 4,
+                    },
+                    {
+                      "x": 1.7888666666666668,
+                      "y": 3,
+                    },
+                    {
+                      "x": 2.1833,
+                      "y": 3,
+                    },
+                    {
+                      "x": 2.5777333333333337,
+                      "y": 3,
+                    },
+                    {
+                      "x": 2.972166666666667,
+                      "y": 4,
+                    },
+                    {
+                      "x": 3.3666000000000005,
+                      "y": 6,
+                    },
+                    {
+                      "x": 3.7610333333333337,
+                      "y": 7,
+                    },
+                    {
+                      "x": 4.155466666666667,
+                      "y": 6,
+                    },
+                    {
+                      "x": 4.549900000000001,
+                      "y": 6,
+                    },
+                    {
+                      "x": 4.944333333333334,
+                      "y": 7,
+                    },
+                    {
+                      "x": 5.338766666666667,
+                      "y": 8,
+                    },
+                    {
+                      "x": 5.733200000000001,
+                      "y": 7,
+                    },
+                    {
+                      "x": 6.127633333333334,
+                      "y": 7,
+                    },
+                    {
+                      "x": 6.522066666666667,
+                      "y": 4,
+                    },
+                    {
+                      "x": 6.916500000000001,
+                      "y": 3,
+                    },
+                    {
+                      "x": 7.310933333333335,
+                      "y": 7,
+                    },
+                    {
+                      "x": 7.705366666666667,
+                      "y": 9,
+                    },
+                    {
+                      "x": 8.099800000000002,
+                      "y": 6,
+                    },
+                    {
+                      "x": 8.494233333333334,
+                      "y": 2,
+                    },
+                    {
+                      "x": 8.888666666666666,
+                      "y": 6,
+                    },
+                    {
+                      "x": 9.2831,
+                      "y": 10,
+                    },
+                    {
+                      "x": 9.677533333333331,
+                      "y": 9,
+                    },
+                    {
+                      "x": 10.071966666666663,
+                      "y": 5,
+                    },
+                    {
+                      "x": 10.466399999999997,
+                      "y": 5,
+                    },
+                    {
+                      "x": 10.860833333333328,
+                      "y": 10,
+                    },
+                    {
+                      "x": 11.25526666666666,
+                      "y": 10,
+                    },
+                    {
+                      "x": 11.649699999999994,
+                      "y": 8,
+                    },
+                    {
+                      "x": 11.833,
+                      "y": 0,
+                    },
+                  ],
+                },
+                {
+                  "config": {
+                    "color": 4279983648,
+                    "drawCircles": false,
+                    "drawValues": false,
+                    "mode": "LINEAR",
+                  },
+                  "label": "analytics.tps",
+                  "values": [],
+                },
+              ],
+            }
+          }
+          legend={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "form": "CIRCLE",
+              "textColor": 4280032031,
+            }
+          }
+          marker={
+            {
+              "enabled": true,
+            }
+          }
+          style={
+            {
+              "flex": 1,
+            }
+          }
+          xAxis={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "position": "BOTTOM",
+              "textColor": 4280032031,
+            }
+          }
+          yAxis={
+            {
+              "left": {
+                "fontFamily": "Rubik",
+                "textColor": 4280032031,
+              },
+              "right": {
+                "enabled": false,
+              },
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
 exports[`Examples twisty-player's 2D matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
