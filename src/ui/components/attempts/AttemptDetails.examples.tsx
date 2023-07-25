@@ -150,13 +150,55 @@ let attempt234567relay = new Attempt(
     .addSolution(
       new SolutionBuilder()
         .setPuzzle(PUZZLE_6x6x6)
-        .setScramble(['R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", 'R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'"])
+        .setScramble([
+          'R',
+          'U',
+          "R'",
+          "U'",
+          'Rw',
+          'Uw',
+          "Rw'",
+          "Uw'",
+          'R',
+          'U',
+          "R'",
+          "U'",
+          'Rw',
+          'Uw',
+          "Rw'",
+          "Uw'",
+        ])
         .build(),
     )
     .addSolution(
       new SolutionBuilder()
         .setPuzzle(PUZZLE_7x7x7)
-        .setScramble(['R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", 'R', 'U', "R'", "U'", 'Rw', 'Uw', "Rw'", "Uw'", '2Rw', '2Uw', "2Rw'", "2Uw'", '2Rw', '2Uw', "2Rw'", "2Uw'"])
+        .setScramble([
+          'R',
+          'U',
+          "R'",
+          "U'",
+          'Rw',
+          'Uw',
+          "Rw'",
+          "Uw'",
+          'R',
+          'U',
+          "R'",
+          "U'",
+          'Rw',
+          'Uw',
+          "Rw'",
+          "Uw'",
+          '2Rw',
+          '2Uw',
+          "2Rw'",
+          "2Uw'",
+          '2Rw',
+          '2Uw',
+          "2Rw'",
+          "2Uw'",
+        ])
         .build(),
     )
     .build(),
@@ -166,7 +208,7 @@ let attemptMultiBLD = (() => {
   const event = {
     ...EVENT_3x3x3_BLD_MULTI,
     puzzles: new Array(BLD_COUNT).fill(PUZZLE_3x3x3),
-  }
+  };
   let builder = new AttemptBuilder()
     .setEvent(event)
     .setInspectionStart(INSPECTION_START)
@@ -199,6 +241,16 @@ const examples: DevelopmentExampleSet = {
       key: 'reconstruction',
       title: 'with Reconstruction',
       component: <AttemptDetails attempt={reconstructionAttempt} />,
+    },
+    {
+      key: 'tps',
+      title: 'with TPS pressed handler',
+      component: (
+        <AttemptDetails
+          attempt={reconstructionAttempt}
+          onPressTPS={attempt => console.log(attempt.stif())}
+        />
+      ),
     },
     {
       key: 'plus2',

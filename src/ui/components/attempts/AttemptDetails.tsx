@@ -18,11 +18,13 @@ import { useTranslation } from 'react-i18next';
 interface AttemptDetailsProps {
   attempt: Attempt;
   onReplay?: (attempt: Attempt) => void;
+  onPressTPS?: (attempt: Attempt) => void;
 }
 
 export default function AttemptDetails({
   attempt,
   onReplay = () => {},
+  onPressTPS = undefined,
 }: AttemptDetailsProps) {
   const theme = useTheme();
   const { t } = useTranslation();
@@ -83,6 +85,13 @@ export default function AttemptDetails({
           )}
           title={attempt.tps()?.toFixed(3) ?? t('common.not_available')}
           description={t('statistics.tps')}
+          onPress={attempt.tps() && onPressTPS ? () => onPressTPS(attempt) : undefined}
+          right={props => (
+            attempt.tps()  && onPressTPS && <List.Icon
+              {...props}
+              icon={Icons.Entypo('chevron-right')}
+            />
+          )}
         />
       </List.Section>
       <List.Section>
