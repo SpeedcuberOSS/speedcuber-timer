@@ -18,10 +18,8 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/inspection/InspectionTime.examples').default,
   // require('../components/inspection/InspectionTimer.examples').default,
   require('../components/PlayerControls/PlayerControls.examples').default,
-  
-  // >>>>> TODO - Next component to port! <<<<<
-  // require('../components/TwistyPlayer/AttemptPlayer.examples').default,
-  
+  require('../components/solutions/Solution.examples').default,
+  require('../components/TwistyPlayer/AttemptPlayer.examples').default,
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
   require('../structure/CenteredBetweenSidebars.examples').default,
 ].forEach(e => examples.set(e.key, e));

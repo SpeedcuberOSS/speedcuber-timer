@@ -11,45 +11,22 @@ import Icons from '../../icons/iconHelper';
 import { StyleSheet } from 'react-native';
 import formatElapsedTime from '../../utils/formatElapsedTime';
 import { useTranslation } from 'react-i18next';
+import { SolutionPhase as SolutionPhaseWrapper } from '../../../lib/stif/wrappers';
+import { Milliseconds } from '../../../lib/stif';
 
-export interface Phase {
+interface SolutionPhaseProps {
   /**
-   * The name of the step
+   * The solution phase to render.
    */
-  label: string;
+  phase: SolutionPhaseWrapper;
   /**
-   * The timestamped moves in the step
+   * The amount of time that has elapsed (e.g. in the Solution replay)
    */
-  moves: { t: number; m: string }[];
-  /**
-   * The duration of the step in milliseconds
-   */
-  duration: number;
-  /**
-   * The number of milliseconds between the start of the step and
-   * execution of the first move.
-   */
-  recognition: number;
-  /**
-   * The average TPS of the step
-   *
-   * = duration / moves.length
-   */
-  tps: number;
+  elapsed?: Milliseconds;
 }
 
-interface ReconstructionStepProps extends Phase {
-  elapsed: number;
-}
-
-function ReconstructionStep({
-  label,
-  moves,
-  duration,
-  recognition,
-  tps,
-  elapsed,
-}: ReconstructionStepProps) {
+function SolutionPhase({ phase, elapsed = 0 }: SolutionPhaseProps) {
+  const moves = phase.moves();
   const theme = useTheme();
   const { t } = useTranslation();
   let Moves = null;
@@ -86,14 +63,13 @@ function ReconstructionStep({
   }
   return (
     <List.Accordion
-      title={label}
+      title={phase.label()}
       right={props => (
         <Chip {...props} compact textStyle={styles.chip}>
-          {`${_time(duration)} ${t('units.seconds')}`}
+          {`${_time(phase.duration())} ${t('units.seconds')}`}
         </Chip>
       )}
       description={Moves}>
-      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.recognition')}
         left={props => (
@@ -101,11 +77,10 @@ function ReconstructionStep({
         )}
         right={props => (
           <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
-            {`${_time(recognition)} ${t('units.seconds')}`}
+            {`${_time(phase.recognition())} ${t('units.seconds')}`}
           </Chip>
         )}
       />
-      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.execution')}
         left={props => (
@@ -113,11 +88,10 @@ function ReconstructionStep({
         )}
         right={props => (
           <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
-            {`${_time(duration - recognition)} ${t('units.seconds')}`}
+            {`${_time(phase.duration() - phase.recognition())} ${t('units.seconds')}`}
           </Chip>
         )}
       />
-      {/* @ts-ignore */}
       <List.Item
         title={t('analytics.tps')}
         left={props => (
@@ -125,7 +99,7 @@ function ReconstructionStep({
         )}
         right={props => (
           <Chip {...props} compact mode="outlined" textStyle={styles.chip}>
-            {tps.toFixed(3)}
+            {phase.tps()?.toFixed(3)}
           </Chip>
         )}
       />
@@ -142,4 +116,4 @@ const styles = StyleSheet.create({
 function _time(duration: number): string {
   return formatElapsedTime(new Date(duration));
 }
-export default memo(ReconstructionStep);
+export default memo(SolutionPhase);

@@ -5,50 +5,31 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { FlatList, StyleSheet, View } from 'react-native';
-import ReconstructionStep, { Phase } from './ReconstructionStep';
-import { useEffect, useRef, useState } from 'react';
+import SolutionPhase from './SolutionPhase';
+import { useEffect, useRef } from 'react';
+import { Solution as SolutionWrapper } from '../../../lib/stif/wrappers';
 
-import { Scramble } from '../../../lib/stif';
-import { SolveReplay } from '../../../lib/bluetooth-puzzle/getSolveReplay';
-import getReconstruction from '../../../lib/bluetooth-puzzle/getReconstruction';
+import { Milliseconds } from '../../../lib/stif';
 
-interface ReconstructionProps {
+interface SolutionProps {
   /**
-   * The starting scramble for solve.
+   * The solution to render.
    */
-  scramble: Scramble;
-  /**
-   * The solve replay for which a reconstruction is being displayed.
-   */
-  solveReplay: SolveReplay;
-  /**
-   * The duration of the attempt.
-   */
-  duration: number;
+  solution: SolutionWrapper;
   /**
    * The current timestamp in the solve replay.
    */
-  atTimestamp: number;
+  atTimestamp?: Milliseconds;
 }
 
-export default function Reconstruction({
-  scramble,
-  solveReplay,
-  duration,
-  atTimestamp,
-}: ReconstructionProps) {
-  const [phases, setPhases] = useState<Phase[]>([]);
-  useEffect(() => {
-    const phases = getReconstruction(scramble, solveReplay, 'CFOP', duration);
-    setPhases(phases);
-  }, [scramble, solveReplay]);
-
+export default function Solution({ solution, atTimestamp = 0 }: SolutionProps) {
+  const phases = solution.reconstruction();
   const ref = useRef<FlatList>(null);
   useEffect(() => {
     if (ref.current && phases.length > 0) {
       let idx = 0;
       for (let i = 0; i < phases.length; i++) {
-        if (atTimestamp < phases[i].moves[0]?.t) {
+        if (atTimestamp < phases[i].moves()[0]?.t) {
           break;
         }
         idx = i;
@@ -56,7 +37,7 @@ export default function Reconstruction({
       ref.current.scrollToIndex({
         index: idx,
         animated: true,
-        viewPosition: 0.5,
+        viewPosition: 0,
       });
     }
   }, [atTimestamp]);
@@ -66,7 +47,7 @@ export default function Reconstruction({
         <FlatList
           ref={ref}
           data={phases}
-          initialScrollIndex={1}
+          initialScrollIndex={0}
           getItemLayout={(data, index) => ({
             length: 75,
             offset: 75 * index,
@@ -74,20 +55,19 @@ export default function Reconstruction({
           })}
           renderItem={({ item }) => {
             let timestamp = atTimestamp;
-            if (atTimestamp < item.moves[0]?.t) {
+            if (atTimestamp < item.moves()[0]?.t) {
               timestamp = 0;
-            } else if (atTimestamp > item.moves[item.moves.length - 1]?.t) {
+            } else if (atTimestamp > item.moves()[item.moves().length - 1]?.t) {
               timestamp = Infinity;
             }
             return (
-              <ReconstructionStep
-                key={item.label}
-                {...item}
+              <SolutionPhase
+                key={item.label()}
+                phase={item}
                 elapsed={timestamp}
               />
             );
           }}
-          keyExtractor={item => item.label}
         />
       ) : null}
     </View>

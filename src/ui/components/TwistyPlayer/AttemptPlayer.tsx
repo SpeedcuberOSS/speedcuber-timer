@@ -4,17 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { AlgorithmBuilder, Attempt } from '../../../lib/stif';
+import { STIF } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { SegmentedButtons, useTheme } from 'react-native-paper';
-import {
-  SolveReplay,
-  compressDoubleTurns,
-  getSolveReplay,
-} from '../../../lib/bluetooth-puzzle/getSolveReplay';
 
 import PlayerControls from '../PlayerControls';
-import Reconstruction from '../reconstructions/Reconstruction';
+import Solution from '../solutions/Solution';
 import TPSChart from '../charts/TPSChart';
 import TwistyPlayer from './TwistyPlayer';
 import { View } from 'react-native';
@@ -46,11 +42,9 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
   const setElapsed = useCallback((elapsed: number) => {
     dispatchElapsed({ type: 'setElapsed', elapsed });
   }, []);
-  const [scramble] = useState(attempt.solutions[0].scramble);
-  const [solveReplay, setSolveReplay] = useState<SolveReplay>([]);
-  useEffect(() => {
-    setSolveReplay(compressDoubleTurns(getSolveReplay(attempt)));
-  }, [attempt]);
+  const [scramble] = useState(attempt.solutions()[0].scramble());
+  const [solveReplay, setSolveReplay] = useState<STIF.TimestampedMove[]>([]);
+  useEffect(() => setSolveReplay(attempt.solutions()[0].moves()), [attempt]);
 
   useEffect(() => {
     const didMoveBackward = elapsed.old >= elapsed.current;
@@ -65,9 +59,7 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       const solutionMoves = solveReplay
         .filter(v => v.t < elapsed.current)
         .map(v => v.m);
-      const twistyAlg = new AlgorithmBuilder()
-        .setMoves([...scramble.algorithm.moves, ...solutionMoves])
-        .build();
+      const twistyAlg = [...scramble, ...solutionMoves];
       // @ts-ignore
       twistyPlayerRef.current.setAlgorithm(twistyAlg);
     }
@@ -81,9 +73,8 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
       <View style={{ flex: 2 }}>
         <TwistyPlayer
           ref={twistyPlayerRef}
-          // @ts-ignore
-          puzzle={attempt.event.puzzle}
-          setupAlg={scramble.algorithm}
+          puzzle={attempt.event().puzzles[0]}
+          algorithm={scramble}
           hintFacelets={'floating'}
           backgroundColor={theme.colors.background}
         />
@@ -105,20 +96,21 @@ export default function AttemptPlayer({ attempt }: AttemptPlayerProps) {
         {value == 'tps' ? (
           <TPSChart
             solveReplay={solveReplay}
-            duration={attempt.duration}
+            duration={attempt.durationWithoutPenalties()}
             atTimestamp={elapsed.current}
           />
         ) : null}
         {value == 'reconstruction' ? (
-          <Reconstruction
-            scramble={scramble}
-            solveReplay={solveReplay}
-            duration={attempt.duration}
+          <Solution
+            solution={attempt.solutions()[0]}
             atTimestamp={elapsed.current}
           />
         ) : null}
       </View>
-      <PlayerControls duration={attempt.duration} onSeek={setElapsed} />
+      <PlayerControls
+        duration={attempt.durationWithoutPenalties()}
+        onSeek={setElapsed}
+      />
     </View>
   );
 }

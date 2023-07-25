@@ -4,13 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { SolutionPhase } from '../../../lib/stif/wrappers';
 
-import { Phase } from './ReconstructionStep';
 import React from 'react';
 
 interface PhaseBarsProps {
-  phases: Phase[];
+  phases: SolutionPhase[];
 }
 
 const PhaseBars: React.FC<PhaseBarsProps> = ({ phases }) => {
@@ -23,7 +23,7 @@ const PhaseBars: React.FC<PhaseBarsProps> = ({ phases }) => {
             <>
               <View
                 key={index}
-                style={{ flex: phase.moves.length, backgroundColor: 'red' }}
+                style={{ flex: phase.moves().length, backgroundColor: 'red' }}
               />
               <View
                 key={-(index + 1)}
@@ -40,7 +40,7 @@ const PhaseBars: React.FC<PhaseBarsProps> = ({ phases }) => {
             <>
               <View
                 key={index}
-                style={{ flex: phase.duration, backgroundColor: 'red' }}
+                style={{ flex: phase.duration(), backgroundColor: 'red' }}
               />
               <View
                 key={-(index + 1)}
