@@ -7,7 +7,7 @@
 import { FlatList, View } from 'react-native';
 import { memo } from 'react';
 
-import { Attempt } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptCard from './AttemptCard';
 
 interface AttemptListProps {
@@ -18,7 +18,7 @@ interface AttemptListProps {
 function AttemptList({ attempts, onReplay = () => {} }: AttemptListProps) {
   console.debug(`AttemptList: ${attempts.length}`);
   const renderAttempt = ({ item }: { item: Attempt }) => (
-    <AttemptCard key={item.id} attempt={item} onReplay={onReplay} />
+    <AttemptCard key={item.id()} attempt={item} onPress={onReplay} />
   );
   return (
     <View style={{ flex: 1 }}>

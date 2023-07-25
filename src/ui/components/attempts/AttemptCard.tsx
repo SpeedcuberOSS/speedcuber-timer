@@ -5,38 +5,27 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Card } from 'react-native-paper';
-import { memo, useState } from 'react';
+import { memo } from 'react';
 
 import { Attempt } from '../../../lib/stif/wrappers';
-// import AttemptDetailsModal from './AttemptDetailsModal';
 import { StyleSheet } from 'react-native';
 import { getAttemptTimeString } from '../../utils/formatElapsedTime';
 
 interface AttemptCardProps {
   attempt: Attempt;
-  onReplay?: (attempt: Attempt) => void;
+  onPress?: (attempt: Attempt) => void;
 }
 
-function AttemptCard({ attempt, onReplay = () => {} }: AttemptCardProps) {
-  const [detailsVisible, setDetailsVisible] = useState(false);
-
+function AttemptCard({ attempt, onPress = () => {} }: AttemptCardProps) {
   return (
-    <>
-      <Card style={styles.card} onPress={() => setDetailsVisible(true)}>
-        <Card.Title
-          title={getAttemptTimeString(attempt)}
-          titleVariant="headlineSmall"
-          subtitle={new Date(attempt.timerStart()).toLocaleDateString()}
-          subtitleVariant="bodySmall"
-        />
-      </Card>
-      {/* <AttemptDetailsModal
-        attempt={attempt}
-        onReplay={onReplay}
-        visible={detailsVisible}
-        onDismiss={() => setDetailsVisible(false)}
-      /> */}
-    </>
+    <Card style={styles.card} onPress={() => onPress(attempt)}>
+      <Card.Title
+        title={getAttemptTimeString(attempt)}
+        titleVariant="headlineSmall"
+        subtitle={new Date(attempt.timerStart()).toLocaleDateString()}
+        subtitleVariant="bodySmall"
+      />
+    </Card>
   );
 }
 

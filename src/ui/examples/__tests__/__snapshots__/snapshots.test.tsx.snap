@@ -12872,6 +12872,58 @@ exports[`Examples attemptdetails's dnf matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -14496,6 +14548,58 @@ exports[`Examples attemptdetails's dns matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -16120,6 +16224,58 @@ exports[`Examples attemptdetails's multibld matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333mbf
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -27425,6 +27581,58 @@ exports[`Examples attemptdetails's plus2 matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -29049,6 +29257,58 @@ exports[`Examples attemptdetails's plus4 matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -30842,6 +31102,58 @@ exports[`Examples attemptdetails's reconstruction matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -32976,6 +33288,58 @@ exports[`Examples attemptdetails's relay234567 matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEventUnofficial",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.234567relay
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -35525,6 +35889,58 @@ exports[`Examples attemptdetails's tps matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [
@@ -37697,6 +38113,58 @@ exports[`Examples attemptdetails's typical matches snapshot 1`] = `
             }
           }
         >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 10,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              selectable={false}
+              style={
+                [
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontSize": 14,
+                  },
+                  undefined,
+                  {
+                    "fontFamily": "WCAEvent",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "Rubik-Regular",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              events.333
+            </Text>
+          </View>
           <Text
             style={
               [

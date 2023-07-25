@@ -28,9 +28,17 @@ export default function AttemptDetails({
 }: AttemptDetailsProps) {
   const theme = useTheme();
   const { t } = useTranslation();
+  const Icon =
+    attempt.event().type === 'unofficial'
+      ? Icons.WCAEventUnofficial
+      : Icons.WCAEvent;
   return (
     <ScrollView style={styles.container}>
       <View style={{ alignItems: 'center' }}>
+        <View style={{flexDirection: 'row', gap: 10, alignItems: 'center'}}>
+          {Icon(attempt.event().id)({size: 14, color: theme.colors.onBackground})}
+          <Text>{t(`events.${attempt.event().id}`)}</Text>
+        </View>
         <Text variant="displayLarge">{getAttemptTimeString(attempt)}</Text>
         <Text variant="labelMedium">
           {new Date(attempt.timerStart()).toLocaleString()}
@@ -85,13 +93,15 @@ export default function AttemptDetails({
           )}
           title={attempt.tps()?.toFixed(3) ?? t('common.not_available')}
           description={t('statistics.tps')}
-          onPress={attempt.tps() && onPressTPS ? () => onPressTPS(attempt) : undefined}
-          right={props => (
-            attempt.tps()  && onPressTPS && <List.Icon
-              {...props}
-              icon={Icons.Entypo('chevron-right')}
-            />
-          )}
+          onPress={
+            attempt.tps() && onPressTPS ? () => onPressTPS(attempt) : undefined
+          }
+          right={props =>
+            attempt.tps() &&
+            onPressTPS && (
+              <List.Icon {...props} icon={Icons.Entypo('chevron-right')} />
+            )
+          }
         />
       </List.Section>
       <List.Section>
