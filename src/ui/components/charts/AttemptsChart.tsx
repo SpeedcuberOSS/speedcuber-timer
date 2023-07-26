@@ -6,7 +6,7 @@
 
 import { View, processColor } from 'react-native';
 
-import { Attempt } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import { AttemptAnalytics } from '../../../lib/analytics/AttemptAnalytics';
 import { CombinedChart } from 'react-native-charts-wrapper';
 import { useTheme } from 'react-native-paper';
@@ -50,7 +50,7 @@ export default function AttemptsChart({
               {
                 label: t('analytics.duration'),
                 values: attempts
-                  .map(attempt => attempt.duration / 1000)
+                  .map(attempt => attempt.duration() / 1000)
                   .reverse(),
                 config: {
                   scatterShape: 'CIRCLE',
