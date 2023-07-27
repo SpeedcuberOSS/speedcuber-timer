@@ -4,13 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { AttemptLibrary } from './interfaces/library';
-import { Attempt } from '../stif/types/Attempt';
+import { Attempt } from '../stif/wrappers';
 
 class InMemoryAttemptLibrary implements AttemptLibrary {
   protected _library: Map<string, Attempt> = new Map();
   add(attempt: Attempt): boolean {
-    if (attempt.id && !this._library.has(attempt.id)) {
-      this._library.set(attempt.id, attempt);
+    if (attempt.id() && !this._library.has(attempt.id())) {
+      this._library.set(attempt.id(), attempt);
       return true;
     }
     return false;

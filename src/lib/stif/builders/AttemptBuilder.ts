@@ -8,6 +8,7 @@ import { STIF, UUID, UnixTimestamp } from '../STIF';
 import { v4 as uuid } from 'uuid';
 import { err, lengthGreaterThan } from './_utils';
 import { STIFError } from '../exceptions';
+import { Attempt } from '../wrappers';
 
 export class AttemptBuilder {
   protected wip: Partial<STIF.Attempt>;
@@ -51,6 +52,11 @@ export class AttemptBuilder {
   public setComment(comment: string): this {
     this.wip.comment = comment;
     return this;
+  }
+  public wrapped() {
+    return {
+      build: () => new Attempt(this.build()),
+    }
   }
   public build(): STIF.Attempt {
     let attempt = {

@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt } from '../stif';
+import { Attempt } from '../stif/wrappers';
 
 function parseAttemptMap(libraryJSON: string | null): Map<string, Attempt> {
   let jsonString = libraryJSON ? libraryJSON : '[]';

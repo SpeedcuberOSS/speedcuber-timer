@@ -17,6 +17,7 @@ import {
 } from '../../builtins';
 import { STIF, UnixTimestamp } from '../../STIF';
 import { SolutionBuilder } from '../SolutionBuilder';
+import { Attempt } from '../../wrappers';
 
 const TEST_SOLUTION = new SolutionBuilder()
   .setPuzzle(PUZZLE_3x3x3)
@@ -218,4 +219,10 @@ describe('A new AttemptBuilder', () => {
       ).toThrow('`solutions` is a required attribute.');
     });
   });
+  describe('build', () => {
+    it('can provide a wrapped Attempt', () => {
+      let attempt = PREPARED_BUILD().wrapped().build();
+      expect(attempt).toBeInstanceOf(Attempt);
+    });
+  })
 });

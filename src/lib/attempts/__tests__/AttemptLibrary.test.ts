@@ -4,30 +4,38 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 import { v4 as uuid } from 'uuid';
-import {
-  Attempt,
-  AttemptBuilder,
-  EVENT_3x3x3,
-  PUZZLE_3x3x3,
-  Scramble,
-  ScrambleBuilder,
-} from '../../stif';
+import { EVENT_3x3x3, PUZZLE_3x3x3 } from '../../stif/builtins';
+import { Attempt } from '../../stif/wrappers';
+import { AttemptBuilder } from '../../stif/builders';
+import { STIF } from '../../stif';
 import { InMemoryAttemptLibrary as AttemptLibrary } from '../InMemoryAttemptLibrary';
 
-let TEST_SCRAMBLE: Scramble = ScrambleBuilder.buildBasic(PUZZLE_3x3x3, [
-  'R',
-  'U',
-]);
-let TEST_ATTEMPT: Attempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  TEST_SCRAMBLE,
-  10000,
-);
-let TEST_ATTEMPT2: Attempt = AttemptBuilder.buildBasic(
-  EVENT_3x3x3,
-  TEST_SCRAMBLE,
-  12000,
-);
+const now = Date.now();
+const TEST_SCRAMBLE: STIF.Algorithm = ['R', 'U'];
+const TEST_ATTEMPT: Attempt = new AttemptBuilder()
+  .setEvent(EVENT_3x3x3)
+  .addSolution({
+    puzzle: PUZZLE_3x3x3,
+    scramble: TEST_SCRAMBLE,
+    reconstruction: [],
+  })
+  .setInspectionStart(now - 23000)
+  .setTimerStart(now - 10000)
+  .setTimerStop(now)
+  .wrapped()
+  .build();
+let TEST_ATTEMPT2: Attempt = new AttemptBuilder()
+  .setEvent(EVENT_3x3x3)
+  .addSolution({
+    puzzle: PUZZLE_3x3x3,
+    scramble: TEST_SCRAMBLE,
+    reconstruction: [],
+  })
+  .setInspectionStart(now - 23000)
+  .setTimerStart(now - 12000)
+  .setTimerStop(now)
+  .wrapped()
+  .build();
 
 describe('AttemptLibrary', () => {
   it('successfully stores a new Attempt', () => {
@@ -40,11 +48,11 @@ describe('AttemptLibrary', () => {
 
     expect(library.add(TEST_ATTEMPT)).toBeTruthy();
     expect(library.count()).toBe(1);
-    expect(library.get(TEST_ATTEMPT.id)).toBe(TEST_ATTEMPT);
+    expect(library.get(TEST_ATTEMPT.id())).toBe(TEST_ATTEMPT);
 
     expect(library.add(TEST_ATTEMPT2)).toBeTruthy();
     expect(library.count()).toBe(2);
-    expect(library.get(TEST_ATTEMPT2.id)).toBe(TEST_ATTEMPT2);
+    expect(library.get(TEST_ATTEMPT2.id())).toBe(TEST_ATTEMPT2);
   });
   it('fails to store a duplicate attempt', () => {
     const library = new AttemptLibrary();
@@ -59,7 +67,7 @@ describe('AttemptLibrary', () => {
     library.add(TEST_ATTEMPT);
     expect(library.count()).toBe(1);
 
-    expect(library.remove(TEST_ATTEMPT.id)).toBeTruthy();
+    expect(library.remove(TEST_ATTEMPT.id())).toBeTruthy();
     expect(library.count()).toBe(0);
   });
   it('fails to remove a non-existent Attempt', () => {
@@ -73,25 +81,33 @@ describe('AttemptLibrary', () => {
   it('successfully updates an existing attempt', () => {
     const library = new AttemptLibrary();
     library.add(TEST_ATTEMPT);
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
-      TEST_ATTEMPT.duration,
+    expect(library.get(TEST_ATTEMPT.id())?.duration()).toEqual(
+      TEST_ATTEMPT.duration(),
     );
 
-    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000 };
-    expect(library.update(TEST_ATTEMPT.id, NEW_ATTEMPT)).toBeTruthy();
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(8000);
+    let NEW_ATTEMPT = new Attempt({
+      ...TEST_ATTEMPT.stif(),
+      timerStart: now - 8000,
+      timerStop: now,
+    });
+    expect(library.update(TEST_ATTEMPT.id(), NEW_ATTEMPT)).toBeTruthy();
+    expect(library.get(TEST_ATTEMPT.id())?.duration()).toEqual(8000);
   });
   it('fails to update a non-existent Attempt', () => {
     const library = new AttemptLibrary();
     library.add(TEST_ATTEMPT);
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
-      TEST_ATTEMPT.duration,
+    expect(library.get(TEST_ATTEMPT.id())?.duration()).toEqual(
+      TEST_ATTEMPT.duration(),
     );
 
-    let NEW_ATTEMPT = { ...TEST_ATTEMPT, duration: 8000 };
+    let NEW_ATTEMPT = new Attempt({
+      ...TEST_ATTEMPT.stif(),
+      timerStart: now - 8000,
+      timerStop: now,
+    });
     expect(library.update(uuid(), NEW_ATTEMPT)).toBeFalsy();
-    expect(library.get(TEST_ATTEMPT.id)?.duration).toEqual(
-      TEST_ATTEMPT.duration,
+    expect(library.get(TEST_ATTEMPT.id())?.duration()).toEqual(
+      TEST_ATTEMPT.duration(),
     );
   });
 });
