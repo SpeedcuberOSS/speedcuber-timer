@@ -24,6 +24,7 @@ import {
 import { AttemptAnalytics } from '../AttemptAnalytics';
 import twistyAttempts from '../demo/twisty2stif';
 import { Attempt } from '../../stif/wrappers';
+import attempts from '../demo/twisty2stif';
 
 const twistyAnalytics = new AttemptAnalytics(twistyAttempts);
 const attemptAnalytics = new AttemptAnalytics(Ao5_AVG_10000);
@@ -370,6 +371,11 @@ describe('analytics', () => {
       ]);
       expect(analytics.sliding.AoX(5)).toEqual([30, 40, 50]);
     });
+    it('is a debug test', () => {
+      let analytics = new AttemptAnalytics(attempts);
+      const averages = analytics.sliding.AoX(5);
+      expect(averages).toBeTruthy();
+    })
     it("returns an empty list when there aren't enough solves", () => {
       let analytics = new AttemptAnalytics([
         attemptFixtureWithTime(10),
