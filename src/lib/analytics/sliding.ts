@@ -10,9 +10,9 @@ export function sliding(
   worstPct: number = 0.05,
 ) {
   const bools = (idx: number, best_: number, worst_: number) => ({
-    best: idx < best_,
-    counting: idx >= best_ && idx <= worst_,
-    worst: idx > worst_,
+    best: idx <= best_,
+    counting: idx > best_ && idx < worst_,
+    worst: idx >= worst_,
   });
   return {
     AoX: (x: number) => {
@@ -20,48 +20,74 @@ export function sliding(
       if (nums.length < x) return [];
       else {
         const bestCount = Math.ceil(x * bestPct);
-        const bestIdx = bestCount;
-        const worstCount =Math.ceil(x * worstPct);
+        const bestIdx = bestCount - 1;
+        const worstCount = Math.ceil(x * worstPct);
         const worstIdx = x - worstCount;
         const counting = x - bestCount - worstCount;
-        let vals = nums.slice(0, x).sort((a, b) => a - b);
-        let averages = [
-          vals.slice(bestCount, -worstCount).reduce((acc, val) => acc + val, 0) /
-            counting,
-        ];
+        let sortedWindow = nums.slice(0, x).sort((a, b) => a - b);
+        let countingSum = sortedWindow
+          .slice(bestCount, -worstCount)
+          .reduce((acc, val) => acc + val, 0);
+        let averages = [countingSum / counting];
         for (let i = x; i <= nums.length; i++) {
-          let idx_old = binarySearch(vals, nums[i - x]);
-          vals.splice(idx_old, 1);
-          let idx_new = binarySearch(vals, nums[i]);
-          vals.splice(idx_new, 0, nums[i]);
-
-          const removing = bools(idx_old, bestIdx, worstIdx);
-          const inserting = bools(idx_new, bestIdx, worstIdx);
-          if (removing.best && inserting.best) {
-            averages.push(averages[averages.length - 1]);
-          // } else if (removing.best && inserting.counting) {
-          //   const newbest = vals[best -  1];
-          //   const a = averages[averages.length - 1] - newbest / counting;
-          //   const avg = a + nums[i] / counting;
-          //   averages.push(avg);
-          // } else if (removing.best && inserting.worst) {
-          // } else if (removing.counting && inserting.best) {
-          // } else if (removing.counting && inserting.counting) {
-          // } else if (removing.counting && inserting.worst) {
-          // } else if (removing.worst && inserting.best) {
-          // } else if (removing.worst && inserting.counting) {
-          } else if (removing.worst && inserting.worst) {
-            averages.push(averages[averages.length - 1]);
+          const removedVal = nums[i - x];
+          const insertedVal = nums[i];
+          const oldBest = sortedWindow[bestIdx];
+          const oldTouchingBest = sortedWindow[bestIdx + 1];
+          const oldWorst = sortedWindow[worstIdx];
+          const oldTouchingWorst = sortedWindow[worstIdx - 1];
+          const idx_old = binarySearch(sortedWindow, removedVal);
+          sortedWindow.splice(idx_old, 1);
+          const idx_new = binarySearch(sortedWindow, insertedVal);
+          sortedWindow.splice(idx_new, 0, insertedVal);
+          const newBest = sortedWindow[bestIdx];
+          const newTouchingBest = sortedWindow[bestIdx + 1];
+          const newWorst = sortedWindow[worstIdx];
+          const newTouchingWorst = sortedWindow[worstIdx - 1];
+          
+          // Update countingSum
+          if (newWorst == Infinity) {
+            countingSum = sortedWindow
+              .slice(bestCount, -worstCount)
+              .reduce((acc, val) => acc + val, 0);  
           } else {
-            console.log('I thought these conditions were exhaustive...');
-            const avg =
-              vals.slice(bestCount, -worstCount).reduce((acc, val) => acc + val, 0) /
-              (counting);
-            averages.push(avg);
+            const removing = bools(idx_old, bestIdx, worstIdx);
+            const inserting = bools(idx_new, bestIdx, worstIdx);
+            if (removing.best && inserting.best) {
+              // No change
+            } else if (removing.best && inserting.counting) {
+              countingSum -= newBest;
+              countingSum += insertedVal;
+            } else if (removing.best && inserting.worst) {
+              countingSum -= newBest;
+              countingSum += newTouchingWorst;
+            } else if (removing.counting && inserting.best) {
+              countingSum -= removedVal;
+              countingSum += newTouchingBest;
+            } else if (removing.counting && inserting.counting) {
+              countingSum -= removedVal;
+              countingSum += insertedVal;
+            } else if (removing.counting && inserting.worst) {
+              countingSum -= removedVal;
+              countingSum += newTouchingWorst;
+            } else if (removing.worst && inserting.best) {
+              countingSum -= oldTouchingWorst;
+              countingSum += newTouchingBest;
+            } else if (removing.worst && inserting.counting) {
+              countingSum -= oldTouchingWorst;
+              countingSum += insertedVal;
+            } else if (removing.worst && inserting.worst) {
+              // No change
+            } else {
+              console.error('I thought these conditions were exhaustive...');
+            }
           }
+
+          // Update averages
+          averages.push(countingSum / counting);
         }
         averages.splice(-1, 1);
-        return averages.map(avg => Math.round(avg));
+        return averages;
       }
     },
   };
