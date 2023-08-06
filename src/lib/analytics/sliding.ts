@@ -4,26 +4,64 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-export function sliding(nums: number[], bestPct: number = 0.05, worstPct: number = 0.05) {
+export function sliding(
+  nums: number[],
+  bestPct: number = 0.05,
+  worstPct: number = 0.05,
+) {
+  const bools = (idx: number, best_: number, worst_: number) => ({
+    best: idx < best_,
+    counting: idx >= best_ && idx <= worst_,
+    worst: idx > worst_,
+  });
   return {
     AoX: (x: number) => {
       // Heavily inspired by: https://stackoverflow.com/a/52136129/14765128
       if (nums.length < x) return [];
       else {
-        const best = Math.ceil(x * bestPct);
-        const worst = Math.ceil(x * worstPct);
-        let averages = [];
+        const bestCount = Math.ceil(x * bestPct);
+        const bestIdx = bestCount;
+        const worstCount =Math.ceil(x * worstPct);
+        const worstIdx = x - worstCount;
+        const counting = x - bestCount - worstCount;
         let vals = nums.slice(0, x).sort((a, b) => a - b);
+        let averages = [
+          vals.slice(bestCount, -worstCount).reduce((acc, val) => acc + val, 0) /
+            counting,
+        ];
         for (let i = x; i <= nums.length; i++) {
-          const avg =
-            vals.slice(best, -worst).reduce((acc, val) => acc + val, 0) / (x - best - worst);
-          averages.push(Math.round(avg));
           let idx_old = binarySearch(vals, nums[i - x]);
           vals.splice(idx_old, 1);
           let idx_new = binarySearch(vals, nums[i]);
           vals.splice(idx_new, 0, nums[i]);
+
+          const removing = bools(idx_old, bestIdx, worstIdx);
+          const inserting = bools(idx_new, bestIdx, worstIdx);
+          if (removing.best && inserting.best) {
+            averages.push(averages[averages.length - 1]);
+          // } else if (removing.best && inserting.counting) {
+          //   const newbest = vals[best -  1];
+          //   const a = averages[averages.length - 1] - newbest / counting;
+          //   const avg = a + nums[i] / counting;
+          //   averages.push(avg);
+          // } else if (removing.best && inserting.worst) {
+          // } else if (removing.counting && inserting.best) {
+          // } else if (removing.counting && inserting.counting) {
+          // } else if (removing.counting && inserting.worst) {
+          // } else if (removing.worst && inserting.best) {
+          // } else if (removing.worst && inserting.counting) {
+          } else if (removing.worst && inserting.worst) {
+            averages.push(averages[averages.length - 1]);
+          } else {
+            console.log('I thought these conditions were exhaustive...');
+            const avg =
+              vals.slice(bestCount, -worstCount).reduce((acc, val) => acc + val, 0) /
+              (counting);
+            averages.push(avg);
+          }
         }
-        return averages;
+        averages.splice(-1, 1);
+        return averages.map(avg => Math.round(avg));
       }
     },
   };

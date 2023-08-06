@@ -29,11 +29,32 @@ describe('sliding', () => {
   it('computes the sliding average of x with random separations between numbers', () => {
     expect(sliding([1, 5, 3, 2, 4, 6]).AoX(5)).toEqual([3, 4]);
   });
-  it('omits lowest from average', () => {
-    expect(sliding([1, 2, 3, 4, 5, 1.5]).AoX(5)).toEqual([3, 3]);
+  it('handles removing best and inserting best', () => {
+    expect(sliding([1, 3, 5, 7, 9, 0]).AoX(5)).toEqual([5, 5]);
+  })
+  it('handles removing best and inserting counting', () => {
+    expect(sliding([1, 3, 5, 7, 9, 6]).AoX(5)).toEqual([5, 6]);
+  })
+  it('handles removing best and inserting worst', () => {
+    expect(sliding([1, 3, 5, 7, 9, 10]).AoX(5)).toEqual([5, 7]);
+  })
+  it('handles removing counting and inserting best', () => {
+    expect(sliding([3, 1, 5, 7, 9, 0]).AoX(5)).toEqual([5, 4]);
   });
-  it('omits highest from average', () => {
-    expect(sliding([5, 2, 3, 4, 1, 5.5]).AoX(5)).toEqual([3, 3]);
+  it('handles removing counting and inserting counting', () => {
+    expect(sliding([3, 1, 5, 7, 9, 6]).AoX(5)).toEqual([5, 6]);
+  });
+  it('handles removing counting and inserting worst', () => {
+    expect(sliding([3, 1, 5, 7, 9, 10]).AoX(5)).toEqual([5, 7]);
+  });
+  it('handles removing worst and inserting best', () => {
+    expect(sliding([9, 7, 5, 3, 1, 0]).AoX(5)).toEqual([5, 3]);
+  });
+  it('handles removing worst and inserting counting', () => {
+    expect(sliding([9, 7, 5, 3, 1, 4]).AoX(5)).toEqual([5, 4]);
+  });
+  it('handles removing worst and inserting worst', () => {
+    expect(sliding([9, 7, 5, 3, 1, 10]).AoX(5)).toEqual([5, 5]);
   });
   // TODO handle cases likely to overflow...
 
@@ -49,12 +70,12 @@ describe('sliding', () => {
 
   it('Ao50', () => {
     const x = 50
-    expect(sliding(durations).AoX(x)).toEqual(Ao50);
+    expect(sliding(durations).AoX(x)).toEqual(Ao50);  // Rounding errors
   });
 
   it('Ao100', () => {
     const x = 100
-    expect(sliding(durations).AoX(x)).toEqual(Ao100);
+    expect(sliding(durations).AoX(x)).toEqual(Ao100);    // Rounding errors
   });
 
   it('Ao1000', () => {
