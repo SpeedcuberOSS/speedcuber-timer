@@ -17,15 +17,25 @@ const examples: DevelopmentExampleSet = {
     {
       key: 'default',
       title: 'Default',
-      component: <AttemptsChart attempts={attempts.slice(0, 50)} />,
+      component: <AttemptsChart attempts={attempts.slice(0, 250)} />,
     },
     {
       key: '50-100',
-      title: 'Ao20, Ao50',
+      title: 'Ao50, Ao100',
       component: (
         <AttemptsChart
-          attempts={attempts.slice(0, 100)}
-          averages={[20, 50]}
+          attempts={attempts}
+          averages={[50, 100]}
+        />
+      ),
+    },
+    {
+      key: '100-1000',
+      title: 'Ao100, Ao1000',
+      component: (
+        <AttemptsChart
+          attempts={attempts}
+          averages={[100, 1000]}
         />
       ),
     },

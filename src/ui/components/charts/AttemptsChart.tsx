@@ -18,18 +18,21 @@ interface AttemptsChartProps {
 }
 
 const AVERAGE_COLORS = ['red', 'limegreen', 'yellow', 'orange'];
+const MAX_POINTS_PER_SERIES = 250; // Hand selected to balance performance limitations with detailed charting.
 
 function prepareAverage(x: number, attempts: Attempt[]) {
-  let averages = new AttemptAnalytics(attempts).sliding
-    .AoX(x)
+  let averages = new AttemptAnalytics(attempts).sliding.AoX(x);
+  const spacing = Math.ceil(averages.length / MAX_POINTS_PER_SERIES);
+  let sparseAverages = averages
+    .filter((value, idx) => idx % spacing == 0)
     .map(d => d / 1000)
     .map((d, idx) => {
       return {
-        x: idx + x - 1,
+        x: idx * spacing + x - 1,
         y: d,
       };
     });
-  return averages;
+  return sparseAverages;
 }
 
 export default function AttemptsChart({
@@ -46,21 +49,24 @@ export default function AttemptsChart({
         style={{ flex: 1 }}
         data={{
           scatterData: {
-            dataSets: [
-              {
-                label: t('analytics.duration'),
-                values: attempts
-                  .map(attempt => attempt.duration() / 1000)
-                  .reverse(),
-                config: {
-                  scatterShape: 'CIRCLE',
-                  scatterShapeSize: 5,
-                  scatterShapeHoleRadius: 2,
-                  color: pointColor,
-                  valueTextColor: textColor,
-                },
-              },
-            ],
+            dataSets:
+              attempts.length <= MAX_POINTS_PER_SERIES
+                ? [
+                    {
+                      label: t('analytics.duration'),
+                      values: attempts
+                        .map(attempt => attempt.duration() / 1000)
+                        .reverse(),
+                      config: {
+                        scatterShape: 'CIRCLE',
+                        scatterShapeSize: 5,
+                        scatterShapeHoleRadius: 2,
+                        color: pointColor,
+                        valueTextColor: textColor,
+                      },
+                    },
+                  ]
+                : [],
           },
           lineData: {
             dataSets: [

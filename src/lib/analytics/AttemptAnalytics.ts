@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Attempt } from '../stif/wrappers';
+import { sliding } from './sliding';
 
 class AttemptAnalytics {
   private attempts: Attempt[];
@@ -191,12 +192,7 @@ class SlidingWindowAnalytics {
   }
 
   AoX(x: number, bestPct: number = 0.05, worstPct: number = 0.05): number[] {
-    let averages: number[] = [];
-    for (let i = 0; i < this.attempts.length - x + 1; i++) {
-      let window = this.attempts.slice(i, i + x);
-      averages.push(new AttemptAnalytics(window).AoX(x, bestPct, worstPct));
-    }
-    return averages;
+    return sliding(this.attempts.map(a => a.duration()), bestPct, worstPct).AoX(x).map(a => Math.round(a));
   }
 
   best(): number[][] {
