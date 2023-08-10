@@ -7,7 +7,7 @@ import { Permission, PermissionsAndroid, Platform } from 'react-native';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import LocationStatus from './LocationStatus';
-import { isBluetoothEnabled } from '.';
+import { isBluetoothEnabled } from './scanner';
 import { t } from 'i18next';
 
 export async function ensureScanningReady() {

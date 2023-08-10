@@ -4,29 +4,25 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { ConnectionStatus, MoveListener } from '../../utils/bluetooth';
-import PuzzleRegistry, {
-  BluetoothPuzzle,
-} from '../../utils/bluetooth/SmartPuzzleRegistry';
 import { useEffect, useState } from 'react';
+import PuzzleRegistry, { BluetoothPuzzle, MessageListener } from './SmartPuzzleRegistry';
 
-import ErrorDialog from '../ErrorDialog';
-import SmartPuzzleCard from './SmartPuzzleCard';
-import { SmartPuzzleError } from '../../utils/bluetooth/SmartPuzzleError';
 import { StyleSheet } from 'react-native';
 import useErrorGuard from '../../hooks/useErrorGuard';
+import ErrorDialog from '../ErrorDialog';
+import SmartPuzzleCard from './SmartPuzzleCard';
+import { SmartPuzzleError } from './SmartPuzzleError';
+import { ConnectionStatus } from './types';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: BluetoothPuzzle;
-  onMove?: MoveListener;
+  onMove?: MessageListener;
 }
 
 async function getConnectionStatus(
   puzzle: BluetoothPuzzle,
 ): Promise<ConnectionStatus> {
-  return (await puzzle.device.isConnected())
-    ? ConnectionStatus.CONNECTED
-    : ConnectionStatus.DISCONNECTED;
+  return (await puzzle.device.isConnected()) ? 'connected' : 'disconnected';
 }
 
 const SmartPuzzleConnector = ({
@@ -34,16 +30,16 @@ const SmartPuzzleConnector = ({
   onMove,
 }: SmartPuzzleConnectorProps) => {
   const { error, guard } = useErrorGuard(SmartPuzzleError);
-  const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>(
-    ConnectionStatus.DISCONNECTED,
-  );
+  const [connectionStatus, setConnectionStatus] =
+    useState<ConnectionStatus>('disconnected');
   useEffect(() => {
     getConnectionStatus(smartPuzzle).then(setConnectionStatus);
   }, [smartPuzzle]);
 
   async function onInitiateConnection() {
-    setConnectionStatus(ConnectionStatus.CONNECTING);
+    setConnectionStatus('connected');
     await guard(async () => await PuzzleRegistry.connect(smartPuzzle));
+    PuzzleRegistry.addMessageListener(smartPuzzle, console.debug)
     setConnectionStatus(await getConnectionStatus(smartPuzzle));
   }
 

@@ -17,11 +17,13 @@ import {
   GO_CUBE_2x2x2,
   GO_CUBE_3x3x3,
   HEYKUBE,
+  RUBIKS_CONNECTED,
 } from '../../../lib/stif/builtins';
 
 const KNOWN_PUZZLE_MODELS: STIF.SmartPuzzle[] = [
   GO_CUBE_2x2x2,
   GO_CUBE_3x3x3,
+  RUBIKS_CONNECTED,
   GIIKER_2x2x2,
   GIIKER_3x3x3,
   HEYKUBE,
@@ -34,7 +36,7 @@ export interface BluetoothPuzzle extends STIF.SmartPuzzle {
   device: Device;
 }
 
-type MessageListener = (message: STIF.Message) => void;
+export type MessageListener = (message: STIF.Message) => void;
 
 export interface MessageSubscription {
   remove: () => void;
@@ -62,7 +64,7 @@ function smartPuzzleType(device: Device): STIF.SmartPuzzle {
 function _isPuzzleRegistered(device: Device): boolean {
   return (
     smartPuzzleType(device) !== SMARTPUZZLE_UNKNOWN &&
-    !PUZZLE_REGISTRY.has(device.id)
+    PUZZLE_REGISTRY.has(device.id)
   );
 }
 
@@ -95,9 +97,11 @@ function addMessageListener(
 }
 
 function getPuzzles(): BluetoothPuzzle[] {
-  return Array.from(PUZZLE_REGISTRY.values())
+  const puzzles = Array.from(PUZZLE_REGISTRY.values())
     .map(entry => entry.puzzle)
     .filter(puzzle => puzzle.puzzle !== PUZZLE_UNKNOWN);
+  console.debug(`Found ${puzzles.length} puzzles out of ${PUZZLE_REGISTRY.size} entries`)
+  return puzzles;
 }
 
 function asSmartPuzzle(device: Device): BluetoothPuzzle {

@@ -4,17 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import PuzzleRegistry, {
-  BluetoothPuzzle,
-} from '../../utils/bluetooth/SmartPuzzleRegistry';
+import PuzzleRegistry, { BluetoothPuzzle } from './SmartPuzzleRegistry';
 import { useEffect, useState } from 'react';
 import { RefreshControl, ScrollView, View } from 'react-native';
 
 import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
-import { SmartPuzzleError } from '../../utils/bluetooth/SmartPuzzleError';
-import { ensureScanningReady } from '../../utils/bluetooth/permissions';
-import { scanForSmartPuzzles } from '../../utils/bluetooth';
+import { SmartPuzzleError } from './SmartPuzzleError';
+import { ensureScanningReady } from './permissions';
+import { scanForSmartPuzzles } from './scanner';
 import useErrorGuard from '../../hooks/useErrorGuard';
 
 const SmartPuzzleScanner = () => {

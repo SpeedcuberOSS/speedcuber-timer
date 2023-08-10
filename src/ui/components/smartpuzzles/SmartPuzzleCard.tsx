@@ -10,21 +10,22 @@ import {
   Chip,
   IconButton,
   Text,
+  useTheme,
 } from 'react-native-paper';
 import Icons, { IconFunction } from '../../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
 import { STIF } from '../../../lib/stif';
 
-import { ConnectionStatus } from '../../utils/bluetooth';
+import { ConnectionStatus } from './types';
 import { StyleSheet } from 'react-native';
 
 interface SmartPuzzleCardProps {
-  name: string;
-  brand: string;
+  name?: string;
+  brand?: string;
   connectionStatus?: ConnectionStatus;
   puzzle?: STIF.Puzzle;
-  onConnect: () => void;
-  onDisconnect: () => void;
+  onConnect?: () => void;
+  onDisconnect?: () => void;
 }
 
 const PuzzleIcons = new Map<STIF.Puzzle, IconFunction>([
@@ -40,14 +41,15 @@ function SmartPuzzleCard({
   name = 'Unknown Name',
   brand = 'Unknown Brand',
   puzzle = PUZZLE_3x3x3,
-  connectionStatus = ConnectionStatus.DISCONNECTED,
-  onConnect,
-  onDisconnect,
+  connectionStatus = 'disconnected',
+  onConnect = () => {},
+  onDisconnect = () => {},
 }: SmartPuzzleCardProps) {
+  const theme = useTheme()
   return (
-    <Card style={{ marginTop: 8, marginHorizontal: 8 }}>
+    <Card style={styles.card}>
       <Card.Title
-        style={{ paddingVertical: 10 }}
+        style={styles.title}
         title={name}
         subtitle={
           <Chip icon={getPuzzleIcon(puzzle)} mode="outlined" disabled>
@@ -55,44 +57,41 @@ function SmartPuzzleCard({
           </Chip>
         }
         right={() => {
-          if (connectionStatus === ConnectionStatus.DISCONNECTED) {
-            return (
-              // @ts-ignore
-              <IconButton
-                mode="contained"
-                icon={Icons.MaterialCommunityIcons('bluetooth')}
-                style={styles.connection}
-                onPress={onConnect}
-              />
-            );
-          } else if (connectionStatus === ConnectionStatus.CONNECTING) {
-            return <ActivityIndicator animating style={styles.connecting} />;
-          } else if (connectionStatus === ConnectionStatus.CONNECTED) {
-            return (
-              // @ts-ignore
-              <IconButton
-                mode="contained"
-                icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
-                style={styles.connection}
-                onPress={onDisconnect}
-              />
-            );
-          } else if (connectionStatus === 'failed') {
-            return (
-              // @ts-ignore
-              <IconButton
-                icon={Icons.Entypo('warning')}
-                style={styles.connection}
-              />
-            );
-          } else {
-            return (
-              // @ts-ignore
-              <IconButton
-                icon={Icons.FontAwesome('question')}
-                style={styles.connection}
-              />
-            );
+          switch (connectionStatus) {
+            case 'disconnected':
+              return (
+                <IconButton
+                  mode="contained"
+                  icon={Icons.MaterialCommunityIcons('bluetooth')}
+                  style={styles.connection}
+                  onPress={onConnect}
+                />
+              );
+            case 'connecting':
+              return <ActivityIndicator animating style={styles.connecting} />;
+            case 'connected':
+              return (
+                <IconButton
+                  mode="outlined"
+                  icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
+                  style={styles.connection}
+                  onPress={onDisconnect}
+                />
+              );
+            case 'failed':
+              return (
+                <IconButton
+                  icon={Icons.Entypo('warning')}
+                  style={styles.connection}
+                />
+              );
+            default:
+              return (
+                <IconButton
+                  icon={Icons.FontAwesome('question')}
+                  style={styles.connection}
+                />
+              );
           }
         }}
       />
@@ -103,6 +102,8 @@ function SmartPuzzleCard({
 export default SmartPuzzleCard;
 
 const styles = StyleSheet.create({
+  card: { marginTop: 8, marginHorizontal: 8},
+  title: { paddingVertical: 10 },
   button: {
     marginRight: 15,
   },

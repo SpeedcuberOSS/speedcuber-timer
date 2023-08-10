@@ -10,16 +10,20 @@ import { getCurrentTheme } from '../../themes';
 import { PaperProvider } from 'react-native-paper';
 import i18n from '../../../localization';
 
+jest.useFakeTimers();
+
 describe('Examples', () => {
   Examples.setKeys().forEach(setKey => {
     describe(`${setKey}'s`, () => {
       const set = Examples.setByKey(setKey);
       set.examples.forEach(example => {
         it(`${example.key} matches snapshot`, () => {
+          const Example = example.component;
+          const ReadyToSnapshot = typeof Example === 'function' ? <Example /> : Example;
           let tree = renderer
             .create(
               <PaperProvider theme={getCurrentTheme()}>
-                {example.component}
+                {ReadyToSnapshot}
               </PaperProvider>,
             )
             .toJSON();

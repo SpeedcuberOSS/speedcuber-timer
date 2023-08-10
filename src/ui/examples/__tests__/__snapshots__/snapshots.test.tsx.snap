@@ -58553,6 +58553,5786 @@ exports[`Examples player-controls's default matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
+exports[`Examples smart-puzzle-card's connected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 1,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(73, 69, 79, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂱
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's connecting matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                accessibilityRole="progressbar"
+                accessibilityState={
+                  {
+                    "busy": true,
+                  }
+                }
+                accessible={true}
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    {
+                      "marginHorizontal": 28,
+                    },
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "height": 24,
+                      "opacity": 1,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "bottom": 0,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 24,
+                          "transform": [
+                            {
+                              "rotate": "45deg",
+                            },
+                          ],
+                          "width": 24,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "height": 12,
+                            "overflow": "hidden",
+                            "width": 24,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            {
+                              "height": 24,
+                              "transform": [
+                                {
+                                  "translateY": 0,
+                                },
+                                {
+                                  "rotate": "-165deg",
+                                },
+                              ],
+                              "width": 24,
+                            }
+                          }
+                        >
+                          <View
+                            collapsable={false}
+                            style={
+                              {
+                                "height": 12,
+                                "overflow": "hidden",
+                                "width": 24,
+                              }
+                            }
+                          >
+                            <View
+                              collapsable={false}
+                              style={
+                                {
+                                  "borderColor": "rgba(103, 80, 164, 1)",
+                                  "borderRadius": 12,
+                                  "borderWidth": 2.4,
+                                  "height": 24,
+                                  "width": 24,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "bottom": 0,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 24,
+                          "transform": [
+                            {
+                              "rotate": "45deg",
+                            },
+                          ],
+                          "width": 24,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "height": 12,
+                            "overflow": "hidden",
+                            "top": 12,
+                            "width": 24,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            {
+                              "height": 24,
+                              "transform": [
+                                {
+                                  "translateY": -12,
+                                },
+                                {
+                                  "rotate": "345deg",
+                                },
+                              ],
+                              "width": 24,
+                            }
+                          }
+                        >
+                          <View
+                            collapsable={false}
+                            style={
+                              {
+                                "height": 12,
+                                "overflow": "hidden",
+                                "width": 24,
+                              }
+                            }
+                          >
+                            <View
+                              collapsable={false}
+                              style={
+                                {
+                                  "borderColor": "rgba(103, 80, 164, 1)",
+                                  "borderRadius": 12,
+                                  "borderWidth": 2.4,
+                                  "height": 24,
+                                  "width": 24,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's default matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Unknown Name
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Unknown Brand
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's disconnected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's failed matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": true,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(73, 69, 79, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Entypo",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's giiker-i2 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Giiker_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Giiker Super Cube i2
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's interactive-failure matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's interactive-success matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's long-brand-name matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Puzzle_123456789012345678901234567890
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Lorem Isum Dolor Sit Amet Cubes Julius Caeser's @thehale Outfit
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's rubiks-connected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "WCAEvent",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Rubik's Connected
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-card's unsupported-puzzle-type matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                FooBar
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "transparent",
+                      "borderRadius": 8,
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="chip-container-outer-layer"
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "backgroundColor": "transparent",
+                        "borderColor": "rgba(73, 69, 79, 0.12)",
+                        "borderRadius": 8,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "flex": undefined,
+                        "flexDirection": "column",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                      }
+                    }
+                    testID="chip-container"
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          [
+                            {
+                              "borderRadius": 8,
+                            },
+                            {
+                              "width": "100%",
+                            },
+                          ],
+                        ]
+                      }
+                      testID="chip"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "paddingLeft": 4,
+                              "position": "relative",
+                            },
+                            {
+                              "paddingLeft": 0,
+                            },
+                            {
+                              "paddingRight": 0,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          style={
+                            [
+                              {
+                                "alignSelf": "center",
+                                "padding": 4,
+                              },
+                              {
+                                "paddingLeft": 8,
+                                "paddingRight": 0,
+                              },
+                              null,
+                            ]
+                          }
+                        >
+                          <Text
+                            allowFontScaling={false}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "rgba(28, 27, 31, 0.38)",
+                                  "fontSize": 18,
+                                },
+                                undefined,
+                                {
+                                  "fontFamily": "FontAwesome",
+                                  "fontStyle": "normal",
+                                  "fontWeight": "normal",
+                                },
+                                {},
+                              ]
+                            }
+                          >
+                            
+                          </Text>
+                        </View>
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "textAlign": "left",
+                              },
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                                "writingDirection": "ltr",
+                              },
+                              [
+                                [
+                                  {
+                                    "marginVertical": 6,
+                                    "textAlignVertical": "center",
+                                  },
+                                  {
+                                    "color": "rgba(28, 27, 31, 0.38)",
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 14,
+                                    "fontWeight": "500",
+                                    "letterSpacing": 0.1,
+                                    "lineHeight": 20,
+                                  },
+                                  {
+                                    "marginLeft": 8,
+                                    "marginRight": 16,
+                                  },
+                                  undefined,
+                                ],
+                                {
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontSize": 12,
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0.4,
+                                  "lineHeight": 16,
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "writingDirection": "ltr",
+                                },
+                                [
+                                  {
+                                    "fontFamily": "Rubik-Regular",
+                                    "fontSize": 12,
+                                    "fontWeight": "400",
+                                    "letterSpacing": 0.4,
+                                    "lineHeight": 16,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            Mysterious Cubes
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </Text>
+            </View>
+            <View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(231, 224, 236, 1)",
+                    "borderRadius": 20,
+                    "height": 40,
+                    "margin": 6,
+                    "marginHorizontal": 20,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": 40,
+                  }
+                }
+                testID="icon-button-container-outer-layer"
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "backgroundColor": "rgba(231, 224, 236, 1)",
+                      "borderColor": "rgba(121, 116, 126, 1)",
+                      "borderRadius": 20,
+                      "borderWidth": 0,
+                      "elevation": 0,
+                      "flex": 1,
+                      "overflow": "hidden",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                    }
+                  }
+                  testID="icon-button-container"
+                >
+                  <View
+                    accessibilityComponentType="button"
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityTraits="button"
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    centered={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 6,
+                        "left": 6,
+                        "right": 6,
+                        "top": 6,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                          },
+                          {
+                            "borderRadius": 20,
+                          },
+                        ],
+                      ]
+                    }
+                    testID="icon-button"
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "rgba(103, 80, 164, 1)",
+                            "fontSize": 24,
+                          },
+                          undefined,
+                          {
+                            "fontFamily": "Material Design Icons",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          {},
+                        ]
+                      }
+                    >
+                      󰂯
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Examples smart-puzzle-scanner's default matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <RCTScrollView
+        refreshControl={
+          <RefreshControlMock
+            onRefresh={[Function]}
+            refreshing={false}
+          />
+        }
+        style={
+          {
+            "minHeight": "100%",
+            "paddingBottom": 10,
+          }
+        }
+      >
+        <RCTRefreshControl />
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</RNCSafeAreaProvider>
+`;
+
 exports[`Examples solution's 2x2x2 matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}

@@ -20,6 +20,8 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   // require('../components/inspection/InspectionTimer.examples').default,
   require('../components/PlayerControls/PlayerControls.examples').default,
   require('../components/solutions/Solution.examples').default,
+  require('../components/smartpuzzles/SmartPuzzleCard.examples').default,
+  require('../components/smartpuzzles/SmartPuzzleScanner.examples').default,
   require('../components/TwistyPlayer/AttemptPlayer.examples').default,
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
   require('../structure/CenteredBetweenSidebars.examples').default,
