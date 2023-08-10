@@ -19,7 +19,7 @@ export interface DevelopmentExample {
   key: string;
   title: string;
   description?: string;
-  component: React.ReactNode;
+  component: React.ReactNode | (() => JSX.Element);
 }
 
 // Navigation

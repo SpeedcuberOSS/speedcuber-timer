@@ -20,13 +20,11 @@ export default function ExampleScreen(
     const displayTitle = `${setTitle}: ${exampleTitle}`;
     props.navigation.setOptions({ title: displayTitle });
   }, []);
-  wrappers.forEach(wrapper => {
-    const oldComponent = Examples.exampleByKey(props.route.params.key);
-
-    oldComponent.component = wrapper({ children: oldComponent.component });
-  });
+  
+  const Example = Examples.exampleByKey(props.route.params.key).component;
+  const ReadyToWrap = typeof Example === 'function' ? <Example /> : Example;
 
   return wrappers.reduce((Wrapped, NextWrapper) => {
     return <NextWrapper>{Wrapped}</NextWrapper>;
-  }, Examples.exampleByKey(props.route.params.key).component);
+  }, ReadyToWrap);
 }
