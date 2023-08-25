@@ -4,7 +4,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt } from '../../lib/stif';
+import { STIF } from '../../lib/stif';
+import { Attempt } from '../../lib/stif/wrappers';
 import AttemptPlayer from '../components/TwistyPlayer/AttemptPlayer';
 import { RootDrawerScreenProps } from '../navigation/types';
 import { SafeAreaView } from 'react-native';
@@ -12,7 +13,7 @@ import { SafeAreaView } from 'react-native';
 type Props = RootDrawerScreenProps<'Play'>;
 
 const attempt =
-  require('../../lib/bluetooth-puzzle/__fixtures__/particula_3x3x3_attempt.json') as Attempt;
+  require('../../lib/recordings/__fixtures__/particula_3x3x3_attempt.json') as STIF.Attempt;
 
 export default function PlayScreen(props: Props) {
   return (
@@ -22,7 +23,7 @@ export default function PlayScreen(props: Props) {
         Print Attempt Library
       </Button>
       */}
-      <AttemptPlayer attempt={attempt} />
+      <AttemptPlayer attempt={new Attempt(attempt)} />
     </SafeAreaView>
   );
 }
