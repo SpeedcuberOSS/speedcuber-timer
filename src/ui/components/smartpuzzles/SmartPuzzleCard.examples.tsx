@@ -10,6 +10,7 @@ import { ConnectionStatus } from './types';
 import SmartPuzzleCard from './SmartPuzzleCard';
 import { DevelopmentExampleSet } from '../../examples/types';
 import { useState } from 'react';
+import { View } from 'react-native';
 
 const examples: DevelopmentExampleSet = {
   key: 'smart-puzzle-card',
@@ -103,6 +104,15 @@ const examples: DevelopmentExampleSet = {
           brand="Rubik's Connected"
           connectionStatus={'failed'}
         />
+      ),
+    },
+    {
+      key: 'compact',
+      title: 'Compact',
+      component: (
+        <View style={{maxWidth: '60%'}}>
+          <SmartPuzzleCard />
+        </View>
       ),
     },
     {

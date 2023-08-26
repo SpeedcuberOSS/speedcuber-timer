@@ -4,20 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  ActivityIndicator,
-  Card,
-  Chip,
-  IconButton,
-  Text,
-  useTheme,
-} from 'react-native-paper';
+import { Card, Switch, useTheme } from 'react-native-paper';
 import Icons, { IconFunction } from '../../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
 import { STIF } from '../../../lib/stif';
 
 import { ConnectionStatus } from './types';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 interface SmartPuzzleCardProps {
   name?: string;
@@ -26,6 +19,12 @@ interface SmartPuzzleCardProps {
   puzzle?: STIF.Puzzle;
   onConnect?: () => void;
   onDisconnect?: () => void;
+}
+
+interface BluetoothSwitchProps {
+  connectionStatus: ConnectionStatus;
+  onConnect: () => void;
+  onDisconnect: () => void;
 }
 
 const PuzzleIcons = new Map<STIF.Puzzle, IconFunction>([
@@ -37,6 +36,44 @@ function getPuzzleIcon(puzzle: STIF.Puzzle): IconFunction {
   return PuzzleIcons.get(puzzle) || Icons.FontAwesome('question');
 }
 
+function BluetoothSwitch({
+  connectionStatus,
+  onConnect,
+  onDisconnect,
+}: BluetoothSwitchProps) {
+  const theme = useTheme();
+  return (
+    <View style={styles.btSwitch}>
+      {Icons.MaterialCommunityIcons('bluetooth')({
+        size: 24,
+        color:
+          connectionStatus == 'disconnected'
+            ? theme.colors.onBackground
+            : theme.colors.onSurfaceDisabled,
+      })}
+      <Switch
+        disabled={connectionStatus == 'connecting'}
+        value={connectionStatus == 'connected'}
+        onValueChange={
+          connectionStatus == 'connected' ? onDisconnect : onConnect
+        }
+      />
+      {connectionStatus === 'failed'
+        ? Icons.Entypo('warning')({
+            size: 24,
+            color: theme.colors.error,
+          })
+        : Icons.MaterialCommunityIcons('bluetooth-connect')({
+            size: 24,
+            color:
+              connectionStatus == 'connected'
+                ? theme.colors.onBackground
+                : theme.colors.onSurfaceDisabled,
+          })}
+    </View>
+  );
+}
+
 function SmartPuzzleCard({
   name = 'Unknown Name',
   brand = 'Unknown Brand',
@@ -45,55 +82,27 @@ function SmartPuzzleCard({
   onConnect = () => {},
   onDisconnect = () => {},
 }: SmartPuzzleCardProps) {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Card style={styles.card}>
       <Card.Title
         style={styles.title}
         title={name}
-        subtitle={
-          <Chip icon={getPuzzleIcon(puzzle)} mode="outlined" disabled>
-            <Text variant="bodySmall">{brand}</Text>
-          </Chip>
+        subtitle={brand}
+        left={() =>
+          getPuzzleIcon(puzzle)({ size: 24, color: theme.colors.onBackground })
         }
+        leftStyle={{ marginRight: 0 }}
         right={() => {
-          switch (connectionStatus) {
-            case 'disconnected':
-              return (
-                <IconButton
-                  mode="contained"
-                  icon={Icons.MaterialCommunityIcons('bluetooth')}
-                  style={styles.connection}
-                  onPress={onConnect}
-                />
-              );
-            case 'connecting':
-              return <ActivityIndicator animating style={styles.connecting} />;
-            case 'connected':
-              return (
-                <IconButton
-                  mode="outlined"
-                  icon={Icons.MaterialCommunityIcons('bluetooth-connect')}
-                  style={styles.connection}
-                  onPress={onDisconnect}
-                />
-              );
-            case 'failed':
-              return (
-                <IconButton
-                  icon={Icons.Entypo('warning')}
-                  style={styles.connection}
-                />
-              );
-            default:
-              return (
-                <IconButton
-                  icon={Icons.FontAwesome('question')}
-                  style={styles.connection}
-                />
-              );
-          }
+          return (
+            <BluetoothSwitch
+              connectionStatus={connectionStatus}
+              onConnect={onConnect}
+              onDisconnect={onDisconnect}
+            />
+          );
         }}
+        rightStyle={{ marginLeft: 0 }}
       />
     </Card>
   );
@@ -102,15 +111,7 @@ function SmartPuzzleCard({
 export default SmartPuzzleCard;
 
 const styles = StyleSheet.create({
-  card: { marginTop: 8, marginHorizontal: 8},
+  card: { marginTop: 8, marginHorizontal: 8 },
   title: { paddingVertical: 10 },
-  button: {
-    marginRight: 15,
-  },
-  connecting: {
-    marginHorizontal: 28,
-  },
-  connection: {
-    marginHorizontal: 20,
-  },
+  btSwitch: { flexDirection: 'row', marginRight: 18 },
 });
