@@ -21,8 +21,8 @@ export default function InsightsScreen(props: Props) {
   const [event] = useCompetitiveEvent();
   const data = library.getAll();
   const attempts = data
-    .filter(a => a.event === event)
-    .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
+    .filter(a => a.event() === event)
+    .sort((a, b) => b.inspectionStart() - a.inspectionStart())
     .slice(0, 100);
   const averages = [5, 12, 50, 100, 1000];
   return (
@@ -32,22 +32,19 @@ export default function InsightsScreen(props: Props) {
         <DataTable>
           <DataTable.Header>
             <DataTable.Title>Type</DataTable.Title>
-            {/* <DataTable.Title>Global</DataTable.Title> */}
             <DataTable.Title>Current</DataTable.Title>
+            <DataTable.Title>Record</DataTable.Title>
           </DataTable.Header>
         </DataTable>
         {averages.map(count => (
-          // @ts-ignore
           <DataTable.Row key={count}>
-            {/* @ts-ignore */}
             <DataTable.Cell>{`Ao${count}`}</DataTable.Cell>
-            {/* <DataTable.Cell>
-              {Math.min(...new AttemptAnalytics(data).sliding.AoX(count)) /
-                1000}
-            </DataTable.Cell> */}
-            {/* @ts-ignore */}
             <DataTable.Cell>
               {new AttemptAnalytics(data.slice(-count)).AoX(count) / 1000}
+            </DataTable.Cell>
+            <DataTable.Cell>
+              {Math.min(...new AttemptAnalytics(data).sliding.AoX(count)) /
+                1000}
             </DataTable.Cell>
           </DataTable.Row>
         ))}

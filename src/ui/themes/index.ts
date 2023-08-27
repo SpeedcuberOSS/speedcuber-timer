@@ -16,7 +16,7 @@ import {
 
 import { Appearance } from 'react-native';
 import merge from 'deepmerge';
-import { MD3Theme, MD3Typescale } from 'react-native-paper/lib/typescript/src/types';
+import { MD3Theme, MD3Typescale } from 'react-native-paper/src/types';
 
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,

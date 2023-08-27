@@ -6,7 +6,7 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { Attempt } from '../../lib/stif';
+import { Attempt } from '../../lib/stif/wrappers';
 import AttemptList from '../components/attempts/AttemptList';
 import { TimerTabScreenProps } from '../navigation/types';
 import { getLibrary } from '../../lib/attempts';
@@ -20,14 +20,17 @@ export default function AttemptsScreen({ route, navigation }: Props) {
   const [event] = useCompetitiveEvent();
   const data = library.getAll();
   const attempts = data
-    .filter(a => a.event === event)
-    .sort((a, b) => b.unixTimestamp - a.unixTimestamp)
-    .slice(0, 100);
+    .filter(a => a.event().id === event.id)
+    .sort((a, b) => b.inspectionStart() - a.inspectionStart());
   return (
     <View style={styles.container}>
       <AttemptList
         attempts={attempts}
-        onReplay={(attempt: Attempt) => navigation.push('Player', { attempt })}
+        onPress={(attempt: Attempt) =>
+          navigation.push('Details', {
+            attempt: attempt.stif()
+          })
+        }
       />
     </View>
   );

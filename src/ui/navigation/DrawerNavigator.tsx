@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import PlayScreen from '../screens/PlayScreen';
-// import PracticeNavigator from './PracticeNavigator';
+import PracticeNavigator from './PracticeNavigator';
 import * as React from 'react';
 import { RootDrawerParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -25,7 +25,7 @@ const DrawerNavigator: React.FC = () => {
           }}
         />
       )}
-      {/* <Drawer.Screen name="Practice" component={PracticeNavigator} /> */}
+      <Drawer.Screen name="Practice" component={PracticeNavigator} />
       <Drawer.Screen name="Play" component={PlayScreen} />
     </Drawer.Navigator>
   );

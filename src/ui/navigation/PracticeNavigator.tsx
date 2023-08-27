@@ -9,6 +9,7 @@ import AttemptPlayerScreen from '../screens/AttemptPlayerScreen';
 import { PracticeStackParamList } from './types';
 import TimerNavigator from './TimerNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
+import AttemptDetailsScreen from '../screens/AttemptDetailsScreen';
 
 const Stack = createStackNavigator<PracticeStackParamList>();
 
@@ -21,6 +22,9 @@ export default function PracticeNavigator() {
       </Stack.Group>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Player" component={AttemptPlayerScreen} />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="Details" component={AttemptDetailsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

@@ -4,19 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  AttemptBuilder,
-  Infraction,
-  Penalty,
-  SCRAMBLE_UNKNOWN,
-  SolutionBuilder,
-} from '../../lib/stif';
+import { AttemptBuilder, SolutionBuilder } from '../../lib/stif/builders';
+import { STIF } from '../../lib/stif';
 import { Pressable, StyleSheet, View } from 'react-native';
 import PuzzleRegistry, {
   MessageSubscription,
-} from '../utils/bluetooth/SmartPuzzleRegistry';
+} from './smartpuzzles/SmartPuzzleRegistry';
 
-import { ATTEMPT_UNKNOWN } from '../../lib/stif';
 import AttemptTime from './attempts/AttemptTime';
 import InspectionTimer from '../components/inspection/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
@@ -27,17 +21,33 @@ import { getScrambler } from '../../lib/scrambles/mandy';
 import { t } from 'i18next';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useState } from 'react';
+import { Attempt } from '../../lib/stif/wrappers';
+import { EVENT_3x3x3, PUZZLE_3x3x3 } from '../../lib/stif/builtins';
 
 enum TimerState {
   SCRAMBLING = 0,
   INSPECTION = 1,
   SOLVING = 2,
 }
-
+const now = Date.now();
+const TEST_SCRAMBLE: STIF.Algorithm = ['R', 'U'];
+const TEST_ATTEMPT: Attempt = new AttemptBuilder()
+  .setEvent(EVENT_3x3x3)
+  .addSolution({
+    puzzle: PUZZLE_3x3x3,
+    scramble: TEST_SCRAMBLE,
+    reconstruction: [],
+  })
+  .setInspectionStart(now - 14000)
+  .setTimerStart(now)
+  .setTimerStop(now)
+  .wrapped()
+  .build();
 export default function PracticeView() {
   const [event] = useCompetitiveEvent();
+  const [inspectionStart, setInspectionStart] = useState(0);
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
-  const [lastAttempt, setLastAttempt] = useState(ATTEMPT_UNKNOWN);
+  const [lastAttempt, setLastAttempt] = useState(TEST_ATTEMPT);
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
   const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
   const [messageStreamBuilder, setMessageStreamBuilder] = useState(
@@ -47,13 +57,14 @@ export default function PracticeView() {
     useState<MessageSubscription>();
 
   function getScramble(): string {
-    let scramble = getScrambler(event).generateScramble();
+    let scramble = getScrambler(event.puzzles[0]).generateScramble();
     attemptBuilder.setEvent(event);
     solutionBuilder.setScramble(scramble);
-    if (scramble === SCRAMBLE_UNKNOWN) {
+    solutionBuilder.setPuzzle(event.puzzles[0]);
+    if (scramble.length === 0) {
       return t('scramble.hand');
     } else {
-      return scramble.algorithm.moves.join(' ');
+      return scramble.join(' ');
     }
   }
 
@@ -64,7 +75,9 @@ export default function PracticeView() {
 
   function handleInspectionBegin() {
     console.debug('Inspection begin');
-    attemptBuilder.setTimestamp(new Date().getTime());
+    const now = new Date().getTime()
+    attemptBuilder.setInspectionStart(now);
+    setInspectionStart(now);
     const smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
     if (smartPuzzle) {
       messageStreamBuilder.setSmartPuzzle(smartPuzzle);
@@ -78,13 +91,11 @@ export default function PracticeView() {
     nextTimerState();
   }
 
-  function handleInspectionComplete(infractions: Infraction[]) {
-    console.debug('Inspection complete', infractions);
-    attemptBuilder.setInspectionCompleteTimestamp(new Date().getTime());
-    infractions.forEach(infraction => {
-      attemptBuilder.addInfraction(infraction);
-    });
-    if (infractions.some(i => i.penalty === Penalty.DID_NOT_FINISH)) {
+  function handleInspectionComplete() {
+    console.debug('Inspection complete');
+    const now = new Date().getTime()
+    attemptBuilder.setTimerStart(now);
+    if (now - inspectionStart > 17_000) {
       console.log('DNF Detected');
       // TODO Ensure DNFs are handled correctly.
       completeAndSaveAttempt(new Date(-1));
@@ -100,14 +111,13 @@ export default function PracticeView() {
   }
 
   function completeAndSaveAttempt(duration: Date) {
-    attemptBuilder.setDuration(duration.getTime());
+    attemptBuilder.setTimerStop(new Date().getTime());
     attemptBuilder.addSolution(solutionBuilder.build());
     if (messageSubscription) {
-      attemptBuilder.addExtension(messageStreamBuilder.build());
       messageSubscription.remove();
       setMessageSubscription(undefined);
     }
-    let prevAttempt = attemptBuilder.build();
+    let prevAttempt = attemptBuilder.wrapped().build();
     getLibrary().add(prevAttempt);
     setLastAttempt(prevAttempt);
     setAttemptBuilder(new AttemptBuilder());

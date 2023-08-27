@@ -53,8 +53,8 @@ twistyData.forEach((twisty: string[]) => {
     if (penalty === '2') {
       builder.addInfraction(STOPPED_PUZZLE_UNSOLVED);
     }
-    const attempt = builder.build();
-    attempts.push(new Attempt(attempt));
+    const attempt = builder.wrapped().build();
+    attempts.push(attempt);
   }
 });
 

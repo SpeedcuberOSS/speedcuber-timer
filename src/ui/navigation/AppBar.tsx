@@ -7,7 +7,7 @@
 import { Appbar, Button } from 'react-native-paper';
 import { useState } from 'react';
 
-import { CompetitiveEvent } from '../../lib/stif';
+import { STIF } from '../../lib/stif';
 import EventSelectorModal from '../components/events/EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import { PracticeStackHeaderProps } from './types';
@@ -49,7 +49,7 @@ export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
       <EventSelectorModal
         visible={showEventSelector}
         onDismiss={() => setShowEventSelector(false)}
-        onSelect={(event: CompetitiveEvent) => {
+        onSelect={(event: STIF.CompetitiveEvent) => {
           setEvent(event);
           setShowEventSelector(false);
         }}

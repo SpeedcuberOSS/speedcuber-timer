@@ -13,7 +13,7 @@ export default function ActivePuzzlePlayer() {
   const theme = useTheme();
   return (
     <TwistyPlayer
-      puzzle={Array.isArray(event.puzzle) ? event.puzzle[0] : event.puzzle}
+      puzzle={event.puzzles[0]}
       backgroundColor={theme.colors.background}
     />
   );

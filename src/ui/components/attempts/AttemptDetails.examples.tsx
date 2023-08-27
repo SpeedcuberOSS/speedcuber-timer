@@ -82,6 +82,19 @@ export const basicAttempt = new Attempt(
     .build(),
 );
 
+export const longCommentAttempt = new Attempt(
+  ATTEMPT_3x3x3(SOLVE_DURATION)
+    .addSolution(SOLUTION_3x3x3)
+    .setComment(
+      `Ex occaecat nostrud aliqua anim consectetur amet labore consequat. Cupidatat enim dolor anim occaecat minim ut ea consectetur et ullamco ad. Ex anim nisi officia tempor in ea culpa mollit minim qui. Anim culpa aliquip velit enim sunt ut sit aliquip in qui id Lorem. Pariatur nostrud qui dolor quis voluptate sunt anim laborum occaecat pariatur cillum. Est aliquip labore pariatur aute.
+
+Cupidatat officia aute elit sunt dolore sunt anim tempor enim. Ad in in reprehenderit amet eu exercitation amet ullamco excepteur Lorem. Qui reprehenderit quis aliqua ut sint elit ea. Minim non magna ullamco fugiat sunt et esse incididunt veniam ea exercitation aliquip esse incididunt. Ut mollit consectetur aliqua pariatur. Aliquip officia ut commodo commodo eiusmod labore cillum in quis nisi culpa laborum. Dolore voluptate excepteur reprehenderit incididunt pariatur.
+
+Esse do velit aute est aute anim ipsum aliquip consequat velit minim. Cillum cupidatat aute quis incididunt laboris duis fugiat sint sunt est. Ad esse qui qui duis consectetur non dolor duis. Laboris non deserunt minim duis pariatur culpa magna aute. Cillum consequat ad adipisicing in sint culpa consequat in non dolore.`,
+    )
+    .build(),
+);
+
 export const reconstructionAttempt = new Attempt(
   ATTEMPT_3x3x3(3470)
     .addSolution(SOLUTION_3x3x3_WITH_RECONSTRUCTION)
@@ -236,6 +249,11 @@ const examples: DevelopmentExampleSet = {
       key: 'typical',
       title: 'Typical',
       component: <AttemptDetails attempt={basicAttempt} />,
+    },
+    {
+      key: 'longComment',
+      title: 'Long Comment',
+      component: <AttemptDetails attempt={longCommentAttempt} />,
     },
     {
       key: 'reconstruction',

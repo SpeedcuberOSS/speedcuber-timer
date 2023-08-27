@@ -15,7 +15,7 @@ import formatElapsedTime, {
 } from '../../utils/formatElapsedTime';
 import { useTranslation } from 'react-i18next';
 
-interface AttemptDetailsProps {
+export interface AttemptDetailsProps {
   attempt: Attempt;
   onReplay?: (attempt: Attempt) => void;
   onPressTPS?: (attempt: Attempt) => void;
@@ -33,16 +33,18 @@ export default function AttemptDetails({
       ? Icons.WCAEventUnofficial
       : Icons.WCAEvent;
   return (
-    <ScrollView style={styles.container}>
-      <View style={{ alignItems: 'center' }}>
-        <View style={{flexDirection: 'row', gap: 10, alignItems: 'center'}}>
-          {Icon(attempt.event().id)({size: 14, color: theme.colors.onBackground})}
-          <Text>{t(`events.${attempt.event().id}`)}</Text>
-        </View>
+    <ScrollView>
+      <View style={styles.header}>
         <Text variant="displayLarge">{getAttemptTimeString(attempt)}</Text>
-        <Text variant="labelMedium">
-          {new Date(attempt.timerStart()).toLocaleString()}
-        </Text>
+        <View style={styles.headerSubtitle}>
+          {Icon(attempt.event().id)({
+            size: 14,
+            color: theme.colors.onBackground,
+          })}
+          <Text>{t(`events.${attempt.event().id}`)}</Text>
+          <Text>-</Text>
+          <Text>{new Date(attempt.timerStart()).toLocaleString()}</Text>
+        </View>
         {attempt.moveCount() > 0 ? (
           <Button
             onPress={() => onReplay(attempt)}
@@ -60,7 +62,11 @@ export default function AttemptDetails({
             title={attempt.comment()}
             titleNumberOfLines={0}
             left={props => (
-              <List.Icon {...props} icon={Icons.MaterialIcons('comment')} />
+              <List.Icon
+                color={props.color}
+                style={[props.style, { alignSelf: 'flex-start' }]}
+                icon={Icons.MaterialIcons('comment')}
+              />
             )}
           />
         </List.Section>
@@ -161,5 +167,6 @@ export default function AttemptDetails({
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  header: { alignItems: 'center', paddingTop: 18 },
+  headerSubtitle: { flexDirection: 'row', gap: 10, alignItems: 'center' },
 });

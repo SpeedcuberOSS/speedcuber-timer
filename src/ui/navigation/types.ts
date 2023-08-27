@@ -10,7 +10,7 @@ import type {
 } from '@react-navigation/drawer';
 import { StackHeaderProps, StackScreenProps } from '@react-navigation/stack';
 
-import { Attempt } from '../../lib/stif';
+import { STIF } from '../../lib/stif';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import type { CompositeScreenProps } from '@react-navigation/native';
 
@@ -29,7 +29,8 @@ export type RootDrawerHeaderProps = DrawerHeaderProps;
 
 export type PracticeStackParamList = {
   Timer: undefined;
-  Player: { attempt: Attempt };
+  Player: { attempt: STIF.Attempt };
+  Details: { attempt: STIF.Attempt };
 };
 
 export type PracticeStackScreenProps<T extends keyof PracticeStackParamList> =
