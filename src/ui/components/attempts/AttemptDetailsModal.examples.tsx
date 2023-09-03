@@ -9,10 +9,11 @@ import {
   basicAttempt,
   dnfAttempt,
   dnsAttempt,
-  infractionsAttempt,
+  plus2Attempt,
+  plus4Attempt,
 } from './AttemptDetails.examples';
 
-import { Attempt } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptDetailsModal from './AttemptDetailsModal';
 import { Button } from 'react-native-paper';
 import { DevelopmentExampleSet } from '../../examples/types';
@@ -42,9 +43,14 @@ const examples: DevelopmentExampleSet = {
       component: <AttemptDetailsModalWrapper attempt={basicAttempt} />,
     },
     {
-      key: 'infractions',
-      title: 'with Infractions',
-      component: <AttemptDetailsModalWrapper attempt={infractionsAttempt} />,
+      key: '+2',
+      title: 'with +2',
+      component: <AttemptDetailsModalWrapper attempt={plus2Attempt} />,
+    },
+    {
+      key: '+4',
+      title: 'with +4',
+      component: <AttemptDetailsModalWrapper attempt={plus4Attempt} />,
     },
     {
       key: 'dnf',

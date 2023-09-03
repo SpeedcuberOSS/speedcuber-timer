@@ -1,0 +1,3465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Smart Puzzle Card compact matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "maxWidth": "60%",
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "marginHorizontal": 8,
+            "marginTop": 8,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.15,
+            "shadowRadius": 3,
+          }
+        }
+        testID="card-container-outer-layer"
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "borderRadius": 6,
+              "elevation": 1,
+              "flex": undefined,
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 1,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 1,
+            }
+          }
+          testID="card-container"
+        >
+          <View
+            style={
+              [
+                {
+                  "flexShrink": 1,
+                },
+                undefined,
+              ]
+            }
+            testID="card"
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
+                  },
+                  {
+                    "minHeight": 72,
+                  },
+                  {
+                    "paddingVertical": 10,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginRight": 16,
+                      "width": 40,
+                    },
+                    {
+                      "marginRight": 0,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "WCAEvent",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
+                        },
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  Unknown Name
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 14,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.25,
+                          "lineHeight": 20,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  Unknown Brand
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flexDirection": "row",
+                      "marginRight": 18,
+                    }
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    selectable={false}
+                    style={
+                      [
+                        {
+                          "color": "rgba(28, 27, 31, 1)",
+                          "fontSize": 24,
+                        },
+                        undefined,
+                        {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        {},
+                      ]
+                    }
+                  >
+                    󰂯
+                  </Text>
+                  <RCTSwitch
+                    accessibilityRole="switch"
+                    disabled={false}
+                    onChange={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    onTintColor="rgba(103, 80, 164, 1)"
+                    style={
+                      {
+                        "height": 31,
+                        "width": 51,
+                      }
+                    }
+                    tintColor="rgba(103, 80, 164, 1)"
+                    value={false}
+                  />
+                  <Text
+                    allowFontScaling={false}
+                    selectable={false}
+                    style={
+                      [
+                        {
+                          "color": "rgba(28, 27, 31, 0.38)",
+                          "fontSize": 24,
+                        },
+                        undefined,
+                        {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        {},
+                      ]
+                    }
+                  >
+                    󰂱
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card connected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={true}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card connecting matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={true}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card default matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Unknown Name
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Unknown Brand
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card disconnected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card failed matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(179, 38, 30, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Entypo",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card giiker-i2 matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Giiker_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Giiker Super Cube i2
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card interactive-failure matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card interactive-success matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card long-brand-name matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Puzzle_123456789012345678901234567890
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Lorem Isum Dolor Sit Amet Cubes Julius Caeser's @thehale Outfit
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card rubiks-connected matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "WCAEvent",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik_12345
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Rubik's Connected
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Smart Puzzle Card unsupported-puzzle-type matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "borderRadius": 6,
+          "marginHorizontal": 8,
+          "marginTop": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.15,
+          "shadowRadius": 3,
+        }
+      }
+      testID="card-container-outer-layer"
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "borderRadius": 6,
+            "elevation": 1,
+            "flex": undefined,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1,
+          }
+        }
+        testID="card-container"
+      >
+        <View
+          style={
+            [
+              {
+                "flexShrink": 1,
+              },
+              undefined,
+            ]
+          }
+          testID="card"
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "paddingLeft": 16,
+                },
+                {
+                  "minHeight": 72,
+                },
+                {
+                  "paddingVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginRight": 16,
+                    "width": 40,
+                  },
+                  {
+                    "marginRight": 0,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "FontAwesome",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flex": 1,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
+                      },
+                      [
+                        {
+                          "minHeight": 30,
+                          "paddingRight": 16,
+                        },
+                        {
+                          "marginBottom": 0,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                FooBar
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "textAlign": "left",
+                    },
+                    {
+                      "color": "rgba(28, 27, 31, 1)",
+                      "writingDirection": "ltr",
+                    },
+                    [
+                      {
+                        "fontFamily": "Rubik-Regular",
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "letterSpacing": 0.25,
+                        "lineHeight": 20,
+                      },
+                      [
+                        {
+                          "marginVertical": 0,
+                          "minHeight": 20,
+                          "paddingRight": 16,
+                        },
+                        undefined,
+                      ],
+                    ],
+                  ]
+                }
+              >
+                Mysterious Cubes
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "marginLeft": 0,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginRight": 18,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂯
+                </Text>
+                <RCTSwitch
+                  accessibilityRole="switch"
+                  disabled={false}
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onTintColor="rgba(103, 80, 164, 1)"
+                  style={
+                    {
+                      "height": 31,
+                      "width": 51,
+                    }
+                  }
+                  tintColor="rgba(103, 80, 164, 1)"
+                  value={false}
+                />
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(28, 27, 31, 0.38)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  󰂱
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

@@ -6,7 +6,7 @@
 
 import { IconButton, Text } from 'react-native-paper';
 import { useState } from 'react';
-import Icons from '../icons/iconHelper';
+import Icons from '../../icons/iconHelper';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 type Direction = 'horizontal' | 'vertical';

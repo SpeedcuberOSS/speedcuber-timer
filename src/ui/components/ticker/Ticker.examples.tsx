@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { View } from 'react-native';
-import { DevelopmentExampleSet } from '../examples/types';
+import { DevelopmentExampleSet } from '../../examples/types';
 import Ticker from './Ticker';
 import { List } from 'react-native-paper';
 

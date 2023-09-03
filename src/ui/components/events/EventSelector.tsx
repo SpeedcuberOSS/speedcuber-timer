@@ -11,7 +11,7 @@ import { STIF } from '../../../lib/stif';
 import * as Events from '../../../lib/stif/builtins/CompetitiveEvents';
 import Icons from '../../icons/iconHelper';
 import { useTranslation } from 'react-i18next';
-import Ticker from '../Ticker';
+import Ticker from '../ticker/Ticker';
 import { Fragment, useCallback, useState } from 'react';
 import { PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
 

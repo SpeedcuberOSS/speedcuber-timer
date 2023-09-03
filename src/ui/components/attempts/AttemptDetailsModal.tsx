@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt } from '../../../lib/stif';
+import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptDetails from './AttemptDetails';
 import TitledModal from '../TitledModal';
 import { View } from 'react-native';
@@ -34,7 +34,6 @@ export default function AttemptDetailsModal({
       <View style={{ paddingBottom: paddingBottom }}>
         <AttemptDetails
           attempt={attempt}
-          onToggleScramble={visible => setPaddingBottom(visible ? 15 : 0)}
           onReplay={attempt => {
             onReplay(attempt);
             onDismiss();
