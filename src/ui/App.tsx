@@ -12,10 +12,14 @@ import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
+import * as library from '../persistence/library';
 
 const App = () => {
   if (i18n.isInitialized) {
     console.log('i18n initialized');
+  }
+  if (library.status() === 'stopped') {
+    library.boot();
   }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
