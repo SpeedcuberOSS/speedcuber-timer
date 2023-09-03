@@ -10,6 +10,7 @@ import * as React from 'react';
 import { RootDrawerParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ExamplesNavigator from '../examples/ExamplesNavigator';
+import FileSystemStackNavigator from '../components/filesystem/FileSystemStackNavigator';
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
@@ -22,6 +23,15 @@ const DrawerNavigator: React.FC = () => {
           component={ExamplesNavigator}
           options={{
             drawerLabel: 'Development',
+          }}
+        />
+      )}
+      {__DEV__ && (
+        <Drawer.Screen
+          name="FileSystemStack"
+          component={FileSystemStackNavigator}
+          options={{
+            drawerLabel: 'File System',
           }}
         />
       )}

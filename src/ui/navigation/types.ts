@@ -19,6 +19,7 @@ export type RootDrawerParamList = {
   Learn: undefined;
   Play: undefined;
   Examples: undefined;
+  FileSystemStack: undefined;
   NotFound: undefined;
 };
 
