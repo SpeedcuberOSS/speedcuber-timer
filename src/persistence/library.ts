@@ -11,6 +11,7 @@ import {
   exists,
   readFile,
 } from 'react-native-fs';
+import { STIF } from '../lib/stif';
 import { runMigrations } from './migrations/runner';
 
 export const LIBRARY_FOLDER = Platform.select({
@@ -90,3 +91,21 @@ export async function libraryVersion() {
   }
 }
 
+export function pathsForEvent(event: STIF.CompetitiveEvent) {
+  const baseFolder = `${LIBRARY_FOLDER}/${event.id}`;
+  return {
+    baseFolder: baseFolder,
+    resultsFile: `${baseFolder}/results.csv`,
+    detailsFolder: `${baseFolder}/details`,
+    recordingsFolder: `${baseFolder}/recordings`,
+  }
+}
+
+export function pathsForAttempt(attempt: STIF.Attempt) {
+  const eventPaths = pathsForEvent(attempt.event);
+  return {
+    resultsFile: eventPaths.resultsFile,
+    detailsFile: `${eventPaths.detailsFolder}/${attempt.id}.json`,
+    recordingFile: `${eventPaths.recordingsFolder}/${attempt.id}.json`,
+  }
+}
