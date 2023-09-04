@@ -6,7 +6,7 @@
 
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import CenteredBetweenSidebars from '../../structure/CenteredBetweenSidebars';
+import CenteredBetweenSidebars from '../../layouts/CenteredBetweenSidebars';
 import PlayerButtons from './PlayerButtons';
 import SpeedSelector from './SpeedSelector';
 import TimeSlider from './TimerSlider';
