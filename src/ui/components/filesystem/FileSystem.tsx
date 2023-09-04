@@ -5,16 +5,22 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { useEffect, useState } from 'react';
-import { FlatList, Platform, ScrollView } from 'react-native';
+import { FlatList, ScrollView } from 'react-native';
 import {
   DocumentDirectoryPath,
-  ExternalDirectoryPath,
   ReadDirItem,
   readDir,
   readFile,
   stat,
+  unlink,
 } from 'react-native-fs';
-import { ActivityIndicator, List, Text, useTheme } from 'react-native-paper';
+import {
+  ActivityIndicator,
+  IconButton,
+  List,
+  Text,
+  useTheme,
+} from 'react-native-paper';
 
 interface FileSystemProps {
   path?: string;
@@ -22,10 +28,7 @@ interface FileSystemProps {
   onPressFolder?: (path: string) => void;
 }
 
-export const DEFAULT_PATH = Platform.select({
-  ios: DocumentDirectoryPath,
-  android: ExternalDirectoryPath,
-}) as string;
+export const DEFAULT_PATH = DocumentDirectoryPath;
 
 export default function FileSystem({
   path = DEFAULT_PATH,
@@ -70,28 +73,58 @@ function FolderBrowser({
   onPressFolder = () => {},
 }: FileSystemProps) {
   const [entries, setEntries] = useState<ReadDirItem[]>([]);
+  const theme = useTheme();
   useEffect(() => {
     readDir(path)
-      .then(entries => setEntries(entries))
+      .then(entries => entries.sort((a, b) => a.name.localeCompare(b.name)))
+      .then(setEntries)
       .catch(console.error);
   }, [path]);
   return (
     <>
       <List.Section>
-        {entries.map(e => (
-          <List.Item
-            key={e.path}
-            title={e.name}
-            left={props => <List.Icon {...props} icon={e.isDirectory() ? "folder" : "file"} />}
-            onPress={() => {
-              if (e.isFile()) {
-                onPressFile(e.path);
-              } else {
-                onPressFolder(e.path);
-              }
-            }}
-          />
-        ))}
+        <FlatList
+          data={entries}
+          renderItem={({ item }) => (
+            <List.Item
+              key={item.path}
+              title={item.name}
+              titleNumberOfLines={0}
+              left={props => (
+                <List.Icon
+                  {...props}
+                  icon={item.isDirectory() ? 'folder' : 'file'}
+                />
+              )}
+              right={props => (
+                <IconButton
+                  iconColor={theme.colors.error}
+                  icon="trash-can"
+                  onPress={() => {
+                    (async () => {
+                      try {
+                        await unlink(item.path);
+                        setEntries(
+                          entries.filter(entry => entry.path !== item.path),
+                        );
+                      } catch (error) {
+                        console.error(error);
+                      }
+                    })();
+                  }}
+                />
+              )}
+              onPress={() => {
+                if (item.isFile()) {
+                  onPressFile(item.path);
+                } else {
+                  onPressFolder(item.path);
+                }
+              }}
+            />
+          )}
+          keyExtractor={item => item.path}
+        />
       </List.Section>
     </>
   );
