@@ -4,21 +4,24 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { DocumentDirectoryPath, ExternalDirectoryPath, copyFile, exists, unlink, writeFile } from "react-native-fs";
+import { DocumentDirectoryPath, copyFile, exists, unlink, writeFile, mkdir } from "react-native-fs";
 import { Migration } from "../types";
 import { Platform } from "react-native";
 
 const LIBRARY_FOLDER = Platform.select({
   ios: DocumentDirectoryPath,
-  android: ExternalDirectoryPath,
+  android: `${DocumentDirectoryPath}/library`,
 });
+const VERSION_FILE = `${LIBRARY_FOLDER}/version`;
+const BACKUP_DIR = `${LIBRARY_FOLDER}/backups/migrations/0`;
+const BACKUP_VERSION_FILE = `${BACKUP_DIR}/version`;
 
 async function createVersionFile() {
-  const versionFile = `${LIBRARY_FOLDER}/version`;
-  if (await exists(versionFile)) {
-    await copyFile(versionFile, `${versionFile}.0`);
+  if (await exists(VERSION_FILE)) {
+    await mkdir(BACKUP_DIR, { NSURLIsExcludedFromBackupKey: true });
+    await copyFile(VERSION_FILE, BACKUP_VERSION_FILE);
   }
-  await writeFile(versionFile, "1");
+  await writeFile(VERSION_FILE, "1");
 }
 
 async function migrate() {
@@ -27,12 +30,11 @@ async function migrate() {
 };
 
 async function restoreOriginalVersionFile() {
-  const versionFile = `${LIBRARY_FOLDER}/version`;
-  if (await exists(`${versionFile}.0`)) {
-    await copyFile(`${versionFile}.0`, versionFile);
-    await unlink(`${versionFile}.0`);
+  if (await exists(BACKUP_VERSION_FILE)) {
+    await copyFile(BACKUP_VERSION_FILE, VERSION_FILE);
+    await unlink(BACKUP_VERSION_FILE);
   } else {
-    await writeFile(versionFile, "0");
+    await writeFile(VERSION_FILE, "0");
   }
 }
 

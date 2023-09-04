@@ -23,9 +23,13 @@ describe('Migration 0 to 1', () => {
     it('backs up the version file if it exists', async () => {
       fs.exists.mockResolvedValue(true);
       await migration.migrate();
+      expect(fs.mkdir).toHaveBeenCalledWith(
+        'DocumentDirectoryPath/backups/migrations/0',
+        { NSURLIsExcludedFromBackupKey: true }, // exclude from iCloud backups
+      );
       expect(fs.copyFile).toHaveBeenCalledWith(
         'DocumentDirectoryPath/version',
-        'DocumentDirectoryPath/version.0',
+        'DocumentDirectoryPath/backups/migrations/0/version',
       );
     });
   });
@@ -34,10 +38,10 @@ describe('Migration 0 to 1', () => {
       fs.exists.mockResolvedValue(true);
       await migration.rollback();
       expect(fs.copyFile).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/version.0',
+        'DocumentDirectoryPath/backups/migrations/0/version',
         'DocumentDirectoryPath/version',
       );
-      expect(fs.unlink).toHaveBeenCalledWith('DocumentDirectoryPath/version.0');
+      expect(fs.unlink).toHaveBeenCalledWith('DocumentDirectoryPath/backups/migrations/0/version');
     });
     it('creates a version file if it does not exist', async () => {
       fs.exists.mockResolvedValue(false);
