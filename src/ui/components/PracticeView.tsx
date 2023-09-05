@@ -16,13 +16,13 @@ import InspectionTimer from '../components/inspection/InspectionTimer';
 import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
 import SolveTimer from '../components/SolveTimer';
 import { Text } from 'react-native-paper';
-import { getLibrary } from '../../lib/attempts';
 import { getScrambler } from '../../lib/scrambles/mandy';
 import { t } from 'i18next';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useState } from 'react';
 import { Attempt } from '../../lib/stif/wrappers';
 import { EVENT_3x3x3, PUZZLE_3x3x3 } from '../../lib/stif/builtins';
+import { library } from '../../persistence';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -75,7 +75,7 @@ export default function PracticeView() {
 
   function handleInspectionBegin() {
     console.debug('Inspection begin');
-    const now = new Date().getTime()
+    const now = new Date().getTime();
     attemptBuilder.setInspectionStart(now);
     setInspectionStart(now);
     const smartPuzzle = PuzzleRegistry.lastConnectedPuzzle();
@@ -93,7 +93,7 @@ export default function PracticeView() {
 
   function handleInspectionComplete() {
     console.debug('Inspection complete');
-    const now = new Date().getTime()
+    const now = new Date().getTime();
     attemptBuilder.setTimerStart(now);
     if (now - inspectionStart > 17_000) {
       console.log('DNF Detected');
@@ -118,7 +118,7 @@ export default function PracticeView() {
       setMessageSubscription(undefined);
     }
     let prevAttempt = attemptBuilder.wrapped().build();
-    getLibrary().add(prevAttempt);
+    library.put(prevAttempt.stif());
     setLastAttempt(prevAttempt);
     setAttemptBuilder(new AttemptBuilder());
     setSolutionBuilder(new SolutionBuilder());

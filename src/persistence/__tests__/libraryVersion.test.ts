@@ -17,8 +17,12 @@ describe('Library Version', () => {
     fs.readFile.mockResolvedValue('1');
     const version = await library.libraryVersion();
     expect(version).toEqual(1);
-    expect(fs.exists).toHaveBeenCalledWith('DocumentDirectoryPath/version');
-    expect(fs.readFile).toHaveBeenCalledWith('DocumentDirectoryPath/version');
+    expect(fs.exists).toHaveBeenCalledWith(
+      'DocumentDirectoryPath/library/version',
+    );
+    expect(fs.readFile).toHaveBeenCalledWith(
+      'DocumentDirectoryPath/library/version',
+    );
   });
   it('throws an error if the version file is not a number', async () => {
     fs.exists.mockResolvedValue(true);

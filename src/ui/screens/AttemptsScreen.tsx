@@ -9,16 +9,13 @@ import { StyleSheet, View } from 'react-native';
 import { Attempt } from '../../lib/stif/wrappers';
 import AttemptList from '../components/attempts/AttemptList';
 import { TimerTabScreenProps } from '../navigation/types';
-import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 type Props = TimerTabScreenProps<'Attempts'>;
 
-let library = getLibrary();
-
 export default function AttemptsScreen({ route, navigation }: Props) {
   const [event] = useCompetitiveEvent();
-  const data = library.getAll();
+  const data: Attempt[] = [];
   const attempts = data
     .filter(a => a.event().id === event.id)
     .sort((a, b) => b.inspectionStart() - a.inspectionStart());

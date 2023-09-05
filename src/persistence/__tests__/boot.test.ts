@@ -30,7 +30,9 @@ describe('boot', () => {
       throw new Error('boot bananas');
     });
     await library.boot();
-    expect(fs.exists).toHaveBeenCalledWith('DocumentDirectoryPath/version');
+    expect(fs.exists).toHaveBeenCalledWith(
+      'DocumentDirectoryPath/library/version',
+    );
     expect(library.crashReason()).toEqual(
       'Unable to check existing library version: Error: boot bananas',
     );

@@ -6,12 +6,8 @@
 
 import { DocumentDirectoryPath, copyFile, exists, unlink, writeFile, mkdir } from "react-native-fs";
 import { Migration } from "../types";
-import { Platform } from "react-native";
 
-const LIBRARY_FOLDER = Platform.select({
-  ios: DocumentDirectoryPath,
-  android: `${DocumentDirectoryPath}/library`,
-});
+const LIBRARY_FOLDER = `${DocumentDirectoryPath}/library`
 const VERSION_FILE = `${LIBRARY_FOLDER}/version`;
 const BACKUP_DIR = `${LIBRARY_FOLDER}/backups/migrations/0`;
 const BACKUP_VERSION_FILE = `${BACKUP_DIR}/version`;
@@ -21,6 +17,7 @@ async function createVersionFile() {
     await mkdir(BACKUP_DIR, { NSURLIsExcludedFromBackupKey: true });
     await copyFile(VERSION_FILE, BACKUP_VERSION_FILE);
   }
+  await mkdir(LIBRARY_FOLDER, { NSURLIsExcludedFromBackupKey: true });
   await writeFile(VERSION_FILE, "1");
 }
 

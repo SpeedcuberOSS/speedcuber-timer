@@ -11,12 +11,16 @@ describe('Migration 0 to 1', () => {
   it('declares versions correctly', () => {
     expect(migration.fromVersion).toEqual(0);
     expect(migration.toVersion).toEqual(1);
-  })
+  });
   describe('migration', () => {
     it('creates a version file if it does not exist', async () => {
       await migration.migrate();
+      expect(fs.mkdir).toHaveBeenCalledWith(
+        'DocumentDirectoryPath/library',
+        { NSURLIsExcludedFromBackupKey: true }, // exclude from iCloud backups
+      );
       expect(fs.writeFile).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/version',
+        'DocumentDirectoryPath/library/version',
         '1',
       );
     });
@@ -24,12 +28,12 @@ describe('Migration 0 to 1', () => {
       fs.exists.mockResolvedValue(true);
       await migration.migrate();
       expect(fs.mkdir).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/backups/migrations/0',
+        'DocumentDirectoryPath/library/backups/migrations/0',
         { NSURLIsExcludedFromBackupKey: true }, // exclude from iCloud backups
       );
       expect(fs.copyFile).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/version',
-        'DocumentDirectoryPath/backups/migrations/0/version',
+        'DocumentDirectoryPath/library/version',
+        'DocumentDirectoryPath/library/backups/migrations/0/version',
       );
     });
   });
@@ -38,16 +42,18 @@ describe('Migration 0 to 1', () => {
       fs.exists.mockResolvedValue(true);
       await migration.rollback();
       expect(fs.copyFile).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/backups/migrations/0/version',
-        'DocumentDirectoryPath/version',
+        'DocumentDirectoryPath/library/backups/migrations/0/version',
+        'DocumentDirectoryPath/library/version',
       );
-      expect(fs.unlink).toHaveBeenCalledWith('DocumentDirectoryPath/backups/migrations/0/version');
+      expect(fs.unlink).toHaveBeenCalledWith(
+        'DocumentDirectoryPath/library/backups/migrations/0/version',
+      );
     });
     it('creates a version file if it does not exist', async () => {
       fs.exists.mockResolvedValue(false);
       await migration.rollback();
       expect(fs.writeFile).toHaveBeenCalledWith(
-        'DocumentDirectoryPath/version',
+        'DocumentDirectoryPath/library/version',
         '0',
       );
     });
