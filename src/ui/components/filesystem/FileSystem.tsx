@@ -9,6 +9,7 @@ import { FlatList, ScrollView } from 'react-native';
 import {
   DocumentDirectoryPath,
   ReadDirItem,
+  hash,
   readDir,
   readFile,
   stat,
@@ -21,6 +22,7 @@ import {
   Text,
   useTheme,
 } from 'react-native-paper';
+import { Timer } from '../../../lib/timers';
 
 interface FileSystemProps {
   path?: string;
@@ -135,13 +137,119 @@ interface FileViewerProps {
 }
 
 function FileViewer({ path }: FileViewerProps) {
-  const [contents, setContents] = useState<string | undefined>(undefined);
+  const [contents, setContents] = useState<string | undefined>('undefined');
+  const [contentsTime, setContentsTime] = useState<number | undefined>(
+    undefined,
+  );
+  const [md5Hash, setMd5Hash] = useState<string | undefined>(undefined);
+  const [md5HashTime, setMd5HashTime] = useState<number | undefined>(undefined);
+  const [sha1Hash, setSha1Hash] = useState<string | undefined>(undefined);
+  const [sha1HashTime, setSha1HashTime] = useState<number | undefined>(
+    undefined,
+  );
+  const [sha256Hash, setSha256Hash] = useState<string | undefined>(undefined);
+  const [sha256HashTime, setSha256HashTime] = useState<number | undefined>(
+    undefined,
+  );
+  const [sha512Hash, setSha512Hash] = useState<string | undefined>(undefined);
+  const [sha512HashTime, setSha512HashTime] = useState<number | undefined>(
+    undefined,
+  );
   useEffect(() => {
-    readFile(path).then(setContents).catch(console.error);
+    const timer = new Timer();
+    timer.start();
+    readFile(path)
+      .then(contents => {
+        setContentsTime(timer.elapsedMilliseconds());
+        return contents;
+      })
+      .then(setContents)
+      .catch(console.error);
   }, [path]);
+  useEffect(() => {
+    const timer = new Timer();
+    timer.start();
+    hash(path, 'md5')
+      .then(hash => {
+        setMd5HashTime(timer.elapsedMilliseconds());
+        return hash;
+      })
+      .then(setMd5Hash)
+      .catch(console.error);
+  }, [path]);
+  useEffect(() => {
+    const timer = new Timer();
+    timer.start();
+    hash(path, 'sha1')
+      .then(hash => {
+        setSha1HashTime(timer.elapsedMilliseconds());
+        return hash;
+      })
+      .then(setSha1Hash)
+      .catch(console.error);
+  }, [path]);
+  useEffect(() => {
+    const timer = new Timer();
+    timer.start();
+    hash(path, 'sha256')
+      .then(hash => {
+        setSha256HashTime(timer.elapsedMilliseconds());
+        return hash;
+      })
+      .then(setSha256Hash)
+      .catch(console.error);
+  }, [path]);
+  useEffect(() => {
+    const timer = new Timer();
+    timer.start();
+    hash(path, 'sha512')
+      .then(setSha512Hash)
+      .then(() => {
+        setSha512HashTime(timer.elapsedMilliseconds());
+      })
+      .catch(console.error);
+  }, [path]);
+
   return (
     <ScrollView>
-      {contents === undefined ? <ActivityIndicator /> : <Text>{contents}</Text>}
+      {contents === undefined ? (
+        <ActivityIndicator />
+      ) : (
+        <>
+          <List.Section>
+            <List.Subheader>Hashes</List.Subheader>
+            <List.Item
+              title={`MD5 (${md5HashTime}ms)`}
+              description={md5Hash}
+              onPress={() => setMd5Hash(undefined)}
+            />
+            <List.Item
+              title={`SHA1 (${sha1HashTime}ms)`}
+              description={sha1Hash}
+              onPress={() => setSha1Hash(undefined)}
+            />
+            <List.Item
+              title={`SHA256 (${sha256HashTime}ms)`}
+              description={sha256Hash}
+              onPress={() => setSha256Hash(undefined)}
+            />
+            <List.Item
+              title={`SHA512 (${sha512HashTime}ms)`}
+              description={sha512Hash}
+              onPress={() => setSha512Hash(undefined)}
+            />
+          </List.Section>
+          <List.Section>
+            <List.Subheader>Contents</List.Subheader>
+            <List.Item
+              title={`Loaded in ${contentsTime}ms`}
+              description={contents}
+              descriptionNumberOfLines={0}
+              onPress={() => setContents(undefined)}
+            />
+          </List.Section>
+        </>
+      )}
     </ScrollView>
   );
 }
