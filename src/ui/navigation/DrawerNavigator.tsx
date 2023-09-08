@@ -17,6 +17,8 @@ const Drawer = createDrawerNavigator<RootDrawerParamList>();
 const DrawerNavigator: React.FC = () => {
   return (
     <Drawer.Navigator id="Root" screenOptions={{ headerShown: false }}>
+      <Drawer.Screen name="Practice" component={PracticeNavigator} />
+      <Drawer.Screen name="Play" component={PlayScreen} />
       {__DEV__ && (
         <Drawer.Screen
           name="Examples"
@@ -35,8 +37,6 @@ const DrawerNavigator: React.FC = () => {
           }}
         />
       )}
-      <Drawer.Screen name="Practice" component={PracticeNavigator} />
-      <Drawer.Screen name="Play" component={PlayScreen} />
     </Drawer.Navigator>
   );
 };
