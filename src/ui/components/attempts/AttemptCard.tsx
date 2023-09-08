@@ -21,7 +21,7 @@ function AttemptCard({ attempt, onPress = () => {} }: AttemptCardProps) {
     <Card style={styles.card} onPress={() => onPress(attempt)}>
       <Card.Title
         title={getAttemptTimeString(attempt)}
-        titleVariant="headlineSmall"
+        titleVariant="titleMedium"
         subtitle={new Date(attempt.timerStart()).toLocaleDateString()}
         subtitleVariant="bodySmall"
       />
