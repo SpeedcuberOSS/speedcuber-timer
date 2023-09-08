@@ -108,6 +108,7 @@ function asSmartPuzzle(device: Device): BluetoothPuzzle {
   return {
     device,
     ...smartPuzzleType(device),
+    name: device.name ?? "Unknown",
   };
 }
 
