@@ -128,10 +128,10 @@ exports[`Attempt Card dnf matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -320,10 +320,10 @@ exports[`Attempt Card dns matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -512,10 +512,10 @@ exports[`Attempt Card hourlong matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -704,10 +704,10 @@ exports[`Attempt Card minutelong matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -896,10 +896,10 @@ exports[`Attempt Card multibld matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -1088,10 +1088,10 @@ exports[`Attempt Card plus2 matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -1280,10 +1280,10 @@ exports[`Attempt Card plus4 matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -1472,10 +1472,10 @@ exports[`Attempt Card reconstruction matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -1664,10 +1664,10 @@ exports[`Attempt Card relay234567 matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
@@ -1856,10 +1856,10 @@ exports[`Attempt Card typical matches snapshot 1`] = `
                     [
                       {
                         "fontFamily": "Rubik-Regular",
-                        "fontSize": 24,
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                        "lineHeight": 32,
+                        "fontSize": 16,
+                        "fontWeight": "500",
+                        "letterSpacing": 0.15,
+                        "lineHeight": 24,
                       },
                       [
                         {
