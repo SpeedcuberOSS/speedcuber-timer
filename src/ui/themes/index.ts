@@ -93,7 +93,7 @@ const fonts: MD3Typescale = {
   },
 };
 
-function getCurrentTheme(): MD3Theme {
+function getCurrentTheme() {
   const darkTheme = Appearance.getColorScheme() == 'dark';
   const baseTheme = darkTheme ? CombinedDarkTheme : CombinedLightTheme;
   const theme = {
