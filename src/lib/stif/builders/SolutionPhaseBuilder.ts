@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { STIF, UnixTimestamp } from '../STIF';
-import { err } from './_utils';
+import { validateSolutionPhase } from '../validation/SolutionPhase';
 
 export class SolutionPhaseBuilder {
   protected wip: Partial<STIF.SolutionPhase>;
@@ -24,9 +24,6 @@ export class SolutionPhaseBuilder {
     return this;
   }
   public build(): STIF.SolutionPhase {
-    return {
-      label: this.wip.label ?? err('label'),
-      moves: this.wip.moves ?? [],
-    };
+    return validateSolutionPhase(this.wip);
   }
 }

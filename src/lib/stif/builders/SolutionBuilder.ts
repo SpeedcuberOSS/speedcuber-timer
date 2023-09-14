@@ -5,8 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { STIF } from '../STIF';
-import { STIFError } from '../exceptions';
-import { err } from './_utils';
+import { validateSolution } from '../validation/Solution';
 
 export class SolutionBuilder {
   protected wip: Partial<STIF.Solution>;
@@ -29,33 +28,6 @@ export class SolutionBuilder {
     return this;
   }
   public build(): STIF.Solution {
-    if (this.phasesOverlap()) {
-      throw new STIFError('Solution phases cannot be overlapping');
-    }
-    return {
-      puzzle: this.wip.puzzle ?? err('puzzle'),
-      scramble: this.wip.scramble ?? err('scramble'),
-      reconstruction: this.wip.reconstruction ?? [],
-    };
-  }
-  protected phasesOverlap(): boolean {
-    if (this.wip.reconstruction === undefined) {
-      return false;
-    }
-    let phases = this.wip.reconstruction
-      .filter(value => value.moves.length > 1)
-      .map(phase => ({
-        start: phase.moves.sort((a, b) => a.t - b.t)[0].t,
-        end: phase.moves.sort((a, b) => b.t - a.t)[0].t,
-      }))
-      .sort((a, b) => a.start - b.start);
-    for (let i = 0; i < phases.length - 1; i++) {
-      let phase = phases[i];
-      let nextPhase = phases[i + 1];
-      if (phase.end > nextPhase.start) {
-        return true;
-      }
-    }
-    return false;
+    return validateSolution(this.wip);
   }
 }

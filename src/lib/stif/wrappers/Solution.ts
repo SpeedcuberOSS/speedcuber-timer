@@ -7,6 +7,7 @@
 import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
 import { SolutionBuilder } from '../builders';
 import { STIFError } from '../exceptions';
+import { validateSolution } from '../validation/Solution';
 import { SolutionPhase } from './SolutionPhase';
 
 interface OptionalArgs {
@@ -20,7 +21,7 @@ export class Solution {
   private _phases: SolutionPhase[] | null = null;
   private _moves: STIF.TimestampedMove[] | null = null;
   constructor(solution: STIF.Solution, opts: OptionalArgs = {}) {
-    this.solution = new SolutionBuilder(solution).build();
+    this.solution = validateSolution(solution);
     if (opts.start !== undefined && opts.start > this.moves()[0]?.t) {
       throw new STIFError('Start time cannot be after first move');
     }

@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { STIF } from '../STIF';
-import { err } from './_utils';
+import { err } from '../validation/_utils';
 
 export class MessageStreamBuilder {
   protected wip: Partial<STIF.SolveRecording>;

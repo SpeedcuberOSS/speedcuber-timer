@@ -5,11 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
-import { AttemptBuilder } from '../builders';
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
 } from '../builtins';
+import { validateAttempt } from '../validation/Attempt';
 import { Solution } from './Solution';
 
 const SECONDS = 1000;
@@ -25,7 +25,7 @@ export class Attempt {
   protected attempt: STIF.Attempt;
   private _moves: STIF.TimestampedMove[] | null = null;
   constructor(attempt: STIF.Attempt) {
-    this.attempt = new AttemptBuilder(attempt).build();
+    this.attempt = validateAttempt(attempt);
   }
   public stif(): STIF.Attempt {
     return this.attempt;

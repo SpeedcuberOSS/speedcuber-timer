@@ -5,10 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { STIF, UUID, UnixTimestamp } from '../STIF';
-import { v4 as uuid } from 'uuid';
-import { err, lengthGreaterThan } from './_utils';
-import { STIFError } from '../exceptions';
-import { Attempt } from '../wrappers';
+import { Attempt } from '../wrappers/Attempt';
+import { validateAttempt } from '../validation/Attempt';
 
 export class AttemptBuilder {
   protected wip: Partial<STIF.Attempt>;
@@ -59,38 +57,6 @@ export class AttemptBuilder {
     }
   }
   public build(): STIF.Attempt {
-    let attempt = {
-      id: this.wip.id ?? uuid(),
-      event: this.wip.event ?? err('event'),
-      inspectionStart: this.wip.inspectionStart ?? err('inspectionStart'),
-      timerStart: this.wip.timerStart ?? err('timerStart'),
-      timerStop: this.wip.timerStop ?? err('timerStop'),
-      solutions: lengthGreaterThan(0, this.wip.solutions)
-        ? this.wip.solutions
-        : err('solutions'),
-      infractions: this.wip.infractions ?? [],
-      comment: this.wip.comment ?? '',
-    };
-    if (attempt.timerStop < attempt.timerStart) {
-      throw new STIFError('`timerStop` cannot occur prior to `timerStart`');
-    }
-    if (attempt.timerStart < attempt.inspectionStart) {
-      throw new STIFError('`timerStart` cannot occur prior to `inspectionStart`');
-    }
-    let solvedPuzzles = attempt.solutions
-      .map(s => s.puzzle)
-      .sort()
-      .join(',');
-    let eventPuzzles = attempt.event.puzzles.sort().join(',');
-    if (solvedPuzzles !== eventPuzzles) {
-      throw new STIFError(
-        '`solutions` do not match the `event`: ' +
-          solvedPuzzles +
-          ' !== ' +
-          eventPuzzles,
-      );
-    }
-
-    return attempt;
+    return validateAttempt(this.wip);
   }
 }
