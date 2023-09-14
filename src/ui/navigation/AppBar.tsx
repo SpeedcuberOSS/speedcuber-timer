@@ -14,11 +14,13 @@ import { PracticeStackHeaderProps } from './types';
 import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useTranslation } from 'react-i18next';
+import PuzzleRegistry from '../components/smartpuzzles/SmartPuzzleRegistry';
 
 export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
   const [event, setEvent] = useCompetitiveEvent();
   const [showEventSelector, setShowEventSelector] = useState(false);
   const [showPuzzleScanner, setShowPuzzleScanner] = useState(false);
+  const smartPuzzle = PuzzleRegistry.lastConnectedPuzzle()
   const { t } = useTranslation();
   return (
     <>
@@ -42,7 +44,7 @@ export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
         />
         {/* @ts-ignore */}
         <Appbar.Action
-          icon="bluetooth"
+          icon={smartPuzzle ? "bluetooth-connect" : "bluetooth" }
           onPress={() => setShowPuzzleScanner(true)}
         />
       </Appbar.Header>
