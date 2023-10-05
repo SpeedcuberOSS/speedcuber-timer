@@ -17,9 +17,6 @@ export function validateSolution(wip: Partial<STIF.Solution>): STIF.Solution {
     scramble: wip.scramble ?? err('scramble'),
     reconstruction: wip.reconstruction ?? [],
   };
-  if (wip?.recording !== undefined) {
-    solution = { ...solution, recording: wip.recording };
-  }
   return solution;
 }
 

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>SpeedcuberTimer</string>
+	<string>Speedcuber Timer</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,6 +35,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth access required for Smartcube support.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth access required for Smartcube support.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

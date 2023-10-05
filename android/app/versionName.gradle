@@ -1,0 +1,25 @@
+// Adapted from: https://stackoverflow.com/a/54146923/14765128
+import groovy.json.JsonSlurper
+
+task('syncVersionNameFromPackageJson') {
+    description "Increments Version Code"
+    doLast {
+        def versionName = getVersionFromNpm()
+        ant.propertyfile(file: "../gradle.properties") {
+            entry(key: "VERSION_NAME", value: versionName)
+        }
+    }
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'bundleRelease') {
+        task.dependsOn 'syncVersionNameFromPackageJson'
+    }
+}
+
+
+def getVersionFromNpm() {
+    def inputFile = new File("$rootDir/../package.json")
+    def packageJson = new JsonSlurper().parseText(inputFile.text)
+    return packageJson["version"]
+}

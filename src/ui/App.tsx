@@ -6,13 +6,17 @@
 
 import 'react-native-get-random-values';
 
-import FlipperAsyncStorage from 'rn-flipper-async-storage-advanced';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
 import * as library from '../persistence/library';
+
+const DevComponents = () => {
+  const FlipperAsyncStorage = require('rn-flipper-async-storage-advanced').default;
+  return <FlipperAsyncStorage />;
+}
 
 const App = () => {
   if (i18n.isInitialized) {
@@ -24,7 +28,7 @@ const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <PaperProvider theme={getCurrentTheme()}>
-        <FlipperAsyncStorage />
+        {__DEV__ && <DevComponents />}
         <MainNavigator />
       </PaperProvider>
     </GestureHandlerRootView>

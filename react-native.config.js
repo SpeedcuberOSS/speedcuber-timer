@@ -5,12 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 module.exports = {
+  project: {
+    ios: { sourceDir: './ios' },
+  },
   dependencies: {
-    'react-native-vector-icons': {
-      platforms: {
-        ios: null,
-      },
-    },
+    'react-native-vector-icons': { platforms: { ios: null } },
+    ...(process.env.NO_FLIPPER
+      ? { 'react-native-flipper': { platforms: { ios: null } } }
+      : {}),
   },
   assets: ['./assets/fonts'],
 };
