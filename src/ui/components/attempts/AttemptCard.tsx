@@ -10,19 +10,21 @@ import { memo } from 'react';
 import { Attempt } from '../../../lib/stif/wrappers';
 import { StyleSheet } from 'react-native';
 import { getAttemptTimeString } from '../../utils/formatElapsedTime';
+import { STIF } from '../../../lib/stif';
 
 interface AttemptCardProps {
-  attempt: Attempt;
-  onPress?: (attempt: Attempt) => void;
+  attempt: STIF.Attempt;
+  onPress?: (attempt: STIF.Attempt) => void;
 }
 
 function AttemptCard({ attempt, onPress = () => {} }: AttemptCardProps) {
+  const wrapped = new Attempt(attempt);
   return (
     <Card style={styles.card} onPress={() => onPress(attempt)}>
       <Card.Title
-        title={getAttemptTimeString(attempt)}
+        title={getAttemptTimeString(wrapped)}
         titleVariant="titleMedium"
-        subtitle={new Date(attempt.timerStart()).toLocaleDateString()}
+        subtitle={new Date(wrapped.timerStart()).toLocaleDateString()}
         subtitleVariant="bodySmall"
       />
     </Card>

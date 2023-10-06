@@ -33,6 +33,7 @@ const MINUTE: Milliseconds = 60000;
 const HOUR: Milliseconds = 60 * MINUTE;
 
 const SOLUTION_3x3x3 = {
+  id: 'd3339217-2f19-4a6e-997f-0a0d46960714',
   puzzle: PUZZLE_3x3x3,
   scramble: ['R', 'U'],
   reconstruction: [],
@@ -73,68 +74,64 @@ const ATTEMPT_3x3x3 = (duration: Milliseconds) =>
     .addSolution(SOLUTION_3x3x3);
 
 let attempt3x3x3WithReconstruction = (duration: Milliseconds) =>
-  new Attempt(
-    new AttemptBuilder()
-      .setEvent(EVENT_3x3x3)
-      .setInspectionStart(INSPECTION_START)
-      .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
-      .setTimerStop(INSPECTION_START + INSPECTION_DURATION + duration)
-      .addSolution(SOLUTION_3x3x3_WITH_RECONSTRUCTION)
-      .build(),
-  );
-
-let attempt234567relay = new Attempt(
   new AttemptBuilder()
-    .setEvent(EVENT_RELAY_234567)
+    .setEvent(EVENT_3x3x3)
     .setInspectionStart(INSPECTION_START)
     .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
-    .setTimerStop(INSPECTION_START + INSPECTION_DURATION + SOLVE_DURATION * 5)
-    .addSolution(
-      new SolutionBuilder()
-        .setPuzzle(PUZZLE_2x2x2)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .addSolution(
-      new SolutionBuilder()
-        .setPuzzle(PUZZLE_3x3x3)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .addSolution(
-      new SolutionBuilder()
-        .setPuzzle(PUZZLE_4x4x4)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .addSolution(
-      new SolutionBuilder()
+    .setTimerStop(INSPECTION_START + INSPECTION_DURATION + duration)
+    .addSolution(SOLUTION_3x3x3_WITH_RECONSTRUCTION)
+    .build();
 
-        .setPuzzle(PUZZLE_5x5x5)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .addSolution(
-      new SolutionBuilder()
-        .setPuzzle(PUZZLE_6x6x6)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .addSolution(
-      new SolutionBuilder()
-        .setPuzzle(PUZZLE_7x7x7)
-        .setScramble(['R', 'U', "R'", "U'"])
-        .build(),
-    )
-    .build(),
-);
+let attempt234567relay = new AttemptBuilder()
+  .setEvent(EVENT_RELAY_234567)
+  .setInspectionStart(INSPECTION_START)
+  .setTimerStart(INSPECTION_START + INSPECTION_DURATION)
+  .setTimerStop(INSPECTION_START + INSPECTION_DURATION + SOLVE_DURATION * 5)
+  .addSolution(
+    new SolutionBuilder()
+      .setPuzzle(PUZZLE_2x2x2)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .addSolution(
+    new SolutionBuilder()
+      .setPuzzle(PUZZLE_3x3x3)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .addSolution(
+    new SolutionBuilder()
+      .setPuzzle(PUZZLE_4x4x4)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .addSolution(
+    new SolutionBuilder()
+
+      .setPuzzle(PUZZLE_5x5x5)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .addSolution(
+    new SolutionBuilder()
+      .setPuzzle(PUZZLE_6x6x6)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .addSolution(
+    new SolutionBuilder()
+      .setPuzzle(PUZZLE_7x7x7)
+      .setScramble(['R', 'U', "R'", "U'"])
+      .build(),
+  )
+  .build();
 
 let attemptMultiBLD = (() => {
   const BLD_COUNT = 50;
   const event = {
     ...EVENT_3x3x3_BLD_MULTI,
     puzzles: new Array(BLD_COUNT).fill(PUZZLE_3x3x3),
-  }
+  };
   let builder = new AttemptBuilder()
     .setEvent(event)
     .setInspectionStart(INSPECTION_START)
@@ -150,7 +147,7 @@ let attemptMultiBLD = (() => {
         .build(),
     );
   }
-  return new Attempt(builder.build());
+  return builder.build();
 })();
 
 const examples: DevelopmentExampleSet = {
@@ -161,22 +158,16 @@ const examples: DevelopmentExampleSet = {
     {
       key: 'typical',
       title: 'Typical',
-      component: (
-        <AttemptCard attempt={new Attempt(ATTEMPT_3x3x3(11343).build())} />
-      ),
+      component: <AttemptCard attempt={ATTEMPT_3x3x3(11343).build()} />,
     },
     {
       key: 'dnf',
       title: 'DNF',
       component: (
         <AttemptCard
-          attempt={
-            new Attempt(
-              ATTEMPT_3x3x3(11343)
-                .addInfraction(STOPPED_PUZZLE_UNSOLVED)
-                .build(),
-            )
-          }
+          attempt={ATTEMPT_3x3x3(11343)
+            .addInfraction(STOPPED_PUZZLE_UNSOLVED)
+            .build()}
         />
       ),
     },
@@ -185,13 +176,9 @@ const examples: DevelopmentExampleSet = {
       title: 'DNS',
       component: (
         <AttemptCard
-          attempt={
-            new Attempt(
-              ATTEMPT_3x3x3(11343)
-                .addInfraction(SIGNED_BEFORE_STARTING)
-                .build(),
-            )
-          }
+          attempt={ATTEMPT_3x3x3(11343)
+            .addInfraction(SIGNED_BEFORE_STARTING)
+            .build()}
         />
       ),
     },
@@ -200,13 +187,9 @@ const examples: DevelopmentExampleSet = {
       title: '+2',
       component: (
         <AttemptCard
-          attempt={
-            new Attempt(
-              ATTEMPT_3x3x3(11343)
-                .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
-                .build(),
-            )
-          }
+          attempt={ATTEMPT_3x3x3(11343)
+            .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
+            .build()}
         />
       ),
     },
@@ -215,14 +198,10 @@ const examples: DevelopmentExampleSet = {
       title: '+4',
       component: (
         <AttemptCard
-          attempt={
-            new Attempt(
-              ATTEMPT_3x3x3(11343)
-                .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
-                .addInfraction(STOPPED_WRONG_HAND_PLACEMENT)
-                .build(),
-            )
-          }
+          attempt={ATTEMPT_3x3x3(11343)
+            .addInfraction(STOPPED_PUZZLE_ONE_MOVE_REMAINING)
+            .addInfraction(STOPPED_WRONG_HAND_PLACEMENT)
+            .build()}
         />
       ),
     },
@@ -237,9 +216,7 @@ const examples: DevelopmentExampleSet = {
       key: 'minutelong',
       title: 'Minute Long',
       component: (
-        <AttemptCard
-          attempt={new Attempt(ATTEMPT_3x3x3(11343 + 1 * MINUTE).build())}
-        />
+        <AttemptCard attempt={ATTEMPT_3x3x3(11343 + 1 * MINUTE).build()} />
       ),
     },
     {
@@ -247,9 +224,7 @@ const examples: DevelopmentExampleSet = {
       title: 'Hour Long',
       component: (
         <AttemptCard
-          attempt={
-            new Attempt(ATTEMPT_3x3x3(11343 + 12 * MINUTE + 10 * HOUR).build())
-          }
+          attempt={ATTEMPT_3x3x3(11343 + 12 * MINUTE + 10 * HOUR).build()}
         />
       ),
     },

@@ -10,20 +10,16 @@ import { AttemptAnalytics } from '../../lib/analytics/AttemptAnalytics';
 import AttemptsChart from '../components/charts/AttemptsChart';
 import { DataTable } from 'react-native-paper';
 import { TimerTabScreenProps } from '../navigation/types';
-import { getLibrary } from '../../lib/attempts';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
+import { useAttempts } from '../../persistence/hooks';
+import { Attempt } from '../../lib/stif/wrappers';
 
 type Props = TimerTabScreenProps<'Insights'>;
 
-let library = getLibrary();
-
 export default function InsightsScreen(props: Props) {
   const [event] = useCompetitiveEvent();
-  const data = library.getAll();
-  const attempts = data
-    .filter(a => a.event() === event)
-    .sort((a, b) => b.inspectionStart() - a.inspectionStart())
-    .slice(0, 100);
+  const stifs = useAttempts({event, sortDirection: 'descending'});
+  const attempts: Attempt[] = [...stifs].map(a => new Attempt(a));
   const averages = [5, 12, 50, 100, 1000];
   return (
     <SafeAreaView style={styles.container}>
@@ -40,10 +36,10 @@ export default function InsightsScreen(props: Props) {
           <DataTable.Row key={count}>
             <DataTable.Cell>{`Ao${count}`}</DataTable.Cell>
             <DataTable.Cell>
-              {new AttemptAnalytics(data.slice(-count)).AoX(count) / 1000}
+              {new AttemptAnalytics(attempts.slice(-count)).AoX(count) / 1000}
             </DataTable.Cell>
             <DataTable.Cell>
-              {Math.min(...new AttemptAnalytics(data).sliding.AoX(count)) /
+              {Math.min(...new AttemptAnalytics(attempts).sliding.AoX(count)) /
                 1000}
             </DataTable.Cell>
           </DataTable.Row>

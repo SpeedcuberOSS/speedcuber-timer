@@ -20,9 +20,9 @@
     "clean": "react-native-clean-project",
     "link-assets": "react-native-asset",
     "analyze-bundle": "react-native-bundle-visualizer - only-mapped - bundle-output ./myapp.bundle - format html",
-    "check-dependencies": "rnx-align-deps",
-    "fix-dependencies": "rnx-align-deps --write",
-    "deduplicate-dependencies": "yarn-deduplicate yarn.lock"
+    "deps:check": "rnx-align-deps",
+    "deps:align": "rnx-align-deps --write",
+    "deps:deduplicate": "yarn-deduplicate yarn.lock"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.11",
@@ -33,6 +33,7 @@
     "@react-navigation/material-bottom-tabs": "^6.2.12",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.2.0",
+    "@realm/react": "^0.6.1",
     "buffer": "^6.0.3",
     "deepmerge": "^3.3.0",
     "i18next": "^21.8.9",
@@ -58,6 +59,7 @@
     "react-native-svg": "^13.9.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-webview": "^12.0.2",
+    "realm": "^12.2.1",
     "solution-analyzer": "^0.1.6",
     "uuid": "^9.0.0"
   },
@@ -97,6 +99,7 @@
     "react-native-flipper": "^0.212.0",
     "react-native-svg-app-icon": "^0.6.1",
     "react-test-renderer": "18.2.0",
+    "realm-flipper-plugin-device": "^1.1.0",
     "rn-flipper-async-storage-advanced": "^1.0.5",
     "typescript": "^4.8.4",
     "yarn-deduplicate": "^6.0.1"

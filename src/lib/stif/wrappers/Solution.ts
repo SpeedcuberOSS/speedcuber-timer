@@ -4,6 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { UUID } from 'react-native-ble-plx';
 import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
 import { SolutionBuilder } from '../builders';
 import { STIFError } from '../exceptions';
@@ -42,6 +43,9 @@ export class Solution {
   }
   public stif(): STIF.Solution {
     return this.solution;
+  }
+  public id(): UUID {
+    return this.solution.id;
   }
   public puzzle(): STIF.Puzzle {
     return this.solution.puzzle;

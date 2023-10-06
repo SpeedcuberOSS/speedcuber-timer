@@ -11,25 +11,32 @@ import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
-import * as library from '../persistence/library';
+import { RealmProvider, useRealm } from '../persistence/realmdb';
 
 const DevComponents = () => {
-  const FlipperAsyncStorage = require('rn-flipper-async-storage-advanced').default;
-  return <FlipperAsyncStorage />;
-}
+  const FlipperAsyncStorage =
+    require('rn-flipper-async-storage-advanced').default;
+  const RealmPlugin = require('realm-flipper-plugin-device').default;
+  const realm = useRealm();
+  return (
+    <>
+      <FlipperAsyncStorage />
+      <RealmPlugin realms={[realm]} />
+    </>
+  );
+};
 
 const App = () => {
   if (i18n.isInitialized) {
     console.log('i18n initialized');
   }
-  if (library.status() === 'stopped') {
-    library.boot();
-  }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <PaperProvider theme={getCurrentTheme()}>
-        {__DEV__ && <DevComponents />}
-        <MainNavigator />
+        <RealmProvider>
+          {__DEV__ && <DevComponents />}
+          <MainNavigator />
+        </RealmProvider>
       </PaperProvider>
     </GestureHandlerRootView>
   );

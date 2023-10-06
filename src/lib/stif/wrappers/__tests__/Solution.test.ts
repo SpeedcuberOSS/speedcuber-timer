@@ -50,6 +50,7 @@ describe('[Wrapper] Solution', () => {
   });
   it('provides access to all STIF.Solution fields', () => {
     let solution = new Solution(RECONSTRUCTION_BUILD().build());
+    expect(solution.id()).toBeDefined();
     expect(solution.puzzle()).toEqual(PUZZLE_3x3x3);
     expect(solution.scramble()).toEqual(['R', 'U']);
     expect(solution.reconstruction().length).toEqual(3);

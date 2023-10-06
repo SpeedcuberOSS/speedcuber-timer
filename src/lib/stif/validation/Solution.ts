@@ -7,12 +7,14 @@
 import { STIF } from "../STIF";
 import { STIFError } from "../exceptions";
 import { err } from "./_utils";
+import { v4 as uuid } from 'uuid';
 
 export function validateSolution(wip: Partial<STIF.Solution>): STIF.Solution {
   if (phasesOverlap(wip)) {
     throw new STIFError('Solution phases cannot be overlapping');
   }
   let solution: STIF.Solution = {
+    id: wip.id ?? uuid(),
     puzzle: wip.puzzle ?? err('puzzle'),
     scramble: wip.scramble ?? err('scramble'),
     reconstruction: wip.reconstruction ?? [],

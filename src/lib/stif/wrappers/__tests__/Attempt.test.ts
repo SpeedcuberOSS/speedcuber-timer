@@ -29,6 +29,7 @@ import { Solution } from '../Solution';
 import { RECONSTRUCTION_BUILD } from './Solution.test';
 
 const TEST_SOLUTION = {
+  id: 'e2130283-7baf-4ca5-bce0-6c806115c7ef',
   puzzle: PUZZLE_3x3x3,
   scramble: ['R', 'U'],
   reconstruction: [],
@@ -101,6 +102,7 @@ describe('[Wrapper] Attempt', () => {
     });
     it('wraps all solutions in the STIF.Attempt', () => {
       let solution2x2x2 = {
+        id: '37eb7f2a-92a8-4a53-84e7-6c6fbfabcbd0',
         puzzle: PUZZLE_2x2x2,
         scramble: ['R', 'U'],
         reconstruction: [],

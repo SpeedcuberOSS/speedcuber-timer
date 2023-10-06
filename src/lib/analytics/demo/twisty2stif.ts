@@ -13,6 +13,7 @@ import {
 } from '../../stif/builtins';
 import { AttemptBuilder } from '../../stif/builders';
 import { Attempt } from '../../stif/wrappers';
+import { v4 as uuid } from 'uuid';
 
 // it('has a noop test to satisfy Jest', () => {
 //   expect(true).toBe(true);
@@ -40,6 +41,7 @@ twistyData.forEach((twisty: string[]) => {
       .setEvent(EVENT_3x3x3)
       .setComment(comment)
       .addSolution({
+        id: uuid(),
         puzzle: PUZZLE_3x3x3,
         scramble: scramble.split(' '),
         reconstruction: [],

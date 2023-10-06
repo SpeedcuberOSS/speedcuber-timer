@@ -24,6 +24,7 @@ export const ATTEMPT_3x3x3_BASIC: STIF.Attempt = {
   infractions: [],
   solutions: [
     {
+      id: 'afba4d94-c69c-48cb-ab74-f49e5387c771',
       puzzle: PUZZLE_3x3x3,
       scramble: "R U R' U' R' F R2 U' R' U' R U R' F'".split(' '),
       reconstruction: [],
@@ -73,6 +74,7 @@ export const ATTEMPT_3x3x3_RECONSTRUCTED: STIF.Attempt = {
   event: EVENT_3x3x3,
   solutions: [
     {
+      id: '552d6a5e-b58d-4f0e-ae68-8a2b77d7596a',
       puzzle: PUZZLE_3x3x3,
       scramble: [
         'L2',

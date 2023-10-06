@@ -467,7 +467,8 @@ exports[`Attempt Details dnf matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -636,7 +637,8 @@ exports[`Attempt Details dnf matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -805,7 +807,8 @@ exports[`Attempt Details dnf matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1194,7 +1197,8 @@ exports[`Attempt Details dnf matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2159,7 +2163,8 @@ exports[`Attempt Details dns matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2328,7 +2333,8 @@ exports[`Attempt Details dns matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2497,7 +2503,8 @@ exports[`Attempt Details dns matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2886,7 +2893,8 @@ exports[`Attempt Details dns matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3857,7 +3865,8 @@ exports[`Attempt Details longComment matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4218,7 +4227,8 @@ exports[`Attempt Details longComment matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4387,7 +4397,8 @@ exports[`Attempt Details longComment matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4556,7 +4567,8 @@ exports[`Attempt Details longComment matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4907,7 +4919,8 @@ exports[`Attempt Details longComment matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -5840,7 +5853,8 @@ exports[`Attempt Details multibld matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -6009,7 +6023,8 @@ exports[`Attempt Details multibld matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -6178,7 +6193,8 @@ exports[`Attempt Details multibld matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -6529,7 +6545,8 @@ exports[`Attempt Details multibld matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -17213,7 +17230,8 @@ exports[`Attempt Details plus2 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -17382,7 +17400,8 @@ exports[`Attempt Details plus2 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -17551,7 +17570,8 @@ exports[`Attempt Details plus2 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -17940,7 +17960,8 @@ exports[`Attempt Details plus2 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -18905,7 +18926,8 @@ exports[`Attempt Details plus4 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -19074,7 +19096,8 @@ exports[`Attempt Details plus4 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -19243,7 +19266,8 @@ exports[`Attempt Details plus4 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -19632,7 +19656,8 @@ exports[`Attempt Details plus4 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -19801,7 +19826,8 @@ exports[`Attempt Details plus4 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -20959,7 +20985,8 @@ exports[`Attempt Details reconstruction matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -21316,7 +21343,8 @@ exports[`Attempt Details reconstruction matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -21485,7 +21513,8 @@ exports[`Attempt Details reconstruction matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -21654,7 +21683,8 @@ exports[`Attempt Details reconstruction matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -22005,7 +22035,8 @@ exports[`Attempt Details reconstruction matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -22973,7 +23004,8 @@ exports[`Attempt Details relay234567 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -23142,7 +23174,8 @@ exports[`Attempt Details relay234567 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -23311,7 +23344,8 @@ exports[`Attempt Details relay234567 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -23662,7 +23696,8 @@ exports[`Attempt Details relay234567 matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -25783,7 +25818,8 @@ exports[`Attempt Details tps matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -26140,7 +26176,8 @@ exports[`Attempt Details tps matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -26309,7 +26346,8 @@ exports[`Attempt Details tps matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -26478,7 +26516,8 @@ exports[`Attempt Details tps matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -26867,7 +26906,8 @@ exports[`Attempt Details tps matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -27835,7 +27875,8 @@ exports[`Attempt Details typical matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -28004,7 +28045,8 @@ exports[`Attempt Details typical matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -28173,7 +28215,8 @@ exports[`Attempt Details typical matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -28524,7 +28567,8 @@ exports[`Attempt Details typical matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]

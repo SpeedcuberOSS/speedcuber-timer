@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { AttemptBuilder, SolutionBuilder } from '../../lib/stif/builders';
-import { STIF } from '../../lib/stif';
 import { Pressable, StyleSheet, View } from 'react-native';
 import PuzzleRegistry, {
   MessageSubscription,
@@ -21,33 +20,24 @@ import { t } from 'i18next';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 import { useState } from 'react';
 import { Attempt } from '../../lib/stif/wrappers';
-import { EVENT_3x3x3, PUZZLE_3x3x3 } from '../../lib/stif/builtins';
-import { library } from '../../persistence';
+import { useAttemptCreator } from '../../persistence/hooks';
+import { useSolveRecordingCreator } from '../../persistence/hooks/useRecordingCreator';
 
 enum TimerState {
   SCRAMBLING = 0,
   INSPECTION = 1,
   SOLVING = 2,
 }
-const now = Date.now();
-const TEST_SCRAMBLE: STIF.Algorithm = ['R', 'U'];
-const TEST_ATTEMPT: Attempt = new AttemptBuilder()
-  .setEvent(EVENT_3x3x3)
-  .addSolution({
-    puzzle: PUZZLE_3x3x3,
-    scramble: TEST_SCRAMBLE,
-    reconstruction: [],
-  })
-  .setInspectionStart(now - 14000)
-  .setTimerStart(now)
-  .setTimerStop(now)
-  .wrapped()
-  .build();
+
 export default function PracticeView() {
+  const createAttempt = useAttemptCreator();
+  const createRecording = useSolveRecordingCreator();
   const [event] = useCompetitiveEvent();
   const [inspectionStart, setInspectionStart] = useState(0);
   const [timerState, setTimerState] = useState(TimerState.SCRAMBLING);
-  const [lastAttempt, setLastAttempt] = useState(TEST_ATTEMPT);
+  const [lastAttempt, setLastAttempt] = useState(
+    undefined as Attempt | undefined,
+  );
   const [attemptBuilder, setAttemptBuilder] = useState(new AttemptBuilder());
   const [solutionBuilder, setSolutionBuilder] = useState(new SolutionBuilder());
   const [messageStreamBuilder, setMessageStreamBuilder] = useState(
@@ -74,7 +64,6 @@ export default function PracticeView() {
   }
 
   function handleInspectionBegin() {
-    console.debug('Inspection begin');
     const now = new Date().getTime();
     attemptBuilder.setInspectionStart(now);
     setInspectionStart(now);
@@ -92,7 +81,6 @@ export default function PracticeView() {
   }
 
   function handleInspectionComplete() {
-    console.debug('Inspection complete');
     const now = new Date().getTime();
     attemptBuilder.setTimerStart(now);
     if (now - inspectionStart > 17_000) {
@@ -112,14 +100,23 @@ export default function PracticeView() {
 
   function completeAndSaveAttempt(duration: Date) {
     attemptBuilder.setTimerStop(new Date().getTime());
-    attemptBuilder.addSolution(solutionBuilder.build());
+    const solution = solutionBuilder.build();
+    setTimeout(() => {
+      try {
+        const recording = messageStreamBuilder.build();
+        createRecording(solution.id, recording);
+      } catch (error) {
+        console.log(`Cannot save a recording because: ${error}`);
+      }
+    }, 0)
+    attemptBuilder.addSolution(solution);
     if (messageSubscription) {
       messageSubscription.remove();
       setMessageSubscription(undefined);
     }
-    let prevAttempt = attemptBuilder.wrapped().build();
-    library.put(prevAttempt.stif());
-    setLastAttempt(prevAttempt);
+    let attempt = attemptBuilder.wrapped().build();
+    createAttempt(attempt.stif());
+    setLastAttempt(attempt);
     setAttemptBuilder(new AttemptBuilder());
     setSolutionBuilder(new SolutionBuilder());
     setMessageStreamBuilder(new MessageStreamBuilder());

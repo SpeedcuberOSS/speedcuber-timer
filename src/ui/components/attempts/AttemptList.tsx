@@ -7,21 +7,20 @@
 import { Dimensions, FlatList, View } from 'react-native';
 import { memo } from 'react';
 
-import { Attempt } from '../../../lib/stif/wrappers';
+import { STIF } from '../../../lib/stif';
 import AttemptCard from './AttemptCard';
 
 const NUM_COLUMNS = 3;
 
 interface AttemptListProps {
-  attempts: Attempt[];
-  onPress?: (attempt: Attempt) => void;
+  attempts: ArrayLike<STIF.Attempt>;
+  onPress?: (attempt: STIF.Attempt) => void;
 }
 
 function AttemptList({ attempts, onPress = () => {} }: AttemptListProps) {
-  console.debug(`AttemptList: ${attempts.length}`);
-  const renderAttempt = ({ item }: { item: Attempt }) => (
+  const renderAttempt = ({ item }: { item: STIF.Attempt }) => (
     <View style={{ width: Dimensions.get('window').width / NUM_COLUMNS }}>
-      <AttemptCard key={item.id()} attempt={item} onPress={onPress} />
+      <AttemptCard key={item.id} attempt={item} onPress={onPress} />
     </View>
   );
   return (
@@ -29,7 +28,7 @@ function AttemptList({ attempts, onPress = () => {} }: AttemptListProps) {
       <FlatList
         data={attempts}
         renderItem={renderAttempt}
-        keyExtractor={attempt => attempt.id()}
+        keyExtractor={attempt => attempt.id}
         numColumns={NUM_COLUMNS}
         initialNumToRender={30}
       />

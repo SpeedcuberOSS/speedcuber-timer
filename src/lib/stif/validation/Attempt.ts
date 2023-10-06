@@ -32,7 +32,7 @@ export function validateAttempt(wip: Partial<STIF.Attempt>): STIF.Attempt {
     .map(s => s.puzzle)
     .sort()
     .join(',');
-  let eventPuzzles = attempt.event.puzzles.sort().join(',');
+  let eventPuzzles = [...attempt.event.puzzles].sort().join(',');
   if (solvedPuzzles !== eventPuzzles) {
     throw new STIFError(
       '`solutions` do not match the `event`: ' +

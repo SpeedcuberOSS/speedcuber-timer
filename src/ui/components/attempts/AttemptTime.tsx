@@ -11,13 +11,13 @@ import { Text } from 'react-native-paper';
 import Time from '../Time';
 
 interface AttemptTimeProps {
-  attempt: Attempt;
+  attempt?: Attempt;
 }
 
 export default function AttemptTime({ attempt }: AttemptTimeProps) {
-  const result = attempt.result();
+  const result = attempt?.result() ?? 0;
   const resultIsNumber = typeof result === 'number';
-  const penaltyText = attempt.penaltyDuration() ? ` +${attempt.penaltyDuration()/2000}` : '';
+  const penaltyText = attempt?.penaltyDuration() ? ` +${attempt.penaltyDuration()/2000}` : '';
   return (
     <View style={styles.container}>
       {resultIsNumber ? (

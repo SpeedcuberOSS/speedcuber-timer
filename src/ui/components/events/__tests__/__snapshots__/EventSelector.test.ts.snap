@@ -340,7 +340,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -495,7 +496,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -650,7 +652,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -805,7 +808,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1277,7 +1281,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1432,7 +1437,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1587,7 +1593,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1742,7 +1749,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -1897,7 +1905,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2052,7 +2061,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2207,7 +2217,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2362,7 +2373,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2517,7 +2529,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2672,7 +2685,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2827,7 +2841,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -2982,7 +2997,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3137,7 +3153,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3495,7 +3512,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3650,7 +3668,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3805,7 +3824,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -3960,7 +3980,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4115,7 +4136,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4270,7 +4292,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4425,7 +4448,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]
@@ -4783,7 +4807,8 @@ exports[`Event Selector default matches snapshot 1`] = `
                       "paddingLeft": 16,
                     },
                     {
-                      "flex": 1,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
                     },
                   ]

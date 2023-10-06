@@ -29,6 +29,7 @@ export namespace STIF {
   }
 
   export interface Solution {
+    id: UUID;
     puzzle: Puzzle;
     scramble: Algorithm;
     reconstruction: SolutionPhase[];
@@ -51,18 +52,21 @@ export namespace STIF {
     comment: string;
   }
 
+  export interface SmartPuzzleUUIDs {
+    trackingService: UUID;
+    trackingCharacteristic: UUID;
+    batteryService?: UUID;
+    batteryCharacteristic?: UUID;
+  }
+
   export interface SmartPuzzle {
     prefix: string;
     name?: string;
     brand: string;
     puzzle: Puzzle;
-    uuids: {
-      trackingService: UUID;
-      trackingCharacteristic: UUID;
-      batteryService?: UUID;
-      batteryCharacteristic?: UUID;
-    };
+    uuids: SmartPuzzleUUIDs;
   }
+  
   export interface Message {
     t: UnixTimestamp;
     m: string;
