@@ -6,3 +6,4 @@
 
 export { useAttempts } from './useAttempts';
 export { useAttemptCreator } from './useAttemptCreator';
+export { useSolveRecordingCreator } from './useSolveRecordingCreator';

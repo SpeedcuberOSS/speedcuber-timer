@@ -27,7 +27,7 @@ export class SolutionPhase {
   }
   public moves(): STIF.TimestampedMove[] {
     if (this._moves === null) {
-      this._moves = this.phase.moves.sort((a, b) => a.t - b.t);
+      this._moves = [...this.phase.moves].sort((a, b) => a.t - b.t);
     }
     return this._moves;
   }

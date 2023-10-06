@@ -5,7 +5,6 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { STIF, UUID, UnixTimestamp } from '../stif';
-import { Attempt } from '../stif/wrappers';
 import { GIIKER_PUZZLE, HEYKUBE, PARTICULA_PUZZLE } from '../stif/builtins';
 
 import { parseMessage as parseGiiKERMessage } from './GiiKER';
@@ -13,11 +12,11 @@ import { parseMessage as parseHeyKubeMessage } from './HeyKube';
 import { parseMessage as parseParticulaMessage } from './Particula';
 
 export function parseTimestampedMoves(
-  attempt: Attempt,
   recording: STIF.SolveRecording,
+  startTime: number = 0,
 ): STIF.TimestampedMove[] {
   return adjustTimestamps(parseMoves(recording))
-    .relativeTo(attempt.stif().timerStart ?? 0)
+    .relativeTo(startTime)
     .sort((a, b) => a.t - b.t);
 }
 

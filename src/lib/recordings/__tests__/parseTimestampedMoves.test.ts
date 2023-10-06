@@ -39,51 +39,49 @@ describe('compressDoubleTurns', () => {
   });
 });
 
-describe('getSolveReplay', () => {
+describe('parseTimestampedMoves', () => {
   it('returns no solve replay if there is no message stream', () => {
+    const startTime = new Attempt(RubiksConnectedAttempt).timerStart();
     expect(
-      parseTimestampedMoves(new Attempt(RubiksConnectedAttempt), {
-        smartPuzzle: RubiksConnectedRecording.smartPuzzle,
-        stream: [],
-      }),
+      parseTimestampedMoves(
+        {
+          smartPuzzle: RubiksConnectedRecording.smartPuzzle,
+          stream: [],
+        },
+        startTime,
+      ),
     ).toEqual([]);
   });
 
   it('correctly parses a solve replay from a Rubiks Connected attempt', () => {
-    expect(
-      parseTimestampedMoves(
-        new Attempt(RubiksConnectedAttempt),
-        RubiksConnectedRecording,
-      ),
-    ).toEqual(RubiksConnectedSolveReplay);
+    const startTime = new Attempt(RubiksConnectedAttempt).timerStart();
+    expect(parseTimestampedMoves(RubiksConnectedRecording, startTime)).toEqual(
+      RubiksConnectedSolveReplay,
+    );
   });
   it('correctly parses a solve replay from a Particula 2x2x2', () => {
-    const Particula2x2x2Attempt =
+    const attempt =
       require('../__fixtures__/particula_2x2x2_attempt.json') as STIF.Attempt;
-    const Particula2x2x2Recording =
+    const recording =
       require('../__fixtures__/particula_2x2x2_recording.json') as STIF.SolveRecording;
-    const Particula2x2x2SolveReplay =
+    const target =
       require('../__fixtures__/particula_2x2x2_solve_replay.json') as STIF.TimestampedMove[];
+    const actual = parseTimestampedMoves(recording, attempt.timerStart);
 
-    const replay = parseTimestampedMoves(
-      new Attempt(Particula2x2x2Attempt),
-      Particula2x2x2Recording,
-    );
-
-    expect(replay).toEqual(Particula2x2x2SolveReplay);
+    expect(actual).toEqual(target);
   });
   it('correctly parses a solve replay from a Particula 3x3x3', () => {
-    const Particula3x3x3Attempt =
+    const attempt =
       require('../__fixtures__/particula_3x3x3_attempt.json') as STIF.Attempt;
-    const Particula3x3x3Recording =
+    const recording =
       require('../__fixtures__/particula_3x3x3_recording.json') as STIF.SolveRecording;
-    const Particula3x3x3SolveReplay =
+    const target =
       require('../__fixtures__/particula_3x3x3_solve_replay.json') as STIF.TimestampedMove[];
 
     // NOTE: This test enforces the omission of orientation quaternions.
     // A future version of the test will need to include them.
-    const replay = parseTimestampedMoves(new Attempt(Particula3x3x3Attempt), Particula3x3x3Recording);
+    const actual = parseTimestampedMoves(recording, attempt.timerStart);
 
-    expect(replay).toEqual(Particula3x3x3SolveReplay);
+    expect(actual).toEqual(target);
   });
 });

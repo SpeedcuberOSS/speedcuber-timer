@@ -4,24 +4,30 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { AttemptBuilder, SolutionBuilder } from '../../lib/stif/builders';
+import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
+import {
+  AttemptBuilder,
+  MessageStreamBuilder,
+  SolutionBuilder,
+} from '../../lib/stif/builders';
+import { Attempt } from '../../lib/stif/wrappers';
 import PuzzleRegistry, {
   MessageSubscription,
 } from './smartpuzzles/SmartPuzzleRegistry';
 
-import AttemptTime from './attempts/AttemptTime';
-import InspectionTimer from '../components/inspection/InspectionTimer';
-import { MessageStreamBuilder } from '../../lib/stif/builders/MessageStreamBuilder';
-import SolveTimer from '../components/SolveTimer';
-import { Text } from 'react-native-paper';
-import { getScrambler } from '../../lib/scrambles/mandy';
 import { t } from 'i18next';
+import { Text } from 'react-native-paper';
+import { parseReconstruction } from '../../lib/recordings/parseReconstruction';
+import { getScrambler } from '../../lib/scrambles/mandy';
+import {
+  useAttemptCreator,
+  useSolveRecordingCreator,
+} from '../../persistence/hooks';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
-import { useState } from 'react';
-import { Attempt } from '../../lib/stif/wrappers';
-import { useAttemptCreator } from '../../persistence/hooks';
-import { useSolveRecordingCreator } from '../../persistence/hooks/useRecordingCreator';
+import SolveTimer from './SolveTimer';
+import AttemptTime from './attempts/AttemptTime';
+import InspectionTimer from './inspection/InspectionTimer';
 
 enum TimerState {
   SCRAMBLING = 0,
@@ -99,24 +105,29 @@ export default function PracticeView() {
   }
 
   function completeAndSaveAttempt(duration: Date) {
-    attemptBuilder.setTimerStop(new Date().getTime());
     const solution = solutionBuilder.build();
-    setTimeout(() => {
-      try {
-        const recording = messageStreamBuilder.build();
-        createRecording(solution.id, recording);
-      } catch (error) {
-        console.log(`Cannot save a recording because: ${error}`);
-      }
-    }, 0)
-    attemptBuilder.addSolution(solution);
+    const attempt = attemptBuilder
+      .setTimerStop(new Date().getTime())
+      .addSolution(solution)
+      .build();
+    try {
+      const recording = messageStreamBuilder.build();
+      solution.reconstruction = parseReconstruction(
+        recording,
+        solution.scramble,
+        attempt.timerStart,
+      );
+      attempt.solutions = [solution];
+      createRecording(solution.id, recording);
+    } catch (error) {
+      console.log(`Cannot save a recording because: ${error}`);
+    }
     if (messageSubscription) {
       messageSubscription.remove();
       setMessageSubscription(undefined);
     }
-    let attempt = attemptBuilder.wrapped().build();
-    createAttempt(attempt.stif());
-    setLastAttempt(attempt);
+    createAttempt(attempt);
+    setLastAttempt(new Attempt(attempt));
     setAttemptBuilder(new AttemptBuilder());
     setSolutionBuilder(new SolutionBuilder());
     setMessageStreamBuilder(new MessageStreamBuilder());

@@ -7,7 +7,7 @@
 import { STIF } from '../stif';
 import { analyzeSolution } from 'solution-analyzer';
 
-type SolutionMethod = 'CFOP' | 'ZZ' | 'Roux';
+export type SolutionMethod = 'CFOP' | 'ZZ' | 'Roux';
 
 export default function reconstructionFor(
   scramble: STIF.Algorithm,

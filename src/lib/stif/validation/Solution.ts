@@ -27,10 +27,10 @@ function phasesOverlap(wip: Partial<STIF.Solution>): boolean {
     return false;
   }
   let phases = wip.reconstruction
-    .filter(value => value.moves.length > 1)
+    .filter(value => [...value.moves].length > 1)
     .map(phase => ({
-      start: phase.moves.sort((a, b) => a.t - b.t)[0].t,
-      end: phase.moves.sort((a, b) => b.t - a.t)[0].t,
+      start: [...phase.moves].sort((a, b) => a.t - b.t)[0].t,
+      end: [...phase.moves].sort((a, b) => b.t - a.t)[0].t,
     }))
     .sort((a, b) => a.start - b.start);
   for (let i = 0; i < phases.length - 1; i++) {
