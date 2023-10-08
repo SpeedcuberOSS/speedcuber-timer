@@ -11,14 +11,20 @@ import { RootDrawerParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ExamplesNavigator from '../examples/ExamplesNavigator';
 import FileSystemStackNavigator from '../components/filesystem/FileSystemStackNavigator';
+import BackupScreen from '../screens/BackupScreen';
+import { useTranslation } from 'react-i18next';
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 const DrawerNavigator: React.FC = () => {
+  const {t} = useTranslation()
   return (
     <Drawer.Navigator id="Root" screenOptions={{ headerShown: false }}>
       <Drawer.Screen name="Practice" component={PracticeNavigator} />
       <Drawer.Screen name="Play" component={PlayScreen} />
+      <Drawer.Screen name="Backup" component={BackupScreen} options={{
+        drawerLabel: t("backup.drawerLabel")
+      }}/>
       {__DEV__ && (
         <Drawer.Screen
           name="Examples"

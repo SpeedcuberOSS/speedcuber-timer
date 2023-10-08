@@ -117,5 +117,15 @@
   },
   "units": {
     "seconds": "s"
+  },
+  "backup": {
+    "title": "Backups",
+    "drawerLabel": "Backup/Restore",
+    "button": "Create Backup"
+  },
+  "restore": {
+    "button": "Restore",
+    "guard": "Confirm restore",
+    "confirmation_message": "The backup will replace all your attempts across all events."
   }
 }

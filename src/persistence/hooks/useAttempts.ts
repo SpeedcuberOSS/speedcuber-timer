@@ -8,13 +8,11 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '../realmdb';
 import { RealmAttempt } from '../realmdb/schema';
 import { STIF } from '../../lib/stif';
+import { IterableArrayLike } from '../types';
 
 interface useAttemptsParams {
-  event: STIF.CompetitiveEvent;
+  event?: STIF.CompetitiveEvent;
   sortDirection?: 'ascending' | 'descending';
-}
-interface IterableArrayLike<T> extends ArrayLike<T> {
-  [Symbol.iterator](): IterableIterator<T>;
 }
 const sortDirections = {
   ascending: false,
@@ -27,12 +25,16 @@ export function useAttempts({
   const [attempts, setAttempts] = useState<IterableArrayLike<STIF.Attempt>>([]);
   const dataset = useQuery<RealmAttempt>(RealmAttempt);
   useEffect(() => {
-    const importantAttempts = dataset.filtered(`event.id = "${event.id}"`);
-    const sorted = importantAttempts.sorted(
-      'inspectionStart',
-      sortDirections[sortDirection],
-    );
-    setAttempts(sorted);
+    if (event !== undefined) {
+      const importantAttempts = dataset.filtered(`event.id = "${event.id}"`);
+      const sorted = importantAttempts.sorted(
+        'inspectionStart',
+        sortDirections[sortDirection],
+      );
+      setAttempts(sorted);
+    } else {
+      setAttempts(dataset);
+    }
   }, [event, dataset]);
   return attempts;
 }

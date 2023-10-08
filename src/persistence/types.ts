@@ -21,3 +21,7 @@ export interface AttemptLibrary {
   put: (attempt: STIF.Attempt) => Promise<void>;
   details: (event: STIF.CompetitiveEvent, attempt_id: UUID) => Promise<STIF.Attempt>;
 }
+
+export interface IterableArrayLike<T> extends ArrayLike<T> {
+  [Symbol.iterator](): IterableIterator<T>;
+}
