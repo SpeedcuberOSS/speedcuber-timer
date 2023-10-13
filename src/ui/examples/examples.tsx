@@ -29,6 +29,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/TwistyPlayer/AttemptPlayer.examples').default,
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
   require('../layouts/CenteredBetweenSidebars.examples').default,
+  require('../layouts/SplitScreen.examples').default,
 ].forEach(e => examples.set(slugify(e.title), e));
 
 /**

@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Split Screen [10/90 Split] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {},
+          {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 10,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 90,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Split Screen [47/53 Horizontal Split] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {},
+          {
+            "flex": 1,
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 47,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 53,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Split Screen [60/40 Split] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {},
+          {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 60,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 40,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Split Screen [Default] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {},
+          {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Split Screen [ignores custom flex direction] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "flexDirection": "row",
+          },
+          {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Split Screen [with styles] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "borderColor": "pink",
+            "borderRadius": 13,
+            "borderWidth": 37,
+          },
+          {
+            "flex": 1,
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "flex": 50,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "blue",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
