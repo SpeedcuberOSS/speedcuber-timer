@@ -125,6 +125,7 @@
   },
   "restore": {
     "button": "Restore",
+    "deleteButton": "Delete",
     "guard": "Confirm restore",
     "confirmation_message": "The backup will replace all your attempts across all events."
   }

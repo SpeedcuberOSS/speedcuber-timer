@@ -6,6 +6,11 @@
 
 import { Milliseconds, STIF, UUID, UnixTimestamp } from "../lib/stif";
 
+export interface BackupEntry {
+  date: Date;
+  path: string;
+}
+
 export type Status = 'stopped' | 'booting' | 'migrating' | 'running' | 'crashed';
 
 export interface AttemptSummary {

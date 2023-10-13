@@ -4,10 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useAttempts, useAttemptRestoration } from '../../persistence/hooks';
-import { backupAttempts } from '../../persistence/backup';
-import { RootDrawerScreenProps } from '../navigation/types';
-import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
 import {
   ActivityIndicator,
   Button,
@@ -16,12 +12,13 @@ import {
   Portal,
   Text,
 } from 'react-native-paper';
-import {
-  BackupEntry,
-  listBackups,
-  loadAttemptsBackup,
-} from '../../persistence/restore';
+import { Backup, Restore } from '../../persistence';
+import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
+import { useAttemptRestoration, useAttempts } from '../../persistence/hooks';
 import { useEffect, useState } from 'react';
+
+import { BackupEntry } from '../../persistence/types';
+import { RootDrawerScreenProps } from '../navigation/types';
 import { useTranslation } from 'react-i18next';
 
 type Props = RootDrawerScreenProps<'Backup'>;
@@ -35,11 +32,16 @@ export default function BackupScreen(props: Props) {
   );
 
   async function onRefresh() {
-    setBackups(await listBackups('attempts'));
+    setBackups(await Restore.list('attempts'));
   }
 
   async function createBackup() {
-    await backupAttempts(attempts);
+    await Backup.attempts(attempts);
+    onRefresh();
+  }
+
+  async function removeBackup(backup: BackupEntry) {
+    await Backup.removeAt(backup.path);
     onRefresh();
   }
 
@@ -54,6 +56,7 @@ export default function BackupScreen(props: Props) {
       <BackupList
         backups={backups}
         onRefresh={onRefresh}
+        onPressDelete={(item) => removeBackup(item)}
         onPressRestore={item => setBackupToRestore(item)}
       />
       <ConfirmationDialog
@@ -73,9 +76,10 @@ const styles = StyleSheet.create({
 interface BackupListProps {
   backups: BackupEntry[];
   onRefresh: () => Promise<void>;
+  onPressDelete: (backup: BackupEntry) => void;
   onPressRestore: (backup: BackupEntry) => void;
 }
-function BackupList({ backups, onRefresh, onPressRestore }: BackupListProps) {
+function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: BackupListProps) {
   const { t } = useTranslation();
   const [refreshing, setRefreshing] = useState(false);
   const [lastBackupCheck, setLastBackupCheck] = useState(new Date());
@@ -99,6 +103,9 @@ function BackupList({ backups, onRefresh, onPressRestore }: BackupListProps) {
         <Card>
           <Card.Title title={item.date.toLocaleString()} />
           <Card.Actions>
+            <Button onPress={() => onPressDelete(item)}>
+              {t('restore.deleteButton')}
+            </Button>
             <Button onPress={() => onPressRestore(item)}>
               {t('restore.button')}
             </Button>
@@ -128,7 +135,7 @@ function ConfirmationDialog({ backup, onDismiss }: ConfirmationDialogProps) {
 
   async function conductRestoreFrom(path: string) {
     setIsRestoring(true);
-    const backup = await loadAttemptsBackup(path);
+    const backup = await Restore.attempts(path);
     restoreAttempts(backup);
     onDismiss();
   }

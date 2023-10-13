@@ -5,20 +5,23 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import {
-  ExternalDirectoryPath,
   DocumentDirectoryPath,
+  ExternalDirectoryPath,
   appendFile,
   mkdir,
+  unlink,
 } from 'react-native-fs';
-import { STIF } from '../lib/stif';
+
 import { IterableArrayLike } from './types';
 import { Platform } from 'react-native';
+import { STIF } from '../lib/stif';
 
 export const BACKUP_FOLDER = `${Platform.select({
   android: ExternalDirectoryPath,
   ios: DocumentDirectoryPath,
 })}/backups`;
-export function backupPaths() {
+
+export function paths() {
   return {
     attempts: `${BACKUP_FOLDER}/${new Date().getTime()}.attempts.stif`,
     recordings: `${BACKUP_FOLDER}/${new Date().getTime()}.solverecordings.stif`,
@@ -30,14 +33,23 @@ export function backupPaths() {
  *
  * https://jsonlines.org/
  */
-export async function backupAttempts(
+export async function attempts(
   attempts: IterableArrayLike<STIF.Attempt>,
 ) {
-  const path = backupPaths().attempts;
-  await mkdir(BACKUP_FOLDER, {
-    NSURLIsExcludedFromBackupKey: false,
-  });
+  const path = paths().attempts;
+  await _ensureFolderExists();
   for (const attempt of attempts) {
     await appendFile(path, JSON.stringify(attempt) + '\n');
   }
+}
+
+export async function removeAt(path: string) {
+  await _ensureFolderExists();
+  await unlink(path);
+}
+
+export async function _ensureFolderExists() {
+  await mkdir(BACKUP_FOLDER, {
+    NSURLIsExcludedFromBackupKey: false,
+  });
 }
