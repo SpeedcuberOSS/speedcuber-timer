@@ -43,6 +43,6 @@ function RaisedCard({ children }: { children: React.ReactNode }) {
   );
 }
 
-const wrappers: Wrapper[] = [Centered, RaisedCard];
+const wrappers: Wrapper[] = [RaisedCard];
 
 export { wrappers, Centered };
