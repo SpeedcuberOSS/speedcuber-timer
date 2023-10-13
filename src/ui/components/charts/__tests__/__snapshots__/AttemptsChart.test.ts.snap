@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Attempts Chart 50-100 matches snapshot 1`] = `
+exports[`Attempts Chart [Ao50, Ao100] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -2122,7 +2122,7 @@ exports[`Attempts Chart 50-100 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Attempts Chart 100-1000 matches snapshot 1`] = `
+exports[`Attempts Chart [Ao100, Ao1000] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -4248,7 +4248,7 @@ exports[`Attempts Chart 100-1000 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Attempts Chart default matches snapshot 1`] = `
+exports[`Attempts Chart [Default] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={

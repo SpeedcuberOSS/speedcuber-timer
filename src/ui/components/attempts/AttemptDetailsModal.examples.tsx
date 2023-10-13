@@ -4,7 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useState } from 'react';
 import {
   basicAttempt,
   dnfAttempt,
@@ -17,6 +16,7 @@ import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptDetailsModal from './AttemptDetailsModal';
 import { Button } from 'react-native-paper';
 import { DevelopmentExampleSet } from '../../examples/types';
+import { useState } from 'react';
 
 const AttemptDetailsModalWrapper = ({ attempt }: { attempt: Attempt }) => {
   const [visible, setVisible] = useState(true);
@@ -33,32 +33,26 @@ const AttemptDetailsModalWrapper = ({ attempt }: { attempt: Attempt }) => {
 };
 
 const examples: DevelopmentExampleSet = {
-  key: 'attemptdetailsmodal',
   title: 'Attempt Details Modal',
   description: 'Attempt Details in a Modal',
   examples: [
     {
-      key: 'typical',
       title: 'Typical',
       component: <AttemptDetailsModalWrapper attempt={basicAttempt} />,
     },
     {
-      key: '+2',
       title: 'with +2',
       component: <AttemptDetailsModalWrapper attempt={plus2Attempt} />,
     },
     {
-      key: '+4',
       title: 'with +4',
       component: <AttemptDetailsModalWrapper attempt={plus4Attempt} />,
     },
     {
-      key: 'dnf',
       title: 'with DNF',
       component: <AttemptDetailsModalWrapper attempt={dnfAttempt} />,
     },
     {
-      key: 'dns',
       title: 'with DNS',
       component: <AttemptDetailsModalWrapper attempt={dnsAttempt} />,
     },

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Inspection Time almost-done matches snapshot 1`] = `
+exports[`Inspection Time [Almost Done] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -92,7 +92,7 @@ exports[`Inspection Time almost-done matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time default matches snapshot 1`] = `
+exports[`Inspection Time [Default] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -180,7 +180,7 @@ exports[`Inspection Time default matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time first-warning matches snapshot 1`] = `
+exports[`Inspection Time [First Warning] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -268,7 +268,7 @@ exports[`Inspection Time first-warning matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time overtime-2 matches snapshot 1`] = `
+exports[`Inspection Time [Overtime +2] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -360,7 +360,7 @@ exports[`Inspection Time overtime-2 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time overtime-dnf matches snapshot 1`] = `
+exports[`Inspection Time [Overtime DNF] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -452,99 +452,7 @@ exports[`Inspection Time overtime-dnf matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time ready matches snapshot 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    collapsable={false}
-    pointerEvents="box-none"
-    style={
-      {
-        "flex": 1,
-      }
-    }
-  >
-    <View
-      style={
-        {
-          "alignItems": "center",
-          "justifyContent": "center",
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          [
-            {
-              "textAlign": "left",
-            },
-            {
-              "color": "rgba(28, 27, 31, 1)",
-              "fontFamily": "Rubik-Regular",
-              "fontWeight": "400",
-              "letterSpacing": 0,
-            },
-            {
-              "writingDirection": "ltr",
-            },
-            {
-              "fontSize": 16,
-              "paddingBottom": 10,
-            },
-          ]
-        }
-      >
-        INSPECTION:
-      </Text>
-      <Text
-        style={
-          [
-            {
-              "textAlign": "left",
-            },
-            {
-              "color": "rgba(28, 27, 31, 1)",
-              "fontFamily": "Rubik-Regular",
-              "fontWeight": "400",
-              "letterSpacing": 0,
-            },
-            {
-              "writingDirection": "ltr",
-            },
-            [
-              {
-                "color": "rgba(33, 0, 93, 1)",
-                "fontSize": 80,
-                "fontVariant": [
-                  "tabular-nums",
-                ],
-              },
-              {
-                "color": "#1B5E20",
-                "fontSize": 100,
-              },
-            ],
-          ]
-        }
-      >
-        11
-      </Text>
-    </View>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
-exports[`Inspection Time ready-2 matches snapshot 1`] = `
+exports[`Inspection Time [Ready +2] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -640,7 +548,7 @@ exports[`Inspection Time ready-2 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time ready-late matches snapshot 1`] = `
+exports[`Inspection Time [Ready Late] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -736,7 +644,99 @@ exports[`Inspection Time ready-late matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Inspection Time second-warning matches snapshot 1`] = `
+exports[`Inspection Time [Ready] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            {
+              "fontSize": 16,
+              "paddingBottom": 10,
+            },
+          ]
+        }
+      >
+        INSPECTION:
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "textAlign": "left",
+            },
+            {
+              "color": "rgba(28, 27, 31, 1)",
+              "fontFamily": "Rubik-Regular",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+            },
+            {
+              "writingDirection": "ltr",
+            },
+            [
+              {
+                "color": "rgba(33, 0, 93, 1)",
+                "fontSize": 80,
+                "fontVariant": [
+                  "tabular-nums",
+                ],
+              },
+              {
+                "color": "#1B5E20",
+                "fontSize": 100,
+              },
+            ],
+          ]
+        }
+      >
+        11
+      </Text>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Inspection Time [Second Warning] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={

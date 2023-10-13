@@ -4,8 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Text } from 'react-native-paper';
 import { DevelopmentExample, DevelopmentExampleSet } from './types';
+
+import { Text } from 'react-native-paper';
+import { slugify } from './_utils';
+
 const examples: Map<string, DevelopmentExampleSet> = new Map();
 [
   require('../components/attempts/AttemptCard.examples').default,
@@ -26,7 +29,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/TwistyPlayer/AttemptPlayer.examples').default,
   require('../components/TwistyPlayer/TwistyPlayer.examples').default,
   require('../layouts/CenteredBetweenSidebars.examples').default,
-].forEach(e => examples.set(e.key, e));
+].forEach(e => examples.set(slugify(e.title), e));
 
 /**
  * The valid keys for all known example sets
@@ -44,7 +47,6 @@ function setKeys(): string[] {
 function setByKey(key: string): DevelopmentExampleSet {
   return (
     examples.get(key) ?? {
-      key: '404',
       title: '404',
       description: '404',
       examples: [],
@@ -61,8 +63,9 @@ function setByKey(key: string): DevelopmentExampleSet {
 function exampleByKey(key: string): DevelopmentExample {
   let [set, example] = key.split(':');
   return (
-    examples.get(set)?.examples.filter(e => e.key === example)[0] ?? {
-      key: '404',
+    examples
+      .get(set)
+      ?.examples.filter(e => slugify(e.title) === example)[0] ?? {
       title: '404',
       description: '404',
       component: <Text>404 Example Not Found</Text>,

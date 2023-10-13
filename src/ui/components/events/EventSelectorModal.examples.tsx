@@ -4,11 +4,10 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useState } from 'react';
-
-import EventSelectorModal from './EventSelectorModal';
-import { DevelopmentExampleSet } from '../../examples/types';
 import { Button } from 'react-native-paper';
+import { DevelopmentExampleSet } from '../../examples/types';
+import EventSelectorModal from './EventSelectorModal';
+import { useState } from 'react';
 
 const EventSelectorModalWrapper = () => {
   const [visible, setVisible] = useState(true);
@@ -25,12 +24,10 @@ const EventSelectorModalWrapper = () => {
 };
 
 const examples: DevelopmentExampleSet = {
-  key: 'event-selector-modal',
   title: 'Event Selector Modal',
   description: 'A modal that allows the user to select an event.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <EventSelectorModalWrapper />,
     },

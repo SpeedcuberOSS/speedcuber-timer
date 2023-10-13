@@ -20,11 +20,11 @@ import {
   STOPPED_PUZZLE_UNSOLVED,
   STOPPED_WRONG_HAND_PLACEMENT,
 } from '../../../lib/stif/builtins';
-import { Milliseconds } from '../../../lib/stif';
-import { Attempt } from '../../../lib/stif/wrappers';
-import { DevelopmentExampleSet } from '../../examples/types';
 
+import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptCard from './AttemptCard';
+import { DevelopmentExampleSet } from '../../examples/types';
+import { Milliseconds } from '../../../lib/stif';
 
 const INSPECTION_START = 1663731466876;
 const INSPECTION_DURATION = 13456;
@@ -151,17 +151,14 @@ let attemptMultiBLD = (() => {
 })();
 
 const examples: DevelopmentExampleSet = {
-  key: 'attemptcard',
   title: 'Attempt Card',
   description: 'A card that displays an attempt.',
   examples: [
     {
-      key: 'typical',
       title: 'Typical',
       component: <AttemptCard attempt={ATTEMPT_3x3x3(11343).build()} />,
     },
     {
-      key: 'dnf',
       title: 'DNF',
       component: (
         <AttemptCard
@@ -172,7 +169,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'dns',
       title: 'DNS',
       component: (
         <AttemptCard
@@ -183,7 +179,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'plus2',
       title: '+2',
       component: (
         <AttemptCard
@@ -194,7 +189,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'plus4',
       title: '+4',
       component: (
         <AttemptCard
@@ -206,21 +200,18 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'reconstruction',
       title: 'with Reconstruction',
       component: (
         <AttemptCard attempt={attempt3x3x3WithReconstruction(11343)} />
       ),
     },
     {
-      key: 'minutelong',
       title: 'Minute Long',
       component: (
         <AttemptCard attempt={ATTEMPT_3x3x3(11343 + 1 * MINUTE).build()} />
       ),
     },
     {
-      key: 'hourlong',
       title: 'Hour Long',
       component: (
         <AttemptCard
@@ -229,12 +220,10 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'relay234567',
       title: 'Relay 2-7',
       component: <AttemptCard attempt={attempt234567relay} />,
     },
     {
-      key: 'multibld',
       title: 'Multi-BLD',
       component: <AttemptCard attempt={attemptMultiBLD} />,
     },

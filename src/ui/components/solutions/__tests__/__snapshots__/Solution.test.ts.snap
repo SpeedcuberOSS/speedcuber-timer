@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Solution 2x2x2 matches snapshot 1`] = `
+exports[`Solution [2x2x2] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -647,7 +647,7 @@ exports[`Solution 2x2x2 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Solution 3x3x3 matches snapshot 1`] = `
+exports[`Solution [3x3x3 (partway replayed)] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -1466,7 +1466,7 @@ exports[`Solution 3x3x3 matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(28, 27, 31, 1)",
+                                "color": "rgba(103, 80, 164, 1)",
                               },
                             ]
                           }
@@ -1812,7 +1812,7 @@ exports[`Solution 3x3x3 matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(28, 27, 31, 1)",
+                                "color": "rgba(103, 80, 164, 1)",
                               },
                             ]
                           }
@@ -2158,7 +2158,7 @@ exports[`Solution 3x3x3 matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(28, 27, 31, 1)",
+                                "color": "rgba(103, 80, 164, 1)",
                               },
                             ]
                           }
@@ -2503,13 +2503,77 @@ exports[`Solution 3x3x3 matches snapshot 1`] = `
                               {
                                 "writingDirection": "ltr",
                               },
-                              {
-                                "color": "rgba(28, 27, 31, 1)",
-                              },
+                              undefined,
                             ]
                           }
                         >
-                          D' F D R' F' F' R F' U F U'
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0,
+                                },
+                                {
+                                  "writingDirection": "ltr",
+                                },
+                                {
+                                  "color": "rgba(103, 80, 164, 1)",
+                                },
+                              ]
+                            }
+                          >
+                            D' F D R' F' F' R
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0,
+                                },
+                                {
+                                  "writingDirection": "ltr",
+                                },
+                                undefined,
+                              ]
+                            }
+                          >
+                             
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "textAlign": "left",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                  "fontFamily": "Rubik-Regular",
+                                  "fontWeight": "400",
+                                  "letterSpacing": 0,
+                                },
+                                {
+                                  "writingDirection": "ltr",
+                                },
+                                {
+                                  "color": "rgba(28, 27, 31, 1)",
+                                },
+                              ]
+                            }
+                          >
+                            F' U F U'
+                          </Text>
                         </Text>
                       </Text>
                     </View>
@@ -3738,7 +3802,7 @@ exports[`Solution 3x3x3 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Solution 3x3x3-gyro matches snapshot 1`] = `
+exports[`Solution [3x3x3 (with Gyroscope)] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -7211,7 +7275,7 @@ exports[`Solution 3x3x3-gyro matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`Solution 3x3x3-partway matches snapshot 1`] = `
+exports[`Solution [3x3x3] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -8030,7 +8094,7 @@ exports[`Solution 3x3x3-partway matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(103, 80, 164, 1)",
+                                "color": "rgba(28, 27, 31, 1)",
                               },
                             ]
                           }
@@ -8376,7 +8440,7 @@ exports[`Solution 3x3x3-partway matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(103, 80, 164, 1)",
+                                "color": "rgba(28, 27, 31, 1)",
                               },
                             ]
                           }
@@ -8722,7 +8786,7 @@ exports[`Solution 3x3x3-partway matches snapshot 1`] = `
                                 "writingDirection": "ltr",
                               },
                               {
-                                "color": "rgba(103, 80, 164, 1)",
+                                "color": "rgba(28, 27, 31, 1)",
                               },
                             ]
                           }
@@ -9067,77 +9131,13 @@ exports[`Solution 3x3x3-partway matches snapshot 1`] = `
                               {
                                 "writingDirection": "ltr",
                               },
-                              undefined,
+                              {
+                                "color": "rgba(28, 27, 31, 1)",
+                              },
                             ]
                           }
                         >
-                          <Text
-                            style={
-                              [
-                                {
-                                  "textAlign": "left",
-                                },
-                                {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontFamily": "Rubik-Regular",
-                                  "fontWeight": "400",
-                                  "letterSpacing": 0,
-                                },
-                                {
-                                  "writingDirection": "ltr",
-                                },
-                                {
-                                  "color": "rgba(103, 80, 164, 1)",
-                                },
-                              ]
-                            }
-                          >
-                            D' F D R' F' F' R
-                          </Text>
-                          <Text
-                            style={
-                              [
-                                {
-                                  "textAlign": "left",
-                                },
-                                {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontFamily": "Rubik-Regular",
-                                  "fontWeight": "400",
-                                  "letterSpacing": 0,
-                                },
-                                {
-                                  "writingDirection": "ltr",
-                                },
-                                undefined,
-                              ]
-                            }
-                          >
-                             
-                          </Text>
-                          <Text
-                            style={
-                              [
-                                {
-                                  "textAlign": "left",
-                                },
-                                {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                  "fontFamily": "Rubik-Regular",
-                                  "fontWeight": "400",
-                                  "letterSpacing": 0,
-                                },
-                                {
-                                  "writingDirection": "ltr",
-                                },
-                                {
-                                  "color": "rgba(28, 27, 31, 1)",
-                                },
-                              ]
-                            }
-                          >
-                            F' U F U'
-                          </Text>
+                          D' F D R' F' F' R F' U F U'
                         </Text>
                       </Text>
                     </View>

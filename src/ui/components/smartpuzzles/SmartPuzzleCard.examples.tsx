@@ -7,30 +7,26 @@
 import { PUZZLE_2x2x2, PUZZLE_SQUARE_1 } from '../../../lib/stif/builtins';
 
 import { ConnectionStatus } from './types';
-import SmartPuzzleCard from './SmartPuzzleCard';
 import { DevelopmentExampleSet } from '../../examples/types';
-import { useState } from 'react';
+import SmartPuzzleCard from './SmartPuzzleCard';
 import { View } from 'react-native';
+import { useState } from 'react';
 
 const examples: DevelopmentExampleSet = {
-  key: 'smart-puzzle-card',
   title: 'Smart Puzzle Card',
   description: 'Card for identifying a smart puzzle.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <SmartPuzzleCard />,
     },
     {
-      key: 'rubiks-connected',
       title: "Rubik's Connected",
       component: (
         <SmartPuzzleCard name="Rubik_12345" brand="Rubik's Connected" />
       ),
     },
     {
-      key: 'giiker-i2',
       title: 'GiiKER i2',
       component: (
         <SmartPuzzleCard
@@ -41,7 +37,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'long-brand-name',
       title: 'Super long brand name',
       component: (
         <SmartPuzzleCard
@@ -51,7 +46,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'unsupported-puzzle-type',
       title: 'Unsupported Puzzle Type',
       component: (
         <SmartPuzzleCard
@@ -62,7 +56,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'connecting',
       title: 'Connecting',
       component: (
         <SmartPuzzleCard
@@ -74,7 +67,6 @@ const examples: DevelopmentExampleSet = {
     },
 
     {
-      key: 'connected',
       title: 'Connected',
       component: (
         <SmartPuzzleCard
@@ -85,7 +77,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'disconnected',
       title: 'Disconnected',
       component: (
         <SmartPuzzleCard
@@ -96,7 +87,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'failed',
       title: 'Failed',
       component: (
         <SmartPuzzleCard
@@ -107,7 +97,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'compact',
       title: 'Compact',
       component: (
         <View style={{maxWidth: '60%'}}>
@@ -116,7 +105,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'interactive-success',
       title: 'Interactive (Success)',
       component: () => {
         const [connectionStatus, setConnectionStatus] =
@@ -136,7 +124,6 @@ const examples: DevelopmentExampleSet = {
       },
     },
     {
-      key: 'interactive-failure',
       title: 'Interactive (Failure)',
       component: () => {
         const [connectionStatus, setConnectionStatus] =

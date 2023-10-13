@@ -8,12 +8,10 @@ import { DevelopmentExampleSet } from '../../examples/types';
 import EventSelector from './EventSelector';
 
 const examples: DevelopmentExampleSet = {
-  key: 'event-selector',
   title: 'Event Selector',
   description: 'Allows the user to select an event.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <EventSelector onSelect={console.log} />,
     },

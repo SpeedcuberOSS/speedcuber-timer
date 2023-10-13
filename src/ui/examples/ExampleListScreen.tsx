@@ -5,9 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Divider, List } from 'react-native-paper';
+
 import { DevelopmentStackScreenProps } from './types';
-import { FlatList } from 'react-native';
 import Examples from './examples';
+import { FlatList } from 'react-native';
+import { slugify } from './_utils';
 import { useState } from 'react';
 
 export default function ExampleListScreen(
@@ -50,10 +52,10 @@ function ExampleListItem(props: ExampleListItemProps) {
       left={props => <List.Icon {...props} icon="folder" />}>
       {set.examples.map(example => (
         <List.Item
-          key={example.key}
+          key={slugify(example.title)}
           title={example.title}
           description={example.description}
-          onPress={() => props.onSelectExample(`${set.key}:${example.key}`)}
+          onPress={() => props.onSelectExample(`${slugify(set.title)}:${slugify(example.title)}`)}
         />
       ))}
     </List.Accordion>

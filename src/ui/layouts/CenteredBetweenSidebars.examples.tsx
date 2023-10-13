@@ -10,12 +10,10 @@ import CenteredBetweenSidebars from './CenteredBetweenSidebars';
 import { DevelopmentExampleSet } from '../examples/types';
 
 const examples: DevelopmentExampleSet = {
-  key: 'centered-between-sidebars',
   title: 'Centered Between Sidebars',
   description: 'A layout component that centers content between two sidebars.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: (
         <CenteredBetweenSidebars>
@@ -41,7 +39,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'custom-weights',
       title: 'Custom Weights',
       component: (
         <CenteredBetweenSidebars contentWeight={2} sidebarWeight={2}>

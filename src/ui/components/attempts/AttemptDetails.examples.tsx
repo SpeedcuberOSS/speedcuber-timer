@@ -4,6 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import {
+  ATTEMPT_3x3x3_BASIC,
+  ATTEMPT_3x3x3_DNF,
+  ATTEMPT_3x3x3_DNS,
+  ATTEMPT_3x3x3_LONG_COMMENT,
+  ATTEMPT_3x3x3_PLUS_2,
+  ATTEMPT_3x3x3_PLUS_4,
+  ATTEMPT_3x3x3_RECONSTRUCTED,
+} from '../../../lib/stif/demo';
 import { AttemptBuilder, SolutionBuilder } from '../../../lib/stif/builders';
 import {
   EVENT_3x3x3_BLD_MULTI,
@@ -15,19 +24,10 @@ import {
   PUZZLE_6x6x6,
   PUZZLE_7x7x7,
 } from '../../../lib/stif/builtins';
-import {
-  ATTEMPT_3x3x3_BASIC,
-  ATTEMPT_3x3x3_DNF,
-  ATTEMPT_3x3x3_DNS,
-  ATTEMPT_3x3x3_LONG_COMMENT,
-  ATTEMPT_3x3x3_PLUS_2,
-  ATTEMPT_3x3x3_PLUS_4,
-  ATTEMPT_3x3x3_RECONSTRUCTED,
-} from '../../../lib/stif/demo';
-import { Attempt } from '../../../lib/stif/wrappers';
-import { DevelopmentExampleSet } from '../../examples/types';
 
+import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptDetails from './AttemptDetails';
+import { DevelopmentExampleSet } from '../../examples/types';
 
 const INSPECTION_START = 1663731466876;
 const INSPECTION_DURATION = 13456;
@@ -152,27 +152,22 @@ let attemptMultiBLD = (() => {
 })();
 
 const examples: DevelopmentExampleSet = {
-  key: 'attemptdetails',
   title: 'Attempt Details',
   description: 'A more detailed view of an attempt.',
   examples: [
     {
-      key: 'typical',
       title: 'Typical',
       component: <AttemptDetails attempt={basicAttempt} />,
     },
     {
-      key: 'longComment',
       title: 'Long Comment',
       component: <AttemptDetails attempt={longCommentAttempt} />,
     },
     {
-      key: 'reconstruction',
       title: 'with Reconstruction',
       component: <AttemptDetails attempt={reconstructionAttempt} />,
     },
     {
-      key: 'tps',
       title: 'with TPS pressed handler',
       component: (
         <AttemptDetails
@@ -182,32 +177,26 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'plus2',
       title: '+2',
       component: <AttemptDetails attempt={plus2Attempt} />,
     },
     {
-      key: 'plus4',
       title: '+4',
       component: <AttemptDetails attempt={plus4Attempt} />,
     },
     {
-      key: 'dnf',
       title: 'with DNF',
       component: <AttemptDetails attempt={dnfAttempt} />,
     },
     {
-      key: 'dns',
       title: 'with DNS',
       component: <AttemptDetails attempt={dnsAttempt} />,
     },
     {
-      key: 'relay234567',
       title: 'Relay 2-7',
       component: <AttemptDetails attempt={attempt234567relay} />,
     },
     {
-      key: 'multibld',
       title: 'Multi-BLD',
       component: <AttemptDetails attempt={attemptMultiBLD} />,
     },

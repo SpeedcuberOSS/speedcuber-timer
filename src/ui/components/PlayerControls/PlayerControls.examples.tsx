@@ -8,12 +8,10 @@ import { DevelopmentExampleSet } from '../../examples/types';
 import PlayerControls from './PlayerControls';
 
 const examples: DevelopmentExampleSet = {
-  key: 'player-controls',
   title: 'Player Controls',
   description: 'Time seeking controls for any sort of timed player.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <PlayerControls duration={15000} onSeek={console.debug} />,
     },

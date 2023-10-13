@@ -5,14 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { DevelopmentExampleSet } from './types';
-import renderer from 'react-test-renderer';
-import { getCurrentTheme } from '../themes';
 import { PaperProvider } from 'react-native-paper';
+import { getCurrentTheme } from '../themes';
+import renderer from 'react-test-renderer';
 
 export function snapshots(set: DevelopmentExampleSet) {
   describe(set.title, () => {
     set.examples.forEach(example => {
-      it(`${example.key} matches snapshot`, () => {
+      it(`[${example.title}] matches snapshot`, () => {
         const Example = example.component;
         const ReadyToSnapshot =
           typeof Example === 'function' ? <Example /> : Example;

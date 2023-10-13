@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Smart Puzzle Scanner default matches snapshot 1`] = `
+exports[`Smart Puzzle Scanner [Default] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={

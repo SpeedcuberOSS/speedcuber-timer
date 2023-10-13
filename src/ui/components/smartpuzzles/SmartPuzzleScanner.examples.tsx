@@ -8,12 +8,10 @@ import { DevelopmentExampleSet } from '../../examples/types';
 import SmartPuzzleScanner from './SmartPuzzleScanner';
 
 const examples: DevelopmentExampleSet = {
-  key: 'smart-puzzle-scanner',
   title: 'Smart Puzzle Scanner',
   description: 'Search for and connect to nearby smart puzzles',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <SmartPuzzleScanner />,
     },

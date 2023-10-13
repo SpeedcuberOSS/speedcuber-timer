@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TPS Chart 2x2x2 matches snapshot 1`] = `
+exports[`TPS Chart [2x2x2] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -245,256 +245,7 @@ exports[`TPS Chart 2x2x2 matches snapshot 1`] = `
 </RNCSafeAreaProvider>
 `;
 
-exports[`TPS Chart 3x3x3 matches snapshot 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    collapsable={false}
-    pointerEvents="box-none"
-    style={
-      {
-        "flex": 1,
-      }
-    }
-  >
-    <View
-      style={
-        {
-          "flex": 1,
-          "padding": 10,
-        }
-      }
-    >
-      <View
-        style={
-          {
-            "backgroundColor": "#F5FCFF",
-            "flex": 1,
-          }
-        }
-      >
-        <RNLineChart
-          chartBackgroundColor={4294966270}
-          chartDescription={
-            {
-              "text": "",
-            }
-          }
-          data={
-            {
-              "dataSets": [
-                {
-                  "config": {
-                    "color": 4284960932,
-                    "drawCircles": false,
-                    "drawFilled": true,
-                    "drawValues": false,
-                    "fillAlpha": 100,
-                    "fillGradient": {
-                      "angle": 90,
-                      "colors": [
-                        4294966270,
-                        4284960932,
-                      ],
-                      "orientation": "BOTTOM_TOP",
-                      "positions": [
-                        0,
-                        1,
-                      ],
-                    },
-                    "mode": "HORIZONTAL_BEZIER",
-                  },
-                  "label": "analytics.tps",
-                  "values": [
-                    {
-                      "x": 0,
-                      "y": 0,
-                    },
-                    {
-                      "x": 1,
-                      "y": 2,
-                    },
-                    {
-                      "x": 1.4945,
-                      "y": 4,
-                    },
-                    {
-                      "x": 1.989,
-                      "y": 4,
-                    },
-                    {
-                      "x": 2.4835,
-                      "y": 2,
-                    },
-                    {
-                      "x": 2.978,
-                      "y": 1,
-                    },
-                    {
-                      "x": 3.4725,
-                      "y": 3,
-                    },
-                    {
-                      "x": 3.967,
-                      "y": 3,
-                    },
-                    {
-                      "x": 4.4615,
-                      "y": 3,
-                    },
-                    {
-                      "x": 4.956,
-                      "y": 2,
-                    },
-                    {
-                      "x": 5.4505,
-                      "y": 3,
-                    },
-                    {
-                      "x": 5.945,
-                      "y": 6,
-                    },
-                    {
-                      "x": 6.4395,
-                      "y": 6,
-                    },
-                    {
-                      "x": 6.934,
-                      "y": 5,
-                    },
-                    {
-                      "x": 7.4285,
-                      "y": 5,
-                    },
-                    {
-                      "x": 7.923,
-                      "y": 6,
-                    },
-                    {
-                      "x": 8.4175,
-                      "y": 6,
-                    },
-                    {
-                      "x": 8.912,
-                      "y": 5,
-                    },
-                    {
-                      "x": 9.4065,
-                      "y": 7,
-                    },
-                    {
-                      "x": 9.901,
-                      "y": 5,
-                    },
-                    {
-                      "x": 10.3955,
-                      "y": 2,
-                    },
-                    {
-                      "x": 10.89,
-                      "y": 3,
-                    },
-                    {
-                      "x": 11.3845,
-                      "y": 6,
-                    },
-                    {
-                      "x": 11.879,
-                      "y": 6,
-                    },
-                    {
-                      "x": 12.3735,
-                      "y": 7,
-                    },
-                    {
-                      "x": 12.868,
-                      "y": 6,
-                    },
-                    {
-                      "x": 13.3625,
-                      "y": 4,
-                    },
-                    {
-                      "x": 13.857,
-                      "y": 6,
-                    },
-                    {
-                      "x": 14.3515,
-                      "y": 8,
-                    },
-                    {
-                      "x": 14.835,
-                      "y": 0,
-                    },
-                  ],
-                },
-                {
-                  "config": {
-                    "color": 4279983648,
-                    "drawCircles": false,
-                    "drawValues": false,
-                    "mode": "LINEAR",
-                  },
-                  "label": "analytics.tps",
-                  "values": [],
-                },
-              ],
-            }
-          }
-          legend={
-            {
-              "enabled": false,
-              "fontFamily": "Rubik",
-              "form": "CIRCLE",
-              "textColor": 4280032031,
-            }
-          }
-          marker={
-            {
-              "enabled": true,
-            }
-          }
-          style={
-            {
-              "flex": 1,
-            }
-          }
-          xAxis={
-            {
-              "enabled": false,
-              "fontFamily": "Rubik",
-              "position": "BOTTOM",
-              "textColor": 4280032031,
-            }
-          }
-          yAxis={
-            {
-              "left": {
-                "fontFamily": "Rubik",
-                "textColor": 4280032031,
-              },
-              "right": {
-                "enabled": false,
-              },
-            }
-          }
-        />
-      </View>
-    </View>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
-exports[`TPS Chart 3x3x3-gyro matches snapshot 1`] = `
+exports[`TPS Chart [3x3x3 (Gyro)] matches snapshot 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
   style={
@@ -682,6 +433,255 @@ exports[`TPS Chart 3x3x3-gyro matches snapshot 1`] = `
                     },
                     {
                       "x": 11.833,
+                      "y": 0,
+                    },
+                  ],
+                },
+                {
+                  "config": {
+                    "color": 4279983648,
+                    "drawCircles": false,
+                    "drawValues": false,
+                    "mode": "LINEAR",
+                  },
+                  "label": "analytics.tps",
+                  "values": [],
+                },
+              ],
+            }
+          }
+          legend={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "form": "CIRCLE",
+              "textColor": 4280032031,
+            }
+          }
+          marker={
+            {
+              "enabled": true,
+            }
+          }
+          style={
+            {
+              "flex": 1,
+            }
+          }
+          xAxis={
+            {
+              "enabled": false,
+              "fontFamily": "Rubik",
+              "position": "BOTTOM",
+              "textColor": 4280032031,
+            }
+          }
+          yAxis={
+            {
+              "left": {
+                "fontFamily": "Rubik",
+                "textColor": 4280032031,
+              },
+              "right": {
+                "enabled": false,
+              },
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`TPS Chart [3x3x3] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#F5FCFF",
+            "flex": 1,
+          }
+        }
+      >
+        <RNLineChart
+          chartBackgroundColor={4294966270}
+          chartDescription={
+            {
+              "text": "",
+            }
+          }
+          data={
+            {
+              "dataSets": [
+                {
+                  "config": {
+                    "color": 4284960932,
+                    "drawCircles": false,
+                    "drawFilled": true,
+                    "drawValues": false,
+                    "fillAlpha": 100,
+                    "fillGradient": {
+                      "angle": 90,
+                      "colors": [
+                        4294966270,
+                        4284960932,
+                      ],
+                      "orientation": "BOTTOM_TOP",
+                      "positions": [
+                        0,
+                        1,
+                      ],
+                    },
+                    "mode": "HORIZONTAL_BEZIER",
+                  },
+                  "label": "analytics.tps",
+                  "values": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                    },
+                    {
+                      "x": 1,
+                      "y": 2,
+                    },
+                    {
+                      "x": 1.4945,
+                      "y": 4,
+                    },
+                    {
+                      "x": 1.989,
+                      "y": 4,
+                    },
+                    {
+                      "x": 2.4835,
+                      "y": 2,
+                    },
+                    {
+                      "x": 2.978,
+                      "y": 1,
+                    },
+                    {
+                      "x": 3.4725,
+                      "y": 3,
+                    },
+                    {
+                      "x": 3.967,
+                      "y": 3,
+                    },
+                    {
+                      "x": 4.4615,
+                      "y": 3,
+                    },
+                    {
+                      "x": 4.956,
+                      "y": 2,
+                    },
+                    {
+                      "x": 5.4505,
+                      "y": 3,
+                    },
+                    {
+                      "x": 5.945,
+                      "y": 6,
+                    },
+                    {
+                      "x": 6.4395,
+                      "y": 6,
+                    },
+                    {
+                      "x": 6.934,
+                      "y": 5,
+                    },
+                    {
+                      "x": 7.4285,
+                      "y": 5,
+                    },
+                    {
+                      "x": 7.923,
+                      "y": 6,
+                    },
+                    {
+                      "x": 8.4175,
+                      "y": 6,
+                    },
+                    {
+                      "x": 8.912,
+                      "y": 5,
+                    },
+                    {
+                      "x": 9.4065,
+                      "y": 7,
+                    },
+                    {
+                      "x": 9.901,
+                      "y": 5,
+                    },
+                    {
+                      "x": 10.3955,
+                      "y": 2,
+                    },
+                    {
+                      "x": 10.89,
+                      "y": 3,
+                    },
+                    {
+                      "x": 11.3845,
+                      "y": 6,
+                    },
+                    {
+                      "x": 11.879,
+                      "y": 6,
+                    },
+                    {
+                      "x": 12.3735,
+                      "y": 7,
+                    },
+                    {
+                      "x": 12.868,
+                      "y": 6,
+                    },
+                    {
+                      "x": 13.3625,
+                      "y": 4,
+                    },
+                    {
+                      "x": 13.857,
+                      "y": 6,
+                    },
+                    {
+                      "x": 14.3515,
+                      "y": 8,
+                    },
+                    {
+                      "x": 14.835,
                       "y": 0,
                     },
                   ],

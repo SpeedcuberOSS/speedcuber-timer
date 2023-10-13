@@ -4,23 +4,19 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { DevelopmentExampleSet } from '../../examples/types';
 import AttemptsChart from './AttemptsChart';
-
+import { DevelopmentExampleSet } from '../../examples/types';
 import attempts from '../../../lib/analytics/demo/twisty2stif';
 
 const examples: DevelopmentExampleSet = {
-  key: 'attempts-chart',
   title: 'Attempts Chart',
   description: 'A scatter plot of attempt durations and trends.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: <AttemptsChart attempts={attempts.slice(0, 250)} />,
     },
     {
-      key: '50-100',
       title: 'Ao50, Ao100',
       component: (
         <AttemptsChart
@@ -30,7 +26,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: '100-1000',
       title: 'Ao100, Ao1000',
       component: (
         <AttemptsChart

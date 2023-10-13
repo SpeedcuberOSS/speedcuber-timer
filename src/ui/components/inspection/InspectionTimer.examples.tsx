@@ -8,12 +8,10 @@ import { DevelopmentExampleSet } from '../../examples/types';
 import InspectionTimer from './InspectionTimer';
 
 const examples: DevelopmentExampleSet = {
-  key: 'inspection-timer',
   title: 'Inspection Timer',
   description: 'Interactive timer for inspection implementing WCA rules.',
   examples: [
     {
-      key: 'default',
       title: 'Default',
       component: (
         <InspectionTimer
@@ -22,7 +20,6 @@ const examples: DevelopmentExampleSet = {
       ),
     },
     {
-      key: 'customDurations',
       title: 'Custom Durations',
       component: (
         <InspectionTimer
