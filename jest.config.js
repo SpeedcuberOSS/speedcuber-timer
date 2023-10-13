@@ -12,7 +12,6 @@ module.exports = {
   ],
   setupFilesAfterEnv: [
     '<rootDir>/src/__mocks__/globalMock.js',
-    '<rootDir>/src/persistence/__mocks__/index.ts',
   ],
 
   // From: https://stackoverflow.com/a/73203803/14765128
