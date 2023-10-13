@@ -13,7 +13,11 @@
   "learn": "Learn",
   "practice": "Practice",
   "play": "Play",
-  "insights": "Insights",
+  "insights": {
+    "title": "Insights",
+    "emptyChartLine1": "Nothing to show.",
+    "emptyChartLine2": "Complete some attempts first."
+  },
   "bluetooth": {
     "connect": "Connect",
     "start_scan": "Smartcube Scan",
@@ -68,7 +72,7 @@
     "puzzle_other": "Puzzles"
   },
   "event": {
-    "type" : {
+    "type": {
       "official": "Official",
       "unofficial": "Unofficial",
       "retired": "Retired"

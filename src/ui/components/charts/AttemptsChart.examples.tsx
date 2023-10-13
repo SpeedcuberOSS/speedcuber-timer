@@ -17,6 +17,10 @@ const examples: DevelopmentExampleSet = {
       component: <AttemptsChart attempts={attempts.slice(0, 250)} />,
     },
     {
+      title: 'Empty',
+      component: <AttemptsChart />,
+    },
+    {
       title: 'Ao50, Ao100',
       component: (
         <AttemptsChart
