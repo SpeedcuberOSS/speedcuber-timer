@@ -11,6 +11,7 @@ import {
   Dialog,
   Portal,
   Text,
+  useTheme,
 } from 'react-native-paper';
 import { Backup, Restore } from '../../persistence';
 import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
@@ -81,6 +82,7 @@ interface BackupListProps {
 }
 function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: BackupListProps) {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [refreshing, setRefreshing] = useState(false);
   const [lastBackupCheck, setLastBackupCheck] = useState(new Date());
   useEffect(() => {
@@ -103,7 +105,7 @@ function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: Backu
         <Card>
           <Card.Title title={item.date.toLocaleString()} />
           <Card.Actions>
-            <Button onPress={() => onPressDelete(item)}>
+            <Button onPress={() => onPressDelete(item)} textColor={theme.colors.error}>
               {t('restore.deleteButton')}
             </Button>
             <Button onPress={() => onPressRestore(item)}>
