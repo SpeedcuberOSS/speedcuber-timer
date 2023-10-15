@@ -17,7 +17,6 @@ describe('sliding', () => {
     expect(sliding([1, 2, 3, 4, 5]).AoX(5)).toEqual([3]);
   });
 
-
   it('handles removing best and inserting best', () => {
     expect(sliding([1, 3, 5, 7, 9, 0]).AoX(5)).toEqual([5, 5]);
   });
