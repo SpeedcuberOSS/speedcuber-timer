@@ -29,7 +29,7 @@ export default function TimeSlider({
   return (
     <View style={styles.timeControls}>
       <Text variant="labelSmall" style={styles.time}>
-        {formatElapsedTime(new Date(currentTimestamp))}
+        {formatElapsedTime(currentTimestamp)}
       </Text>
       <Slider
         maximumValue={duration}
@@ -43,7 +43,7 @@ export default function TimeSlider({
         maximumTrackTintColor={theme.colors.onBackground}
       />
       <Text variant="labelSmall" style={styles.time}>
-        {formatElapsedTime(new Date(duration))}
+        {formatElapsedTime(duration)}
       </Text>
     </View>
   );

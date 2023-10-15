@@ -5,14 +5,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Chip, List, Text, useTheme } from 'react-native-paper';
-import { memo } from 'react';
 
 import Icons from '../../icons/iconHelper';
+import { Milliseconds } from '../../../lib/stif';
+import { SolutionPhase as SolutionPhaseWrapper } from '../../../lib/stif/wrappers';
 import { StyleSheet } from 'react-native';
 import formatElapsedTime from '../../utils/formatElapsedTime';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SolutionPhase as SolutionPhaseWrapper } from '../../../lib/stif/wrappers';
-import { Milliseconds } from '../../../lib/stif';
 
 interface SolutionPhaseProps {
   /**
@@ -114,6 +114,6 @@ const styles = StyleSheet.create({
 });
 
 function _time(duration: number): string {
-  return formatElapsedTime(new Date(duration));
+  return formatElapsedTime(duration);
 }
 export default memo(SolutionPhase);

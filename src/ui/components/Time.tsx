@@ -14,7 +14,7 @@ interface TimeProps {
 }
 
 export default function Time({ elapsed }: TimeProps) {
-  let timeParts = formatElapsedTime(elapsed).split(':');
+  let timeParts = formatElapsedTime(elapsed.getTime()).split(':');
   let largeParts = timeParts.slice(0, -1);
   let smallParts = timeParts.slice(-1)[0].split('.');
   return (

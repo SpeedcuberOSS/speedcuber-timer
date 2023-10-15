@@ -6,13 +6,13 @@
 
 import { Button, List, Text, useTheme } from 'react-native-paper';
 import { ScrollView, StyleSheet, View } from 'react-native';
+import formatElapsedTime, {
+  getAttemptTimeString,
+} from '../../utils/formatElapsedTime';
 
 import { Attempt } from '../../../lib/stif/wrappers';
 import Icons from '../../icons/iconHelper';
 import TwistyPlayer from '../TwistyPlayer';
-import formatElapsedTime, {
-  getAttemptTimeString,
-} from '../../utils/formatElapsedTime';
 import { useTranslation } from 'react-i18next';
 
 export interface AttemptDetailsProps {
@@ -77,7 +77,7 @@ export default function AttemptDetails({
           left={props => (
             <List.Icon {...props} icon={Icons.Ionicons('hourglass')} />
           )}
-          title={formatElapsedTime(new Date(attempt.inspectionDuration()))}
+          title={formatElapsedTime(attempt.inspectionDuration())}
           description={t('statistics.duration.inspection')}
         />
         <List.Item
@@ -144,7 +144,7 @@ export default function AttemptDetails({
             titleNumberOfLines={0}
             description={
               solution.duration()
-                ? formatElapsedTime(new Date(solution.duration()))
+                ? formatElapsedTime(solution.duration())
                 : ''
             }
             left={props => (
