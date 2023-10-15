@@ -10,12 +10,10 @@ import {
   STOPPED_PUZZLE_ONE_MOVE_REMAINING,
   STOPPED_PUZZLE_UNSOLVED,
 } from '../../stif/builtins';
-import { AttemptBuilder } from '../../stif/builders';
-import { Attempt } from '../../stif/wrappers';
 
-// it('has a noop test to satisfy Jest', () => {
-//   expect(true).toBe(true);
-// });
+import { Attempt } from '../../stif/wrappers';
+import { AttemptBuilder } from '../../stif/builders';
+import { v4 as uuid } from 'uuid'
 
 let TEST_SCRAMBLE = ['R', 'U'];
 
@@ -28,6 +26,7 @@ export function attemptFixtureWithTime(durationMillis: number) {
       .setTimerStart(now)
       .setTimerStop(now + durationMillis)
       .addSolution({
+        id: uuid(),
         puzzle: PUZZLE_3x3x3,
         scramble: TEST_SCRAMBLE,
         reconstruction: [],
