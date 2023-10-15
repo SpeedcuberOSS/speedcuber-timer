@@ -5,9 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Attempt } from '../../lib/stif/wrappers';
-import { AttemptAnalytics } from '../../lib/analytics/AttemptAnalytics';
 import AttemptsChart from '../components/charts/AttemptsChart';
-import { DataTable } from 'react-native-paper';
+import AveragesTable from '../components/charts/AveragesTable';
 import SplitScreen from '../layouts/SplitScreen';
 import { StyleSheet } from 'react-native';
 import { TimerTabScreenProps } from '../navigation/types';
@@ -20,41 +19,22 @@ export default function InsightsScreen(props: Props) {
   const [event] = useCompetitiveEvent();
   const stifs = useAttempts({ event, sortDirection: 'descending' });
   const attempts: Attempt[] = [...stifs].map(a => new Attempt(a));
-  const averages = [5, 12, 50, 100, 1000];
   return (
     <SplitScreen style={styles.container}>
       <AttemptsChart attempts={attempts} />
-      <AveragesTable averages={averages} attempts={attempts} />
+      <AveragesTable
+        attempts={attempts}
+        averages={[
+          { type: 'mean', size: 3 },
+          { type: 'trimmed', size: 5 },
+          { type: 'trimmed', size: 12 },
+          { type: 'trimmed', size: 50 },
+          { type: 'trimmed', size: 100 },
+          { type: 'trimmed', size: 1000 },
+        ]}
+        perPage={3}
+      />
     </SplitScreen>
-  );
-}
-
-interface InsightsScreenProps {
-  averages: number[];
-  attempts: Attempt[];
-}
-
-export function AveragesTable({ averages, attempts }: InsightsScreenProps) {
-  return (
-    <DataTable>
-      <DataTable.Header>
-        <DataTable.Title>Type</DataTable.Title>
-        <DataTable.Title>Current</DataTable.Title>
-        <DataTable.Title>Record</DataTable.Title>
-      </DataTable.Header>
-      {averages.map(count => (
-        <DataTable.Row key={count}>
-          <DataTable.Cell>{`Ao${count}`}</DataTable.Cell>
-          <DataTable.Cell>
-            {new AttemptAnalytics(attempts.slice(-count)).AoX(count) / 1000}
-          </DataTable.Cell>
-          <DataTable.Cell>
-            {Math.min(...new AttemptAnalytics(attempts).sliding.AoX(count)) /
-              1000}
-          </DataTable.Cell>
-        </DataTable.Row>
-      ))}
-    </DataTable>
   );
 }
 

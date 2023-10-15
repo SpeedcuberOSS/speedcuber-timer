@@ -16,6 +16,7 @@ const examples: Map<string, DevelopmentExampleSet> = new Map();
   require('../components/attempts/AttemptDetailsModal.examples').default,
   require('../components/charts/TPSChart.examples').default,
   require('../components/charts/AttemptsChart.examples').default,
+  require('../components/charts/AveragesTable.examples').default,
   require('../components/events/EventSelector.examples').default,
   require('../components/events/EventSelectorModal.examples').default,
   require('../components/ticker/Ticker.examples').default,
