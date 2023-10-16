@@ -4,10 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Attempt } from '../../lib/stif/wrappers';
 import AttemptDetails from '../components/attempts/AttemptDetails';
+import ConfirmationDialog from '../components/ConfirmationDialog';
 import { PracticeStackScreenProps } from '../navigation/types';
 import { View } from 'react-native';
 import { useAttemptDeletor } from '../../persistence/hooks';
@@ -25,6 +26,7 @@ export default function AttemptDetailsScreen({ route, navigation }: Props) {
       title: new Date(attempt.stif().timerStart).toLocaleString(),
     });
   }, [attempt]);
+  const [confirming, setConfirming] = useState(false);
   return (
     <View style={{ paddingTop: 12 }}>
       <AttemptDetails
@@ -34,11 +36,17 @@ export default function AttemptDetailsScreen({ route, navigation }: Props) {
             attempt: attempt.stif(),
           })
         }
-        onDelete={attempt => {
+        onDelete={() => setConfirming(true)}
+        // onPressTPS={route.params.onPressTPS}
+      />
+      <ConfirmationDialog
+        visible={confirming}
+        onCancel={() => setConfirming(false)}
+        onConfirm={() => {
+          setConfirming(false);
           navigation.pop();
           deleteAttempt(attempt.id());
         }}
-        // onPressTPS={route.params.onPressTPS}
       />
     </View>
   );

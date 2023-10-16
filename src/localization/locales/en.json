@@ -135,5 +135,11 @@
     "deleteButton": "Delete",
     "guard": "Confirm restore",
     "confirmation_message": "The backup will replace all your attempts across all events."
+  },
+  "confirmation": {
+    "title": "Are you sure?",
+    "description": "",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }

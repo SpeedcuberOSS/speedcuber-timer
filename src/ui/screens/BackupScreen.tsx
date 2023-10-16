@@ -4,21 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import {
-  ActivityIndicator,
-  Button,
-  Card,
-  Dialog,
-  Portal,
-  Text,
-  useTheme,
-} from 'react-native-paper';
 import { Backup, Restore } from '../../persistence';
+import { Button, Card, Text, useTheme } from 'react-native-paper';
 import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
 import { useAttemptRestoration, useAttempts } from '../../persistence/hooks';
 import { useEffect, useState } from 'react';
 
 import { BackupEntry } from '../../persistence/types';
+import ConfirmationDialog from '../components/ConfirmationDialog';
 import { RootDrawerScreenProps } from '../navigation/types';
 import { useTranslation } from 'react-i18next';
 
@@ -57,10 +50,10 @@ export default function BackupScreen(props: Props) {
       <BackupList
         backups={backups}
         onRefresh={onRefresh}
-        onPressDelete={(item) => removeBackup(item)}
+        onPressDelete={item => removeBackup(item)}
         onPressRestore={item => setBackupToRestore(item)}
       />
-      <ConfirmationDialog
+      <BackupConfirmationDialog
         backup={backupToRestore}
         onDismiss={() => setBackupToRestore(null)}
       />
@@ -80,7 +73,12 @@ interface BackupListProps {
   onPressDelete: (backup: BackupEntry) => void;
   onPressRestore: (backup: BackupEntry) => void;
 }
-function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: BackupListProps) {
+function BackupList({
+  backups,
+  onRefresh,
+  onPressDelete,
+  onPressRestore,
+}: BackupListProps) {
   const { t } = useTranslation();
   const theme = useTheme();
   const [refreshing, setRefreshing] = useState(false);
@@ -105,7 +103,9 @@ function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: Backu
         <Card>
           <Card.Title title={item.date.toLocaleString()} />
           <Card.Actions>
-            <Button onPress={() => onPressDelete(item)} textColor={theme.colors.error}>
+            <Button
+              onPress={() => onPressDelete(item)}
+              textColor={theme.colors.error}>
               {t('restore.deleteButton')}
             </Button>
             <Button onPress={() => onPressRestore(item)}>
@@ -123,49 +123,36 @@ function BackupList({ backups, onRefresh, onPressDelete, onPressRestore }: Backu
   );
 }
 
-interface ConfirmationDialogProps {
+interface BackupConfirmationDialogProps {
   backup: null | BackupEntry;
   onDismiss: () => void;
 }
-function ConfirmationDialog({ backup, onDismiss }: ConfirmationDialogProps) {
+function BackupConfirmationDialog({
+  backup,
+  onDismiss,
+}: BackupConfirmationDialogProps) {
   const { t } = useTranslation();
   const restoreAttempts = useAttemptRestoration();
-  const [isRestoring, setIsRestoring] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   useEffect(() => {
-    setTimeout(() => setIsRestoring(false), 500);
+    setTimeout(() => setIsProcessing(false), 500);
   }, [backup]);
 
   async function conductRestoreFrom(path: string) {
-    setIsRestoring(true);
+    setIsProcessing(true);
     const backup = await Restore.attempts(path);
     restoreAttempts(backup);
     onDismiss();
   }
 
   return (
-    <Portal>
-      <Dialog visible={backup != null} onDismiss={onDismiss}>
-        {isRestoring ? (
-          <Dialog.Content>
-            <ActivityIndicator size="large" />
-          </Dialog.Content>
-        ) : (
-          <>
-            <Dialog.Title>{t('restore.guard')}</Dialog.Title>
-            <Dialog.Content>
-              <Text>{t('restore.confirmation_message')}</Text>
-            </Dialog.Content>
-            <Dialog.Actions>
-              <Button
-                onPress={() =>
-                  backup ? conductRestoreFrom(backup.path) : null
-                }>
-                {t('restore.button')}
-              </Button>
-            </Dialog.Actions>
-          </>
-        )}
-      </Dialog>
-    </Portal>
+    <ConfirmationDialog
+      visible={backup != null || isProcessing}
+      title={t('restore.guard')}
+      description={t('restore.confirmation_message')}
+      confirmText={t('restore.button')}
+      onConfirm={() => (backup ? conductRestoreFrom(backup.path) : null)}
+      onCancel={onDismiss}
+    />
   );
 }
