@@ -4,12 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { StyleSheet, View, processColor } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
+import { View, processColor } from 'react-native';
 
 import { Attempt } from '../../../lib/stif/wrappers';
 import { AttemptAnalytics } from '../../../lib/analytics/AttemptAnalytics';
 import { CombinedChart } from 'react-native-charts-wrapper';
+import ZeroAttemptsPlaceholder from '../attempts/ZeroAttemptsPlaceholder';
+import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 
 interface AttemptsChartProps {
@@ -39,8 +40,8 @@ export default function AttemptsChartDelegator({
   attempts = [],
   averages = [5, 12],
 }: AttemptsChartProps) {
-  if (attempts.length == 0) {
-    return <EmptyChart />;
+  if (attempts.length === 0) {
+    return <ZeroAttemptsPlaceholder />;
   } else {
     return <AttemptsChart attempts={attempts} averages={averages} />;
   }
@@ -142,18 +143,3 @@ export function AttemptsChart({
     </View>
   );
 }
-
-function EmptyChart() {
-  const { t } = useTranslation();
-  return (
-    <View style={styles.centeredContents}>
-      <Text style={styles.centeredText}>{t("insights.emptyChartLine1")}</Text>
-      <Text style={styles.centeredText}>{t("insights.emptyChartLine2")}</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  centeredContents: { alignSelf: 'center', flex: 1, justifyContent: 'center' },
-  centeredText: { textAlign: 'center' },
-});

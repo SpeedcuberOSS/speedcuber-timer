@@ -5,16 +5,24 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Dimensions, FlatList, View } from 'react-native';
-import { memo } from 'react';
 
-import { STIF } from '../../../lib/stif';
 import AttemptCard from './AttemptCard';
+import { STIF } from '../../../lib/stif';
+import ZeroAttemptsPlaceholder from './ZeroAttemptsPlaceholder';
 
 const NUM_COLUMNS = 3;
 
 interface AttemptListProps {
   attempts: ArrayLike<STIF.Attempt>;
   onPress?: (attempt: STIF.Attempt) => void;
+}
+
+function AttemptListDelegator(props: AttemptListProps) {
+  if (props.attempts.length === 0) {
+    return <ZeroAttemptsPlaceholder />;
+  } else {
+    return <AttemptList {...props} />;
+  }
 }
 
 function AttemptList({ attempts, onPress = () => {} }: AttemptListProps) {
@@ -36,4 +44,4 @@ function AttemptList({ attempts, onPress = () => {} }: AttemptListProps) {
   );
 }
 
-export default memo(AttemptList);
+export default AttemptListDelegator;
