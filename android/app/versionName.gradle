@@ -3,16 +3,14 @@ import groovy.json.JsonSlurper
 
 task('syncVersionNameFromPackageJson') {
     description "Increments Version Code"
-    doLast {
-        def versionName = getVersionFromNpm()
-        ant.propertyfile(file: "../gradle.properties") {
-            entry(key: "VERSION_NAME", value: versionName)
-        }
+    def versionName = getVersionFromNpm()
+    ant.propertyfile(file: "../gradle.properties") {
+        entry(key: "VERSION_NAME", value: versionName)
     }
 }
 
 tasks.whenTaskAdded { task ->
-    if (task.name == 'bundleRelease') {
+    if (task.name == 'bundle') {
         task.dependsOn 'syncVersionNameFromPackageJson'
     }
 }
