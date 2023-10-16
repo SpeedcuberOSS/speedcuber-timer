@@ -57,6 +57,9 @@
   "attempt": {
     "replay": "Replay",
     "comment": "Comment",
+    "actions": "Actions",
+    "delete": "Delete",
+    "delete_description": "Permanently remove this attempt",
     "infraction_zero": "Infractions",
     "infraction_one": "Infraction",
     "infraction_other": "Infractions"

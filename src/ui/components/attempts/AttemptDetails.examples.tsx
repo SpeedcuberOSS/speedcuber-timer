@@ -168,11 +168,29 @@ const examples: DevelopmentExampleSet = {
       component: <AttemptDetails attempt={reconstructionAttempt} />,
     },
     {
-      title: 'with TPS pressed handler',
+      title: 'with TPS handler',
       component: (
         <AttemptDetails
           attempt={reconstructionAttempt}
-          onPressTPS={attempt => console.log(attempt.stif())}
+          onInspectTPS={attempt => console.log("onInspectTPS", attempt.stif())}
+        />
+      ),
+    },
+    {
+      title: 'with move count handler',
+      component: (
+        <AttemptDetails
+          attempt={reconstructionAttempt}
+          onInspectMoveCount={attempt => console.log("onInspectMoveCount", attempt.stif())}
+        />
+      ),
+    },
+    {
+      title: 'with deletion handler',
+      component: (
+        <AttemptDetails
+          attempt={reconstructionAttempt}
+          onDelete={attempt => console.log("onDelete", attempt.stif())}
         />
       ),
     },

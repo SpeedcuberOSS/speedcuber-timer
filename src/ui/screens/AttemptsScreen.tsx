@@ -7,10 +7,10 @@
 import { StyleSheet, View } from 'react-native';
 
 import AttemptList from '../components/attempts/AttemptList';
-import { TimerTabScreenProps } from '../navigation/types';
-import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
-import { useAttempts } from '../../persistence/hooks';
 import { STIF } from '../../lib/stif';
+import { TimerTabScreenProps } from '../navigation/types';
+import { useAttempts } from '../../persistence/hooks';
+import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 type Props = TimerTabScreenProps<'Attempts'>;
 
@@ -21,9 +21,10 @@ export default function AttemptsScreen({ route, navigation }: Props) {
     <View style={styles.container}>
       <AttemptList
         attempts={attempts}
-        onPress={(attempt: STIF.Attempt) =>
-          navigation.push('Details', { attempt })
-        }
+        onPress={(attempt: STIF.Attempt) => {
+          const clone = JSON.parse(JSON.stringify(attempt));
+          return navigation.push('Details', { attempt: clone });
+        }}
       />
     </View>
   );
