@@ -5,11 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import AppBar from './AppBar';
+import AttemptDetailsScreen from '../screens/AttemptDetailsScreen';
 import AttemptPlayerScreen from '../screens/AttemptPlayerScreen';
 import { PracticeStackParamList } from './types';
 import TimerNavigator from './TimerNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
-import AttemptDetailsScreen from '../screens/AttemptDetailsScreen';
 
 const Stack = createStackNavigator<PracticeStackParamList>();
 

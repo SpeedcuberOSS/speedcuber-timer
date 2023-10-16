@@ -4,26 +4,25 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { STIF } from '../../lib/stif';
-import { Attempt } from '../../lib/stif/wrappers';
-import AttemptPlayer from '../components/TwistyPlayer/AttemptPlayer';
+import { SafeAreaView, ScrollView } from 'react-native';
+
+import { EVENT_5x5x5_BLD } from '../../lib/stif/builtins';
 import { RootDrawerScreenProps } from '../navigation/types';
-import { SafeAreaView } from 'react-native';
+import { STIF } from '../../lib/stif';
+import { Text } from 'react-native-paper';
+import { useQuery } from '../../persistence/realmdb';
 
 type Props = RootDrawerScreenProps<'Play'>;
 
-const attempt =
-  require('../../lib/recordings/__fixtures__/particula_3x3x3_attempt.json') as STIF.Attempt;
-
 export default function PlayScreen(props: Props) {
+  const query = useQuery<STIF.Solution>('Solution');
+  const orphans = query.filtered(`puzzle = "${EVENT_5x5x5_BLD.puzzles[0]}"`);
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      {/* <Button
-        onPress={() => console.log(JSON.stringify(getLibrary().getAll()))}>
-        Print Attempt Library
-      </Button>
-      */}
-      <AttemptPlayer attempt={new Attempt(attempt)} />
+      <Text variant="titleLarge">Orphaned Solutions</Text>
+      <ScrollView>
+        <Text>{JSON.stringify(orphans)}</Text>
+      </ScrollView>
     </SafeAreaView>
   );
 }
