@@ -4,9 +4,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { parseReconstruction } from '../parseReconstruction';
-
 import { STIF } from '../../stif';
+import { parseReconstruction } from '../parseReconstruction';
 
 const rcAttempt =
   require('../__fixtures__/rubiks_connected_attempt.json') as STIF.Attempt;
@@ -48,7 +47,6 @@ describe('parseReconstruction', () => {
       require('../__fixtures__/particula_3x3x3_recording.json') as STIF.SolveRecording;
     const scramble = attempt.solutions[0].scramble;
     const actual = parseReconstruction(recording, scramble, attempt.timerStart);
-    console.debug(JSON.stringify(actual));
     expect(actual).toMatchSnapshot();
   });
 });
