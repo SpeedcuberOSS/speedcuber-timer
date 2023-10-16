@@ -4,30 +4,27 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import PuzzleRegistry, { BluetoothPuzzle } from './SmartPuzzleRegistry';
 import { useEffect, useState } from 'react';
-import PuzzleRegistry, { BluetoothPuzzle, MessageListener } from './SmartPuzzleRegistry';
 
-import { StyleSheet } from 'react-native';
-import useErrorGuard from '../../hooks/useErrorGuard';
+import { ConnectionStatus } from './types';
 import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleCard from './SmartPuzzleCard';
 import { SmartPuzzleError } from './SmartPuzzleError';
-import { ConnectionStatus } from './types';
+import useErrorGuard from '../../hooks/useErrorGuard';
 
 interface SmartPuzzleConnectorProps {
   smartPuzzle: BluetoothPuzzle;
-  onMove?: MessageListener;
 }
 
 async function getConnectionStatus(
   puzzle: BluetoothPuzzle,
 ): Promise<ConnectionStatus> {
-  return (await puzzle.device.isConnected()) ? 'connected' : 'disconnected';
+  return (await puzzle.isConnected()) ? 'connected' : 'disconnected';
 }
 
 const SmartPuzzleConnector = ({
   smartPuzzle,
-  onMove,
 }: SmartPuzzleConnectorProps) => {
   const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [connectionStatus, setConnectionStatus] =
@@ -37,7 +34,7 @@ const SmartPuzzleConnector = ({
   }, [smartPuzzle]);
 
   async function onInitiateConnection() {
-    setConnectionStatus('connected');
+    setConnectionStatus('connecting');
     await guard(async () => await PuzzleRegistry.connect(smartPuzzle));
     PuzzleRegistry.addMessageListener(smartPuzzle, console.debug)
     setConnectionStatus(await getConnectionStatus(smartPuzzle));
@@ -65,5 +62,3 @@ const SmartPuzzleConnector = ({
 };
 
 export default SmartPuzzleConnector;
-
-const styles = StyleSheet.create({});

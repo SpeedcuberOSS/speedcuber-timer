@@ -6,13 +6,17 @@
 import { Permission, PermissionsAndroid, Platform } from 'react-native';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
+import BLE from './BLE';
 import LocationStatus from './LocationStatus';
-import { isBluetoothEnabled } from './scanner';
 import { t } from 'i18next';
 
 export async function ensureScanningReady() {
-  await ensureLocationPermissionGranted();
-  await ensureLocationEnabled();
+  if (Platform.OS === 'android') {
+    if (Platform.Version <= 30) {
+      await ensureLocationPermissionGranted();
+      await ensureLocationEnabled();
+    }
+  }
   await ensureBluetoothPermissionGranted();
   await ensureBluetoothEnabled();
 }
@@ -80,11 +84,11 @@ async function requestLocationPermission(requiredPermission: Permission) {
 function getRequiredLocationPermissionForDevice() {
   let requiredPermission = null;
   if (Platform.OS === 'android') {
-    if (Platform.Version >= 23) {
+    if (23 <= Platform.Version && Platform.Version < 29) {
       requiredPermission =
         PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION;
     }
-    if (Platform.Version >= 29) {
+    if (29 <= Platform.Version && Platform.Version < 31) {
       requiredPermission = PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION;
     }
   }
@@ -163,7 +167,7 @@ async function ensureLocationEnabled() {
 
 async function ensureBluetoothEnabled() {
   console.debug('Checking if Bluetooth is enabled...');
-  let enabled = await isBluetoothEnabled();
+  let enabled = await BLE.isEnabled();
   console.debug(`Bluetooth enabled: ${enabled}`);
   if (!enabled) {
     throw new SmartPuzzleError(

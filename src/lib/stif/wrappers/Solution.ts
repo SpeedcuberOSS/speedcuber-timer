@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { UUID } from 'react-native-ble-plx';
-import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
-import { SolutionBuilder } from '../builders';
+import { Milliseconds, STIF, UUID, UnixTimestamp } from '../STIF';
+
 import { STIFError } from '../exceptions';
-import { validateSolution } from '../validation/Solution';
 import { SolutionPhase } from './SolutionPhase';
+import { validateSolution } from '../validation/Solution';
 
 interface OptionalArgs {
   start?: UnixTimestamp;
