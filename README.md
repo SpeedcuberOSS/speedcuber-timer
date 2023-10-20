@@ -1,7 +1,39 @@
-# Speedcuber, The App
+<div align="center">
 
-The all-in-one, cross-platform, mobile app made for speedcubers by
-speedcubers.
+![The Speedcuber Timer logo. A green cube fading into view as it climbs
+into the light](./icon.svg)
+# Speedcuber Timer
+
+The smart, offline-ready speedcubing app made for speedcubers, by speedcubers.
+
+Supports Android and iOS!
+
+</div>
+
+## Top Features
+
+ - Connect to most brands of smartcubes *simultaneously*.
+ - Automatic solve recordings and reconstructions.
+ - Replay your smartcube-recorded solves to review and improve.
+ - Support for all official events of the World Cube Association, and
+   many common unofficial events!
+ - All the statistics you know and love.
+ - And much more!
+
+<div align="center">
+
+
+|            Connect to Smartcubes             |       Detailed Statistics        |
+| :------------------------------------------: | :------------------------------: |
+| <img src="docs/concurrent_connections.png" height=500px /> | <img src="docs/statistics.png" height=500px /> |
+
+
+|             Automatic Reconstructions             |            Track Turn Speed            |
+| :-----------------------------------------------: | :------------------------------------: |
+| <img src="docs/solve_replay_reconstruction.png" height=500 /> | <img src="docs/solve_replay_tps.png" height=500 /> |
+
+
+</div>
 
 ## Contributing
 Thank you for your interest in contributing to this project! There are
