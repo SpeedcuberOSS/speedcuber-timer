@@ -46,7 +46,7 @@ lots of ways you can do so:
  - [Reporting
    bugs](https://github.com/SpeedcuberOSS/BinaryClock/issues/new/choose).
  - Developing new features/bug fixes.
- - (Coming Soon!) Adding and updating translations.
+ - [Adding and updating translations](./src/localization/README.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information!
 
