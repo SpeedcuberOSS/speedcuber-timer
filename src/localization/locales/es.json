@@ -26,10 +26,11 @@
     "title": "Ocurrió un error..."
   },
   "attempt": {
-    "replay": "Reproducir"
+    "replay": "Reproducir",
+    "delete": "Borrar"
   },
   "event": {
-    "type" : {
+    "type": {
       "official": "Oficial",
       "unofficial": "No oficial",
       "retired": "Retirado"
@@ -42,6 +43,10 @@
   },
   "charts": {
     "duration": "Duración",
+    "best": "Mejor"
+  },
+  "analytics": {
+    "average": "Promedio",
     "best": "Mejor"
   }
 }
