@@ -28,6 +28,7 @@ extension.
 Then click the sidebar icon for i18n Ally and fill in any missing
 translations!
 
-https://github.com/SpeedcuberOSS/speedcuber-timer/assets/47901316/9747565e-2ff3-4cab-a296-1fbee9a7fb9a
+https://github.com/SpeedcuberOSS/speedcuber-timer/assets/47901316/d45b8454-c93d-4021-bfcf-2a617fc661c8
+
 
 
