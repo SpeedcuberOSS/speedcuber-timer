@@ -11,7 +11,7 @@ jest.mock('react-native-webview', () => {
   };
 });
 
-jest.mock('react-native-ble-plx');
+jest.mock('react-native-ble-manager');
 
 import * as actualfs from 'react-native-fs';
 jest.mock('react-native-fs', () => ({
