@@ -17,14 +17,14 @@ const HOURS = 60 * MINUTES;
  */
 function zpad(num: number, places: number = 2): string {
   const str = `${num}`;
-  const zeros = '0'.repeat(places - str.length);
+  const zeros = '0'.repeat(Math.max(places - str.length, 0));
   return `${zeros}${str}`;
 }
 
 export default function formatElapsedTime(elapsed: Milliseconds): string {
   let [hours, rhours] = [Math.floor(elapsed / HOURS), elapsed % HOURS];
   let [mins, rmins] = [Math.floor(rhours / MINUTES), rhours % MINUTES];
-  let [secs, millis] = [Math.floor(rmins / SECONDS), rmins % SECONDS];
+  let [secs, millis] = [Math.floor(rmins / SECONDS), Math.floor(rmins % SECONDS)];
 
   const hourstr = hours > 0 ? `${hours}:` : '';
   const minstr = hours > 0 ? `${zpad(mins)}:` : mins > 0 ? `${mins}:` : '';

@@ -14,6 +14,7 @@ const HOURS = 60 * MINUTES;
 describe('format_elapsed_time', () => {
   it.each([
     [0 * SECONDS, '0.000'],
+    [1 * MILLIS, '0.001'],
     [1 * SECONDS, '1.000'],
     [12 * SECONDS, '12.000'],
     [1 * SECONDS + 50 * MILLIS, '1.050'],
