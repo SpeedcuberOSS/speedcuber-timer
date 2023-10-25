@@ -37,7 +37,11 @@ export default function AttemptDetailsScreen({ route, navigation }: Props) {
           })
         }
         onDelete={() => setConfirming(true)}
-        // onPressTPS={route.params.onPressTPS}
+        onInspectTPS={() =>
+          navigation.push('TPSChart', {
+            attempt: attempt.stif(),
+          })
+        }
       />
       <ConfirmationDialog
         visible={confirming}

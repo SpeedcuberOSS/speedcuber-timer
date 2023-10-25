@@ -182,10 +182,6 @@ exports[`TPS Chart [2x2x2] matches snapshot 1`] = `
                       "x": 7.552866666666672,
                       "y": 6,
                     },
-                    {
-                      "x": 7.561,
-                      "y": 0,
-                    },
                   ],
                 },
                 {
@@ -221,6 +217,7 @@ exports[`TPS Chart [2x2x2] matches snapshot 1`] = `
           }
           xAxis={
             {
+              "axisMinimum": 0,
               "enabled": false,
               "fontFamily": "Rubik",
               "position": "BOTTOM",
@@ -230,7 +227,9 @@ exports[`TPS Chart [2x2x2] matches snapshot 1`] = `
           yAxis={
             {
               "left": {
+                "axisMinimum": 0,
                 "fontFamily": "Rubik",
+                "spaceBottom": 0,
                 "textColor": 4280032031,
               },
               "right": {
@@ -431,10 +430,6 @@ exports[`TPS Chart [3x3x3 (Gyro)] matches snapshot 1`] = `
                       "x": 11.649699999999994,
                       "y": 8,
                     },
-                    {
-                      "x": 11.833,
-                      "y": 0,
-                    },
                   ],
                 },
                 {
@@ -470,6 +465,7 @@ exports[`TPS Chart [3x3x3 (Gyro)] matches snapshot 1`] = `
           }
           xAxis={
             {
+              "axisMinimum": 0,
               "enabled": false,
               "fontFamily": "Rubik",
               "position": "BOTTOM",
@@ -479,7 +475,9 @@ exports[`TPS Chart [3x3x3 (Gyro)] matches snapshot 1`] = `
           yAxis={
             {
               "left": {
+                "axisMinimum": 0,
                 "fontFamily": "Rubik",
+                "spaceBottom": 0,
                 "textColor": 4280032031,
               },
               "right": {
@@ -680,10 +678,6 @@ exports[`TPS Chart [3x3x3] matches snapshot 1`] = `
                       "x": 14.3515,
                       "y": 8,
                     },
-                    {
-                      "x": 14.835,
-                      "y": 0,
-                    },
                   ],
                 },
                 {
@@ -719,6 +713,7 @@ exports[`TPS Chart [3x3x3] matches snapshot 1`] = `
           }
           xAxis={
             {
+              "axisMinimum": 0,
               "enabled": false,
               "fontFamily": "Rubik",
               "position": "BOTTOM",
@@ -728,7 +723,9 @@ exports[`TPS Chart [3x3x3] matches snapshot 1`] = `
           yAxis={
             {
               "left": {
+                "axisMinimum": 0,
                 "fontFamily": "Rubik",
+                "spaceBottom": 0,
                 "textColor": 4280032031,
               },
               "right": {

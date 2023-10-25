@@ -5,22 +5,24 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { StyleSheet, View, processColor } from 'react-native';
-import { useTheme } from 'react-native-paper';
 
 import { LineChart } from 'react-native-charts-wrapper';
-import { useTranslation } from 'react-i18next';
 import { STIF } from '../../../lib/stif';
+import { useTheme } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
 interface TPSChartProps {
   solveReplay: STIF.TimestampedMove[];
   duration: number;
   atTimestamp?: number;
+  showXAxis?: boolean;
 }
 
 export default function TPSChart({
   solveReplay,
   duration,
   atTimestamp,
+  showXAxis = false,
 }: TPSChartProps) {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -38,7 +40,6 @@ export default function TPSChart({
                 values: [
                   { x: 0, y: 0 },
                   ...tps.map((tps, i) => ({ y: tps.tps, x: tps.t })),
-                  { x: duration / 1000, y: 0 },
                 ],
                 config: {
                   drawValues: false,
@@ -87,15 +88,18 @@ export default function TPSChart({
             fontFamily: 'Rubik',
           }}
           xAxis={{
-            enabled: false,
+            enabled: showXAxis,
             textColor: processColor(theme.colors.onBackground),
             position: 'BOTTOM',
             fontFamily: 'Rubik',
+            axisMinimum: 0,
           }}
           yAxis={{
             left: {
               textColor: processColor(theme.colors.onBackground),
               fontFamily: 'Rubik',
+              axisMinimum: 0,
+              spaceBottom: 0,
             },
             right: {
               enabled: false,

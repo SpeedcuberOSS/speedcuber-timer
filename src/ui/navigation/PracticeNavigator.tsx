@@ -8,6 +8,7 @@ import AppBar from './AppBar';
 import AttemptDetailsScreen from '../screens/AttemptDetailsScreen';
 import AttemptPlayerScreen from '../screens/AttemptPlayerScreen';
 import { PracticeStackParamList } from './types';
+import TPSChartScreen from '../screens/TPSChartScreen';
 import TimerNavigator from './TimerNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -25,6 +26,9 @@ export default function PracticeNavigator() {
       </Stack.Group>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Details" component={AttemptDetailsScreen} />
+      </Stack.Group>
+      <Stack.Group>
+        <Stack.Screen name="TPSChart" component={TPSChartScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
