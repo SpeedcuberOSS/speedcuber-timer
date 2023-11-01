@@ -22,58 +22,74 @@ exports[`Centered Between Sidebars [Custom Weights] matches snapshot 1`] = `
     }
   >
     <View
+      onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "flexDirection": "row",
-        }
+        [
+          {
+            "flex": 1,
+          },
+          {
+            "flexDirection": "row",
+          },
+        ]
       }
     >
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 2,
-          }
+          [
+            {},
+            {
+              "flex": 2,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "red",
-              "height": 1334,
+              "flex": 1,
             }
           }
         />
       </View>
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 2,
-            "zIndex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 2,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "green",
-              "height": 1334,
+              "flex": 1,
             }
           }
         />
       </View>
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 2,
-          }
+          [
+            {},
+            {
+              "flex": 2,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "red",
-              "height": 1334,
+              "flex": 1,
             }
           }
         />
@@ -105,58 +121,281 @@ exports[`Centered Between Sidebars [Default] matches snapshot 1`] = `
     }
   >
     <View
+      onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "flexDirection": "row",
-        }
+        [
+          {
+            "flex": 1,
+          },
+          {
+            "flexDirection": "row",
+          },
+        ]
       }
     >
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "red",
-              "height": 1334,
+              "flex": 1,
             }
           }
         />
       </View>
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 4,
-            "zIndex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 4,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "green",
-              "height": 1334,
+              "flex": 1,
             }
           }
         />
       </View>
       <View
+        onLayout={[Function]}
         style={
-          {
-            "flex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
           style={
             {
               "backgroundColor": "red",
-              "height": 1334,
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Centered Between Sidebars [Styled Contents] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flex": 1,
+          },
+          {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "borderColor": "yellow",
+              "borderWidth": 2,
+            },
+            {
+              "flex": 2,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "borderColor": "blue",
+              "borderWidth": 2,
+            },
+            {
+              "flex": 2,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "green",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "borderColor": "yellow",
+              "borderWidth": 2,
+            },
+            {
+              "flex": 2,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
+
+exports[`Centered Between Sidebars [Vertical] matches snapshot 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    pointerEvents="box-none"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flex": 1,
+          },
+          {
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {},
+            {
+              "flex": 4,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "green",
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "red",
+              "flex": 1,
             }
           }
         />

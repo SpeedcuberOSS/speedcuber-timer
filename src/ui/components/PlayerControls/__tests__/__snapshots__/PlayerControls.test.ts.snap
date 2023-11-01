@@ -127,18 +127,23 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "flexDirection": "row",
-        }
+        [
+          {},
+          {
+            "flexDirection": "row",
+          },
+        ]
       }
     >
       <View
         onLayout={[Function]}
         style={
-          {
-            "flex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View />
@@ -146,10 +151,12 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          {
-            "flex": 4,
-            "zIndex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 4,
+            },
+          ]
         }
       >
         <View
@@ -836,9 +843,12 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          {
-            "flex": 1,
-          }
+          [
+            {},
+            {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
