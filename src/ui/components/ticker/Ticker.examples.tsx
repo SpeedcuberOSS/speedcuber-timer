@@ -4,8 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { List, Text } from 'react-native-paper';
+
 import { DevelopmentExampleSet } from '../../examples/types';
-import { List } from 'react-native-paper';
 import Ticker from './Ticker';
 import { View } from 'react-native';
 
@@ -61,7 +62,9 @@ const examples: DevelopmentExampleSet = {
     },
     {
       title: 'Large Numbers (Horizontal)',
-      component: <Ticker initialValue={1397} step={10000} orientation='horizontal'/>,
+      component: (
+        <Ticker initialValue={1397} step={10000} orientation="horizontal" />
+      ),
     },
     {
       title: 'Everything (Vertical)',
@@ -84,7 +87,7 @@ const examples: DevelopmentExampleSet = {
           max={15}
           step={5}
           onChange={value => console.log(`Ticker is now ${value}`)}
-          orientation='horizontal'
+          orientation="horizontal"
         />
       ),
     },
@@ -98,7 +101,7 @@ const examples: DevelopmentExampleSet = {
             max={15}
             step={5}
             onChange={value => console.log(`Ticker is now ${value}`)}
-            orientation='horizontal'
+            orientation="horizontal"
           />
         </View>
       ),
@@ -119,6 +122,38 @@ const examples: DevelopmentExampleSet = {
             />
           )}
         />
+      ),
+    },
+    {
+      title: 'Transform Values',
+      component: (
+        <Ticker
+          transform={value => (
+            <View
+              style={{ padding: value, borderColor: 'pink', borderWidth: value }}>
+              <Text variant='titleLarge'>{value.toString(16)}</Text>
+            </View>
+          )}
+        />
+      ),
+    },
+    {
+      title: 'Custom Styles',
+      component: (
+        <Ticker
+          valueStyle={{ backgroundColor: 'red' }}
+          iconStyle={{ borderColor: 'green', borderWidth: 2 }}
+        />
+      ),
+    },
+    {
+      title: 'Horizontal Icons (Vertical Ticker)',
+      component: <Ticker iconOrientation="horizontal" />,
+    },
+    {
+      title: 'Horizontal Icons (Horizontal Ticker)',
+      component: (
+        <Ticker orientation="horizontal" iconOrientation="horizontal" />
       ),
     },
   ],

@@ -8,11 +8,11 @@ import * as Events from '../../../lib/stif/builtins/CompetitiveEvents';
 
 import { Divider, List } from 'react-native-paper';
 import { Fragment, useCallback, useState } from 'react';
+import { ScrollView, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
 import { PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
 import { STIF } from '../../../lib/stif';
-import { ScrollView } from 'react-native';
 import Ticker from '../ticker/Ticker';
 import { useTranslation } from 'react-i18next';
 
@@ -43,13 +43,15 @@ function EventItem({ event, onSelect }: EventItemProps) {
       left={props => <List.Icon {...props} icon={Icons.STIF(`event-${event.id}`)} />}
       right={props =>
         event.id === '333mbf' ? (
-          <Ticker
-            initialValue={2}
-            min={2}
-            step={1}
-            onChange={value => setMbfCount(value)}
-            orientation="horizontal"
-          />
+          <View style={{margin: -14}}>
+            <Ticker
+              initialValue={2}
+              min={2}
+              step={1}
+              onChange={value => setMbfCount(value)}
+              orientation="horizontal"
+            />
+          </View>
         ) : null
       }
     />

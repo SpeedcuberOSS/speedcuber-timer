@@ -5,9 +5,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { IconButton, Text } from 'react-native-paper';
-import { useState } from 'react';
+import { TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+
 import Icons from '../../icons/iconHelper';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { useState } from 'react';
 
 type Direction = 'horizontal' | 'vertical';
 type TickEffect = 'increment' | 'decrement';
@@ -22,25 +23,41 @@ interface TickerProps {
   min?: number;
   max?: number;
   step?: number;
+  transform?: (value: number) => JSX.Element | string;
   onChange?: (value: number) => void;
+  valueStyle?: ViewStyle;
+  iconStyle?: ViewStyle;
   orientation?: Direction;
+  iconOrientation?: Direction;
 }
 
 const flexFor: { [D in Direction]: FlexDirection } = {
   horizontal: 'row',
   vertical: 'column',
 };
-const firstIconFor: { [D in Direction]: string } = {
-  horizontal: 'chevron-down',
-  vertical: 'chevron-up',
+const firstIconFor: { [D in Direction]: { [D in Direction]: string } } = {
+  vertical: {
+    horizontal: 'chevron-right',
+    vertical: 'chevron-up',
+  },
+  horizontal: {
+    horizontal: 'chevron-left',
+    vertical: 'chevron-down',
+  },
 };
 const firstIconEffectFor: { [D in Direction]: TickEffect } = {
   horizontal: 'decrement',
   vertical: 'increment',
 };
-const secondIconFor: { [D in Direction]: string } = {
-  horizontal: 'chevron-up',
-  vertical: 'chevron-down',
+const secondIconFor: { [D in Direction]: { [D in Direction]: string } } = {
+  vertical: {
+    horizontal: 'chevron-left',
+    vertical: 'chevron-down',
+  },
+  horizontal: {
+    horizontal: 'chevron-right',
+    vertical: 'chevron-up',
+  },
 };
 const secondIconEffectFor: { [D in Direction]: TickEffect } = {
   horizontal: 'increment',
@@ -52,8 +69,12 @@ export default function Ticker({
   min = -Infinity,
   max = Infinity,
   step = 1,
+  transform = value => value.toString(),
   onChange = () => {},
-  orientation: direction = 'vertical',
+  valueStyle = {},
+  iconStyle = {},
+  orientation = 'vertical',
+  iconOrientation = 'vertical',
 }: TickerProps) {
   const [value, setValue] = useState(
     Math.min(max, Math.max(min, initialValue)),
@@ -70,34 +91,42 @@ export default function Ticker({
     increment: value >= max,
     decrement: value <= min,
   };
+  const transformedValue = min <= max ? transform(value) : '-';
+  const Content =
+    typeof transformedValue === 'string' ? (
+      <Text
+        style={{
+          minWidth: 20,
+          textAlign: 'center',
+          textAlignVertical: 'center',
+          fontVariant: ['tabular-nums'],
+        }}>
+        {transformedValue}
+      </Text>
+    ) : (
+      transformedValue
+    );
   return (
     <TouchableWithoutFeedback>
       <View
         style={{
-          flexDirection: flexFor[direction],
+          flexDirection: flexFor[orientation],
           alignItems: 'center',
           justifyContent: 'center',
-          margin: -14,
         }}
         onTouchEnd={e => e.stopPropagation()}>
         <IconButton
-          disabled={disabled[firstIconEffectFor[direction]]}
-          icon={Icons.Entypo(firstIconFor[direction])}
-          onPress={effects[firstIconEffectFor[direction]]}
+          style={iconStyle}
+          disabled={disabled[firstIconEffectFor[orientation]]}
+          icon={Icons.Entypo(firstIconFor[orientation][iconOrientation])}
+          onPress={effects[firstIconEffectFor[orientation]]}
         />
-        <Text
-          style={{
-            minWidth: 20,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            fontVariant: ['tabular-nums'],
-          }}>
-          {min <= max ? value : '-'}
-        </Text>
+        <View style={valueStyle}>{Content}</View>
         <IconButton
-          disabled={disabled[secondIconEffectFor[direction]]}
-          icon={Icons.Entypo(secondIconFor[direction])}
-          onPress={effects[secondIconEffectFor[direction]]}
+          style={iconStyle}
+          disabled={disabled[secondIconEffectFor[orientation]]}
+          icon={Icons.Entypo(secondIconFor[orientation][iconOrientation])}
+          onPress={effects[secondIconEffectFor[orientation]]}
         />
       </View>
     </TouchableWithoutFeedback>
