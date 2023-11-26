@@ -90,6 +90,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.19.0",
+    "fantasticon": "^2.0.0",
     "jest": "^29.6.1",
     "metro-react-native-babel-preset": "^0.73.7",
     "prettier": "^2.4.1",

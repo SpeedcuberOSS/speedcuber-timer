@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { WCAEvent, WCAEventUnofficial, WCAInfraction } from './wca';
+import * as React from 'react';
 
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
@@ -17,7 +17,7 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import OcticonsIcon from 'react-native-vector-icons/Octicons';
-import * as React from 'react';
+import { STIFIcon } from './STIFIcons';
 import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
 import ZocialIcon from 'react-native-vector-icons/Zocial';
 
@@ -57,13 +57,11 @@ const ReactNativeVectorIcons = {
   SimpleLineIcons: (name: string) => render(SimpleLineIconsIcon, name),
 };
 
-const WCAIcons = {
-  WCAEvent: (name: string) => render(WCAEvent, name),
-  WCAEventUnofficial: (name: string) => render(WCAEventUnofficial, name),
-  WCAInfraction: (name: string) => render(WCAInfraction, name),
+const STIFIcons = {
+  STIF: (name: string) => render(STIFIcon, name),
 };
 
 export default {
   ...ReactNativeVectorIcons,
-  ...WCAIcons,
+  ...STIFIcons
 };

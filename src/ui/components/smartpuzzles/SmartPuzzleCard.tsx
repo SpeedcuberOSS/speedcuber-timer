@@ -7,10 +7,10 @@
 import { Card, Switch, useTheme } from 'react-native-paper';
 import Icons, { IconFunction } from '../../icons/iconHelper';
 import { PUZZLE_2x2x2, PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
-import { STIF } from '../../../lib/stif';
+import { StyleSheet, View } from 'react-native';
 
 import { ConnectionStatus } from './types';
-import { StyleSheet, View } from 'react-native';
+import { STIF } from '../../../lib/stif';
 
 interface SmartPuzzleCardProps {
   name?: string;
@@ -28,8 +28,8 @@ interface BluetoothSwitchProps {
 }
 
 const PuzzleIcons = new Map<STIF.Puzzle, IconFunction>([
-  [PUZZLE_2x2x2, Icons.WCAEvent('222')],
-  [PUZZLE_3x3x3, Icons.WCAEvent('333')],
+  [PUZZLE_2x2x2, Icons.STIF('event-222')],
+  [PUZZLE_3x3x3, Icons.STIF('event-333')],
 ]);
 
 function getPuzzleIcon(puzzle: STIF.Puzzle): IconFunction {

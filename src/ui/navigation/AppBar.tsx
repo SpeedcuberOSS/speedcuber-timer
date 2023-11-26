@@ -5,16 +5,16 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { Appbar, Button } from 'react-native-paper';
-import { useState } from 'react';
 
-import { STIF } from '../../lib/stif';
 import EventSelectorModal from '../components/events/EventSelectorModal';
 import Icons from '../icons/iconHelper';
 import { PracticeStackHeaderProps } from './types';
+import PuzzleRegistry from '../components/smartpuzzles/SmartPuzzleRegistry';
+import { STIF } from '../../lib/stif';
 import SmartPuzzleScannerModal from '../components/smartpuzzles/SmartPuzzleScannerModal';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import PuzzleRegistry from '../components/smartpuzzles/SmartPuzzleRegistry';
 
 export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
   const [event, setEvent] = useCompetitiveEvent();
@@ -33,7 +33,7 @@ export default function AppBar({ navigation, back }: PracticeStackHeaderProps) {
         <Appbar.Content
           title={
             <Button
-              icon={Icons.WCAEvent(event.id)}
+              icon={Icons.STIF(`event-${event.id}`)}
               mode="contained-tonal"
               onPress={() => setShowEventSelector(true)}>
               {t(`events.${event.id}`)}

@@ -4,16 +4,17 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Divider, List } from 'react-native-paper';
-import { ScrollView } from 'react-native';
-
-import { STIF } from '../../../lib/stif';
 import * as Events from '../../../lib/stif/builtins/CompetitiveEvents';
-import Icons from '../../icons/iconHelper';
-import { useTranslation } from 'react-i18next';
-import Ticker from '../ticker/Ticker';
+
+import { Divider, List } from 'react-native-paper';
 import { Fragment, useCallback, useState } from 'react';
+
+import Icons from '../../icons/iconHelper';
 import { PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
+import { STIF } from '../../../lib/stif';
+import { ScrollView } from 'react-native';
+import Ticker from '../ticker/Ticker';
+import { useTranslation } from 'react-i18next';
 
 interface EventSelectorProps {
   onSelect: (event: STIF.CompetitiveEvent) => void;
@@ -34,14 +35,12 @@ function EventItem({ event, onSelect }: EventItemProps) {
       onSelect(event);
     }
   }, [event, onSelect, mbfCount]);
-  const Icon =
-    event.type === 'unofficial' ? Icons.WCAEventUnofficial : Icons.WCAEvent;
 
   return (
     <List.Item
       title={t(`events.${event.id}`)}
       onPress={pressHandler}
-      left={props => <List.Icon {...props} icon={Icon(event.id)} />}
+      left={props => <List.Icon {...props} icon={Icons.STIF(`event-${event.id}`)} />}
       right={props =>
         event.id === '333mbf' ? (
           <Ticker

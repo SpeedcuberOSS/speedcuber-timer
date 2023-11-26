@@ -322,7 +322,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -330,7 +330,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -478,7 +478,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -486,7 +486,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -634,7 +634,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -642,7 +642,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -790,7 +790,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -798,7 +798,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -1008,34 +1008,38 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     </View>
                   </View>
                 </View>
-                <Text
-                  style={
-                    [
-                      {
-                        "textAlign": "left",
-                      },
-                      {
-                        "color": "rgba(28, 27, 31, 1)",
-                        "fontFamily": "Rubik-Regular",
-                        "fontWeight": "400",
-                        "letterSpacing": 0,
-                      },
-                      {
-                        "writingDirection": "ltr",
-                      },
-                      {
-                        "fontVariant": [
-                          "tabular-nums",
-                        ],
-                        "minWidth": 20,
-                        "textAlign": "center",
-                        "textAlignVertical": "center",
-                      },
-                    ]
-                  }
+                <View
+                  style={{}}
                 >
-                  2
-                </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "textAlign": "left",
+                        },
+                        {
+                          "color": "rgba(28, 27, 31, 1)",
+                          "fontFamily": "Rubik-Regular",
+                          "fontWeight": "400",
+                          "letterSpacing": 0,
+                        },
+                        {
+                          "writingDirection": "ltr",
+                        },
+                        {
+                          "fontVariant": [
+                            "tabular-nums",
+                          ],
+                          "minWidth": 20,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                      ]
+                    }
+                  >
+                    2
+                  </Text>
+                </View>
                 <View
                   collapsable={false}
                   style={
@@ -1263,7 +1267,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -1271,7 +1275,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -1419,7 +1423,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -1427,7 +1431,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -1575,7 +1579,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -1583,7 +1587,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -1731,7 +1735,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -1739,7 +1743,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -1887,7 +1891,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -1895,7 +1899,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2043,7 +2047,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2051,7 +2055,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2199,7 +2203,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2207,7 +2211,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2355,7 +2359,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2363,7 +2367,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2511,7 +2515,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2519,7 +2523,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2667,7 +2671,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2675,7 +2679,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2823,7 +2827,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2831,7 +2835,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -2979,7 +2983,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -2987,7 +2991,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -3135,7 +3139,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -3143,7 +3147,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -3494,7 +3498,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -3502,7 +3506,163 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
+                </Text>
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "paddingLeft": 16,
+                    },
+                    {
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  numberOfLines={1}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "fontFamily": "Rubik-Regular",
+                        "fontWeight": "400",
+                        "letterSpacing": 0,
+                      },
+                      {
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontSize": 16,
+                        },
+                        {
+                          "color": "rgba(28, 27, 31, 1)",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  events.111
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": "rgba(202, 196, 208, 1)",
+                  "height": 0.5,
+                },
+                undefined,
+                {
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                },
+                false,
+                undefined,
+              ]
+            }
+          />
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              [
+                false,
+                [
+                  {
+                    "paddingRight": 24,
+                    "paddingVertical": 8,
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "marginVertical": 6,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                pointerEvents="box-none"
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    {
+                      "alignSelf": "center",
+                      "marginLeft": 16,
+                      "marginRight": 0,
+                      "marginVertical": 0,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": "rgba(73, 69, 79, 1)",
+                        "fontSize": 24,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "STIFIcon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
                 </Text>
               </View>
               <View
@@ -3650,7 +3810,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -3658,7 +3818,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -3806,7 +3966,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -3814,7 +3974,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -3962,7 +4122,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -3970,7 +4130,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -4118,7 +4278,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -4126,7 +4286,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -4274,7 +4434,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -4282,7 +4442,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -4430,7 +4590,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEventUnofficial",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -4438,7 +4598,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -4789,7 +4949,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -4797,7 +4957,7 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View

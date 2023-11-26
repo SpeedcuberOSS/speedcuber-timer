@@ -57,15 +57,11 @@ interface HeaderSectionProps extends SectionProps {
 function HeaderSection({ attempt, onReplay }: HeaderSectionProps) {
   const theme = useTheme();
   const { t } = useTranslation();
-  const Icon =
-    attempt.event().type === 'unofficial'
-      ? Icons.WCAEventUnofficial
-      : Icons.WCAEvent;
   return (
     <View style={styles.header}>
       <Text variant="displayLarge">{getAttemptTimeString(attempt)}</Text>
       <View style={styles.headerSubtitle}>
-        {Icon(attempt.event().id)({
+        {Icons.STIF(`event-${attempt.event().id}`)({
           size: 14,
           color: theme.colors.onBackground,
         })}
@@ -212,7 +208,7 @@ function SolutionsSection({ attempt }: SectionProps) {
             solution.duration() ? formatElapsedTime(solution.duration()) : ''
           }
           left={props => (
-            <List.Icon {...props} icon={Icons.WCAEvent(solution.puzzle())} />
+            <List.Icon {...props} icon={Icons.STIF(`event-${solution.puzzle()}`)} />
           )}>
           <View style={{ height: 200 }}>
             <TwistyPlayer

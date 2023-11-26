@@ -121,7 +121,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                       },
                       undefined,
                       {
-                        "fontFamily": "WCAEvent",
+                        "fontFamily": "STIFIcon",
                         "fontStyle": "normal",
                         "fontWeight": "normal",
                       },
@@ -129,7 +129,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
               </View>
               <View
@@ -410,7 +410,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -418,7 +418,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -698,7 +698,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -706,7 +706,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -986,7 +986,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -994,7 +994,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -1274,7 +1274,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -1282,7 +1282,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -1562,7 +1562,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -1570,7 +1570,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -1850,7 +1850,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -1858,7 +1858,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -2138,7 +2138,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -2146,7 +2146,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -2426,7 +2426,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -2434,7 +2434,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -2714,7 +2714,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -2722,7 +2722,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
@@ -3002,7 +3002,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                     },
                     undefined,
                     {
-                      "fontFamily": "WCAEvent",
+                      "fontFamily": "STIFIcon",
                       "fontStyle": "normal",
                       "fontWeight": "normal",
                     },
@@ -3010,7 +3010,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                   ]
                 }
               >
-                
+                
               </Text>
             </View>
             <View
