@@ -1,10 +1,5 @@
-// Copyright (c) 2022 Joseph Hale <me@jhale.dev>
-//
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
-import { STIF } from '../STIF';
 import {
+  PUZZLE_1x1x1,
   PUZZLE_2x2x2,
   PUZZLE_3x3x3,
   PUZZLE_4x4x4,
@@ -18,6 +13,13 @@ import {
   PUZZLE_SQUARE_1,
   PUZZLE_UNKNOWN,
 } from './Puzzles';
+
+// Copyright (c) 2022 Joseph Hale <me@jhale.dev>
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+import { STIF } from '../STIF';
 
 export const EVENT_UNKNOWN: STIF.CompetitiveEvent = Object.freeze({
   id: 'unknown',
@@ -120,6 +122,11 @@ export const EVENT_3x3x3_FEET: STIF.CompetitiveEvent = Object.freeze({
 });
 
 // Common Unofficial Events
+export const EVENT_1x1x1: STIF.CompetitiveEvent = Object.freeze({
+  id: '111',
+  puzzles: [PUZZLE_1x1x1],
+  type: 'unofficial',
+});
 export const EVENT_2x2x2_BLD: STIF.CompetitiveEvent = Object.freeze({
   id: '222bf',
   puzzles: [PUZZLE_2x2x2],

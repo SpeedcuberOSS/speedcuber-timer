@@ -7,6 +7,7 @@
 import { STIF } from '../STIF';
 
 export const PUZZLE_UNKNOWN: STIF.Puzzle = 'unknown'
+export const PUZZLE_1x1x1: STIF.Puzzle = '111'
 export const PUZZLE_2x2x2: STIF.Puzzle = '222'
 export const PUZZLE_3x3x3: STIF.Puzzle = '333'
 export const PUZZLE_4x4x4: STIF.Puzzle = '444'
