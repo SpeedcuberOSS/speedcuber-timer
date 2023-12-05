@@ -67,7 +67,8 @@
   "scramble": {
     "scramble_one": "Scramble",
     "scramble_other": "Scrambles",
-    "hand": "Hand Scramble"
+    "hand": "Hand Scramble",
+    "show": "Show Scramble"
   },
   "puzzle": {
     "puzzle_zero": "Puzzles",
