@@ -119,7 +119,8 @@ android {
             keyPassword 'android'
         }
         release {
-            if (System.getenv("ANDROID_RELEASE_KEYSTORE_FILE_PATH").length() > 0) {
+            def keystorePath = System.getenv("ANDROID_RELEASE_KEYSTORE_FILE_PATH")
+            if (keystorePath != null && keystorePath.length() > 0) {
                 storeFile file(System.getenv("ANDROID_RELEASE_KEYSTORE_FILE_PATH"))
                 storePassword System.getenv("ANDROID_RELEASE_KEYSTORE_PASSWORD")
                 keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS")
