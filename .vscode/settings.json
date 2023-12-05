@@ -56,4 +56,5 @@
   "material-icon-theme.files.associations": {
     "*.examples.tsx": "lib"
   },
+  "java.compile.nullAnalysis.mode": "automatic",
 }
