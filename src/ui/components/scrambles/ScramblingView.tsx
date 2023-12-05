@@ -31,37 +31,16 @@ export default function ScramblingView({
   previousAttempt,
   onPress = () => {},
 }: ScramblingViewProps) {
-  const event = previousAttempt.event;
-  const [scrambles, setScrambles] = useState<GeneratedScramble[]>([]);
-  useEffect(() => {
-    const scrambles = event.puzzles.map(
-      puzzle =>
-        ({
-          puzzle,
-          algorithm: getScrambler(puzzle).generateScramble(),
-        } as GeneratedScramble),
-    );
-    setScrambles(scrambles);
-    onPress(scrambles);
-  }, [previousAttempt.id]);
+  const scrambles = useScrambles(previousAttempt.event, previousAttempt.id);
   const [layouts, setLayouts] = useState<LayoutAllEvent>();
   return (
     <Pressable style={styles.landing} onPress={() => onPress([])}>
       <CenteredBetweenSidebars
         direction="vertical"
         contentWeight={2}
-        contentStyle={{
-          justifyContent: 'center',
-          borderColor: 'blue',
-          borderWidth: 2,
-        }}
+        contentStyle={{ justifyContent: 'center' }}
         sidebarWeight={3}
-        sidebarStyle={{
-          marginVertical: 10,
-          marginHorizontal: 20,
-          borderColor: 'yellow',
-          borderWidth: 2,
-        }}
+        sidebarStyle={{ margin: 20 }}
         onLayoutAll={setLayouts}
         containerStyle={{ alignItems: 'center' }}>
         <Scrambles
@@ -75,9 +54,23 @@ export default function ScramblingView({
   );
 }
 
+function useScrambles(event: STIF.CompetitiveEvent, key: string) {
+  const [scrambles, setScrambles] = useState<GeneratedScramble[]>([]);
+  useEffect(() => {
+    const scrambles = event.puzzles.map(
+      puzzle =>
+        ({
+          puzzle,
+          algorithm: getScrambler(puzzle).generateScramble(),
+        } as GeneratedScramble),
+    );
+    setScrambles(scrambles);
+  }, [key]);
+  return scrambles;
+}
+
 const styles = StyleSheet.create({
   landing: {
-    // flex: 1,
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
