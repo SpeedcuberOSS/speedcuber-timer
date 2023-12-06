@@ -4,6 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { BluetoothPuzzle } from './SmartPuzzleRegistry';
 import SmartPuzzleScanner from './SmartPuzzleScanner';
 import TitledModal from '../TitledModal';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +12,19 @@ import { useTranslation } from 'react-i18next';
 interface SmartPuzzleScannerModalProps {
   visible: boolean;
   onDismiss: () => void;
+  onSelectPuzzle?: (puzzle: BluetoothPuzzle) => void;
+  onDeselectPuzzle?: (puzzle: BluetoothPuzzle) => void;
+  isPuzzleSelectable?: (puzzle: BluetoothPuzzle) => boolean;
+  isPuzzleSelected?: (puzzle: BluetoothPuzzle) => boolean;
 }
 
 export default function SmartPuzzleScannerModal({
   visible,
   onDismiss,
+  onSelectPuzzle,
+  onDeselectPuzzle,
+  isPuzzleSelectable,
+  isPuzzleSelected,
 }: SmartPuzzleScannerModalProps) {
   const { t } = useTranslation();
   return (
@@ -23,7 +32,12 @@ export default function SmartPuzzleScannerModal({
       title={t('bluetooth.start_scan')}
       visible={visible}
       onDismiss={onDismiss}>
-      <SmartPuzzleScanner />
+      <SmartPuzzleScanner
+        onSelectPuzzle={onSelectPuzzle}
+        onDeselectPuzzle={onDeselectPuzzle}
+        isPuzzleSelectable={isPuzzleSelectable}
+        isPuzzleSelected={isPuzzleSelected}
+      />
     </TitledModal>
   );
 }

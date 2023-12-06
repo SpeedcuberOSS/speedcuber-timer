@@ -19,6 +19,7 @@
     "emptyChartLine2": "Complete some attempts first."
   },
   "bluetooth": {
+    "no_active_puzzle": "(none)",
     "connect": "Connect",
     "start_scan": "Smartcube Scan",
     "connect_error": "Failed to connect to puzzle {{name}} because:\n{{error}}",

@@ -12,15 +12,10 @@ import { useEffect, useState } from 'react';
 
 import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptTime from '../attempts/AttemptTime';
+import { GeneratedScramble } from './types';
 import { STIF } from '../../../lib/stif';
 import Scrambles from './Scrambles';
 import { getScrambler } from '../../../lib/scrambles/mandy';
-
-interface GeneratedScramble {
-  puzzle: STIF.Puzzle;
-  algorithm: STIF.Algorithm;
-  smartPuzzle?: STIF.SmartPuzzle;
-}
 
 interface ScramblingViewProps {
   previousAttempt: STIF.Attempt;
@@ -34,7 +29,7 @@ export default function ScramblingView({
   const scrambles = useScrambles(previousAttempt.event, previousAttempt.id);
   const [layouts, setLayouts] = useState<LayoutAllEvent>();
   return (
-    <Pressable style={styles.landing} onPress={() => onPress([])}>
+    <Pressable style={styles.landing} onPress={() => onPress(scrambles)}>
       <CenteredBetweenSidebars
         direction="vertical"
         contentWeight={2}
@@ -54,6 +49,9 @@ export default function ScramblingView({
   );
 }
 
+/**
+ * Generates scrambles for the given `event` every time the `key` changes.
+ */
 function useScrambles(event: STIF.CompetitiveEvent, key: string) {
   const [scrambles, setScrambles] = useState<GeneratedScramble[]>([]);
   useEffect(() => {

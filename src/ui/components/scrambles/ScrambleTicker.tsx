@@ -1,39 +1,71 @@
 // Copyright (c) 2023 Joseph Hale <me@jhale.dev>
-// 
+//
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import Scramble from "./Scramble";
-import { ScramblesProps } from "./Scrambles";
-import Ticker from "../ticker/Ticker";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import Algorithm from './Algorithm';
+import ScrambleHeader from './ScrambleHeader';
+import { ScramblesProps } from './Scrambles';
+import SmartPuzzleSelectorModal from '../smartpuzzles/SmartPuzzleSelectorModal';
+import Ticker from '../ticker/Ticker';
+import { View } from 'react-native';
+import { useState } from 'react';
 
-export default function ScrambleTicker({ scrambles = [], layoutHeightLimit }: ScramblesProps) {
-  const { t } = useTranslation();
-  const [_, setIdx] = useState(0);
-  function mapToAlgorithm(idx: number) {
+interface ScrambleTickerProps extends ScramblesProps {}
+
+export default function ScrambleTicker({
+  scrambles = [],
+  layoutHeightLimit,
+}: ScrambleTickerProps) {
+  const [idx, setIdx] = useState(0);
+  const [tickerHeight, setTickerHeight] = useState(0);
+  const [showSmartPuzzleSelector, setShowSmartPuzzleSelector] = useState(false);
+  function mapToHeader(idx: number) {
     return idx < scrambles.length ? (
-      <Scramble
+      <ScrambleHeader
         puzzle={scrambles[idx].puzzle}
-        algorithm={scrambles[idx].algorithm}
+        smartPuzzle={scrambles[idx].smartPuzzle}
         positioning={[idx + 1, scrambles.length]}
-        layoutHeightLimit={layoutHeightLimit}
+        onRequestSmartPuzzleLink={() => setShowSmartPuzzleSelector(true)}
       />
     ) : (
-      t('scramble.hand')
+      <></>
     );
   }
   return (
-    <Ticker
-      min={0}
-      max={Math.max(scrambles.length - 1, 0)}
-      orientation="horizontal"
-      onChange={setIdx}
-      valueStyle={{ maxWidth: '80%' }}
-      iconOrientation="horizontal"
-      transform={mapToAlgorithm}
-    />
+    <>
+      <View
+        onLayout={event => setTickerHeight(event.nativeEvent.layout.height)}>
+        <Ticker
+          min={0}
+          max={Math.max(scrambles.length - 1, 0)}
+          orientation="horizontal"
+          onChange={setIdx}
+          valueStyle={{ maxWidth: '80%' }}
+          iconOrientation="horizontal"
+          transform={mapToHeader}
+        />
+      </View>
+      <View
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingHorizontal: 10,
+        }}>
+        <Algorithm
+          algorithm={scrambles[idx]?.algorithm}
+          layoutHeightLimit={(layoutHeightLimit ?? Infinity) - tickerHeight}
+        />
+      </View>
+      <SmartPuzzleSelectorModal
+        scrambles={scrambles}
+        idx={idx}
+        visible={showSmartPuzzleSelector}
+        onDismiss={() => {
+          setShowSmartPuzzleSelector(false);
+        }}
+      />
+    </>
   );
 }

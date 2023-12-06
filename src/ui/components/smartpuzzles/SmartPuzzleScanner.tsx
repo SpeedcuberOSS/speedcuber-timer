@@ -5,8 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import PuzzleRegistry, { BluetoothPuzzle } from './SmartPuzzleRegistry';
-import { useEffect, useState } from 'react';
 import { RefreshControl, ScrollView, View } from 'react-native';
+import { useEffect, useState } from 'react';
 
 import ErrorDialog from '../ErrorDialog';
 import SmartPuzzleConnector from './SmartPuzzleConnector';
@@ -15,7 +15,18 @@ import { ensureScanningReady } from './permissions';
 import { scanForSmartPuzzles } from './scanner';
 import useErrorGuard from '../../hooks/useErrorGuard';
 
-const SmartPuzzleScanner = () => {
+interface SmartPuzzleScannerProps {
+  onSelectPuzzle?: (puzzle: BluetoothPuzzle) => void;
+  onDeselectPuzzle?: (puzzle: BluetoothPuzzle) => void;
+  isPuzzleSelectable?: (puzzle: BluetoothPuzzle) => boolean;
+  isPuzzleSelected?: (puzzle: BluetoothPuzzle) => boolean;
+}
+function SmartPuzzleScanner({
+  onSelectPuzzle,
+  onDeselectPuzzle,
+  isPuzzleSelectable,
+  isPuzzleSelected,
+}: SmartPuzzleScannerProps) {
   const { error, guard } = useErrorGuard(SmartPuzzleError);
   const [isScanActive, setIsScanActive] = useState(false);
   const [arePuzzlesRetrieved, setArePuzzlesRetrieved] = useState(false);
@@ -50,12 +61,19 @@ const SmartPuzzleScanner = () => {
           />
         }>
         {smartPuzzles.map(cube => (
-          <SmartPuzzleConnector key={cube.device.id} smartPuzzle={cube} />
+          <SmartPuzzleConnector
+            key={cube.device.id}
+            smartPuzzle={cube}
+            onSelectPuzzle={onSelectPuzzle}
+            onDeselectPuzzle={onDeselectPuzzle}
+            isPuzzleSelectable={isPuzzleSelectable}
+            isPuzzleSelected={isPuzzleSelected}
+          />
         ))}
       </ScrollView>
       <ErrorDialog error={error} />
     </View>
   );
-};
+}
 
 export default SmartPuzzleScanner;

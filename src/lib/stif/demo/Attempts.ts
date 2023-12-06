@@ -6,6 +6,7 @@
 
 import {
   EVENT_3x3x3,
+  EVENT_3x3x3_BLD_MULTI,
   EVENT_RELAY_234,
   EVENT_RELAY_2345,
   EVENT_RELAY_23456,
@@ -226,7 +227,7 @@ export const ATTEMPT_3x3x3_RECONSTRUCTED: STIF.Attempt = {
 };
 
 export const ATTEMPT_RELAY_234: STIF.Attempt = {
-  id: 'b9e74e18-cdb0-4a26-9d27-a9d611546741',
+  id: '5ef7b46d-ed9e-4234-9c42-20dbd13a3357',
   event: EVENT_RELAY_234,
   inspectionStart: 1693848712000,
   timerStart: 1693848721234,
@@ -379,4 +380,20 @@ export const ATTEMPT_RELAY_234567: STIF.Attempt = {
       reconstruction: [],
     },
   ],
+};
+
+export const ATTEMPT_3x3x3_MULTI_BLD_WR: STIF.Attempt = {
+  id: '41d4357b-ff3e-44d3-b984-328c466c9cf9',
+  event: EVENT_3x3x3_BLD_MULTI,
+  inspectionStart: 1693848712000,
+  timerStart: 1693848721234,
+  timerStop: 1693848732782,
+  comment: '',
+  infractions: [],
+  solutions: new Array(40).fill("placeholder").map((_value, idx) => ({
+    id: `afba4d94-c69c-48cb-ab74-f49e5387c${String(idx).padStart(3, '0')}`,
+    puzzle: PUZZLE_3x3x3,
+    scramble: "R U R' U' R' F R2 U' R' U' R U R' F'".split(' '),
+    reconstruction: [],
+  }))
 };

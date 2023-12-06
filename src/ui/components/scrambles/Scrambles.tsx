@@ -5,14 +5,10 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Algorithm from './Algorithm';
-import { STIF } from '../../../lib/stif';
+import { GeneratedScramble } from './types';
 import ScrambleTicker from './ScrambleTicker';
+import SingleScramble from './SingleScramble';
 
-export interface GeneratedScramble {
-  puzzle: STIF.Puzzle;
-  algorithm: STIF.Algorithm;
-  smartPuzzle?: STIF.SmartPuzzle;
-}
 export interface ScramblesProps {
   scrambles?: GeneratedScramble[];
   layoutHeightLimit?: number;
@@ -32,10 +28,11 @@ export default function Scrambles({
     );
   else if (scrambles.length === 1)
     return (
-      <Algorithm
-        algorithm={scrambles[0].algorithm}
+      <SingleScramble
+        scramble={scrambles[0]}
         layoutHeightLimit={layoutHeightLimit}
       />
     );
   else return <ScrambleTicker {...{ scrambles, layoutHeightLimit }} />;
 }
+

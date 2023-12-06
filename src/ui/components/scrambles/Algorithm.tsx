@@ -29,9 +29,9 @@ export default function Algorithm({
   const overflows = !!likelyOverflow || !!measuredOverflow;
   return (
     <>
-      <View>
+      <View style={{alignSelf: 'center'}}>
         {overflows ? (
-          <Button onPress={() => setShowDialog(true)}>
+          <Button mode="elevated" onPress={() => setShowDialog(true)}>
             {t('scramble.show')}
           </Button>
         ) : (

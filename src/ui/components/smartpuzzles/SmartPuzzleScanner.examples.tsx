@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { DevelopmentExampleSet } from '../../examples/types';
+import { PUZZLE_2x2x2 } from '../../../lib/stif/builtins';
 import SmartPuzzleScanner from './SmartPuzzleScanner';
 
 const examples: DevelopmentExampleSet = {
@@ -14,6 +15,21 @@ const examples: DevelopmentExampleSet = {
     {
       title: 'Default',
       component: <SmartPuzzleScanner />,
+    },
+    {
+      title: 'Selectable Puzzles',
+      component: <SmartPuzzleScanner onSelectPuzzle={console.log} />,
+    },
+    {
+      title: 'Selectable Puzzles (except 2x2x2)',
+      component: (
+        <SmartPuzzleScanner
+          onSelectPuzzle={console.log}
+          isPuzzleSelectable={smartPuzzle => {
+            return smartPuzzle.puzzle !== PUZZLE_2x2x2;
+          }}
+        />
+      ),
     },
   ],
 };

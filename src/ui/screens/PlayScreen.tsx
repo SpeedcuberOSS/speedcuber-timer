@@ -8,13 +8,21 @@ import { ATTEMPT_RELAY_234567 } from '../../lib/stif/demo';
 import { RootDrawerScreenProps } from '../navigation/types';
 import { SafeAreaView } from 'react-native';
 import ScramblingView from '../components/scrambles/ScramblingView';
+import { useState } from 'react';
 
 type Props = RootDrawerScreenProps<'Play'>;
 
 export default function PlayScreen(props: Props) {
+  const [count, setCount] = useState(0);
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScramblingView previousAttempt={ATTEMPT_RELAY_234567}/>
+      <ScramblingView
+        previousAttempt={ATTEMPT_RELAY_234567}
+        onPress={(scrambles) => {
+          setCount(count + 1);
+          console.log(scrambles, count, 'pressed');
+        }}
+      />
     </SafeAreaView>
   );
 }
