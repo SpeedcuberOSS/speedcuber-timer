@@ -35,7 +35,7 @@ export default function ScramblingView({
         contentWeight={2}
         contentStyle={{ justifyContent: 'center' }}
         sidebarWeight={3}
-        sidebarStyle={{ margin: 20 }}
+        sidebarStyle={{ marginHorizontal: 20 }}
         onLayoutAll={setLayouts}
         containerStyle={{ alignItems: 'center' }}>
         <Scrambles
