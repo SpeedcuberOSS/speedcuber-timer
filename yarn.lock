@@ -8321,10 +8321,10 @@ react-native-asset@^2.0.1:
     sha1-file "^1.0.4"
     xcode "^2.0.0"
 
-react-native-ble-manager@^10.1.5:
-  version "10.1.5"
-  resolved "https://registry.yarnpkg.com/react-native-ble-manager/-/react-native-ble-manager-10.1.5.tgz#c7b156db336fd554f6fb5100b70771cdb2114569"
-  integrity sha512-74qyH9IV81oY2J1ECul09M3Png7jTHPq74YG6VSa2I2Q/ZvU27NTNUu1DHYsk7Wwpexs+HJ1kAQWgJBaAM9IcQ==
+react-native-ble-manager@^11.0.5:
+  version "11.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-ble-manager/-/react-native-ble-manager-11.0.5.tgz#538ddf7b37188b4436a2e3b275e7c485c33926df"
+  integrity sha512-d8q6YEKyNkiygCy+qHa+N139UHRSWtbz7S+29mL0ZVjCSdzA6PRPsnSVDeRQJEVrWzP8ut2O6py57b6mPnBBFA==
 
 react-native-bootsplash@^4.7.2:
   version "4.7.4"

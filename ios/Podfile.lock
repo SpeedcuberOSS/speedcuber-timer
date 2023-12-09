@@ -333,7 +333,7 @@ PODS:
   - React-jsinspector (0.71.12)
   - React-logger (0.71.12):
     - glog
-  - react-native-ble-manager (10.1.5):
+  - react-native-ble-manager (11.0.5):
     - React-Core
   - react-native-charts-wrapper (0.5.11):
     - Charts (= 4.1.0)
@@ -733,7 +733,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 509cd947c28834614808ce056ee8eb700a0662aa
   React-jsinspector: ec4dcbfb1f4e72f04f826a0301eceee5fa7ca540
   React-logger: 35538accacf2583693fbc3ee8b53e69a1776fcee
-  react-native-ble-manager: 09724bad4d06b86a85e0cd7bd97196fecca15e9a
+  react-native-ble-manager: b8929ab67117f894e6537bb362eef7435e17ea7c
   react-native-charts-wrapper: 4461b72f48e737a490e968bf2468cc0fd2281681
   react-native-flipper: 9c1957af24b76493ba74f46d000a5c1d485e7731
   react-native-get-random-values: dee677497c6a740b71e5612e8dbd83e7539ed5bb
