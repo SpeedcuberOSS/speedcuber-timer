@@ -89,10 +89,7 @@ export default function PracticeView() {
               );
               const subscription = PuzzleRegistry.addMessageListener(
                 scramble.smartPuzzle,
-                message => {
-                  console.debug('Message received:', message);
-                  messages.addMessages([message]);
-                },
+                message => messages.addMessages([message]),
               );
               return { messages, messageSubscription: subscription };
             } else {
@@ -160,7 +157,7 @@ export default function PracticeView() {
       if (recording) {
         createRecording(attempt.solutions[idx].id, recording);
       }
-    })
+    });
   }
 
   return (
