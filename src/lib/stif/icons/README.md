@@ -84,6 +84,9 @@ other icon set bundled with `react-native-vector-icons`.
    ```bash
    fantasticon stif --output fonts --font-types eot woff2 woff ttf --name STIFIcon
    ```
+   <!-- ```bash
+   yarn run fantasticon src/lib/stif/icons/stif --output src/lib/stif/icons/font --font-types eot woff2 woff ttf --name STIFIcon
+   ``` -->
 
 ## LICENSE
 

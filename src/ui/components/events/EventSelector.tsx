@@ -11,7 +11,6 @@ import { Fragment, useCallback, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
-import { PUZZLE_3x3x3 } from '../../../lib/stif/builtins';
 import { STIF } from '../../../lib/stif';
 import Ticker from '../ticker/Ticker';
 import { useTranslation } from 'react-i18next';
@@ -27,14 +26,15 @@ interface EventItemProps {
 
 function EventItem({ event, onSelect }: EventItemProps) {
   const { t } = useTranslation();
-  const [mbfCount, setMbfCount] = useState(2);
+  const [multiCount, setMultiCount] = useState(2);
+  const isMultiEvent = () => ['333mbf', "333m", "222m"].includes(event.id)
   const pressHandler = useCallback(() => {
-    if (event.id === Events.EVENT_3x3x3_BLD_MULTI.id) {
-      onSelect({ ...event, puzzles: new Array(mbfCount).fill(PUZZLE_3x3x3) });
+    if (isMultiEvent()) {
+      onSelect({ ...event, puzzles: new Array(multiCount).fill(event.puzzles[0]) });
     } else {
       onSelect(event);
     }
-  }, [event, onSelect, mbfCount]);
+  }, [event, onSelect, multiCount]);
 
   return (
     <List.Item
@@ -42,13 +42,13 @@ function EventItem({ event, onSelect }: EventItemProps) {
       onPress={pressHandler}
       left={props => <List.Icon {...props} icon={Icons.STIF(`event-${event.id}`)} />}
       right={props =>
-        event.id === '333mbf' ? (
+        isMultiEvent() ? (
           <View style={{margin: -14}}>
             <Ticker
               initialValue={2}
               min={2}
               step={1}
-              onChange={value => setMbfCount(value)}
+              onChange={value => setMultiCount(value)}
               orientation="horizontal"
             />
           </View>

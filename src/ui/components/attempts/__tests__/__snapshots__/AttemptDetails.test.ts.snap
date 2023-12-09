@@ -84,7 +84,7 @@ exports[`Attempt Details [+2] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -1547,7 +1547,7 @@ exports[`Attempt Details [+2] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -1738,7 +1738,7 @@ exports[`Attempt Details [+4] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -3371,7 +3371,7 @@ exports[`Attempt Details [+4] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -3562,7 +3562,7 @@ exports[`Attempt Details [Long Comment] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -5323,7 +5323,7 @@ exports[`Attempt Details [Long Comment] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -5514,7 +5514,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -6907,7 +6907,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -7106,7 +7106,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -7305,7 +7305,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -7504,7 +7504,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -7703,7 +7703,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -7902,7 +7902,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -8101,7 +8101,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -8300,7 +8300,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -8499,7 +8499,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -8698,7 +8698,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -8897,7 +8897,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -9096,7 +9096,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -9295,7 +9295,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -9494,7 +9494,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -9693,7 +9693,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -9892,7 +9892,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -10091,7 +10091,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -10290,7 +10290,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -10489,7 +10489,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -10688,7 +10688,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -10887,7 +10887,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -11086,7 +11086,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -11285,7 +11285,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -11484,7 +11484,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -11683,7 +11683,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -11882,7 +11882,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -12081,7 +12081,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -12280,7 +12280,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -12479,7 +12479,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -12678,7 +12678,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -12877,7 +12877,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -13076,7 +13076,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -13275,7 +13275,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -13474,7 +13474,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -13673,7 +13673,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -13872,7 +13872,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -14071,7 +14071,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -14270,7 +14270,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -14469,7 +14469,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -14668,7 +14668,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -14867,7 +14867,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -15066,7 +15066,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -15265,7 +15265,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -15464,7 +15464,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -15663,7 +15663,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -15862,7 +15862,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -16061,7 +16061,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -16260,7 +16260,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -16459,7 +16459,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -16658,7 +16658,7 @@ exports[`Attempt Details [Multi-BLD] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -16849,7 +16849,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -18441,7 +18441,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -18640,7 +18640,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -18839,7 +18839,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -19038,7 +19038,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -19237,7 +19237,7 @@ exports[`Attempt Details [Relay 2-7] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -19428,7 +19428,7 @@ exports[`Attempt Details [Typical] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -20821,7 +20821,7 @@ exports[`Attempt Details [Typical] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -21012,7 +21012,7 @@ exports[`Attempt Details [with DNF] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -22475,7 +22475,7 @@ exports[`Attempt Details [with DNF] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -22666,7 +22666,7 @@ exports[`Attempt Details [with DNS] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -24129,7 +24129,7 @@ exports[`Attempt Details [with DNS] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -24320,7 +24320,7 @@ exports[`Attempt Details [with Reconstruction] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -26263,7 +26263,7 @@ exports[`Attempt Details [with Reconstruction] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -26490,7 +26490,7 @@ exports[`Attempt Details [with TPS handler] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -28471,7 +28471,7 @@ exports[`Attempt Details [with TPS handler] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -28698,7 +28698,7 @@ exports[`Attempt Details [with deletion handler] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -30641,7 +30641,7 @@ exports[`Attempt Details [with deletion handler] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View
@@ -31260,7 +31260,7 @@ exports[`Attempt Details [with move count handler] matches snapshot 1`] = `
                 ]
               }
             >
-              
+              
             </Text>
             <Text
               style={
@@ -33241,7 +33241,7 @@ exports[`Attempt Details [with move count handler] matches snapshot 1`] = `
                         ]
                       }
                     >
-                      
+                      
                     </Text>
                   </View>
                   <View

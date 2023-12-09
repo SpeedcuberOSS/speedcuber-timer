@@ -132,9 +132,19 @@ export const EVENT_2x2x2_BLD: STIF.CompetitiveEvent = Object.freeze({
   puzzles: [PUZZLE_2x2x2],
   type: 'unofficial',
 });
+export const EVENT_2x2x2_MULTI: STIF.CompetitiveEvent = Object.freeze({
+  id: '222m',
+  puzzles: [PUZZLE_2x2x2, PUZZLE_2x2x2],
+  type: 'unofficial',
+});
 export const EVENT_3x3x3_BLD_TEAM: STIF.CompetitiveEvent = Object.freeze({
   id: '333bf-team',
   puzzles: [PUZZLE_3x3x3],
+  type: 'unofficial',
+});
+export const EVENT_3x3x3_MULTI: STIF.CompetitiveEvent = Object.freeze({
+  id: '333m',
+  puzzles: [PUZZLE_3x3x3, PUZZLE_3x3x3],
   type: 'unofficial',
 });
 export const EVENT_6x6x6_BLD: STIF.CompetitiveEvent = Object.freeze({

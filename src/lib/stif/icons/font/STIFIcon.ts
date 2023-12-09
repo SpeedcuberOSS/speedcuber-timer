@@ -2,6 +2,7 @@ export type StifIconId =
   | "event-111"
   | "event-222"
   | "event-222bf"
+  | "event-222m"
   | "event-234567relay"
   | "event-23456relay"
   | "event-2345relay"
@@ -10,6 +11,7 @@ export type StifIconId =
   | "event-333bf"
   | "event-333fm"
   | "event-333ft"
+  | "event-333m"
   | "event-333mbf"
   | "event-333mbo"
   | "event-333mts"
@@ -53,6 +55,7 @@ export type StifIconKey =
   | "Event_111"
   | "Event_222"
   | "Event_222bf"
+  | "Event_222m"
   | "Event_234567relay"
   | "Event_23456relay"
   | "Event_2345relay"
@@ -61,6 +64,7 @@ export type StifIconKey =
   | "Event_333bf"
   | "Event_333fm"
   | "Event_333ft"
+  | "Event_333m"
   | "Event_333mbf"
   | "Event_333mbo"
   | "Event_333mts"
@@ -104,6 +108,7 @@ export enum StifIcon {
   Event_111 = "event-111",
   Event_222 = "event-222",
   Event_222bf = "event-222bf",
+  Event_222m = "event-222m",
   Event_234567relay = "event-234567relay",
   Event_23456relay = "event-23456relay",
   Event_2345relay = "event-2345relay",
@@ -112,6 +117,7 @@ export enum StifIcon {
   Event_333bf = "event-333bf",
   Event_333fm = "event-333fm",
   Event_333ft = "event-333ft",
+  Event_333m = "event-333m",
   Event_333mbf = "event-333mbf",
   Event_333mbo = "event-333mbo",
   Event_333mts = "event-333mts",
@@ -156,50 +162,52 @@ export const STIF_ICON_CODEPOINTS: { [key in StifIcon]: string } = {
   [StifIcon.Event_111]: "61697",
   [StifIcon.Event_222]: "61698",
   [StifIcon.Event_222bf]: "61699",
-  [StifIcon.Event_234567relay]: "61700",
-  [StifIcon.Event_23456relay]: "61701",
-  [StifIcon.Event_2345relay]: "61702",
-  [StifIcon.Event_234relay]: "61703",
-  [StifIcon.Event_333]: "61704",
-  [StifIcon.Event_333bf]: "61705",
-  [StifIcon.Event_333fm]: "61706",
-  [StifIcon.Event_333ft]: "61707",
-  [StifIcon.Event_333mbf]: "61708",
-  [StifIcon.Event_333mbo]: "61709",
-  [StifIcon.Event_333mts]: "61710",
-  [StifIcon.Event_333oh]: "61711",
-  [StifIcon.Event_444]: "61712",
-  [StifIcon.Event_444bf]: "61713",
-  [StifIcon.Event_555]: "61714",
-  [StifIcon.Event_555bf]: "61715",
-  [StifIcon.Event_666]: "61716",
-  [StifIcon.Event_666bf]: "61717",
-  [StifIcon.Event_777]: "61718",
-  [StifIcon.Event_777bf]: "61719",
-  [StifIcon.EventClock]: "61720",
-  [StifIcon.EventCurvycopter]: "61721",
-  [StifIcon.EventFisher]: "61722",
-  [StifIcon.EventFto]: "61723",
-  [StifIcon.EventHelicopter]: "61724",
-  [StifIcon.EventKilominx]: "61725",
-  [StifIcon.EventMagic]: "61726",
-  [StifIcon.EventMiniguild]: "61727",
-  [StifIcon.EventMinx]: "61728",
-  [StifIcon.EventMmagic]: "61729",
-  [StifIcon.EventMpyram]: "61730",
-  [StifIcon.EventMskewb]: "61731",
-  [StifIcon.EventMtetram]: "61732",
-  [StifIcon.EventPyram]: "61733",
-  [StifIcon.EventPyramorphix]: "61734",
-  [StifIcon.EventRedi]: "61735",
-  [StifIcon.EventSkewb]: "61736",
-  [StifIcon.EventSq1]: "61737",
-  [StifIcon.Infraction_10e3]: "61738",
-  [StifIcon.InfractionA3d1]: "61739",
-  [StifIcon.InfractionA4b]: "61740",
-  [StifIcon.InfractionA4b1]: "61741",
-  [StifIcon.InfractionA4d1]: "61742",
-  [StifIcon.InfractionA6c]: "61743",
-  [StifIcon.InfractionA6d]: "61744",
-  [StifIcon.InfractionA6e]: "61745",
+  [StifIcon.Event_222m]: "61700",
+  [StifIcon.Event_234567relay]: "61701",
+  [StifIcon.Event_23456relay]: "61702",
+  [StifIcon.Event_2345relay]: "61703",
+  [StifIcon.Event_234relay]: "61704",
+  [StifIcon.Event_333]: "61705",
+  [StifIcon.Event_333bf]: "61706",
+  [StifIcon.Event_333fm]: "61707",
+  [StifIcon.Event_333ft]: "61708",
+  [StifIcon.Event_333m]: "61709",
+  [StifIcon.Event_333mbf]: "61710",
+  [StifIcon.Event_333mbo]: "61711",
+  [StifIcon.Event_333mts]: "61712",
+  [StifIcon.Event_333oh]: "61713",
+  [StifIcon.Event_444]: "61714",
+  [StifIcon.Event_444bf]: "61715",
+  [StifIcon.Event_555]: "61716",
+  [StifIcon.Event_555bf]: "61717",
+  [StifIcon.Event_666]: "61718",
+  [StifIcon.Event_666bf]: "61719",
+  [StifIcon.Event_777]: "61720",
+  [StifIcon.Event_777bf]: "61721",
+  [StifIcon.EventClock]: "61722",
+  [StifIcon.EventCurvycopter]: "61723",
+  [StifIcon.EventFisher]: "61724",
+  [StifIcon.EventFto]: "61725",
+  [StifIcon.EventHelicopter]: "61726",
+  [StifIcon.EventKilominx]: "61727",
+  [StifIcon.EventMagic]: "61728",
+  [StifIcon.EventMiniguild]: "61729",
+  [StifIcon.EventMinx]: "61730",
+  [StifIcon.EventMmagic]: "61731",
+  [StifIcon.EventMpyram]: "61732",
+  [StifIcon.EventMskewb]: "61733",
+  [StifIcon.EventMtetram]: "61734",
+  [StifIcon.EventPyram]: "61735",
+  [StifIcon.EventPyramorphix]: "61736",
+  [StifIcon.EventRedi]: "61737",
+  [StifIcon.EventSkewb]: "61738",
+  [StifIcon.EventSq1]: "61739",
+  [StifIcon.Infraction_10e3]: "61740",
+  [StifIcon.InfractionA3d1]: "61741",
+  [StifIcon.InfractionA4b]: "61742",
+  [StifIcon.InfractionA4b1]: "61743",
+  [StifIcon.InfractionA4d1]: "61744",
+  [StifIcon.InfractionA6c]: "61745",
+  [StifIcon.InfractionA6d]: "61746",
+  [StifIcon.InfractionA6e]: "61747",
 };
