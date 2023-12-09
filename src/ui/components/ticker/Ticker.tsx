@@ -6,9 +6,9 @@
 
 import { IconButton, Text } from 'react-native-paper';
 import { TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import { useEffect, useState } from 'react';
 
 import Icons from '../../icons/iconHelper';
-import { useState } from 'react';
 
 type Direction = 'horizontal' | 'vertical';
 type TickEffect = 'increment' | 'decrement';
@@ -76,9 +76,9 @@ export default function Ticker({
   orientation = 'vertical',
   iconOrientation = 'vertical',
 }: TickerProps) {
-  const [value, setValue] = useState(
-    Math.min(max, Math.max(min, initialValue)),
-  );
+  const init = Math.min(max, Math.max(min, initialValue));
+  const [value, setValue] = useState(init);
+  useEffect(() => setValue(init), [initialValue]);
   const handleTick = (value: number) => {
     setValue(value);
     onChange(value);

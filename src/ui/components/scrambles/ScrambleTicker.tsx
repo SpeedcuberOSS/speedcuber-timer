@@ -4,13 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { useEffect, useState } from 'react';
+
 import Algorithm from './Algorithm';
 import ScrambleHeader from './ScrambleHeader';
 import { ScramblesProps } from './Scrambles';
 import SmartPuzzleSelectorModal from '../smartpuzzles/SmartPuzzleSelectorModal';
 import Ticker from '../ticker/Ticker';
 import { View } from 'react-native';
-import { useState } from 'react';
 
 interface ScrambleTickerProps extends ScramblesProps {}
 
@@ -19,6 +20,7 @@ export default function ScrambleTicker({
   layoutHeightLimit,
 }: ScrambleTickerProps) {
   const [idx, setIdx] = useState(0);
+  useEffect(() => setIdx(0), [scrambles]);
   const [tickerHeight, setTickerHeight] = useState(0);
   const [showSmartPuzzleSelector, setShowSmartPuzzleSelector] = useState(false);
   function mapToHeader(idx: number) {
@@ -39,6 +41,7 @@ export default function ScrambleTicker({
         onLayout={event => setTickerHeight(event.nativeEvent.layout.height)}>
         <Ticker
           min={0}
+          initialValue={idx}
           max={Math.max(scrambles.length - 1, 0)}
           orientation="horizontal"
           onChange={setIdx}
