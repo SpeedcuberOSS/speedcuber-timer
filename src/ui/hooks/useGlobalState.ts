@@ -5,10 +5,12 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { EVENT_3x3x3 } from '../../lib/stif/builtins';
+import { GeneratedScramble } from '../components/scrambles/types';
 import { createGlobalState } from 'react-hooks-global-state';
 
 const { useGlobalState } = createGlobalState({
   competitiveEvent: EVENT_3x3x3,
+  scrambles: [] as GeneratedScramble[],
 });
 
 export { useGlobalState };

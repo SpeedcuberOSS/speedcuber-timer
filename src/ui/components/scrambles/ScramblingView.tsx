@@ -8,14 +8,14 @@ import CenteredBetweenSidebars, {
   LayoutAllEvent,
 } from '../../layouts/CenteredBetweenSidebars';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useEffect, useState } from 'react';
 
 import { Attempt } from '../../../lib/stif/wrappers';
 import AttemptTime from '../attempts/AttemptTime';
 import { GeneratedScramble } from './types';
 import { STIF } from '../../../lib/stif';
 import Scrambles from './Scrambles';
-import { getScrambler } from '../../../lib/scrambles/mandy';
+import { useScrambles } from '../../hooks/useScrambles';
+import { useState } from 'react';
 
 interface ScramblingViewProps {
   previousAttempt: STIF.Attempt;
@@ -47,24 +47,6 @@ export default function ScramblingView({
       </CenteredBetweenSidebars>
     </Pressable>
   );
-}
-
-/**
- * Generates scrambles for the given `event` every time the `key` changes.
- */
-function useScrambles(event: STIF.CompetitiveEvent, key: string) {
-  const [scrambles, setScrambles] = useState<GeneratedScramble[]>([]);
-  useEffect(() => {
-    const scrambles = event.puzzles.map(
-      puzzle =>
-        ({
-          puzzle,
-          algorithm: getScrambler(puzzle).generateScramble(),
-        } as GeneratedScramble),
-    );
-    setScrambles(scrambles);
-  }, [key]);
-  return scrambles;
 }
 
 const styles = StyleSheet.create({
