@@ -124,19 +124,25 @@ async function connect(puzzle: BluetoothPuzzle): Promise<void> {
       if (!(await BLE.isEnabled())) {
         throw "Bluetooth is off. Please enable it and try again."
       }
+
       await BLE.Manager.connect(puzzle.device.id);
       const subscription = BLE.Events.addListener(
         'BleManagerDisconnectPeripheral',
         onDisconnect,
       );
+
       const entry = PUZZLE_REGISTRY.get(puzzle.device.id);
       if (entry) {
         resetEntry(entry);
         entry.subscriptions.push(subscription);
       }
+
+      await discoverServices(puzzle);
       await configureNotifications(puzzle);
+
       _lastConnectedPuzzle = puzzle;
     } catch (error) {
+      console.error(error);
       throw new SmartPuzzleError(
         SmartPuzzleErrorCode.PUZZLE_CONNECTION_FAILED,
         t('bluetooth.connect_error', {
@@ -152,18 +158,42 @@ async function connect(puzzle: BluetoothPuzzle): Promise<void> {
   }
 }
 
-async function configureNotifications(puzzle: BluetoothPuzzle) {
+async function discoverServices(puzzle: BluetoothPuzzle) {
   await BLE.Manager.retrieveServices(puzzle.device.id);
+  if (__DEV__) {
+    const services = await BLE.Manager.retrieveServices(puzzle.device.id);
+    console.debug(puzzle.device.name, 'services:', services)
+  }
+}
+
+async function configureNotifications(puzzle: BluetoothPuzzle) {
   const subscription = BLE.Events.addListener(
     'BleManagerDidUpdateValueForCharacteristic',
     onReceiveNotification(puzzle),
   );
   await BLE.Manager.startNotification(
     puzzle.device.id,
-    puzzle.uuids.trackingService,
-    puzzle.uuids.trackingCharacteristic,
+    compressUUID(puzzle.uuids.trackingService),
+    compressUUID(puzzle.uuids.trackingCharacteristic),
   );
   PUZZLE_REGISTRY.get(puzzle.device.id)?.subscriptions.push(subscription);
+}
+
+function compressUUID(uuid: string): string {
+  // Bluetooth 4.0 specification, Volume 3, Part F, Section 3.2.1
+  // https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=456433
+
+  // Required since react-native-ble-manager needs short UUIDs on iOS,
+  // so I need to be able to compare them to the full UUIDs in STIF.
+  // CBUUID (iOS):
+  // https://developer.apple.com/documentation/corebluetooth/cbuuid
+  // Source: https://github.com/innoveit/react-native-ble-manager/blob/f46dd5c303ea0e70a44e299fb1ebabff86da9edd/ios/BleManager.swift#L381-L385
+  const baseUUID = /0000(....)-0000-1000-8000-00805F9B34FB/;
+  if (baseUUID.test(uuid.toUpperCase())) {
+    return uuid.substring(4, 8);
+  } else {
+    return uuid;
+  }
 }
 
 function onReceiveNotification(puzzle: BluetoothPuzzle) {
