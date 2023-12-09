@@ -108,7 +108,6 @@ function SmartPuzzleCard({
       onDeselect();
     }
   }, [connectionStatus, onDisconnect, onDeselect]);
-  console.log(canSelect, onSelect, canSelect || !onSelect)
   const puzzleIconStyle = {
     size: 24,
     color:
