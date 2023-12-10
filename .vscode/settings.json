@@ -57,4 +57,5 @@
     "*.examples.tsx": "lib"
   },
   "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "disabled",
 }
