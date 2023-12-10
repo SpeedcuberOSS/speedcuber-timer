@@ -2090,7 +2090,7 @@ exports[`Attempts Chart [Ao50, Ao100] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "form": "CIRCLE",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         style={
@@ -2102,14 +2102,14 @@ exports[`Attempts Chart [Ao50, Ao100] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "position": "BOTTOM",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         yAxis={
           {
             "left": {
               "fontFamily": "Rubik",
-              "textColor": 4280032031,
+              "textColor": 4279901208,
             },
             "right": {
               "enabled": false,
@@ -4216,7 +4216,7 @@ exports[`Attempts Chart [Ao100, Ao1000] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "form": "CIRCLE",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         style={
@@ -4228,14 +4228,14 @@ exports[`Attempts Chart [Ao100, Ao1000] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "position": "BOTTOM",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         yAxis={
           {
             "left": {
               "fontFamily": "Rubik",
-              "textColor": 4280032031,
+              "textColor": 4279901208,
             },
             "right": {
               "enabled": false,
@@ -6287,11 +6287,11 @@ exports[`Attempts Chart [Default] matches snapshot 1`] = `
               "dataSets": [
                 {
                   "config": {
-                    "color": 3211219108,
+                    "color": 4278218240,
                     "scatterShape": "CIRCLE",
                     "scatterShapeHoleRadius": 2,
                     "scatterShapeSize": 5,
-                    "valueTextColor": 4280032031,
+                    "valueTextColor": 4279901208,
                   },
                   "label": "analytics.duration",
                   "values": [
@@ -6561,7 +6561,7 @@ exports[`Attempts Chart [Default] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "form": "CIRCLE",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         style={
@@ -6573,14 +6573,14 @@ exports[`Attempts Chart [Default] matches snapshot 1`] = `
           {
             "fontFamily": "Rubik",
             "position": "BOTTOM",
-            "textColor": 4280032031,
+            "textColor": 4279901208,
           }
         }
         yAxis={
           {
             "left": {
               "fontFamily": "Rubik",
-              "textColor": 4280032031,
+              "textColor": 4279901208,
             },
             "right": {
               "enabled": false,
@@ -6630,7 +6630,7 @@ exports[`Attempts Chart [Empty] matches snapshot 1`] = `
               "textAlign": "left",
             },
             {
-              "color": "rgba(28, 27, 31, 1)",
+              "color": "rgb(26, 28, 24)",
               "fontFamily": "Rubik-Regular",
               "fontWeight": "400",
               "letterSpacing": 0,
@@ -6653,7 +6653,7 @@ exports[`Attempts Chart [Empty] matches snapshot 1`] = `
               "textAlign": "left",
             },
             {
-              "color": "rgba(28, 27, 31, 1)",
+              "color": "rgb(26, 28, 24)",
               "fontFamily": "Rubik-Regular",
               "fontWeight": "400",
               "letterSpacing": 0,

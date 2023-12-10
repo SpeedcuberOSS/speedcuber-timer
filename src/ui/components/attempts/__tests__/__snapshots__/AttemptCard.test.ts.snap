@@ -25,7 +25,7 @@ exports[`Attempt Card [+2] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -43,7 +43,7 @@ exports[`Attempt Card [+2] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -122,7 +122,7 @@ exports[`Attempt Card [+2] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -157,7 +157,7 @@ exports[`Attempt Card [+2] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -217,7 +217,7 @@ exports[`Attempt Card [+4] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -235,7 +235,7 @@ exports[`Attempt Card [+4] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -314,7 +314,7 @@ exports[`Attempt Card [+4] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -349,7 +349,7 @@ exports[`Attempt Card [+4] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -409,7 +409,7 @@ exports[`Attempt Card [DNF] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -427,7 +427,7 @@ exports[`Attempt Card [DNF] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -506,7 +506,7 @@ exports[`Attempt Card [DNF] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -541,7 +541,7 @@ exports[`Attempt Card [DNF] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -601,7 +601,7 @@ exports[`Attempt Card [DNS] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -619,7 +619,7 @@ exports[`Attempt Card [DNS] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -698,7 +698,7 @@ exports[`Attempt Card [DNS] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -733,7 +733,7 @@ exports[`Attempt Card [DNS] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -793,7 +793,7 @@ exports[`Attempt Card [Hour Long] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -811,7 +811,7 @@ exports[`Attempt Card [Hour Long] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -890,7 +890,7 @@ exports[`Attempt Card [Hour Long] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -925,7 +925,7 @@ exports[`Attempt Card [Hour Long] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -985,7 +985,7 @@ exports[`Attempt Card [Minute Long] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -1003,7 +1003,7 @@ exports[`Attempt Card [Minute Long] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1082,7 +1082,7 @@ exports[`Attempt Card [Minute Long] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1117,7 +1117,7 @@ exports[`Attempt Card [Minute Long] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1177,7 +1177,7 @@ exports[`Attempt Card [Multi-BLD] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -1195,7 +1195,7 @@ exports[`Attempt Card [Multi-BLD] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1274,7 +1274,7 @@ exports[`Attempt Card [Multi-BLD] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1309,7 +1309,7 @@ exports[`Attempt Card [Multi-BLD] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1369,7 +1369,7 @@ exports[`Attempt Card [Relay 2-7] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -1387,7 +1387,7 @@ exports[`Attempt Card [Relay 2-7] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1466,7 +1466,7 @@ exports[`Attempt Card [Relay 2-7] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1501,7 +1501,7 @@ exports[`Attempt Card [Relay 2-7] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1561,7 +1561,7 @@ exports[`Attempt Card [Typical] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -1579,7 +1579,7 @@ exports[`Attempt Card [Typical] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1658,7 +1658,7 @@ exports[`Attempt Card [Typical] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1693,7 +1693,7 @@ exports[`Attempt Card [Typical] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1753,7 +1753,7 @@ exports[`Attempt Card [with Reconstruction] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "margin": 10,
           "shadowColor": "#000",
@@ -1771,7 +1771,7 @@ exports[`Attempt Card [with Reconstruction] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1850,7 +1850,7 @@ exports[`Attempt Card [with Reconstruction] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1885,7 +1885,7 @@ exports[`Attempt Card [with Reconstruction] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [

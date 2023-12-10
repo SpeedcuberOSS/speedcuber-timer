@@ -37,7 +37,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               "textAlign": "left",
             },
             {
-              "color": "rgba(28, 27, 31, 1)",
+              "color": "rgb(26, 28, 24)",
               "writingDirection": "ltr",
             },
             [
@@ -65,9 +65,9 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
         disabled={false}
         inverted={false}
         lowerLimit={-9007199254740991}
-        maximumTrackTintColor="rgba(28, 27, 31, 1)"
+        maximumTrackTintColor="rgb(26, 28, 24)"
         maximumValue={15000}
-        minimumTrackTintColor="rgba(103, 80, 164, 1)"
+        minimumTrackTintColor="rgb(0, 110, 0)"
         minimumValue={0}
         onChange={[Function]}
         onRNCSliderAccessibilityAction={null}
@@ -88,7 +88,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
           ]
         }
         tapToSeek={false}
-        thumbTintColor="rgba(103, 80, 164, 1)"
+        thumbTintColor="rgb(0, 110, 0)"
         upperLimit={9007199254740991}
         value={0}
       />
@@ -99,7 +99,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               "textAlign": "left",
             },
             {
-              "color": "rgba(28, 27, 31, 1)",
+              "color": "rgb(26, 28, 24)",
               "writingDirection": "ltr",
             },
             [
@@ -193,7 +193,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -277,7 +277,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -320,7 +320,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -404,7 +404,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -447,7 +447,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -564,7 +564,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                       style={
                         [
                           {
-                            "color": "rgba(73, 69, 79, 1)",
+                            "color": "rgb(67, 72, 63)",
                             "fontSize": 24,
                           },
                           undefined,
@@ -609,7 +609,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -693,7 +693,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -736,7 +736,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -820,7 +820,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -897,7 +897,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                   "textAlign": "left",
                 },
                 {
-                  "color": "rgba(28, 27, 31, 1)",
+                  "color": "rgb(26, 28, 24)",
                   "writingDirection": "ltr",
                 },
                 [
@@ -909,7 +909,7 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                     "lineHeight": 16,
                   },
                   {
-                    "color": "rgba(103, 80, 164, 1)",
+                    "color": "rgb(0, 110, 0)",
                   },
                 ],
               ]

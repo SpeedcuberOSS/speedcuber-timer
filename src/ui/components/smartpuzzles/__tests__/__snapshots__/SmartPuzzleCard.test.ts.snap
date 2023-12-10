@@ -32,7 +32,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "marginHorizontal": 8,
             "marginTop": 8,
@@ -51,7 +51,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
           collapsable={false}
           style={
             {
-              "backgroundColor": "rgba(247, 243, 249, 1)",
+              "backgroundColor": "rgba(239, 246, 234, 1)",
               "borderRadius": 6,
               "elevation": 1,
               "flex": undefined,
@@ -132,7 +132,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -167,7 +167,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                         "textAlign": "left",
                       },
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "writingDirection": "ltr",
                       },
                       [
@@ -187,7 +187,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                             "marginBottom": 0,
                           },
                           {
-                            "color": "rgba(28, 27, 31, 1)",
+                            "color": "rgb(26, 28, 24)",
                           },
                         ],
                       ],
@@ -204,7 +204,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                         "textAlign": "left",
                       },
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "writingDirection": "ltr",
                       },
                       [
@@ -222,7 +222,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                             "paddingRight": 16,
                           },
                           {
-                            "color": "rgba(28, 27, 31, 1)",
+                            "color": "rgb(26, 28, 24)",
                           },
                         ],
                       ],
@@ -253,7 +253,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                     style={
                       [
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                           "fontSize": 24,
                         },
                         undefined,
@@ -274,14 +274,14 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                     onChange={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                    onTintColor="rgba(103, 80, 164, 1)"
+                    onTintColor="rgb(0, 110, 0)"
                     style={
                       {
                         "height": 31,
                         "width": 51,
                       }
                     }
-                    tintColor="rgba(103, 80, 164, 1)"
+                    tintColor="rgb(0, 110, 0)"
                     value={false}
                   />
                   <Text
@@ -290,7 +290,7 @@ exports[`Smart Puzzle Card [Compact] matches snapshot 1`] = `
                     style={
                       [
                         {
-                          "color": "rgba(28, 27, 31, 0.38)",
+                          "color": "rgba(26, 28, 24, 0.38)",
                           "fontSize": 24,
                         },
                         undefined,
@@ -341,7 +341,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -360,7 +360,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -441,7 +441,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -476,7 +476,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -496,7 +496,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -513,7 +513,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -531,7 +531,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -562,7 +562,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -583,14 +583,14 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={true}
                 />
                 <Text
@@ -599,7 +599,7 @@ exports[`Smart Puzzle Card [Connected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -649,7 +649,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -668,7 +668,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -749,7 +749,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -784,7 +784,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -804,7 +804,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -821,7 +821,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -839,7 +839,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -870,7 +870,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -891,14 +891,14 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -907,7 +907,7 @@ exports[`Smart Puzzle Card [Connecting] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -957,7 +957,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -976,7 +976,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1057,7 +1057,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -1092,7 +1092,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1112,7 +1112,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1129,7 +1129,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1147,7 +1147,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1178,7 +1178,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1199,14 +1199,14 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -1215,7 +1215,7 @@ exports[`Smart Puzzle Card [Default] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1265,7 +1265,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -1284,7 +1284,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1365,7 +1365,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -1400,7 +1400,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1420,7 +1420,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1437,7 +1437,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1455,7 +1455,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1486,7 +1486,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1507,14 +1507,14 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -1523,7 +1523,7 @@ exports[`Smart Puzzle Card [Disconnected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1573,7 +1573,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -1592,7 +1592,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1673,7 +1673,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -1708,7 +1708,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1728,7 +1728,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1745,7 +1745,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -1763,7 +1763,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -1794,7 +1794,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1815,14 +1815,14 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -1831,7 +1831,7 @@ exports[`Smart Puzzle Card [Failed] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(179, 38, 30, 1)",
+                        "color": "rgb(186, 26, 26)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -1881,7 +1881,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -1900,7 +1900,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -1981,7 +1981,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -2016,7 +2016,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2036,7 +2036,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2053,7 +2053,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2071,7 +2071,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2102,7 +2102,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2123,14 +2123,14 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -2139,7 +2139,7 @@ exports[`Smart Puzzle Card [GiiKER i2] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2189,7 +2189,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -2208,7 +2208,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -2289,7 +2289,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -2324,7 +2324,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2344,7 +2344,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2361,7 +2361,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2379,7 +2379,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2410,7 +2410,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2431,14 +2431,14 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -2447,7 +2447,7 @@ exports[`Smart Puzzle Card [Interactive (Failure)] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2497,7 +2497,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -2516,7 +2516,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -2597,7 +2597,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -2632,7 +2632,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2652,7 +2652,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2669,7 +2669,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2687,7 +2687,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2718,7 +2718,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2739,14 +2739,14 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -2755,7 +2755,7 @@ exports[`Smart Puzzle Card [Interactive (Success)] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -2805,7 +2805,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -2824,7 +2824,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -2905,7 +2905,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -2940,7 +2940,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2960,7 +2960,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -2977,7 +2977,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -2995,7 +2995,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -3026,7 +3026,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3047,14 +3047,14 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -3063,7 +3063,7 @@ exports[`Smart Puzzle Card [Rubik's Connected] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3113,7 +3113,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -3132,7 +3132,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -3213,7 +3213,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -3248,7 +3248,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -3268,7 +3268,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -3285,7 +3285,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -3303,7 +3303,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -3334,7 +3334,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3355,14 +3355,14 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -3371,7 +3371,7 @@ exports[`Smart Puzzle Card [Super long brand name] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3421,7 +3421,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
       collapsable={false}
       style={
         {
-          "backgroundColor": "rgba(247, 243, 249, 1)",
+          "backgroundColor": "rgba(239, 246, 234, 1)",
           "borderRadius": 6,
           "marginHorizontal": 8,
           "marginTop": 8,
@@ -3440,7 +3440,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
         collapsable={false}
         style={
           {
-            "backgroundColor": "rgba(247, 243, 249, 1)",
+            "backgroundColor": "rgba(239, 246, 234, 1)",
             "borderRadius": 6,
             "elevation": 1,
             "flex": undefined,
@@ -3521,7 +3521,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -3556,7 +3556,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -3576,7 +3576,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                           "marginBottom": 0,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -3593,7 +3593,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                       "textAlign": "left",
                     },
                     {
-                      "color": "rgba(28, 27, 31, 1)",
+                      "color": "rgb(26, 28, 24)",
                       "writingDirection": "ltr",
                     },
                     [
@@ -3611,7 +3611,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                           "paddingRight": 16,
                         },
                         {
-                          "color": "rgba(28, 27, 31, 1)",
+                          "color": "rgb(26, 28, 24)",
                         },
                       ],
                     ],
@@ -3642,7 +3642,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 1)",
+                        "color": "rgb(26, 28, 24)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3663,14 +3663,14 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                   onChange={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
-                  onTintColor="rgba(103, 80, 164, 1)"
+                  onTintColor="rgb(0, 110, 0)"
                   style={
                     {
                       "height": 31,
                       "width": 51,
                     }
                   }
-                  tintColor="rgba(103, 80, 164, 1)"
+                  tintColor="rgb(0, 110, 0)"
                   value={false}
                 />
                 <Text
@@ -3679,7 +3679,7 @@ exports[`Smart Puzzle Card [Unsupported Puzzle Type] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(28, 27, 31, 0.38)",
+                        "color": "rgba(26, 28, 24, 0.38)",
                         "fontSize": 24,
                       },
                       undefined,

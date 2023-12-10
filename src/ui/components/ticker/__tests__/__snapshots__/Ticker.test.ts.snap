@@ -81,7 +81,7 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
             style={
               {
                 "backgroundColor": "transparent",
-                "borderColor": "rgba(121, 116, 126, 1)",
+                "borderColor": "rgb(115, 121, 110)",
                 "borderRadius": 20,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -165,7 +165,7 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(73, 69, 79, 1)",
+                      "color": "rgb(67, 72, 63)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -193,7 +193,7 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
                   "textAlign": "left",
                 },
                 {
-                  "color": "rgba(28, 27, 31, 1)",
+                  "color": "rgb(26, 28, 24)",
                   "fontFamily": "Rubik-Regular",
                   "fontWeight": "400",
                   "letterSpacing": 0,
@@ -240,7 +240,7 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
             style={
               {
                 "backgroundColor": "transparent",
-                "borderColor": "rgba(121, 116, 126, 1)",
+                "borderColor": "rgb(115, 121, 110)",
                 "borderRadius": 20,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -324,7 +324,7 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
                 style={
                   [
                     {
-                      "color": "rgba(73, 69, 79, 1)",
+                      "color": "rgb(67, 72, 63)",
                       "fontSize": 24,
                     },
                     undefined,
@@ -506,7 +506,7 @@ exports[`Ticker [Custom Styles] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -538,7 +538,7 @@ exports[`Ticker [Custom Styles] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -669,7 +669,7 @@ exports[`Ticker [Custom Styles] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -766,7 +766,7 @@ exports[`Ticker [Default] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -850,7 +850,7 @@ exports[`Ticker [Default] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -878,7 +878,7 @@ exports[`Ticker [Default] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -925,7 +925,7 @@ exports[`Ticker [Default] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1009,7 +1009,7 @@ exports[`Ticker [Default] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1106,7 +1106,7 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1190,7 +1190,7 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1218,7 +1218,7 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -1265,7 +1265,7 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1349,7 +1349,7 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1446,7 +1446,7 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1530,7 +1530,7 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1558,7 +1558,7 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -1605,7 +1605,7 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1689,7 +1689,7 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1786,7 +1786,7 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -1870,7 +1870,7 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -1898,7 +1898,7 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -1945,7 +1945,7 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2029,7 +2029,7 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2126,7 +2126,7 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2210,7 +2210,7 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2238,7 +2238,7 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -2285,7 +2285,7 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2369,7 +2369,7 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2466,7 +2466,7 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2550,7 +2550,7 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2578,7 +2578,7 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -2625,7 +2625,7 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2709,7 +2709,7 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2806,7 +2806,7 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -2890,7 +2890,7 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -2918,7 +2918,7 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -2965,7 +2965,7 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -3054,7 +3054,7 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -3151,7 +3151,7 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -3240,7 +3240,7 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -3268,7 +3268,7 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -3315,7 +3315,7 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -3399,7 +3399,7 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -3518,7 +3518,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                   "textAlign": "left",
                 },
                 {
-                  "color": "rgba(28, 27, 31, 1)",
+                  "color": "rgb(26, 28, 24)",
                   "fontFamily": "Rubik-Regular",
                   "fontWeight": "400",
                   "letterSpacing": 0,
@@ -3531,7 +3531,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                     "fontSize": 16,
                   },
                   {
-                    "color": "rgba(28, 27, 31, 1)",
+                    "color": "rgb(26, 28, 24)",
                   },
                   undefined,
                 ],
@@ -3594,7 +3594,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -3678,7 +3678,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3706,7 +3706,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                     "textAlign": "left",
                   },
                   {
-                    "color": "rgba(28, 27, 31, 1)",
+                    "color": "rgb(26, 28, 24)",
                     "fontFamily": "Rubik-Regular",
                     "fontWeight": "400",
                     "letterSpacing": 0,
@@ -3753,7 +3753,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
               style={
                 {
                   "backgroundColor": "transparent",
-                  "borderColor": "rgba(121, 116, 126, 1)",
+                  "borderColor": "rgb(115, 121, 110)",
                   "borderRadius": 20,
                   "borderWidth": 0,
                   "elevation": 0,
@@ -3837,7 +3837,7 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                   style={
                     [
                       {
-                        "color": "rgba(73, 69, 79, 1)",
+                        "color": "rgb(67, 72, 63)",
                         "fontSize": 24,
                       },
                       undefined,
@@ -3936,7 +3936,7 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4020,7 +4020,7 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4048,7 +4048,7 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -4095,7 +4095,7 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4179,7 +4179,7 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4276,7 +4276,7 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4360,7 +4360,7 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4388,7 +4388,7 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -4435,7 +4435,7 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4519,7 +4519,7 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4616,7 +4616,7 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4705,7 +4705,7 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4733,7 +4733,7 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -4780,7 +4780,7 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -4869,7 +4869,7 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -4966,7 +4966,7 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5055,7 +5055,7 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -5083,7 +5083,7 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -5130,7 +5130,7 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5214,7 +5214,7 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -5311,7 +5311,7 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5400,7 +5400,7 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -5428,7 +5428,7 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -5475,7 +5475,7 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5564,7 +5564,7 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -5661,7 +5661,7 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5745,7 +5745,7 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -5773,7 +5773,7 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -5820,7 +5820,7 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(28, 27, 31, 0.12)",
+              "borderColor": "rgba(26, 28, 24, 0.12)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -5909,7 +5909,7 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(28, 27, 31, 0.38)",
+                    "color": "rgba(26, 28, 24, 0.38)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6006,7 +6006,7 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6090,7 +6090,7 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6118,7 +6118,7 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -6165,7 +6165,7 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6249,7 +6249,7 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6346,7 +6346,7 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6430,7 +6430,7 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6458,7 +6458,7 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
                 "textAlign": "left",
               },
               {
-                "color": "rgba(28, 27, 31, 1)",
+                "color": "rgb(26, 28, 24)",
                 "fontFamily": "Rubik-Regular",
                 "fontWeight": "400",
                 "letterSpacing": 0,
@@ -6505,7 +6505,7 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6589,7 +6589,7 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6686,7 +6686,7 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6770,7 +6770,7 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
@@ -6807,7 +6807,7 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
                   "textAlign": "left",
                 },
                 {
-                  "color": "rgba(28, 27, 31, 1)",
+                  "color": "rgb(26, 28, 24)",
                   "writingDirection": "ltr",
                 },
                 [
@@ -6852,7 +6852,7 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
           style={
             {
               "backgroundColor": "transparent",
-              "borderColor": "rgba(121, 116, 126, 1)",
+              "borderColor": "rgb(115, 121, 110)",
               "borderRadius": 20,
               "borderWidth": 0,
               "elevation": 0,
@@ -6936,7 +6936,7 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
               style={
                 [
                   {
-                    "color": "rgba(73, 69, 79, 1)",
+                    "color": "rgb(67, 72, 63)",
                     "fontSize": 24,
                   },
                   undefined,
