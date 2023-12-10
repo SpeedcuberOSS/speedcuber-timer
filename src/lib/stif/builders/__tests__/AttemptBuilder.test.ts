@@ -4,8 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { AttemptBuilder } from '../AttemptBuilder';
-import { v4 as uuid } from 'uuid';
 import {
   EVENT_3x3x3,
   EVENT_RELAY_23,
@@ -16,8 +14,11 @@ import {
   TIMELIMIT_EXCEEDED,
 } from '../../builtins';
 import { STIF, UnixTimestamp } from '../../STIF';
-import { SolutionBuilder } from '../SolutionBuilder';
+
 import { Attempt } from '../../wrappers';
+import { AttemptBuilder } from '../AttemptBuilder';
+import { SolutionBuilder } from '../SolutionBuilder';
+import { v4 as uuid } from 'uuid';
 
 const TEST_SOLUTION = new SolutionBuilder()
   .setPuzzle(PUZZLE_3x3x3)
@@ -117,7 +118,7 @@ describe('A new AttemptBuilder', () => {
           .setInspectionStart(timestamp)
           .setTimerStart(timestamp - 1000)
           .build(),
-      ).toThrow('`timerStart` cannot occur prior to `inspectionStart`');
+      ).toThrow(/'timerStart' \(\d+\) cannot occur prior to 'inspectionStart' \(\d+\)/);
     });
     it('is given a timerStop prior to timerStart', () => {
       let timestamp = new Date().getTime() - 10000;
@@ -127,7 +128,7 @@ describe('A new AttemptBuilder', () => {
           .setTimerStart(timestamp + 1000)
           .setTimerStop(timestamp + 500)
           .build(),
-      ).toThrow('`timerStop` cannot occur prior to `timerStart`');
+      ).toThrow(/'timerStop' \(\d+\) cannot occur prior to 'timerStart' \(\d+\)/);
     });
     it('is given different number of solutions than puzzles in the event', () => {
       expect(() =>

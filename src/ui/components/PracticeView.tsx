@@ -105,7 +105,8 @@ export default function PracticeView() {
   function handleInspectionComplete() {
     const now = new Date().getTime();
     setTimerStart(now);
-    if (now - inspectionStart > 17_000) {
+    const didNotStart = now - inspectionStart > 17_000;
+    if (didNotStart) {
       console.log('DNF Detected');
       // TODO Ensure DNFs are handled correctly.
       const attempt = assembleAttempt();
@@ -124,10 +125,11 @@ export default function PracticeView() {
 
   function assembleAttempt() {
     const now = new Date().getTime();
+    const didNotStart = timerStart < inspectionStart;
     const attempt = new AttemptBuilder()
       .setEvent(event)
       .setInspectionStart(inspectionStart)
-      .setTimerStart(timerStart)
+      .setTimerStart(didNotStart ? now : timerStart)
       .setTimerStop(now);
     wipSolutions
       .map(wip => {

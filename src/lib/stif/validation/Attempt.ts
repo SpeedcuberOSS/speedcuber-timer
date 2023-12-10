@@ -4,10 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { STIF } from "../STIF";
-import { v4 as uuid } from 'uuid';
 import { err, lengthGreaterThan } from './_utils';
+
+import { STIF } from "../STIF";
 import { STIFError } from '../exceptions';
+import { v4 as uuid } from 'uuid';
 
 export function validateAttempt(wip: Partial<STIF.Attempt>): STIF.Attempt {
   let attempt = {
@@ -23,10 +24,10 @@ export function validateAttempt(wip: Partial<STIF.Attempt>): STIF.Attempt {
     comment: wip.comment ?? '',
   };
   if (attempt.timerStop < attempt.timerStart) {
-    throw new STIFError('`timerStop` cannot occur prior to `timerStart`');
+    throw new STIFError(`'timerStop' (${attempt.timerStop}) cannot occur prior to 'timerStart' (${attempt.timerStart})`);
   }
   if (attempt.timerStart < attempt.inspectionStart) {
-    throw new STIFError('`timerStart` cannot occur prior to `inspectionStart`');
+    throw new STIFError(`'timerStart' (${attempt.timerStart}) cannot occur prior to 'inspectionStart' (${attempt.inspectionStart})`);
   }
   let solvedPuzzles = attempt.solutions
     .map(s => s.puzzle)
