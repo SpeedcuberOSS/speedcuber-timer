@@ -5,15 +5,17 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { StyleSheet, View } from 'react-native';
+import { Text, useTheme } from 'react-native-paper';
 
-import { Text } from 'react-native-paper';
 import formatElapsedTime from '../utils/formatElapsedTime';
 
 interface TimeProps {
   elapsed: Date;
+  afterText?: string;
 }
 
-export default function Time({ elapsed }: TimeProps) {
+export default function Time({ elapsed, afterText }: TimeProps) {
+  const theme = useTheme();
   let timeParts = formatElapsedTime(elapsed.getTime()).split(':');
   let largeParts = timeParts.slice(0, -1);
   let smallParts = timeParts.slice(-1)[0].split('.');
@@ -26,11 +28,14 @@ export default function Time({ elapsed }: TimeProps) {
       ))}
       <Text style={styles.monospaceMedium}>{smallParts[0]}</Text>
       <Text style={styles.monospaceSmall}>{`.${smallParts[1]}`}</Text>
+      {afterText && (
+        <Text style={[styles.monospaceSmall, {color: theme.colors.error}]}>{`${afterText}`}</Text>
+      )}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'flex-end',

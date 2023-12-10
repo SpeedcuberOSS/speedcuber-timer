@@ -4,11 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Attempt } from '../../../lib/stif/wrappers';
 import { StyleSheet, View } from 'react-native';
+import Time, { styles as TimeStyles } from '../Time';
 
+import { Attempt } from '../../../lib/stif/wrappers';
 import { Text } from 'react-native-paper';
-import Time from '../Time';
 
 interface AttemptTimeProps {
   attempt?: Attempt;
@@ -17,13 +17,15 @@ interface AttemptTimeProps {
 export default function AttemptTime({ attempt }: AttemptTimeProps) {
   const result = attempt?.result() ?? 0;
   const resultIsNumber = typeof result === 'number';
-  const penaltyText = attempt?.penaltyDuration() ? ` +${attempt.penaltyDuration()/2000}` : '';
+  const penaltyText = attempt?.penaltyDuration()
+    ? ` +${attempt.penaltyDuration() / 1000}`
+    : '';
   return (
     <View style={styles.container}>
       {resultIsNumber ? (
-        <Time elapsed={new Date(result)} />
+        <Time elapsed={new Date(result)} afterText={penaltyText} />
       ) : (
-        <Text>{result + penaltyText}</Text>
+        <Text style={TimeStyles.monospaceLarge}>{result}</Text>
       )}
     </View>
   );
