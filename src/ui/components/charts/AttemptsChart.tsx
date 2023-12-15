@@ -27,12 +27,11 @@ function prepareAverage(x: number, attempts: Attempt[]) {
   let sparseAverages = averages
     .filter((value, idx) => idx % spacing == 0)
     .map(d => d / 1000)
-    .map((d, idx) => {
-      return {
-        x: idx * spacing + x - 1,
-        y: d,
-      };
-    });
+    .map((d, idx) => ({
+      x: idx * spacing + x - 1,
+      y: d,
+    }))
+    .filter(point => point.y !== Infinity);
   return sparseAverages;
 }
 
@@ -68,7 +67,12 @@ export function AttemptsChart({
                       label: t('analytics.duration'),
                       values: attempts
                         .map(attempt => attempt.duration() / 1000)
-                        .reverse(),
+                        .reverse()
+                        .map((d, idx) => ({
+                          x: idx,
+                          y: d,
+                        }))
+                        .filter(point => point.y !== Infinity),
                       config: {
                         scatterShape: 'CIRCLE',
                         scatterShapeSize: 5,
@@ -86,9 +90,11 @@ export function AttemptsChart({
                 label: t('analytics.best'),
                 values: new AttemptAnalytics(attempts).sliding
                   .best()
-                  .map(([x, y]) => {
-                    return { x: x, y: y / 1000 };
-                  }),
+                  .map(([x, y]) => ({
+                    x: x,
+                    y: y / 1000,
+                  }))
+                  .filter(point => point.y !== Infinity),
                 config: {
                   color: processColor('yellow'),
                   circleColor: processColor('yellow'),

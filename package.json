@@ -1,6 +1,6 @@
 {
   "name": "speedcubertimer",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "scripts": {
     "env": "dotenv -e ./fastlane/.env",
@@ -46,7 +46,7 @@
     "react-native": "^0.71.11",
     "react-native-ble-manager": "^10.1.5",
     "react-native-bootsplash": "^4.7.2",
-    "react-native-charts-wrapper": "^0.5.11",
+    "react-native-charts-wrapper": "^0.6.0",
     "react-native-default-preference": "^1.4.4",
     "react-native-fs": "^2.18.0",
     "react-native-gesture-handler": "^2.9.0",
