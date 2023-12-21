@@ -1,1 +1,30 @@
-The speedcubing timer you've waited for since smartcubes became a thing!
+The speedsolving timer you've waited for since smartcubes became a thing!
+ • Practice any official WCA event (2x2x2, 3x3x3, 4x4x4, Megaminx, Pyraminx, Skewb, Square-1, Clock, etc.) and a dozen unofficial events (relays, big cube BLD, etc.)
+ • Connect as many smartcubes as you want to record and automatically reconstruct your solves.
+ • Detailed statistics for both individual solves and your entire solve history.
+
+REVOLUTIONARY SMARTCUBE SUPPORT
+Speedcuber Timer is the first native mobile application with full, offline support for multiple smart Rubik's Cubes including:
+ • Giiker 2x2x2
+ • Giiker 3x3x3
+ • GoCube Edge
+ • GoCube 2x2x2
+ • Rubik's Connected
+ • HeyKube
+ • and more (we add support for new models regularly)
+
+For the first time of *any* smartcube application, connect multiple smartcubes **simultaneously**, e.g. for tracking each puzzle in a 3x3x3 Multi-BLD or Multi-Puzzle Relay attempt.
+
+TRACK YOUR PROGRESS
+Tons of statistics for individual solves and your entire solve history. Keep tabs on your averages of 3, 5, 12, 50, 100, and 1000 for each event. Check out graphs of your improvement over time.
+
+When you use a smartcube, you get even more detailed statistics:
+ • Automatic reconstructions. See every face turn you made during a solve.
+ • Turns per second (TPS) graphs.
+ • Solution phase duration, move count, recognition time, and TPS.
+ • Replay the solve in real-time or slow it down for a closer look.
+
+COMMUNITY DRIVEN
+Speedcuber Timer is developed by speedcubers like you! Everyone can contribute, even if you don't know how to code. Suggest new unofficial events, design icons, add translations to new languages, recommend new features, report bugs, or anything else you feel like sharing!
+
+Join the conversation on GitHub: https://github.com/SpeedcuberOSS/speedcuber-timer/discussions

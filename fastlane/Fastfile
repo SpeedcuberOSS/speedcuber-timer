@@ -18,6 +18,9 @@ default_platform(:ios)
 desc "Make sure to copy the `.env.dist` to `.env` and fill all values before running any lanes"
 
 platform :ios do
+  before_all do
+    ENV["NO_FLIPPER"] = "1"  # Disable Flipper in Release builds
+  end
   
   desc 'Fetch certificates and provisioning profiles'
   lane :certificates do

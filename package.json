@@ -97,7 +97,7 @@
     "react-native-asset": "^2.0.1",
     "react-native-bundle-visualizer": "^3.1.2",
     "react-native-clean-project": "^4.0.1",
-    "react-native-flipper": "^0.212.0",
+    "react-native-flipper": "0.163.0",
     "react-native-svg-app-icon": "^0.6.1",
     "react-test-renderer": "18.2.0",
     "realm-flipper-plugin-device": "^1.1.0",
