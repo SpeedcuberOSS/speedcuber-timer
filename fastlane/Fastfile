@@ -71,7 +71,7 @@ platform :ios do
       key_filepath: ENV["IOS_APP_STORE_CONNECT_KEY_FILE_PATH"],
     )
     upload_to_app_store(
-      precheck_include_in_app_purchases: false
+      precheck_include_in_app_purchases: false,
       force: true
     )
   end
