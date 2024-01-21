@@ -12,6 +12,7 @@ jest.mock('react-native-webview', () => {
 });
 
 jest.mock('react-native-ble-manager');
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
 import * as actualfs from 'react-native-fs';
 jest.mock('react-native-fs', () => ({

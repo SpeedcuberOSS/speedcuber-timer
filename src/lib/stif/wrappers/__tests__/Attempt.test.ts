@@ -4,7 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { AttemptBuilder } from '../../builders';
 import {
   EVENT_3x3x3,
   EVENT_3x3x3_BLD_MULTI,
@@ -22,11 +21,13 @@ import {
   STOPPED_PUZZLE_UNSOLVED,
   STOPPED_WRONG_HAND_PLACEMENT,
 } from '../../builtins';
+
 import { Attempt } from '../Attempt';
-import { Solution } from '../Solution';
+import { AttemptBuilder } from '../../builders';
 // TODO This import indicates the need for a centralized place for
 // reusable test data.
 import { RECONSTRUCTION_BUILD } from './Solution.test';
+import { Solution } from '../Solution';
 
 const TEST_SOLUTION = {
   id: 'e2130283-7baf-4ca5-bce0-6c806115c7ef',
