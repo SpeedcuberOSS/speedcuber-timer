@@ -42,7 +42,7 @@ platform :ios do
       xcodeproj: "ios/SpeedcuberTimer.xcodeproj"
     )
 
-    gym
+    build_app
 
     echo(message: "----------------------------------------------------------")
     echo(message: "HELP: If the build FAILED, make sure to...")
@@ -59,7 +59,21 @@ platform :ios do
       issuer_id: ENV["IOS_APP_STORE_CONNECT_ISSUER_ID"],
       key_filepath: ENV["IOS_APP_STORE_CONNECT_KEY_FILE_PATH"],
     )
-    pilot
+    upload_to_testflight
+  end
+  
+  desc "Publish a production release to the App Store"
+  lane :production do
+    build
+    app_store_connect_api_key(
+      key_id: ENV["IOS_APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["IOS_APP_STORE_CONNECT_ISSUER_ID"],
+      key_filepath: ENV["IOS_APP_STORE_CONNECT_KEY_FILE_PATH"],
+    )
+    upload_to_app_store(
+      precheck_include_in_app_purchases: false
+      force: true
+    )
   end
 
 end

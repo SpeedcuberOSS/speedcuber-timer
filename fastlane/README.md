@@ -41,6 +41,14 @@ Build the iOS application.
 
 Publish a beta release to the App Store
 
+### ios production
+
+```sh
+[bundle exec] fastlane ios production
+```
+
+Publish a production release to the App Store
+
 ----
 
 
