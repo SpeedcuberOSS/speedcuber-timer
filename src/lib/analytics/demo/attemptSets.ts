@@ -22,7 +22,7 @@ export function attemptFixtureWithTime(durationMillis: number) {
   return new Attempt(
     new AttemptBuilder()
       .setEvent(EVENT_3x3x3)
-      .setInspectionStart(now - 15_000)
+      .setInspectionStart(now - 14_000)
       .setTimerStart(now)
       .setTimerStop(now + durationMillis)
       .addSolution({

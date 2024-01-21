@@ -125,9 +125,17 @@ describe('[Wrapper] Attempt', () => {
   });
 
   describe('infractions', () => {
+    it('automatically includes infraction for inspection = 15 seconds', () => {
+      let attempt = new Attempt(INSPECTION_BUILD(15000).build());
+      expect(attempt.infractions()).toEqual([INSPECTION_EXCEEDED_15_SECONDS]);
+    });
     it('automatically includes infraction for inspection > 15 seconds', () => {
       let attempt = new Attempt(INSPECTION_BUILD(15500).build());
       expect(attempt.infractions()).toEqual([INSPECTION_EXCEEDED_15_SECONDS]);
+    });
+    it('automatically includes infraction for inspection = 17 seconds', () => {
+      let attempt = new Attempt(INSPECTION_BUILD(17000).build());
+      expect(attempt.infractions()).toEqual([INSPECTION_EXCEEDED_17_SECONDS]);
     });
     it('automatically includes infraction for inspection > 17 seconds', () => {
       let attempt = new Attempt(INSPECTION_BUILD(17500).build());

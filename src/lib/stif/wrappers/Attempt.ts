@@ -4,13 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
 import {
   INSPECTION_EXCEEDED_15_SECONDS,
   INSPECTION_EXCEEDED_17_SECONDS,
 } from '../builtins';
-import { validateAttempt } from '../validation/Attempt';
+import { Milliseconds, STIF, UnixTimestamp } from '../STIF';
+
 import { Solution } from './Solution';
+import { validateAttempt } from '../validation/Attempt';
 
 const SECONDS = 1000;
 
@@ -78,9 +79,9 @@ export class Attempt {
   }
   public infractions(): STIF.Infraction[] {
     let i = [...this.attempt.infractions];
-    if (this.inspectionDuration() > 17 * SECONDS) {
+    if (this.inspectionDuration() >= 17 * SECONDS) {
       i.push(INSPECTION_EXCEEDED_17_SECONDS);
-    } else if (this.inspectionDuration() > 15 * SECONDS) {
+    } else if (this.inspectionDuration() >= 15 * SECONDS) {
       i.push(INSPECTION_EXCEEDED_15_SECONDS);
     }
     return [...new Set(i)];
