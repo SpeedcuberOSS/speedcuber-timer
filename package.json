@@ -15,6 +15,7 @@
     "pods": "cd ios && pod install",
     "icons": "react-native-svg-app-icon",
     "splash": "yarn react-native generate-bootsplash --background-color '#000' icon.svg",
+    "android-menu": "adb shell input keyevent 82",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "clean": "react-native-clean-project",
