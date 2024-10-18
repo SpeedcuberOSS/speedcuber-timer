@@ -9,7 +9,7 @@
     "ios": "yarn env react-native run-ios",
     "android": "yarn env react-native run-android",
     "ios:release": "yarn env react-native run-ios --mode Release",
-    "android:release": "yarn env react-native run-android --mode=release",
+    "android:release": "yarn env react-native run-android --mode release",
     "build:ios": "yarn env yarn pods && react-native rnx-bundle --platform ios && yarn fix-dependencies",
     "build:android": "yarn env react-native rnx-bundle --platform android && yarn fix-dependencies",
     "pods": "cd ios && pod install",
