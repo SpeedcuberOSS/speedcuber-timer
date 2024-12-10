@@ -43,18 +43,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
-		<string>AntDesign.ttf</string>
-		<string>EvilIcons.ttf</string>
 		<string>FontAwesome.ttf</string>
-		<string>FontAwesome5.ttf</string>
-		<string>Fontisto.ttf</string>
-		<string>Foundation.ttf</string>
 		<string>Ionicons.ttf</string>
+		<string>MaterialDesignIcons.ttf</string>
 		<string>MaterialIcons.ttf</string>
-		<string>MaterialCommunityIcons.ttf</string>
-		<string>Octicons.ttf</string>
-		<string>Zocial.ttf</string>
-		<string>SimpleLineIcons.ttf</string>
 		<string>STIFIcon.ttf</string>
 		<string>Rubik-Black.ttf</string>
 		<string>Rubik-BlackItalic.ttf</string>
