@@ -4,17 +4,6 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useEffect, useState } from 'react';
-import { FlatList, ScrollView } from 'react-native';
-import {
-  DocumentDirectoryPath,
-  ReadDirItem,
-  hash,
-  readDir,
-  readFile,
-  stat,
-  unlink,
-} from 'react-native-fs';
 import {
   ActivityIndicator,
   IconButton,
@@ -22,6 +11,18 @@ import {
   Text,
   useTheme,
 } from 'react-native-paper';
+import {
+  DocumentDirectoryPath,
+  ReadDirResItemT,
+  hash,
+  readDir,
+  readFile,
+  stat,
+  unlink,
+} from '@dr.pogodin/react-native-fs';
+import { FlatList, ScrollView } from 'react-native';
+import { useEffect, useState } from 'react';
+
 import { Timer } from '../../../lib/timers';
 
 interface FileSystemProps {
@@ -74,7 +75,7 @@ function FolderBrowser({
   onPressFile = () => {},
   onPressFolder = () => {},
 }: FileSystemProps) {
-  const [entries, setEntries] = useState<ReadDirItem[]>([]);
+  const [entries, setEntries] = useState<ReadDirResItemT[]>([]);
   const theme = useTheme();
   useEffect(() => {
     readDir(path)
