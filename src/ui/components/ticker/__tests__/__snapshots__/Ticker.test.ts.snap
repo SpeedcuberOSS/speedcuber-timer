@@ -159,27 +159,11 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
               }
               testID="icon-button"
             >
-              <Text
-                allowFontScaling={false}
-                selectable={false}
-                style={
-                  [
-                    {
-                      "color": "rgb(67, 72, 63)",
-                      "fontSize": 24,
-                    },
-                    undefined,
-                    {
-                      "fontFamily": "Entypo",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    {},
-                  ]
-                }
-              >
-                
-              </Text>
+              <icon
+                color="rgb(67, 72, 63)"
+                name="chevron-down"
+                size={24}
+              />
             </View>
           </View>
         </View>
@@ -318,27 +302,11 @@ exports[`Ticker [Cramped] matches snapshot 1`] = `
               }
               testID="icon-button"
             >
-              <Text
-                allowFontScaling={false}
-                selectable={false}
-                style={
-                  [
-                    {
-                      "color": "rgb(67, 72, 63)",
-                      "fontSize": 24,
-                    },
-                    undefined,
-                    {
-                      "fontFamily": "Entypo",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    {},
-                  ]
-                }
-              >
-                
-              </Text>
+              <icon
+                color="rgb(67, 72, 63)"
+                name="chevron-up"
+                size={24}
+              />
             </View>
           </View>
         </View>
@@ -500,27 +468,11 @@ exports[`Ticker [Custom Styles] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -663,27 +615,11 @@ exports[`Ticker [Custom Styles] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -844,27 +780,11 @@ exports[`Ticker [Default] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1003,27 +923,11 @@ exports[`Ticker [Default] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1184,27 +1088,11 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1343,27 +1231,11 @@ exports[`Ticker [Everything (Horizontal)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1524,27 +1396,11 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1683,27 +1539,11 @@ exports[`Ticker [Everything (Vertical)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -1864,27 +1704,11 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-left"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2023,27 +1847,11 @@ exports[`Ticker [Horizontal Icons (Horizontal Ticker)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-right"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2204,27 +2012,11 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-right"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2363,27 +2155,11 @@ exports[`Ticker [Horizontal Icons (Vertical Ticker)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-left"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2544,27 +2320,11 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2703,27 +2463,11 @@ exports[`Ticker [Horizontal] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -2884,27 +2628,11 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -3048,27 +2776,11 @@ exports[`Ticker [Initial < Min] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -3234,27 +2946,11 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -3393,27 +3089,11 @@ exports[`Ticker [Initial > Max] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -3506,8 +3186,10 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                 "flexShrink": 1,
                 "justifyContent": "center",
               },
+              undefined,
             ]
           }
+          testID="undefined-content"
         >
           <Text
             numberOfLines={1}
@@ -3672,27 +3354,11 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="chevron-down"
+                  size={24}
+                />
               </View>
             </View>
           </View>
@@ -3831,27 +3497,11 @@ exports[`Ticker [Inside List Item] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="chevron-up"
+                  size={24}
+                />
               </View>
             </View>
           </View>
@@ -4014,27 +3664,11 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -4173,27 +3807,11 @@ exports[`Ticker [Large Numbers (Horizontal)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -4354,27 +3972,11 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -4513,27 +4115,11 @@ exports[`Ticker [Large Numbers (Vertical)] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -4699,27 +4285,11 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -4863,27 +4433,11 @@ exports[`Ticker [Max < Min] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5049,27 +4603,11 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5208,27 +4746,11 @@ exports[`Ticker [Max 10] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5394,27 +4916,11 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5558,27 +5064,11 @@ exports[`Ticker [Min = Max] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5739,27 +5229,11 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -5903,27 +5377,11 @@ exports[`Ticker [Min 0] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgba(26, 28, 24, 0.38)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgba(26, 28, 24, 0.38)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6084,27 +5542,11 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6243,27 +5685,11 @@ exports[`Ticker [Starting 13] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6424,27 +5850,11 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6583,27 +5993,11 @@ exports[`Ticker [Step 5] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6764,27 +6158,11 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-up"
+              size={24}
+            />
           </View>
         </View>
       </View>
@@ -6930,27 +6308,11 @@ exports[`Ticker [Transform Values] matches snapshot 1`] = `
             }
             testID="icon-button"
           >
-            <Text
-              allowFontScaling={false}
-              selectable={false}
-              style={
-                [
-                  {
-                    "color": "rgb(67, 72, 63)",
-                    "fontSize": 24,
-                  },
-                  undefined,
-                  {
-                    "fontFamily": "Entypo",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                  },
-                  {},
-                ]
-              }
-            >
-              
-            </Text>
+            <icon
+              color="rgb(67, 72, 63)"
+              name="chevron-down"
+              size={24}
+            />
           </View>
         </View>
       </View>
