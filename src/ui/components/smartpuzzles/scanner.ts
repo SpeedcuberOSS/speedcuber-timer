@@ -11,9 +11,8 @@ import PuzzleRegistry from './SmartPuzzleRegistry';
 export async function scanForSmartPuzzles(
   scanDurationMillis: number = 5000,
 ): Promise<boolean> {
-  const subscription = BLE.Events.addListener(
-    'BleManagerDiscoverPeripheral',
-    (device: BleDevice) => PuzzleRegistry.addPuzzle(device),
+  const subscription = BLE.Manager.onDiscoverPeripheral(
+    (device: BleDevice) => PuzzleRegistry.addPuzzle(device)
   );
 
   const FILTER_UUIDS: string[] = [];

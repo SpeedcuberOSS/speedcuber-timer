@@ -7,7 +7,7 @@ import { Permission, PermissionsAndroid, Platform } from 'react-native';
 import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import BLE from './BLE';
-import LocationStatus from './LocationStatus';
+import { isLocationEnabled } from 'react-native-location-status';
 import { t } from 'i18next';
 
 export async function ensureScanningReady() {
@@ -154,7 +154,7 @@ async function requestBluetoothPermissions(permissions: Permission[]) {
 async function ensureLocationEnabled() {
   if (Platform.OS === 'android') {
     console.debug('Checking if location is enabled...');
-    let enabled = await LocationStatus.isLocationEnabled();
+    let enabled = await isLocationEnabled();
     console.debug(`Location enabled: ${enabled}`);
     if (!enabled) {
       throw new SmartPuzzleError(

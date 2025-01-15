@@ -24,14 +24,33 @@ needed for your application.
 
 #### Android Setup
 
-Installing the fonts on Android only requires copying the font file to
-the app's assets directory (you may have to create the directory).
+Installing the fonts on Android only requires copying the font file to `react-native-vector-icons`' font directory.
+
+```json
+// package.json
+{
+    "dependencies": { ... },
+    "reactNativeVectorIcons": {
+      "fontDir": "path/to/your/assets/fonts"
+    }
+}  
+```
 
 ```bash
-cp font/STIFIcon.ttf android/app/src/main/assets/fonts  
+cp font/STIFIcon.ttf path/to/your/assets/fonts
 ```
 
 #### iOS Setup
+
+Follow the steps for Android above, then run the following command to add the
+font name to the `Info.plist`.
+
+```bash
+npx rnvi-update-plist package.json ios/YOUR_APP_NAME/Info.plist
+```
+
+<details>
+  <summary>Or do it manually...</summary>
 
 Installing the fonts on iOS is a little more complicated:
 
@@ -53,6 +72,8 @@ Installing the fonts on iOS is a little more complicated:
    </array>
    ```
 
+</details>
+
 Clean your build directory and re-build for the font to be included in
 the app bundle.
 
@@ -62,7 +83,7 @@ Then, to use the icons in your React Native project, convert the `.ttf`
 file into a usable icon set.
 
 ```javascript
-import { createIconSet } from 'react-native-vector-icons';
+import { createIconSet } from '@react-native-vector-icons/common';
 import glyphs from '../../lib/stif/icons/font/STIFIcon.json';
 
 const STIFIcon = createIconSet(glyphs, 'STIFIcon', 'STIFIcon.ttf');

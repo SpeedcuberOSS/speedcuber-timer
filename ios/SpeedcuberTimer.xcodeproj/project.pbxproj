@@ -8,45 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SpeedcuberTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SpeedcuberTimerTests.m */; };
-		07A72D5E2FEF4EE9AED474F2 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2E5B55473D74498AC6F4C67 /* Rubik-ExtraBold.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-SpeedcuberTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SpeedcuberTimer.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1C017E41887145A9A1E74ACB /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5132885BF4EA4ABC8694D74B /* Rubik-Bold.ttf */; };
-		2B15EC98B88E476EB9B46747 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78DD3AD9910B49F9A302491E /* Rubik-Medium.ttf */; };
-		2C324C4C2851D08D00A07F04 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C3C2851D08D00A07F04 /* Fontisto.ttf */; };
-		2C324C4D2851D08D00A07F04 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C3D2851D08D00A07F04 /* Octicons.ttf */; };
-		2C324C4E2851D08D00A07F04 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C3E2851D08D00A07F04 /* Feather.ttf */; };
-		2C324C4F2851D08D00A07F04 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C3F2851D08D00A07F04 /* Entypo.ttf */; };
-		2C324C502851D08D00A07F04 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C402851D08D00A07F04 /* FontAwesome5_Brands.ttf */; };
-		2C324C512851D08D00A07F04 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C412851D08D00A07F04 /* MaterialCommunityIcons.ttf */; };
-		2C324C522851D08D00A07F04 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C422851D08D00A07F04 /* AntDesign.ttf */; };
-		2C324C532851D08D00A07F04 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C432851D08D00A07F04 /* Foundation.ttf */; };
-		2C324C542851D08D00A07F04 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C442851D08D00A07F04 /* Ionicons.ttf */; };
-		2C324C552851D08D00A07F04 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C452851D08D00A07F04 /* FontAwesome5_Solid.ttf */; };
-		2C324C562851D08D00A07F04 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C462851D08D00A07F04 /* FontAwesome5_Regular.ttf */; };
-		2C324C572851D08D00A07F04 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C472851D08D00A07F04 /* FontAwesome.ttf */; };
-		2C324C582851D08D00A07F04 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C482851D08D00A07F04 /* Zocial.ttf */; };
-		2C324C592851D08D00A07F04 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C492851D08D00A07F04 /* EvilIcons.ttf */; };
-		2C324C5A2851D08D00A07F04 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */; };
-		2C324C5B2851D08D00A07F04 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */; };
-		2C7269FA2A42CB3600DE8816 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */; };
-		2CADEB6A2B130BEB00C79D36 /* STIFIcon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CADEB692B130BEA00C79D36 /* STIFIcon.ttf */; };
-		4F48A19822744432808A3089 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1700325245CB433BABCF521A /* Rubik-MediumItalic.ttf */; };
-		535F1677F83048668DED79E2 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF8FF56AF7CF4701B78D22FB /* Rubik-SemiBold.ttf */; };
-		53C967E2AD56445D913C72A5 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 868649CC4468447B9BF1366E /* Rubik-BlackItalic.ttf */; };
-		5DFC3C9ED74A4A9C8DC49548 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7361F7D119A745EE8E66CB12 /* Rubik-ExtraBoldItalic.ttf */; };
-		617F479909D24FD2BC11B8FB /* RubikMonoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 037319F518BB4CF7AE7F1386 /* RubikMonoOne-Regular.ttf */; };
-		6D900F1CA00743318C8DF70A /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA77DFA0D7F5457FAC07E42C /* Rubik-LightItalic.ttf */; };
+		49BC45E892FE7A13A72DBB39 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8BB5B343BF0B4564B6FAF9D1 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61127F2F07D8498A8F8CB21E /* Rubik-Light.ttf */; };
-		91B50445AF884CAB93D4083F /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8DFC03BCB2941A7865D23DF /* Rubik-SemiBoldItalic.ttf */; };
-		A4240768EC554EDA98742AFA /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479913F7AF4045EF93B340B0 /* Rubik-Italic.ttf */; };
-		B2DCC9A9DC4B47C1A6395BC9 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA3B4A795E54F9C8A535973 /* Rubik-BoldItalic.ttf */; };
-		B3EB06E1C39A4EB58D08124B /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7277105ED570427298E6B94C /* Rubik-Regular.ttf */; };
-		C76D4E88E97D4B4194011564 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC380F4D711243B59FA9294D /* Rubik-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,53 +31,21 @@
 		00E356EE1AD99517003FC87E /* SpeedcuberTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedcuberTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SpeedcuberTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeedcuberTimerTests.m; sourceTree = "<group>"; };
-		037319F518BB4CF7AE7F1386 /* RubikMonoOne-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RubikMonoOne-Regular.ttf"; path = "../assets/fonts/RubikMonoOne-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SpeedcuberTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedcuberTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SpeedcuberTimer/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = SpeedcuberTimer/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpeedcuberTimer/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SpeedcuberTimer/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SpeedcuberTimer/main.m; sourceTree = "<group>"; };
-		1700325245CB433BABCF521A /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-MediumItalic.ttf"; path = "../assets/fonts/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SpeedcuberTimer/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SpeedcuberTimer-SpeedcuberTimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeedcuberTimer-SpeedcuberTimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C324C3C2851D08D00A07F04 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		2C324C3D2851D08D00A07F04 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		2C324C3E2851D08D00A07F04 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		2C324C3F2851D08D00A07F04 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		2C324C402851D08D00A07F04 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		2C324C412851D08D00A07F04 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		2C324C422851D08D00A07F04 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		2C324C432851D08D00A07F04 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		2C324C442851D08D00A07F04 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		2C324C452851D08D00A07F04 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		2C324C462851D08D00A07F04 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		2C324C472851D08D00A07F04 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		2C324C482851D08D00A07F04 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		2C324C492851D08D00A07F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
-		2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = SpeedcuberTimer/BootSplash.storyboard; sourceTree = "<group>"; };
-		2CADEB692B130BEA00C79D36 /* STIFIcon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = STIFIcon.ttf; path = ../../../src/lib/stif/icons/font/STIFIcon.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SpeedcuberTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer.debug.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer/Pods-SpeedcuberTimer.debug.xcconfig"; sourceTree = "<group>"; };
-		479913F7AF4045EF93B340B0 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic.ttf"; path = "../assets/fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; };
-		5132885BF4EA4ABC8694D74B /* Rubik-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Bold.ttf"; path = "../assets/fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SpeedcuberTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer.release.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer/Pods-SpeedcuberTimer.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/Pods-SpeedcuberTimer-SpeedcuberTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SpeedcuberTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeedcuberTimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		61127F2F07D8498A8F8CB21E /* Rubik-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Light.ttf"; path = "../assets/fonts/Rubik-Light.ttf"; sourceTree = "<group>"; };
-		7277105ED570427298E6B94C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Regular.ttf"; path = "../assets/fonts/Rubik-Regular.ttf"; sourceTree = "<group>"; };
-		7361F7D119A745EE8E66CB12 /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-ExtraBoldItalic.ttf"; path = "../assets/fonts/Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		78DD3AD9910B49F9A302491E /* Rubik-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Medium.ttf"; path = "../assets/fonts/Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SpeedcuberTimer/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		868649CC4468447B9BF1366E /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../assets/fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig"; path = "Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/Pods-SpeedcuberTimer-SpeedcuberTimerTests.release.xcconfig"; sourceTree = "<group>"; };
-		8AA3B4A795E54F9C8A535973 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BoldItalic.ttf"; path = "../assets/fonts/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
-		C8DFC03BCB2941A7865D23DF /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-SemiBoldItalic.ttf"; path = "../assets/fonts/Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		D2E5B55473D74498AC6F4C67 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-ExtraBold.ttf"; path = "../assets/fonts/Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
-		DA77DFA0D7F5457FAC07E42C /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../assets/fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
-		EC380F4D711243B59FA9294D /* Rubik-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Black.ttf"; path = "../assets/fonts/Rubik-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FF8FF56AF7CF4701B78D22FB /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-SemiBold.ttf"; path = "../assets/fonts/Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,65 +85,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		09E42D984DAD4175AB9D615B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EC380F4D711243B59FA9294D /* Rubik-Black.ttf */,
-				868649CC4468447B9BF1366E /* Rubik-BlackItalic.ttf */,
-				5132885BF4EA4ABC8694D74B /* Rubik-Bold.ttf */,
-				8AA3B4A795E54F9C8A535973 /* Rubik-BoldItalic.ttf */,
-				D2E5B55473D74498AC6F4C67 /* Rubik-ExtraBold.ttf */,
-				7361F7D119A745EE8E66CB12 /* Rubik-ExtraBoldItalic.ttf */,
-				479913F7AF4045EF93B340B0 /* Rubik-Italic.ttf */,
-				61127F2F07D8498A8F8CB21E /* Rubik-Light.ttf */,
-				DA77DFA0D7F5457FAC07E42C /* Rubik-LightItalic.ttf */,
-				78DD3AD9910B49F9A302491E /* Rubik-Medium.ttf */,
-				1700325245CB433BABCF521A /* Rubik-MediumItalic.ttf */,
-				7277105ED570427298E6B94C /* Rubik-Regular.ttf */,
-				FF8FF56AF7CF4701B78D22FB /* Rubik-SemiBold.ttf */,
-				C8DFC03BCB2941A7865D23DF /* Rubik-SemiBoldItalic.ttf */,
-				037319F518BB4CF7AE7F1386 /* RubikMonoOne-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* SpeedcuberTimer */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
-				2C7269F92A42CB3600DE8816 /* BootSplash.storyboard */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
 			name = SpeedcuberTimer;
-			sourceTree = "<group>";
-		};
-		2C324C3B2851D08D00A07F04 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				2CADEB692B130BEA00C79D36 /* STIFIcon.ttf */,
-				2C324C3C2851D08D00A07F04 /* Fontisto.ttf */,
-				2C324C3D2851D08D00A07F04 /* Octicons.ttf */,
-				2C324C3E2851D08D00A07F04 /* Feather.ttf */,
-				2C324C3F2851D08D00A07F04 /* Entypo.ttf */,
-				2C324C402851D08D00A07F04 /* FontAwesome5_Brands.ttf */,
-				2C324C412851D08D00A07F04 /* MaterialCommunityIcons.ttf */,
-				2C324C422851D08D00A07F04 /* AntDesign.ttf */,
-				2C324C432851D08D00A07F04 /* Foundation.ttf */,
-				2C324C442851D08D00A07F04 /* Ionicons.ttf */,
-				2C324C452851D08D00A07F04 /* FontAwesome5_Solid.ttf */,
-				2C324C462851D08D00A07F04 /* FontAwesome5_Regular.ttf */,
-				2C324C472851D08D00A07F04 /* FontAwesome.ttf */,
-				2C324C482851D08D00A07F04 /* Zocial.ttf */,
-				2C324C492851D08D00A07F04 /* EvilIcons.ttf */,
-				2C324C4A2851D08D00A07F04 /* SimpleLineIcons.ttf */,
-				2C324C4B2851D08D00A07F04 /* MaterialIcons.ttf */,
-			);
-			name = Fonts;
-			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -230,14 +119,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				2C324C3B2851D08D00A07F04 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* SpeedcuberTimer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SpeedcuberTimerTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				09E42D984DAD4175AB9D615B /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -293,7 +180,6 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SpeedcuberTimer" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
-				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -358,41 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C324C4C2851D08D00A07F04 /* Fontisto.ttf in Resources */,
-				2C324C572851D08D00A07F04 /* FontAwesome.ttf in Resources */,
-				2C324C532851D08D00A07F04 /* Foundation.ttf in Resources */,
-				2C324C562851D08D00A07F04 /* FontAwesome5_Regular.ttf in Resources */,
-				2C324C542851D08D00A07F04 /* Ionicons.ttf in Resources */,
-				2C324C592851D08D00A07F04 /* EvilIcons.ttf in Resources */,
-				2C324C4F2851D08D00A07F04 /* Entypo.ttf in Resources */,
-				2C324C582851D08D00A07F04 /* Zocial.ttf in Resources */,
-				2C324C5A2851D08D00A07F04 /* SimpleLineIcons.ttf in Resources */,
-				2C324C4E2851D08D00A07F04 /* Feather.ttf in Resources */,
-				2C324C4D2851D08D00A07F04 /* Octicons.ttf in Resources */,
-				2C324C502851D08D00A07F04 /* FontAwesome5_Brands.ttf in Resources */,
-				2C324C522851D08D00A07F04 /* AntDesign.ttf in Resources */,
-				2C324C5B2851D08D00A07F04 /* MaterialIcons.ttf in Resources */,
-				2C324C552851D08D00A07F04 /* FontAwesome5_Solid.ttf in Resources */,
-				2C324C512851D08D00A07F04 /* MaterialCommunityIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2C7269FA2A42CB3600DE8816 /* BootSplash.storyboard in Resources */,
-				C76D4E88E97D4B4194011564 /* Rubik-Black.ttf in Resources */,
-				53C967E2AD56445D913C72A5 /* Rubik-BlackItalic.ttf in Resources */,
-				1C017E41887145A9A1E74ACB /* Rubik-Bold.ttf in Resources */,
-				2CADEB6A2B130BEB00C79D36 /* STIFIcon.ttf in Resources */,
-				B2DCC9A9DC4B47C1A6395BC9 /* Rubik-BoldItalic.ttf in Resources */,
-				07A72D5E2FEF4EE9AED474F2 /* Rubik-ExtraBold.ttf in Resources */,
-				5DFC3C9ED74A4A9C8DC49548 /* Rubik-ExtraBoldItalic.ttf in Resources */,
-				A4240768EC554EDA98742AFA /* Rubik-Italic.ttf in Resources */,
-				8BB5B343BF0B4564B6FAF9D1 /* Rubik-Light.ttf in Resources */,
-				6D900F1CA00743318C8DF70A /* Rubik-LightItalic.ttf in Resources */,
-				2B15EC98B88E476EB9B46747 /* Rubik-Medium.ttf in Resources */,
-				4F48A19822744432808A3089 /* Rubik-MediumItalic.ttf in Resources */,
-				B3EB06E1C39A4EB58D08124B /* Rubik-Regular.ttf in Resources */,
-				535F1677F83048668DED79E2 /* Rubik-SemiBold.ttf in Resources */,
-				91B50445AF884CAB93D4083F /* Rubik-SemiBoldItalic.ttf in Resources */,
-				617F479909D24FD2BC11B8FB /* RubikMonoOne-Regular.ttf in Resources */,
+				49BC45E892FE7A13A72DBB39 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,17 +255,19 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
 			);
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
 		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -525,25 +381,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpeedcuberTimer-SpeedcuberTimerTests/Pods-SpeedcuberTimer-SpeedcuberTimerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD10A7F022414F080027D42C /* Start Packager */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Start Packager";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -587,7 +424,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SpeedcuberTimerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +451,7 @@
 				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = XLMP575759;
 				INFOPLIST_FILE = SpeedcuberTimerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,7 +485,7 @@
 				INFOPLIST_FILE = SpeedcuberTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Speedcuber Timer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +521,7 @@
 				INFOPLIST_FILE = SpeedcuberTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Speedcuber Timer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,7 +546,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -737,7 +574,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -753,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -770,9 +607,17 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -781,7 +626,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -809,7 +654,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -818,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -834,9 +679,16 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

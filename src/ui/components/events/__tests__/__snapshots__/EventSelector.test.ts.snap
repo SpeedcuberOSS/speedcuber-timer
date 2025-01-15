@@ -311,27 +311,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-222"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -344,8 +328,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -467,27 +453,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -500,8 +470,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -623,27 +595,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -656,8 +612,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -779,27 +737,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333mbf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -812,8 +754,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -990,27 +934,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgba(26, 28, 24, 0.38)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgba(26, 28, 24, 0.38)"
+                          name="chevron-down"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -1149,27 +1077,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgb(67, 72, 63)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgb(67, 72, 63)"
+                          name="chevron-up"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -1263,27 +1175,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333fm"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -1296,8 +1192,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -1419,27 +1317,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333oh"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -1452,8 +1334,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -1575,27 +1459,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-444"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -1608,8 +1476,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -1731,27 +1601,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-444bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -1764,8 +1618,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -1887,27 +1743,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-555"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -1920,8 +1760,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2043,27 +1885,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-555bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2076,8 +1902,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2199,27 +2027,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-666"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2232,8 +2044,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2355,27 +2169,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-777"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2388,8 +2186,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2511,27 +2311,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-clock"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2544,8 +2328,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2667,27 +2453,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-minx"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2700,8 +2470,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2823,27 +2595,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-pyram"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -2856,8 +2612,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -2979,27 +2737,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-skewb"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -3012,8 +2754,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -3135,27 +2879,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-sq1"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -3168,8 +2896,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -3494,27 +3224,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-111"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -3527,8 +3241,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -3650,27 +3366,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-222bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -3683,8 +3383,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -3806,27 +3508,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-222m"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -3839,8 +3525,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -4017,27 +3705,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgba(26, 28, 24, 0.38)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgba(26, 28, 24, 0.38)"
+                          name="chevron-down"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -4176,27 +3848,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgb(67, 72, 63)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgb(67, 72, 63)"
+                          name="chevron-up"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -4290,27 +3946,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333m"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -4323,8 +3963,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -4501,27 +4143,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgba(26, 28, 24, 0.38)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgba(26, 28, 24, 0.38)"
+                          name="chevron-down"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -4660,27 +4286,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                         }
                         testID="icon-button"
                       >
-                        <Text
-                          allowFontScaling={false}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "rgb(67, 72, 63)",
-                                "fontSize": 24,
-                              },
-                              undefined,
-                              {
-                                "fontFamily": "Entypo",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                              },
-                              {},
-                            ]
-                          }
-                        >
-                          
-                        </Text>
+                        <icon
+                          color="rgb(67, 72, 63)"
+                          name="chevron-up"
+                          size={24}
+                        />
                       </View>
                     </View>
                   </View>
@@ -4774,27 +4384,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-666bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -4807,8 +4401,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -4930,27 +4526,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-777bf"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -4963,8 +4543,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -5086,27 +4668,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-234relay"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -5119,8 +4685,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -5242,27 +4810,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-2345relay"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -5275,8 +4827,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -5398,27 +4952,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-23456relay"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -5431,8 +4969,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -5554,27 +5094,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-234567relay"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -5587,8 +5111,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
@@ -5913,27 +5439,11 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                   ]
                 }
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "STIFIcon",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="event-333ft"
+                  size={24}
+                />
               </View>
               <View
                 style={
@@ -5946,8 +5456,10 @@ exports[`Event Selector [Default] matches snapshot 1`] = `
                       "flexShrink": 1,
                       "justifyContent": "center",
                     },
+                    undefined,
                   ]
                 }
+                testID="undefined-content"
               >
                 <Text
                   numberOfLines={1}
