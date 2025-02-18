@@ -10,7 +10,7 @@ import {
   appendFile,
   mkdir,
   unlink,
-} from 'react-native-fs';
+} from '@dr.pogodin/react-native-fs';
 
 import { IterableArrayLike } from './types';
 import { Platform } from 'react-native';

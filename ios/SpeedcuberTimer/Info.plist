@@ -28,14 +28,11 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
+	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Bluetooth access required for Smartcube support.</string>
@@ -46,18 +43,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
-		<string>AntDesign.ttf</string>
-		<string>EvilIcons.ttf</string>
 		<string>FontAwesome.ttf</string>
-		<string>FontAwesome5.ttf</string>
-		<string>Fontisto.ttf</string>
-		<string>Foundation.ttf</string>
 		<string>Ionicons.ttf</string>
+		<string>MaterialDesignIcons.ttf</string>
 		<string>MaterialIcons.ttf</string>
-		<string>MaterialCommunityIcons.ttf</string>
-		<string>Octicons.ttf</string>
-		<string>Zocial.ttf</string>
-		<string>SimpleLineIcons.ttf</string>
 		<string>STIFIcon.ttf</string>
 		<string>Rubik-Black.ttf</string>
 		<string>Rubik-BlackItalic.ttf</string>
@@ -76,10 +65,10 @@
 		<string>RubikMonoOne-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>BootSplash.storyboard</string>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>arm64</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

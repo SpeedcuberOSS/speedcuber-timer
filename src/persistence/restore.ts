@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { BACKUP_FOLDER, _ensureFolderExists } from './backup';
-import { read, readDir, stat } from 'react-native-fs';
+import { read, readDir, stat } from '@dr.pogodin/react-native-fs';
 
 import { BackupEntry } from './types';
 import { JsonLinesReader } from '../lib/jsonl';

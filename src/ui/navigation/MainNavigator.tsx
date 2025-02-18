@@ -4,17 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { NavigationContainer } from '@react-navigation/native';
-import RNBootSplash from 'react-native-bootsplash';
 import DrawerNavigator from './DrawerNavigator';
+import { NavigationContainer } from '@react-navigation/native';
 import { getCurrentTheme } from '../themes';
 
 const MainNavigator = () => {
   const theme = getCurrentTheme();
   return (
-    <NavigationContainer
-      theme={theme}
-      onReady={() => RNBootSplash.hide({ fade: true, duration: 500 })}>
+    <NavigationContainer theme={theme}>
       <DrawerNavigator />
     </NavigationContainer>
   );

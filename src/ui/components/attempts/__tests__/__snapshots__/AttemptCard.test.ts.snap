@@ -68,122 +68,136 @@ exports[`Attempt Card [+2] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                13.343 (+2)
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  13.343 (+2)
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -260,122 +274,136 @@ exports[`Attempt Card [+4] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                15.343 (+4)
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  15.343 (+4)
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -452,122 +480,136 @@ exports[`Attempt Card [DNF] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                DNF
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  DNF
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -644,122 +686,136 @@ exports[`Attempt Card [DNS] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                DNS
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  DNS
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -836,122 +892,136 @@ exports[`Attempt Card [Hour Long] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                10:12:11.343
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  10:12:11.343
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -1028,122 +1098,136 @@ exports[`Attempt Card [Minute Long] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                1:11.343
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  1:11.343
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -1220,122 +1304,136 @@ exports[`Attempt Card [Multi-BLD] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                19:27.150
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  19:27.150
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -1412,122 +1510,136 @@ exports[`Attempt Card [Relay 2-7] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                1:56.715
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  1:56.715
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -1604,122 +1716,136 @@ exports[`Attempt Card [Typical] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                11.343
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  11.343
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
@@ -1796,122 +1922,136 @@ exports[`Attempt Card [with Reconstruction] matches snapshot 1`] = `
               "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
+          collapsable={false}
           focusable={true}
+          onBlur={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
           onResponderTerminate={[Function]}
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
-          style={
-            [
-              {
-                "flexShrink": 1,
-              },
-              undefined,
-            ]
-          }
-          testID="card"
         >
           <View
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "space-between",
-                  "paddingLeft": 16,
-                },
-                {
-                  "minHeight": 72,
+                  "flexShrink": 1,
                 },
                 undefined,
               ]
             }
+            testID="card"
           >
             <View
               style={
                 [
                   {
-                    "flex": 1,
-                    "flexDirection": "column",
-                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingLeft": 16,
                   },
+                  {
+                    "minHeight": 72,
+                  },
+                  undefined,
                 ]
               }
             >
-              <Text
-                numberOfLines={1}
+              <View
                 style={
                   [
                     {
-                      "textAlign": "left",
+                      "flex": 1,
+                      "flexDirection": "column",
+                      "justifyContent": "center",
                     },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
-                    [
-                      {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "500",
-                        "letterSpacing": 0.15,
-                        "lineHeight": 24,
-                      },
-                      [
-                        {
-                          "minHeight": 30,
-                          "paddingRight": 16,
-                        },
-                        {
-                          "marginBottom": 0,
-                        },
-                        undefined,
-                      ],
-                    ],
                   ]
                 }
               >
-                11.343
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={
-                  [
-                    {
-                      "textAlign": "left",
-                    },
-                    {
-                      "color": "rgb(26, 28, 24)",
-                      "writingDirection": "ltr",
-                    },
+                <Text
+                  numberOfLines={1}
+                  style={
                     [
                       {
-                        "fontFamily": "Rubik-Regular",
-                        "fontSize": 12,
-                        "fontWeight": "400",
-                        "letterSpacing": 0.4,
-                        "lineHeight": 16,
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
                       },
                       [
                         {
-                          "marginVertical": 0,
-                          "minHeight": 20,
-                          "paddingRight": 16,
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
                         },
-                        undefined,
+                        [
+                          {
+                            "minHeight": 30,
+                            "paddingRight": 16,
+                          },
+                          {
+                            "marginBottom": 0,
+                          },
+                          undefined,
+                        ],
                       ],
-                    ],
-                  ]
-                }
-              >
-                9/20/2022
-              </Text>
+                    ]
+                  }
+                >
+                  11.343
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgb(26, 28, 24)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "Rubik-Regular",
+                          "fontSize": 12,
+                          "fontWeight": "400",
+                          "letterSpacing": 0.4,
+                          "lineHeight": 16,
+                        },
+                        [
+                          {
+                            "marginVertical": 0,
+                            "minHeight": 20,
+                            "paddingRight": 16,
+                          },
+                          undefined,
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  9/20/2022
+                </Text>
+              </View>
+              <View />
             </View>
-            <View />
           </View>
         </View>
       </View>
