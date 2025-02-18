@@ -1423,7 +1423,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-webview (13.12.4):
+  - react-native-webview (13.15.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1978,7 +1978,7 @@ DEPENDENCIES:
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - "react-native-vector-icons (from `../node_modules/@react-native-vector-icons/common`)"
-  - react-native-webview (from `../node_modules/react-native-webview`)
+  - "react-native-webview (from `../node_modules/@dr.pogodin/react-native-webview`)"
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -2108,7 +2108,7 @@ EXTERNAL SOURCES:
   react-native-vector-icons:
     :path: "../node_modules/@react-native-vector-icons/common"
   react-native-webview:
-    :path: "../node_modules/react-native-webview"
+    :path: "../node_modules/@dr.pogodin/react-native-webview"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -2224,7 +2224,7 @@ SPEC CHECKSUMS:
   react-native-safe-area-context: 2500e4fe998caad50ad3bc51ec23ef951308569e
   react-native-slider: 124ce99f9cd2d04c79f020da6dee9f8d38a6b8c7
   react-native-vector-icons: 1c0923f822a6d103e0f3583b533c930803f21f4b
-  react-native-webview: 0bd56be54d01756f20eb942dad37a2cd22a6def2
+  react-native-webview: 48037ac281f1169b25a38c6c557d4009af9d0f08
   React-nativeconfig: aeed6e2a8ac02b2df54476afcc7c663416c12bf7
   React-NativeModulesApple: c5b7813da94136f50ef084fa1ac077332dcfc658
   React-perflogger: 6afb7eebf7d9521cc70481688ccddf212970e9d3

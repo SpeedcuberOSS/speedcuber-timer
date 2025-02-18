@@ -1090,6 +1090,14 @@
     buffer "^6.0.3"
     http-status-codes "^2.3.0"
 
+"@dr.pogodin/react-native-webview@^13.15.2":
+  version "13.15.2"
+  resolved "https://registry.yarnpkg.com/@dr.pogodin/react-native-webview/-/react-native-webview-13.15.2.tgz#8201cbae2d5a321422f45b8abe3a102eb4ab8a40"
+  integrity sha512-t6XeNW5ZGIbceD6Ev9qUWuCwMFSq9ytHxV7KcPTW5NnsB/AZdviuFc/gGH+whdirau1HR+HygpKpeBjBkPiNUg==
+  dependencies:
+    escape-string-regexp "^5.0.0"
+    invariant "2.2.4"
+
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
@@ -3448,6 +3456,11 @@ escape-string-regexp@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
+escape-string-regexp@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz#4683126b500b61762f2dbebace1806e8be31b1c8"
+  integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
 eslint-config-prettier@^8.5.0:
   version "8.10.0"
@@ -6185,14 +6198,6 @@ react-native-screens@^4.3.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
-
-react-native-webview@^13.12.4:
-  version "13.12.4"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-13.12.4.tgz#1a563a7fbd6bf53d688388d46708f273ed0ebb94"
-  integrity sha512-8lWeYPVWeOj0ya9ZpDesOQPRgczuN3ogQHlhS21sNXndd4kvfPG+WjlRdrvxYgj//udpwmzcWzagwLnEp60Aqg==
-  dependencies:
-    escape-string-regexp "^4.0.0"
-    invariant "2.2.4"
 
 react-native@0.76.3, react-native@>=0.68:
   version "0.76.3"
