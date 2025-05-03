@@ -19,7 +19,7 @@ import { SmartPuzzleError, SmartPuzzleErrorCode } from './SmartPuzzleError';
 
 import BLE from './BLE';
 import { Buffer } from 'buffer';
-import { EmitterSubscription } from 'react-native';
+import { EventSubscription } from 'react-native';
 import { STIF } from '../../../lib/stif';
 import { t } from 'i18next';
 
@@ -48,7 +48,7 @@ export interface MessageSubscription {
 
 interface PuzzleRegistryEntry {
   puzzle: BluetoothPuzzle;
-  subscriptions: EmitterSubscription[];
+  subscriptions: EventSubscription[];
   listeners: MessageListener[];
 }
 
@@ -126,10 +126,7 @@ async function connect(puzzle: BluetoothPuzzle): Promise<void> {
       }
 
       await BLE.Manager.connect(puzzle.device.id);
-      const subscription = BLE.Events.addListener(
-        'BleManagerDisconnectPeripheral',
-        onDisconnect,
-      );
+      const subscription = BLE.Manager.onDisconnectPeripheral(onDisconnect);
 
       const entry = PUZZLE_REGISTRY.get(puzzle.device.id);
       if (entry) {
@@ -167,10 +164,7 @@ async function discoverServices(puzzle: BluetoothPuzzle) {
 }
 
 async function configureNotifications(puzzle: BluetoothPuzzle) {
-  const subscription = BLE.Events.addListener(
-    'BleManagerDidUpdateValueForCharacteristic',
-    onReceiveNotification(puzzle),
-  );
+  const subscription = BLE.Manager.onDidUpdateValueForCharacteristic(onReceiveNotification(puzzle))
   await BLE.Manager.startNotification(
     puzzle.device.id,
     compressUUID(puzzle.uuids.trackingService),

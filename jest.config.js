@@ -20,5 +20,8 @@ module.exports = {
     // Jest does not support package.json.exports. See
     // https://github.com/uuidjs/uuid/issues/451
     uuid: require.resolve('uuid'),
+    // Mock out font files that aren't available to Jest
+    // https://github.com/oblador/react-native-vector-icons/issues/1681#issuecomment-2585560725
+    '\\.(ttf)$': '<rootDir>/src/__mocks__/file-mock.js',
   },
 };

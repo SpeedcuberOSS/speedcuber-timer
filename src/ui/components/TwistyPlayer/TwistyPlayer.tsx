@@ -4,6 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import { ColorValue, View } from 'react-native';
 import {
   PUZZLE_3x3x3,
   PUZZLE_CLOCK,
@@ -12,11 +13,10 @@ import {
   PUZZLE_SKEWB,
   PUZZLE_SQUARE_1,
 } from '../../../lib/stif/builtins';
-import { STIF } from '../../../lib/stif';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
-import { ColorValue } from 'react-native';
-import { WebView } from 'react-native-webview';
+import { STIF } from '../../../lib/stif';
+import { WebView } from '@dr.pogodin/react-native-webview';
 
 interface TwistyPlayerProps {
   algorithm?: STIF.Algorithm;
@@ -40,102 +40,48 @@ const TwistyPlayer = forwardRef(
     ref,
   ) => {
     const webViewRef = useRef<WebView>({} as WebView);
-    const [width, height, scale] = [384, 256, 2];
-    function sendMove(move: string) {
-      const js = `
-        addMoveButton = document.getElementById("add-move")
-        if (addMoveButton) {
-          addMoveButton.innerHTML = "${move}"
-          addMoveButton.click()
-        }
-        true;
-      `;
-      console.debug(`Sending move ${move} to twisty player`);
-      if (webViewRef.current.injectJavaScript)
-        webViewRef.current.injectJavaScript(js);
-    }
     useImperativeHandle(ref, () => ({
       setAlgorithm: (alg: STIF.Algorithm) => {
         const moves = alg.join(' ');
-        console.debug('Setting alg:', moves);
-        const js = `
-          setAlgButton = document.getElementById("set-algorithm")
-          if (setAlgButton) {
-            setAlgButton.innerHTML = "${moves}"
-            setAlgButton.click()
-          }
-          true;
-        `;
+        const js = `window.app.setAlgorithm("${moves}"); true;`;
+        console.debug(js);
         if (webViewRef.current.injectJavaScript)
           webViewRef.current.injectJavaScript(js);
       },
       addMove: (move: string) => {
-        console.debug('Adding move:', move);
-        const js = `
-          addMoveButton = document.getElementById("add-move")
-          if (addMoveButton) {
-            addMoveButton.innerHTML = "${move}"
-            addMoveButton.click()
-          }
-          true;
-        `;
+        const js = `window.app.addMove(${JSON.stringify(move)}); true;`;
+        console.debug(js);
         if (webViewRef.current.injectJavaScript)
           webViewRef.current.injectJavaScript(js);
       },
     }));
-
     return (
-      <WebView
-        ref={webViewRef}
-        style={{ flex: 1 }}
-        scrollEnabled={false}
-        setBuiltInZoomControls={false}
-        setDisplayZoomControls={false}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        originWhitelist={['*']}
-        source={{
-          html: `
-            <script type="module">
-              import { TwistyPlayer } from "https://cdn.cubing.net/js/cubing/twisty";
-              import { Move } from "https://cdn.cubing.net/js/cubing/alg";
-
-              const player = new TwistyPlayer({
-                puzzle: "${stifPuzzle_To_TwistyPlayerString(puzzle)}",
-                visualization: "${visualization}",
-                hintFacelets: "${hintFacelets ? hintFacelets : 'none'}",
-                backView: "${backView ? backView : 'none'}",
-                background: "none",
-                controlPanel: "none",
-              });
-              player.style = "width: ${width * scale}; height: ${
-            height * scale
-          };"
-              player.alg = "${algorithm?.join(' ') || ''}",
-              document.body.appendChild(player);
-              document.getElementById("add-move").addEventListener("click", () => {
-                var move = document.getElementById("add-move").innerHTML
-                player.experimentalAddAlgLeaf(new Move(move));
-              })
-              document.getElementById("set-algorithm").addEventListener("click", () => {
-                var alg = document.getElementById("set-algorithm").innerHTML
-                player.alg = alg;
-              })
-            </script>
-
-            <body
-              style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: ${String(
-                backgroundColor,
-              )}">
-              <button hidden id="add-move">U</button>
-              <button hidden id="set-algorithm"></button>
-            </body>
-          `,
-        }}
-      />
-    );
-  },
-);
+      <View style={{ flex: 1, backgroundColor: 'black' }}>
+        <WebView
+          ref={webViewRef}
+          style={{ flex: 1, backgroundColor: 'transparent' }}
+          scrollEnabled={false}
+          setBuiltInZoomControls={false}
+          setDisplayZoomControls={false}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          source={{ uri: 'https://twisty-player.speedcuber.org' }}
+          onMessage={e => console.log("[TwistyPlayer-Webview]", e.nativeEvent)}
+          injectedJavaScript={`
+            window.app.setTwistyPlayer({
+              algorithm: "${algorithm?.join(' ') || ''}",
+              puzzle: "${stifPuzzle_To_TwistyPlayerString(puzzle)}",
+              visualization: "${visualization}",
+              hintFacelets: "${hintFacelets ? hintFacelets : 'none'}",
+              backView: "${backView ? backView : 'none'}",
+              backgroundColor: "${String(backgroundColor)}",
+            });
+            true;
+          `}/>
+      </View>
+    )
+  }
+)
 
 export default TwistyPlayer;
 

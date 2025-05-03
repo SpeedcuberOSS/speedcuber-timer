@@ -9,22 +9,9 @@ import 'react-native-get-random-values';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { RealmProvider } from '../persistence/realmdb';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
-import { RealmProvider, useRealm } from '../persistence/realmdb';
-
-const DevComponents = () => {
-  const FlipperAsyncStorage =
-    require('rn-flipper-async-storage-advanced').default;
-  const RealmPlugin = require('realm-flipper-plugin-device').default;
-  const realm = useRealm();
-  return (
-    <>
-      <FlipperAsyncStorage />
-      <RealmPlugin realms={[realm]} />
-    </>
-  );
-};
 
 const App = () => {
   if (i18n.isInitialized) {
@@ -34,7 +21,6 @@ const App = () => {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <PaperProvider theme={getCurrentTheme()}>
         <RealmProvider>
-          {__DEV__ && <DevComponents />}
           <MainNavigator />
         </RealmProvider>
       </PaperProvider>

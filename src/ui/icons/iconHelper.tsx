@@ -6,20 +6,12 @@
 
 import * as React from 'react';
 
-import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
-import EvilIconsIcon from 'react-native-vector-icons/EvilIcons';
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import FontistoIcon from 'react-native-vector-icons/Fontisto';
-import FoundationIcon from 'react-native-vector-icons/Foundation';
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIconsIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
-import OcticonsIcon from 'react-native-vector-icons/Octicons';
+import EntypoIcon from '@react-native-vector-icons/entypo';
+import FontAwesomeIcon from '@react-native-vector-icons/fontawesome';
+import IoniconsIcon from '@react-native-vector-icons/ionicons';
+import MaterialCommunityIconsIcon from '@react-native-vector-icons/material-design-icons';
+import MaterialIconsIcon from '@react-native-vector-icons/material-icons';
 import { STIFIcon } from './STIFIcons';
-import SimpleLineIconsIcon from 'react-native-vector-icons/SimpleLineIcons';
-import ZocialIcon from 'react-native-vector-icons/Zocial';
 
 interface IconParams {
   size: number;
@@ -42,19 +34,11 @@ function render(Icon: any, name: string) {
 
 const ReactNativeVectorIcons = {
   Entypo: (name: string) => render(EntypoIcon, name),
-  AntDesign: (name: string) => render(AntDesignIcon, name),
-  EvilIcons: (name: string) => render(EvilIconsIcon, name),
   FontAwesome: (name: string) => render(FontAwesomeIcon, name),
-  FontAwesome5: (name: string) => render(FontAwesome5Icon, name),
-  Fontisto: (name: string) => render(FontistoIcon, name),
-  Foundation: (name: string) => render(FoundationIcon, name),
   Ionicons: (name: string) => render(IoniconsIcon, name),
   MaterialIcons: (name: string) => render(MaterialIconsIcon, name),
   MaterialCommunityIcons: (name: string) =>
     render(MaterialCommunityIconsIcon, name),
-  Octicons: (name: string) => render(OcticonsIcon, name),
-  Zocial: (name: string) => render(ZocialIcon, name),
-  SimpleLineIcons: (name: string) => render(SimpleLineIconsIcon, name),
 };
 
 const STIFIcons = {

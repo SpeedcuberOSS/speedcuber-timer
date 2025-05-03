@@ -14,8 +14,8 @@ jest.mock('react-native-webview', () => {
 jest.mock('react-native-ble-manager');
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
-import * as actualfs from 'react-native-fs';
-jest.mock('react-native-fs', () => ({
+import * as actualfs from '@dr.pogodin/react-native-fs';
+jest.mock('@dr.pogodin/react-native-fs', () => ({
   DocumentDirectoryPath: 'DocumentDirectoryPath',
   ExternalDirectoryPath: 'ExternalDirectoryPath',
   appendFile: jest.fn(),

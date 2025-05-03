@@ -61,37 +61,60 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
       >
         0.000
       </Text>
-      <RNCSlider
-        disabled={false}
-        inverted={false}
-        lowerLimit={-9007199254740991}
-        maximumTrackTintColor="rgb(26, 28, 24)"
-        maximumValue={15000}
-        minimumTrackTintColor="rgb(0, 110, 0)"
-        minimumValue={0}
-        onChange={[Function]}
-        onRNCSliderAccessibilityAction={null}
-        onRNCSliderSlidingComplete={[Function]}
-        onRNCSliderSlidingStart={[Function]}
-        onRNCSliderValueChange={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        step={0}
+      <View
+        onLayout={[Function]}
         style={
           [
+            [
+              {
+                "flex": 4,
+              },
+              {
+                "height": 40,
+              },
+            ],
             {
-              "flex": 4,
-            },
-            {
-              "height": 40,
+              "justifyContent": "center",
             },
           ]
         }
-        tapToSeek={false}
-        thumbTintColor="rgb(0, 110, 0)"
-        upperLimit={9007199254740991}
-        value={0}
-      />
+      >
+        <RNCSlider
+          disabled={false}
+          inverted={false}
+          lowerLimit={-9007199254740991}
+          maximumTrackTintColor="rgb(26, 28, 24)"
+          maximumValue={15000}
+          minimumTrackTintColor="rgb(0, 110, 0)"
+          minimumValue={0}
+          onChange={[Function]}
+          onRNCSliderAccessibilityAction={null}
+          onRNCSliderSlidingComplete={[Function]}
+          onRNCSliderSlidingStart={[Function]}
+          onRNCSliderValueChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          step={0}
+          style={
+            [
+              {
+                "width": 0,
+                "zIndex": 1,
+              },
+              {
+                "height": 40,
+              },
+              {
+                "alignContent": "center",
+                "alignItems": "center",
+              },
+            ]
+          }
+          tapToSeek={false}
+          thumbTintColor="rgb(0, 110, 0)"
+          upperLimit={9007199254740991}
+        />
+      </View>
       <Text
         style={
           [
@@ -271,27 +294,11 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="controller-jump-to-start"
+                  size={24}
+                />
               </View>
             </View>
           </View>
@@ -398,27 +405,11 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="controller-fast-backward"
+                  size={24}
+                />
               </View>
             </View>
           </View>
@@ -558,27 +549,11 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                     }
                     testID="cross-fade-icon-current"
                   >
-                    <Text
-                      allowFontScaling={false}
-                      selectable={false}
-                      style={
-                        [
-                          {
-                            "color": "rgb(67, 72, 63)",
-                            "fontSize": 24,
-                          },
-                          undefined,
-                          {
-                            "fontFamily": "Entypo",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                          {},
-                        ]
-                      }
-                    >
-                      
-                    </Text>
+                    <icon
+                      color="rgb(67, 72, 63)"
+                      name="controller-play"
+                      size={24}
+                    />
                   </View>
                 </View>
               </View>
@@ -687,27 +662,11 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="controller-fast-forward"
+                  size={24}
+                />
               </View>
             </View>
           </View>
@@ -814,27 +773,11 @@ exports[`Player Controls [Default] matches snapshot 1`] = `
                 }
                 testID="icon-button"
               >
-                <Text
-                  allowFontScaling={false}
-                  selectable={false}
-                  style={
-                    [
-                      {
-                        "color": "rgb(67, 72, 63)",
-                        "fontSize": 24,
-                      },
-                      undefined,
-                      {
-                        "fontFamily": "Entypo",
-                        "fontStyle": "normal",
-                        "fontWeight": "normal",
-                      },
-                      {},
-                    ]
-                  }
-                >
-                  
-                </Text>
+                <icon
+                  color="rgb(67, 72, 63)"
+                  name="controller-next"
+                  size={24}
+                />
               </View>
             </View>
           </View>
