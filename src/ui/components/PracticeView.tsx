@@ -17,7 +17,7 @@ import {
   useAttemptCreator,
   useSolveRecordingCreator,
 } from '../../persistence/hooks';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Attempt } from '../../lib/stif/wrappers';
 import { GeneratedScramble } from './scrambles/types';
@@ -25,7 +25,7 @@ import InspectionTimer from './inspection/InspectionTimer';
 import { STIF } from '../../lib/stif';
 import ScramblingView from './scrambles/ScramblingView';
 import SolveTimer from './SolveTimer';
-import { parseReconstruction } from '../../lib/recordings/parseReconstruction';
+import { parseReconstructionAsync } from '../../lib/recordings/parseReconstructionAsync';
 import { useCompetitiveEvent } from '../hooks/useCompetitiveEvent';
 
 enum TimerState {
@@ -109,58 +109,76 @@ export default function PracticeView() {
     if (didNotStart) {
       console.log('DNF Detected');
       // TODO Ensure DNFs are handled correctly.
-      const attempt = assembleAttempt();
-      persistAttempt(attempt);
-      setTimerState(TimerState.SCRAMBLING);
+      handleSolveComplete();
     } else {
       nextTimerState();
     }
   }
 
-  function handleSolveComplete() {
-    const attempt = assembleAttempt();
-    persistAttempt(attempt);
-    nextTimerState();
-  }
-
-  function assembleAttempt() {
+  const handleSolveComplete = useCallback(() => {
     const now = new Date().getTime();
-    const didNotStart = timerStart < inspectionStart;
-    const attempt = new AttemptBuilder()
-      .setEvent(event)
-      .setInspectionStart(inspectionStart)
-      .setTimerStart(didNotStart ? now : timerStart)
+
+    // Capture state before transitioning so async code uses the right snapshot.
+    const capturedWipSolutions = wipSolutions;
+    const capturedInspectionStart = inspectionStart;
+    const capturedTimerStart = timerStart;
+    const capturedEvent = event;
+
+    // Stop BLE subscriptions and snapshot the recordings synchronously so
+    // no new messages are added after the solve ends.
+    const capturedRecordings = capturedWipSolutions.map(wip => {
+      if (wip.messageSubscription) {
+        wip.messageSubscription.remove();
+      }
+      return wip.messages?.build();
+    });
+
+    // Transition the UI immediately so the user sees no lag.
+    setTimerState(TimerState.SCRAMBLING);
+
+    // Build and persist the attempt in the background.
+    const didNotStart = capturedTimerStart < capturedInspectionStart;
+    const attemptBuilder = new AttemptBuilder()
+      .setEvent(capturedEvent)
+      .setInspectionStart(capturedInspectionStart)
+      .setTimerStart(didNotStart ? now : capturedTimerStart)
       .setTimerStop(now);
-    wipSolutions
-      .map(wip => {
-        const recording = wip.messages?.build();
+
+    Promise.all(
+      capturedWipSolutions.map(async (wip, idx) => {
+        const recording = capturedRecordings[idx];
         if (recording) {
-          const reconstruction = parseReconstruction(
+          const reconstruction = await parseReconstructionAsync(
             recording,
             wip.scramble.algorithm,
-            timerStart,
+            capturedTimerStart,
           );
           reconstruction.forEach(phase => wip.builder.addSolutionPhase(phase));
         }
-        if (wip.messageSubscription) {
-          wip.messageSubscription.remove();
-        }
         return wip.builder.build();
+      }),
+    )
+      .then(solutions => {
+        solutions.forEach(solution => attemptBuilder.addSolution(solution));
+        const attempt = attemptBuilder.build();
+        createAttempt(attempt);
+        setLastAttempt(new Attempt(attempt));
+        capturedWipSolutions.forEach((wip, idx) => {
+          const recording = capturedRecordings[idx];
+          if (recording) {
+            createRecording(attempt.solutions[idx].id, recording);
+          }
+        });
       })
-      .forEach(solution => attempt.addSolution(solution));
-    return attempt.build();
-  }
-
-  function persistAttempt(attempt: STIF.Attempt) {
-    createAttempt(attempt);
-    setLastAttempt(new Attempt(attempt));
-    wipSolutions.map((wip, idx) => {
-      const recording = wip.messages?.build();
-      if (recording) {
-        createRecording(attempt.solutions[idx].id, recording);
-      }
-    });
-  }
+      .catch(e => console.error('Failed to assemble or persist attempt', e));
+  }, [
+    wipSolutions,
+    inspectionStart,
+    timerStart,
+    event,
+    createAttempt,
+    createRecording,
+  ]);
 
   return (
     <View style={styles.container}>
