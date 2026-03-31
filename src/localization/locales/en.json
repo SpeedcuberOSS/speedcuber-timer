@@ -80,7 +80,8 @@
     "type": {
       "official": "Official",
       "unofficial": "Unofficial",
-      "retired": "Retired"
+      "retired": "Retired",
+      "favorites": "Favorites"
     }
   },
   "events": {

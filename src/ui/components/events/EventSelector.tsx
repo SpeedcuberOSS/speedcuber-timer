@@ -6,13 +6,14 @@
 
 import * as Events from '../../../lib/stif/builtins/CompetitiveEvents';
 
-import { Divider, List } from 'react-native-paper';
+import { Divider, IconButton, List } from 'react-native-paper';
 import { Fragment, useCallback, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 
 import Icons from '../../icons/iconHelper';
 import { STIF } from '../../../lib/stif';
 import Ticker from '../ticker/Ticker';
+import { useFavoriteEvents } from '../../hooks/useFavoriteEvents';
 import { useTranslation } from 'react-i18next';
 
 interface EventSelectorProps {
@@ -22,12 +23,14 @@ interface EventSelectorProps {
 interface EventItemProps {
   event: STIF.CompetitiveEvent;
   onSelect: (event: STIF.CompetitiveEvent) => void;
+  isFavorite: boolean;
+  onToggleFavorite: (eventId: string) => void;
 }
 
-function EventItem({ event, onSelect }: EventItemProps) {
+function EventItem({ event, onSelect, isFavorite, onToggleFavorite }: EventItemProps) {
   const { t } = useTranslation();
   const [multiCount, setMultiCount] = useState(2);
-  const isMultiEvent = () => ['333mbf', "333m", "222m"].includes(event.id)
+  const isMultiEvent = () => ['333mbf', '333m', '222m'].includes(event.id)
   const pressHandler = useCallback(() => {
     if (isMultiEvent()) {
       onSelect({ ...event, puzzles: new Array(multiCount).fill(event.puzzles[0]) });
@@ -43,16 +46,29 @@ function EventItem({ event, onSelect }: EventItemProps) {
       left={props => <List.Icon {...props} icon={Icons.STIF(`event-${event.id}`)} />}
       right={props =>
         isMultiEvent() ? (
-          <View style={{margin: -14}}>
-            <Ticker
-              initialValue={2}
-              min={2}
-              step={1}
-              onChange={value => setMultiCount(value)}
-              orientation="horizontal"
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{margin: -14}}>
+              <Ticker
+                initialValue={2}
+                min={2}
+                step={1}
+                onChange={value => setMultiCount(value)}
+                orientation="horizontal"
+              />
+            </View>
+            <IconButton
+              {...props}
+              icon={isFavorite ? 'star' : 'star-outline'}
+              onPress={() => onToggleFavorite(event.id)}
             />
           </View>
-        ) : null
+        ) : (
+          <IconButton
+            {...props}
+            icon={isFavorite ? 'star' : 'star-outline'}
+            onPress={() => onToggleFavorite(event.id)}
+          />
+        )
       }
     />
   );
@@ -60,12 +76,30 @@ function EventItem({ event, onSelect }: EventItemProps) {
 
 export default function EventSelector({ onSelect }: EventSelectorProps) {
   const { t } = useTranslation();
+  const { favoriteEventIds, toggleFavorite, isFavorite } = useFavoriteEvents();
   const unsupportedEvents = ['unknown', '333bf-team', '23relay'];
   const events = Object.values(Events).filter(
     e => !unsupportedEvents.includes(e.id),
   );
+  const favoriteEvents = events.filter(e => isFavorite(e.id));
   return (
     <ScrollView>
+      {favoriteEvents.length > 0 && (
+        <List.Section>
+          <List.Subheader>{t('event.type.favorites')}</List.Subheader>
+          {favoriteEvents.map((e, idx) => (
+            <Fragment key={e.id}>
+              {!!idx && <Divider horizontalInset />}
+              <EventItem
+                event={e}
+                onSelect={onSelect}
+                isFavorite={true}
+                onToggleFavorite={toggleFavorite}
+              />
+            </Fragment>
+          ))}
+        </List.Section>
+      )}
       <List.Section>
         <List.Subheader>{t('event.type.official')}</List.Subheader>
         {events
@@ -74,7 +108,13 @@ export default function EventSelector({ onSelect }: EventSelectorProps) {
             // Inspired by: https://www.codemzy.com/blog/joining-arrays-react-components
             <Fragment key={e.id}>
               {!!idx && <Divider horizontalInset />}
-              <EventItem key={e.id} event={e} onSelect={onSelect} />
+              <EventItem
+                key={e.id}
+                event={e}
+                onSelect={onSelect}
+                isFavorite={isFavorite(e.id)}
+                onToggleFavorite={toggleFavorite}
+              />
             </Fragment>
           ))}
       </List.Section>
@@ -86,7 +126,13 @@ export default function EventSelector({ onSelect }: EventSelectorProps) {
             // Inspired by: https://www.codemzy.com/blog/joining-arrays-react-components
             <Fragment key={e.id}>
               {!!idx && <Divider horizontalInset />}
-              <EventItem key={e.id} event={e} onSelect={onSelect} />
+              <EventItem
+                key={e.id}
+                event={e}
+                onSelect={onSelect}
+                isFavorite={isFavorite(e.id)}
+                onToggleFavorite={toggleFavorite}
+              />
             </Fragment>
           ))}
       </List.Section>
@@ -98,7 +144,13 @@ export default function EventSelector({ onSelect }: EventSelectorProps) {
             // Inspired by: https://www.codemzy.com/blog/joining-arrays-react-components
             <Fragment key={e.id}>
               {!!idx && <Divider horizontalInset />}
-              <EventItem key={e.id} event={e} onSelect={onSelect} />
+              <EventItem
+                key={e.id}
+                event={e}
+                onSelect={onSelect}
+                isFavorite={isFavorite(e.id)}
+                onToggleFavorite={toggleFavorite}
+              />
             </Fragment>
           ))}
       </List.Section>
