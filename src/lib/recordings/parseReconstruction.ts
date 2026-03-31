@@ -17,6 +17,7 @@ export function parseReconstruction(
   startTime: number = 0,
   method: SolutionMethod = 'CFOP',
 ) {
+  'worklet';
   const moves = parseTimestampedMoves(recording, startTime);
   const rawReconstruction = reconstructionFor(scramble, moves).using(method);
   const reconstruction = rawReconstruction.map(phase => {

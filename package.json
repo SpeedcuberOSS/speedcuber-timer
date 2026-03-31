@@ -60,6 +60,7 @@
     "react-native-svg": "^13.9.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-webview": "^12.0.2",
+    "react-native-worklets-core": "1.6.3",
     "realm": "^12.2.1",
     "solution-analyzer": "^0.1.6",
     "uuid": "^9.0.0"

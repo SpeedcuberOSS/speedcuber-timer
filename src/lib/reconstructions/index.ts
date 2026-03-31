@@ -13,6 +13,7 @@ export default function reconstructionFor(
   scramble: STIF.Algorithm,
   moves: STIF.TimestampedMove[],
 ) {
+  'worklet';
   return {
     using: (method: SolutionMethod) =>
       __reconstructionFor(scramble, moves, method),
@@ -24,6 +25,7 @@ function __reconstructionFor(
   moves: STIF.TimestampedMove[],
   method: SolutionMethod,
 ) {
+  'worklet';
   const breakdown = analyzeSolution(
     scramble.join(' '),
     moves.map(v => v.m).join(' '),

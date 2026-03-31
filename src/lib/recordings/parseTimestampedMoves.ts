@@ -15,6 +15,7 @@ export function parseTimestampedMoves(
   recording: STIF.SolveRecording,
   startTime: number = 0,
 ): STIF.TimestampedMove[] {
+  'worklet';
   return adjustTimestamps(parseMoves(recording))
     .relativeTo(startTime)
     .sort((a, b) => a.t - b.t);
@@ -30,6 +31,7 @@ export function parseTimestampedMoves(
 export function compressDoubleTurns(
   moves: STIF.TimestampedMove[],
 ): STIF.TimestampedMove[] {
+  'worklet';
   const window = moves[moves.length - 1].t / moves.length;
 
   const movesMatch = (m1: string | null, m2: string | null) =>
