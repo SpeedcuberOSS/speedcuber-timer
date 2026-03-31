@@ -4,14 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useRealm } from '../realmdb';
+import { useDatabase } from '../sqlitedb/DatabaseProvider';
+import { SolveRecordingSchema, solveRecordingToRow } from '../sqlitedb';
 import { STIF, UUID } from '../../lib/stif';
 
 export function useSolveRecordingCreator() {
-  const realm = useRealm();
-  return (solutionId: UUID, recording: STIF.SolveRecording) => {
-    realm.write(() => {
-      realm.create('SolveRecording', { solutionId: solutionId, ...recording });
-    });
+  const db = useDatabase();
+  return async (solutionId: UUID, recording: STIF.SolveRecording) => {
+    const repo = db.getRepository(SolveRecordingSchema);
+    await repo.save(solveRecordingToRow(solutionId, recording));
   };
 }
