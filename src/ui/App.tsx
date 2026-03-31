@@ -11,17 +11,14 @@ import MainNavigator from './navigation/MainNavigator';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { getCurrentTheme } from './themes';
 import i18n from '../localization';
-import { RealmProvider, useRealm } from '../persistence/realmdb';
+import { DatabaseProvider } from '../persistence/sqlitedb/DatabaseProvider';
 
 const DevComponents = () => {
   const FlipperAsyncStorage =
     require('rn-flipper-async-storage-advanced').default;
-  const RealmPlugin = require('realm-flipper-plugin-device').default;
-  const realm = useRealm();
   return (
     <>
       <FlipperAsyncStorage />
-      <RealmPlugin realms={[realm]} />
     </>
   );
 };
@@ -33,10 +30,10 @@ const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <PaperProvider theme={getCurrentTheme()}>
-        <RealmProvider>
+        <DatabaseProvider>
           {__DEV__ && <DevComponents />}
           <MainNavigator />
-        </RealmProvider>
+        </DatabaseProvider>
       </PaperProvider>
     </GestureHandlerRootView>
   );

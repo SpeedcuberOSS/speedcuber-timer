@@ -5,8 +5,9 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import { useEffect, useState } from 'react';
-import { useQuery } from '../realmdb';
-import { RealmAttempt } from '../realmdb/schema';
+import { useDatabase } from '../sqlitedb/DatabaseProvider';
+import { useDbVersion, AttemptSchema, rowToAttempt } from '../sqlitedb';
+import type { AttemptRow } from '../sqlitedb';
 import { STIF } from '../../lib/stif';
 import { IterableArrayLike } from '../types';
 
@@ -14,27 +15,32 @@ interface useAttemptsParams {
   event?: STIF.CompetitiveEvent;
   sortDirection?: 'ascending' | 'descending';
 }
-const sortDirections = {
-  ascending: false,
-  descending: true,
-};
+
 export function useAttempts({
   event,
   sortDirection = 'ascending',
 }: useAttemptsParams): IterableArrayLike<STIF.Attempt> {
+  const db = useDatabase();
+  const [attemptsVersion] = useDbVersion('attemptsVersion');
   const [attempts, setAttempts] = useState<IterableArrayLike<STIF.Attempt>>([]);
-  const dataset = useQuery<RealmAttempt>(RealmAttempt);
+
+  const eventId = event?.id;
+
   useEffect(() => {
-    if (event !== undefined) {
-      const importantAttempts = dataset.filtered(`event.id = "${event.id}"`);
-      const sorted = importantAttempts.sorted(
-        'inspectionStart',
-        sortDirections[sortDirection],
-      );
-      setAttempts(sorted);
-    } else {
-      setAttempts(dataset);
+    const order = sortDirection === 'ascending' ? 'ASC' : 'DESC';
+    const repo = db.getRepository<AttemptRow>(AttemptSchema);
+    const query = repo.createQueryBuilder('attempt').orderBy(
+      'attempt.inspectionStart',
+      order,
+    );
+    if (eventId !== undefined) {
+      query.where('attempt.eventId = :eventId', { eventId });
     }
-  }, [event, dataset]);
+    query
+      .getMany()
+      .then(rows => setAttempts(rows.map(rowToAttempt)))
+      .catch(console.error);
+  }, [db, eventId, sortDirection, attemptsVersion]);
+
   return attempts;
 }

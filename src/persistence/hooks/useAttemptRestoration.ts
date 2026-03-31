@@ -4,19 +4,18 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { useRealm, useQuery } from '../realmdb';
+import { useDatabase } from '../sqlitedb/DatabaseProvider';
+import { AttemptSchema, attemptToRow, bumpAttemptsVersion } from '../sqlitedb';
 import { STIF } from '../../lib/stif';
-import { RealmAttempt } from '../realmdb/schema';
 
 export function useAttemptRestoration() {
-  const realm = useRealm();
-  const query = useQuery(RealmAttempt);
-  return (attempts: STIF.Attempt[]) => {
-    realm.write(() => {
-      realm.delete(query)
-      for(const attempt of attempts) {
-        realm.create('Attempt', attempt);
-      }
+  const db = useDatabase();
+  return async (attempts: STIF.Attempt[]) => {
+    const rows = attempts.map(attemptToRow);
+    await db.transaction(async manager => {
+      await manager.getRepository(AttemptSchema).clear();
+      await manager.getRepository(AttemptSchema).save(rows);
     });
+    bumpAttemptsVersion();
   };
 }
