@@ -4,14 +4,20 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { View, processColor } from 'react-native';
+import { LayoutChangeEvent, View } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Attempt } from '../../../lib/stif/wrappers';
 import { AttemptAnalytics } from '../../../lib/analytics/AttemptAnalytics';
-import { CombinedChart } from 'react-native-charts-wrapper';
+import { GridComponent, LegendComponent } from 'echarts/components';
+import { LineChart, ScatterChart } from 'echarts/charts';
+import { SVGRenderer, SvgChart } from '@wuba/react-native-echarts';
 import ZeroAttemptsPlaceholder from '../attempts/ZeroAttemptsPlaceholder';
+import * as echarts from 'echarts/core';
 import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
+
+echarts.use([SVGRenderer, ScatterChart, LineChart, GridComponent, LegendComponent]);
 
 interface AttemptsChartProps {
   attempts?: Attempt[];
@@ -52,100 +58,137 @@ export function AttemptsChart({
 }: AttemptsChartProps) {
   const theme = useTheme();
   const { t } = useTranslation();
-  const pointColor = processColor(theme.colors.primary.replace('1)', '0.75)'));
-  const textColor = processColor(theme.colors.onBackground);
+  const chartRef = useRef<any>(null);
+  const chartInstance = useRef<any>(null);
+  const [{ width, height }, setDimensions] = useState({ width: 0, height: 0 });
+
+  const primaryColor = theme.colors.primary.replace('1)', '0.75)');
+  const textColor = theme.colors.onBackground;
+
+  const scatterData = useMemo(
+    () =>
+      attempts.length <= MAX_POINTS_PER_SERIES
+        ? attempts
+            .map(attempt => attempt.duration() / 1000)
+            .reverse()
+            .map((d, idx) => [idx, d] as [number, number])
+            .filter(([, y]) => y !== Infinity)
+        : [],
+    [attempts],
+  );
+
+  const bestData = useMemo(
+    () =>
+      new AttemptAnalytics(attempts).sliding
+        .best()
+        .map(([x, y]) => [x, y / 1000] as [number, number])
+        .filter(([, y]) => y !== Infinity),
+    [attempts],
+  );
+
+  const averageData = useMemo(
+    () =>
+      averages.map(a => ({
+        label: `Ao${a}`,
+        data: prepareAverage(a, attempts).map(
+          ({ x, y }) => [x, y] as [number, number],
+        ),
+      })),
+    [attempts, averages],
+  );
+
+  // Initialize chart when the container dimensions are available.
+  useEffect(() => {
+    if (!chartRef.current || width === 0 || height === 0) return;
+
+    chartInstance.current = echarts.init(chartRef.current, null, {
+      renderer: 'svg',
+      width,
+      height,
+    });
+
+    return () => {
+      chartInstance.current?.dispose();
+      chartInstance.current = null;
+    };
+  }, [width, height]);
+
+  // Update chart options whenever data or theme changes.
+  useEffect(() => {
+    if (!chartInstance.current) return;
+
+    chartInstance.current.setOption({
+      legend: {
+        data: [
+          t('analytics.duration'),
+          t('analytics.best'),
+          ...averages.map(a => `Ao${a}`),
+        ],
+        textStyle: { color: textColor, fontFamily: 'Rubik' },
+        icon: 'circle',
+      },
+      xAxis: {
+        type: 'value',
+        position: 'bottom',
+        axisLabel: { color: textColor, fontFamily: 'Rubik' },
+        axisLine: { lineStyle: { color: textColor } },
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: { color: textColor, fontFamily: 'Rubik' },
+        axisLine: { lineStyle: { color: textColor } },
+      },
+      series: [
+        {
+          name: t('analytics.duration'),
+          type: 'scatter',
+          data: scatterData,
+          symbolSize: 5,
+          itemStyle: { color: primaryColor },
+        },
+        {
+          name: t('analytics.best'),
+          type: 'line',
+          data: bestData,
+          lineStyle: { color: 'yellow', type: 'dashed' },
+          symbol: 'circle',
+          symbolSize: 3,
+          showSymbol: true,
+          itemStyle: { color: 'yellow' },
+        },
+        ...averageData.map(({ label, data }, idx) => ({
+          name: label,
+          type: 'line' as const,
+          data,
+          lineStyle: {
+            color: AVERAGE_COLORS[idx % AVERAGE_COLORS.length],
+            width: 2,
+          },
+          showSymbol: false,
+          itemStyle: { color: AVERAGE_COLORS[idx % AVERAGE_COLORS.length] },
+        })),
+      ],
+    });
+  }, [
+    width,
+    height,
+    scatterData,
+    bestData,
+    averageData,
+    averages,
+    primaryColor,
+    textColor,
+    t,
+  ]);
+
+  const handleLayout = (e: LayoutChangeEvent) => {
+    const { width: w, height: h } = e.nativeEvent.layout;
+    setDimensions({ width: w, height: h });
+  };
+
   return (
-    <View style={{ flex: 1, padding: 10 }}>
-      <CombinedChart
-        style={{ flex: 1 }}
-        data={{
-          scatterData: {
-            dataSets:
-              attempts.length <= MAX_POINTS_PER_SERIES
-                ? [
-                    {
-                      label: t('analytics.duration'),
-                      values: attempts
-                        .map(attempt => attempt.duration() / 1000)
-                        .reverse()
-                        .map((d, idx) => ({
-                          x: idx,
-                          y: d,
-                        }))
-                        .filter(point => point.y !== Infinity),
-                      config: {
-                        scatterShape: 'CIRCLE',
-                        scatterShapeSize: 5,
-                        scatterShapeHoleRadius: 2,
-                        color: pointColor,
-                        valueTextColor: textColor,
-                      },
-                    },
-                  ]
-                : [],
-          },
-          lineData: {
-            dataSets: [
-              {
-                label: t('analytics.best'),
-                values: new AttemptAnalytics(attempts).sliding
-                  .best()
-                  .map(([x, y]) => ({
-                    x: x,
-                    y: y / 1000,
-                  }))
-                  .filter(point => point.y !== Infinity),
-                config: {
-                  color: processColor('yellow'),
-                  circleColor: processColor('yellow'),
-                  circleRadius: 3,
-                  drawCircleHole: false,
-                  drawValues: false,
-                  dashedLine: {
-                    lineLength: 5,
-                    spaceLength: 5,
-                  },
-                },
-              },
-              ...averages.map((a, idx) => {
-                return {
-                  label: `Ao${a}`,
-                  values: prepareAverage(a, attempts),
-                  config: {
-                    color: processColor(
-                      AVERAGE_COLORS[idx % AVERAGE_COLORS.length],
-                    ),
-                    lineWidth: 2,
-                    drawCircles: false,
-                    drawValues: false,
-                  },
-                };
-              }),
-            ],
-          },
-        }}
-        legend={{
-          form: 'CIRCLE',
-          textColor: textColor,
-          fontFamily: 'Rubik',
-        }}
-        xAxis={{
-          textColor: textColor,
-          position: 'BOTTOM',
-          fontFamily: 'Rubik',
-        }}
-        yAxis={{
-          left: {
-            textColor: textColor,
-            fontFamily: 'Rubik',
-          },
-          right: {
-            enabled: false,
-          },
-        }}
-        drawOrder={['SCATTER', 'LINE']}
-        chartDescription={{ text: '' }}
-      />
+    <View style={{ flex: 1, padding: 10 }} onLayout={handleLayout}>
+      <SvgChart ref={chartRef} style={{ flex: 1 }} />
     </View>
   );
 }
