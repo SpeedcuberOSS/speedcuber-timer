@@ -33,7 +33,8 @@
     "type": {
       "official": "Oficial",
       "unofficial": "No oficial",
-      "retired": "Retirado"
+      "retired": "Retirado",
+      "favorites": "Favoritos"
     }
   },
   "scramble": {
