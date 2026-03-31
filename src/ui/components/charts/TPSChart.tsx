@@ -4,12 +4,18 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import { StyleSheet, View, processColor } from 'react-native';
+import { LayoutChangeEvent, View } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import { LineChart } from 'react-native-charts-wrapper';
+import { GridComponent } from 'echarts/components';
+import { LineChart } from 'echarts/charts';
+import { SVGRenderer, SvgChart } from '@wuba/react-native-echarts';
 import { STIF } from '../../../lib/stif';
+import * as echarts from 'echarts/core';
 import { useTheme } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
+
+echarts.use([SVGRenderer, LineChart, GridComponent]);
 
 interface TPSChartProps {
   solveReplay: STIF.TimestampedMove[];
@@ -26,88 +32,124 @@ export default function TPSChart({
 }: TPSChartProps) {
   const { t } = useTranslation();
   const theme = useTheme();
-  const tps = windowedTPS(solveReplay, duration);
-  const maxTPS = Math.max(...tps.map(t => t.tps));
-  return (
-    <View style={{ flex: 1, padding: 10 }}>
-      <View style={styles.container}>
-        <LineChart
-          style={styles.chart}
-          data={{
-            dataSets: [
+  const chartRef = useRef<any>(null);
+  const chartInstance = useRef<any>(null);
+  const [{ width, height }, setDimensions] = useState({ width: 0, height: 0 });
+
+  const tps = useMemo(
+    () => windowedTPS(solveReplay, duration),
+    [solveReplay, duration],
+  );
+  const maxTPS = useMemo(
+    () => (tps.length > 0 ? Math.max(...tps.map(pt => pt.tps)) : 1),
+    [tps],
+  );
+
+  // Initialize chart when the container dimensions are available.
+  useEffect(() => {
+    if (!chartRef.current || width === 0 || height === 0) return;
+
+    chartInstance.current = echarts.init(chartRef.current, null, {
+      renderer: 'svg',
+      width,
+      height,
+    });
+
+    return () => {
+      chartInstance.current?.dispose();
+      chartInstance.current = null;
+    };
+  }, [width, height]);
+
+  // Update chart options whenever data or theme changes.
+  useEffect(() => {
+    if (!chartInstance.current) return;
+
+    chartInstance.current.setOption({
+      backgroundColor: theme.colors.background,
+      grid: {
+        top: 10,
+        bottom: showXAxis ? 40 : 10,
+        left: 50,
+        right: 10,
+      },
+      xAxis: {
+        type: 'value',
+        show: showXAxis,
+        min: 0,
+        axisLabel: {
+          color: theme.colors.onBackground,
+          fontFamily: 'Rubik',
+        },
+        axisLine: {
+          lineStyle: { color: theme.colors.onBackground },
+        },
+      },
+      yAxis: {
+        type: 'value',
+        min: 0,
+        axisLabel: {
+          color: theme.colors.onBackground,
+          fontFamily: 'Rubik',
+        },
+        axisLine: {
+          lineStyle: { color: theme.colors.onBackground },
+        },
+        splitLine: {
+          lineStyle: { color: theme.colors.onBackground, opacity: 0.1 },
+        },
+      },
+      series: [
+        {
+          name: t('analytics.tps'),
+          type: 'line',
+          smooth: true,
+          data: [[0, 0], ...tps.map(pt => [pt.t, pt.tps])],
+          lineStyle: { color: theme.colors.primary },
+          itemStyle: { color: theme.colors.primary },
+          showSymbol: false,
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                { offset: 0, color: theme.colors.primary },
+                { offset: 1, color: theme.colors.background },
+              ],
+              global: false,
+            },
+            opacity: 0.4,
+          },
+        },
+        ...(atTimestamp !== undefined
+          ? [
               {
-                label: t('analytics.tps'),
-                values: [
-                  { x: 0, y: 0 },
-                  ...tps.map((tps, i) => ({ y: tps.tps, x: tps.t })),
+                name: 'position',
+                type: 'line' as const,
+                data: [
+                  [atTimestamp / 1000, 0],
+                  [atTimestamp / 1000, maxTPS],
                 ],
-                config: {
-                  drawValues: false,
-                  drawCircles: false,
-                  mode: 'HORIZONTAL_BEZIER',
-                  color: processColor(theme.colors.primary),
-                  drawFilled: true,
-                  fillAlpha: 100,
-                  fillGradient: {
-                    colors: [
-                      processColor(theme.colors.background),
-                      processColor(theme.colors.primary),
-                    ],
-                    positions: [0, 1],
-                    angle: 90,
-                    orientation: 'BOTTOM_TOP',
-                  },
-                },
+                lineStyle: { color: theme.colors.secondary },
+                showSymbol: false,
               },
-              {
-                label: t('analytics.tps'),
-                values:
-                  atTimestamp !== undefined
-                    ? [
-                        { x: atTimestamp / 1000, y: 0 },
-                        { x: atTimestamp / 1000, y: maxTPS },
-                      ]
-                    : [],
-                config: {
-                  drawValues: false,
-                  drawCircles: false,
-                  mode: 'LINEAR',
-                  color: processColor(theme.colors.secondary),
-                },
-              },
-            ],
-          }}
-          chartBackgroundColor={processColor(theme.colors.background)}
-          marker={{
-            enabled: true,
-          }}
-          legend={{
-            enabled: false,
-            form: 'CIRCLE',
-            textColor: processColor(theme.colors.onBackground),
-            fontFamily: 'Rubik',
-          }}
-          xAxis={{
-            enabled: showXAxis,
-            textColor: processColor(theme.colors.onBackground),
-            position: 'BOTTOM',
-            fontFamily: 'Rubik',
-            axisMinimum: 0,
-          }}
-          yAxis={{
-            left: {
-              textColor: processColor(theme.colors.onBackground),
-              fontFamily: 'Rubik',
-              axisMinimum: 0,
-              spaceBottom: 0,
-            },
-            right: {
-              enabled: false,
-            },
-          }}
-          chartDescription={{ text: '' }}
-        />
-      </View>
+            ]
+          : []),
+      ],
+    });
+  }, [width, height, tps, maxTPS, atTimestamp, theme, showXAxis, t]);
+
+  const handleLayout = (e: LayoutChangeEvent) => {
+    const { width: w, height: h } = e.nativeEvent.layout;
+    setDimensions({ width: w, height: h });
+  };
+
+  return (
+    <View style={{ flex: 1, padding: 10 }} onLayout={handleLayout}>
+      <SvgChart ref={chartRef} style={{ flex: 1 }} />
     </View>
   );
 }
@@ -128,13 +170,3 @@ function windowedTPS(
   }
   return tps;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-  chart: {
-    flex: 1,
-  },
-});
